@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="goldLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5E4A0"/>
+      <stop offset="50%" stop-color="#C9A96E"/>
+      <stop offset="100%" stop-color="#7A5E2A"/>
+    </linearGradient>
+    <linearGradient id="goldDark" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C9A96E"/>
+      <stop offset="100%" stop-color="#4A3410"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Subtle zodiac ring -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#C9A96E" stroke-width="1.5" opacity="0.2"/>
+  <circle cx="256" cy="256" r="168" fill="none" stroke="#C9A96E" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- 4 directional tick marks (astrological compass) -->
+  <line x1="256" y1="52" x2="256" y2="68" stroke="#C9A96E" stroke-width="2" opacity="0.5"/>
+  <line x1="256" y1="444" x2="256" y2="460" stroke="#C9A96E" stroke-width="2" opacity="0.5"/>
+  <line x1="52" y1="256" x2="68" y2="256" stroke="#C9A96E" stroke-width="2" opacity="0.5"/>
+  <line x1="444" y1="256" x2="460" y2="256" stroke="#C9A96E" stroke-width="2" opacity="0.5"/>
+
+  <!-- 4 Blade Diamond Star — UPPER BLADE -->
+  <!-- Upper blade: left face (shadow) -->
+  <polygon points="256,44 228,236 256,256" fill="#8B6B28"/>
+  <!-- Upper blade: right face (light) -->
+  <polygon points="256,44 256,256 284,236" fill="#F0D49C" filter="url(#glow)"/>
+
+  <!-- LOWER BLADE -->
+  <!-- Lower blade: left face (light) -->
+  <polygon points="256,468 228,276 256,256" fill="#F0D49C"/>
+  <!-- Lower blade: right face (shadow) -->
+  <polygon points="256,468 256,256 284,276" fill="#8B6B28"/>
+
+  <!-- LEFT BLADE -->
+  <!-- Left blade: top face (light) -->
+  <polygon points="44,256 236,228 256,256" fill="#F0D49C"/>
+  <!-- Left blade: bottom face (shadow) -->
+  <polygon points="44,256 256,256 236,284" fill="#6A4E1A"/>
+
+  <!-- RIGHT BLADE -->
+  <!-- Right blade: top face (shadow) -->
+  <polygon points="468,256 284,228 256,256" fill="#A07A30"/>
+  <!-- Right blade: bottom face (light) -->
+  <polygon points="468,256 256,256 284,284" fill="#F0D49C"/>
+
+  <!-- Centre facet (diamond core) — gives 3D depth -->
+  <polygon points="256,220 220,256 256,292 292,256" fill="#C9A96E" opacity="0.6"/>
+  <polygon points="256,236 236,256 256,276 276,256" fill="#0D0D12" opacity="0.9"/>
+  <!-- Tiny gold reflex in the void -->
+  <circle cx="256" cy="256" r="6" fill="#C9A96E" opacity="0.7"/>
+</svg>

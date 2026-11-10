@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <style>
+      /* Light mode: dark golden blades on transparent (browser tab bg is light) */
+      .bg-rect { display: none; }
+      .blade-light { fill: #B8872A; }
+      .blade-shadow { fill: #6A4C14; }
+      .blade-mid { fill: #9A7020; }
+      .gem-core { fill: #C9A96E; }
+      .gem-void { fill: #FFFFFF; opacity: 0.0; }
+
+      @media (prefers-color-scheme: dark) {
+        /* Dark mode: bright gold on transparent */
+        .blade-light { fill: #F5E4A0; }
+        .blade-shadow { fill: #CCAA60; }
+        .blade-mid { fill: #D4A848; }
+        .gem-core { fill: #F5E4A0; }
+      }
+    </style>
+  </defs>
+
+  <!-- NO background rect — transparent for browser tabs -->
+  <!-- UPPER blade (bold — 6px wide base) -->
+  <polygon points="16,1 11,17 16,16" class="blade-shadow"/>
+  <polygon points="16,1 16,16 21,17" class="blade-light"/>
+
+  <!-- LOWER blade -->
+  <polygon points="16,31 11,16 16,17" class="blade-light"/>
+  <polygon points="16,31 16,17 21,16" class="blade-shadow"/>
+
+  <!-- LEFT blade -->
+  <polygon points="1,16 16,11 16,16" class="blade-light"/>
+  <polygon points="1,16 16,16 16,21" class="blade-shadow"/>
+
+  <!-- RIGHT blade -->
+  <polygon points="31,16 16,11 17,16" class="blade-mid"/>
+  <polygon points="31,16 17,16 16,21" class="blade-light"/>
+
+  <!-- Solid gold diamond centre — clearly visible at all sizes -->
+  <polygon points="16,11 11,16 16,21 21,16" class="gem-core"/>
+  <!-- tiny dark notch for depth -->
+  <polygon points="16,13 13,16 16,19 19,16" fill="#0D0D12" opacity="0.35"/>
+</svg>

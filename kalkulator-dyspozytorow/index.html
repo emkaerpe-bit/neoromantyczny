@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/blog/favicon.svg?v=4.0" type="image/svg+xml"/>
+    <link rel="icon" href="/blog/favicon-32x32.png?v=4.0" type="image/png" sizes="32x32"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/apple-touch-icon.png?v=4.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    
+    <title>Kalkulator Drzewa Dyspozytorów i Władcy Horoskopu Online</title>
+    <meta name="description" content="Oblicz drzewo dyspozytorów, władcę horoskopu i ostatecznego dyspozytora z godziny urodzenia. Odkryj hierarchię planet i architekturę swojej psychiki."/>
+    <meta name="keywords" content="drzewo dyspozytorów, kalkulator dyspozytorów, ostateczny dyspozytor, władca horoskopu kalkulator, wzajemna recepcja, astrologia humanistyczna" />
+    <link rel="canonical" href="https://neoromantyczny.pl/kalkulator-dyspozytorow/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://neoromantyczny.pl/kalkulator-dyspozytorow/" />
+    <meta property="og:title" content="Kalkulator Drzewa Dyspozytorów i Władcy Horoskopu Online" />
+    <meta property="og:description" content="Oblicz drzewo dyspozytorów, władcę horoskopu i ostatecznego dyspozytora z godziny urodzenia. Odkryj hierarchię planet i architekturę swojej psychiki." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2094&auto=format&fit=crop" />
+    <meta property="og:locale" content="pl_PL" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kalkulator Drzewa Dyspozytorów i Władcy Horoskopu Online" />
+    <meta name="twitter:description" content="Oblicz drzewo dyspozytorów, władcę horoskopu i ostatecznego dyspozytora z godziny urodzenia." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2094&auto=format&fit=crop" />
+
+    <!-- GEO Tags -->
+    <meta name="geo.region" content="PL" />
+    <meta name="geo.placename" content="Polska" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Kalkulator Drzewa Dyspozytorów i Władcy Horoskopu",
+          "operatingSystem": "All",
+          "applicationCategory": "LifestyleApplication",
+          "description": "Darmowe narzędzie astrologii humanistycznej do obliczania łańcucha dyspozycji, ostatecznego dyspozytora, wzajemnych recepcji oraz władcy horoskopu.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "PLN"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Neoromantyzm"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Czym różni się Władca Horoskopu od Ostatecznego Dyspozytora?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Władca Horoskopu to planeta zarządzająca znakiem Ascendentu — odpowiada za Twoją powierzchowność, styl działania i pierwsze wrażenie. Ostateczny Dyspozytor to planeta, która stoi na samym szczycie łańcucha psychiki i ma decydujący głos w sytuacjach granicznych. Mogą to być dwie zupełnie różne planety."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Co jeśli w moim horoskopie nie ma ostatecznego dyspozytora?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Większość ludzi nie ma pojedynczego ostatecznego dyspozytora. Zamiast tego na szczycie drzewa znajduje się Wzajemna Recepcja (dwie współpracujące planety) lub Pętla Planetarna (zamknięty obieg kilku energii). To oznacza bogatszą psychikę i większą elastyczność w adaptacji do różnych sytuacji życiowych."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy muszę znać dokładną godzinę urodzenia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Samo drzewo dyspozytorów planetarnych opiera się na znakach zodiaku, które rzadko zmieniają się w ciągu jednej doby. Dokładna godzina jest natomiast niezbędna do precyzyjnego wyznaczenia Ascendentu i wskazania Władcy Horoskopu."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/kalkulator-dyspozytorow/dispositor.css">
+  
+    <!-- Standardized Midnight Luxe Stripe Checkout (BLIK + Cards) -->
+    <link rel="stylesheet" href="/luxe-checkout.css">
+    <script src="https://js.stripe.com/v3/" defer></script>
+    <script src="/luxe-checkout.js" defer></script>
+  </head>
+  <body>
+    <!-- Header Navigation (Luxury Floating Pill) -->
+    <nav id="luxe-header-nav" class="disp-nav">
+      <a href="/" class="nav-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-sparkle">
+          <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+          <path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle>
+        </svg>
+        <span class="nav-title" id="luxe-header-text">Neoromantyzm</span>
+      </a>
+      <div class="nav-links">
+        <a href="/kalkulator-ascendentu/">Ascendent</a>
+        <a href="/kalkulator-synastrii/">Synastria</a>
+        <a href="/kalkulator-prezentowy/">Prezenty</a>
+        <a href="/blog/">Blog</a>
+      </div>
+      <a href="/blog/" class="nav-cta">
+        <span>Powrót na Blog</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-arrow">
+          <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </a>
+    </nav>
+
+    <main class="disp-container">
+      <div class="disp-hero">
+        <div class="disp-badge">ARCHITEKTURA NIEŚWIADOMOŚCI • ASTRA ENGINE</div>
+        <h1>Kalkulator Drzewa Dyspozytorów i Władcy Horoskopu</h1>
+        <p class="disp-lead">
+          Kto pociąga za sznurki, gdy opadają pozory? Za każdym Twoim racjonalnym wyborem stoi ukryta hierarchia psychiki — łańcuch zależności, w którym jedne motywacje bezwzględnie podporządkowują sobie inne. Oblicz ostatecznego dyspozytora oraz władcę horoskopu i odkryj, czy Twoimi decyzjami zarządza samotny monarcha, uwikłany w spory duet, czy zamknięta rada cieni.
+        </p>
+      </div>
+
+      <div class="disp-card">
+        <form id="disp-form">
+          <div class="disp-form-grid">
+            <div class="disp-field">
+              <label for="disp-date" class="disp-label">Data urodzenia</label>
+              <input type="date" id="disp-date" class="disp-input" required>
+            </div>
+            <div class="disp-field">
+              <label for="disp-time" class="disp-label">Godzina urodzenia (do Ascendentu)</label>
+              <input type="time" id="disp-time" class="disp-input" value="12:00">
+            </div>
+            <div class="disp-field">
+              <label for="disp-city" class="disp-label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-champagne);margin-right:6px;vertical-align:middle;display:inline-block;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Miejsce narodzin
+              </label>
+              <div class="disp-input-relative">
+                <input type="text" id="disp-city" class="disp-input" placeholder="np. Warszawa" autocomplete="off" aria-label="Miejsce narodzin">
+                <div class="disp-input-pin">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="disp-btn-wrap">
+            <button type="submit" class="disp-btn-submit">
+              <span>Oblicz Drzewo Dyspozytorów</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="disp-results" style="display:none;"></div>
+    </main>
+    <!-- Sekcja Edukacyjna & SEO Baza Wiedzy -->
+    <section class="disp-container" style="padding-top:2rem;padding-bottom:5rem;">
+      <div class="disp-card">
+        <div class="disp-badge">KOMPENDIUM WIEDZY • ASTROLOGIA HUMANISTYCZNA</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#FAF8F5;margin:0 0 1rem;">
+          Czym jest drzewo dyspozytorów w horoskopie urodzeniowym?
+        </h2>
+        <p style="font-size:0.95rem;line-height:1.75;color:rgba(250,248,245,0.85);margin-bottom:1.5rem;">
+          <strong style="color:#C9A96E;">W pigułce:</strong> Żadna planeta w horoskopie nie działa w próżni. Każda przebywa w czyimś domu — w znaku zodiaku, którym włada inna energia. Jeśli Twój Księżyc stoi w Skorpionie, to choć szuka bliskości, ostatecznie słucha bezwzględnych rozkazów Marsa lub Plutona. Łańcuch tych zależności tworzy <strong>drzewo dyspozytorów</strong>: mapę psychologicznej suwerenności, która obnaża, która siła ma decydujący głos, gdy stajesz pod ścianą.
+        </p>
+
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#FAF8F5;margin:1.75rem 0 0.85rem;">
+          Struktury Władzy w Kosmogramie: Kto naprawdę rządzi Twoim losem?
+        </h3>
+        <div style="overflow-x:auto;margin-bottom:1.75rem;">
+          <table class="disp-table" style="min-width:500px;">
+            <thead>
+              <tr>
+                <th>Układ w Horoskopie</th>
+                <th>Psychologiczna Natura</th>
+                <th>Wpływ na podejmowanie decyzji</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color:#FAF8F5;font-weight:600;">Władca Ostateczny (Monarcha)</td>
+                <td>Pojedyncza planeta we własnym znaku (domicylu), do której spływają wszystkie gałęzie. Suweren absolutny.</td>
+                <td>Klarowny, bezkompromisowy instynkt. W kryzysie ignoruje półśrodki — daje potężną sprawczość, lecz grozi ślepym uporem.</td>
+              </tr>
+              <tr>
+                <td style="color:#FAF8F5;font-weight:600;">Wzajemna Recepcja (Duet)</td>
+                <td>Dwie planety goszczące się wzajemnie (np. Wenus w Skorpionie i Mars w Wadze). Wymiana kluczy do podświadomości.</td>
+                <td>Wewnętrzny sojusz. Zdolność do elastycznych manewrów, ale w stresie — ryzyko wyczerpujących negocjacji z samym sobą.</td>
+              </tr>
+              <tr>
+                <td style="color:#FAF8F5;font-weight:600;">Pętla Planetarna (Rada Cieni)</td>
+                <td>Zamknięty krąg 3 lub więcej planet (np. Słońce &rarr; Merkury &rarr; Jowisz &rarr; Słońce). Brak jednego monarchy.</td>
+                <td>Wielowątkowa, erudycyjna psychika. Trudność w podjęciu radykalnych kroków, dopóki wszystkie wewnętrzne głosy nie osiągną zgody.</td>
+              </tr>
+              <tr>
+                <td style="color:#FAF8F5;font-weight:600;">Władca Horoskopu</td>
+                <td>Planeta zarządzająca znakiem Ascendentu. Twoja zbroja, twarz dla świata i pierwszy filtr percepcji.</td>
+                <td>Styl wchodzenia w relacje i pierwsze wrażenie. Bywa zupełnie sprzeczny z Władcą Ostatecznym (np. łagodność na zewnątrz, stal wewnątrz).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#FAF8F5;margin:1.75rem 0 0.85rem;">
+          Najczęstsze pytania o Drzewo Dyspozytorów (FAQ)
+        </h3>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:1.5rem;">
+          <details style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:0.75rem;padding:1rem 1.25rem;cursor:pointer;">
+            <summary style="font-family:'Playfair Display',serif;font-size:1.02rem;color:#FAF8F5;font-weight:600;">Czym różni się Władca Horoskopu od Ostatecznego Dyspozytora?</summary>
+            <p style="font-size:0.9rem;line-height:1.65;color:rgba(250,248,245,0.75);margin-top:0.65rem;">Władca Horoskopu to planeta zarządzająca znakiem Ascendentu — odpowiada za Twoją powierzchowność, styl działania i pierwsze wrażenie. Ostateczny Dyspozytor to planeta, która stoi na samym szczycie łańcucha psychiki i ma decydujący głos w sytuacjach granicznych. Mogą to być dwie zupełnie różne planety.</p>
+          </details>
+          <details style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:0.75rem;padding:1rem 1.25rem;cursor:pointer;">
+            <summary style="font-family:'Playfair Display',serif;font-size:1.02rem;color:#FAF8F5;font-weight:600;">Co jeśli w moim horoskopie nie ma ostatecznego dyspozytora?</summary>
+            <p style="font-size:0.9rem;line-height:1.65;color:rgba(250,248,245,0.75);margin-top:0.65rem;">Większość ludzi nie ma pojedynczego ostatecznego dyspozytora. Zamiast tego na szczycie drzewa znajduje się Wzajemna Recepcja (dwie współpracujące planety) lub Pętla Planetarna (zamknięty obieg kilku energii). To oznacza bogatszą psychikę i większą elastyczność w adaptacji do różnych sytuacji życiowych.</p>
+          </details>
+          <details style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:0.75rem;padding:1rem 1.25rem;cursor:pointer;">
+            <summary style="font-family:'Playfair Display',serif;font-size:1.02rem;color:#FAF8F5;font-weight:600;">Czy muszę znać dokładną godzinę urodzenia?</summary>
+            <p style="font-size:0.9rem;line-height:1.65;color:rgba(250,248,245,0.75);margin-top:0.65rem;">Samo drzewo dyspozytorów planetarnych (Słońce, Księżyc, Merkury, Wenus, Mars, Jowisz, Saturn, Uran, Neptun, Pluton) opiera się na znakach zodiaku, które rzadko zmieniają się w ciągu jednej doby. Dokładna godzina jest natomiast niezbędna do precyzyjnego wyznaczenia Ascendentu i wskazania Władcy Horoskopu.</p>
+          </details>
+        </div>
+
+        <div class="disp-cross-nav">
+          <div class="disp-cross-nav-header">
+            POZOSTAŁE NARZĘDZIA ASTRA ENGINE
+          </div>
+          <div class="disp-cross-grid">
+            <a href="/kalkulator-ascendentu/" class="disp-cross-card">
+              <div class="disp-cross-icon">🔮</div>
+              <div class="disp-cross-text">
+                <span class="disp-cross-title">Kalkulator Ascendentu</span>
+                <span class="disp-cross-desc">Wielka Trójka & Domy</span>
+              </div>
+              <span class="disp-cross-arrow">&rarr;</span>
+            </a>
+            <a href="/kalkulator-synastrii/" class="disp-cross-card">
+              <div class="disp-cross-icon">❤️</div>
+              <div class="disp-cross-text">
+                <span class="disp-cross-title">Synastria Partnerska</span>
+                <span class="disp-cross-desc">Dopasowanie Kosmogramów</span>
+              </div>
+              <span class="disp-cross-arrow">&rarr;</span>
+            </a>
+            <a href="/kalkulator-prezentowy/" class="disp-cross-card">
+              <div class="disp-cross-icon">🎁</div>
+              <div class="disp-cross-text">
+                <span class="disp-cross-title">Kalkulator Prezentowy</span>
+                <span class="disp-cross-desc">Zodiakalny Profil Relacji</span>
+              </div>
+              <span class="disp-cross-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top:1px solid rgba(255,255,255,0.06);padding:2.5rem 1.5rem;text-align:center;font-size:0.82rem;color:rgba(250,248,245,0.5);">
+      <p style="margin:0 0 0.5rem;font-family:'Playfair Display',serif;letter-spacing:0.08em;color:#FAF8F5;">NEOROMANTYZM</p>
+      <p style="margin:0;">&copy; 2026 Neoromantyczny. Wszelkie prawa zastrzeżone. • <a href="/faq/" style="color:inherit;text-decoration:underline;">Baza Wiedzy & FAQ</a></p>
+    </footer>
+
+    <script src="/kalkulator-astrokartografii/astrocartography-cities.js" defer></script>
+    <script src="/kalkulator-dyspozytorow/dispositor-engine.js" defer></script>
+    <script src="/kalkulator-dyspozytorow/dispositor-wheel.js" defer></script>
+    <script src="/kalkulator-dyspozytorow/dispositor-report-data-1.js" defer></script>
+    <script src="/kalkulator-dyspozytorow/dispositor-report-data-2.js" defer></script>
+    <script src="/kalkulator-dyspozytorow/dispositor-report-data-3.js" defer></script>
+    <script src="/kalkulator-dyspozytorow/dispositor-report-data-4.js" defer></script>
+    <script src="/kalkulator-dyspozytorow/dispositor-report-data-5.js" defer></script>
+    <script src="/kalkulator-dyspozytorow/dispositor-report-ui.js" defer></script>
+    <script src="/kalkulator-dyspozytorow/dispositor-ui.js" defer></script>
+  </body>
+</html>

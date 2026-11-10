@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Jawne uprawnienia dla wyszukiwarek AI i systemów RAG (GEO 2026)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://neoromantyczny.pl/sitemap.xml

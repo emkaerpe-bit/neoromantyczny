@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Astrokartografii i Relokacji – Mapa Linii Online</title>
+    <meta name="description" content="Darmowy kalkulator astrokartografii i horoskopu relokacyjnego po polsku. Sprawdź na mapie świata swoją linię Wenus (miłość), Jowisza (pieniądze) i Saturna.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://neoromantyczny.pl/kalkulator-astrokartografii/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kalkulator Astrokartografii i Horoskopu Relokacyjnego Online">
+    <meta property="og:description" content="Gdzie na świecie czeka Cię miłość, a gdzie duże pieniądze? Oblicz swoje linie Wenus, Jowisza, Słońca i Saturna na interaktywnej mapie świata.">
+    <meta property="og:url" content="https://neoromantyczny.pl/kalkulator-astrokartografii/">
+    <meta property="og:site_name" content="Neoromantyczny">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/kalkulator-astrokartografii/astrocartography.css">
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- JSON-LD SoftwareApplication + FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Kalkulator Astrokartografii i Horoskopu Relokacyjnego Neoromantyczny",
+          "url": "https://neoromantyczny.pl/kalkulator-astrokartografii/",
+          "applicationCategory": "LifestyleApplication",
+          "operatingSystem": "Web",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "PLN"
+          },
+          "description": "Pierwszy polski kalkulator astrokartografii i relokacji wyliczający przebieg linii planetarnych Wenus, Jowisza, Słońca, Księżyca, Saturna i Plutona na mapie świata oraz ranking miast dla miłości, kariery i domu."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Czym jest astrokartografia i jak działa kalkulator linii planetarnych?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Astrokartografia (astrologia lokacyjna) rzutuje Twój kosmogram urodzeniowy na mapę kuli ziemskiej. Wyznacza miejsca, w których w chwili Twoich narodzin poszczególne planety wschodziły (linia AC), zachodziły (linia DC), górowały w zenicie (linia MC) lub znajdowały się w dole nieba (linia IC)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Która linia w astrokartografii odpowiada za miłość, a która za pieniądze i karierę?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Za magnetyzm osobisty, wielką miłość i udane podróże we dwoje odpowiadają przede wszystkim linie Wenus (szczególnie Wenus DC i Wenus AC) oraz Słońca DC. Za szybki awans, rozwój biznesu i duże pieniądze odpowiada linia Jowisza MC oraz Słońca MC."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/luxe-checkout.css">
+    <script src="/luxe-checkout.js" defer></script>
+</head>
+<body>
+    <!-- Production Gate Overlay -->
+    <div id="acg-production-overlay" style="position: fixed; inset: 0; z-index: 999999; background: rgba(11, 15, 25, 0.94); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); display: flex; align-items: center; justify-content: center; padding: 24px; text-align: center;">
+        <div style="max-width: 480px; width: 100%; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(201, 169, 110, 0.3); border-radius: 28px; padding: 40px 32px; box-shadow: 0 25px 60px rgba(0,0,0,0.6);">
+            <div style="width: 56px; height: 56px; border-radius: 20px; background: rgba(201, 169, 110, 0.12); border: 1px solid rgba(201, 169, 110, 0.25); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; color: #C9A96E;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </div>
+            <div style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A96E; margin-bottom: 12px; font-weight: 600;">Moduł w fazie produkcji</div>
+            <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 26px; color: #FDFBF7; margin: 0 0 14px 0; line-height: 1.3;">Kalkulator Astrokartografii</h2>
+            <p style="font-size: 14px; line-height: 1.6; color: rgba(253, 251, 247, 0.7); margin: 0 0 28px 0;">To narzędzie jest obecnie w trakcie dopracowywania silnika obliczeń astronomicznych i kartograficznych. Oficjalna premiera już wkrótce.</p>
+            <a href="/" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: 9999px; background: #C9A96E; color: #0B0F19; font-weight: 700; font-size: 13px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em; transition: transform 0.2s;">
+                Wróć do strony głównej &rarr;
+            </a>
+        </div>
+    </div>
+    <nav id="luxe-header-nav" aria-label="Nawigacja główna">
+        <a href="/" class="nav-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-sparkle">
+                <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                <path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle>
+            </svg>
+            <span class="nav-title">Neoromantyczny</span>
+        </a>
+        <div class="nav-links">
+            <a href="/">Główna</a>
+            <a href="/blog/">Artykuły</a>
+            <a href="/kalkulator-prezentowy/">Kalkulator</a>
+            <a href="/faq/">Baza Wiedzy</a>
+        </div>
+        <a href="/blog/" class="nav-cta">
+            <span>Powrót na bloga</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-arrow">
+                <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+            </svg>
+        </a>
+    </nav>
+    <main class="acg-container">
+        <header class="acg-hero">
+            <div class="acg-badge">✦ Astrokartografia i Horoskop Relokacyjny</div>
+            <h1 class="acg-h1">Kalkulator Astrokartografii: Gdzie Czeka Cię <em>Miłość</em>, a Gdzie <em>Pieniądze?</em></h1>
+            <p class="acg-subtitle">
+                Wpisz datę, godzinę i wyszukaj swoje miasto urodzenia (ponad 250 miast Polski i świata). Rzutujemy Twój kosmogram w układzie równikowym na kulę ziemską, wyznaczając dokładny przebieg linii Wenus, Jowisza, Słońca, Księżyca oraz Saturna.
+            </p>
+        </header>
+
+        <section class="acg-card acg-no-print" aria-label="Formularz danych urodzeniowych">
+            <form id="acgForm">
+                <div class="acg-form-grid">
+                    <div>
+                        <label class="acg-label" for="acgName">Twoje Imię (opcjonalnie)</label>
+                        <input class="acg-input" type="text" id="acgName" maxlength="30" autocomplete="off">
+                    </div>
+                    <div>
+                        <label class="acg-label" for="acgDate">Data Urodzenia *</label>
+                        <input class="acg-input" type="date" id="acgDate" required>
+                    </div>
+                    <div>
+                        <label class="acg-label" for="acgTime">Godzina (opcjonalnie — domyślnie 12:00)</label>
+                        <input class="acg-input" type="time" id="acgTime">
+                    </div>
+                    <div>
+                        <label class="acg-label" for="acgCityInput">Miejsce Urodzenia (wpisz nazwę miasta) *</label>
+                        <div class="acg-autocomplete-wrap" id="acgBirthCityWrap">
+                            <input class="acg-input" type="text" id="acgCityInput" autocomplete="off" spellcheck="false" aria-label="Wpisz miasto urodzenia">
+                            <span class="acg-autocomplete-icon">⌕</span>
+                            <div class="acg-autocomplete-list" id="acgCityDropdown" role="listbox"></div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="acg-btn-primary">
+                    <span>✦ Wykreśl Moją Mapę Świata i Linie Planetarne</span>
+                    <span>→</span>
+                </button>
+            </form>
+        </section>
+
+        <!-- WYNIKI: INTERAKTYWNA MAPA + DARMOWY PODGLĄD + PAYWALL ("WISIENKA NA TORCIE") -->
+        <section id="acgResultsSection" class="acg-results" aria-live="polite">
+            <div class="acg-map-shell">
+                <div class="acg-filter-bar acg-no-print">
+                    <div class="acg-filter-pills">
+                        <button type="button" class="acg-pill-btn active" data-region="world">🌍 Mapa Świata</button>
+                        <button type="button" class="acg-pill-btn" data-region="europe">🇪🇺 Powiększenie: Europa i Morze Śródziemne</button>
+                    </div>
+                    <div class="acg-filter-pills">
+                        <button type="button" class="acg-pill-btn active" data-filter="all">Główne Osie Mocy</button>
+                        <button type="button" class="acg-pill-btn" data-filter="love">♀ Miłość & Dom (Wenus / Księżyc)</button>
+                        <button type="button" class="acg-pill-btn" data-filter="wealth">♃ Pieniądze & Kariera (Jowisz / Słońce)</button>
+                        <button type="button" class="acg-pill-btn" data-filter="shadow">⚠ Strefy Cienia (Saturn / Pluton)</button>
+                    </div>
+                </div>
+
+                <!-- KONTEKSTOWY PANEL DEFINICJI: O CO CHODZI I NA JAKIEJ PODSTAWIE TWORZY SIĘ LINIA -->
+                <div id="acgFilterDefinitionBox" style="margin-bottom:1rem; padding:1.1rem 1.3rem; background:rgba(16,18,29,0.92); border:1px solid rgba(201,169,110,0.28); border-radius:1.1rem;"></div>
+
+                <div class="acg-svg-stage" id="acgMapMount"></div>
+
+                <div id="acgMapInspector" style="margin-top:0.85rem; padding:0.75rem 1.15rem; background:rgba(201,169,110,0.08); border:1px solid rgba(201,169,110,0.26); border-radius:0.85rem; font-size:0.86rem; color:#FAF8F5; text-align:center;">
+                    ✦ Najedź kursorem lub kliknij dowolną linię albo miasto na mapie, aby odczytać dokładny wpływ planetarny.
+                </div>
+
+                <div class="acg-map-legend">
+                    <span class="acg-legend-item"><span class="acg-dot" style="background:#F472B6;"></span> Wenus (Miłość & Magnetyzm)</span>
+                    <span class="acg-legend-item"><span class="acg-dot" style="background:#34D399;"></span> Jowisz (Pieniądze & Szczęście)</span>
+                    <span class="acg-legend-item"><span class="acg-dot" style="background:#FBBF24;"></span> Słońce (Kariera & Siła)</span>
+                    <span class="acg-legend-item"><span class="acg-dot" style="background:#A78BFA;"></span> Księżyc (Dom & Spokój)</span>
+                    <span class="acg-legend-item"><span class="acg-dot" style="background:#38BDF8;"></span> Merkury (Biznes & Kontakty)</span>
+                    <span class="acg-legend-item"><span class="acg-dot" style="background:#FB7185;"></span> Saturn / Pluton (Ciężar & Przełom)</span>
+                    <span class="acg-legend-item" style="opacity:0.75;">• Linia ciągła: MC / AC • Linia przerywana: IC / DC</span>
+                </div>
+            </div>
+
+            <!-- DARMOWE KARTY GŁÓWNYCH MIAST NR 1 -->
+            <div class="acg-grid-3">
+                <article class="acg-card" style="margin-bottom:0;" id="freeLoveCard"></article>
+                <article class="acg-card" style="margin-bottom:0;" id="freeWealthCard"></article>
+                <article class="acg-card" style="margin-bottom:0;" id="freeShadowCard"></article>
+            </div>
+
+            <!-- DARMOWY SYMULATOR DOWOLNEGO MIASTA (WYSZUKIWARKA TYPE-AHEAD 250+ MIAST) -->
+            <div class="acg-card">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:1.25rem; padding-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.08);">
+                    <div>
+                        <div class="acg-kicker">Wyszukiwarka Relokacyjna • 250+ Miast Polski, Europy i Świata</div>
+                        <h3 class="acg-h3" style="margin:0;">Jak zmienia się Twój kosmogram po wylądowaniu w wybranym mieście?</h3>
+                    </div>
+                    <div style="min-width:300px; flex: 1; max-width: 390px;">
+                        <label class="acg-label" for="cityTesterInput" style="margin-bottom:0.35rem;">Wpisz nazwę miasta, wyspy lub kraju</label>
+                        <div class="acg-autocomplete-wrap" id="acgTesterCityWrap">
+                            <input class="acg-input" type="text" id="cityTesterInput" autocomplete="off" spellcheck="false" aria-label="Wpisz miasto do przetestowania">
+                            <span class="acg-autocomplete-icon">⌕</span>
+                            <div class="acg-autocomplete-list" id="cityTesterDropdown" role="listbox"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cityTesterOutput"></div>
+            </div>
+
+            <!-- TABLICA ASTRONOMICZNA NA ŻYWO (WERYFIKACJA OBLICZEŃ I WSPÓŁRZĘDNYCH RÓWNIKOWYCH) -->
+            <div class="acg-card" id="acgEphemerisCard">
+                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:1rem; margin-bottom:1rem;">
+                    <div>
+                        <div class="acg-kicker">Transparentność Matematyczna • Sfera Niebieska i Układ Równikowy</div>
+                        <h3 class="acg-h3" style="margin:0;">Twoje Dokładne Parametry Astronomiczne w Chwili Narodzin</h3>
+                    </div>
+                    <div id="acgSiderealMeta" style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:#C9A96E;"></div>
+                </div>
+                <p style="font-size:0.86rem; line-height:1.65; color:rgba(250,248,245,0.74); margin-bottom:1rem;">
+                    Poniższa tablica prezentuje wyliczone dla Twojego momentu urodzenia (po przeliczeniu strefy czasowej IANA na czas uniwersalny UTC) współrzędne ekliptyczne oraz równikowe: <strong>Długość Ekliptyczną (λ)</strong>, <strong>Rektascensję (α)</strong>, <strong>Deklinację (δ)</strong> oraz dokładny południk geograficzny, nad którym dana planeta górowała w zenicie (<strong>Linia MC</strong>) i w nadirze (<strong>Linia IC</strong>).
+                </p>
+                <div class="acg-ephemeris-scroll" id="acgEphemerisMount"></div>
+            </div>
+            <!-- PAYWALL & PEŁNY OSOBISTY ATLAS RELOKACYJNY ("WISIENKA NA TORCIE") -->
+            <div class="acg-paywall-wrap" id="acgPaywallWrap">
+                <div class="acg-paywall-gate" id="acgPaywallGate">
+                    <div class="acg-gate-card">
+                        <div class="acg-badge" style="margin-bottom:0.85rem;">✦ Pełny Osobisty Atlas Astrokartograficzny (20 Miast + Horoskop Relokacyjny)</div>
+                        <h3 style="font-family:'Playfair Display',Georgia,serif; font-size:1.85rem; color:#FAF8F5; margin-bottom:0.75rem;">
+                            Odblokuj Swoje TOP 5 Miast na Miłość, Wielkie Pieniądze, Dom i Czarną Listę Saturna
+                        </h3>
+                        <p style="font-size:0.93rem; line-height:1.68; color:rgba(250,248,245,0.78); margin-bottom:1.35rem;">
+                            Widzisz powyżej tylko pojedyncze punkty nr 1. W pełnym Dossier otrzymujesz precyzyjny ranking <strong>20 kluczowych miast świata</strong> dopasowanych co do kilometra do Twojego kosmogramu, wyliczenie przesunięcia Ascendentu i Domów w każdym z nich oraz instrukcję, <strong>jak aktywować swoją linię Wenus i Jowisza bez wyjeżdżania z Polski</strong>.
+                        </p>
+                        <div style="text-align:left; background:rgba(255,255,255,0.03); border:1px solid rgba(201,169,110,0.22); border-radius:1rem; padding:1.1rem 1.35rem; margin-bottom:1.5rem; font-size:0.86rem; line-height:1.75; color:rgba(250,248,245,0.88);">
+                            <div>✦ <strong>TOP 5 Miast Miłości i Podróży Poślubnych</strong> (dokładny dystans km + oś Wenus AC/DC/MC)</div>
+                            <div>✦ <strong>TOP 5 Metropolii Pieniędzy, Awansu i Biznesu</strong> (Twoje linie Jowisza, Słońca i Merkurego)</div>
+                            <div>✦ <strong>TOP 5 Miejsc na Dom, Życie na Stałe i Reset Układu Nerwowego</strong> (oś Księżyca i Wenus IC)</div>
+                            <div>✦ <strong>Czarna Lista 5 Miast Wyczerpania (Saturn & Pluton)</strong> — dokąd nie lecieć na rocznicę</div>
+                            <div>✦ <strong>Zdalna Aktywacja Linii w Domu</strong> + <strong>Eksport Dossier do PDF</strong></div>
+                        </div>
+                        <button type="button" id="acgUnlockBtn" class="acg-btn-primary">
+                            <span>Odblokuj Pełny Atlas Relokacyjny (39 PLN • BLIK / Apple Pay / Karta)</span>
+                            <span>→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ZAWARTOŚĆ DOSSIER (ZBLUROWANA PRZED ODBLOKOWANIEM) -->
+                <div class="acg-locked-blur" style="padding: 2.25rem;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:2rem; padding-bottom:1.25rem; border-bottom:1px solid rgba(201,169,110,0.25);">
+                        <div>
+                            <div class="acg-kicker">Osobiste Dossier Relokacyjne • Pełny Raport</div>
+                            <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:2rem; color:#FAF8F5;">Twój Indywidualny Atlas Miejsc Mocy</h2>
+                        </div>
+                        <button type="button" onclick="window.print()" class="acg-pill-btn acg-no-print" style="border-color:#C9A96E; color:#C9A96E; padding:0.65rem 1.25rem;">
+                            🖨 Pobierz / Drukuj Atlas PDF
+                        </button>
+                    </div>
+
+                    <div class="acg-grid-2">
+                        <div>
+                            <div class="acg-kicker" style="color:#F472B6;">♀ Kategoria I • Miłość, Randki, Podróż Poślubna</div>
+                            <h3 class="acg-h3">Twoje TOP 5 Miast Magnetyzmu i Czułości</h3>
+                            <div id="dossierLoveList"></div>
+                        </div>
+                        <div>
+                            <div class="acg-kicker" style="color:#34D399;">♃ Kategoria II • Pieniądze, Kariera, Rozmach</div>
+                            <h3 class="acg-h3">Twoje TOP 5 Metropolii Finansowego Przełomu</h3>
+                            <div id="dossierWealthList"></div>
+                        </div>
+                        <div>
+                            <div class="acg-kicker" style="color:#A78BFA;">☽ Kategoria III • Dom, Spokój, Regeneracja</div>
+                            <h3 class="acg-h3">Twoje TOP 5 Miejsc do Życia i Odpoczynku</h3>
+                            <div id="dossierHomeList"></div>
+                        </div>
+                        <div>
+                            <div class="acg-kicker" style="color:#FB7185;">⚠ Kategoria IV • Czarna Lista (Saturn & Pluton)</div>
+                            <h3 class="acg-h3">5 Miejsc Ciężaru, Tarcia i Wyczerpania</h3>
+                            <div id="dossierShadowList"></div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.08);">
+                        <div class="acg-kicker">Astrokartografia Bez Pakowania Walizek</div>
+                        <h3 class="acg-h3">Jak Uruchomić Swoją Linię Miłości i Pieniędzy z Poziomu Własnego Domu?</h3>
+                        <div id="dossierRemoteActivation"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODAL STRIPE CHECKOUT -->
+        <div class="acg-modal-backdrop" id="acgStripeModal" aria-hidden="true">
+            <div class="acg-modal-box">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                    <span class="acg-kicker" style="margin:0;">Bezpieczna Płatność Stripe • 39,00 PLN</span>
+                    <button type="button" id="acgModalClose" style="background:none; border:none; color:#FAF8F5; font-size:1.3rem; cursor:pointer;">✕</button>
+                </div>
+                <h3 class="acg-h3" style="font-size:1.3rem;">Odblokuj Osobisty Atlas Astrokartograficzny</h3>
+                <div id="acgStripeLoader" style="font-size:0.85rem; color:var(--muted); margin:1rem 0;">Inicjalizacja bramki BLIK / Apple Pay / Karta...</div>
+                <div id="acgStripeMount" style="margin-bottom:1rem;"></div>
+                <div id="acgStripeError" style="font-size:0.82rem; color:#FB7185; margin-bottom:1rem;"></div>
+                <button type="button" id="acgStripeSubmit" class="acg-btn-primary" style="display:none; margin-bottom:0.75rem;">
+                    <span>Zapłać 39,00 PLN i Otwórz Atlas →</span>
+                </button>
+                <button type="button" id="acgLocalBypassBtn" class="acg-pill-btn" style="width:100%; justify-content:center; border-color:rgba(201,169,110,0.45); color:#E5C384; padding:0.7rem;">
+                    ⚡ Odblokuj natychmiast (Podgląd Dossier)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEKCJA EDUKACYJNA: O CO CHODZI I JAK SIĘ TO OBLICZA (METODOLOGIA ASTRONOMICZNA) -->
+        <section class="acg-card" style="margin-top:3.5rem;">
+            <div class="acg-kicker">Kompendium Wiedzy • O Co Chodzi w Astrokartografii i Jak Się To Oblicza?</div>
+            <h2 class="acg-h3" style="font-size:1.65rem; margin-bottom:1rem;">Czym jest Astrokartografia (Astro*Carto*Graphy) i Horoskop Relokacyjny?</h2>
+            <p style="font-size:0.94rem; line-height:1.75; color:rgba(250,248,245,0.84); margin-bottom:1.25rem;">
+                Klasyczny horoskop urodzeniowy zamraża niebo w jednej chwili i w jednym punkcie geograficznym — w szpitalu, w którym przyszedłeś na świat. <strong>Astrokartografia (opracowana w latach 70. przez amerykańskiego astrologa Jima Lewisa)</strong> zadaje zupełnie inne pytanie: <em>„W których miejscach na Ziemi, dokładnie w sekundzie Twoich narodzin, poszczególne planety właśnie wschodziły nad horyzontem, zachodziły lub stały w samym zenicie?”</em>
+            </p>
+            <p style="font-size:0.94rem; line-height:1.75; color:rgba(250,248,245,0.84); margin-bottom:1.5rem;">
+                Kiedy przemieszczasz się wzdłuż równoleżników i południków — jadąc na wakacje, w podróż poślubną lub przeprowadzając się do innego kraju — Twoje planety urodzeniowe nie zmieniają swoich znaków zodiaku, ale <strong>zmienia się kąt nachylenia lokalnego horyzontu (Ascendent) oraz lokalny południk (Medium Coeli)</strong>. W rezultacie planeta, która w Polsce była ukryta w cadentnym domu (np. w XII lub VI domu), po wylądowaniu w Lizbonie, Rzymie czy Tokio może stanąć dokładnie na Twojej osi 1. lub 10. domu, stając się dominującą siłą Twojego życia.
+            </p>
+
+            <div class="acg-grid-2" style="margin-bottom:1.75rem;">
+                <div style="background:rgba(255,255,255,0.025); border:1px solid rgba(201,169,110,0.22); border-radius:1.1rem; padding:1.3rem;">
+                    <div class="acg-kicker">4 Osie Kątowe Każdej Planety</div>
+                    <h3 class="acg-h3" style="font-size:1.18rem;">Co oznaczają skróty MC, IC, AC oraz DC na mapie?</h3>
+                    <ul style="margin:0; padding-left:1.15rem; font-size:0.87rem; line-height:1.72; color:rgba(250,248,245,0.82);">
+                        <li style="margin-bottom:0.45rem;"><strong>Linia MC (Medium Coeli – Górowanie w Zenicie):</strong> Pionowy południk geograficzny, na którym planeta stała najwyżej na niebie (szczyt 10. domu). Decyduje o karierze, pieniądzach, autorytecie publicznym i rozpoznawalności.</li>
+                        <li style="margin-bottom:0.45rem;"><strong>Linia IC (Imum Coeli – Dołowanie w Nadirze):</strong> Południk przesunięty o 180° względem MC (szczyt 4. domu). Odpowiada za dom, zakup nieruchomości, zapuszczenie korzeni, rodzinę i regenerację układu nerwowego.</li>
+                        <li style="margin-bottom:0.45rem;"><strong>Linia AC (Ascendent – Wschód Planety):</strong> Łukowata krzywa horyzontalna łącząca wszystkie punkty Ziemi, w których planeta dokładnie przecinała wschodni horyzont (1. dom). Kształtuje Twoją pewność siebie, witalność, ciało i pierwsze wrażenie.</li>
+                        <li><strong>Linia DC (Descendent – Zachód Planety):</strong> Krzywa zachodniego horyzontu (7. dom). Najważniejsza oś relacji, zakochiwania się, małżeństwa, klientów oraz ludzi, których przyciągasz do swojego życia.</li>
+                    </ul>
+                </div>
+
+                <div style="background:rgba(255,255,255,0.025); border:1px solid rgba(201,169,110,0.22); border-radius:1.1rem; padding:1.3rem;">
+                    <div class="acg-kicker">Algorytm Sferyczny • Krok po Kroku</div>
+                    <h3 class="acg-h3" style="font-size:1.18rem;">Jak nasz silnik matematyczny oblicza linie i odległości?</h3>
+                    <ol style="margin:0; padding-left:1.15rem; font-size:0.86rem; line-height:1.7; color:rgba(250,248,245,0.82);">
+                        <li style="margin-bottom:0.4rem;"><strong>Konwersja IANA UTC i Dzień Juliański (JD):</strong> Godzina urodzenia z wybranego miasta jest przeliczana przez historyczną strefę czasową (z uwzględnieniem czasu letniego CEST/CET) na Czas Uniwersalny UTC i Dzień Juliański JD.</li>
+                        <li style="margin-bottom:0.4rem;"><strong>Nutacja (Δψ) i Czas Gwiazdowy (GAST):</strong> Wyliczamy pozorne nachylenie ekliptyki ε oraz Kąt Obrotu Ziemi względem punktu Barana, czyli Pozorny Czas Gwiazdowy w Greenwich (GAST).</li>
+                        <li style="margin-bottom:0.4rem;"><strong>Transformacja na Rektascensję (α) i Deklinację (δ):</strong> Długość (λ) i szerokość ekliptyczną (β) każdej planety rzutujemy na układ równikowy. Południk zenitalny wyznacza równanie <code>λ_MC = α − GAST</code>.</li>
+                        <li><strong>Równanie Półłuku Dziennego i Geodezyjna Odległość Haversine:</strong> Krzywe wschodu/zachodu (AC/DC) dla każdej szerokości φ wyznacza kąt godzinny <code>cos H₀ = −tan φ · tan δ</code>, a dystans (w km) do każdego miasta liczony jest ortodromą sferyczną (wzór Haversine'a).</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div style="background:rgba(201,169,110,0.06); border:1px solid rgba(201,169,110,0.24); border-radius:1rem; padding:1.15rem 1.35rem; font-size:0.86rem; line-height:1.68; color:rgba(250,248,245,0.82);">
+                <strong>💡 Jaki promień (orbis) działa w astrokartografii?</strong> Najsilniejsze, namacalne działanie linii planetarnej odczuwasz w pasie od <strong>0 do 250 km</strong> od osi dokładnej (tzw. <em>Zenit / Ścisła Koniunkcja Kątowa</em>). W promieniu <strong>250 – 550 km</strong> linia działa jako wyraźne tło relokacyjne (szczególnie gdy jednocześnie przesuwa planetę do domu kątowego I, IV, VII lub X w horoskopie relokacyjnym). Powyżej 700 km wpływ bezpośredniej linii wygasa, a o klimacie miejsca decyduje wyłącznie rozkład domów relokacyjnych.
+            </div>
+        </section>
+    </main>
+
+    <script src="/kalkulator-astrokartografii/astrocartography-worldmap.js"></script>
+    <script src="/kalkulator-astrokartografii/astrocartography-cities.js"></script>
+    <script src="/kalkulator-astrokartografii/astrocartography-data.js"></script>
+    <script src="/kalkulator-astrokartografii/astrocartography-engine.js"></script>
+</body>
+</html>

@@ -1,0 +1,772 @@
+/* Midnight Luxe Numerology Style */
+:root {
+  --bg-dark: #0D0D12;
+  --surface: #16161D;
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --gold: #C9A84C;
+  --champagne: #F1E5D1;
+  --ivory: #FAF8F5;
+  --slate: #8E8E93;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--ivory);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.num-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 6.5rem 1.25rem 5rem;
+}
+@media (max-width: 768px) {
+  .num-container {
+    padding: 5rem 1rem 4rem;
+  }
+}
+
+.num-header-wrap {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.num-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.num-badge-gold {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #0D0D12;
+  background: var(--gold);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.num-h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--ivory);
+  margin: 0.5rem 0 1rem;
+  line-height: 1.15;
+}
+
+.num-lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(250, 248, 245, 0.8);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.num-card {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.num-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) {
+  .num-grid-2 { grid-template-columns: 1fr 1fr; }
+}
+
+.num-mt { margin-top: 1.5rem; }
+
+.num-form-card {
+  background: linear-gradient(180deg, rgba(22, 22, 29, 0.95) 0%, rgba(13, 13, 18, 0.98) 100%);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+}
+
+.num-input-group {
+  margin-bottom: 1.25rem;
+}
+
+.num-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--champagne);
+  margin-bottom: 0.4rem;
+}
+
+.num-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
+  padding: 0.85rem 1rem;
+  color: var(--ivory);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  color-scheme: dark;
+}
+.num-input:focus {
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.05);
+}
+
+.num-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.num-input-has-icon {
+  padding-right: 2.75rem !important;
+}
+
+.num-input-icon-right {
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  opacity: 0.9;
+}
+
+/* Złoty kolor ikon w rubrykach (kalendarz HTML5 date picker) */
+.num-input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(63%) sepia(35%) saturate(713%) hue-rotate(1deg) brightness(101%) contrast(85%);
+  opacity: 0.95;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.num-input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+.num-btn-primary {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  background: linear-gradient(135deg, #C9A84C 0%, #A88632 100%);
+  color: #0D0D12;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1.15rem 1.5rem;
+  border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.num-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201, 168, 76, 0.35);
+}
+
+.num-card-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.num-h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  color: var(--ivory);
+  margin: 0.25rem 0 0.85rem;
+}
+
+.num-p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(250, 248, 245, 0.8);
+  margin: 0 0 0.65rem;
+}
+
+.num-score-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--champagne);
+  margin-bottom: 0.75rem;
+}
+.num-score-val {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.num-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+.num-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #A88632 0%, #C9A84C 100%);
+  border-radius: 9999px;
+  transition: width 1s ease;
+}
+
+.num-scores-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+  text-align: center;
+}
+.num-scores-grid small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--slate);
+  margin-bottom: 0.25rem;
+}
+.num-scores-grid strong {
+  font-size: 1.15rem;
+  color: var(--ivory);
+}
+
+/* Paywall Blur Styles */
+.num-paywall-wrap:not(.num-unlocked) .num-lock-content {
+  filter: blur(8px);
+  user-select: none;
+  opacity: 0.35;
+  pointer-events: none;
+  transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+.num-unlocked .num-lock-content {
+  filter: none;
+  opacity: 1;
+  user-select: auto;
+  pointer-events: auto;
+}
+
+.num-paywall-cta {
+  margin-top: 2rem;
+  padding: 2.25rem;
+  background: linear-gradient(180deg, rgba(22, 22, 29, 0.98) 0%, rgba(13, 13, 18, 1) 100%);
+  border: 2px solid var(--gold);
+  border-radius: 1.25rem;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(201, 168, 76, 0.2);
+}
+
+.num-cta-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.65rem;
+  color: var(--ivory);
+  margin: 0 0 0.5rem;
+}
+
+.num-cta-desc {
+  font-size: 0.95rem;
+  color: rgba(250, 248, 245, 0.85);
+  max-width: 580px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+}
+
+.num-price-tag {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+.num-old-price {
+  font-size: 1.2rem;
+  color: var(--slate);
+  text-decoration: line-through;
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+.num-guarantee {
+  font-size: 0.78rem;
+  color: var(--slate);
+  margin-top: 1rem;
+}
+
+.num-unlocked-banner {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid var(--gold);
+  border-radius: 0.75rem;
+  text-align: center;
+}
+.num-btn-secondary {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--champagne);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+.num-btn-secondary:hover {
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.num-gold-quote {
+  border-left: 2px solid var(--gold);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--champagne);
+  font-style: italic;
+}
+
+/* Signature Floating Pill Navbar (Quiet Luxury) */
+.luxe-navbar {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 90%;
+  max-width: 56rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(13, 13, 18, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.nav-brand-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ivory);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: rgba(250, 248, 245, 0.7);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: var(--gold);
+}
+
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--gold);
+  color: #0D0D12;
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 0.55rem 1.25rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.25);
+  transition: transform 0.2s, background-color 0.2s;
+}
+.nav-cta-btn:hover {
+  transform: scale(1.04);
+  background: var(--champagne);
+}
+
+@media (max-width: 768px) {
+  .luxe-navbar {
+    width: 94%;
+    padding: 0.6rem 1rem;
+    top: 1rem;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  #luxe-header-text {
+    font-size: 10px !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    opacity: 0.8 !important;
+  }
+  .nav-cta-btn {
+    font-size: 8.5px !important;
+    padding: 6px 12px !important;
+    letter-spacing: 0.08em !important;
+  }
+}
+
+/* =======================================================
+   PORTAL TOOLTIPS & DEFINITIONS (SYNASTRY STANDARD)
+======================================================= */
+#num-portal-tooltip {
+  position: fixed;
+  z-index: 99999999 !important;
+  background: linear-gradient(165deg, rgba(20, 20, 30, 0.99) 0%, rgba(10, 10, 16, 0.99) 100%);
+  border: 1px solid rgba(201, 168, 76, 0.65);
+  border-radius: 1rem;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.96), 0 0 35px rgba(201, 168, 76, 0.22);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  max-width: 380px;
+  width: calc(100vw - 32px);
+  color: var(--ivory);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none !important;
+  transform: translateY(6px);
+  transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.18s ease;
+  box-sizing: border-box !important;
+}
+
+#num-portal-tooltip.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none !important;
+  transform: translateY(0);
+}
+
+.num-asp-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: help;
+  text-decoration: underline dotted rgba(201, 168, 76, 0.5);
+  text-underline-offset: 3px;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.num-asp-badge:hover,
+.num-asp-badge:focus-within {
+  text-decoration-color: var(--gold);
+  color: var(--gold);
+  z-index: 999999 !important;
+}
+
+.num-stat-box.num-has-tooltip {
+  cursor: help;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.num-stat-box.num-has-tooltip:hover,
+.num-stat-box.num-has-tooltip:focus-within {
+  border-color: rgba(201, 168, 76, 0.6);
+  background: rgba(201, 168, 76, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(201, 168, 76, 0.12);
+}
+
+.num-tag-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.num-info-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: rgba(201, 169, 110, 0.85);
+  background: rgba(201, 169, 110, 0.1);
+  border: 1px solid rgba(201, 169, 110, 0.28);
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.num-info-pill:hover,
+.num-asp-badge:hover .num-info-pill,
+.num-asp-badge:focus-within .num-info-pill,
+.num-has-tooltip:hover .num-info-pill,
+.num-stat-box.num-has-tooltip:hover .num-info-pill {
+  background: var(--gold);
+  color: #0D0D12;
+  border-color: var(--gold);
+  font-weight: 700;
+}
+
+.num-tt-scope {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.num-tt-scope.scope-indiv {
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--champagne);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+}
+.num-tt-scope.scope-rel {
+  background: rgba(201, 168, 76, 0.25);
+  color: #FAF8F5;
+  border: 1px solid var(--gold);
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.25);
+}
+
+.num-pill-scope-indiv,
+.num-pill-scope-rel {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+.num-pill-scope-indiv {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--champagne);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.num-pill-scope-rel {
+  background: rgba(201, 168, 76, 0.18);
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+}
+
+.num-tt-label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.num-tt-def {
+  font-size: 0.88rem;
+  color: rgba(250, 248, 245, 0.95);
+  margin-bottom: 0.6rem;
+}
+
+.num-tt-basis {
+  font-size: 0.8rem;
+  color: var(--champagne);
+  line-height: 1.5;
+  padding: 0.5rem 0.7rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 2px solid var(--gold);
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+
+/* Ukryte dane tooltipów czytane przez portal */
+.num-tooltip-pop {
+  display: none !important;
+}
+
+/* =======================================================
+   MASTER VERDICT & RESPONSIVE DOSSIER TABLE
+======================================================= */
+.num-verdict-card {
+  background: linear-gradient(170deg, rgba(201, 168, 76, 0.12) 0%, rgba(22, 22, 29, 0.95) 45%, rgba(13, 13, 18, 0.98) 100%);
+  border: 1px solid rgba(201, 168, 76, 0.45);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(201, 168, 76, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.num-verdict-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #0D0D12;
+  background: var(--gold);
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.num-verdict-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.4rem, 4vw, 2.1rem);
+  color: var(--ivory);
+  margin: 0.5rem 0 1.25rem;
+  line-height: 1.25;
+}
+
+.num-verdict-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(250, 248, 245, 0.92);
+  margin-bottom: 1rem;
+}
+
+/* Tabela porównawcza wskaźników */
+.num-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.num-table {
+  width: 100%;
+  min-width: 540px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.num-table th {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--gold);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.num-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(250, 248, 245, 0.88);
+}
+
+.num-table tr:hover td {
+  background: rgba(201, 168, 76, 0.03);
+}
+
+.num-badge-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  color: var(--champagne);
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin-right: 0.4rem;
+}
+
+.num-badge-badge {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Indywidualne tabele partnerskie (Synastry Standard) */
+.num-indiv-card {
+  background: rgba(22, 22, 30, 0.75);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 1.1rem;
+  padding: 1.4rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.num-indiv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.num-indiv-table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.num-indiv-table tr:last-child {
+  border-bottom: none;
+}
+
+.num-indiv-table td {
+  padding: 0.65rem 0.35rem;
+  vertical-align: middle;
+}
+
+.num-indiv-table td:first-child {
+  color: rgba(250, 248, 245, 0.92);
+}
+
+.num-indiv-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: var(--ivory);
+}
+
+.num-indiv-table tr:hover td {
+  background: rgba(201, 168, 76, 0.03);
+}
+

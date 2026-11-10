@@ -1,0 +1,71 @@
+# =====================================================================
+# NETLIFY REDIRECTS - PRETTY URLS & CANONICAL ENFORCEMENT
+# Guaranteed 301! Forced Redirects for Google Search Console Validation
+# =====================================================================
+
+# Root & Directory Index .html -> Clean Pretty URLs (Forced 301!)
+/index.html                     /                         301!
+/blog/index.html                /blog/                    301!
+/faq/index.html                 /faq/                     301!
+/kalkulator-ascendentu/index.html /kalkulator-ascendentu/ 301!
+/kalkulator-prezentowy/index.html /kalkulator-prezentowy/ 301!
+/kalkulator-synastrii/index.html  /kalkulator-synastrii/  301!
+/kalkulator-faz-ksiezyca/index.html /kalkulator-faz-ksiezyca/ 301!
+/kalkulator-astrokartografii/index.html /kalkulator-astrokartografii/ 301!
+/kalkulator-numerologiczny/index.html /kalkulator-numerologiczny/ 301!
+/kalkulator-dyspozytorow/index.html /kalkulator-dyspozytorow/ 301!
+/success.html                   /success                  301!
+
+# Legacy Calculator Aliases
+/kalkulator                     /kalkulator-prezentowy/   301
+/blog/kalkulator                /kalkulator-prezentowy/   301
+/blog/kalkulator-prezentowy     /kalkulator-prezentowy/   301
+/blog/kalkulator-prezentowy/*   /kalkulator-prezentowy/   301
+/blog/kalkulator-ascendentu     /kalkulator-ascendentu/   301
+/blog/kalkulator-ascendentu/*   /kalkulator-ascendentu/   301
+/blog/kalkulator-synastrii      /kalkulator-synastrii/    301
+/blog/kalkulator-synastrii/*    /kalkulator-synastrii/    301
+/drzewo-dyspozytorow            /kalkulator-dyspozytorow/ 301
+/blog/kalkulator-dyspozytorow   /kalkulator-dyspozytorow/ 301
+/blog/kalkulator-dyspozytorow/* /kalkulator-dyspozytorow/ 301
+
+# Explicit 301! Forced Redirects for all Blog Articles (.html -> Clean)
+/blog/skorpion-i-ryby-milosc-dopasowanie-partnerskie.html                      /blog/skorpion-i-ryby-milosc-dopasowanie-partnerskie                    301!
+/blog/bledy-prezentowe-zodiakara.html                                          /blog/bledy-prezentowe-zodiakara                                         301!
+/blog/dopasowanie-znakow-zodiaku-jakie-znaki-do-siebie-pasuja.html             /blog/dopasowanie-znakow-zodiaku-jakie-znaki-do-siebie-pasuja           301!
+/blog/chemia-czy-toksycznosc-synastria-partnerska.html                         /blog/chemia-czy-toksycznosc-synastria-partnerska                        301!
+/blog/co-oznacza-znak-ksiezycowy-kalkulator.html                               /blog/co-oznacza-znak-ksiezycowy-kalkulator                              301!
+/blog/dlaczego-on-nienawidzi-niespodzianek.html                                /blog/dlaczego-on-nienawidzi-niespodzianek                               301!
+/blog/jak-dobrac-perfumy-do-ascendentu.html                                    /blog/jak-dobrac-perfumy-do-ascendentu                                   301!
+/blog/jak-obliczyc-ascendent-i-znak-ksiezycowy.html                            /blog/jak-obliczyc-ascendent-i-znak-ksiezycowy                           301!
+/blog/jak-wybrac-prezent-dla-zodiakary.html                                    /blog/jak-wybrac-prezent-dla-zodiakary                                   301!
+/blog/kiedy-podarunek-staje-sie-cicha-klotnia.html                             /blog/kiedy-podarunek-staje-sie-cicha-klotnia                            301!
+/blog/luksusowy-prezent-last-minute.html                                       /blog/luksusowy-prezent-last-minute                                      301!
+/blog/prezent-dla-barana-co-kupic.html                                         /blog/prezent-dla-barana-co-kupic                                        301!
+/blog/prezent-dla-blizniat-co-kupic.html                                       /blog/prezent-dla-blizniat-co-kupic                                      301!
+/blog/prezent-dla-byka-jak-trafic-w-gust.html                                  /blog/prezent-dla-byka-jak-trafic-w-gust                                 301!
+/blog/prezent-dla-koziorozca-jak-przetrwac-bezlitosny-audyt.html               /blog/prezent-dla-koziorozca-jak-przetrwac-bezlitosny-audyt              301!
+/blog/prezent-dla-lwa-co-kupic.html                                            /blog/prezent-dla-lwa-co-kupic                                           301!
+/blog/prezent-dla-mezczyzny-ktory-ma-wszystko-jak-nie-oblac-relacyjnego-testu.html /blog/prezent-dla-mezczyzny-ktory-ma-wszystko-jak-nie-oblac-relacyjnego-testu 301!
+/blog/prezent-dla-panny-co-kupic.html                                          /blog/prezent-dla-panny-co-kupic                                         301!
+/blog/prezent-dla-raka-co-kupic.html                                           /blog/prezent-dla-raka-co-kupic                                          301!
+/blog/prezent-dla-ryb-jak-obdarowac-kogos-kto-operuje-w-zupelnie-innej-gestosci.html /blog/prezent-dla-ryb-jak-obdarowac-kogos-kto-operuje-w-zupelnie-innej-gestosci 301!
+/blog/prezent-dla-skorpiona-co-kupic.html                                      /blog/prezent-dla-skorpiona-co-kupic                                     301!
+/blog/prezent-dla-strzelca-co-kupic.html                                       /blog/prezent-dla-strzelca-co-kupic                                      301!
+/blog/prezent-dla-wagi-co-kupic.html                                           /blog/prezent-dla-wagi-co-kupic                                          301!
+/blog/prezent-dla-wodnika-jak-obdarowac-kogos-kto-zameldowal-sie-w-xxii-wieku.html /blog/prezent-dla-wodnika-jak-obdarowac-kogos-kto-zameldowal-sie-w-xxii-wieku 301!
+/blog/prezent-dla-zodiakary-jak-sie-nie-wyglupic.html                          /blog/prezent-dla-zodiakary-jak-sie-nie-wyglupic                         301!
+/blog/prezent-na-ostatnia-chwile-i-jego-konsekwencje-gdy-czas-spotyka-sie-z-jakoscia.html /blog/prezent-na-ostatnia-chwile-i-jego-konsekwencje-gdy-czas-spotyka-sie-z-jakoscia 301!
+/blog/prezent-na-poczatku-zwiazku-co-kupic.html                                /blog/prezent-na-poczatku-zwiazku-co-kupic                               301!
+/blog/prezent-na-rocznice-zwiazku-dla-niej-co-kupic.html                       /blog/prezent-na-rocznice-zwiazku-dla-niej-co-kupic                      301!
+/blog/psychologia-obdarowywania.html                                           /blog/psychologia-obdarowywania                                          301!
+/blog/psychologia-relacji-prezenty.html                                        /blog/psychologia-relacji-prezenty                                       301!
+/blog/wielka-trojka-w-zwiazku.html                                             /blog/wielka-trojka-w-zwiazku                                            301!
+/blog/znak-wenus-w-horoskopie-urodzeniowym.html                                /blog/znak-wenus-w-horoskopie-urodzeniowym                               301!
+/blog/zwiazek-karmiczny-w-synastrii.html                                       /blog/zwiazek-karmiczny-w-synastrii                                      301!
+/blog/zywioly-zodiaku-prezenty.html                                            /blog/zywioly-zodiaku-prezenty                                           301!
+
+/blog/drzewo-dyspozytorow-ostateczny-wladca-horoskopu.html                       /blog/drzewo-dyspozytorow-ostateczny-wladca-horoskopu                      301!
+
+# Serverless Functions
+/api/create-payment-intent      /.netlify/functions/create-payment-intent 200

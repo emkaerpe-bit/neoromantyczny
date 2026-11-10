@@ -1,0 +1,15 @@
+# OS & Environment
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Temporary & Cache
+tmp/
+temp/
+*.tmp
+.cache/
+.netlify/
+
+# Dependencies
+node_modules/

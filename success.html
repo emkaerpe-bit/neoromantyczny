@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dziękujemy za Zamówienie | Neoromantyczny</title>
+    
+    <!-- PRIMARY SEO & META TAGS -->
+    <meta name="description" content="Dziękujemy za zakup e-booka Zodiakalny Prezentownik. Potwierdzenie zamówienia oraz link do pobrania materiałów zostały przesłane na Twój adres e-mail."/>
+    
+    
+    
+    <!-- Fonts (Non-Blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#C9A84C',
+                        champagne: '#F1E5D1',
+                        obsidian: '#0D0D12',
+                        ivory: '#FAF8F5',
+                        surface: '#16161D',
+                        slate: '#4F4F5A'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .noise-overlay {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.05;
+            mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="manifest" href="site.webmanifest?v=3.0"/>
+<meta name="theme-color" content="#0D0D12"/>
+
+
+
+
+<!-- MOBILE SAFEGUARD CSS (Injected) -->
+<style id="mobile-safeguard">
+  @media (max-width: 768px) {
+    /* Nav container: mniejszy padding i fizyczny gap */
+    nav.fixed {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      gap: 1rem !important;
+    }
+    /* Logo: mniejszy font żeby zwolnić miejsce */
+    nav.fixed > div:first-child span {
+      font-size: 0.85rem !important;
+      line-height: 1.4 !important;
+    }
+    /* Przycisk CTA: mniejszy padding i font */
+    nav.fixed > a.bg-champagne {
+      padding-left: 0.75rem !important;
+      padding-right: 0.75rem !important;
+      padding-top: 0.4rem !important;
+      padding-bottom: 0.4rem !important;
+      font-size: 0.75rem !important;
+    }
+    /* Ukryj strzałkę w przycisku na mobile żeby zaoszczędzić miejsce */
+    nav.fixed > a.bg-champagne svg {
+      display: none !important;
+    }
+    /* METADATA ARTYKUŁU: wymuś jeden wiersz przez mniejszy font i tracking */
+    header .gap-8 {
+      gap: 0.3rem !important;
+      flex-wrap: nowrap !important;
+      white-space: nowrap !important;
+      letter-spacing: 0.05em !important;
+      font-size: 9px !important;
+      justify-content: center !important;
+    }
+  }
+</style>
+<link rel="icon" href="favicon.svg?v=4.0" type="image/svg+xml"/>
+<link rel="icon" href="favicon-32x32.png?v=4.0" type="image/png" sizes="32x32"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=4.0"/>
+</head>
+<body class="bg-obsidian text-ivory flex items-center justify-center min-h-screen p-6 relative overflow-hidden">
+    
+    <div class="noise-overlay"></div>
+    <div class="absolute inset-0 bg-hero-gradient opacity-40"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-xl w-full text-center relative z-10">
+        <div class="success-element opacity-0 mb-12 flex justify-center">
+            <div class="w-24 h-24 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center relative shadow-[0_0_50px_rgba(201,168,76,0.2)]">
+                <i data-lucide="mail-check" class="w-10 h-10 text-primary"></i>
+                <div class="absolute inset-0 rounded-full border border-primary animate-ping opacity-20"></div>
+            </div>
+        </div>
+
+        <h1 class="success-element opacity-0 text-5xl md:text-6xl font-serif mb-8 leading-tight tracking-tight">
+            Wiadomość do Ciebie <br />
+            <span class="italic text-primary">jest już w drodze!</span>
+        </h1>
+
+        <div class="success-element opacity-0 space-y-6 text-lg text-ivory/60 mb-16 leading-relaxed">
+            <p>
+                Sprawdź swoją skrzynkę odbiorczą (również folder Oferty i Spam). Powitalny mail powinien pojawić się w ciągu kilku minut.
+            </p>
+            <p>
+                Dziękuję za dołączenie do grona osób świadomych, które chcą lepiej zrozumieć bliskich i wybierać prezenty z większą uważnością.
+            </p>
+        </div>
+
+        <div class="success-element opacity-0 flex flex-col items-center gap-6">
+            <a href="/blog/" class="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-obsidian bg-primary rounded-full overflow-hidden transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_30px_rgba(201,168,76,0.3)] hover:shadow-[0_0_50px_rgba(201,168,76,0.5)]">
+                <span class="relative z-10 flex items-center gap-3">
+                    Wróć na bloga <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                </span>
+            </a>
+            
+            <p class="text-[10px] font-mono uppercase tracking-[0.3em] text-ivory/30">
+                Poczuj magię gwiazd
+            </p>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        gsap.to('.success-element', {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: 'power3.out',
+            from: { y: 30 }
+        });
+    </script>
+</body>
+</html>

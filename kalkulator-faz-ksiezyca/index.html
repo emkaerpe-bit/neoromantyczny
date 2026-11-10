@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Faz Księżyca Dnia Narodzin – Test Dopasowania Par</title>
+    <meta name="description" content="Darmowy kalkulator faz Księżyca z daty urodzenia (Soulmate Moon Phase). Zobacz tarcze Księżyca z nocy Waszych narodzin i sprawdź, czy tworzą Pełnię.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://neoromantyczny.pl/kalkulator-faz-ksiezyca/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kalkulator Faz Księżyca Dnia Narodzin (Soulmate Moon Phase)">
+    <meta property="og:description" content="Wpisz dwie daty urodzenia, zobacz realistyczne tarcze Księżyca z nocy Waszych narodzin i pobierz plakat 9:16 ze złożeniem tarcz.">
+    <meta property="og:url" content="https://neoromantyczny.pl/kalkulator-faz-ksiezyca/">
+    <meta property="og:site_name" content="Neoromantyczny">
+    <meta property="og:locale" content="pl_PL">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/kalkulator-faz-ksiezyca/moon-phase.css">
+
+    <!-- JSON-LD SoftwareApplication + FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Kalkulator Faz Księżyca Dnia Narodzin Pary (Soulmate Moon Phase)",
+          "url": "https://neoromantyczny.pl/kalkulator-faz-ksiezyca/",
+          "applicationCategory": "LifestyleApplication",
+          "operatingSystem": "Web",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "PLN"
+          },
+          "description": "Interaktywne narzędzie obliczające dokładną fazę Księżyca, kąt oświetlenia tarczy i znak Księżyca dla dwóch dat urodzenia oraz nakładające obie tarcze w teście Soulmate Moon Phase."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Na czym polega test dopasowania faz Księżyca (Soulmate Moon Phase)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Test Soulmate Moon Phase sprawdza dokładny kąt oświetlenia tarczy Księżyca w dniu Twoich narodzin oraz w dniu narodzin partnera, a następnie nakłada obie tarcze na siebie. Pozwala to zobaczyć, czy Wasze Księżyce dopełniają się jak układ Yin-Yang do Pełni, czy rezonują w tej samej fazie rytmu emocjonalnego."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy do obliczenia fazy Księżyca z dnia urodzenia potrzebna jest dokładna godzina?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sama faza Księżyca i kształt oświetlonego sierpa są czytelne już na podstawie samej daty urodzenia. Podanie przybliżonej godziny pozwala dodatkowo doprecyzować stopień Księżyca na granicy znaków zodiaku."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <nav id="luxe-header-nav" aria-label="Nawigacja główna">
+        <a href="/" class="nav-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-sparkle">
+                <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                <path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle>
+            </svg>
+            <span class="nav-title">Neoromantyczny</span>
+        </a>
+        <div class="nav-links">
+            <a href="/">Główna</a>
+            <a href="/blog/">Artykuły</a>
+            <a href="/kalkulator-prezentowy/">Kalkulator</a>
+            <a href="/faq/">Baza Wiedzy</a>
+        </div>
+        <a href="/blog/" class="nav-cta">
+            <span>Powrót na bloga</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-arrow">
+                <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+            </svg>
+        </a>
+    </nav>
+    <main class="moon-container">
+        <header class="moon-hero">
+            <span class="moon-eyebrow">Soulmate Moon Phase • Geometria Nocy Narodzin</span>
+            <h1 class="moon-h1">Kalkulator Faz Księżyca Dnia Narodzin: Czy Wasze Księżyce Tworzą Pełnię?</h1>
+            <p class="moon-subtitle">
+                Wpisz datę urodzenia swoją oraz bliskiej osoby. Narzędzie odtworzy dokładny kąt oświetlenia tarczy Księżyca z nocy Waszych narodzin i nałoży je na siebie, sprawdzając, jak dopełniają się Wasze emocjonalne półkule.
+            </p>
+        </header>
+
+        <section class="moon-form-card" aria-label="Formularz dat urodzenia">
+            <form id="moonPhaseForm">
+                <div class="partners-grid">
+                    <div class="partner-box">
+                        <div class="partner-box-title">☾ Pierwsza Osoba (Ty)</div>
+                        <div class="field-group">
+                            <label class="field-label" for="nameA">Twoje Imię</label>
+                            <input class="luxe-input" type="text" id="nameA" maxlength="28">
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="dateA">Data Urodzenia *</label>
+                            <input class="luxe-input" type="date" id="dateA" required>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="timeA">Godzina (opcjonalnie — domyślnie 12:00)</label>
+                            <input class="luxe-input" type="time" id="timeA">
+                        </div>
+                    </div>
+
+                    <div class="partner-box">
+                        <div class="partner-box-title">☽ Druga Osoba (Partner / Partnerka)</div>
+                        <div class="field-group">
+                            <label class="field-label" for="nameB">Imię Partnera</label>
+                            <input class="luxe-input" type="text" id="nameB" maxlength="28">
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="dateB">Data Urodzenia *</label>
+                            <input class="luxe-input" type="date" id="dateB" required>
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label" for="timeB">Godzina (opcjonalnie — domyślnie 12:00)</label>
+                            <input class="luxe-input" type="time" id="timeB">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="luxe-btn-primary">
+                    <span>Nałóż Tarcze Księżyca i Oblicz Rezonans</span>
+                    <span>→</span>
+                </button>
+            </form>
+        </section>
+
+        <!-- WYNIKI I SCENA WIZUALNA -->
+        <section id="moonResults" class="results-wrapper" aria-live="polite">
+            <div class="lunar-stage-card">
+                <span class="moon-eyebrow" id="compBadge">Złożenie Tarcz Nocy Narodzin</span>
+                <h2 class="card-h3" id="compTitle" style="font-size: 1.85rem; margin-bottom: 0.5rem;">Zwierciadlane Dopełnienie Pełni</h2>
+
+                <div class="lunar-trio-grid">
+                    <div class="moon-disc-column">
+                        <div class="moon-svg-wrap" id="svgMoonA"></div>
+                        <div class="moon-person-name" id="lblNameA">Maja</div>
+                        <div class="moon-phase-title" id="lblPhaseA">🌓 Pierwsza Kwadra</div>
+                        <div class="moon-astro-meta" id="lblMetaA"></div>
+                    </div>
+
+                    <div class="composite-column">
+                        <div class="composite-svg-wrap" id="svgComposite"></div>
+                        <div class="moon-person-name" style="color: #F4EFEA;">Złożona Tarcza Pary</div>
+                        <div class="moon-phase-title" style="color: var(--gold-primary);">Nałożenie Światła A + B</div>
+                    </div>
+
+                    <div class="moon-disc-column">
+                        <div class="moon-svg-wrap" id="svgMoonB"></div>
+                        <div class="moon-person-name" id="lblNameB">Kacper</div>
+                        <div class="moon-phase-title" id="lblPhaseB">🌗 Trzecia Kwadra</div>
+                        <div class="moon-astro-meta" id="lblMetaB"></div>
+                    </div>
+                </div>
+
+                <div class="merge-controls">
+                    <label for="mergeSlider" class="field-label" style="margin-bottom: 0.2rem;">
+                        Przesuń suwak, aby rozsunąć lub scalić Wasze Księżyce:
+                    </label>
+                    <input type="range" id="mergeSlider" class="merge-slider" min="0" max="100" value="100">
+                </div>
+
+                <div class="score-badges-row">
+                    <div class="score-pill">
+                        <div class="score-pill-val" id="valResonance">94%</div>
+                        <div class="score-pill-lbl">Rezonans Księżycowy</div>
+                    </div>
+                    <div class="score-pill">
+                        <div class="score-pill-val" id="valUnionLight">98%</div>
+                        <div class="score-pill-lbl">Wspólne Oświetlenie Pełni</div>
+                    </div>
+                    <div class="score-pill">
+                        <div class="score-pill-val" id="valAngleDiff">172°</div>
+                        <div class="score-pill-lbl">Kąt Między Fazami</div>
+                    </div>
+                </div>
+            </div>
+            <!-- POBIERANIE PLAKATU 9:16 NA STORIES / TIKTOK / PINTEREST -->
+            <div class="viral-poster-bar">
+                <div>
+                    <div class="card-kicker">Grafika 9:16 (1080 × 1920 px)</div>
+                    <h3 class="card-h3" style="margin-bottom: 0.25rem; font-size: 1.2rem;">Pobierz Wasze Księżyce na Stories lub wyślij drugiej połówce</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Gotowy plakat w estetyce Midnight Luxe z Waszymi imionami, tarczami z nocy narodzin i wynikiem złożenia.</p>
+                </div>
+                <button type="button" id="btnDownloadPoster" class="btn-outline-gold">
+                    <span>✦ Pobierz Plakat 9:16 (PNG)</span>
+                </button>
+            </div>
+
+            <!-- KARTY INTERPRETACJI -->
+            <div class="analysis-grid">
+                <article class="luxe-card luxe-card-full">
+                    <div class="card-kicker">Diagnoza Złożenia Faz</div>
+                    <h3 class="card-h3">Co oznacza Wasza wspólna tarcza?</h3>
+                    <div class="card-body" id="compBody"></div>
+                </article>
+
+                <article class="luxe-card">
+                    <div class="card-kicker">Portret Księżycowy • Osoba 1</div>
+                    <h3 class="card-h3" id="cardTitleA">Twoja Faza Narodzin</h3>
+                    <div class="card-body" id="cardBodyA"></div>
+                </article>
+
+                <article class="luxe-card">
+                    <div class="card-kicker">Portret Księżycowy • Osoba 2</div>
+                    <h3 class="card-h3" id="cardTitleB">Faza Narodzin Partnera</h3>
+                    <div class="card-body" id="cardBodyB"></div>
+                </article>
+
+                <!-- GŁÓWNE CTA: PRZEJŚCIE DO SYNASTRII PAR -->
+                <article class="luxe-card luxe-card-full" style="border-color: rgba(201, 169, 110, 0.45); background: linear-gradient(145deg, rgba(24, 21, 32, 0.94), rgba(11, 11, 17, 0.98));">
+                    <div class="card-kicker">Głęboki Kosmogram Partnerski • Synastria Par</div>
+                    <h3 class="card-h3" id="synastryCtaTitle">Wasze Księżyce to Dopiero Wstęp: Sprawdźcie Pełną Synastrię</h3>
+                    <div class="card-body" style="margin-bottom: 1.6rem;">
+                        <p id="synastryCtaText">
+                            Złożenie faz Księżyca ujawnia Wasz nocny rytm emocjonalny i instynktowne odruchy obronne. Jednak o tym, czy w relacji wygra magnetyzm, czy destrukcyjna dynamika, decydują przede wszystkim aspekty Wenus z Marsem, Saturna, osi Ascendent–Descendent oraz Lilith.
+                        </p>
+                        <p style="color: rgba(250, 248, 245, 0.72); font-size: 0.9rem;">
+                            Przenieś Wasze daty jednym kliknięciem do Kalkulatora Synastrii: oblicz podwójne koło kosmogramu (Bi-Wheel), wskaźniki chemii i bezpieczeństwa oraz poznaj psychologiczną architekturę Waszego związku.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="/kalkulator-synastrii/" id="synastryCrossLink" class="luxe-btn-primary" style="width: 100%; text-decoration: none;">
+                            <span>✦ Przejdź do Pełnej Synastrii Par (Wenus, Mars, Lilith)</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SEKCJA SEO / GEO & TABELA RAG -->
+        <section class="seo-editorial-section">
+            <div class="card-kicker">Kompendium Faz Księżyca Dnia Narodzin</div>
+            <h2 class="card-h3" style="font-size: 1.65rem;">Jak faza Księżyca z dnia urodzenia wpływa na relacje i miłość?</h2>
+            <p class="card-body" style="margin-bottom: 1.25rem;">
+                W astrologii relacyjnej kąt między Słońcem a Księżycem w chwili narodzin wyznacza Twój wrodzony temperament nocny — sposób, w jaki reagujesz na bliskość, zmęczenie oraz domowe konflikty. Zestawienie dwóch tarcz urodzeniowych (tzw. <em>Soulmate Moon Phase</em>) pokazuje, czy partnerzy wnoszą do związku przeciwstawne, uzupełniające się półkule światła (układ dopełnienia do Pełni), czy poruszają się w tym samym rytmie fazowym.
+            </p>
+
+            <div class="rag-table-wrap">
+                <table class="rag-table">
+                    <thead>
+                        <tr>
+                            <th>Faza Księżyca Narodzin</th>
+                            <th>Kąt Słońce–Księżyc</th>
+                            <th>Archetyp w Związku</th>
+                            <th>Najlepsze Dopełnienie Tarczy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🌑 Nów Księżyca</td>
+                            <td>0° – 45°</td>
+                            <td>Inicjator świeżych początków, ceni prywatność i spokój</td>
+                            <td>Pełnia (180°–225°) lub Ubywający Garbaty</td>
+                        </tr>
+                        <tr>
+                            <td>🌒 Przybywający Sierp</td>
+                            <td>45° – 90°</td>
+                            <td>Architekt pragnienia, kocha wspólne plany i ruch</td>
+                            <td>Ubywający Księżyc Garbaty (225°–270°)</td>
+                        </tr>
+                        <tr>
+                            <td>🌓 Pierwsza Kwadra</td>
+                            <td>90° – 135°</td>
+                            <td>Człowiek czynu, rozwiązuje kryzysy od ręki</td>
+                            <td>Trzecia Kwadra (270°–315°) — zamek półkul</td>
+                        </tr>
+                        <tr>
+                            <td>🌔 Przybywający Garbaty</td>
+                            <td>135° – 180°</td>
+                            <td>Perfekcjonista czułości, wyłapuje każdy detal nastroju</td>
+                            <td>Ubywający Sierp (315°–360°) lub Trzecia Kwadra</td>
+                        </tr>
+                        <tr>
+                            <td>🌕 Pełnia Księżyca</td>
+                            <td>180° – 225°</td>
+                            <td>Lustro emocji, żyje relacją jeden na jeden na 100%</td>
+                            <td>Nów Księżyca (0°–45°) lub druga Pełnia</td>
+                        </tr>
+                        <tr>
+                            <td>🌖 Ubywający Garbaty</td>
+                            <td>225° – 270°</td>
+                            <td>Powiernik tajemnic, daje dojrzałe oparcie i czułość</td>
+                            <td>Przybywający Sierp (45°–90°)</td>
+                        </tr>
+                        <tr>
+                            <td>🌗 Trzecia Kwadra</td>
+                            <td>270° – 315°</td>
+                            <td>Strażnik autonomii, lojalny, ale odporny na dramaty</td>
+                            <td>Pierwsza Kwadra (90°–135°) — pełne domknięcie</td>
+                        </tr>
+                        <tr>
+                            <td>🌘 Ubywający Sierp</td>
+                            <td>315° – 360°</td>
+                            <td>Nocny intuicjonista, czyta między wierszami</td>
+                            <td>Przybywający Garbaty (135°–180°)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="/kalkulator-faz-ksiezyca/moon-phase-data.js"></script>
+    <script src="/kalkulator-faz-ksiezyca/moon-phase-engine.js"></script>
+</body>
+</html>
