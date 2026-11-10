@@ -6,6 +6,89 @@
 
 <link rel="stylesheet" href="/blog/blog-theme.css">
 
+  <style>
+    /* VENUS POPUP MODAL & HERO FIX */
+    .venus-hero-header {
+      min-height: 60vh !important;
+      padding-top: 8rem !important;
+      padding-bottom: 5rem !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    @media (min-width: 768px) {
+      .venus-hero-header {
+        min-height: 68vh !important;
+        padding-top: 10rem !important;
+        padding-bottom: 6rem !important;
+      }
+    }
+
+    #venus-popup-modal {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background: rgba(10, 10, 15, 0.85) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      z-index: 99999 !important;
+      display: none !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 1.25rem !important;
+      box-sizing: border-box !important;
+    }
+
+    #venus-popup-modal.active {
+      display: flex !important;
+    }
+
+    #venus-popup-card {
+      position: relative !important;
+      background: linear-gradient(165deg, rgba(22, 22, 32, 0.98) 0%, rgba(13, 13, 18, 0.99) 100%) !important;
+      border: 1px solid rgba(201, 169, 110, 0.45) !important;
+      border-radius: 2rem !important;
+      padding: 2.5rem 2rem !important;
+      max-width: 580px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(201, 169, 110, 0.18) !important;
+      color: #FAF8F5 !important;
+      animation: venusModalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    @keyframes venusModalIn {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    #venus-modal-close {
+      position: absolute !important;
+      top: 1.25rem !important;
+      right: 1.25rem !important;
+      width: 36px !important;
+      height: 36px !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      border-radius: 50% !important;
+      color: rgba(250, 248, 245, 0.75) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      font-size: 14px !important;
+      transition: all 0.2s ease !important;
+    }
+
+    #venus-modal-close:hover {
+      background: rgba(201, 169, 110, 0.2) !important;
+      color: #C9A96E !important;
+      border-color: #C9A96E !important;
+      transform: rotate(90deg) !important;
+    }
+  </style>
+
 
   <!-- Standardized Midnight Luxe Stripe Checkout (BLIK + Cards) -->
   <link rel="stylesheet" href="/luxe-checkout.css">
@@ -293,7 +376,7 @@
 </main>
 
 <!-- ELEGANCKI MODAL POPUP WENUS -->
-<div id="venus-popup-modal" role="dialog" aria-modal="true" aria-labelledby="v-res-name" style="position:fixed !important;top:0 !important;left:0 !important;width:100% !important;height:100% !important;right:0 !important;bottom:0 !important;">
+<div id="venus-popup-modal" role="dialog" aria-modal="true" aria-labelledby="v-res-name">
   <div id="venus-popup-card">
     <button type="button" id="venus-modal-close" aria-label="Zamknij pop-up">✕</button>
     

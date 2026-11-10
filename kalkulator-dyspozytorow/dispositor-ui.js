@@ -552,10 +552,10 @@
       attempts = attempts || 0;
       if (window.__DISPOSITOR_REPORT_UI__ && typeof window.__DISPOSITOR_REPORT_UI__.renderPaywallTeaser === 'function') {
         window.__DISPOSITOR_REPORT_UI__.renderPaywallTeaser(dispData, currentChart.planets, currentChart);
-      } else if (attempts < 20) {
-        setTimeout(function () { triggerPaywallRender(attempts + 1); }, 60);
+      } else if (attempts < 80) {
+        setTimeout(function () { triggerPaywallRender(attempts + 1); }, 80);
       } else {
-        console.warn('Nie udało się załadować modułu __DISPOSITOR_REPORT_UI__ po 20 próbach.');
+        console.warn('Nie udało się załadować modułu __DISPOSITOR_REPORT_UI__ po 80 próbach.');
       }
     }
     triggerPaywallRender(0);

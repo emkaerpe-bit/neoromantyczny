@@ -12,6 +12,7 @@
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.mutualReception = {
     type: 'mutual',
+    title: 'Wzajemna Recepcja: Sojusz Dwóch Planet',
     archetype: 'Wewnętrzny Dialog & Sojusz Dwóch Biegunów',
     subtitle: 'W Twojej psychice nie ma jednego dyktatora. Na szczycie zasiadają dwa archetypy, które nieustannie ze sobą rozmawiają.',
     structureTheory: 'W klasycznej teorii dyspozytorów Marc Edmund Jones i Donna Cunningham definiują Wzajemną Recepcję jako „dwuosobowy zarząd psychiki”. Dwie planety, znajdując się nawzajem w swoich znakach władztwa, tworzą nierozerwalny obwód partnerski. Zamiast pionowej piramidy władzy z jednym ostatecznym władcą, energia krąży wahadłowo między dwoma biegunami. Cunningham zauważa, że daje to fenomenalną wszechstronność i odporność, lecz w sytuacjach kryzysowych grozi syndromem »ping-ponga decyzyjnego« — niekończącego się przekazywania odpowiedzialności między dwoma archetypami. Kluczem do integracji jest świadome wyznaczenie domen lub uruchomienie punktu ujścia (outlet).',
@@ -58,6 +59,7 @@
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.loop = {
     type: 'loop',
+    title: 'Pętla Decyzyjna: Zamknięty Obieg Energii',
     archetype: 'Pierścień Samoregulacji & Wewnętrzna Odporność',
     subtitle: 'Energia w Twojej psychice krąży w zamkniętym obiegu. Jesteś niezwykle odporny, ale Twoją pułapką jest mielenie tych samych myśli.',
     structureTheory: 'Według teorii obiegów zamkniętych Marca Edmunda Jonesa i Roberta Handa, pętla trzech lub więcej planet tworzy samowystarczalny »syndykat psychiczny«. Żadna planeta w pętli nie posiada absolutnego mandatu suwerena — każda przekazuje władzę następnej, zamykając obwód. Czyni to Twoją strukturę wewnętrzną wyjątkowo niezależną od wpływów z zewnątrz, ale jednocześnie podatną na tzw. »kołowrotek myśli« (spin cycle). Robert Hand wskazuje, że ucieczką z impasu pętli jest zidentyfikowanie tzw. Zaworu Wyjściowego (Escape Hatch): planety w pętli, która tworzy najsilniejsze aspekty do Twojego Ascendantu lub osi MC, przekładając cykliczną energię na konkretny czyn w świecie materialnym.',
@@ -104,6 +106,7 @@
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.splitSovereignty = {
     type: 'split',
+    title: 'Podwójna Suwerenność: Dwa Bieguny Władzy',
     archetype: 'Dwa Odrębne Światy & Równowaga Ról',
     subtitle: 'W Twoim horoskopie istnieją dwa niezależne ośrodki decyzyjne. Nie próbuj łączyć ich na siłę — szanuj oba.',
     structureTheory: 'W analizie drzew dyspozytorów Marca Edmunda Jonesa, obecność dwóch lub więcej ostatecznych dyspozytorów oznacza »rozdwojoną suwerenność« (Split Sovereignty). W Twojej psychice funkcjonują dwa autonomiczne królestwa, które nie podlegają sobie nawzajem. Donna Cunningham przestrzega przed próbą homogenizacji tych sił w jedną tożsamość — prowadzi to do frustracji i poczucia wewnętrznej schizmy. Dojrzała integracja polega na świadomym rozgraniczeniu terytoriów: każdy suweren ma prawo do absolutnej władzy w swojej domenie życia.',

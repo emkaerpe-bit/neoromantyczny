@@ -25,16 +25,26 @@
     attempts = attempts || 0;
     const container = document.getElementById('dispositor-report-container');
     if (!container) {
-      if (attempts < 20) {
-        setTimeout(function () { renderPaywallTeaser(hierarchy, planets, chart, attempts + 1); }, 60);
+      if (attempts < 80) {
+        setTimeout(function () { renderPaywallTeaser(hierarchy, planets, chart, attempts + 1); }, 80);
         return;
       }
       return;
     }
 
     if (!window.__DISPOSITOR_REPORT_DATA__ || !window.__DISPOSITOR_REPORT_DATA__.getReportForHierarchy) {
-      if (attempts < 20) {
-        setTimeout(function () { renderPaywallTeaser(hierarchy, planets, chart, attempts + 1); }, 60);
+      if (attempts === 0) {
+        container.innerHTML = `
+          <div style="text-align:center;padding:2.5rem 1rem;background:rgba(201,169,110,0.03);border:1px dashed rgba(201,169,110,0.25);border-radius:1.5rem;margin-top:2rem;">
+            <div style="font-size:24px;margin-bottom:0.5rem;animation:spin 2s linear infinite;display:inline-block;">✦</div>
+            <p style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#C9A84C;margin:0;">
+              KOMPILOWANIE STUDIUM ARCHITEKTURY WEWNĘTRZNEJ...
+            </p>
+          </div>
+        `;
+      }
+      if (attempts < 80) {
+        setTimeout(function () { renderPaywallTeaser(hierarchy, planets, chart, attempts + 1); }, 80);
         return;
       }
       console.warn('Baza wiedzy raportu nie została jeszcze załadowana.');
