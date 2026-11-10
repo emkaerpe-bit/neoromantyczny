@@ -96,9 +96,6 @@
               <button type="button" onclick="window.print()" class="sat-btn-gold" style="padding:0.6rem 1.2rem; font-size:0.82rem; cursor:pointer;">
                 🖨️ Zapisz / Drukuj PDF
               </button>
-              <button type="button" id="sat-lock-reset-btn" style="background:none; border:1px solid rgba(255,255,255,0.15); color:rgba(250,248,245,0.6); padding:0.6rem 1rem; border-radius:9999px; font-size:0.75rem; cursor:pointer;">
-                🔒 Zablokuj (Test)
-              </button>
             </div>
           </div>
         ` : `
@@ -138,10 +135,6 @@
               <span style="font-size:0.75rem; color:rgba(250,248,245,0.5); font-family:'JetBrains Mono', monospace;">
                 Płatność jednorazowa Stripe (BLIK / Apple Pay / Karta) • Natychmiastowy dostęp
               </span>
-
-              <button type="button" id="sat-quick-unlock-btn" style="background:none; border:none; color:#C9A96E; font-size:0.75rem; text-decoration:underline; cursor:pointer; margin-top:0.6rem;">
-                ⚡ Odblokuj natychmiast bez płatności (0 PLN — Test) &rarr;
-              </button>
             </div>
           </div>
         `}

@@ -10,16 +10,12 @@
       glyph: '☉',
       color: '#FFD700',
       hard: {
-        archetype: 'Próba Władcy & Kompleks Wzorca Ojca',
-        core: 'Głębokie poczucie, że na prawo do istnienia i szacunku trzeba ciężko zasłużyć. Często chłodna relacja z ojcem, wczesne obarczenie dorosłymi obowiązkami lub wychowanie w cieniu nieugiętych wymagań.',
-        shadow: 'Paraliżujący syndrom oszusta, bezlitosna samokrytyka, lęk przed publicznym błędem i maskowanie bezradności sztywnym pancerzem.',
-        maturePower: 'Niezłomny autorytet moralny, cicha charyzma lidera i odporność psychiczna, której nie złamie żaden kryzys rynkowy ani relacyjny.'
+        text: 'Wychowanie w cieniu nieustannych oczekiwań albo wczesny brak ojca, który wymusił przedwczesną dorosłość. Znasz ten wewnętrzny głos: nieważne, ile zrobisz, wciąż czujesz, że musisz zasłużyć na prawo do szacunku. W pracy orzesz do upadłego, maskując syndrom oszusta żelazną samodyscypliną. W wieku 28–30 lat to przestaje działać — ciało i psychika odmawiają dalszego spalania się dla cudzej aprobaty.',
+        integration: 'Dojrzałość zaczyna się w chwili, gdy zrzucasz konieczność udowadniania czegokolwiek światu. Gdy sam stajesz się dla siebie suwerennym autorytetem, zyskujesz cichą, niewzruszoną siłę lidera, której nie zachwieje żaden zewnętrzny kryzys.'
       },
       soft: {
-        archetype: 'Naturalny Architekt & Spokój Mistrza',
-        core: 'Wrodzona dojrzałość, dyscyplina bez cierpiętnictwa i instynktowny szacunek dla czasu. Zdolność do chłodnej, realistycznej samooceny bez popadania w kompleksy.',
-        shadow: 'Zbytnia ostrożność, lęk przed zrobieniem odważnego kroku w nieznane i kurczowe trzymanie się status quo.',
-        maturePower: 'Metodycznie, krok po kroku budowany prestiż społeczny, zaufanie partnerów i stabilność trwająca dekadami.'
+        text: 'Wrodzony zmysł cierpliwego budowania. Nie potrzebujesz poklasku ani spektakularnych gestów; instynktownie rozumiesz, że ranga i szacunek rodzą się z codziennej, żmudnej powtarzalności.',
+        integration: 'Podczas Powrotu Saturna nie doświadczasz dramatycznego rozpadu, lecz naturalnego awansu — otoczenie bez oporów powierza Ci stery i odpowiedzialność za kluczowe decyzje.'
       }
     },
     moon: {
@@ -28,16 +24,12 @@
       glyph: '☽',
       color: '#E8E6E3',
       hard: {
-        archetype: 'Pancerz nad Wrażliwością & Wczesna Samotność',
-        core: 'Pierwotny lęk przed obnażeniem własnej bezbronności. Poczucie wczesnego emocjonalnego osamotnienia i wpojenie przekonania, że łzy i potrzeba bliskości są niebezpieczną słabością.',
-        shadow: 'Emocjonalny mur w relacjach, ucieczka w przepracowanie przed intymnością, chroniczne tłumienie żalu i somatyzacja napięć w ciele.',
-        maturePower: 'Niezrównana mądrość psychologiczna, opanowanie w sytuacjach krytycznych oraz zdolność do bycia niewzruszonym oparciem dla bliskich.'
+        text: 'Poczucie wczesnego emocjonalnego osamotnienia. Bardzo szybko nauczyłeś się, że łzy i bezradność są ryzykowne, więc zamknąłeś miękkie wnętrze za grubym murem opanowania. W relacjach uciekasz w obowiązki, pracę i pragmatyzm za każdym razem, gdy pojawia się ryzyko prawdziwej bezbronności. Lęk przed odrzuceniem sprawia, że wolisz cierpieć w milczeniu, niż poprosić o wsparcie.',
+        integration: 'Powrót Saturna zmusza do zburzenia tej twierdzy. Uświadamiasz sobie, że stłumione emocje nie znikają, lecz niszczą zdrowie od środka. Prawdziwa siła nie polega na byciu z kamienia, lecz na odwadze pokazania drugiemu człowiekowi swoich pęknięć.'
       },
       soft: {
-        archetype: 'Emocjonalna Twierdza & Głęboka Lojalność',
-        core: 'Zdolność do mądrego zarządzania własnymi emocjami bez ich tłumienia. Wrodzona lojalność, opiekuńczość i wysokie poczucie odpowiedzialności za dom.',
-        shadow: 'Skłonność do brania na siebie emocjonalnych ciężarów partnera kosztem własnych potrzeb.',
-        maturePower: 'Stworzenie bezpiecznego, ciepłego i trwałego ogniska domowego opartego na bezwzględnym zaufaniu i wzajemnym szacunku.'
+        text: 'Rzadka odporność psychiczna i umiejętność trzymania fasonu w chwilach, gdy inni panikują. Potrafisz ukoić własny niepokój bez ucieczki w nałogi czy histerię.',
+        integration: 'Stajesz się bezpieczną przystanią i emocjonalną opoką dla rodziny i partnera, tworząc dom oparty na niezachwianej lojalności.'
       }
     },
     mercury: {
@@ -46,16 +38,12 @@
       glyph: '☿',
       color: '#FFA726',
       hard: {
-        archetype: 'Brzytwa Umysłu & Zmęczenie Szumem',
-        core: 'Umysł pracujący w trybie wiecznego audytu i sceptycyzmu. Skłonność do natrętnych wątpliwości, lęk przed byciem wyśmianym za swoje opinie i wstręt do powierzchownego gadania.',
-        shadow: 'Zgryźliwy cynizm, chroniczna podejrzliwość, paraliż analityczny i blokady w swobodnym wyrażaniu myśli.',
-        maturePower: 'Chirurgiczna precyzja słowa, rygor naukowy, dar krystalizowania skomplikowanych koncepcji i tworzenia wiekopomnych dzieł.'
+        text: 'Mózg w trybie wiecznego audytu. Paraliżująca samokrytyka sprawia, że każde słowo i decyzję analizujesz do utraty tchu, bojąc się kompromitacji lub zarzutu powierzchowności. W gorszych momentach uciekasz w cynizm, zjadliwą ironię i unikanie otwartych rozmów.',
+        integration: 'Kiedy przestajesz traktować własne myśli jak pole minowe, ten układ rodzi wybitny rygor intelektualny. Zamiast pustego gadania zyskujesz chirurgiczną precyzję wypowiedzi i zdolność do tworzenia rzeczy o niepodważalnej wartości merytorycznej.'
       },
       soft: {
-        archetype: 'Intelektualna Trwałość & Strategia Długiego Dystansu',
-        core: 'Zrównoważony, metodyczny intelekt. Umiejętność słuchania, ważenia faktów i formułowania sądów opartych na twardych danych.',
-        shadow: 'Czasem zbyt powolne przyswajanie gwałtownych, chaotycznych zwrotów akcji.',
-        maturePower: 'Absolutna wiarygodność — kiedy coś powiesz lub podpiszesz, otoczenie traktuje to jak niepodważalną pieczęć.'
+        text: 'Metodyczny, pragmatyczny umysł odporny na mody i dezinformację. Cenisz twarde fakty, rzetelne źródła i przemyślaną logikę.',
+        integration: 'Twoje słowo ma wagę podpisanego aktu notarialnego. W biznesie i życiu prywatnym uchodzisz za głos rozsądku, który potrafi uporządkować każdy chaos.'
       }
     },
     venus: {
@@ -64,16 +52,12 @@
       glyph: '♀',
       color: '#66BB6A',
       hard: {
-        archetype: 'Test Lojalności & Miłość jako Praca',
-        core: 'Lęk przed byciem niekochanym i odrzuconym. Podświadome przekonanie, że na miłość trzeba ciężko zasłużyć poświęceniem, perfekcją lub nienaganną dyscypliną.',
-        shadow: 'Przyciąganie chłodnych, emocjonalnie niedostępnych partnerów; lęk przed zaangażowaniem spleciony ze strachem przed samotnością.',
-        maturePower: 'Stworzenie nierozerwalnego sojuszu partnerskiego na całe życie, opartego na dojrzałym oddaniu, stabilności finansowej i szacunku.'
+        text: 'Przeświadczenie, że na miłość i bliskość trzeba zasłużyć nienaganną pracą lub poświęceniem. Podświadomy lęk przed odrzuceniem pcha Cię w stronę relacji chłodnych, skomplikowanych lub takich, w których musisz nieustannie udowadniać swoją przydatność. Często wolisz być sam, niż zaryzykować ból obnażonego serca.',
+        integration: 'Przełom polega na zrozumieniu, że partnerstwo nie jest transakcją barterową ani polem walki o przetrwanie. Uczysz się stawiać zdrowe granice bez chłodu i budować intymność opartą na autentycznej czułości, a nie na strachu przed porzuceniem.'
       },
       soft: {
-        archetype: 'Dyskretny Luksus & Trwałe Więzi',
-        core: 'Wyrafinowane poczucie estetyki, stałość uczuć i wierność wartościom. Instynktowne przedkładanie jakości ponad ilość w relacjach i finansach.',
-        shadow: 'Zbytnia zachowawczość w okazywaniu namiętności i spontanicznych porywów serca.',
-        maturePower: 'Eleganckie budowanie bezpiecznego majątku i wieloletnich, harmonijnych relacji odpornych na próbę czasu.'
+        text: 'Dojrzałe poczucie estetyki i lojalność, która nie blednie z biegiem lat. Wybierasz jakość zamiast ilości — zarówno w doborze ubrań, jak i ludzi, z którymi dzielisz stół.',
+        integration: 'Zdolność do budowania stabilnego bezpieczeństwa materialnego oraz relacji miłosnych, które z każdą dekadą stają się głębsze i bardziej harmonijne.'
       }
     },
     mars: {
@@ -82,16 +66,12 @@
       glyph: '♂',
       color: '#EF5350',
       hard: {
-        archetype: 'Zderzenie Gazu z Hamulcem & Żelazna Wola',
-        core: 'Potężna ambicja i wola walki zderzająca się z wewnętrznymi hamulcami, lękiem przed porażką i oporem materii. Czasem poczucie, że świat celowo stawia zapory.',
-        shadow: 'Erupcje tłumionego gniewu, autoagresja, zniecierpliwienie i frustracja przy pierwszych opóźnieniach.',
-        maturePower: 'Mordercza wytrwałość, precyzyjne egzekwowanie strategicznych celów i odporność na zmęczenie, której nikt nie potrafi powtórzyć.'
+        text: 'Jednoczesne wciskanie gazu i hamulca. Ogromny napęd do działania i ambicja zderzają się z wewnętrznym paraliżem, lękiem przed porażką i poczuciem winy przy każdej próbie postawienia na swoim. Niewyrażona złość gromadzi się pod powierzchnią, prowadząc do autoagresji lub nagłych, gwałtownych wybuchów frustracji.',
+        integration: 'Gdy nauczysz się planować ruchy z zimną krwią, zyskujesz rzadką odporność na opór materii. Twoja wola staje się nie do złamania — nie marnujesz energii na jałowe awantury, lecz metodycznie eliminujesz przeszkody, krok po kroku.'
       },
       soft: {
-        archetype: 'Strateg Bitewny & Niezłomna Konsekwencja',
-        core: 'Doskonałe dozowanie sił. Działanie metodyczne, cierpliwe i nieuchronne. Brak marnowania energii na jałowe awantury.',
-        shadow: 'Zbyt mało miejsca na spontaniczny zryw i zabawę.',
-        maturePower: 'Zdolność do doprowadzania gigantycznych projektów do końca bez ryzyka wypalenia i zniechęcenia.'
+        text: 'Wybitne wyczucie czasu i cierpliwość stratega. Wiesz dokładnie, kiedy uderzyć, a kiedy poczekać, aż przeciwnik sam popełni błąd.',
+        integration: 'Niezrównana wytrzymałość operacyjna. Doprowadzasz do końca najcięższe wielomiesięczne przedsięwzięcia bez ryzyka załamania czy wypalenia.'
       }
     },
     jupiter: {
@@ -100,16 +80,12 @@
       glyph: '♃',
       color: '#AB47BC',
       hard: {
-        archetype: 'Rozdarcie Między Wizją a Rygorem',
-        core: 'Ciągłe przeciąganie liny między wielkimi marzeniami a lękiem przed brakiem gruntu pod nogami. Huśtawka nastrojów od euforycznego planowania do nagłego pesymizmu.',
-        shadow: 'Przecenianie własnych możliwości na przemian z lękowym wycofaniem się tuż przed osiągnięciem sukcesu.',
-        maturePower: 'Mistrzowskie połączenie dalekowzrocznej wizji biznesowej z twardą, pragmatyczną dyscypliną wykonawczą.'
+        text: 'Rozdarcie między wielkim rozmachem a paniką przed bankructwem. W chwili, gdy pojawia się życiowa szansa, natychmiast odzywa się wewnętrzny pesymista, torpedując odważne decyzje. Uczysz się równowagi między zaufaniem do losu a trzeźwym zarządzaniem ryzykiem.',
+        integration: 'Budujesz sukces na solidnym gruncie — nie pompujesz baniek spekulacyjnych, lecz zamieniasz wielkie wizje w mierzalne, trwałe instytucje.'
       },
       soft: {
-        archetype: 'Filozof Sukcesu Materialnego',
-        core: 'Głębokie zrozumienie praw rynku i praw moralnych. Uczciwość w budowaniu pozycji życiowej i naturalny autorytet nauczyciela.',
-        shadow: 'Zadowalanie się bezpiecznym, umiarkowanym kompromisem.',
-        maturePower: 'Budowanie trwałego dobrobytu, zaufania instytucjonalnego i zostawienie po sobie wartościowego dziedzictwa.'
+        text: 'Zrównoważony, etyczny optymizm poparty pracowitością. Rozumiesz prawo karmy: zbierasz to, co zasiałeś rzetelnym wysiłkiem.',
+        integration: 'Osiągasz naturalny autorytet społeczny i powodzenie, które nie budzi zawiści, bo opiera się na uczciwości i sprawiedliwym traktowaniu innych.'
       }
     }
   };

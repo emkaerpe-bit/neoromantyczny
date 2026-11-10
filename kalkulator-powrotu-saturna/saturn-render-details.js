@@ -94,12 +94,9 @@
                 ${data.glyph}
               </div>
               <div>
-                <h4 style="font-family:'Playfair Display', serif; font-size:1.08rem; color:#FAF8F5; margin:0 0 0.15rem; font-weight:600;">
+                <h4 style="font-family:'Playfair Display', serif; font-size:1.08rem; color:#FAF8F5; margin:0; font-weight:600;">
                   ${cleanTitle}
                 </h4>
-                <div style="font-size:0.78rem; color:#C9A96E; font-style:italic;">
-                  ${branch.archetype}
-                </div>
               </div>
             </div>
             <span style="font-size:0.73rem; text-transform:uppercase; padding:0.25rem 0.65rem; border-radius:9999px; background:${tagBg}; border:1px solid ${tagBorder}; color:${tagColor}; font-family:'JetBrains Mono', monospace; font-weight:700; letter-spacing:0.04em;">
@@ -108,18 +105,12 @@
           </div>
 
           <!-- Treść Psychologiczna -->
-          <p style="font-size:0.87rem; line-height:1.65; color:rgba(250,248,245,0.85); margin:0 0 0.55rem;">
-            ${branch.core}
+          <p style="font-size:0.87rem; line-height:1.65; color:rgba(250,248,245,0.85); margin:0 0 0.65rem;">
+            ${branch.text || branch.core}
           </p>
 
-          ${branch.shadow ? `
-            <p style="font-size:0.82rem; line-height:1.55; color:#FB7185; margin:0 0 0.45rem;">
-              <strong>Ryzyko cienia:</strong> ${branch.shadow}
-            </p>
-          ` : ''}
-
-          <p style="font-size:0.84rem; line-height:1.55; color:#E5CC7C; margin:0;">
-            <strong style="color:#C9A96E;">Mądrość dojrzała:</strong> ${branch.maturePower}
+          <p style="font-size:0.84rem; line-height:1.6; color:#E5CC7C; margin:0; padding-top:0.45rem; border-top:1px solid rgba(255,255,255,0.06);">
+            <strong style="color:#C9A96E; font-family:'Playfair Display', serif;">Mądrość dojrzała:</strong> ${branch.integration || branch.maturePower}
           </p>
         </div>
       `;

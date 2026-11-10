@@ -40,7 +40,7 @@
     chapter5: {
       number: 'Rozdział V',
       title: 'Kodeks Rezyliencji Chronosa: 7 Żelaznych Reguł Dojrzałości',
-      subtitle: 'Stoicki dekalog przetrwania kryzysu 28–30 lat według standardu Midnight Luxe',
+      subtitle: '7 fundamentalnych reguł budowania niezłomnej dojrzałości psychologicznej',
       rules: [
         {
           num: 'I',

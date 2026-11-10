@@ -116,24 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     }
-
-    const quickUnlockBtn = document.getElementById('sat-quick-unlock-btn');
-    if (quickUnlockBtn) {
-      quickUnlockBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        try { localStorage.setItem('neo_saturn_unlocked', 'true'); } catch (err) {}
-        reRenderSaturnReport();
-      });
-    }
-
-    const resetBtn = document.getElementById('sat-lock-reset-btn');
-    if (resetBtn) {
-      resetBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        try { localStorage.removeItem('neo_saturn_unlocked'); } catch (err) {}
-        reRenderSaturnReport();
-      });
-    }
   }
 
   function reRenderSaturnReport() {

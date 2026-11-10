@@ -1,5 +1,5 @@
 /**
- * NEOROMANTYCZNY — SATURN ASPECTS DATA (PART 2: PLANETY TRANS-SATURNICZNE & PUNKTY KARMICZNE)
+ * NEOROMANTYCZNY — SATURN ASPECTS DATA (PART 2: TRANS-SATURN & KARMIC POINTS)
  * Standard: Human Voice 2026, Psychologia Głębi C.G. Junga, Liz Greene
  */
 (function () {
@@ -10,16 +10,12 @@
       glyph: '♅',
       color: '#26C6DA',
       hard: {
-        archetype: 'Pęknięcie Tradycji & Napięcie Rewolucji',
-        core: 'Bolesne rozdarcie między potrzebą absolutnego bezpieczeństwa a gwałtownym pragnieniem zburzenia wszelkich reguł. Doświadczenie nagłych, nieoczekiwanych zwrotów losu niszczących ułożone plany.',
-        shadow: 'Skrajny opór przed konieczną zmianą lub kompulsywny, chaotyczny bunt niszczący to, co wartościowe.',
-        maturePower: 'Zdolność do wdrażania radykalnych innowacji w oparciu o solidne, trwałe struktury społeczne i technologiczne.'
+        text: 'Wewnętrzna wojna domowa między obsesją bezpieczeństwa a nagłą chęcią rzucenia wszystkiego w diabły. Boisz się zmian, więc tkwisz w dusznych układach do momentu, w którym tama pęka i dochodzi do destrukcyjnego wybuchu.',
+        integration: 'Dojrzałość polega na odwadze wprowadzania nowoczesnych, odważnych reform na własnych warunkach, zanim zmusi Cię do tego los. Łączysz rewolucyjną wizję z solidną praktyką.'
       },
       soft: {
-        archetype: 'Konstruktywny Reformator',
-        core: 'Harmonijne łączenie szacunku dla tradycji z nowoczesnym myśleniem. Umiejętność powolnego modernizowania struktur bez wywoływania chaosu.',
-        shadow: 'Zadowalanie się kosmetycznymi ulepszeniami zamiast odważnej transformacji.',
-        maturePower: 'Autorytet w środowiskach innowatorów; dar przewidywania trendów przyszłości i urealniania ich w biznesie.'
+        text: 'Dar konstruktywnego modernizowania struktur. Nie niszczysz tego, co stare, dla samej rebelii; potrafisz tchnąć świeże życie w tradycyjne systemy.',
+        integration: 'Autorytet w środowiskach innowatorów. Widzisz trendy przyszłości i potrafisz osadzić je w twardych realiach rynku.'
       }
     },
     neptune: {
@@ -28,16 +24,12 @@
       glyph: '♆',
       color: '#42A5F5',
       hard: {
-        archetype: 'Krystalizacja Mgły & Rozbicie Iluzji',
-        core: 'Permanentna walka między surową rzeczywistością a krainą marzeń i duchowego eskapizmu. Lęk przed twardymi faktami, skłonność do idealizowania ludzi i bolesne rozczarowania.',
-        shadow: 'Ucieczka w nałogi, neurotyczną niemoc, rolę bezradnej ofiary losu lub unikanie odpowiedzialności za własne finanse.',
-        maturePower: 'Przekucie najgłębszej wrażliwości artystycznej i duchowej w konkretne, namacalne formy; trzeźwe współczucie bez naiwności.'
+        text: 'Bolesne zderzenie marzeń z twardą rzeczywistością. Skłonność do uciekania przed rachunkami i trudnymi rozmowami w świat fantazji, używek lub poczucia bezradności. Kryzys 28–30 lat bezlitośnie zdziera różowe okulary.',
+        integration: 'Odkrywasz, że prawdziwa wrażliwość nie wymaga izolacji od świata. Przekuwasz artystyczne i duchowe wizje w konkretne, namacalne formy, zyskując trzeźwe współczucie wolne od naiwności.'
       },
       soft: {
-        archetype: 'Uziemiony Mistyk & Praktyczny Wizjoner',
-        core: 'Naturalna zdolność do nadawania marzeniom dyscypliny i granic. Połączenie głębokiej intuicji z trzeźwym osądem rzeczywistości.',
-        shadow: 'Zbytnie racjonalizowanie uniesień duchowych i artystycznych.',
-        maturePower: 'Umiejętność realizowania natchnionych, wzniosłych projektów w twardych realiach rynkowych i społecznych.'
+        text: 'Zdolność do nadawania marzeniom dyscypliny i granic. Nie bujasz w obłokach — Twoja intuicja jest praktycznym narzędziem nawigacyjnym.',
+        integration: 'Umiejętność realizowania wzniosłych projektów z zachowaniem żelaznej dyscypliny budżetowej i organizacyjnej.'
       }
     },
     pluto: {
@@ -46,16 +38,12 @@
       glyph: '♇',
       color: '#BA68C8',
       hard: {
-        archetype: 'Przetopienie Władzy & Totalna Suwerenność',
-        core: 'Ciężki kaliber psychologiczny. Doświadczenie bezwzględnych, opresyjnych struktur siły i konieczność całkowitego przetopienia własnego ego. Tranzyt stawia sprawę jasno: prawda albo upadek.',
-        shadow: 'Obsesja kontroli, lęk przed bezsilnością, paranoja, manipulacje w relacjach i walka o dominację do upadłego.',
-        maturePower: 'Niezłomna, magnetyczna siła charakteru, odporność na traumy i zdolność do podnoszenia się z każdego kryzysu jak feniks z popiołów.'
+        text: 'Ciężki kaliber psychologiczny. Wczesne doświadczenie bezsilności wobec opresyjnych osób lub okoliczności zrodziło obsesyjną potrzebę kontroli. W relacjach to walka o dominację, nieufność i lęk przed tym, że ktoś odkryje Twoje słabe punkty.',
+        integration: 'Kiedy przestajesz toczyć podjazdową wojnę z otoczeniem, uwalniasz potężną moc samoregeneracji. Przechodzisz przez każdy życiowy kryzys jak feniks przez ogień — nie do złamania, suwerenny i w pełni świadomy swojej siły.'
       },
       soft: {
-        archetype: 'Architekt Głębokie Transformacji',
-        core: 'Wrodzona zdolność do operowania na najgłębszych poziomach psychiki i władzy. Cierpliwe, nieodwracalne eliminowanie tego, co obumarłe.',
-        shadow: 'Chłodna bezwzględność w dążeniu do wyznaczonych celów.',
-        maturePower: 'Strategiczna kontrola nad własnym losem, zdolność zarządzania kryzysowego w organizacjach i niezrównana dyskrecja.'
+        text: 'Niewzruszona siła woli i dyskrecja. Działasz w ciszy, głęboko i nieodwracalnie.',
+        integration: 'Wybitne zdolności zarządzania kryzysowego. Potrafisz przeprowadzić najtrudniejszą transformację bez paniki i chaosu.'
       }
     },
     chiron: {
@@ -64,16 +52,12 @@
       glyph: '⚷',
       color: '#B8A456',
       hard: {
-        archetype: 'Rana Niewystarczalności & Uzdrowiciel Struktur',
-        core: 'Głębokie poczucie wadliwości lub chronicznego braku prawa do błędu. Lęk przed oceną i odrzuceniem wynikający z wczesnych ran autorytetu.',
-        shadow: 'Poczucie wiecznego niedocenienia, izolacja, chłód wobec własnych słabości i karanie siebie za brak doskonałości.',
-        maturePower: 'Głęboka empatia dla ludzkich ograniczeń, autentyczna mądrość mentora pomagającego innym przezwyciężać ich własne blokady.'
+        text: 'Przewlekłe poczucie wadliwości i lęk przed popełnieniem błędu. Ciągły strach przed tym, że inni uznają Cię za niewystarczająco kompetentnego lub dojrzałego, co prowadzi do bolesnej autoizolacji.',
+        integration: 'Zrozumienie, że nikt nie jest doskonały. Przestajesz biczować się za potknięcia, a Twoje własne blizny stają się źródłem najcenniejszej mądrości życiowej, którą potrafisz dzielić się z innymi.'
       },
       soft: {
-        archetype: 'Dojrzały Przewodnik w Cierpieniu',
-        core: 'Zdolność do godzenia się z ludzką kruchością bez utraty godności. Zintegrowanie własnych blizn jako źródła siły.',
-        shadow: 'Zbyt wczesne zadowalanie się rolą obserwatora cudzego życia.',
-        maturePower: 'Prawdziwy autorytet terapeutyczny i dar przywracania innym wiary we własną sprawczość.'
+        text: 'Wrodzona pokora i szacunek dla ludzkich ograniczeń. Nie oceniasz ludzi z góry.',
+        integration: 'Dar mądrego doradcy i mentora. Twoja obecność przynosi uspokojenie tym, którzy zmagają się z poczuciem zagubienia.'
       }
     },
     node: {
@@ -82,52 +66,40 @@
       glyph: '☊',
       color: '#7986CB',
       hard: {
-        archetype: 'Karmiczny Egzamin Dojrzałości',
-        core: 'Saturn staje w poprzek starych nawyków z przeszłości. Konieczność definitywnego porzucenia dziecinnych schematów na rzecz trudnego, dorosłego powołania.',
-        shadow: 'Kurczowe trzymanie się wygody i odkładanie życiowej misji na „lepsze czasy”.',
-        maturePower: 'Zbudowanie trwałego pomnika własnego przeznaczenia poprzez dyscyplinę, prawość i odwagę przyjęcia odpowiedzialności.'
+        text: 'Saturn blokuje ucieczkę w stare, dziecinne przyzwyczajenia. Wymaga porzucenia bezpiecznej strefy komfortu i wzięcia pełnej odpowiedzialności za własne powołanie.',
+        integration: 'Przełamanie oporu i wejście na właściwą ścieżkę życiową. Każdy wysiłek włożony w rozwój przynosi trwałe, niezniszczalne owoce.'
       },
       soft: {
-        archetype: 'Drogowskaz Przeznaczenia',
-        core: 'Naturalna harmonia między ciężką pracą a życiowym powołaniem. Poczucie, że każda trudność jest zaplanowanym krokiem w rozwoju duszy.',
-        shadow: 'Brak determinacji przy braku zewnętrznej presji.',
-        maturePower: 'Spokojna, nieubłagana realizacja życiowego celu z poczuciem głębokiej synchronii z czasem.'
+        text: 'Poczucie głębokiej synchronii z czasem. Trudności życiowe nie paraliżują, lecz są traktowane jak kolejne szczeble wtajemniczenia.',
+        integration: 'Spokojna, konsekwentna realizacja życiowego celu z pełnym poczuciem sensu.'
       }
     },
     lilith: {
       name: 'Czarny Księżyc (Lilith)',
       genitive: 'z Lilith',
       glyph: '⚸',
-      color: '#F43F5E',
+      color: '#E57373',
       hard: {
-        archetype: 'Wyparta Dzikość & Szantaż Moralny',
-        core: 'Potężny konflikt między rygorystycznymi normami społecznymi a dziką, suwerenną naturą. Lęk przed odrzuceniem za bycie „zbyt nieposłusznym”.',
-        shadow: 'Moralizatorstwo maskujące własne nieuświadomione popędy lub autodestrukcyjny bunt niszczący fundamenty życia.',
-        maturePower: 'Odzyskanie pierwotnej autentyczności, bezkompromisowa obrona własnej suwerenności i uwolnienie się od cudzego poczucia winy.'
+        text: 'Blokowanie własnej dzikiej, pierwotnej natury z lęku przed odrzuceniem przez otoczenie. Próba podporządkowania instynktów surowym normom społecznym wywołuje wewnętrzne napięcie.',
+        integration: 'Odzyskanie suwerenności i magnetyzmu bez wstydu i poczucia winy. Integrujesz swój Cień, stając się człowiekiem kompletnym.'
       },
       soft: {
-        archetype: 'Zintegrowana Cień & Magnetyczna Prawda',
-        core: 'Zdolność do panowania nad swoimi mrocznymi instynktami bez ich cenzurowania. Odwaga mówienia niewygodnej prawdy.',
-        shadow: 'Uwodzenie innych własną tajemniczością w celach obronnych.',
-        maturePower: 'Magnetyczna niezależność, odporność na społeczną presję i tworzenie bezkompromisowych dzieł.'
+        text: 'Naturalna odwaga bycia sobą przy zachowaniu pełnej klasy i godności.',
+        integration: 'Niezrównany magnetyzm osobisty i wierność własnej prawdzie bez konieczności agresywnej prowokacji.'
       }
     },
     fortune: {
       name: 'Punkt Szczęścia',
       genitive: 'z Punktem Szczęścia',
       glyph: '⊗',
-      color: '#E5CC7C',
+      color: '#81C784',
       hard: {
-        archetype: 'Szczęście Wykute w Pocie & Trudna Nagroda',
-        core: 'Poczucie, że w Twoim życiu nic nie przychodzi łatwo ani z przypadku. Każdy sukces wymaga potu, rygoru i przezwyciężenia zwątpienia.',
-        shadow: 'Przekonanie o własnym pechu, zgorzknienie i zazdrość wobec tych, którym przychodzi łatwiej.',
-        maturePower: 'Osiągnięcie najtrwalszego ze wszystkich rodzajów szczęścia: dumy z własnego mistrzostwa, niezależności finansowej i nienaruszalnego spokoju.'
+        text: 'Poczucie, że nic nie przychodzi łatwo. Los zmusza Cię do budowania powodzenia przez bezwzględną dyscyplinę, prawość i rzetelność.',
+        integration: 'Prawdziwy, niezniszczalny dobrostan materialny i wewnętrzny spokój, którego nie naruszy żaden rynkowy wstrząs.'
       },
       soft: {
-        archetype: 'Pragmatyczny Dar Sukcesu',
-        core: 'Harmonijne współdziałanie dyscypliny i życiowej pomyślności. Umiejętność zamieniania cierpliwej pracy w realny dobrobyt materialny.',
-        shadow: 'Niedocenianie własnego szczęścia przez pryzmat wiecznych obowiązków.',
-        maturePower: 'Głęboka satysfakcja z solidnie zbudowanego życia, w którym każdy fundament powstał z Twojej własnej, rzetelnej pracy.'
+        text: 'Pomyślność przychodzi u Ciebie przez rzetelną pracę i powściągliwość. Szczęście jest logiczną konsekwencją Twoich wyborów.',
+        integration: 'Zbudowanie trwałego majątku i wewnętrznego spokoju w pełnej harmonii z czasem.'
       }
     }
   };
