@@ -6,6 +6,7 @@
   'use strict';
 
   let currentReportData = null;
+  let currentHierarchy = null;
 
   function isUnlocked() {
     try {
@@ -21,42 +22,83 @@
     }
   }
 
-  function renderRetrogradeChapter1(chart) {
-    if (!chart || !chart.retrogradePlanets || chart.retrogradePlanets.length === 0) return '';
-    const rPlanets = chart.retrogradePlanets;
-    const badgesHtml = rPlanets.map(p => `
-      <span style="display:inline-flex;align-items:center;gap:0.35rem;background:rgba(251,113,133,0.08);border:1px solid rgba(251,113,133,0.3);padding:0.3rem 0.65rem;border-radius:6px;font-size:0.82rem;color:#FAF8F5;">
-        <span style="color:#FB7185;font-size:0.95rem;">${p.glyph}</span>
-        <strong style="font-weight:600;">${p.name} Rx</strong>
-        <span style="color:rgba(250,248,245,0.6);font-family:'JetBrains Mono',monospace;font-size:0.75rem;">(w ${p.signName} ${p.degreeInSign})</span>
-      </span>
-    `).join('');
+  function getGoverningRetrogradePlanets(hierarchy, chart) {
+    const h = hierarchy || currentHierarchy;
+    if (!h || !chart || !chart.planets) return [];
+    const governingKeys = new Set([
+      ...(h.finalDispositors || []),
+      ...(h.mutualReceptions ? h.mutualReceptions.flat() : []),
+      ...(h.loops ? h.loops.flat() : [])
+    ]);
+    return chart.planets.filter(p => governingKeys.has(p.key) && p.isRetrograde);
+  }
 
-    return `
-      <div style="margin-top:1.35rem;background:rgba(251,113,133,0.05);border:1px solid rgba(251,113,133,0.25);border-radius:0.85rem;padding:1.25rem 1.35rem;">
-        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#FB7185;text-transform:uppercase;font-weight:700;">
-            DIAGNOZA RETROGRADACJI • INTROWERSJA ENERGII PSYCHICZNEJ (C.G. JUNG)
+  function renderRetrogradeChapter1(chart, hierarchy) {
+    const h = hierarchy || currentHierarchy;
+    const govRetroPlanets = getGoverningRetrogradePlanets(h, chart);
+    if (!govRetroPlanets.length) return '';
+
+    const profiles = (window.__DISPOSITOR_RETRO_DATA__ && window.__DISPOSITOR_RETRO_DATA__.PROFILES) || {};
+
+    const retroSectionsHtml = govRetroPlanets.map(p => {
+      const prof = profiles[p.key] || {
+        name: p.name + ' (Rx)',
+        archetype: 'Władca w Ruchu Wstecznym • Głęboka Introspekcja',
+        summary: 'W Twoim horoskopie ' + p.name + ' porusza się ruchem wstecznym, przenosząc energię sprawczą do wnętrza psychiki.',
+        mechanics: 'Każda decyzja podlega rygorystycznej, wewnętrznej weryfikacji. Nie ulegasz presji zewnętrznego świata.',
+        shadowWarning: 'Ryzyko paraliżu decyzyjnego, ruminacji i tłumienia autentycznych potrzeb.',
+        somaticReset: 'Uziemienie zmysłowe, kontakt z naturą i spisanie myśli na papier bez autocenzury.'
+      };
+
+      return `
+        <div style="margin-top:1.25rem;background:rgba(251,113,133,0.05);border:1px solid rgba(251,113,133,0.3);border-radius:0.85rem;padding:1.35rem 1.45rem;">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#FB7185;text-transform:uppercase;font-weight:700;">
+              DIAGNOZA RETROGRADACJI WŁADCY • ${p.name.toUpperCase()} (Rx)
+            </div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#FB7185;background:rgba(251,113,133,0.12);padding:0.25rem 0.6rem;border-radius:4px;font-weight:600;">
+              ${p.signName} ${p.degreeInSign} • RUCH WSTECZNY
+            </span>
           </div>
-          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#FB7185;background:rgba(251,113,133,0.12);padding:0.2rem 0.55rem;border-radius:4px;">
-            ${rPlanets.length} ${rPlanets.length === 1 ? 'PLANETA Rx' : (rPlanets.length < 5 ? 'PLANETY Rx' : 'PLANET Rx')}
-          </span>
+
+          <h4 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#FAF8F5;margin:0 0 0.65rem;line-height:1.35;">
+            ${prof.archetype}
+          </h4>
+
+          <p style="font-size:0.95rem;line-height:1.75;color:rgba(250,248,245,0.9);margin:0 0 0.85rem;">
+            ${prof.summary}
+          </p>
+
+          <div style="background:rgba(0,0,0,0.25);border:1px solid rgba(251,113,133,0.2);border-radius:0.75rem;padding:1rem 1.15rem;margin-bottom:0.85rem;">
+            <strong style="color:#C9A84C;font-size:0.92rem;display:block;margin-bottom:0.35rem;">
+              ✦ Wpływ Retrogradacji na Wynik Raportu (${prof.name}):
+            </strong>
+            <p style="font-size:0.91rem;line-height:1.68;color:rgba(250,248,245,0.85);margin:0;">
+              ${prof.mechanics}
+            </p>
+          </div>
+
+          <div style="background:rgba(251,113,133,0.06);border:1px dashed rgba(251,113,133,0.3);border-radius:0.75rem;padding:1rem 1.15rem;">
+            <strong style="color:#FB7185;font-size:0.92rem;display:block;margin-bottom:0.35rem;">
+              Wektor Cienia & Pułapka ${prof.name}:
+            </strong>
+            <p style="font-size:0.91rem;line-height:1.68;color:rgba(250,248,245,0.85);margin:0 0 0.5rem;">
+              ${prof.shadowWarning}
+            </p>
+            <p style="font-size:0.88rem;line-height:1.6;color:rgba(250,248,245,0.8);margin:0;">
+              <strong style="color:#34D399;">Złota Zasada Równowagi:</strong> ${prof.somaticReset}
+            </p>
+          </div>
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.85rem;">
-          ${badgesHtml}
-        </div>
-        <p style="font-size:0.92rem;line-height:1.7;color:rgba(250,248,245,0.85);margin:0 0 0.65rem;">
-          W klasycznej tradycji astrologicznej ruch wsteczny bywał powierzchownie etykietowany jako „słabość”. W psychologii głębi C.G. Junga retrogradacja oznacza <strong>radykalną introwersję funkcji psychicznej</strong>. Energia tych archetypów nie jest nastawiona na konformistyczną, natychmiastową aprobatę otoczenia — podlega wieloetapowej, wewnętrznej destylacji.
-        </p>
-        <p style="font-size:0.92rem;line-height:1.7;color:rgba(250,248,245,0.85);margin:0;">
-          W Twojej architekturze psychicznej planety retrogradujące stanowią autonomiczne filtry suwerenności. Sprawiają, że odrzucasz gotowe dogmaty i schematy społeczne, budując własne, nienegocjowalne kryteria prawdy. Wymaga to cierpliwości, lecz daje unikalną odporność na manipulację.
-        </p>
-      </div>
-    `;
+      `;
+    }).join('');
+
+    return retroSectionsHtml;
   }
 
   function renderPaywallTeaser(hierarchy, planets, chart, attempts) {
     attempts = attempts || 0;
+    if (hierarchy) currentHierarchy = hierarchy;
     const container = document.getElementById('dispositor-report-container');
     if (!container) {
       if (attempts < 80) {
@@ -140,13 +182,13 @@
           <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:0.85rem;padding:1rem 1.25rem;font-size:0.92rem;line-height:1.65;color:rgba(250,248,245,0.75);">
             <strong style="color:#C9A84C;">Prawda o Twojej suwerenności:</strong> ${diag.sovereigntyRole || ''}
           </div>
-          ${renderRetrogradeChapter1(chart)}
+          ${renderRetrogradeChapter1(chart, hierarchy)}
         </section>
 
         <!-- STREFA ROZDZIAŁÓW 2–6 Z MECHANIZMEM CURIOSITY GAP (PAYWALL 20 PLN) -->
         <div class="disp-paywall-gate">
           <div class="disp-blurred-zone">
-            ${renderChapters2To6(data, chart)}
+            ${renderChapters2To6(data, chart, hierarchy)}
           </div>
           <div class="disp-paywall-overlay">
             <div class="disp-lock-card">
@@ -256,17 +298,17 @@
           <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:0.85rem;padding:1rem 1.25rem;font-size:0.92rem;line-height:1.65;color:rgba(250,248,245,0.75);">
             <strong style="color:#C9A84C;">Prawda o Twojej suwerenności:</strong> ${diag.sovereigntyRole || ''}
           </div>
-          ${renderRetrogradeChapter1(chart)}
+          ${renderRetrogradeChapter1(chart, currentHierarchy)}
         </section>
 
         <div class="disp-unlocked-zone">
-          ${renderChapters2To6(data, chart)}
+          ${renderChapters2To6(data, chart, currentHierarchy)}
         </div>
       </article>
     `;
   }
 
-  function renderChapters2To6(data, chart) {
+  function renderChapters2To6(data, chart, hierarchy) {
     const nour = data.nourishmentProtocol || {};
     const shadow = data.shadowAndEmergency || {};
     const rel = data.relationshipDynamics || {};
@@ -332,19 +374,35 @@
             <strong style="color:#FB7185;font-size:0.9rem;display:block;margin-bottom:0.25rem;">Protokół Resetu 24h (Gdy przytłacza Cię świat):</strong>
             <p style="font-size:0.9rem;line-height:1.6;color:rgba(250,248,245,0.85);margin:0;">${shadow.emergency24h || ''}</p>
           </div>
-          ${chart && chart.retrogradePlanets && chart.retrogradePlanets.length > 0 ? `
-            <div style="margin-top:1rem;background:rgba(251,113,133,0.06);border:1px dashed rgba(251,113,133,0.35);border-radius:0.75rem;padding:0.9rem 1.1rem;">
-              <strong style="color:#FB7185;font-size:0.9rem;display:block;margin-bottom:0.35rem;">
-                Wektor Cienia Planet Retrogradujących (${chart.retrogradePlanets.map(p => p.name).join(', ')}):
-              </strong>
-              <p style="font-size:0.9rem;line-height:1.65;color:rgba(250,248,245,0.85);margin:0 0 0.5rem;">
-                Gdy Twoje zasoby psychiczne ulegają wyczerpaniu, planety w ruchu wstecznym mogą kierować energię do wewnątrz ze zbyt destrukcyjną siłą, tworząc pętle ruminacji, autoagresji lub paraliżu decyzyjnego. Zamiast skomunikować potrzebę na zewnątrz, analizujesz sytuację w nieskończoność w ciszy.
-              </p>
-              <p style="font-size:0.88rem;line-height:1.6;color:rgba(250,248,245,0.75);margin:0;">
-                <strong style="color:#C9A84C;">Antidotum somatyczne dla Rx:</strong> Przerwij wewnętrzny monolog poprzez gwałtowną zmianę sensoryczną (spacer w chłodnym powietrzu, zrzucenie myśli na papier bez redagowania, uziemienie stóp), zanim powrócisz do konfrontacji z problemem.
-              </p>
-            </div>
-          ` : ''}
+          ${(() => {
+            const h = hierarchy || currentHierarchy;
+            const govRetro = getGoverningRetrogradePlanets(h, chart);
+            if (!govRetro.length) return '';
+            const profiles = (window.__DISPOSITOR_RETRO_DATA__ && window.__DISPOSITOR_RETRO_DATA__.PROFILES) || {};
+            const shadowItems = govRetro.map(p => {
+              const prof = profiles[p.key] || {};
+              return `
+                <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px dashed rgba(251,113,133,0.25);">
+                  <strong style="color:#FAF8F5;font-size:0.9rem;display:block;margin-bottom:0.25rem;">✦ ${p.name} (Rx) w przeciążeniu:</strong>
+                  <p style="font-size:0.9rem;line-height:1.65;color:rgba(250,248,245,0.85);margin:0 0 0.45rem;">
+                    ${prof.shadowWarning || 'Zamiast skomunikować potrzebę, analizujesz sytuację w nieskończoność w ciszy.'}
+                  </p>
+                  <p style="font-size:0.88rem;line-height:1.6;color:rgba(250,248,245,0.75);margin:0;">
+                    <strong style="color:#C9A84C;">Antidotum Somatyczne:</strong> ${prof.somaticReset || 'Uziemienie stóp i gwałtowna zmiana bodźców sensorycznych.'}
+                  </p>
+                </div>
+              `;
+            }).join('');
+
+            return `
+              <div style="margin-top:1rem;background:rgba(251,113,133,0.06);border:1px dashed rgba(251,113,133,0.35);border-radius:0.75rem;padding:0.95rem 1.15rem;">
+                <strong style="color:#FB7185;font-size:0.92rem;display:block;margin-bottom:0.35rem;">
+                  Wektor Cienia Władcy w Retrogradacji (${govRetro.map(p => p.name).join(', ')}):
+                </strong>
+                ${shadowItems}
+              </div>
+            `;
+          })()}
         </section>
 
         <!-- ROZDZIAŁ 4: BLISKOŚĆ, MIŁOŚĆ & GRANICE -->
