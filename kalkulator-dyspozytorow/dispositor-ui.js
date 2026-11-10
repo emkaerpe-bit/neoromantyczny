@@ -20,7 +20,115 @@
   let useModernMode = false;
   let selectedPlanetKey = null;
 
+  function setupCityAutocomplete() {
+    const inputEl = document.getElementById('disp-city');
+    const dropdownEl = document.getElementById('dispCityDropdown');
+    if (!inputEl || !dropdownEl) return;
+
+    function norm(s) {
+      return String(s || '').toLowerCase().trim()
+        .replace(/ł/g, 'l').replace(/ą/g, 'a').replace(/ę/g, 'e')
+        .replace(/ś/g, 's').replace(/ć/g, 'c').replace(/ń/g, 'n')
+        .replace(/ó/g, 'o').replace(/ź/g, 'z').replace(/ż/g, 'z')
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    let allCities = [];
+    if (window.ACG_CITIES_DB && Array.isArray(window.ACG_CITIES_DB.allCities)) {
+      allCities = window.ACG_CITIES_DB.allCities;
+    } else {
+      allCities = (window.__DISPOSITOR_ENGINE__ && window.__DISPOSITOR_ENGINE__.CITIES) || [];
+    }
+
+    let currentMatches = [];
+    let activeIdx = -1;
+
+    function renderList(query) {
+      const q = norm(query);
+      if (!q) {
+        currentMatches = allCities.slice(0, 15);
+      } else {
+        const starts = [];
+        const contains = [];
+        allCities.forEach(c => {
+          const nName = norm(c.name);
+          const nCountry = norm(c.country || 'Polska');
+          if (nName.startsWith(q)) starts.push(c);
+          else if (nName.includes(q) || nCountry.includes(q)) contains.push(c);
+        });
+        currentMatches = starts.concat(contains).slice(0, 20);
+      }
+
+      activeIdx = currentMatches.length ? 0 : -1;
+      if (!currentMatches.length) {
+        dropdownEl.innerHTML = `<div class="disp-autocomplete-empty">Nie znaleziono miasta „${query}”. Wpisz ręcznie lub wybierz najbliższe większe miasto.</div>`;
+        dropdownEl.classList.add('is-open');
+        return;
+      }
+
+      dropdownEl.innerHTML = currentMatches.map((c, idx) => `
+        <div class="disp-autocomplete-item ${idx === 0 ? 'is-active' : ''}" data-idx="${idx}" role="option">
+          <div>
+            <span class="disp-autocomplete-name">${c.name}</span>
+            <span class="disp-autocomplete-country">(${c.country || 'Polska'})</span>
+          </div>
+          <span class="disp-autocomplete-coords">${Math.abs(c.lat).toFixed(1)}°, ${Math.abs(c.lon).toFixed(1)}°</span>
+        </div>
+      `).join('');
+      dropdownEl.classList.add('is-open');
+
+      dropdownEl.querySelectorAll('.disp-autocomplete-item').forEach(item => {
+        item.addEventListener('mousedown', (e) => {
+          e.preventDefault();
+          const chosen = currentMatches[Number(item.getAttribute('data-idx'))];
+          if (chosen) selectItem(chosen);
+        });
+      });
+    }
+
+    function selectItem(city) {
+      inputEl.value = `${city.name} (${city.shortCountry || city.country || 'Polska'})`;
+      dropdownEl.classList.remove('is-open');
+    }
+
+    inputEl.addEventListener('focus', () => {
+      renderList(inputEl.value);
+    });
+
+    inputEl.addEventListener('input', () => {
+      renderList(inputEl.value);
+    });
+
+    inputEl.addEventListener('keydown', (e) => {
+      if (!dropdownEl.classList.contains('is-open')) return;
+      const items = dropdownEl.querySelectorAll('.disp-autocomplete-item');
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        activeIdx = Math.min(currentMatches.length - 1, activeIdx + 1);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        activeIdx = Math.max(0, activeIdx - 1);
+      } else if (e.key === 'Enter' && activeIdx >= 0 && currentMatches[activeIdx]) {
+        e.preventDefault();
+        selectItem(currentMatches[activeIdx]);
+        return;
+      } else if (e.key === 'Escape') {
+        dropdownEl.classList.remove('is-open');
+        return;
+      }
+      items.forEach((el, i) => el.classList.toggle('is-active', i === activeIdx));
+      if (items[activeIdx]) items[activeIdx].scrollIntoView({ block: 'nearest' });
+    });
+
+    document.addEventListener('mousedown', (e) => {
+      if (!inputEl.contains(e.target) && !dropdownEl.contains(e.target)) {
+        dropdownEl.classList.remove('is-open');
+      }
+    });
+  }
+
   function init() {
+    setupCityAutocomplete();
     const form = document.getElementById('disp-form');
     if (!form) return;
 
@@ -420,6 +528,9 @@
           </div>
         </div>
 
+        <!-- Paywalled Spersonalizowany Raport Władcy (20 PLN) Container -->
+        <div id="dispositor-report-container"></div>
+
         <!-- CTA Konsultacji -->
         <div class="disp-card" style="margin-top:2rem;background:linear-gradient(135deg, rgba(201,169,110,0.12) 0%, rgba(13,13,18,0.9) 100%);border-color:rgba(201,169,110,0.4);text-align:center;padding:2.75rem 1.75rem;">
           <div class="disp-badge" style="background:rgba(201,169,110,0.2);">PRYWATNA KONSULTACJA • ANALIZA KOSMOGRAMU</div>
@@ -433,15 +544,12 @@
             Zarezerwuj konsultację: kontakt@neoromantyczny.pl
           </a>
         </div>
-
-        <!-- Paywalled Spersonalizowany Raport Władcy (20 PLN) Container -->
-        <div id="dispositor-report-container"></div>
       </div>
     `;
 
     // Render Paywalled Custom Dispositor Report (20 PLN)
     if (window.__DISPOSITOR_REPORT_UI__ && typeof window.__DISPOSITOR_REPORT_UI__.renderPaywallTeaser === 'function') {
-      window.__DISPOSITOR_REPORT_UI__.renderPaywallTeaser(dispData, currentChart.planets);
+      window.__DISPOSITOR_REPORT_UI__.renderPaywallTeaser(dispData, currentChart.planets, currentChart);
     }
 
     // Bind event handlers

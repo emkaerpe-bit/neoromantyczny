@@ -769,3 +769,164 @@ html, body {
     padding: 0.85rem 1rem;
   }
 }
+
+/* ==========================================================================
+   CITY AUTOCOMPLETE STYLING
+   ========================================================================== */
+.disp-autocomplete-wrap {
+  position: relative;
+  width: 100%;
+}
+.disp-autocomplete-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: rgba(18, 18, 26, 0.98);
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  border-radius: 0.75rem;
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(201, 169, 110, 0.1);
+  display: none;
+}
+.disp-autocomplete-list.is-open {
+  display: block;
+}
+.disp-autocomplete-item {
+  padding: 0.65rem 0.95rem;
+  font-size: 0.85rem;
+  color: #FAF8F5;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.15s ease;
+}
+.disp-autocomplete-item:last-child {
+  border-bottom: none;
+}
+.disp-autocomplete-item:hover,
+.disp-autocomplete-item.is-active {
+  background: rgba(201, 169, 110, 0.15);
+  color: #C9A96E;
+}
+.disp-autocomplete-name {
+  font-weight: 500;
+}
+.disp-autocomplete-country {
+  font-size: 0.75rem;
+  color: rgba(250, 248, 245, 0.55);
+  margin-left: 0.35rem;
+}
+.disp-autocomplete-coords {
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: rgba(201, 169, 110, 0.75);
+}
+.disp-autocomplete-empty {
+  padding: 0.85rem 1rem;
+  font-size: 0.82rem;
+  color: rgba(250, 248, 245, 0.6);
+  text-align: center;
+}
+
+/* ==========================================================================
+   CURIOSITY GAP & PAYWALL REPORT STYLING
+   ========================================================================== */
+.disp-paywall-gate {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  margin-top: 1.5rem;
+}
+.disp-blurred-zone {
+  filter: blur(7px);
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.42;
+  transition: filter 0.4s ease, opacity 0.4s ease;
+}
+.disp-blurred-zone.is-unlocked {
+  filter: none !important;
+  user-select: auto !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+}
+.disp-paywall-overlay {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.5rem 1.25rem 2rem;
+  background: linear-gradient(180deg, rgba(13,13,20,0.15) 0%, rgba(13,13,20,0.92) 20%, rgba(13,13,20,0.99) 100%);
+  z-index: 20;
+}
+.disp-lock-card {
+  max-width: 580px;
+  width: 100%;
+  background: linear-gradient(165deg, rgba(24,24,36,0.98) 0%, rgba(14,14,22,0.99) 100%);
+  border: 1px solid rgba(201,169,110,0.5);
+  border-radius: 1.5rem;
+  padding: 2.25rem 1.75rem;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.9), 0 0 50px rgba(201,169,110,0.18);
+  text-align: center;
+}
+
+/* ==========================================================================
+   PRINT / PDF EXPORT STYLES
+   ========================================================================== */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #111111 !important;
+  }
+  #luxe-header-nav,
+  .disp-hero,
+  #disp-form,
+  .disp-lab-grid,
+  .disp-chain-grid,
+  .disp-cross-nav,
+  .disp-paywall-overlay,
+  .disp-print-btn,
+  .disp-badge,
+  .disp-btn,
+  .disp-btn-submit,
+  footer,
+  section.disp-container {
+    display: none !important;
+  }
+  #disp-results {
+    display: block !important;
+  }
+  .disp-card,
+  .disp-full-report-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #111111 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .disp-full-report-card * {
+    color: #111111 !important;
+  }
+  .disp-full-report-card h2,
+  .disp-full-report-card h3 {
+    color: #000000 !important;
+    page-break-after: avoid;
+  }
+  .disp-full-report-card section {
+    page-break-inside: avoid;
+    margin-bottom: 2rem !important;
+    border-bottom: 1px solid #E5E5E5 !important;
+    padding-bottom: 1.5rem !important;
+  }
+}

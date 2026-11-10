@@ -16,7 +16,7 @@
     }
   }
 
-  function renderPaywallTeaser(hierarchy, planets) {
+  function renderPaywallTeaser(hierarchy, planets, chart) {
     const container = document.getElementById('dispositor-report-container');
     if (!container) return;
 
@@ -28,93 +28,130 @@
     currentReportData = window.__DISPOSITOR_REPORT_DATA__.getReportForHierarchy(hierarchy, planets);
 
     if (isUnlocked()) {
-      renderFullReport(currentReportData);
+      renderFullReport(currentReportData, chart);
       return;
     }
 
-    const diag = currentReportData.coreDiagnosis || {};
-    const excerpt = currentReportData.structureTheory
-      ? currentReportData.structureTheory.slice(0, 190) + '...'
-      : (diag.psychDynamics ? diag.psychDynamics.slice(0, 160) + '...' : '');
+    const data = currentReportData;
+    const diag = data.coreDiagnosis || {};
+    const birthInfo = chart ? `Data: ${chart.hasTime ? 'z godziną' : 'bez godziny'} • ${chart.city && chart.city.name ? chart.city.name : 'Polska'}` : '';
 
     container.innerHTML = `
-      <section class="disp-report-teaser-card" style="margin-top:2.5rem;padding:2.25rem 1.75rem;background:linear-gradient(165deg, rgba(22,22,32,0.95) 0%, rgba(13,13,20,0.98) 100%);border:1px solid rgba(201,169,110,0.45);border-radius:1.75rem;box-shadow:0 25px 60px rgba(0,0,0,0.8), 0 0 40px rgba(201,169,110,0.12);text-align:center;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#C9A84C;text-transform:uppercase;margin-bottom:0.65rem;font-weight:700;">
-          STUDIUM PSYCHOLOGII GŁĘBI • 20 PLN
-        </div>
-        <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem, 4.5vw, 2.1rem);color:#FAF8F5;margin:0 0 0.5rem;line-height:1.25;">
-          ${currentReportData.title}
-        </h3>
-        <p style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#C9A84C;margin:0 0 1rem;letter-spacing:0.05em;">
-          ${currentReportData.archetype || ''}
-        </p>
-        <p style="font-size:0.95rem;line-height:1.65;color:rgba(250,248,245,0.75);max-width:680px;margin:0 auto 1.5rem;">
-          ${excerpt}
-        </p>
-
-        <div style="display:flex;justify-content:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.75rem;">
-          <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:9999px;padding:0.3rem 0.85rem;font-size:11px;color:rgba(250,248,245,0.9);font-family:'JetBrains Mono',monospace;">6 Rozdziałów Głębi</span>
-          <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:9999px;padding:0.3rem 0.85rem;font-size:11px;color:rgba(250,248,245,0.9);font-family:'JetBrains Mono',monospace;">Ciało & Układ Nerwowy</span>
-          <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:9999px;padding:0.3rem 0.85rem;font-size:11px;color:rgba(250,248,245,0.9);font-family:'JetBrains Mono',monospace;">Eksport PDF A4</span>
-          <span style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.35);border-radius:9999px;padding:0.3rem 0.85rem;font-size:11px;color:#34D399;font-weight:700;font-family:'JetBrains Mono',monospace;">BLIK • 20,00 PLN</span>
+      <article class="disp-full-report-card" style="margin-top:2.5rem;padding:2.5rem 2rem;background:linear-gradient(165deg, rgba(18,18,26,0.98) 0%, rgba(10,10,16,0.99) 100%);border:1px solid rgba(201,169,110,0.5);border-radius:2rem;box-shadow:0 35px 80px rgba(0,0,0,0.9), 0 0 50px rgba(201,169,110,0.15);color:#FAF8F5;">
+        
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,0.1);">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#C9A84C;text-transform:uppercase;font-weight:700;">
+              SPERSONALIZOWANE STUDIUM ARCHITEKTURY WEWNĘTRZNEJ • 20 PLN
+            </div>
+            <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem, 4vw, 2.2rem);color:#FAF8F5;margin:0.25rem 0 0.15rem;line-height:1.25;">
+              ${data.title}
+            </h2>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#FB7185;margin-top:0.35rem;">
+              🔒 Wersja Demonstracyjna • 1 z 6 Rozdziałów Odsłonięty
+            </div>
+          </div>
+          ${birthInfo ? `<div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(250,248,245,0.6);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:0.4rem 0.85rem;border-radius:9999px;">${birthInfo}</div>` : ''}
         </div>
 
-        <button type="button" id="disp-unlock-btn" class="disp-report-btn" style="background:#C9A84C;color:#0D0D12;font-weight:700;padding:1.15rem 2.25rem;border-radius:9999px;border:none;cursor:pointer;font-size:15px;box-shadow:0 0 35px rgba(201,168,76,0.35);transition:all 0.2s ease;display:inline-flex;align-items:center;gap:0.75rem;">
-          <span>Odblokuj Pełne Studium (20 PLN • BLIK)</span>
-          <span style="font-size:18px;">&rarr;</span>
-        </button>
+        ${data.structureTheory ? `
+        <!-- DIAGNOZA STRUKTURY DRZEWA (MARC EDMUND JONES & ROBERT HAND) -->
+        <section style="margin-bottom:2.25rem;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.3);border-radius:1rem;padding:1.4rem 1.35rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#C9A84C;text-transform:uppercase;margin-bottom:0.45rem;font-weight:700;">
+            DIAGNOZA STRUKTURALNA (MARC EDMUND JONES & ROBERT HAND)
+          </div>
+          <p style="font-size:0.95rem;line-height:1.75;color:rgba(250,248,245,0.9);margin:0;font-style:italic;">
+            ${data.structureTheory}
+          </p>
+        </section>
+        ` : ''}
 
-        <div style="margin-top:1rem;font-size:11px;color:rgba(250,248,245,0.45);font-family:'JetBrains Mono',monospace;">
-          🔒 Natychmiastowy dostęp po opłaceniu • Bezpieczne szyfrowanie Stripe
+        <!-- ROZDZIAŁ 1: RDZEŃ TOŻSAMOŚCI & ARCHETYP (ODSŁONIĘTY DLA UŻYTKOWNIKA) -->
+        <section style="margin-bottom:2.25rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#C9A84C;margin-bottom:0.4rem;font-weight:700;">
+            ROZDZIAŁ 01 • RDZEŃ TOŻSAMOŚCI & ARCHETYP [ODSŁONIĘTY]
+          </div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.35rem;color:#FAF8F5;margin:0 0 0.85rem;line-height:1.35;">
+            ${data.archetype}
+          </h3>
+          <p style="font-size:1rem;line-height:1.75;color:rgba(250,248,245,0.85);margin:0 0 1rem;">
+            ${diag.psychDynamics || ''}
+          </p>
+          <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:0.85rem;padding:1rem 1.25rem;font-size:0.92rem;line-height:1.65;color:rgba(250,248,245,0.75);">
+            <strong style="color:#C9A84C;">Prawda o Twojej suwerenności:</strong> ${diag.sovereigntyRole || ''}
+          </div>
+        </section>
+
+        <!-- STREFA ROZDZIAŁÓW 2–6 Z MECHANIZMEM CURIOSITY GAP (PAYWALL 20 PLN) -->
+        <div class="disp-paywall-gate">
+          <div class="disp-blurred-zone">
+            ${renderChapters2To6(data)}
+          </div>
+          <div class="disp-paywall-overlay">
+            <div class="disp-lock-card">
+              <div style="font-size:2.2rem;margin-bottom:0.35rem;">🔒</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;color:#C9A84C;text-transform:uppercase;margin-bottom:0.5rem;font-weight:700;">
+                PEŁNE STUDIUM PSYCHOLOGII GŁĘBI • 20,00 PLN
+              </div>
+              <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.35rem, 3.8vw, 1.85rem);color:#FAF8F5;margin:0 0 0.65rem;line-height:1.25;">
+                Odblokuj Pozostałe 5 Rozdziałów
+              </h3>
+              <p style="font-size:0.9rem;line-height:1.6;color:rgba(250,248,245,0.75);max-width:480px;margin:0 auto 1.25rem;">
+                Poznaj protokół somatyczny zasilania Twojego władcy, anatomię nieświadomego sabotażu, reguły granic w miłości oraz pobierz pełny raport w formacie PDF A4.
+              </p>
+
+              <div style="display:flex;justify-content:center;gap:0.45rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+                <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:9999px;padding:0.25rem 0.75rem;font-size:11px;color:rgba(250,248,245,0.9);font-family:'JetBrains Mono',monospace;">6 Rozdziałów Głębi</span>
+                <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:9999px;padding:0.25rem 0.75rem;font-size:11px;color:rgba(250,248,245,0.9);font-family:'JetBrains Mono',monospace;">Somatyka & Reset 24h</span>
+                <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:9999px;padding:0.25rem 0.75rem;font-size:11px;color:rgba(250,248,245,0.9);font-family:'JetBrains Mono',monospace;">Eksport PDF A4</span>
+                <span style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.35);border-radius:9999px;padding:0.25rem 0.75rem;font-size:11px;color:#34D399;font-weight:700;font-family:'JetBrains Mono',monospace;">BLIK • 20,00 PLN</span>
+              </div>
+
+              <button type="button" id="disp-unlock-btn" class="disp-report-btn" style="background:#C9A84C;color:#0D0D12;font-weight:700;padding:1.15rem 2.25rem;border-radius:9999px;border:none;cursor:pointer;font-size:15px;box-shadow:0 0 35px rgba(201,168,76,0.35);transition:all 0.2s ease;display:inline-flex;align-items:center;gap:0.75rem;">
+                <span>Odblokuj Pełne Studium (20 PLN • BLIK)</span>
+                <span style="font-size:18px;">&rarr;</span>
+              </button>
+
+              <div style="margin-top:1rem;font-size:11px;color:rgba(250,248,245,0.45);font-family:'JetBrains Mono',monospace;">
+                🔒 Natychmiastowy dostęp po opłaceniu • Bezpieczne szyfrowanie Stripe
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </article>
     `;
 
+    bindUnlockEvents(chart);
+  }
+
+  function bindUnlockEvents(chart) {
     const unlockBtn = document.getElementById('disp-unlock-btn');
     if (unlockBtn) {
       unlockBtn.addEventListener('click', () => {
         if (typeof window.openLuxeCheckout === 'function') {
           window.openLuxeCheckout('dyspozytorzy', () => {
             try { localStorage.setItem('neo_dispositor_unlocked', 'true'); } catch (e) {}
-            renderFullReport(currentReportData);
+            renderFullReport(currentReportData, chart);
           });
         }
       });
     }
   }
 
-  function renderFullReport(data) {
+  function renderFullReport(data, chart) {
     const container = document.getElementById('dispositor-report-container');
     if (!container || !data) return;
 
     const diag = data.coreDiagnosis || {};
-    const nour = data.nourishmentProtocol || {};
-    const shadow = data.shadowAndEmergency || {};
-    const rel = data.relationshipDynamics || {};
-    const car = data.careerAndWealth || {};
-    const filt = data.decisionalFilter || {};
-
-    const exhaustLi = (shadow.exhaustionSignals || []).map(s => `
-      <li style="margin-bottom:0.65rem;padding-left:1.5rem;position:relative;">
-        <span style="position:absolute;left:0;color:#FB7185;font-size:13px;">⚠</span>
-        <span>${s}</span>
-      </li>
-    `).join('');
-
-    const questLi = (filt.questions || []).map(q => `
-      <li style="margin-bottom:0.75rem;padding-left:1.5rem;position:relative;color:#FAF8F5;font-weight:500;">
-        <span style="position:absolute;left:0;color:#C9A84C;font-size:14px;">✦</span>
-        <span>${q}</span>
-      </li>
-    `).join('');
+    const birthInfo = chart ? `Data: ${chart.hasTime ? 'z godziną' : 'bez godziny'} • ${chart.city && chart.city.name ? chart.city.name : 'Polska'}` : '';
 
     container.innerHTML = `
-      <article class="disp-full-report-card" style="margin-top:3rem;padding:2.5rem 2rem;background:linear-gradient(165deg, rgba(18,18,26,0.98) 0%, rgba(10,10,16,0.99) 100%);border:1px solid rgba(201,169,110,0.5);border-radius:2rem;box-shadow:0 35px 80px rgba(0,0,0,0.9), 0 0 50px rgba(201,169,110,0.15);color:#FAF8F5;">
+      <article class="disp-full-report-card" style="margin-top:2.5rem;padding:2.5rem 2rem;background:linear-gradient(165deg, rgba(18,18,26,0.98) 0%, rgba(10,10,16,0.99) 100%);border:1px solid rgba(201,169,110,0.5);border-radius:2rem;box-shadow:0 35px 80px rgba(0,0,0,0.9), 0 0 50px rgba(201,169,110,0.15);color:#FAF8F5;">
         
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,0.1);">
           <div>
             <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#C9A84C;text-transform:uppercase;font-weight:700;">
-              STUDIUM ARCHITEKTURY WEWNĘTRZNEJ
+              SPERSONALIZOWANE STUDIUM ARCHITEKTURY WEWNĘTRZNEJ
             </div>
             <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem, 4vw, 2.2rem);color:#FAF8F5;margin:0.25rem 0 0.15rem;line-height:1.25;">
               ${data.title}
@@ -123,9 +160,12 @@
               ● Status: Odblokowany (Dostęp Dożywotni)
             </div>
           </div>
-          <button type="button" onclick="window.print()" class="disp-print-btn" style="background:transparent;border:1px solid #C9A84C;color:#C9A84C;font-family:'JetBrains Mono',monospace;font-size:12px;padding:0.65rem 1.25rem;border-radius:9999px;cursor:pointer;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.2s ease;">
-            <span>🖨 Zapisz / Drukuj PDF A4</span>
-          </button>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+            ${birthInfo ? `<div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(250,248,245,0.6);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:0.4rem 0.85rem;border-radius:9999px;">${birthInfo}</div>` : ''}
+            <button type="button" onclick="window.print()" class="disp-print-btn" style="background:transparent;border:1px solid #C9A84C;color:#C9A84C;font-family:'JetBrains Mono',monospace;font-size:12px;padding:0.65rem 1.25rem;border-radius:9999px;cursor:pointer;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.2s ease;">
+              <span>🖨 Zapisz / Drukuj PDF A4</span>
+            </button>
+          </div>
         </div>
 
         ${data.structureTheory ? `
@@ -156,6 +196,35 @@
           </div>
         </section>
 
+        <div class="disp-unlocked-zone">
+          ${renderChapters2To6(data)}
+        </div>
+      </article>
+    `;
+  }
+
+  function renderChapters2To6(data) {
+    const nour = data.nourishmentProtocol || {};
+    const shadow = data.shadowAndEmergency || {};
+    const rel = data.relationshipDynamics || {};
+    const car = data.careerAndWealth || {};
+    const filt = data.decisionalFilter || {};
+
+    const exhaustLi = (shadow.exhaustionSignals || []).map(s => `
+      <li style="margin-bottom:0.65rem;padding-left:1.5rem;position:relative;">
+        <span style="position:absolute;left:0;color:#FB7185;font-size:13px;">⚠</span>
+        <span>${s}</span>
+      </li>
+    `).join('');
+
+    const questLi = (filt.questions || []).map(q => `
+      <li style="margin-bottom:0.75rem;padding-left:1.5rem;position:relative;color:#FAF8F5;font-weight:500;">
+        <span style="position:absolute;left:0;color:#C9A84C;font-size:14px;">✦</span>
+        <span>${q}</span>
+      </li>
+    `).join('');
+
+    return `
         <!-- ROZDZIAŁ 2: PROTOKÓŁ CIAŁA & CODZIENNE ZASILANIE -->
         <section style="margin-bottom:2.25rem;background:rgba(201,168,76,0.04);border-left:3px solid #C9A84C;padding:1.5rem 1.25rem;border-radius:0 1rem 1rem 0;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#C9A84C;margin-bottom:0.4rem;font-weight:700;">
@@ -259,7 +328,6 @@
             </blockquote>
           </div>
         </section>
-      </article>
     `;
   }
 
