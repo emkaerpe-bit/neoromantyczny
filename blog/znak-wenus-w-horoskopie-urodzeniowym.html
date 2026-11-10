@@ -87,6 +87,179 @@
       border-color: #C9A96E !important;
       transform: rotate(90deg) !important;
     }
+
+    /* VENUS INLINE CALCULATOR CONTAINER (MIDNIGHT LUXE) */
+    #venus-calc-container {
+      position: relative !important;
+      margin: 3.5rem 0 !important;
+      padding: 3.25rem 2rem 3.5rem 2rem !important;
+      border-radius: 2rem !important;
+      background: linear-gradient(165deg, rgba(22, 22, 32, 0.92) 0%, rgba(13, 13, 18, 0.98) 100%) !important;
+      border: 1px solid rgba(201, 169, 110, 0.35) !important;
+      box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.85), 0 0 50px rgba(201, 169, 110, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+    }
+
+    @media (max-width: 640px) {
+      #venus-calc-container {
+        padding: 2.25rem 1.25rem 2.5rem 1.25rem !important;
+        border-radius: 1.5rem !important;
+        margin: 2.5rem 0 !important;
+      }
+    }
+
+    .venus-calc-glow-tr {
+      position: absolute !important;
+      right: -3rem !important;
+      top: -3rem !important;
+      width: 18rem !important;
+      height: 18rem !important;
+      background: radial-gradient(circle, rgba(201, 169, 110, 0.18) 0%, rgba(201, 169, 110, 0) 70%) !important;
+      border-radius: 9999px !important;
+      filter: blur(2.5rem) !important;
+      pointer-events: none !important;
+    }
+
+    .venus-calc-glow-bl {
+      position: absolute !important;
+      left: -3rem !important;
+      bottom: -3rem !important;
+      width: 16rem !important;
+      height: 16rem !important;
+      background: radial-gradient(circle, rgba(217, 70, 239, 0.08) 0%, rgba(217, 70, 239, 0) 70%) !important;
+      border-radius: 9999px !important;
+      filter: blur(2.5rem) !important;
+      pointer-events: none !important;
+    }
+
+    .venus-calc-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.5rem !important;
+      padding: 0.45rem 1.15rem !important;
+      border-radius: 9999px !important;
+      background: rgba(201, 169, 110, 0.1) !important;
+      border: 1px solid rgba(201, 169, 110, 0.3) !important;
+      color: #DFBE82 !important;
+      font-family: var(--font-jetbrains), monospace !important;
+      font-size: 10px !important;
+      letter-spacing: 0.18em !important;
+      text-transform: uppercase !important;
+      margin: 0 auto 1.25rem auto !important;
+      box-shadow: 0 2px 10px rgba(201, 169, 110, 0.08) !important;
+    }
+
+    .venus-calc-title {
+      font-family: var(--font-playfair), 'Playfair Display', Georgia, serif !important;
+      font-size: clamp(1.75rem, 3.2vw, 2.35rem) !important;
+      font-weight: 600 !important;
+      color: #FAF8F5 !important;
+      line-height: 1.25 !important;
+      margin: 0 auto 0.85rem auto !important;
+      text-align: center !important;
+      letter-spacing: -0.01em !important;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .venus-calc-desc {
+      color: rgba(250, 248, 245, 0.72) !important;
+      font-size: 0.95rem !important;
+      font-weight: 300 !important;
+      line-height: 1.65 !important;
+      max-width: 520px !important;
+      margin: 0 auto 2.25rem auto !important;
+      text-align: center !important;
+    }
+
+    .venus-calc-form {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 1rem !important;
+      max-width: 480px !important;
+      margin: 0 auto !important;
+      flex-wrap: wrap !important;
+    }
+
+    .venus-calc-input {
+      background-color: rgba(18, 18, 26, 0.95) !important;
+      color: #FAF8F5 !important;
+      color-scheme: dark !important;
+      border: 1px solid rgba(201, 169, 110, 0.4) !important;
+      border-radius: 9999px !important;
+      height: 50px !important;
+      width: 215px !important;
+      padding: 0 1.25rem 0 1.5rem !important;
+      font-size: 13.5px !important;
+      font-family: var(--font-jetbrains), monospace !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+      transition: all 0.25s ease !important;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .venus-calc-input:focus {
+      border-color: #C9A96E !important;
+      box-shadow: 0 0 18px rgba(201, 169, 110, 0.35), inset 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+      outline: none !important;
+    }
+
+    .venus-calc-input::-webkit-calendar-picker-indicator {
+      filter: invert(0.85) sepia(0.8) saturate(3) hue-rotate(5deg) !important;
+      cursor: pointer !important;
+      opacity: 0.85 !important;
+      transition: opacity 0.2s ease !important;
+    }
+    .venus-calc-input::-webkit-calendar-picker-indicator:hover {
+      opacity: 1 !important;
+    }
+
+    .venus-calc-button {
+      background: linear-gradient(135deg, #DFBE82 0%, #C9A84C 100%) !important;
+      color: #0D0D12 !important;
+      border: none !important;
+      border-radius: 9999px !important;
+      height: 50px !important;
+      width: 215px !important;
+      font-size: 13.5px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.02em !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.5rem !important;
+      cursor: pointer !important;
+      box-sizing: border-box !important;
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.35) !important;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .venus-calc-button:hover {
+      transform: translateY(-2px) scale(1.02) !important;
+      box-shadow: 0 8px 30px rgba(201, 168, 76, 0.5) !important;
+      background: linear-gradient(135deg, #F0D59E 0%, #D4B258 100%) !important;
+    }
+
+    .venus-calc-button:active {
+      transform: translateY(0) scale(0.99) !important;
+    }
+
+    @media (max-width: 480px) {
+      .venus-calc-form {
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+      .venus-calc-input,
+      .venus-calc-button {
+        width: 100% !important;
+        max-width: 280px !important;
+      }
+    }
   </style>
 
 
@@ -106,32 +279,32 @@
     
     
     <!-- MIKROKALKULATOR WENUS NEOROMANTYZM -->
-    <div id="venus-calc-container" class="my-12 p-8 md:p-10 rounded-[2.5rem] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-champagne/30 shadow-2xl relative overflow-hidden backdrop-blur-xl">
-      <div class="absolute -right-20 -top-20 w-64 h-64 bg-champagne/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div id="venus-calc-container">
+      <div class="venus-calc-glow-tr"></div>
+      <div class="venus-calc-glow-bl"></div>
       
-      <div class="relative z-10 text-center max-w-xl mx-auto">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-champagne/10 text-champagne font-mono text-[10px] uppercase tracking-widest border border-champagne/20 mb-4">
-          ✦ GEOMETRIA POŻĄDANIA & RELACJI
-        </span>
-        <h3 class="text-2xl md:text-3xl font-serif text-ivory mb-3">Oblicz swój Znak Wenus</h3>
-        <p class="text-ivory/70 text-sm leading-relaxed mb-6 font-light">
+      <div class="relative z-10 text-center max-w-xl mx-auto" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+        <div style="display: flex; justify-content: center; width: 100%;">
+          <span class="venus-calc-badge">
+            ✦ GEOMETRIA POŻĄDANIA &amp; RELACJI
+          </span>
+        </div>
+        <h3 class="venus-calc-title">Oblicz swój Znak Wenus</h3>
+        <p class="venus-calc-desc">
           Wpisz datę urodzenia. Algorytm w ułamku sekundy przeliczy współrzędne ekliptyczne Wenus i odsłoni Twój nieuświadomiony kod pożądania. Bez zakładania konta, spamu i podawania maila.
         </p>
 
-        <form id="venus-form" class="flex flex-col sm:flex-row items-center justify-center gap-3.5 max-w-md mx-auto" onsubmit="return false;">
+        <form id="venus-form" class="venus-calc-form" onsubmit="return false;">
           <input type="date" id="venus-birthdate" required 
-                 style="background-color: #14141B !important; color: #FAF8F5 !important; color-scheme: dark !important; border: 1.5px solid rgba(201, 169, 110, 0.5) !important; width: 200px !important; height: 48px !important; font-size: 13.5px !important; text-align: center !important; border-radius: 9999px !important; box-sizing: border-box !important;" 
-                 class="w-full sm:w-[200px] rounded-full px-5 focus:outline-none transition-all shadow-inner font-mono text-center" 
+                 class="venus-calc-input" 
                  placeholder="RRRR-MM-DD" />
           <button type="button" id="venus-calc-btn" 
-                  style="width: 200px !important; height: 48px !important; border-radius: 9999px !important; box-sizing: border-box !important; font-size: 13.5px !important;"
-                  class="w-full sm:w-[200px] inline-flex items-center justify-center gap-2 bg-champagne text-obsidian font-bold hover:scale-105 transition-all shadow-[0_0_25px_rgba(201,168,76,0.25)] cursor-pointer border-none">
+                  class="venus-calc-button">
             <span>Oblicz Znak</span>
-            <span class="text-base">➔</span>
+            <span class="text-base leading-none">➔</span>
           </button>
         </form>
-
-        </div>
+      </div>
     </div>
   
     
