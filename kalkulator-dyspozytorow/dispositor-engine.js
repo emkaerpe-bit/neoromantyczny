@@ -454,6 +454,8 @@
   window.__DISPOSITOR_ENGINE__ = {
     calcAllPlanets,
     calculateDispositorChain,
+    getTzOffset,
+    getCityByName,
     CITIES,
     BODIES,
     SIGNS,

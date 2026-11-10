@@ -14,6 +14,11 @@
 /kalkulator-astrokartografii/index.html /kalkulator-astrokartografii/ 301!
 /kalkulator-numerologiczny/index.html /kalkulator-numerologiczny/ 301!
 /kalkulator-dyspozytorow/index.html /kalkulator-dyspozytorow/ 301!
+/kalkulator-powrotu-saturna/index.html /kalkulator-powrotu-saturna/ 301!
+/powrot-saturna                 /kalkulator-powrotu-saturna/ 301
+/saturn-return                  /kalkulator-powrotu-saturna/ 301
+/blog/kalkulator-powrotu-saturna /kalkulator-powrotu-saturna/ 301
+/blog/kalkulator-powrotu-saturna/* /kalkulator-powrotu-saturna/ 301
 /success.html                   /success                  301!
 
 # Legacy Calculator Aliases
@@ -30,6 +35,7 @@
 /blog/kalkulator-dyspozytorow/* /kalkulator-dyspozytorow/ 301
 
 # Explicit 301! Forced Redirects for all Blog Articles (.html -> Clean)
+/blog/powrot-saturna-wiek-28-30-lat-jak-przetrwac.html                         /blog/powrot-saturna-wiek-28-30-lat-jak-przetrwac                       301!
 /blog/skorpion-i-ryby-milosc-dopasowanie-partnerskie.html                      /blog/skorpion-i-ryby-milosc-dopasowanie-partnerskie                    301!
 /blog/bledy-prezentowe-zodiakara.html                                          /blog/bledy-prezentowe-zodiakara                                         301!
 /blog/dopasowanie-znakow-zodiaku-jakie-znaki-do-siebie-pasuja.html             /blog/dopasowanie-znakow-zodiaku-jakie-znaki-do-siebie-pasuja           301!

@@ -155,6 +155,20 @@
       }
       renderAll(true);
     });
+
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const pDate = params.get('date');
+      if (pDate) {
+        const dateEl = document.getElementById('disp-date');
+        const timeEl = document.getElementById('disp-time');
+        const cityEl = document.getElementById('disp-city');
+        if (dateEl) dateEl.value = pDate;
+        if (timeEl && params.get('time')) timeEl.value = params.get('time');
+        if (cityEl && params.get('city')) cityEl.value = params.get('city');
+        setTimeout(() => { form.dispatchEvent(new Event('submit')); }, 120);
+      }
+    } catch (e) {}
   }
 
   function selectPlanet(planetKey) {

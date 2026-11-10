@@ -1,0 +1,142 @@
+/**
+ * NEOROMANTYCZNY — SATURN RETURN LUXE EXTENSIONS
+ * Wzbogacenie do dispositor.css (Zgodność 100% z Astra Engine UI)
+ */
+
+/* Badges Godności */
+.sat-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.badge-gold { background: rgba(201, 169, 110, 0.18); color: #FAF8F5; border: 1px solid rgba(201, 169, 110, 0.45); }
+.badge-silver { background: rgba(180, 190, 205, 0.15); color: #d0d6e2; border: 1px solid rgba(180, 190, 205, 0.3); }
+.badge-bronze { background: rgba(205, 127, 50, 0.15); color: #dfa070; border: 1px solid rgba(205, 127, 50, 0.3); }
+.badge-crimson { background: rgba(251, 113, 133, 0.15); color: #FB7185; border: 1px solid rgba(251, 113, 133, 0.35); }
+
+/* Chronometr Czasu Rzeczywistego */
+.chrono-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.chrono-slot {
+  background: rgba(10, 10, 16, 0.9);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  min-width: 54px;
+  text-align: center;
+}
+
+.chrono-num {
+  display: block;
+  font-size: 1.55rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', monospace;
+  color: #FAF8F5;
+  line-height: 1;
+}
+
+.chrono-lbl {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: rgba(250, 248, 245, 0.5);
+  margin-top: 0.25rem;
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.chrono-sep {
+  font-size: 1.3rem;
+  color: #C9A96E;
+  opacity: 0.6;
+  font-weight: bold;
+}
+
+/* Curiosity Gap & Paywall */
+.sat-paywall-locked {
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid rgba(201, 169, 110, 0.45) !important;
+  background: radial-gradient(circle at top, rgba(30, 25, 20, 0.65), rgba(13, 13, 18, 0.98)) !important;
+  box-shadow: 0 0 35px rgba(201, 169, 110, 0.15);
+}
+
+.sat-blurred-content {
+  filter: blur(8px);
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.32;
+}
+
+.sat-paywall-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(15, 15, 22, 0.88) 0%, rgba(10, 10, 14, 0.97) 100%);
+}
+
+.sat-btn-gold {
+  background: linear-gradient(135deg, #d4af37, #997825);
+  color: #08080c;
+  padding: 0.95rem 2rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(201, 169, 110, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.sat-btn-gold:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(201, 169, 110, 0.5);
+  color: #000;
+}
+
+.sat-disp-cta:hover {
+  background: rgba(201, 169, 110, 0.22) !important;
+  border-color: #C9A96E !important;
+  color: #FAF8F5 !important;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .chrono-slot {
+    padding: 0.45rem 0.55rem;
+    min-width: 44px;
+  }
+  .chrono-num {
+    font-size: 1.25rem;
+  }
+  .chrono-lbl {
+    font-size: 0.55rem;
+  }
+  .sat-btn-gold {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.2rem;
+    font-size: 0.88rem;
+  }
+}

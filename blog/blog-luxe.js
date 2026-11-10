@@ -132,6 +132,22 @@
         font-size: 11px;
       }
     }
+    nav.navbar-scrolled {
+      background-color: rgba(250, 248, 245, 0.92) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border-color: rgba(0, 0, 0, 0.06) !important;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08) !important;
+    }
+    nav.navbar-scrolled span, nav.navbar-scrolled .hidden.md\\:flex {
+      color: #0D0D12 !important;
+    }
+    nav.navbar-scrolled div.hidden.md\\:flex a:not(.bg-champagne) {
+      color: rgba(13, 13, 18, 0.7) !important;
+    }
+    nav.navbar-scrolled div.hidden.md\\:flex a:not(.bg-champagne):hover {
+      color: #C9A84C !important;
+    }
   `;
   document.head.appendChild(style);
 
@@ -187,6 +203,20 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   setTimeout(onScroll, 400);
+
+  // 3b. STICKY GLASSMORPHIC NAVBAR SCROLL LISTENER
+  const navEl = document.getElementById('navbar') || document.querySelector('nav');
+  function updateNavbar() {
+    if (!navEl) return;
+    const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollPos > 50) {
+      navEl.classList.add('navbar-scrolled');
+    } else {
+      navEl.classList.remove('navbar-scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  updateNavbar();
 
   // 4. ASTRO-PSYCHOLOGICAL GLOSSARY DEFINITIONS
   const GLOSSARY = {

@@ -62,6 +62,17 @@
       successSub: 'Analiza psychologii głębi i władcy horoskopu jest gotowa.',
       unlockKey: 'neo_dispositor_unlocked',
       directUrl: 'https://buy.stripe.com/fZufZacz78HZgsK6iucwg01'
+    },
+    'saturn': {
+      tag: 'THE CHRONOS PROTOCOL • ZAMKNIĘTY RAPORT TRANSFORMACJI',
+      title: 'Protokół Przetrwania Powrotu Saturna',
+      sub: 'Indywidualna instrukcja przejścia tranzytu 28–30 r.ż., kalendarz 3 fal i Kodeks Rezyliencji.',
+      price: '47,00 PLN',
+      btn: 'Zapłać 47,00 PLN i Odblokuj Raport &rarr;',
+      successHeading: 'Raport został odblokowany!',
+      successSub: 'Wszystkie 5 rozdziałów Protokołu Chronosa jest już aktywnych.',
+      unlockKey: 'neo_saturn_unlocked',
+      directUrl: 'https://buy.stripe.com/bJecMY8iRe2jdgy9uGcwg03'
     }
   };
 
