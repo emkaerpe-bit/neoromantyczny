@@ -107,7 +107,7 @@
                 <span style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.35);border-radius:9999px;padding:0.25rem 0.75rem;font-size:11px;color:#34D399;font-weight:700;font-family:'JetBrains Mono',monospace;">BLIK • 20,00 PLN</span>
               </div>
 
-              <button type="button" id="disp-unlock-btn" class="disp-report-btn" style="background:#C9A84C;color:#0D0D12;font-weight:700;padding:1.15rem 2.25rem;border-radius:9999px;border:none;cursor:pointer;font-size:15px;box-shadow:0 0 35px rgba(201,168,76,0.35);transition:all 0.2s ease;display:inline-flex;align-items:center;gap:0.75rem;">
+              <button type="button" id="disp-unlock-btn" class="disp-report-btn" style="background:#C9A84C;color:#0D0D12;font-weight:700;padding:1rem 1.4rem;border-radius:9999px;border:none;cursor:pointer;font-size:14px;box-shadow:0 0 35px rgba(201,168,76,0.35);transition:all 0.2s ease;display:inline-flex;align-items:center;justify-content:center;gap:0.6rem;max-width:100%;box-sizing:border-box;white-space:normal;text-align:center;">
                 <span>Odblokuj Pełne Studium (20 PLN • BLIK)</span>
                 <span style="font-size:18px;">&rarr;</span>
               </button>
