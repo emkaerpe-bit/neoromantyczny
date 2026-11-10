@@ -330,7 +330,7 @@
             <div style="display:flex;align-items:center;gap:0.5rem;">
               <span class="disp-glyph-box" style="width:1.9rem;height:1.9rem;font-size:1.05rem;">${p.glyph}</span>
               <strong style="font-size:0.98rem;color:#FAF8F5;">${p.name}</strong>
-              <span style="color:rgba(250,248,245,0.6);font-size:0.8rem;">w znaku ${p.signName} (${p.degInSign}°)</span>
+              <span style="color:rgba(250,248,245,0.6);font-size:0.8rem;margin-left:0.35rem;">w znaku ${p.signName} (${p.degInSign}°)</span>
             </div>
             ${statusBadge}
           </div>

@@ -103,7 +103,8 @@
                 max-width: calc(100vw - 2rem) !important;
                 left: 50% !important;
                 transform: translateX(-50%) !important;
-                bottom: calc(100% + 10px) !important;
+                top: calc(100% + 12px) !important;
+                bottom: auto !important;
                 z-index: 999999 !important;
             }
 
@@ -208,7 +209,7 @@
                             </button>
 
                             <!-- Glassmorphic Dropdown Popover -->
-                            <div id="calc-popover" style="position: absolute; left: 50%; bottom: calc(100% + 10px); transform: translateX(-50%) scale(0.95); width: 310px; max-width: calc(100vw - 2rem); opacity: 0; pointer-events: none; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 999999; box-sizing: border-box;">
+                            <div id="calc-popover" style="position: absolute; left: 50%; top: calc(100% + 12px); bottom: auto; transform: translateX(-50%) scale(0.95); width: 310px; max-width: calc(100vw - 2rem); opacity: 0; pointer-events: none; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); z-index: 999999; box-sizing: border-box;">
                                 <div style="background-color: rgba(11, 15, 25, 0.98); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(201, 168, 110, 0.35); border-radius: 20px; padding: 14px 14px 16px 14px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 25px 60px -15px rgba(0,0,0,0.9), 0 0 35px rgba(201,168,76,0.15); box-sizing: border-box;">
                                     <div style="text-align: center; margin-bottom: 2px;">
                                         <p style="color: #C9A96E; font-family: monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 2px 0; font-weight: 600;">Eksploruj Narzędzia</p>
@@ -278,8 +279,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Decorative arrow pointing down -->
-                                <div style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%) rotate(45deg); width: 10px; height: 10px; background-color: rgba(11, 15, 25, 0.98); border-right: 1px solid rgba(201, 168, 110, 0.35); border-bottom: 1px solid rgba(201, 168, 110, 0.35); margin-top: -5px; z-index: 9998; box-sizing: border-box;"></div>
+                                <!-- Decorative arrow pointing up -->
+                                <div style="position: absolute; top: -6px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 10px; height: 10px; background-color: rgba(11, 15, 25, 0.98); border-left: 1px solid rgba(201, 168, 110, 0.35); border-top: 1px solid rgba(201, 168, 110, 0.35); z-index: 9998; box-sizing: border-box;"></div>
                             </div>
                         </div>
                         <button id="hero-btn-articles" onclick="document.getElementById('artykuly').scrollIntoView({behavior:'smooth'})" class="group flex items-center gap-4 bg-white/5 border border-white/10 text-ivory px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-colors backdrop-blur-md">

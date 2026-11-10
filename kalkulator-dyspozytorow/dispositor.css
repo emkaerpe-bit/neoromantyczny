@@ -697,12 +697,20 @@ html, body {
 @media (max-width: 768px) {
   .disp-container {
     width: 100% !important;
+    max-width: 100% !important;
     padding: 5.5rem 0.85rem 3.5rem !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
   }
   .disp-card {
     padding: 1.25rem 0.85rem !important;
     border-radius: 1.25rem !important;
     margin-bottom: 1.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
   .disp-hero {
     margin-bottom: 1.75rem !important;
@@ -725,15 +733,23 @@ html, body {
   .disp-table {
     font-size: 0.76rem !important;
     width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
   }
   .disp-table th, .disp-table td {
     padding: 0.5rem 0.35rem !important;
   }
   .disp-chain-grid {
     grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .disp-chain-item {
     padding: 0.75rem 0.85rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .disp-btn,
   .disp-btn-submit {
