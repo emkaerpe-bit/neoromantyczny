@@ -9,18 +9,34 @@
 
   function isUnlocked() {
     try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('reset') === '1' || params.get('lock') === '1') {
+        localStorage.removeItem('neo_dispositor_unlocked');
+        return false;
+      }
       return localStorage.getItem('neo_dispositor_unlocked') === 'true' ||
-             new URLSearchParams(window.location.search).get('unlocked') === 'true';
+             params.get('unlocked') === 'true';
     } catch (e) {
       return false;
     }
   }
 
-  function renderPaywallTeaser(hierarchy, planets, chart) {
+  function renderPaywallTeaser(hierarchy, planets, chart, attempts) {
+    attempts = attempts || 0;
     const container = document.getElementById('dispositor-report-container');
-    if (!container) return;
+    if (!container) {
+      if (attempts < 20) {
+        setTimeout(function () { renderPaywallTeaser(hierarchy, planets, chart, attempts + 1); }, 60);
+        return;
+      }
+      return;
+    }
 
     if (!window.__DISPOSITOR_REPORT_DATA__ || !window.__DISPOSITOR_REPORT_DATA__.getReportForHierarchy) {
+      if (attempts < 20) {
+        setTimeout(function () { renderPaywallTeaser(hierarchy, planets, chart, attempts + 1); }, 60);
+        return;
+      }
       console.warn('Baza wiedzy raportu nie została jeszcze załadowana.');
       return;
     }

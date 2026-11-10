@@ -548,9 +548,17 @@
     `;
 
     // Render Paywalled Custom Dispositor Report (20 PLN)
-    if (window.__DISPOSITOR_REPORT_UI__ && typeof window.__DISPOSITOR_REPORT_UI__.renderPaywallTeaser === 'function') {
-      window.__DISPOSITOR_REPORT_UI__.renderPaywallTeaser(dispData, currentChart.planets, currentChart);
+    function triggerPaywallRender(attempts) {
+      attempts = attempts || 0;
+      if (window.__DISPOSITOR_REPORT_UI__ && typeof window.__DISPOSITOR_REPORT_UI__.renderPaywallTeaser === 'function') {
+        window.__DISPOSITOR_REPORT_UI__.renderPaywallTeaser(dispData, currentChart.planets, currentChart);
+      } else if (attempts < 20) {
+        setTimeout(function () { triggerPaywallRender(attempts + 1); }, 60);
+      } else {
+        console.warn('Nie udało się załadować modułu __DISPOSITOR_REPORT_UI__ po 20 próbach.');
+      }
     }
+    triggerPaywallRender(0);
 
     // Bind event handlers
     document.querySelectorAll('.disp-planet-hit, .disp-rank-row, .disp-chain-item').forEach(el => {
