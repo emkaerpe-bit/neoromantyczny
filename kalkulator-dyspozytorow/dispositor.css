@@ -181,6 +181,29 @@ body {
   margin-bottom: 1rem;
 }
 
+.disp-rx-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #FB7185;
+  background: rgba(251, 113, 133, 0.12);
+  border: 1px solid rgba(251, 113, 133, 0.35);
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+}
+
+.disp-badge-rx {
+  background: rgba(251, 113, 133, 0.15) !important;
+  color: #FB7185 !important;
+  border-color: rgba(251, 113, 133, 0.35) !important;
+}
+
 .disp-heading {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 2rem;

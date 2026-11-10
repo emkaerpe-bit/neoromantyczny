@@ -142,14 +142,7 @@
             + (-Math.sin(w) * Math.sin(Om) + Math.cos(w) * Math.cos(Om) * Math.cos(inc)) * yv;
     return { x, y };
   }
-  function calcAllPlanets(dateStr, timeStr, cityName) {
-    const city = getCityByName(cityName);
-    const [y, m, d] = dateStr.split('-').map(Number);
-    const hasTime = Boolean(timeStr && timeStr.includes(':'));
-    const [hh, mm] = hasTime ? timeStr.split(':').map(Number) : [12, 0];
-    const tzOffset = getTzOffset(y, m, d, hh, mm);
-    const utcDate = new Date(Date.UTC(y, m - 1, d, hh - tzOffset, mm, 0));
-    const jd = utcDate.getTime() / 86400000 + 2440587.5;
+  function calcRawLonsAtJd(jd) {
     const T = (jd - 2451545.0) / 36525.0;
 
     // 1. Słońce
@@ -175,27 +168,41 @@
     const uranH  = helioXY(19.18916464 - 0.00203876 * T, 0.04725744 - 0.00004397 * T, 0.77263783 - 0.00055246 * T, 313.23810451 + 428.46788481 * T, 170.95427630 + 0.40805281 * T, 74.01692503 + 0.04240589 * T);
     const nepH   = helioXY(30.06992276 + 0.00026291 * T, 0.00860619 + 0.00002132 * T, 1.77004347 - 0.00025547 * T, -55.12002969 + 218.48620020 * T, 44.96476227 - 0.32241464 * T, 131.78422574 - 0.00593206 * T);
     const plutoH = helioXY(39.48211675 - 0.00031596 * T, 0.24882730 + 0.00005170 * T, 17.14001206 + 0.00004818 * T, 238.92903833 + 145.20780515 * T, 224.06891629 - 0.04062942 * T, 110.30393684 - 0.01183482 * T);
-
-    const mercLon  = norm360(Math.atan2(mercH.y - earthH.y, mercH.x - earthH.x) * RAD);
-    const venusLon = norm360(Math.atan2(venusH.y - earthH.y, venusH.x - earthH.x) * RAD);
-    const marsLon  = norm360(Math.atan2(marsH.y - earthH.y, marsH.x - earthH.x) * RAD);
-    const jupLon   = norm360(Math.atan2(jupH.y - earthH.y, jupH.x - earthH.x) * RAD);
-    const satLon   = norm360(Math.atan2(satH.y - earthH.y, satH.x - earthH.x) * RAD);
-    const uranLon  = norm360(Math.atan2(uranH.y - earthH.y, uranH.x - earthH.x) * RAD);
-    const nepLon   = norm360(Math.atan2(nepH.y - earthH.y, nepH.x - earthH.x) * RAD);
-    const plutoLon = norm360(Math.atan2(plutoH.y - earthH.y, plutoH.x - earthH.x) * RAD);
-
-    // 4. Chiron (Kepler orbit heliocentric -> geocentric, NASA JPL J2000 epoch)
     const chironH = helioXY(13.65, 0.3806, 6.94, 217.58 + 713.58 * T, 188.86, 209.38);
-    const chironLon = norm360(Math.atan2(chironH.y - earthH.y, chironH.x - earthH.x) * RAD);
 
-    // 5. Węzeł Północny (Mean Lunar Node)
-    const nodeLon = norm360(125.04452 - 1934.136261 * T + 0.0020708 * T * T);
+    return {
+      sun: sunLon,
+      moon: moonLon,
+      mercury: norm360(Math.atan2(mercH.y - earthH.y, mercH.x - earthH.x) * RAD),
+      venus:   norm360(Math.atan2(venusH.y - earthH.y, venusH.x - earthH.x) * RAD),
+      mars:    norm360(Math.atan2(marsH.y - earthH.y, marsH.x - earthH.x) * RAD),
+      jupiter: norm360(Math.atan2(jupH.y - earthH.y, jupH.x - earthH.x) * RAD),
+      saturn:  norm360(Math.atan2(satH.y - earthH.y, satH.x - earthH.x) * RAD),
+      uranus:  norm360(Math.atan2(uranH.y - earthH.y, uranH.x - earthH.x) * RAD),
+      neptune: norm360(Math.atan2(nepH.y - earthH.y, nepH.x - earthH.x) * RAD),
+      pluto:   norm360(Math.atan2(plutoH.y - earthH.y, plutoH.x - earthH.x) * RAD),
+      chiron:  norm360(Math.atan2(chironH.y - earthH.y, chironH.x - earthH.x) * RAD),
+      node:    norm360(125.04452 - 1934.136261 * T + 0.0020708 * T * T),
+      lilith:  norm360(83.353243 + 4069.0137287 * T - 0.01032 * T * T + 180.0)
+    };
+  }
 
-    // 6. Lilith (Czarny Księżyc - Mean Lunar Apogee = Perigee + 180°)
-    const lilithLon = norm360(83.353243 + 4069.0137287 * T - 0.01032 * T * T + 180.0);
+  function calcAllPlanets(dateStr, timeStr, cityName) {
+    const city = getCityByName(cityName);
+    const [y, m, d] = dateStr.split('-').map(Number);
+    const hasTime = Boolean(timeStr && timeStr.includes(':'));
+    const [hh, mm] = hasTime ? timeStr.split(':').map(Number) : [12, 0];
+    const tzOffset = getTzOffset(y, m, d, hh, mm);
+    const utcDate = new Date(Date.UTC(y, m - 1, d, hh - tzOffset, mm, 0));
+    const jd = utcDate.getTime() / 86400000 + 2440587.5;
+    const T = (jd - 2451545.0) / 36525.0;
 
-    // 7. Ascendent
+    // Pozycje w chwili narodzin oraz chwile później do detekcji wektora prędkości
+    const rawLons = calcRawLonsAtJd(jd);
+    const dt = 0.01;
+    const rawLonsNext = calcRawLonsAtJd(jd + dt);
+
+    // Ascendent
     let ascLon = null;
     if (hasTime) {
       const gmst = norm360(280.46061837 + 360.98564736629 * (jd - 2451545.0));
@@ -207,16 +214,12 @@
     }
     const refAsc = ascLon !== null ? ascLon : 0;
 
-    // 8. Punkt Szczęścia (Pars Fortunae)
-    const sunDist = norm360(sunLon - refAsc);
+    // Punkt Szczęścia (Pars Fortunae)
+    const sunDist = norm360(rawLons.sun - refAsc);
     const isDay = (sunDist >= 180 && sunDist < 360);
-    const fortuneLon = norm360(isDay ? (refAsc + moonLon - sunLon) : (refAsc + sunLon - moonLon));
+    rawLons.fortune = norm360(isDay ? (refAsc + rawLons.moon - rawLons.sun) : (refAsc + rawLons.sun - rawLons.moon));
 
-    const rawLons = {
-      sun: sunLon, moon: moonLon, mercury: mercLon, venus: venusLon, mars: marsLon,
-      jupiter: jupLon, saturn: satLon, uranus: uranLon, neptune: nepLon, pluto: plutoLon,
-      chiron: chironLon, lilith: lilithLon, node: nodeLon, fortune: fortuneLon
-    };
+    const RETRO_CANDIDATES = ['mercury', 'venus', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto', 'chiron'];
 
     const planets = BODIES.map(b => {
       const lon = rawLons[b.key];
@@ -225,6 +228,20 @@
       const degInSign = Math.floor(lon % 30);
       const minInSign = Math.floor((lon % 1) * 60);
       const degreeInSign = `${degInSign}°${minInSign < 10 ? '0' : ''}${minInSign}'`;
+
+      // Detekcja ruchu wstecznego (Retrograde)
+      let speed = 0;
+      let isRetrograde = false;
+      if (rawLonsNext[b.key] !== undefined) {
+        let diff = rawLonsNext[b.key] - lon;
+        if (diff > 180) diff -= 360;
+        if (diff < -180) diff += 360;
+        speed = Math.round((diff / dt) * 10000) / 10000;
+        if (RETRO_CANDIDATES.includes(b.key) && speed < 0) {
+          isRetrograde = true;
+        }
+      }
+
       return {
         key: b.key,
         name: b.name,
@@ -238,10 +255,14 @@
         min: minInSign,
         degInSign: degInSign,
         minInSign: minInSign,
-        degreeInSign: degreeInSign
+        degreeInSign: degreeInSign,
+        speed: speed,
+        isRetrograde: isRetrograde,
+        motion: isRetrograde ? 'R' : 'D'
       };
     });
 
+    const retrogradePlanets = planets.filter(p => p.isRetrograde);
     const ascSignIdx = ascLon !== null ? Math.floor(ascLon / 30) : null;
     const ascSign = ascSignIdx !== null ? SIGNS[ascSignIdx] : null;
     const houseCusps = Array.from({ length: 12 }, (_, i) => ({
@@ -251,6 +272,9 @@
 
     return {
       planets,
+      retrogradePlanets,
+      retrogradeCount: retrogradePlanets.length,
+      hasRetrograde: retrogradePlanets.length > 0,
       ascLon,
       ascSign,
       ascendant: {

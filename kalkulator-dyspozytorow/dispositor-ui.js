@@ -183,14 +183,20 @@
       const rulerPlanet = currentChart.planets.find(p => p.key === rulerKey);
       const desc = RULER_INTERPRETATIONS[rulerKey] || '';
 
+      const isRulerRx = rulerPlanet && rulerPlanet.isRetrograde;
       chartRulerHtml = `
         <div class="disp-card disp-card-gold" style="margin-bottom:1.25rem;">
-          <div class="disp-badge">WŁADCA HOROSKOPU • KIEROWNIK ŻYCIA</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
+            <div class="disp-badge" style="margin-bottom:0;">WŁADCA HOROSKOPU • KIEROWNIK ŻYCIA</div>
+            ${isRulerRx ? '<span class="disp-badge disp-badge-rx" style="margin-bottom:0;font-size:0.65rem;">RETROGRADACJA (Rx)</span>' : ''}
+          </div>
           <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
             <div class="disp-glyph-box" style="width:3.25rem;height:3.25rem;font-size:1.85rem;border-color:rgba(201,169,110,0.5);">${rulerPlanet.glyph}</div>
             <div>
-              <h3 style="font-family:'Playfair Display',serif;font-size:1.45rem;margin:0;color:#FAF8F5;">
-                ${rulerPlanet.name} <span style="font-size:0.92rem;color:#C9A96E;font-family:'JetBrains Mono',monospace;">(w znaku ${rulerPlanet.signName})</span>
+              <h3 style="font-family:'Playfair Display',serif;font-size:1.45rem;margin:0;color:#FAF8F5;display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;">
+                <span>${rulerPlanet.name}</span>
+                ${isRulerRx ? '<span class="disp-rx-tag" title="Władca w ruchu wstecznym">Rx</span>' : ''}
+                <span style="font-size:0.92rem;color:#C9A96E;font-family:'JetBrains Mono',monospace;">(w znaku ${rulerPlanet.signName} ${rulerPlanet.degreeInSign})</span>
               </h3>
               <p style="font-size:0.8rem;color:rgba(250,248,245,0.6);margin:0.2rem 0 0;font-family:'JetBrains Mono',monospace;">
                 Władca Ascendentu w znaku ${currentChart.ascSign.name} ${currentChart.ascSign.glyph}
@@ -200,6 +206,11 @@
           <p style="font-size:0.9rem;line-height:1.65;color:rgba(250,248,245,0.85);margin:0;font-style:italic;">
             „${desc}”
           </p>
+          ${isRulerRx ? `
+            <div style="margin-top:0.85rem;padding:0.65rem 0.85rem;border-radius:8px;background:rgba(251,113,133,0.08);border:1px solid rgba(251,113,133,0.25);font-size:0.82rem;line-height:1.55;color:rgba(250,248,245,0.85);">
+              <strong style="color:#FB7185;">Wpływ Retrogradacji na Władcę:</strong> Twoja energia życiowa nie jest zorientowana na natychmiastową, impulsywną ekspresję w świecie. Każda reakcja przechodzi przez wewnętrzny filtr introspekcji i rewizji. Potrzebujesz więcej czasu na wejście w nowe otoczenie, lecz Twoje decyzje są znacznie trwalsze i odporniejsze na manipulację.
+            </div>
+          ` : ''}
         </div>
       `;
     }
@@ -214,7 +225,7 @@
         return `
           <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(201,169,110,0.12);padding:0.4rem 0.8rem;border-radius:6px;border:1px solid rgba(201,169,110,0.3);margin:0.25rem;">
             <span style="font-size:1.2rem;color:#C9A96E;">${p.glyph}</span>
-            <strong style="color:#FAF8F5;font-size:0.95rem;">${p.name}</strong>
+            <strong style="color:#FAF8F5;font-size:0.95rem;">${p.name}</strong>${p.isRetrograde ? ' <span class="disp-rx-tag" title="Władca w ruchu wstecznym">Rx</span>' : ''}
             <span style="font-size:0.75rem;color:#C9A96E;font-family:'JetBrains Mono',monospace;">${Math.round(data.percentage)}%</span>
           </div>
         `;
@@ -235,7 +246,7 @@
       const mrPairs = dispData.mutualReceptions.map(pair => {
         const p1 = currentChart.planets.find(pl => pl.key === pair[0]);
         const p2 = currentChart.planets.find(pl => pl.key === pair[1]);
-        return `${p1.name} ${p1.glyph} (w ${p1.signName}) ↔ ${p2.name} ${p2.glyph} (w ${p2.signName})`;
+        return `${p1.name} ${p1.glyph}${p1.isRetrograde ? ' <span class="disp-rx-tag">Rx</span>' : ''} (w ${p1.signName}) ↔ ${p2.name} ${p2.glyph}${p2.isRetrograde ? ' <span class="disp-rx-tag">Rx</span>' : ''} (w ${p2.signName})`;
       }).join('<br>');
 
       finalBoxHtml = `
@@ -285,6 +296,39 @@
       `;
     }
 
+    // 4b. Status Retrogradacji (Introspekcja i Rewizja Wewnętrzna wg C.G. Junga)
+    let retroBoxHtml = '';
+    const retroPlanets = currentChart.retrogradePlanets || [];
+    if (retroPlanets.length > 0) {
+      const retroItemsHtml = retroPlanets.map(p => `
+        <div style="display:inline-flex;align-items:center;gap:0.45rem;background:rgba(251,113,133,0.08);border:1px solid rgba(251,113,133,0.25);padding:0.35rem 0.65rem;border-radius:6px;margin:0.2rem;">
+          <span style="color:#FB7185;font-size:1rem;">${p.glyph}</span>
+          <strong style="color:#FAF8F5;font-size:0.85rem;">${p.name}</strong>
+          <span class="disp-rx-tag">Rx</span>
+          <span style="font-size:0.75rem;color:rgba(250,248,245,0.6);font-family:'JetBrains Mono',monospace;">w ${p.signName} ${p.degreeInSign}</span>
+        </div>
+      `).join('');
+
+      retroBoxHtml = `
+        <div class="disp-card" style="margin-bottom:1.25rem;border-color:rgba(251,113,133,0.35);">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
+            <div class="disp-badge disp-badge-rx" style="margin:0;">
+              WEKTOR INTROSPEKCJI • RETROGRADACJA (Rx)
+            </div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:#FB7185;">
+              ${retroPlanets.length} ${retroPlanets.length === 1 ? 'planeta w ruchu wstecznym' : (retroPlanets.length < 5 ? 'planety w ruchu wstecznym' : 'planet w ruchu wstecznym')}
+            </span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.25rem;margin-bottom:0.85rem;">
+            ${retroItemsHtml}
+          </div>
+          <p style="font-size:0.88rem;line-height:1.65;color:rgba(250,248,245,0.8);margin:0;">
+            W psychologii analitycznej C.G. Junga ruch wsteczny oznacza introwersję funkcji psychicznej: dana energia nie realizuje się bezrefleksyjnie w świecie zewnętrznym, lecz jest nieustannie weryfikowana, kwestionowana i pogłębiana od wewnątrz. W łańcuchu dyspozytorów planety Rx stanowią wewnętrzne filtry — sprawiają, że nie przyjmujesz gotowych schematów społecznych, lecz budujesz własne, bezkompromisowe kryteria prawdy.
+          </p>
+        </div>
+      `;
+    }
+
     // 5. Ranking w psychice (Tabela)
     let rankingRows = dispData.summary.map((item, idx) => {
       const p = currentChart.planets.find(pl => pl.key === item.planet);
@@ -295,10 +339,10 @@
           <td>
             <div style="display:flex;align-items:center;gap:0.45rem;">
               <span class="disp-glyph-box" style="width:1.8rem;height:1.8rem;font-size:1.05rem;border-color:${isSelected ? '#C9A96E' : 'rgba(255,255,255,0.1)'};">${p.glyph}</span>
-              <strong style="color:${isSelected ? '#C9A96E' : '#FAF8F5'};">${p.name}</strong>
+              <strong style="color:${isSelected ? '#C9A96E' : '#FAF8F5'};">${p.name}</strong>${p.isRetrograde ? ' <span class="disp-rx-tag" title="Planeta w retrogradacji (ruch wsteczny)">Rx</span>' : ''}
             </div>
           </td>
-          <td style="color:rgba(250,248,245,0.7);font-size:0.82rem;">${p.signName}</td>
+          <td style="color:rgba(250,248,245,0.7);font-size:0.82rem;">${p.signName} <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;opacity:0.65;">${p.degreeInSign}</span></td>
           <td style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.82rem;">${item.totalSubjects}</td>
           <td style="text-align:right;">
             <div style="display:flex;align-items:center;justify-content:flex-end;gap:0.4rem;">
@@ -437,7 +481,7 @@
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.5rem;">
             <div style="display:flex;align-items:center;gap:0.5rem;">
               <span class="disp-glyph-box" style="width:1.9rem;height:1.9rem;font-size:1.05rem;">${p.glyph}</span>
-              <strong style="font-size:0.98rem;color:#FAF8F5;">${p.name}</strong>
+              <strong style="font-size:0.98rem;color:#FAF8F5;">${p.name}</strong>${p.isRetrograde ? ' <span class="disp-rx-tag">Rx</span>' : ''}
               <span style="color:rgba(250,248,245,0.6);font-size:0.8rem;margin-left:0.35rem;">w znaku ${p.signName} (${p.degInSign}°)</span>
             </div>
             ${statusBadge}
@@ -487,6 +531,7 @@
             ${chartRulerHtml}
             ${finalBoxHtml}
             ${atmakarakaHtml}
+            ${retroBoxHtml}
 
             <div class="disp-card" style="margin-bottom:1.25rem;">
               <h4 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#FAF8F5;margin:0 0 0.4rem;">

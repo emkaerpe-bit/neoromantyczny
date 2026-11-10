@@ -21,6 +21,40 @@
     }
   }
 
+  function renderRetrogradeChapter1(chart) {
+    if (!chart || !chart.retrogradePlanets || chart.retrogradePlanets.length === 0) return '';
+    const rPlanets = chart.retrogradePlanets;
+    const badgesHtml = rPlanets.map(p => `
+      <span style="display:inline-flex;align-items:center;gap:0.35rem;background:rgba(251,113,133,0.08);border:1px solid rgba(251,113,133,0.3);padding:0.3rem 0.65rem;border-radius:6px;font-size:0.82rem;color:#FAF8F5;">
+        <span style="color:#FB7185;font-size:0.95rem;">${p.glyph}</span>
+        <strong style="font-weight:600;">${p.name} Rx</strong>
+        <span style="color:rgba(250,248,245,0.6);font-family:'JetBrains Mono',monospace;font-size:0.75rem;">(w ${p.signName} ${p.degreeInSign})</span>
+      </span>
+    `).join('');
+
+    return `
+      <div style="margin-top:1.35rem;background:rgba(251,113,133,0.05);border:1px solid rgba(251,113,133,0.25);border-radius:0.85rem;padding:1.25rem 1.35rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#FB7185;text-transform:uppercase;font-weight:700;">
+            DIAGNOZA RETROGRADACJI • INTROWERSJA ENERGII PSYCHICZNEJ (C.G. JUNG)
+          </div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#FB7185;background:rgba(251,113,133,0.12);padding:0.2rem 0.55rem;border-radius:4px;">
+            ${rPlanets.length} ${rPlanets.length === 1 ? 'PLANETA Rx' : (rPlanets.length < 5 ? 'PLANETY Rx' : 'PLANET Rx')}
+          </span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.85rem;">
+          ${badgesHtml}
+        </div>
+        <p style="font-size:0.92rem;line-height:1.7;color:rgba(250,248,245,0.85);margin:0 0 0.65rem;">
+          W klasycznej tradycji astrologicznej ruch wsteczny bywał powierzchownie etykietowany jako „słabość”. W psychologii głębi C.G. Junga retrogradacja oznacza <strong>radykalną introwersję funkcji psychicznej</strong>. Energia tych archetypów nie jest nastawiona na konformistyczną, natychmiastową aprobatę otoczenia — podlega wieloetapowej, wewnętrznej destylacji.
+        </p>
+        <p style="font-size:0.92rem;line-height:1.7;color:rgba(250,248,245,0.85);margin:0;">
+          W Twojej architekturze psychicznej planety retrogradujące stanowią autonomiczne filtry suwerenności. Sprawiają, że odrzucasz gotowe dogmaty i schematy społeczne, budując własne, nienegocjowalne kryteria prawdy. Wymaga to cierpliwości, lecz daje unikalną odporność na manipulację.
+        </p>
+      </div>
+    `;
+  }
+
   function renderPaywallTeaser(hierarchy, planets, chart, attempts) {
     attempts = attempts || 0;
     const container = document.getElementById('dispositor-report-container');
@@ -74,7 +108,7 @@
               ${data.title}
             </h2>
             <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#FB7185;margin-top:0.35rem;">
-              🔒 Wersja Demonstracyjna • 1 z 6 Rozdziałów Odsłonięty
+              ● Wersja Demonstracyjna • 1 z 6 Rozdziałów Odsłonięty
             </div>
           </div>
           ${birthInfo ? `<div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(250,248,245,0.6);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:0.4rem 0.85rem;border-radius:9999px;">${birthInfo}</div>` : ''}
@@ -106,16 +140,17 @@
           <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:0.85rem;padding:1rem 1.25rem;font-size:0.92rem;line-height:1.65;color:rgba(250,248,245,0.75);">
             <strong style="color:#C9A84C;">Prawda o Twojej suwerenności:</strong> ${diag.sovereigntyRole || ''}
           </div>
+          ${renderRetrogradeChapter1(chart)}
         </section>
 
         <!-- STREFA ROZDZIAŁÓW 2–6 Z MECHANIZMEM CURIOSITY GAP (PAYWALL 20 PLN) -->
         <div class="disp-paywall-gate">
           <div class="disp-blurred-zone">
-            ${renderChapters2To6(data)}
+            ${renderChapters2To6(data, chart)}
           </div>
           <div class="disp-paywall-overlay">
             <div class="disp-lock-card">
-              <div style="font-size:2.2rem;margin-bottom:0.35rem;">🔒</div>
+              <div style="margin-bottom:0.6rem;color:#C9A84C;"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
               <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;color:#C9A84C;text-transform:uppercase;margin-bottom:0.5rem;font-weight:700;">
                 PEŁNE STUDIUM PSYCHOLOGII GŁĘBI • 20,00 PLN
               </div>
@@ -139,7 +174,7 @@
               </button>
 
               <div style="margin-top:1rem;font-size:11px;color:rgba(250,248,245,0.45);font-family:'JetBrains Mono',monospace;">
-                🔒 Natychmiastowy dostęp po opłaceniu • Bezpieczne szyfrowanie Stripe
+                ● Natychmiastowy dostęp po opłaceniu • Bezpieczne szyfrowanie Stripe
               </div>
             </div>
           </div>
@@ -189,7 +224,8 @@
           <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
             ${birthInfo ? `<div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(250,248,245,0.6);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:0.4rem 0.85rem;border-radius:9999px;">${birthInfo}</div>` : ''}
             <button type="button" onclick="window.print()" class="disp-print-btn" style="background:transparent;border:1px solid #C9A84C;color:#C9A84C;font-family:'JetBrains Mono',monospace;font-size:12px;padding:0.65rem 1.25rem;border-radius:9999px;cursor:pointer;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.2s ease;">
-              <span>🖨 Zapisz / Drukuj PDF A4</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect width="12" height="8" x="6" y="14"></rect></svg>
+              <span>Zapisz / Drukuj PDF A4</span>
             </button>
           </div>
         </div>
@@ -220,16 +256,17 @@
           <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:0.85rem;padding:1rem 1.25rem;font-size:0.92rem;line-height:1.65;color:rgba(250,248,245,0.75);">
             <strong style="color:#C9A84C;">Prawda o Twojej suwerenności:</strong> ${diag.sovereigntyRole || ''}
           </div>
+          ${renderRetrogradeChapter1(chart)}
         </section>
 
         <div class="disp-unlocked-zone">
-          ${renderChapters2To6(data)}
+          ${renderChapters2To6(data, chart)}
         </div>
       </article>
     `;
   }
 
-  function renderChapters2To6(data) {
+  function renderChapters2To6(data, chart) {
     const nour = data.nourishmentProtocol || {};
     const shadow = data.shadowAndEmergency || {};
     const rel = data.relationshipDynamics || {};
@@ -238,7 +275,7 @@
 
     const exhaustLi = (shadow.exhaustionSignals || []).map(s => `
       <li style="margin-bottom:0.65rem;padding-left:1.5rem;position:relative;">
-        <span style="position:absolute;left:0;color:#FB7185;font-size:13px;">⚠</span>
+        <span style="position:absolute;left:0;color:#FB7185;font-size:11px;line-height:1.6;">●</span>
         <span>${s}</span>
       </li>
     `).join('');
@@ -292,9 +329,22 @@
             <p style="font-size:0.92rem;line-height:1.65;color:rgba(250,248,245,0.8);margin:0;">${shadow.sabotagePattern || ''}</p>
           </div>
           <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(251,113,133,0.3);border-radius:0.75rem;padding:0.85rem 1rem;">
-            <strong style="color:#FB7185;font-size:0.9rem;display:block;margin-bottom:0.25rem;">🌿 Protokół Resetu 24h (Gdy przytłacza Cię świat):</strong>
+            <strong style="color:#FB7185;font-size:0.9rem;display:block;margin-bottom:0.25rem;">Protokół Resetu 24h (Gdy przytłacza Cię świat):</strong>
             <p style="font-size:0.9rem;line-height:1.6;color:rgba(250,248,245,0.85);margin:0;">${shadow.emergency24h || ''}</p>
           </div>
+          ${chart && chart.retrogradePlanets && chart.retrogradePlanets.length > 0 ? `
+            <div style="margin-top:1rem;background:rgba(251,113,133,0.06);border:1px dashed rgba(251,113,133,0.35);border-radius:0.75rem;padding:0.9rem 1.1rem;">
+              <strong style="color:#FB7185;font-size:0.9rem;display:block;margin-bottom:0.35rem;">
+                Wektor Cienia Planet Retrogradujących (${chart.retrogradePlanets.map(p => p.name).join(', ')}):
+              </strong>
+              <p style="font-size:0.9rem;line-height:1.65;color:rgba(250,248,245,0.85);margin:0 0 0.5rem;">
+                Gdy Twoje zasoby psychiczne ulegają wyczerpaniu, planety w ruchu wstecznym mogą kierować energię do wewnątrz ze zbyt destrukcyjną siłą, tworząc pętle ruminacji, autoagresji lub paraliżu decyzyjnego. Zamiast skomunikować potrzebę na zewnątrz, analizujesz sytuację w nieskończoność w ciszy.
+              </p>
+              <p style="font-size:0.88rem;line-height:1.6;color:rgba(250,248,245,0.75);margin:0;">
+                <strong style="color:#C9A84C;">Antidotum somatyczne dla Rx:</strong> Przerwij wewnętrzny monolog poprzez gwałtowną zmianę sensoryczną (spacer w chłodnym powietrzu, zrzucenie myśli na papier bez redagowania, uziemienie stóp), zanim powrócisz do konfrontacji z problemem.
+              </p>
+            </div>
+          ` : ''}
         </section>
 
         <!-- ROZDZIAŁ 4: BLISKOŚĆ, MIŁOŚĆ & GRANICE -->
@@ -329,7 +379,7 @@
             <p style="font-size:0.92rem;line-height:1.65;color:rgba(250,248,245,0.8);margin:0;">${car.wealthLever || ''}</p>
           </div>
           <div>
-            <strong style="color:#FB7185;font-size:0.925rem;display:block;margin-bottom:0.25rem;">⚠ Środowiska, które niszczą Twoje siły:</strong>
+            <strong style="color:#FB7185;font-size:0.925rem;display:block;margin-bottom:0.25rem;">Środowiska, które niszczą Twoje siły:</strong>
             <p style="font-size:0.92rem;line-height:1.65;color:rgba(250,248,245,0.8);margin:0;">${car.careerTrap || ''}</p>
           </div>
         </section>

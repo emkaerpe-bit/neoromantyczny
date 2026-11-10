@@ -27,3 +27,18 @@
 
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
+
+/blog/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/kalkulator-dyspozytorow/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/kalkulator-ascendentu/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/kalkulator-prezentowy/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/kalkulator-synastrii/
+  Cache-Control: public, max-age=0, must-revalidate
