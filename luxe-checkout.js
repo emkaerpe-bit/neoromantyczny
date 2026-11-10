@@ -59,7 +59,9 @@
       price: '20,00 PLN',
       btn: 'Zapłać 20,00 PLN i Odbierz Raport &rarr;',
       successHeading: 'Raport został odblokowany!',
-      successSub: 'Analiza psychologii głębi i władcy horoskopu jest gotowa.'
+      successSub: 'Analiza psychologii głębi i władcy horoskopu jest gotowa.',
+      unlockKey: 'neo_dispositor_unlocked',
+      directUrl: 'https://buy.stripe.com/fZufZacz78HZgsK6iucwg01'
     }
   };
 
@@ -282,7 +284,21 @@
 
     } catch (err) {
       if (loader) loader.style.display = 'none';
-      if (errorBox) errorBox.innerHTML = `⚠️ ${err.message}`;
+      const prod = PRODUCTS_CONFIG[productKey];
+      if (prod && prod.directUrl) {
+        if (errorBox) {
+          errorBox.innerHTML = `
+            <div style="margin-top:0.5rem;font-size:0.85rem;color:#FAF8F5;text-align:center;">
+              <p style="margin-bottom:0.75rem;color:rgba(250,248,245,0.75);">Przejdź do bezpośredniej, bezpiecznej kasy Stripe:</p>
+              <a href="${prod.directUrl}" target="_blank" rel="noopener noreferrer" class="luxe-btn-submit" style="display:inline-flex;text-decoration:none;align-items:center;justify-content:center;padding:0.9rem 1.4rem;">
+                Przejdź do Kasy Stripe (20 PLN) &rarr;
+              </a>
+            </div>
+          `;
+        }
+      } else {
+        if (errorBox) errorBox.innerHTML = `⚠️ ${err.message}`;
+      }
     }
   }
 
