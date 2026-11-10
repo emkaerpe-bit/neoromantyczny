@@ -359,7 +359,7 @@
         <div class="disp-lab-grid">
           <!-- Lewa Kolumna: Koło Zodiakalne SVG -->
           <div class="disp-lab-visual">
-            <div class="disp-card" style="padding:1.25rem 1rem;position:sticky;top:1rem;">
+            <div class="disp-card disp-wheel-card" style="padding:1.25rem 1rem;">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
                 <div class="disp-badge" style="margin:0;">KOŁO ZODIAKALNE • ASTRA ENGINE</div>
                 <span style="font-size:0.72rem;font-family:'JetBrains Mono',monospace;color:rgba(250,248,245,0.5);">Tryb Terytorium</span>
@@ -387,8 +387,8 @@
               <p style="font-size:0.82rem;color:rgba(250,248,245,0.6);margin:0 0 1rem;">
                 Wybierz planetę z listy, aby aktywować jej terytorium na kole zodiakalnym.
               </p>
-              <div style="overflow-x:auto;">
-                <table class="disp-table">
+              <div style="width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;box-sizing:border-box;">
+                <table class="disp-table" style="width:100%;">
                   <thead>
                     <tr>
                       <th style="width:36px;">#</th>
@@ -415,7 +415,7 @@
           <p style="font-size:0.85rem;color:rgba(250,248,245,0.65);margin:0 0 1.25rem;">
             Łańcuch zależności psychicznych. Kliknij dowolne ogniwo, aby zobaczyć powiązane wektory na kole zodiakalnym.
           </p>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:0.75rem;">
+          <div class="disp-chain-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:0.75rem;width:100%;max-width:100%;box-sizing:border-box;">
             ${relationsHtml}
           </div>
         </div>
@@ -429,7 +429,7 @@
           <p style="font-size:0.92rem;line-height:1.75;color:rgba(250,248,245,0.85);max-width:620px;margin:0 auto 1.5rem;">
             Drzewo dyspozytorów obnaża to, czego nie widać na powierzchni: nieświadome sojusze planet, uwikłania emocjonalne i punkty, w których Twoja wola traci ster. Umów się na intymną analizę psychologiczną swojego kosmogramu z autorem Neoromantyzmu.
           </p>
-          <a href="mailto:kontakt@neoromantyczny.pl?subject=Konsultacja%20-%20Analiza%20Drzewa%20Dyspozytorow" class="disp-btn" style="text-decoration:none;display:inline-block;padding:0.95rem 2.25rem;color:#0D0D12;">
+          <a href="mailto:kontakt@neoromantyczny.pl?subject=Konsultacja%20-%20Analiza%20Drzewa%20Dyspozytorow" class="disp-btn disp-btn-consultation" style="text-decoration:none;display:inline-block;padding:0.95rem 1.5rem;color:#0D0D12;max-width:100%;box-sizing:border-box;word-break:break-word;">
             Zarezerwuj konsultację: kontakt@neoromantyczny.pl
           </a>
         </div>

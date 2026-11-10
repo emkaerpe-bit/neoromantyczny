@@ -12,7 +12,11 @@
   --color-border-gold: rgba(201, 169, 110, 0.28);
 }
 
-body {
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
   background-color: var(--color-obsidian);
   color: var(--color-ivory);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -20,6 +24,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
 }
 
 /* LUXE HEADER NAV (NEOROMANTYZM FLOATING PILL) */
@@ -82,10 +88,11 @@ body {
 }
 
 .disp-container {
-  width: 92%;
+  width: 100%;
   max-width: 1140px;
   margin: 0 auto;
   padding: 7.5rem 1rem 6rem;
+  box-sizing: border-box;
 }
 
 /* HERO SECTION CENTERED */
@@ -130,6 +137,9 @@ body {
   overflow: hidden;
   margin-bottom: 2rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
 
 .disp-card-gold {
@@ -431,9 +441,12 @@ body {
 /* ASTRA ENGINE LABORATORY & ZODIAC WHEEL STYLES */
 .disp-lab-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
@@ -441,6 +454,28 @@ body {
     grid-template-columns: 1.15fr 1fr;
     align-items: start;
   }
+  .disp-wheel-card {
+    position: sticky;
+    top: 1rem;
+  }
+}
+
+.disp-lab-visual,
+.disp-lab-analysis {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#disp-wheel-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .disp-wheel-svg {
@@ -660,6 +695,56 @@ body {
 }
 
 @media (max-width: 768px) {
+  .disp-container {
+    width: 100% !important;
+    padding: 5.5rem 0.85rem 3.5rem !important;
+  }
+  .disp-card {
+    padding: 1.25rem 0.85rem !important;
+    border-radius: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .disp-hero {
+    margin-bottom: 1.75rem !important;
+  }
+  .disp-heading {
+    font-size: 1.65rem !important;
+    line-height: 1.2 !important;
+  }
+  .disp-hero p {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+  }
+  .disp-tab-btn {
+    font-size: 0.72rem !important;
+    padding: 0.45rem 0.85rem !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    text-align: center !important;
+  }
+  .disp-table {
+    font-size: 0.76rem !important;
+    width: 100% !important;
+  }
+  .disp-table th, .disp-table td {
+    padding: 0.5rem 0.35rem !important;
+  }
+  .disp-chain-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .disp-chain-item {
+    padding: 0.75rem 0.85rem !important;
+  }
+  .disp-btn,
+  .disp-btn-submit {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.85rem !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
   .disp-cross-grid {
     grid-template-columns: 1fr;
     gap: 0.65rem;
