@@ -15,7 +15,7 @@
             GŁÓWNA DIAGNOZA KOSMOGRAMU • THE CHRONOS PROTOCOL
           </div>
           <span class="sat-badge ${dignityData.badgeClass || 'badge-gold'}">
-            ${dignityData.type || 'Godność'} (${dignityData.score || '0'})
+            ${dignityData.type || 'Godność'}
           </span>
         </div>
 

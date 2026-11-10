@@ -155,6 +155,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   window.reRenderSaturnReport = reRenderSaturnReport;
 
+  // Opcjonalne zaczytanie parametrów z URL (np. przy przejściu z innego kalkulatora)
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('date')) document.getElementById('disp-date').value = urlParams.get('date');
+    if (urlParams.get('time')) document.getElementById('disp-time').value = urlParams.get('time');
+    if (urlParams.get('city')) document.getElementById('disp-city').value = urlParams.get('city');
+  } catch (e) {}
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     const dateStr = document.getElementById('disp-date').value;
@@ -263,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <!-- Kondycja Godnościowa & Dyspozytor Saturna -->
           <div class="disp-card">
             <h4 style="font-family:'Playfair Display', serif; font-size:1.15rem; color:#FAF8F5; margin:0 0 0.4rem;">
-              Kondycja Godnościowa (Ibn Ezra)
+              Kondycja: ${dignityData.type || 'Zodiakalna'}
             </h4>
             <p style="font-size:0.86rem; line-height:1.6; color:rgba(250,248,245,0.85); margin:0 0 0.6rem;">
               ${dignityData.meaning || ''}
