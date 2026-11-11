@@ -151,7 +151,7 @@
     activeCallback = callback;
 
     const prod = PRODUCTS_CONFIG[activeProduct] || PRODUCTS_CONFIG['prezentownik'];
-    if (prod && prod.directUrl && (typeof Stripe === 'undefined' || activeProduct === 'saturn')) {
+    if (prod && prod.directUrl && typeof Stripe === 'undefined') {
       window.location.href = prod.directUrl;
       return;
     }

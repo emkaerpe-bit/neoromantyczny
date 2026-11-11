@@ -7,7 +7,8 @@ const PRODUCTS = {
   'synastria': { amount: '3900', description: 'Pełny Raport Synastrii Partnerskiej (7 Rozdziałów + PDF A4)' },
   'astrokartografia': { amount: '3900', description: 'Atlas Astrokartograficzny (Pełny Raport Relokacyjny)' },
   'numerologia': { amount: '4700', description: 'Pełny Portret Numerologiczny (Potencjał i Cykle)' },
-  'dyspozytorzy': { amount: '2000', description: 'Architektura Podświadomości: Raport Władcy Horoskopu' }
+  'dyspozytorzy': { amount: '2000', description: 'Architektura Podświadomości: Raport Władcy Horoskopu' },
+  'saturn': { amount: '4700', description: 'Protokół Przetrwania Powrotu Saturna (The Chronos Protocol)' }
 };
 
 export async function handler(event, context) {

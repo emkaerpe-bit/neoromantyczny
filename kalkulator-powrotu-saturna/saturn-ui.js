@@ -105,8 +105,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const unlockBtn = document.getElementById('sat-unlock-btn');
     if (unlockBtn) {
       unlockBtn.addEventListener('click', function (e) {
-        // Direct Checkout: Przejście do oficjalnej kasy Stripe (47 PLN)
-        window.location.href = 'https://buy.stripe.com/bJecMY8iRe2jdgy9uGcwg03';
+        e.preventDefault();
+        if (typeof window.openLuxeCheckout === 'function') {
+          window.openLuxeCheckout('saturn', function () {
+            try { localStorage.setItem('neo_saturn_unlocked', 'true'); } catch (err) {}
+            reRenderSaturnReport();
+          });
+        } else {
+          window.location.href = 'https://buy.stripe.com/bJecMY8iRe2jdgy9uGcwg03';
+        }
       });
     }
   }
