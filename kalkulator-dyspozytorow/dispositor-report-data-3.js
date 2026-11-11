@@ -9,12 +9,12 @@
   window.__DISPOSITOR_REPORT_DATA__.planets = window.__DISPOSITOR_REPORT_DATA__.planets || {};
 
   // ==========================================
-  // JOWISZ: GŁÓD SENSU & SZEROKI HORYZONT
+  // JOWISZ: SENZ & SZEROKA PERSPEKTYWA
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.planets.jupiter = {
     planetKey: 'jupiter',
-    title: 'Jowisz: Głód Sensu & Odwaga Horyzontu',
-    archetype: 'Wędrowiec Filozoficzny & Nauczyciel Zaufania',
+    title: 'Jowisz: Poszukiwanie Sensu i Szeroka Perspektywa',
+    archetype: 'Synteza Poznawcza, Zaufanie do Świata i Etyczny Rozmach',
     subtitle: 'Dusisz się w małości. Twoja psychika karmi się wiarą w to, że życie jest czymś nieskończenie większym niż walka o przetrwanie.',
     structureTheory: 'Według teorii dyspozytorów Marc Edmund Jonesa i Roberta Handa, Jowisz na szczycie hierarchii (w Strzelcu lub tradycyjnie w Rybach) tworzy tzw. układ teleologiczny. Każda planeta w Twoim horoskopie nie dąży do przetrwania ani do analizy faktów dla samych faktów — wszystko musi służyć wyższemu sensowi, syntezie i zaufaniu do szerszego porządku świata. Donna Cunningham ostrzega, że cieniem tego układu bywa »inflacja jowiszowa«: ucieczka w wielkie wizje i lekceważenie twardych, nudnych realiów dnia codziennego.',
     coreDiagnosis: {
@@ -56,12 +56,12 @@
   };
 
   // ==========================================
-  // SATURN: MĄDROŚĆ CZASU & KRĘGOSŁUP CHARAKTERU
+  // SATURN: ZASADA REALIZMU & PRÓBA CZASU
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.planets.saturn = {
     planetKey: 'saturn',
-    title: 'Saturn: Mądrość Czasu & Szacunek dla Formy',
-    archetype: 'Wewnętrzny Mistrz & Strażnik Dojrzałości',
+    title: 'Saturn: Zasada Realizmu i Próba Czasu',
+    archetype: 'Archetyp Senexa, Odpowiedzialność i Trwały Fundament',
     subtitle: 'Nie wierzysz w tanie skróty. Wszystko, co wartościowe w Twoim życiu, rodzi się w cierpliwości i wierności prawdzie.',
     structureTheory: 'W klasyfikacji Marca Edmunda Jonesa, Saturn we władztwie (w Koziorożcu lub Wodniku) jako ostateczny dyspozytor jest architektonicznym fundamentem i opoką kosmogramu. Żadne działanie, emocja ani marzenie nie zostają zrealizowane, dopóki nie zdadzą egzaminu przed prawem czasu, formy i konsekwencji. Liz Greene wskazuje, że Saturn na szczycie drzewa daje monumentalną odporność psychiczną, ale niesie ryzyko »skamienienia psychicznego«: utożsamienia siebie z rolą bezbłędnego filaru i panicznym lękiem przed okazaniem jakiejkolwiek bezradności.',
     coreDiagnosis: {
@@ -103,12 +103,12 @@
   };
 
   // ==========================================
-  // URAN: POWIEW WOLNOŚCI & ODWAGA PRAWDY
+  // URAN: RADYKALNA NIEZALEŻNOŚĆ & PRAWDZIWOŚĆ
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.planets.uranus = {
     planetKey: 'uranus',
-    title: 'Uran: Powiew Wolności & Odwaga Niezależności',
-    archetype: 'Wizjoner Przełomu & Strażnik Autonomii',
+    title: 'Uran: Radykalna Niezależność i Przełamywanie Konwencji',
+    archetype: 'Archetyp Prometejski, Bunt Poznawczy i Suwerenność Myśli',
     subtitle: 'Nie rodzisz się po to, by powielać cudze schematy. Twoją naturą jest widzieć to, co dopiero nadejdzie.',
     structureTheory: 'W nowoczesnej astrologii humanistycznej, Uran we władztwie (w Wodniku) jako ostateczny dyspozytor tworzy strukturę nieciągłą („obwód wysokiego napięcia”). Oznacza to, że żadna tradycyjna norma ani społeczny nawyk nie mają w Twojej psychice immunitetu. Robert Hand zauważa, że jednostka z Uranem na szczycie hierarchii jest organicznie niezdolna do fałszu i kompromisów kosztem wolności — wyzwaniem jest jednak chroniczne napięcie somatyczne i tendencja do gwałtownego detonowania bezpiecznych więzi przy najmniejszym poczuciu rutyny.',
     coreDiagnosis: {

@@ -9,12 +9,12 @@
   window.__DISPOSITOR_REPORT_DATA__.planets = window.__DISPOSITOR_REPORT_DATA__.planets || {};
 
   // ==========================================
-  // MERKURY: UMYSŁ W RUCHU & ARCHITEKTURA SŁOWA
+  // MERKURY: PRECYZJA POJĘCIOWA & ANALIZA
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.planets.mercury = {
     planetKey: 'mercury',
-    title: 'Merkury: Umysł w Ruchu & Czystość Słowa',
-    archetype: 'Tłumacz Świata & Władca Rozróżnienia',
+    title: 'Merkury: Zmysł Rozróżniania i Precyzja Pojęciowa',
+    archetype: 'Funkcja Myślenia, Analiza Rzeczywistości i Trafne Słowo',
     subtitle: 'Twój umysł nie zasypia nigdy. Widzisz powiązania, które innym umykają w gęstwinie codzienności.',
     structureTheory: 'W klasycznej teorii dyspozytorów Marca Edmunda Jonesa, Merkury we władztwie (Bliźnięta lub Panna) jako ostateczny dyspozytor tworzy psychologiczną strukturę sieciową („centrala komunikacyjna”). Każdy impuls emocjonalny, wola działania czy ocena wartości nie mogą zostać zrealizowane w świecie, dopóki nie przejdą przez filtr pojęciowy Merkurego. Robert Hand zauważa, że osoba z Merkurym na szczycie drzewa rzadko cierpi z braku wglądu — jej głównym wyzwaniem jest ucieczka w rolę »wiecznego tłumacza«, który nieustannie analizuje życie, zamiast pozwolić sobie na jego bezpośrednie przeżycie.',
     coreDiagnosis: {
@@ -56,12 +56,12 @@
   };
 
   // ==========================================
-  // WENUS: HARMONIA ZMYSŁÓW & GODNOŚĆ WYBORU
+  // WENUS: HIERARCHIA WARTOŚCI & ZMYSŁ JAKOŚCI
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.planets.venus = {
     planetKey: 'venus',
-    title: 'Wenus: Harmonia Zmysłów & Wewnętrzna Godność',
-    archetype: 'Mistrzyni Rezonansu & Strażniczka Jakości',
+    title: 'Wenus: Hierarchia Wartości i Zmysł Jakości',
+    archetype: 'Autonomia Estetyczna, Etyka Relacji i Zdolność do Więzi',
     subtitle: 'Twoją nawigacją jest zachwyt. Jeśli coś budzi w Tobie estetyczny lub etyczny wstręt, nie ma tam dla Ciebie miejsca.',
     structureTheory: 'W analizie dyspozytorów Donny Cunningham, Wenus jako ostateczny dyspozytor (w Byku lub Wadze) konstytuuje psychikę rządzoną przez prawo rezonansu i hierarchii wartości, a nie przez siłę czy presję. Każda planeta w Twoim kosmogramie składa ostateczny raport Twojej zmysłowej i relacyjnej harmonii. Jeśli działanie narusza Twoje poczucie smaku, sprawiedliwości lub szacunku, cała machina motywacyjna gaśnie. Liz Greene wskazuje, że suwerenność Wenus polega na bezkompromisowej wierności temu, co naprawdę kochasz — zdrada własnego gustu jest tu tożsama z chorobą duszy.',
     coreDiagnosis: {
@@ -103,12 +103,12 @@
   };
 
   // ==========================================
-  // MARS: WEWNĘTRZNY OGIEŃ & OCHRONA GRANIC
+  // MARS: INSTYNKT SPRAWCZOŚCI & OBRONA GRANIC
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.planets.mars = {
     planetKey: 'mars',
-    title: 'Mars: Wewnętrzny Ogień & Odwaga Przełomu',
-    archetype: 'Wojownik Czystej Woli & Obrońca Prawdy',
+    title: 'Mars: Instynkt Sprawczości i Obrona Granic',
+    archetype: 'Wektor Czystego Działania i Odwaga Konfrontacji',
     subtitle: 'Nie potrafisz trwać w bezruchu, gdy rzeczywistość domaga się decyzji. Twoją naturą jest działanie.',
     structureTheory: 'Gdy Mars (w Baranie lub Skorpionie) zamyka drzewo dyspozytorów, Marc Edmund Jones definiuje to jako strukturę kinetyczną. Oznacza to, że Twój intelekt, emocje i zasoby są jedynie zaopatrzeniem dla wektora woli i działania. Robert Hand podkreśla, że Mars jako ostateczny dyspozytor nie znosi stanu zawieszenia: jeśli okoliczności blokują Twoją inicjatywę, energia kinetyczna nie znika, lecz eksploduje do wewnątrz, prowadząc do autoagresji somatycznej lub nagłych, destrukcyjnych zerwań. Integracja tego układu wymaga odwagi brania pełnej odpowiedzialności za swoje cięcia.',
     coreDiagnosis: {

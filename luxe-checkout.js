@@ -21,7 +21,8 @@
       btn: 'Zapłać 47,00 PLN i Odbierz E-book &rarr;',
       successHeading: 'Płatność zakończona pomyślnie!',
       successSub: 'Twój e-book Zodiakalny Prezentownik jest gotowy do pobrania.',
-      downloadUrl: '/success.html'
+      downloadUrl: '/success.html',
+      directUrl: 'https://buy.stripe.com/dRm28k8iRbUb4K2fT4cwg00'
     },
     'synastria': {
       tag: 'PEŁNY RAPORT SYNASTRII (7 ROZDZIAŁÓW)',
@@ -96,12 +97,6 @@
             <span class="luxe-badge-price" id="luxe-modal-price">47,00 PLN</span>
           </div>
 
-          <div id="luxe-test-bypass-container" style="display:none;margin-bottom:1rem;">
-            <button type="button" id="luxe-test-bypass-btn" class="luxe-btn-test">
-              ⚡ Odblokuj natychmiast bez płatności (0 PLN — Test) &rarr;
-            </button>
-          </div>
-
           <div id="luxe-stripe-loader" class="luxe-stripe-loader">
             <div class="luxe-stripe-spinner"></div>
             <span>Bezpieczne szyfrowanie sesji...</span>
@@ -138,7 +133,6 @@
     const modal = document.getElementById('luxe-stripe-modal');
     const closeBtn = document.getElementById('luxe-stripe-modal-close');
     const submitBtn = document.getElementById('luxe-stripe-submit-btn');
-    const testBtn = document.getElementById('luxe-test-bypass-btn');
 
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     if (modal) {
@@ -150,17 +144,19 @@
       if (e.key === 'Escape') closeModal();
     });
     if (submitBtn) submitBtn.addEventListener('click', handleSubmit);
-    if (testBtn) {
-      testBtn.addEventListener('click', () => {
-        showSuccess();
-      });
-    }
   }
 
   function openModal(productKey = 'prezentownik', callback = null) {
-    ensureModalMounted();
     activeProduct = productKey || 'prezentownik';
     activeCallback = callback;
+
+    const prod = PRODUCTS_CONFIG[activeProduct] || PRODUCTS_CONFIG['prezentownik'];
+    if (prod && prod.directUrl && (typeof Stripe === 'undefined' || activeProduct === 'saturn')) {
+      window.location.href = prod.directUrl;
+      return;
+    }
+
+    ensureModalMounted();
 
     const modal = document.getElementById('luxe-stripe-modal');
     if (!modal) return;
@@ -184,12 +180,6 @@
     if (subEl) subEl.innerText = prod.sub;
     if (priceEl) priceEl.innerText = prod.price;
     if (labelEl) labelEl.innerHTML = prod.btn;
-
-    // Show test bypass button if localhost
-    const testContainer = document.getElementById('luxe-test-bypass-container');
-    if (testContainer) {
-      testContainer.style.display = isLocal ? 'block' : 'none';
-    }
 
     modal.classList.add('is-active');
     document.body.style.overflow = 'hidden';
@@ -297,16 +287,8 @@
       if (loader) loader.style.display = 'none';
       const prod = PRODUCTS_CONFIG[productKey];
       if (prod && prod.directUrl) {
-        if (errorBox) {
-          errorBox.innerHTML = `
-            <div style="margin-top:0.5rem;font-size:0.85rem;color:#FAF8F5;text-align:center;">
-              <p style="margin-bottom:0.75rem;color:rgba(250,248,245,0.75);">Przejdź do bezpośredniej, bezpiecznej kasy Stripe:</p>
-              <a href="${prod.directUrl}" target="_blank" rel="noopener noreferrer" class="luxe-btn-submit" style="display:inline-flex;text-decoration:none;align-items:center;justify-content:center;padding:0.9rem 1.4rem;">
-                Przejdź do Kasy Stripe (20 PLN) &rarr;
-              </a>
-            </div>
-          `;
-        }
+        window.location.href = prod.directUrl;
+        return;
       } else {
         if (errorBox) errorBox.innerHTML = `⚠️ ${err.message}`;
       }
@@ -352,7 +334,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     // Intercept checkout triggers
     document.addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-luxe-checkout], .js-open-checkout, a[href*="buy.stripe.com"]');
+      const btn = e.target.closest('[data-luxe-checkout], .js-open-checkout');
       if (btn) {
         e.preventDefault();
         const prod = btn.getAttribute('data-luxe-checkout') || btn.getAttribute('data-product') || 'prezentownik';

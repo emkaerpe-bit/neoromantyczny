@@ -14,8 +14,8 @@
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.planets.sun = {
     planetKey: 'sun',
-    title: 'Słońce we Władztwie: Solarna Oś Tożsamości',
-    archetype: 'Wewnętrzny Suweren & Źródło Świadomego Bytu',
+    title: 'Słońce we Władztwie: Świadome Ja i Oś Indywiduacji',
+    archetype: 'Autonomia Świadomości i Wewnętrzny Autorytet',
     subtitle: 'Wszystkie wektory horoskopu zbiegają się w jednym punkcie: w Twojej autentycznej tożsamości.',
     structureTheory: 'W teorii dyspozytorów Marca Edmunda Jonesa, Słońce jako jedyny ostateczny dyspozytor tworzy strukturę centryczną („układ słoneczny”). Oznacza to, że każda inna planeta w Twoim kosmogramie — od intelektu Merkurego po rygor Saturna — nie działa dla własnych celów, lecz jest poddanym pracującym na rzecz uświadomienia i ekspresji Twojego prawdziwego JA.',
     coreDiagnosis: {
@@ -61,8 +61,8 @@
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.planets.moon = {
     planetKey: 'moon',
-    title: 'Księżyc we Władztwie: Pierwotna Matryca Bezpieczeństwa',
-    archetype: 'Oceaniczna Pamięć & Intuicja Somatyczna',
+    title: 'Księżyc we Władztwie: Pamięć Emocjonalna i Bezpieczeństwo Bytu',
+    archetype: 'Instynktowna Ochrona i Inteligencja Emocjonalna Ciała',
     subtitle: 'Wszystkie szlaki horoskopu prowadzą do czucia. Ciało i układ nerwowy mają weto absolutne.',
     structureTheory: 'Gdy Księżyc w Raku zamyka drzewo dyspozytorów, intelekt, ambicja i działanie są podwładnymi Twojego stanu emocjonalnego. Każdy logiczny argument jest u Ciebie tylko wtórnym tłumaczem tego, co wcześniej poczuł Twój żołądek. W terminologii Roberta Handa i Liz Greene jest to układ pierwotnej ochrony psychicznej — żadna decyzja nie przetrwa, jeśli narusza Twoją biologiczną potrzebę bezpieczeństwa.',
     coreDiagnosis: {

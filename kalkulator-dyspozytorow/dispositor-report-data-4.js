@@ -9,12 +9,12 @@
   window.__DISPOSITOR_REPORT_DATA__.planets = window.__DISPOSITOR_REPORT_DATA__.planets || {};
 
   // ==========================================
-  // NEPTUN: GŁĘBIA INTUICJI & DAR WSPÓŁODCZUWANIA
+  // NEPTUN: PRZEPUSZCZALNOŚĆ GRANIC & GŁĘBOKA EMPATIA
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.planets.neptune = {
     planetKey: 'neptune',
-    title: 'Neptun: Głębia Intuicji & Dar Współodczuwania',
-    archetype: 'Współczujący Przewodnik & Strażnik Tajemnicy',
+    title: 'Neptun: Przepuszczalność Granic i Głęboka Empatia',
+    archetype: 'Zanurzenie w Nieświadomości, Wrażliwość i Zmysł Metafizyczny',
     subtitle: 'Twoja skóra psychiczna jest cieńsza niż u innych. Czujesz to, co niewidzialne, zanim ktokolwiek wypowie choćby słowo.',
     structureTheory: 'Gdy Neptun (we władztwie w Rybach) wieńczy drzewo dyspozytorów, klasyczna architektura psychiki ulega rozpuszczeniu na rzecz matrycy oceanicznej. Zgodnie z analizą Liz Greene i Roberta Handa, nie mamy tu do czynienia z hierarchią władzy, lecz z polem transpersonalnym, w którym myśli, wola i ambicje zostają podporządkowane potrzebie współczucia, transcendencji lub ucieczki. Wyzwaniem tego układu jest brak szczelnych filtrów somatycznych — bez ugruntowania w materii otoczenie z łatwością wyczerpuje Twoje zasoby psychiczne.',
     coreDiagnosis: {
@@ -56,12 +56,12 @@
   };
 
   // ==========================================
-  // PLUTON: PRAWDA PRZEOBRAŻENIA & SIŁA ODRODZENIA
+  // PLUTON: KONFRONTACJA Z CIENIEM & ODRODZENIE
   // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.planets.pluto = {
     planetKey: 'pluto',
-    title: 'Pluton: Prawda Przeobrażenia & Siła Odrodzenia',
-    archetype: 'Władca Cienia & Mistrz Wewnętrznej Niezłomności',
+    title: 'Pluton: Konfrontacja z Cieniem i Psychologiczne Odrodzenie',
+    archetype: 'Archetyp Przeobrażenia, Radykalna Prawda i Odporność Psychiczna',
     subtitle: 'Widzisz przez maski. Wiesz, czym jest ból, strata i kryzys — i wiesz, jak za każdym razem wstać silniejszym.',
     structureTheory: 'W analizie dyspozytorów Donny Cunningham, Pluton na szczycie hierarchii (we władztwie w Skorpionie) tworzy układ katartyczno-alchemiczny. Każda inna planeta w Twoim kosmogramie służy bezwzględnemu obnażaniu iluzji, integracji cienia i dochodzeniu do nienaruszalnej prawdy. Marc Edmund Jones i C.G. Jung wskazywali, że niebezpieczeństwem tej pozycji jest »kompulsja kontroli« i zbroja nieufności: w obawie przed bezbronnością jednostka woli sama zdetonować relację lub projekt, niż zaryzykować zaufanie drugiemu człowiekowi.',
     coreDiagnosis: {

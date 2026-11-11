@@ -43,7 +43,7 @@
     const retroSectionsHtml = govRetroPlanets.map(p => {
       const prof = profiles[p.key] || {
         name: p.name + ' (Rx)',
-        archetype: 'Władca w Ruchu Wstecznym • Głęboka Introspekcja',
+        archetype: 'Władca w Ruchu Wstecznym: Przeniesienie Funkcji Psychicznej do Wnętrza',
         summary: 'W Twoim horoskopie ' + p.name + ' porusza się ruchem wstecznym, przenosząc energię sprawczą do wnętrza psychiki.',
         mechanics: 'Każda decyzja podlega rygorystycznej, wewnętrznej weryfikacji. Nie ulegasz presji zewnętrznego świata.',
         shadowWarning: 'Ryzyko paraliżu decyzyjnego, ruminacji i tłumienia autentycznych potrzeb.',

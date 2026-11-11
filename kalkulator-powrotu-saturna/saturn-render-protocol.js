@@ -127,10 +127,10 @@
                 Konkretne procedury postępowania dla Twojego <strong>${satPlanet.house}. Domu</strong>, instrukcja na czas retrogradacji oraz Kodeks 7 Reguł Rezyliencji.
               </p>
 
-              <button type="button" id="sat-unlock-btn" class="sat-btn-gold" style="margin-bottom:0.6rem; cursor:pointer; border:none; padding:0.95rem 2rem; font-size:0.95rem; font-weight:700;">
+              <a href="https://buy.stripe.com/bJecMY8iRe2jdgy9uGcwg03" id="sat-unlock-btn" class="sat-btn-gold" style="margin-bottom:0.6rem; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; padding:0.95rem 2rem; font-size:0.95rem; font-weight:700;">
                 <span>Odblokuj Raport Przetrwania — 47 PLN</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
+              </a>
 
               <span style="font-size:0.75rem; color:rgba(250,248,245,0.5); font-family:'JetBrains Mono', monospace;">
                 Płatność jednorazowa Stripe (BLIK / Apple Pay / Karta) • Natychmiastowy dostęp

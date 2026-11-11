@@ -207,7 +207,7 @@
                 ${rulerPlanet.name} <span style="font-size:0.92rem;color:#C9A96E;font-family:'JetBrains Mono',monospace;">(w znaku ${rulerPlanet.signName})</span>
               </h3>
               <p style="font-size:0.8rem;color:rgba(250,248,245,0.6);margin:0.2rem 0 0;font-family:'JetBrains Mono',monospace;">
-                Władca Ascendentu w znaku ${currentChart.ascSign.name} ${currentChart.ascSign.glyph}
+                Ascendent w znaku ${currentChart.ascSign.name}
               </p>
             </div>
           </div>
@@ -375,7 +375,7 @@
               const pls = s.planetsHere.length > 0 
                 ? `— goszczą tu: ${s.planetsHere.map(p => `<strong style="color:#FAF8F5;">${p.name} ${p.glyph}</strong>`).join(', ')}`
                 : '— puste pole';
-              return `<li style="margin-bottom:0.35rem;"><span style="color:${details.rulerColor};font-weight:bold;">${s.name} ${s.glyph}</span> <span style="font-size:0.75rem;color:rgba(250,248,245,0.7);">${pls}</span></li>`;
+              return `<li style="margin-bottom:0.35rem;"><span style="color:${details.rulerColor};font-weight:bold;">${s.name}</span> <span style="font-size:0.75rem;color:rgba(250,248,245,0.7);">${pls}</span></li>`;
             }).join('')
           : '<li>Brak znaków bezpośrednich w wybranym systemie</li>';
 
@@ -384,7 +384,7 @@
               const pls = s.planetsHere.length > 0 
                 ? `— goszczą tu: ${s.planetsHere.map(p => `<strong style="color:#FAF8F5;">${p.name} ${p.glyph}</strong>`).join(', ')}`
                 : '— puste pole';
-              return `<li style="margin-bottom:0.35rem;"><span style="color:#FAF8F5;font-style:italic;">${s.name} ${s.glyph}</span> <span style="font-size:0.75rem;color:rgba(250,248,245,0.7);">${pls}</span></li>`;
+              return `<li style="margin-bottom:0.35rem;"><span style="color:#FAF8F5;font-style:italic;">${s.name}</span> <span style="font-size:0.75rem;color:rgba(250,248,245,0.7);">${pls}</span></li>`;
             }).join('')
           : '<li>Brak terytoriów pośrednich (łańcuch zamyka się bezpośrednio)</li>';
 
