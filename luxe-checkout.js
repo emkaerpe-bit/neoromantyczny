@@ -150,12 +150,6 @@
     activeProduct = productKey || 'prezentownik';
     activeCallback = callback;
 
-    const prod = PRODUCTS_CONFIG[activeProduct] || PRODUCTS_CONFIG['prezentownik'];
-    if (prod && prod.directUrl && typeof Stripe === 'undefined') {
-      window.location.href = prod.directUrl;
-      return;
-    }
-
     ensureModalMounted();
 
     const modal = document.getElementById('luxe-stripe-modal');
@@ -229,6 +223,25 @@
     }
   }
 
+  async function ensureStripeLoaded() {
+    if (typeof window.Stripe !== 'undefined') return true;
+
+    let s = document.querySelector('script[src*="js.stripe.com"]');
+    if (!s) {
+      s = document.createElement('script');
+      s.src = 'https://js.stripe.com/v3/';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+
+    const start = Date.now();
+    while (Date.now() - start < 4500) {
+      if (typeof window.Stripe !== 'undefined') return true;
+      await new Promise(r => setTimeout(r, 80));
+    }
+    return typeof window.Stripe !== 'undefined';
+  }
+
   async function initStripe(productKey) {
     const loader = document.getElementById('luxe-stripe-loader');
     const errorBox = document.getElementById('luxe-stripe-error');
@@ -242,11 +255,12 @@
     isStripeReady = false;
 
     try {
-      if (typeof Stripe === 'undefined') {
-        throw new Error('Biblioteka Stripe nie mogła zostać załadowana. Sprawdź połączenie.');
+      await ensureStripeLoaded();
+      if (typeof window.Stripe === 'undefined') {
+        throw new Error('Biblioteka Stripe nie mogła zostać załadowana (sprawdź połączenie lub wyłącz bloker skryptów).');
       }
       if (!stripeInstance) {
-        stripeInstance = Stripe(STRIPE_PK, { locale: 'pl' });
+        stripeInstance = window.Stripe(STRIPE_PK, { locale: 'pl' });
       }
 
       const res = await fetch('/api/create-payment-intent', {
@@ -285,12 +299,19 @@
 
     } catch (err) {
       if (loader) loader.style.display = 'none';
-      const prod = PRODUCTS_CONFIG[productKey];
-      if (prod && prod.directUrl) {
-        window.location.href = prod.directUrl;
-        return;
-      } else {
-        if (errorBox) errorBox.innerHTML = `⚠️ ${err.message}`;
+      const prod = PRODUCTS_CONFIG[productKey] || PRODUCTS_CONFIG['prezentownik'];
+      if (errorBox) {
+        errorBox.innerHTML = `
+          <div style="padding:0.85rem; border:1px solid rgba(201,168,76,0.3); background:rgba(201,168,76,0.06); border-radius:10px; margin-top:0.75rem; font-size:0.85rem; color:#FAF8F5; text-align:center; line-height:1.5;">
+            <p style="margin:0 0 0.5rem; color:rgba(250,248,245,0.85);">⚠️ ${err.message}</p>
+            ${prod && prod.directUrl ? `
+              <p style="margin:0 0 0.75rem; font-size:0.8rem; color:rgba(250,248,245,0.65);">Możesz bezpiecznie sfinalizować transakcję w nowej karcie:</p>
+              <a href="${prod.directUrl}" target="_blank" rel="noopener noreferrer" class="luxe-btn-submit" style="display:inline-flex; align-items:center; justify-content:center; text-decoration:none; padding:0.75rem 1.4rem; font-size:0.88rem;">
+                Przejdź do Kasy Stripe (${prod.price}) &rarr;
+              </a>
+            ` : ''}
+          </div>
+        `;
       }
     }
   }
