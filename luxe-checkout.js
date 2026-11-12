@@ -21,7 +21,7 @@
       btn: 'Zapłać 47,00 PLN i Odbierz E-book &rarr;',
       successHeading: 'Płatność zakończona pomyślnie!',
       successSub: 'Twój e-book Zodiakalny Prezentownik jest gotowy do pobrania.',
-      downloadUrl: '/success.html',
+      downloadUrl: 'https://drive.google.com/uc?export=download&id=14r9HvDx21VVsEKUmhBeCFY5n9fqJLc4u',
       directUrl: 'https://buy.stripe.com/dRm28k8iRbUb4K2fT4cwg00'
     },
     'synastria': {
