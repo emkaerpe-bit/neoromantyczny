@@ -1,180 +1,101 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta name="robots" content="noindex, nofollow">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dziękujemy za Zamówienie | Neoromantyczny</title>
-    
-    <!-- PRIMARY SEO & META TAGS -->
-    <meta name="description" content="Dziękujemy za zakup e-booka Zodiakalny Prezentownik. Potwierdzenie zamówienia oraz link do pobrania materiałów zostały przesłane na Twój adres e-mail."/>
-    
-    
-    
-    <!-- Fonts (Non-Blocking) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#C9A84C',
-                        champagne: '#F1E5D1',
-                        obsidian: '#0D0D12',
-                        ivory: '#FAF8F5',
-                        surface: '#16161D',
-                        slate: '#4F4F5A'
-                    },
-                    fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        .noise-overlay {
-            position: fixed;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 50;
-            opacity: 0.05;
-            mix-blend-mode: overlay;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-    </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="manifest" href="site.webmanifest?v=3.0"/>
-<meta name="theme-color" content="#0D0D12"/>
-
-
-
-
-<!-- MOBILE SAFEGUARD CSS (Injected) -->
-<style id="mobile-safeguard">
-  @media (max-width: 768px) {
-    /* Nav container: mniejszy padding i fizyczny gap */
-    nav.fixed {
-      padding-left: 1rem !important;
-      padding-right: 1rem !important;
-      gap: 1rem !important;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Potwierdzenie Zakupu | Neoromantyczny</title>
+  <meta name="description" content="Potwierdzenie płatności i odbiór e-booka Zodiakalny Prezentownik."/>
+  <link rel="icon" href="/favicon.svg?v=4.0" type="image/svg+xml"/>
+  <link rel="icon" href="/favicon-32x32.png?v=4.0" type="image/png" sizes="32x32"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4.0"/>
+  <link rel="stylesheet" href="/fonts.css"/>
+  <meta name="theme-color" content="#0D0D12"/>
+  <style>
+    :root { --obsidian: #0D0D12; --surface: #16161D; --gold: #C9A84C; --ivory: #FAF8F5; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh; background: radial-gradient(circle at top, #1a1a24 0%, var(--obsidian) 75%);
+      color: var(--ivory); font-family: 'Inter', system-ui, sans-serif;
+      display: flex; align-items: center; justify-content: center; padding: 1.5rem;
     }
-    /* Logo: mniejszy font żeby zwolnić miejsce */
-    nav.fixed > div:first-child span {
-      font-size: 0.85rem !important;
-      line-height: 1.4 !important;
+    .card {
+      max-width: 540px; width: 100%; background: rgba(22, 22, 29, 0.92);
+      border: 1px solid rgba(201, 168, 76, 0.28); border-radius: 24px;
+      padding: 2.75rem 2rem; text-align: center; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
     }
-    /* Przycisk CTA: mniejszy padding i font */
-    nav.fixed > a.bg-champagne {
-      padding-left: 0.75rem !important;
-      padding-right: 0.75rem !important;
-      padding-top: 0.4rem !important;
-      padding-bottom: 0.4rem !important;
-      font-size: 0.75rem !important;
+    .badge {
+      width: 72px; height: 72px; margin: 0 auto 1.5rem; border-radius: 50%;
+      background: rgba(201, 168, 76, 0.14); border: 1px solid rgba(201, 168, 76, 0.35);
+      display: flex; align-items: center; justify-content: center; font-size: 2rem;
     }
-    /* Ukryj strzałkę w przycisku na mobile żeby zaoszczędzić miejsce */
-    nav.fixed > a.bg-champagne svg {
-      display: none !important;
+    h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; line-height: 1.2; margin-bottom: 1rem; }
+    h1 span { color: var(--gold); font-style: italic; }
+    p { color: rgba(250, 248, 245, 0.78); font-size: 1rem; line-height: 1.6; margin-bottom: 1.75rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      background: var(--gold); color: var(--obsidian); font-weight: 700; font-size: 1rem;
+      padding: 1rem 2rem; border-radius: 999px; text-decoration: none;
+      box-shadow: 0 0 30px rgba(201, 168, 76, 0.3); transition: transform 0.2s ease;
     }
-    /* METADATA ARTYKUŁU: wymuś jeden wiersz przez mniejszy font i tracking */
-    header .gap-8 {
-      gap: 0.3rem !important;
-      flex-wrap: nowrap !important;
-      white-space: nowrap !important;
-      letter-spacing: 0.05em !important;
-      font-size: 9px !important;
-      justify-content: center !important;
+    .btn:hover { transform: scale(1.03); }
+    .btn-ghost {
+      display: inline-block; margin-top: 1.25rem; color: rgba(250, 248, 245, 0.55);
+      font-size: 0.85rem; text-decoration: none;
     }
-  }
-</style>
-<link rel="icon" href="favicon.svg?v=4.0" type="image/svg+xml"/>
-<link rel="icon" href="favicon-32x32.png?v=4.0" type="image/png" sizes="32x32"/>
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=4.0"/>
+    .btn-ghost:hover { color: var(--gold); }
+    .meta { margin-top: 1.75rem; font-size: 0.8rem; color: rgba(250, 248, 245, 0.45); line-height: 1.5; }
+  </style>
 </head>
-<body class="bg-obsidian text-ivory flex items-center justify-center min-h-screen p-6 relative overflow-hidden">
-    
-    <div class="noise-overlay"></div>
-    <div class="absolute inset-0 bg-hero-gradient opacity-40"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<body>
+  <main class="card">
+    <div class="badge" id="status-icon">✨</div>
+    <h1 id="status-title">Weryfikacja <span>płatności...</span></h1>
+    <p id="status-desc">Trwa bezpieczne potwierdzanie transakcji w systemie Stripe. Proszę czekać chwilę.</p>
+    <div id="action-area"></div>
+    <p class="meta">W razie pytań lub problemów z pobraniem napisz na <strong>kontakt@neoromantyczny.pl</strong>.</p>
+  </main>
+  <script>
+    (async function () {
+      const EBOOK_URL = 'https://drive.google.com/uc?export=download&id=14r9HvDx21VVsEKUmhBeCFY5n9fqJLc4u';
+      const params = new URLSearchParams(window.location.search);
+      const pi = params.get('payment_intent');
+      const product = params.get('product') || 'prezentownik';
+      const titleEl = document.getElementById('status-title');
+      const descEl = document.getElementById('status-desc');
+      const iconEl = document.getElementById('status-icon');
+      const actionEl = document.getElementById('action-area');
 
-    <div class="max-w-xl w-full text-center relative z-10">
-        <div class="success-element opacity-0 mb-12 flex justify-center">
-            <div class="w-24 h-24 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center relative shadow-[0_0_50px_rgba(201,168,76,0.2)]">
-                <i data-lucide="mail-check" class="w-10 h-10 text-primary"></i>
-                <div class="absolute inset-0 rounded-full border border-primary animate-ping opacity-20"></div>
-            </div>
-        </div>
+      function showBlocked(msg) {
+        iconEl.textContent = '🔒';
+        titleEl.innerHTML = 'Brak potwierdzonej <span>płatności</span>';
+        descEl.textContent = msg;
+        actionEl.innerHTML = '<a href="/" class="btn">Wróć na stronę główną &rarr;</a>';
+      }
 
-        <h1 class="success-element opacity-0 text-5xl md:text-6xl font-serif mb-8 leading-tight tracking-tight">
-            Wiadomość do Ciebie <br />
-            <span class="italic text-primary">jest już w drodze!</span>
-        </h1>
+      if (!pi) {
+        showBlocked('Ta strona jest dostępna po sfinalizowaniu zamówienia. Jeśli właśnie opłaciłeś e-booka i nie widzisz linku, skontaktuj się z nami.');
+        return;
+      }
 
-        <div class="success-element opacity-0 space-y-6 text-lg text-ivory/60 mb-16 leading-relaxed">
-            <p>
-                Sprawdź swoją skrzynkę odbiorczą (również folder Oferty i Spam). Powitalny mail powinien pojawić się w ciągu kilku minut.
-            </p>
-            <p>
-                Dziękuję za dołączenie do grona osób świadomych, które chcą lepiej zrozumieć bliskich i wybierać prezenty z większą uważnością.
-            </p>
-        </div>
-
-        <div class="success-element opacity-0 flex flex-col items-center gap-6">
-            <a href="/blog/" class="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-obsidian bg-primary rounded-full overflow-hidden transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_30px_rgba(201,168,76,0.3)] hover:shadow-[0_0_50px_rgba(201,168,76,0.5)]">
-                <span class="relative z-10 flex items-center gap-3">
-                    Wróć na bloga <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                </span>
-            </a>
-            
-            <p class="text-[10px] font-mono uppercase tracking-[0.3em] text-ivory/30">
-                Poczuj magię gwiazd
-            </p>
-        </div>
-    </div>
-
-    <script>
-        lucide.createIcons();
-
-        gsap.to('.success-element', {
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            stagger: 0.2,
-            ease: 'power3.out',
-            from: { y: 30 }
+      try {
+        const res = await fetch('/api/verify-payment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paymentIntentId: pi, product })
         });
-    </script>
+        const data = await res.json();
+        if (!res.ok || !data.verified) {
+          showBlocked('Płatność nie została jeszcze zaksięgowana przez Stripe. Jeśli środki zostały pobrane, napisz do nas podając numer transakcji.');
+          return;
+        }
+        titleEl.innerHTML = 'Płatność zakończona <span>sukcesem!</span>';
+        descEl.innerHTML = 'Twój e-book <strong>Zodiakalny Prezentownik</strong> jest gotowy do pobrania. Kliknij poniżej, aby zapisać plik PDF.';
+        actionEl.innerHTML = `<a href="${EBOOK_URL}" target="_blank" rel="noopener noreferrer" class="btn">Pobierz Zodiakalny Prezentownik (PDF) &darr;</a><br><a href="/blog/" class="btn-ghost">Przejdź na bloga &rarr;</a>`;
+      } catch (_err) {
+        showBlocked('Nie udało się połączyć z serwerem weryfikacji płatności. Odśwież stronę za chwilę lub napisz do nas.');
+      }
+    })();
+  </script>
 </body>
 </html>

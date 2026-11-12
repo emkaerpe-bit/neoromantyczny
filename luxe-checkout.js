@@ -195,7 +195,7 @@
     const sBody = document.getElementById('luxe-checkout-success');
     const sHead = document.getElementById('luxe-success-heading');
     const sSub = document.getElementById('luxe-success-sub');
-    const sBtn = document.getElementById('luxe-success-download-btn');
+    const sBtn = document.getElementById('luxe-success-download-btn') || document.getElementById('luxe-download-btn');
 
     if (prod.unlockKey) {
       try { localStorage.setItem(prod.unlockKey, 'true'); } catch (e) {}
@@ -204,8 +204,12 @@
     if (sHead) sHead.innerText = prod.successHeading;
     if (sSub) sSub.innerText = prod.successSub;
     if (sBtn) {
-      sBtn.innerText = prod.unlockKey ? 'Przejdź do Raportu &rarr;' : 'Pobierz E-book &rarr;';
+      sBtn.innerHTML = prod.unlockKey ? 'Przejdź do Raportu &rarr;' : 'Pobierz Zodiakalny Prezentownik (PDF) &darr;';
       sBtn.href = prod.downloadUrl || '#';
+      if (!prod.unlockKey && prod.downloadUrl) {
+        sBtn.setAttribute('target', '_blank');
+        sBtn.setAttribute('rel', 'noopener noreferrer');
+      }
       if (prod.unlockKey) {
         sBtn.onclick = (e) => {
           e.preventDefault();
@@ -316,6 +320,31 @@
     }
   }
 
+  function buildReturnUrl(productKey) {
+    if (productKey === 'prezentownik') {
+      return `${window.location.origin}/success?product=prezentownik`;
+    }
+    const url = new URL(window.location.href);
+    url.searchParams.delete('payment_intent');
+    url.searchParams.delete('payment_intent_client_secret');
+    url.searchParams.delete('redirect_status');
+    url.searchParams.set('luxe_product', productKey);
+    return url.toString();
+  }
+
+  async function verifyPaymentOnServer(paymentIntentId, productKey) {
+    const res = await fetch('/api/verify-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ paymentIntentId, product: productKey })
+    });
+    const data = await res.json();
+    if (!res.ok || !data.verified) {
+      throw new Error(data.error || 'Płatność nie została jeszcze potwierdzona przez Stripe.');
+    }
+    return data;
+  }
+
   async function handleSubmit() {
     if (!stripeInstance || !stripeElementsInstance) return;
     const submitBtn = document.getElementById('luxe-stripe-submit-btn');
@@ -331,6 +360,7 @@
     try {
       const { error, paymentIntent } = await stripeInstance.confirmPayment({
         elements: stripeElementsInstance,
+        confirmParams: { return_url: buildReturnUrl(activeProduct) },
         redirect: 'if_required'
       });
 
@@ -340,8 +370,11 @@
           submitBtn.disabled = false;
           submitBtn.innerHTML = `<span>${prod.btn}</span>`;
         }
-      } else if (paymentIntent && (paymentIntent.status === 'succeeded' || paymentIntent.status === 'processing')) {
+      } else if (paymentIntent && paymentIntent.status === 'succeeded') {
+        await verifyPaymentOnServer(paymentIntent.id, activeProduct);
         showSuccess();
+      } else if (paymentIntent && paymentIntent.status === 'processing') {
+        if (errorBox) errorBox.innerHTML = '⏳ Płatność jest w trakcie przetwarzania przez bank. Odśwież stronę za chwilę.';
       }
     } catch (err) {
       if (errorBox) errorBox.innerHTML = `⚠️ Błąd: ${err.message}`;
@@ -352,8 +385,35 @@
     }
   }
 
+  async function handleRedirectReturn() {
+    const params = new URLSearchParams(window.location.search);
+    const paymentIntentId = params.get('payment_intent');
+    const redirectStatus = params.get('redirect_status');
+    const productKey = params.get('luxe_product');
+    if (!paymentIntentId || !productKey || redirectStatus !== 'succeeded') return;
+
+    try {
+      await verifyPaymentOnServer(paymentIntentId, productKey);
+      const prod = PRODUCTS_CONFIG[productKey];
+      if (prod && prod.unlockKey) {
+        try { localStorage.setItem(prod.unlockKey, 'true'); } catch (e) {}
+      }
+      const cleanUrl = new URL(window.location.href);
+      cleanUrl.searchParams.delete('payment_intent');
+      cleanUrl.searchParams.delete('payment_intent_client_secret');
+      cleanUrl.searchParams.delete('redirect_status');
+      cleanUrl.searchParams.delete('luxe_product');
+      window.history.replaceState({}, '', cleanUrl.toString());
+      if (prod && prod.unlockKey) {
+        window.location.reload();
+      }
+    } catch (err) {
+      console.error('Weryfikacja płatności nie powiodła się:', err);
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
-    // Intercept checkout triggers
+    handleRedirectReturn();
     document.addEventListener('click', (e) => {
       const btn = e.target.closest('[data-luxe-checkout], .js-open-checkout');
       if (btn) {

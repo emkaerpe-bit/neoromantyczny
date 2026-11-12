@@ -75,3 +75,4 @@
 
 # Serverless Functions
 /api/create-payment-intent      /.netlify/functions/create-payment-intent 200
+/api/verify-payment             /.netlify/functions/verify-payment 200
