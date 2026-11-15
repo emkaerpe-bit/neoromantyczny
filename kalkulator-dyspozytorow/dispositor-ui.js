@@ -209,7 +209,8 @@
       } else {
         selectedPlanetKey = dispData.summary && dispData.summary.length > 0 ? dispData.summary[0].planet : currentChart.planets[0].key;
       }
-      renderAll(true);
+      renderAll(!window.__DISP_SUPPRESS_SUBMIT_SCROLL__);
+      window.__DISP_SUPPRESS_SUBMIT_SCROLL__ = false;
     });
 
     try {
@@ -234,18 +235,25 @@
             if (dateEl) dateEl.value = saved.date;
             if (timeEl && saved.time) timeEl.value = saved.time;
             if (cityEl && saved.city) cityEl.value = saved.city;
+            const justUnlocked = sessionStorage.getItem('neo_just_unlocked') === 'dyspozytorzy';
+            if (justUnlocked) {
+              window.__DISP_SUPPRESS_SUBMIT_SCROLL__ = true;
+            }
             setTimeout(() => {
               form.dispatchEvent(new Event('submit'));
-              try {
-                if (sessionStorage.getItem('neo_just_unlocked') === 'dyspozytorzy') {
-                  sessionStorage.removeItem('neo_just_unlocked');
-                  setTimeout(() => {
-                    const rep = document.getElementById('dispositor-report-container');
-                    if (rep) rep.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }, 250);
-                }
-              } catch (err) {}
-            }, 120);
+              if (justUnlocked) {
+                sessionStorage.removeItem('neo_just_unlocked');
+                const scrollToUnlocked = (tries) => {
+                  const target = document.getElementById('disp-unlocked-start') || document.getElementById('dispositor-report-container');
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'auto', block: 'start' });
+                  } else if (tries < 30) {
+                    setTimeout(() => scrollToUnlocked(tries + 1), 60);
+                  }
+                };
+                setTimeout(() => scrollToUnlocked(0), 60);
+              }
+            }, 60);
           }
         }
       }

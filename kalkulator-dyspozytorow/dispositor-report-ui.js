@@ -376,7 +376,7 @@
 
     return `
         <!-- ROZDZIAŁ 2: PROTOKÓŁ CIAŁA & CODZIENNE ZASILANIE -->
-        <section style="margin-bottom:2.25rem;background:rgba(201,168,76,0.04);border-left:3px solid #C9A84C;padding:1.5rem 1.25rem;border-radius:0 1rem 1rem 0;">
+        <section id="disp-unlocked-start" style="margin-bottom:2.25rem;background:rgba(201,168,76,0.04);border-left:3px solid #C9A84C;padding:1.5rem 1.25rem;border-radius:0 1rem 1rem 0;scroll-margin-top:88px;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#C9A84C;margin-bottom:0.4rem;font-weight:700;">
             ROZDZIAŁ 02 • PROTOKÓŁ CIAŁA & CODZIENNE ZASILANIE
           </div>

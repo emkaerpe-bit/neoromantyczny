@@ -330,7 +330,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const chronoSlot = document.getElementById('chronoSlot');
     if (chronoSlot) window.SaturnClock.startCountdown(targetDate, chronoSlot);
 
-    resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!window.__SATURN_SUPPRESS_SUBMIT_SCROLL__) {
+      resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    window.__SATURN_SUPPRESS_SUBMIT_SCROLL__ = false;
   });
 
   try {
@@ -344,18 +347,20 @@ document.addEventListener('DOMContentLoaded', function () {
         if (dateEl) dateEl.value = parsed.date;
         if (timeEl && parsed.time) timeEl.value = parsed.time;
         if (cityEl && parsed.city) cityEl.value = parsed.city;
+        const justUnlocked = sessionStorage.getItem('neo_just_unlocked') === 'saturn';
+        if (justUnlocked) {
+          window.__SATURN_SUPPRESS_SUBMIT_SCROLL__ = true;
+        }
         setTimeout(() => {
           form.dispatchEvent(new Event('submit'));
-          try {
-            if (sessionStorage.getItem('neo_just_unlocked') === 'saturn') {
-              sessionStorage.removeItem('neo_just_unlocked');
-              setTimeout(() => {
-                const proto = document.getElementById('saturnProtocolSection') || resultsContainer;
-                if (proto) proto.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }, 250);
-            }
-          } catch (err) {}
-        }, 120);
+          if (justUnlocked) {
+            sessionStorage.removeItem('neo_just_unlocked');
+            setTimeout(() => {
+              const proto = document.getElementById('saturnProtocolSection') || resultsContainer;
+              if (proto) proto.scrollIntoView({ behavior: 'auto', block: 'start' });
+            }, 80);
+          }
+        }, 60);
       }
     }
   } catch (err) {}
