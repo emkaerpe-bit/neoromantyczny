@@ -403,6 +403,7 @@
       cleanUrl.searchParams.delete('luxe_product');
       window.history.replaceState({}, '', cleanUrl.toString());
       if (prod && prod.unlockKey) {
+        try { sessionStorage.setItem('neo_just_unlocked', productKey); } catch (e) {}
         window.location.reload();
       }
     } catch (err) {

@@ -195,6 +195,10 @@
         return;
       }
 
+      try {
+        localStorage.setItem('neo_dispositor_last_input', JSON.stringify({ date, time, city }));
+      } catch (err) {}
+
       currentChart = window.__DISPOSITOR_ENGINE__.calcAllPlanets(date, time, city);
       const dispData = window.__DISPOSITOR_ENGINE__.calculateDispositorChain(currentChart.planets, useModernMode);
       if (dispData.finalDispositors && dispData.finalDispositors.length > 0) {
@@ -219,6 +223,31 @@
         if (timeEl && params.get('time')) timeEl.value = params.get('time');
         if (cityEl && params.get('city')) cityEl.value = params.get('city');
         setTimeout(() => { form.dispatchEvent(new Event('submit')); }, 120);
+      } else {
+        const savedRaw = localStorage.getItem('neo_dispositor_last_input');
+        if (savedRaw) {
+          const saved = JSON.parse(savedRaw);
+          if (saved && saved.date) {
+            const dateEl = document.getElementById('disp-date');
+            const timeEl = document.getElementById('disp-time');
+            const cityEl = document.getElementById('disp-city');
+            if (dateEl) dateEl.value = saved.date;
+            if (timeEl && saved.time) timeEl.value = saved.time;
+            if (cityEl && saved.city) cityEl.value = saved.city;
+            setTimeout(() => {
+              form.dispatchEvent(new Event('submit'));
+              try {
+                if (sessionStorage.getItem('neo_just_unlocked') === 'dyspozytorzy') {
+                  sessionStorage.removeItem('neo_just_unlocked');
+                  setTimeout(() => {
+                    const rep = document.getElementById('dispositor-report-container');
+                    if (rep) rep.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 250);
+                }
+              } catch (err) {}
+            }, 120);
+          }
+        }
       }
     } catch (e) {}
   }
