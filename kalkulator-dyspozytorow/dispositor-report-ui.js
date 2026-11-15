@@ -1,5 +1,5 @@
 /**
- * NEOROMANTYZM — ARCHITEKTURA PODŚWIADOMOŚCI: GENERATOR RAPORTU & PAYWALL UI (20 PLN)
+ * NEOROMANTYZM — ARCHITEKTURA PODŚWIADOMOŚCI: GENERATOR RAPORTU & PAYWALL UI (29 PLN)
  * Standard: Human Voice 2026, C.G. Jung Depth Psychology, 6 Rozdziałów Głębi
  */
 (function () {
@@ -187,7 +187,7 @@
         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,0.1);">
           <div>
             <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.25em;color:#C9A84C;text-transform:uppercase;font-weight:700;">
-              SPERSONALIZOWANE STUDIUM ARCHITEKTURY WEWNĘTRZNEJ • 20 PLN
+              SPERSONALIZOWANE STUDIUM ARCHITEKTURY WEWNĘTRZNEJ • 29 PLN
             </div>
             <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem, 4vw, 2.2rem);color:#FAF8F5;margin:0.25rem 0 0.15rem;line-height:1.25;">
               ${data.title}
@@ -229,7 +229,7 @@
           ${buildChainFlowNarrative(chart, hierarchy)}
         </section>
 
-        <!-- STREFA ROZDZIAŁÓW 2–6 Z MECHANIZMEM CURIOSITY GAP (PAYWALL 20 PLN) -->
+        <!-- STREFA ROZDZIAŁÓW 2–6 Z MECHANIZMEM CURIOSITY GAP (PAYWALL 29 PLN) -->
         <div class="disp-paywall-gate">
           <div class="disp-blurred-zone">
             ${renderChapters2To6(data, chart, hierarchy)}
@@ -238,7 +238,7 @@
             <div class="disp-lock-card">
               <div style="margin-bottom:0.6rem;color:#C9A84C;"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
               <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.2em;color:#C9A84C;text-transform:uppercase;margin-bottom:0.5rem;font-weight:700;">
-                PEŁNE STUDIUM PSYCHOLOGII GŁĘBI • 20,00 PLN
+                PEŁNE STUDIUM PSYCHOLOGII GŁĘBI • 29,00 PLN
               </div>
               <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.35rem, 3.8vw, 1.85rem);color:#FAF8F5;margin:0 0 0.65rem;line-height:1.25;">
                 Odblokuj Pozostałe 5 Rozdziałów
@@ -251,11 +251,11 @@
                 <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:9999px;padding:0.25rem 0.75rem;font-size:11px;color:rgba(250,248,245,0.9);font-family:'JetBrains Mono',monospace;">6 Rozdziałów Głębi</span>
                 <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:9999px;padding:0.25rem 0.75rem;font-size:11px;color:rgba(250,248,245,0.9);font-family:'JetBrains Mono',monospace;">Somatyka & Reset 24h</span>
                 <span style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:9999px;padding:0.25rem 0.75rem;font-size:11px;color:rgba(250,248,245,0.9);font-family:'JetBrains Mono',monospace;">Eksport PDF A4</span>
-                <span style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.35);border-radius:9999px;padding:0.25rem 0.75rem;font-size:11px;color:#34D399;font-weight:700;font-family:'JetBrains Mono',monospace;">BLIK • 20,00 PLN</span>
+                <span style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.35);border-radius:9999px;padding:0.25rem 0.75rem;font-size:11px;color:#34D399;font-weight:700;font-family:'JetBrains Mono',monospace;">BLIK • 29,00 PLN</span>
               </div>
 
               <button type="button" id="disp-unlock-btn" class="disp-report-btn" style="background:#C9A84C;color:#0D0D12;font-weight:700;padding:1rem 1.4rem;border-radius:9999px;border:none;cursor:pointer;font-size:14px;box-shadow:0 0 35px rgba(201,168,76,0.35);transition:all 0.2s ease;display:inline-flex;align-items:center;justify-content:center;gap:0.6rem;max-width:100%;box-sizing:border-box;white-space:normal;text-align:center;">
-                <span>Odblokuj Pełne Studium (20 PLN • BLIK)</span>
+                <span>Odblokuj Pełne Studium (29 PLN • BLIK)</span>
                 <span style="font-size:18px;">&rarr;</span>
               </button>
 

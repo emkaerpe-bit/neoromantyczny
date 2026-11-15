@@ -645,7 +645,7 @@
           </div>
         </div>
 
-        <!-- Paywalled Spersonalizowany Raport Władcy (20 PLN) Container -->
+        <!-- Paywalled Spersonalizowany Raport Władcy (29 PLN) Container -->
         <div id="dispositor-report-container"></div>
 
         <!-- CTA Konsultacji -->
@@ -664,7 +664,7 @@
       </div>
     `;
 
-    // Render Paywalled Custom Dispositor Report (20 PLN)
+    // Render Paywalled Custom Dispositor Report (29 PLN)
     function triggerPaywallRender(attempts) {
       attempts = attempts || 0;
       if (window.__DISPOSITOR_REPORT_UI__ && typeof window.__DISPOSITOR_REPORT_UI__.renderPaywallTeaser === 'function') {

@@ -7,7 +7,7 @@ const EXPECTED_AMOUNTS = {
   synastria: 3900,
   astrokartografia: 3900,
   numerologia: 4700,
-  dyspozytorzy: 2000,
+  dyspozytorzy: 2900,
   saturn: 4700
 };
 
