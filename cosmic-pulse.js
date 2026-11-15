@@ -421,7 +421,7 @@
 (function () {
   const ZODIAC_DATA = [
     {
-      name: 'Baran', genitive: 'Barana', symbol: '♈\uFE0E', element: 'Ogień', ruler: 'Mars',
+      name: 'Baran', genitive: 'Barana', symbol: '<svg width="1.1em" height="1.1em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;" aria-hidden="true"><path d="M 8.5 13.5 C 7.5 8.5, 14 7.5, 16 14.5 L 16 25 M 23.5 13.5 C 24.5 8.5, 18 7.5, 16 14.5"/></svg>', element: 'Ogień', ruler: 'Mars',
       slug: '/blog/prezent-dla-barana-co-kupic',
       aura: 'Dzień bezpośrednich impulsów i magnetycznej szczerości. Napięcie w relacjach szuka natychmiastowego ujścia – półsłówka i dyplomatyczne uniki działają dziś jak płachta na byka.',
       greenLight: 'Spontaniczne zaproszenie w ostatniej chwili, odważny komplement, prezenty związane z adrenaliną, niszowym rzemiosłem i wyzwaniem.',
@@ -429,7 +429,7 @@
       scent: 'Czarny pieprz, czerwony grejpfrut, skóra i palone drewno cedrowe'
     },
     {
-      name: 'Byk', genitive: 'Byka', symbol: '♉\uFE0E', element: 'Ziemia', ruler: 'Wenus',
+      name: 'Byk', genitive: 'Byka', symbol: '<svg width="1.1em" height="1.1em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;" aria-hidden="true"><circle cx="16" cy="19" r="5.2"/><path d="M 8.5 9.5 C 10.5 14, 21.5 14, 23.5 9.5"/></svg>', element: 'Ziemia', ruler: 'Wenus',
       slug: '/blog/prezent-dla-byka-jak-trafic-w-gust',
       aura: 'Czas zmysłowego uziemienia i hedonistycznego spokoju. Emocje reagują dziś wyłącznie na dotyk, jakość materii, zapach i poczucie fizycznego bezpieczeństwa.',
       greenLight: 'Kolacja przy świecach, kaszmir, ciężkie flakony perfum, masaż i namacalne dowody obecności bez pośpiechu.',
@@ -437,7 +437,7 @@
       scent: 'Figa śródziemnomorska, drzewo sandałowe, wanilia bourbon i wetyweria'
     },
     {
-      name: 'Bliźnięta', genitive: 'Bliźniąt', symbol: '♊\uFE0E', element: 'Powietrze', ruler: 'Merkury',
+      name: 'Bliźnięta', genitive: 'Bliźniąt', symbol: '<svg width="1.1em" height="1.1em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;" aria-hidden="true"><path d="M 8.5 9 C 12.5 11.2, 19.5 11.2, 23.5 9 M 8.5 23 C 12.5 20.8, 19.5 20.8, 23.5 23 M 12.8 10.3 L 12.8 21.7 M 19.2 10.3 L 19.2 21.7"/></svg>', element: 'Powietrze', ruler: 'Merkury',
       slug: '/blog/prezent-dla-blizniat-co-kupic',
       aura: 'Intelektualne iskrzenie i ciekawość, która nie znosi rutyny. Droga do bliskości prowadzi dziś wyłącznie przez błyskotliwą rozmowę, ironię i grę skojarzeń.',
       greenLight: 'Nieoczywista wiadomość w ciągu dnia, album konceptualny, limitowany gadżet lub wspólne odkrywanie nowego miejsca.',
@@ -445,7 +445,7 @@
       scent: 'Bergamotka, biała herbata, kardamon i chłodny ozon'
     },
     {
-      name: 'Rak', genitive: 'Raka', symbol: '♋\uFE0E', element: 'Woda', ruler: 'Księżyc',
+      name: 'Rak', genitive: 'Raka', symbol: '<svg width="1.1em" height="1.1em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;" aria-hidden="true"><circle cx="10.2" cy="13.5" r="3.2"/><circle cx="21.8" cy="18.5" r="3.2"/><path d="M 7.5 11.7 C 11 7.6, 19.5 7.6, 25 11 M 24.5 20.3 C 21 24.4, 12.5 24.4, 7 21"/></svg>', element: 'Woda', ruler: 'Księżyc',
       slug: '/blog/prezent-dla-raka-co-kupic',
       aura: 'Niezwykła wyostrzona intuicja i pamięć emocjonalna. Ludzie słyszą dziś ton Twojego głosu głośniej niż same słowa – każdy fałsz zostanie natychmiast wyczuty.',
       greenLight: 'Kameralny wieczór we dwoje, upominek nawiązujący do wspólnego wspomnienia, troska o detale domowego rytuału.',
@@ -453,7 +453,7 @@
       scent: 'Bursztyn, mleko migdałowe, irys i morska sól'
     },
     {
-      name: 'Lew', genitive: 'Lwa', symbol: '♌\uFE0E', element: 'Ogień', ruler: 'Słońce',
+      name: 'Lew', genitive: 'Lwa', symbol: '<svg width="1.1em" height="1.1em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;" aria-hidden="true"><circle cx="10.5" cy="18.5" r="3"/><path d="M 12.8 16.2 C 11.5 9.5, 19.5 7.5, 20.5 13.5 C 21.2 17.5, 18.5 22, 22 22.5 C 23.5 22.7, 24.5 21.5, 24.5 20.2"/></svg>', element: 'Ogień', ruler: 'Słońce',
       slug: '/blog/prezent-dla-lwa-co-kupic',
       aura: 'Aura królewskiego rozmachu i pragnienia bycia dostrzeżonym. W relacjach liczy się dziś gest z klasą, duma z partnera i autentyczny podziw.',
       greenLight: 'Spektakularna oprawa prezentu, złote akcenty, niszowa biżuteria i gest, który pokazuje, że druga osoba jest absolutnym priorytetem.',
@@ -461,7 +461,7 @@
       scent: 'Szafran, kwiat pomarańczy, żywica benzoesowa i ciepłe złote piżmo'
     },
     {
-      name: 'Panna', genitive: 'Panny', symbol: '♍\uFE0E', element: 'Ziemia', ruler: 'Merkury',
+      name: 'Panna', genitive: 'Panny', symbol: '<svg width="1.1em" height="1.1em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;" aria-hidden="true"><path d="M 7.5 11.5 C 8.5 9.5, 10 9.5, 10 12 L 10 21 M 10 13 C 10 9.5, 14.2 9.5, 14.2 13 L 14.2 21 M 14.2 13 C 14.2 9.5, 18.4 9.5, 18.4 13 L 18.4 20.5 C 18.4 23.5, 21 24.5, 23 23 M 18.4 15 C 21.5 12.5, 24.5 14.5, 22.5 18.5 C 21 21, 17.5 22.5, 15.8 24"/></svg>', element: 'Ziemia', ruler: 'Merkury',
       slug: '/blog/prezent-dla-panny-co-kupic',
       aura: 'Analityczna precyzja i cichy język miłości wyrażany przez uważność. Dziś największe wrażenie robi to, że pamiętasz o drobiazgu, o którym ktoś wspomniał miesiąc temu.',
       greenLight: 'Minimalistyczny design, perfekcyjnie zaplanowany wieczór, japońska ceramika, luksusowa pielęgnacja i porządek w działaniu.',
@@ -469,7 +469,7 @@
       scent: 'Hinoki (japoński cyprys), czysta bawełna, szałwia muszkatołowa i zielona herbata'
     },
     {
-      name: 'Waga', genitive: 'Wagi', symbol: '♎\uFE0E', element: 'Powietrze', ruler: 'Wenus',
+      name: 'Waga', genitive: 'Wagi', symbol: '<svg width="1.1em" height="1.1em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;" aria-hidden="true"><path d="M 7.5 18.5 L 12.2 18.5 A 4.8 4.8 0 1 1 19.8 18.5 L 24.5 18.5 M 7.5 22.5 L 24.5 22.5"/></svg>', element: 'Powietrze', ruler: 'Wenus',
       slug: '/blog/prezent-dla-wagi-co-kupic',
       aura: 'Estetyczna wrażliwość podniesiona do rangi sztuki. Harmonia wizualna, takt i symetria w relacji decydują dziś o tym, czy między dwojgiem ludzi pojawi się chemia.',
       greenLight: 'Sztuka, autorskie flakony perfum, jedwab, galeria lub restauracja o nienagannym wnętrzu i wyrafinowany flirt.',
@@ -477,7 +477,7 @@
       scent: 'Róża damasceńska, różowy pieprz, białe piżmo i drzewo kaszmirowe'
     },
     {
-      name: 'Skorpion', genitive: 'Skorpiona', symbol: '♏\uFE0E', element: 'Woda', ruler: 'Pluton',
+      name: 'Skorpion', genitive: 'Skorpiona', symbol: '<svg width="1.1em" height="1.1em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;" aria-hidden="true"><path d="M 7.5 11.5 C 8.5 9.5, 10 9.5, 10 12 L 10 21 M 10 13 C 10 9.5, 14.2 9.5, 14.2 13 L 14.2 21 M 14.2 13 C 14.2 9.5, 18.4 9.5, 18.4 13 L 18.4 20 C 18.4 23, 21.5 23, 24 19.5 M 21.2 19.2 L 24.2 19.2 L 24.2 22.2"/></svg>', element: 'Woda', ruler: 'Pluton',
       slug: '/blog/prezent-dla-skorpiona-co-kupic',
       aura: 'Magnetyczna głębia, psychologia cienia i zero tolerancji dla powierzchowności. Rozmowy schodzą dziś pod powierzchnię – liczy się wyłącznie absolutna prawda i intymność.',
       greenLight: 'Tajemniczy, hipnotyzujący zapach, literatura psychologiczna, zmysłowa bielizna i rozmowa w cztery oczy bez masek.',
@@ -485,7 +485,7 @@
       scent: 'Oud (agar), czarna skóra, kadzidło kościelne, tytoń i ciemna śliwka'
     },
     {
-      name: 'Strzelec', genitive: 'Strzelca', symbol: '♐\uFE0E', element: 'Ogień', ruler: 'Jowisz',
+      name: 'Strzelec', genitive: 'Strzelca', symbol: '<svg width="1.1em" height="1.1em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;" aria-hidden="true"><path d="M 8.5 23.5 L 23.5 8.5 M 16.5 8.5 L 23.5 8.5 L 23.5 15.5 M 11.5 14.5 L 17.5 20.5"/></svg>', element: 'Ogień', ruler: 'Jowisz',
       slug: '/blog/prezent-dla-strzelca-co-kupic',
       aura: 'Głód przestrzeni, filozoficznego rozmachu i wolności. Relacje potrzebują dziś świeżego powietrza, inspiracji i wyjścia poza utarte cztery ściany.',
       greenLight: 'Bilety w nieznane, rzemieślnicze akcesoria podróżne, egzotyczne smaki i rozmowy o wielkich wizjach.',
@@ -493,7 +493,7 @@
       scent: 'Kadzidło frankońskie, cynamon cejloński, jałowiec i dziki cedr'
     },
     {
-      name: 'Koziorożec', genitive: 'Koziorożca', symbol: '♑\uFE0E', element: 'Ziemia', ruler: 'Saturn',
+      name: 'Koziorożec', genitive: 'Koziorożca', symbol: '<svg width="1.1em" height="1.1em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;" aria-hidden="true"><path d="M 7.5 11.5 L 10 10 L 13.2 20.5 L 16.8 11.5 C 18 9, 21.5 9.5, 21.5 13.5 C 21.5 18, 24.2 21, 21 23.5 C 18.5 25, 16.2 23, 17.2 20.5 C 18.2 18.5, 21.5 18.8, 24 21"/></svg>', element: 'Ziemia', ruler: 'Saturn',
       slug: '/blog/prezent-dla-koziorozca-jak-przetrwac-bezlitosny-audyt',
       aura: 'Szlachetny minimalizm, dyscyplina i szacunek dla czasu. Uczucia wyraża się dziś poprzez niezawodność, konkret, lojalność i ponadczasowy status.',
       greenLight: 'Klasyka gatunku (skóra licowa, stal, pióro wieczne, wyselekcjonowany rocznik) oraz dotrzymane słowo bez zbędnych deklaracji.',
@@ -501,7 +501,7 @@
       scent: 'Wetyweria haitańska, mech dębowy, gorzka pomarańcza i chłodny grafit'
     },
     {
-      name: 'Wodnik', genitive: 'Wodnika', symbol: '♒\uFE0E', element: 'Powietrze', ruler: 'Uran',
+      name: 'Wodnik', genitive: 'Wodnika', symbol: '<svg width="1.1em" height="1.1em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;" aria-hidden="true"><path d="M 7.5 14.5 L 10.5 11.5 L 13.2 14.5 L 16 11.5 L 18.8 14.5 L 21.5 11.5 L 24.5 14.5 M 7.5 20.5 L 10.5 17.5 L 13.2 20.5 L 16 17.5 L 18.8 20.5 L 21.5 17.5 L 24.5 20.5"/></svg>', element: 'Powietrze', ruler: 'Uran',
       slug: '/blog/prezent-dla-wodnika-jak-obdarowac-kogos-kto-zameldowal-sie-w-xxii-wieku',
       aura: 'Magnetyzm oryginalności i bunt przeciwko schematom. Największym afrodyzjakiem jest dziś intelektualna niezależność i zaskoczenie czymś unikatowym.',
       greenLight: 'Niszowy winyl, awangardowy obiekt designu, nowoczesna technologia i szacunek dla osobistej przestrzeni.',
@@ -509,7 +509,7 @@
       scent: 'Molekuły ambroksanu, metaliczny aldehyd, czarny bez i chłodny eukaliptus'
     },
     {
-      name: 'Ryby', genitive: 'Ryb', symbol: '♓\uFE0E', element: 'Woda', ruler: 'Neptun',
+      name: 'Ryby', genitive: 'Ryb', symbol: '<svg width="1.1em" height="1.1em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;" aria-hidden="true"><path d="M 10 8.5 C 14.5 12.5, 14.5 19.5, 10 23.5 M 22 8.5 C 17.5 12.5, 17.5 19.5, 22 23.5 M 7.5 16 L 24.5 16"/></svg>', element: 'Woda', ruler: 'Neptun',
       slug: '/blog/prezent-dla-ryb-jak-obdarowac-kogos-kto-operuje-w-zupelnie-innej-gestosci',
       aura: 'Oniryczna wrażliwość, empatia i poetycki odbiór rzeczywistości. Granice między słowem a przeczuciem zacierają się – dziś rządzi nastrój, muzyka i symbolika.',
       greenLight: 'Rytuał kąpielowy, analogowa fotografia, sztuka, niszowe świece zapachowe i czułość bez słów.',
