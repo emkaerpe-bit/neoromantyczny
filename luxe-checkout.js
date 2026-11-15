@@ -49,7 +49,8 @@
       price: '47,00 PLN',
       btn: 'Zapłać 47,00 PLN i Odbierz Portret &rarr;',
       successHeading: 'Portret został odblokowany!',
-      successSub: 'Twój pełny profil numerologiczny jest już dostępny.'
+      successSub: 'Twój pełny profil numerologiczny jest już dostępny.',
+      unlockKey: 'neo_num_unlocked'
     },
     'dyspozytorzy': {
       tag: 'ARCHITEKTURA PODŚWIADOMOŚCI',

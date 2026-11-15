@@ -1488,6 +1488,12 @@
       try {
         if (localStorage.getItem('neo_synastry_unlocked') === 'true') {
           performUnlock(true);
+          if (sessionStorage.getItem('neo_just_unlocked') === 'synastria') {
+            sessionStorage.removeItem('neo_just_unlocked');
+            setTimeout(() => {
+              if (section) section.scrollIntoView({ behavior: 'auto', block: 'start' });
+            }, 60);
+          }
         }
       } catch (e) {}
       if (window.location && window.location.search) {

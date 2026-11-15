@@ -47,5 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const n1 = savedN1 || 'Osoba 1';
     const n2 = savedN2 || 'Osoba 2';
     resultsContainer.innerHTML = buildNumerologyReportHtml(savedD1, savedD2, n1, n2, true);
+    try {
+      if (sessionStorage.getItem('neo_just_unlocked') === 'numerologia') {
+        sessionStorage.removeItem('neo_just_unlocked');
+        resultsContainer.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+    } catch (e) {}
   }
 });

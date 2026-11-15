@@ -1003,7 +1003,10 @@
 
       const resSec = document.getElementById('acgResultsSection');
       resSec.classList.add('is-visible');
-      resSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (!window.__ACG_SUPPRESS_SUBMIT_SCROLL__) {
+        resSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      window.__ACG_SUPPRESS_SUBMIT_SCROLL__ = false;
     }
 
     document.querySelectorAll('.acg-pill-btn[data-filter]').forEach(btn => {
@@ -1090,12 +1093,16 @@
             if (match) selectedBirthCity = match;
           }
           if (!selectedBirthCity && Array.isArray(allBirthPool)) selectedBirthCity = allBirthPool[0];
+          const justUnlocked = sessionStorage.getItem('neo_just_unlocked') === 'astrokartografia';
+          if (justUnlocked) {
+            window.__ACG_SUPPRESS_SUBMIT_SCROLL__ = true;
+          }
           runCalculation(parsed.date, parsed.time || '12:00');
-          if (sessionStorage.getItem('neo_just_unlocked') === 'astrokartografia') {
+          if (justUnlocked) {
             sessionStorage.removeItem('neo_just_unlocked');
             setTimeout(() => {
-              if (paywallWrap) paywallWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 250);
+              if (paywallWrap) paywallWrap.scrollIntoView({ behavior: 'auto', block: 'start' });
+            }, 60);
           }
         }
       }
