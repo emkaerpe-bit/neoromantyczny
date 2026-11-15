@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
         try { window.history.replaceState({}, '', window.location.pathname); } catch (e) {}
         return false;
       }
-      if (params.get('unlocked') === 'true' || params.get('paid') === 'true') {
+      if (params.get('paid') === 'true') {
         try { localStorage.setItem('neo_saturn_unlocked', 'true'); } catch (e) {}
         return true;
       }
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const svgWheelHtml = window.SaturnWheel.renderSaturnReturnWheel(currentChart, currentTransitSatLon);
 
     // 6. Składanie Raportu: Raport ZACZYNA SIĘ OD ZNAKU I DOMU
-    const diagnosisHtml = window.SaturnRender.renderMainDiagnosisCard(satPlanet, signData, houseData, dignityData, satPlanet.isRetrograde);
+    const diagnosisHtml = window.SaturnRender.renderMainDiagnosisCard(satPlanet, signData, houseData, dignityData, satPlanet.isRetrograde, dispInfo);
     const passesHtml = window.SaturnRenderDetails.renderPassesHtml(passes);
     const aspectsHtml = window.SaturnRenderDetails.renderAspectsList(aspects);
 

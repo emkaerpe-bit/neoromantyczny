@@ -6,131 +6,131 @@
   Object.assign(window.__DISPOSITOR_REPORT_DATA__.planets, {
     mercury: {
       planetKey: 'mercury',
-      title: 'Merkury: Kartograf Cudzych Sekretów',
-      archetype: 'Rzeźbiarz Słowa — Zbieracz Ukrytych Sensów',
-      subtitle: 'Gdy Merkury w Bliźniętach albo w Pannie zamyka drzewo dyspozytorów, świat układa się przed Tobą jak szyfr zapisany drobnym maczkiem na marginesie starej książki.',
-      structureTheory: 'Twoje decyzje rodzą się z nerwowych połączeń między faktami, których inni w ogóle nie widzą. Umysł pracuje u Ciebie bez przerwy na nocną zmianę. Dopóki nadajesz chaosowi imiona, stoisz twardo na nogach; gdy przestajesz nazywać rzeczy po imieniu, lęk natychmiast wchodzi przez szparę pod drzwiami.',
+      title: 'Merkury: Strateg',
+      archetype: 'Archetyp: Strateg',
+      subtitle: 'Gdy Merkury w Bliźniętach albo w Pannie zamyka drzewo dyspozytorów, Twoje poczucie kontroli zależy od tego, czy potrafisz nazwać mechanizm sytuacji.',
+      structureTheory: 'Każda emocja i potrzeba przechodzi u Ciebie natychmiastową obróbkę poznawczą. Wyłapujesz niespójności w cudzych deklaracjach po trzech minutach rozmowy. Dopóki porządkujesz informacje i podejmujesz konkretne decyzje, czujesz spokój; gdy zostawiasz sprawy niedomówione, umysł zaczyna produkować dziesiątki czarnych scenariuszy.',
       coreDiagnosis: {
-        vector: 'Przekuć nerwowy pośpiech myśli w chirurgiczną precyzję słowa i nie rozmieniać uwagi na drobne.',
-        psychDynamics: 'Widzisz sprzeczność w cudzym zdaniu, zanim rozmówca skończy pić herbatę. Twoją udręką bywa nadmiar głosów we własnej głowie — sto otwartych kartek jednocześnie, tysiąc błyskotliwych dygresji i żadnej kropki. Kiedy uciekasz od emocji w suchą analizę, ciało odpowiada płytkim oddechem i drżeniem dłoni.',
-        sovereigntyRole: 'W pokoju pełnym krzyku wygrywa nie ten, kto bije pięścią w stół, lecz ten, kto potrafi położyć na nim jedno zdanie kończące spór.'
+        vector: 'Przekuć nerwowy pośpiech myśli w chirurgiczną precyzję komunikatu i nie tracić energii na drobiazgi.',
+        psychDynamics: 'Potrafisz rozbroić trudny problem w pięć minut logicznym pytaniem, ale często używasz intelektualizacji jako tarczy przed prawdziwym lękiem. Zamiast przyznać przed partnerem, że coś Cię zabolało, układasz długi wywód merytoryczny. W stresie otwierasz kilkanaście wątków naraz i nie domykasz żadnego do końca.',
+        sovereigntyRole: 'W chaosie emocjonalnych opinii wygrywasz spokojnym przywołaniem faktów, liczb i jednego trafnego wniosku.'
       },
       nourishmentProtocol: {
-        somatic: 'Długie wydechy nosem, rozluźnienie barków opadających przy biurku oraz ręczne pisanie piórem zamiast gorączkowego stukania w klawiaturę.',
-        environment: 'Czyste światło nad stołem, dobrze ułożone książki, notatnik w twardej oprawie i cisza wolna od paplaniny w tle.',
-        dailyRitual: 'Dwadzieścia minut bez telefonu po przebudzeniu. Zapisz trzy najważniejsze sprawy na małej kartce i resztę wyrzuć z głowy do jutra.'
+        somatic: 'Długie wydechy nosem, rozluźnianie szczęki i barków przy biurku oraz odłożenie telefonu na godzinę przed snem.',
+        environment: 'Przejrzyste biurko bez stosów luźnych notatek, jedna aktywna lista zadań i cisza bez rozpraszających powiadomień.',
+        dailyRitual: 'Rano spisz trzy priorytety na zwykłej kartce — zanim sprawdzisz komunikatory i skrzynkę mailową.'
       },
       shadowAndEmergency: {
         exhaustionSignals: [
-          'Chłodna ironia, którą odpychasz bliskość jak tarczą ze szkła, gdy robi się zbyt prawdziwie.',
-          'Bezsenne układanie stu scenariuszy rozmowy o trzeciej nad ranem, choć nikt jeszcze nic nie powiedział.',
-          'Rozpraszanie sił na dziesięć rozpoczętych zeszytów i brak finału w tym jedynym, naprawdę ważnym.'
+          'Złośliwa ironia używana po to, żeby zatrzymać drugą osobę na bezpieczny dystans emocjonalny.',
+          'Bezsenne układanie stu wariantów jutrzejszej rozmowy o trzeciej nad ranem.',
+          'Zaczynanie pięciu kursów, wątków lub projektów naraz przy zerowej satysfakcji z finału.'
         ],
-        sabotagePattern: 'Tłumaczysz sobie uczucie na zimną logikę tak długo, aż zabijesz żywy impuls. Potem dziwisz się w pustym mieszkaniu, że wokół zostało mnóstwo błyskotliwych faktów i ani grama ciepła.',
-        emergency24h: 'Przestań analizować i zadzwoń albo wyślij tę jedną krótką wiadomość, którą poprawiasz w brudnopisie od poniedziałku.'
+        sabotagePattern: 'Rozkładasz każdą relację i uczucie na czynniki pierwsze tak długo, aż zabijasz spontaniczność — potem zostajesz z poczuciem racji i kompletnym brakiem bliskości.',
+        emergency24h: 'Zakończ jedną wiszącą sprawę komunikacyjną: wyślij konkretny mail lub zadzwoń zamiast poprawiać wersję roboczą piąty raz.'
       },
       relationshipDynamics: {
-        intimateNeed: 'Rozmowy, która sięga pod podszewkę banału. Kogoś, przy kim milczenie nie jest niezręczne, a żart nie potrzebuje przypisów.',
-        vulnerabilityFear: 'Strach przed byciem nudnym, przewidywalnym albo złapanym na niewiedzy, gdy zbraknie Ci ciętej riposty.',
-        boundaryRule: 'Nie wygrywaj sporów błyskotliwością w chwilach, gdy druga osoba potrzebuje tylko prostej obecności.'
+        intimateNeed: 'Stymulacji intelektualnej, poczucia humoru bez tłumaczenia żartów oraz partnera, który potrafi rozmawiać o problemach bez obrażania się.',
+        vulnerabilityFear: 'Strach przed wyjściem na osobę nudną, mało lotną lub przyłapaną na braku argumentów w ważnym sporze.',
+        boundaryRule: 'Nie wygrywaj kłótni erystyką w chwili, gdy bliska osoba chce tylko usłyszeć, że rozumiesz jej zmęczenie.'
       },
       careerAndWealth: {
-        wealthLever: 'Język, architektura informacji, handel, prawo, negocjacje, redakcja i zamiana gąszczu danych w krystalicznie klarowną decyzję.',
-        careerTrap: 'Tępa, mechaniczna robota pod ludźmi, dla których myślenie stanowi groźną bezczelność.'
+        wealthLever: 'Język, architektura informacji, prawo, negocjacje, analiza danych, redakcja oraz sprzedaż doradcza oparta na ekspertyzie.',
+        careerTrap: 'Mechaniczna, powtarzalna praca pod przełożonym, który traktuje zadawanie pytań jako niesubordynację.'
       },
       decisionalFilter: {
         questions: [
-          'Czy zadaję kolejne pytanie z ciekawości prawdy, czy ze strachu przed krokiem naprzód?',
-          'Czy moje zdanie buduje most, czy tnie jak brzytwa dla samej satysfakcji?',
-          'Którą sprawę mam wreszcie zamknąć dziś przed zachodem słońca?'
+          'Czy dopytuję o szczegóły, bo szukam prawdy, czy tylko odwlekam trudną decyzję?',
+          'Czy to zdanie wyjaśnia sytuację, czy służy jedynie udowodnieniu mojej przewagi intelektualnej?',
+          'Którą otwartą sprawę powinienem zamknąć dziś przed końcem pracy?'
         ],
-        powerAxiom: 'Jasne słowo ma ciężar złotej monety — nie rzucaj go na wiatr przed ludźmi bez słuchu.'
+        powerAxiom: 'Jasne słowo ma wartość dopiero wtedy, gdy prowadzi do konkretnego działania.'
       }
     },
     venus: {
       planetKey: 'venus',
-      title: 'Wenus: Pani Zakazanych Proporcji',
-      archetype: 'Mistrzyni Harmonii — Strażniczka Godności',
-      subtitle: 'Gdy Wenus w Byku lub Wadze domyka cały horoskop, Twój los rozstrzyga się w jakości więzi, smaku i granic.',
-      structureTheory: 'Nie daj się zwieść jedwabnym rękawiczkom: za Twoim poczuciem taktu kryje się stalowa miara wartości. Kiedy coś jest brzydkie, wulgarne albo nieuczciwe wobec Ciebie, nie musisz podnosić głosu przy kolacji. Wewnętrzna waga zapada w ciszy, a drzwi zamykają się bezpowrotnie na dwa spusty.',
+      title: 'Wenus: Dyplomata',
+      archetype: 'Archetyp: Dyplomata',
+      subtitle: 'Gdy Wenus w Byku lub Wadze domyka cały horoskop, Twój spokój zależy od jakości umów, estetyki otoczenia i równowagi dawania oraz brania.',
+      structureTheory: 'Twoja uprzejmość potrafi zmylić ludzi: pod spokojnym tonem kryje się bezkompromisowy zmysł jakości. Wiesz natychmiast, kiedy ktoś marnuje Twój czas, obniża standard albo przekracza granicę szacunku. Nie musisz krzyczeć w kłótni — kiedy miara się przelewa, po prostu po cichu zamykasz dostęp do swojej obecności.',
       coreDiagnosis: {
-        vector: 'Przestać płacić własnym spokojem za cudzy komfort przy stole.',
-        psychDynamics: 'Potrafisz wyczuć fałsz w tonie głosu i zgrzyt w doborze słów, zanim inni zauważą pęknięcie. Najczęstszą trucizną jest u Ciebie nadmierna uprzejmość: uśmiechasz się gładko, gdy wewnątrz rośnie gorzki osad, byle nie popsuć atmosfery i nie wyjść na osobę kłopotliwą.',
-        sovereigntyRole: 'Twój autorytet polega na selekcji. Nie gonisz za nikim po schodach — przyciągasz jakością, ciszą i brakiem desperacji.'
+        vector: 'Przestać płacić własnym komfortem i czasem za utrzymywanie pozornej zgody w relacjach.',
+        psychDynamics: 'Wychwytujesz nieszczerość w tonie głosu zanim druga strona dokończy zdanie. Twoim typowym mechanizmem obronnym w stresie jest nadmierna dyplomacja: zgadzasz się na niekorzystne warunki dla świętego spokoju, a potem gromadzisz cichą urazę, aż któregoś dnia zrywasz kontakt bez ostrzeżenia.',
+        sovereigntyRole: 'Twój autorytet wynika ze smaku, cierpliwości i umiejętności odmowy bez zbędnych tłumaczeń.'
       },
       nourishmentProtocol: {
-        somatic: 'Dobre płótno na skórze, powolny posiłek bez pośpiechu, zapach deszczu po burzy i ciało traktowane z czułością zamiast pośpiechu.',
-        environment: 'Piękne światło wieczorem, świeże kwiaty lub dobre drewno, zero bylejakości w rzeczach codziennego użytku.',
-        dailyRitual: 'Zrób jedną małą rzecz wyłącznie dla piękna dnia i powiedz jedno uprzejme, lecz twarde „nie”, jeśli coś jest pod Twoją cenę.'
+        somatic: 'Świadomy kontakt z komfortem ciała: porządny posiłek zjedzony bez pośpiechu, dobre materiały i spokojny spacer bez telefonu.',
+        environment: 'Uporządkowana przestrzeń pozbawiona prowizorek, spójne światło wieczorem i przedmioty wybrane na lata.',
+        dailyRitual: 'Zadbaj dziś o jedną rzecz podnoszącą standard codzienności i odmów wyraźnie jednej prośbie naruszającej Twój plan.'
       },
       shadowAndEmergency: {
         exhaustionSignals: [
-          'Kupowanie akceptacji milczeniem i uległością w sprawach, które od tygodni budzą w Tobie bunt.',
-          'Zamykanie serca za ciężką kurtyną uprzejmości, żeby nikt nigdy nie zobaczył Twojego głodu.',
-          'Szukanie ucieczki w zmysłowym zbytku, gdy pod skórą kłuje poczucie emocjonalnej pustki.'
+          'Uśmiechanie się i przytakiwanie w sytuacjach, które od tygodni budzą w Tobie wewnętrzny sprzeciw.',
+          'Chowanie własnych potrzeb za nienaganną uprzejmością, żeby nie wyjść na osobę roszczeniową.',
+          'Kompulsywne wydatki lub objadanie się w odpowiedzi na deficyt bliskości w związku.'
         ],
-        sabotagePattern: 'Zgadzasz się na letnie układy i niedomówienia, dopóki kielich nie przeleje się przy drobiazgu. Wtedy odchodzisz chłodno w środku nocy, zostawiając zdumionego partnera bez słowa ostrzeżenia.',
-        emergency24h: 'Powiedz na głos swoją rzeczywistą cenę lub granicę, zanim cicha uraza zamieni się w lodowatą obojętność.'
+        sabotagePattern: 'Tolerujesz letnie układy i nierówny podział kosztów emocjonalnych aż do punktu krytycznego — wtedy odchodzisz gwałtownie, zanim partner zrozumie powagę sytuacji.',
+        emergency24h: 'Nazwij wprost jedną granicę finansową lub czasową w bliskiej relacji, zanim cicha irytacja zamieni się w obojętność.'
       },
       relationshipDynamics: {
-        intimateNeed: 'Elegancji uczuć, wierności słowu i dotyku, który nie bierze niczego siłą.',
-        vulnerabilityFear: 'Lęk przed brzydkim konfliktem i obawą, że kiedy pokażesz zęby lub gniew, stracisz miłość na zawsze.',
-        boundaryRule: 'Prawdziwy spokój nie rodzi się z unikania prawdy, lecz z równej wymiany między dwojgiem dorosłych ludzi.'
+        intimateNeed: 'Wzajemności, dotrzymywania drobnych obietnic oraz poczucia, że druga strona dba o jakość wspólnego czasu.',
+        vulnerabilityFear: 'Obawa przed brzydką konfrontacją i przekonanie, że pokazanie niezadowolenia przekreśli sympatię otoczenia.',
+        boundaryRule: 'Prawdziwy spokój w parze wymaga równej wymiany — uprzejmość bez asertywności staje się cichym rachunkiem pretensji.'
       },
       careerAndWealth: {
-        wealthLever: 'Estetyka, luksus, dyplomacja, sztuka, doradztwo wizerunkowe, kuratorstwo i tworzenie miejsc, do których ludzie wracają z zachwytu.',
-        careerTrap: 'Brudna gra łokciami w środowiskach bez stylu, smaku i elementarnego honoru.'
+        wealthLever: 'Dyplomacja, wzornictwo, marki premium, negocjacje kontraktów, doradztwo wizerunkowe, nieruchomości i kuratorstwo jakości.',
+        careerTrap: 'Praca w środowisku opartym na ciągłym krzyku, chaosie i pogoni za najniższą ceną bez szacunku dla rzemiosła.'
       },
       decisionalFilter: {
         questions: [
-          'Czy zgadzam się na to z własnego wyboru, czy tylko po to, by uniknąć niezręcznej ciszy?',
-          'Czy ta relacja karmi moje poczucie godności, czy cicho je wyprzedaje?',
-          'Jak brzmiałaby moja decyzja, gdyby nie chodziło o cudzą aprobatę?'
+          'Czy zgadzam się na tę propozycję z przekonania, czy tylko unikam niezręcznej odmowy?',
+          'Czy ta relacja szanuje mój czas i granice, czy zjada moją energię po cichu?',
+          'Jak wyceniłbym ten krok, gdybym nie musiał dbać o cudze dobre samopoczucie?'
         ],
-        powerAxiom: 'Ten, kto zna wartość własnego towarzystwa, nigdy nie negocjuje z bylejakością.'
+        powerAxiom: 'Ten, kto szanuje własne standardy, nie musi nikogo przekonywać do swojej wartości.'
       }
     },
     mars: {
       planetKey: 'mars',
-      title: 'Mars: Żelazny Kręg Woli',
-      archetype: 'Wojownik Progu — Strażnik Odwagi',
-      subtitle: 'Gdy Mars w Baranie lub Skorpionie stoi na końcu łańcucha, całe Twoje życie zależy od jednego pytania: czy potrafisz uderzyć w stół we własnej sprawie.',
-      structureTheory: 'Nie stworzono Cię do czekania pod cudzym parasolem na lepszą pogodę. Kiedy Mars zamyka drzewo dyspozytorów, energia życiowa płynie jak warta rzeka pod zimowym lodem — albo przebijasz sobie drogę prosto naprzód, albo złość zwraca się przeciwko Tobie jako zmęczenie, migrena i gorzki chłód.',
+      title: 'Mars: Wojownik',
+      archetype: 'Archetyp: Wojownik',
+      subtitle: 'Gdy Mars w Baranie lub Skorpionie stoi na końcu łańcucha, całe Twoje samopoczucie zależy od tego, czy potrafisz zadziałać we własnej sprawie.',
+      structureTheory: 'Nie funkcjonujesz dobrze w biernym oczekiwaniu na cudzą inicjatywę. Gdy Mars zamyka drzewo dyspozytorów, energia życiowa musi znaleźć jasne ujście w działaniu, sporcie lub ostrej decyzji. Kiedy blokujesz swój sprzeciw dla wygody innych ludzi, gniew obraca się do środka jako napięcie mięśniowe, bóle głowy lub wybuchy na drobiazgach.',
       coreDiagnosis: {
-        vector: 'Zamienić tłumioną frustrację w czysty, zdecydowany ruch bez oglądania się na zezwolenia.',
-        psychDynamics: 'Widzisz, co trzeba zrobić, już w trzeciej sekundzie spotkania, gdy reszta sali wciąż tasuje papiery. Kiedy z uprzejmości lub strachu zaciskasz zęby i grasz potulnego obserwatora, Twój ogień zaczyna przypalać Ci wnętrze od środka.',
-        sovereigntyRole: 'Twoja obecność porządkuje chaos w sytuacjach podbramkowych. Kiedy w pokoju pęka rura i gaśnie światło, inni instynktownie patrzą w Twoją stronę.'
+        vector: 'Zamienić tłumioną frustrację w czysty, zdecydowany ruch bez czekania na powszechne pozwolenie.',
+        psychDynamics: 'Widzisz potrzebny krok już w trzeciej sekundzie spotkania, gdy reszta grupy wciąż szuka wymówek. Jeśli z grzeczności albo lęku przed konfliktem zaciskasz zęby i siedzisz cicho, gromadzisz w sobie złość, która w końcu wybucha nie tam, gdzie trzeba — na partnerze albo w korku ulicznym.',
+        sovereigntyRole: 'Twoja obecność porządkuje kryzys. W sytuacjach awaryjnych, kiedy wszyscy tracą głowę i szukają winnych, Ty przechodzisz od razu do rozwiązania.'
       },
       nourishmentProtocol: {
-        somatic: 'Krótki, brutalnie szczery wysiłek fizyczny — ciężki trening, szybki bieg pod górę, zimny prysznic wypłukujący zastój z mięśni.',
-        environment: 'Wyraźne terytorium bez wtrącania się z boku, ciężkie metalowe detale i proste zasady gry na piśmie.',
-        dailyRitual: 'Zacznij poranek od najtrudniejszej rozmowy albo zadania, przed którym inni odkładają słuchawkę do piątku.'
+        somatic: 'Krótki, intensywny wysiłek siłowy lub interwałowy oraz zimny prysznic szybko rozładowujący nadmiar kortyzolu i adrenaliny.',
+        environment: 'Jasny podział odpowiedzialności w domu i pracy, brak wtrącania się bez pytania oraz konkretne terminy na piśmie.',
+        dailyRitual: 'Załatw jedną najtrudniejszą rozmowę lub zadanie przed dziesiątą rano — zanim zdążysz wymyślić trzy powody, żeby ją odłożyć.'
       },
       shadowAndEmergency: {
         exhaustionSignals: [
-          'Wybuchy zimnego gniewu na drobiazgach na ulicy, bo prawdziwy przeciwnik wciąż siedzi nietykalny w domu lub pracy.',
-          'Ciągłe udowadnianie racji tam, gdzie wystarczyłoby spokojnie odwrócić się na pięcie.',
-          'Paraliż woli z winy ukrytego strachu, że jedno twarde cięcie zburzy kruchy pokój.'
+          'Ostre reakcje na błahe spóźnienie lub drobiazg w domu, gdy prawdziwy konflikt siedzi nierozwiązany w pracy.',
+          'Udowadnianie racji w nieistotnych dyskusjach wyłącznie z odruchu walki o dominację.',
+          'Paraliż decyzyjny wywołany obawą, że jedno szczere cięcie rozwali dotychczasowy spokój.'
         ],
-        sabotagePattern: 'Wypowiadasz dziesięć małych wojen naraz zamiast stanąć twarzą w twarz z jednym konfliktem, który naprawdę decyduje o Twojej wolności.',
-        emergency24h: 'Zrób jeden odważny ruch w sprawie, którą odwlekasz od miesięcy — bez ostrzegawczych westchnień, krótko i czysto.'
+        sabotagePattern: 'Prowadzisz pięć małych kłótni zastępczych tygodniowo zamiast stanąć twarzą w twarz z jednym tematem, który naprawdę blokuje Twoją wolność.',
+        emergency24h: 'Zrób jeden odważny ruch w sprawie odwlekanej od miesięcy — krótko, konkretnie i bez teatralnego wstępu.'
       },
       relationshipDynamics: {
-        intimateNeed: 'Namiętności bez letniej wody i partnera, który nie chowa głowy pod poduszkę, gdy iskry lecą nad stołem.',
-        vulnerabilityFear: 'Obawa przed bezradnością i chwilą, w której okaże się, że zbroja nie chroni przed stratą.',
-        boundaryRule: 'Prawdziwa odwaga w miłości nie polega na wygrywaniu pojedynków, lecz na szczerości bez chowania noża za plecami.'
+        intimateNeed: 'Intensywności, jasnych sygnałów oraz partnera, który potrafi stawić Ci czoła w sporze bez wielodniowego obrażania się.',
+        vulnerabilityFear: 'Obawa przed bezradnością oraz lęk, że zdjęcie gardy w miłości narazi Cię na zranienie.',
+        boundaryRule: 'Prawdziwa siła w związku oznacza szczerość bez złośliwego docinania. Walcz z problemem, nigdy z partnerem.'
       },
       careerAndWealth: {
-        wealthLever: 'Pionierskie projekty, sytuacje kryzysowe, negocjacje twardych stawek, medycyna, sport, przedsiębiorczość i rozruch tam, gdzie inni boją się zacząć.',
-        careerTrap: 'Cierpliwe grzanie krzesła w urzędzie, gdzie inicjatywa bywa karana jako brak pokory.'
+        wealthLever: 'Zarządzanie kryzysowe, uruchamianie nowych firm, negocjacje twardych warunków, chirurgia, sport, prawo procesowe i sprzedaż B2B.',
+        careerTrap: 'Praca w powolnej biurokracji, w której inicjatywa jest traktowana jak bezczelne wychylanie się przed szereg.'
       },
       decisionalFilter: {
         questions: [
-          'Czy walczę o własną prawdę, czy tylko szukam guza, żeby poczuć, że jeszcze żyję?',
-          'Gdzie dokładnie zamilkłem z lęku przed cudzą furią?',
-          'Co bym zrobił dzisiaj rano, gdyby w ogóle nie brakowało mi odwagi?'
+          'Czy walczę tutaj o realny interes, czy tylko szukam starcia, żeby poczuć przypływ adrenaliny?',
+          'W której dokładnie relacji przemilczałem temat ze strachu przed cudzą złością?',
+          'Jaki pierwszy krok wykonałbym dzisiaj, gdybym odłożył wahanie na bok?'
         ],
-        powerAxiom: 'Odwaga to nie brak strachu w kościach — to krok w stronę ognia mimo zimnego potu na karku.'
+        powerAxiom: 'Odwaga nie polega na braku niepokoju — zaczyna się w sekundzie ruchu mimo dyskomfortu.'
       }
     }
   });

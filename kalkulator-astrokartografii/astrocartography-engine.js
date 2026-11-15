@@ -1056,7 +1056,6 @@
     const modal = document.getElementById('acgStripeModal');
     const unlockBtn = document.getElementById('acgUnlockBtn');
     const closeBtn = document.getElementById('acgModalClose');
-    const bypassBtn = document.getElementById('acgLocalBypassBtn');
 
     function unlockAtlas() {
       paywallWrap.classList.add('is-unlocked');
@@ -1064,7 +1063,7 @@
       localStorage.setItem('neo_acg_unlocked', '1');
     }
 
-    if (localStorage.getItem('neo_acg_unlocked') === '1' || new URLSearchParams(window.location.search).get('unlocked') === 'true') {
+    if (localStorage.getItem('neo_acg_unlocked') === '1') {
       paywallWrap.classList.add('is-unlocked');
     }
     if (unlockBtn) unlockBtn.addEventListener('click', () => {
@@ -1075,6 +1074,5 @@
       }
     });
     if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.remove('is-active'));
-    if (bypassBtn) bypassBtn.addEventListener('click', unlockAtlas);
   });
 })();

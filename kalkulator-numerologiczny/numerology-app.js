@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('num-form');
   const resultsContainer = document.getElementById('num-results');
   const params = new URLSearchParams(window.location.search);
-  const isPaid = params.get('unlocked') === 'true' || localStorage.getItem('neo_num_unlocked') === 'true';
+  const isPaid = params.get('paid') === 'true' || localStorage.getItem('neo_num_unlocked') === 'true';
 
   if (!form || !resultsContainer) return;
 

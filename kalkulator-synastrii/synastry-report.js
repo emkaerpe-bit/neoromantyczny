@@ -134,7 +134,7 @@
       c: 'Walka o to, czyje zdanie zamyka spór — jedno czuje się pouczane, drugie słucha własnego głosu jak sędziego.'
     },
     'sun-venus': {
-      h: 'Ciepłe światło przy którym zrzuca się mokry płaszcz z ulicy. W tym towarzystwie najzwyklejszy wieczór smakuje jak mały luksus.',
+      h: 'Naturalna akceptacja i ciepło bez udawania kogokolwiek. W tym towarzystwie najzwyklejszy wieczór smakuje jak mały luksus.',
       c: 'Pokusa grania w piękną harmonię kosztem przemilczanej zadry, dopóki kielich nie przeleje się przy błahej uwadze.'
     },
     'mars-sun': {
@@ -154,7 +154,7 @@
       c: 'Przymus wyjścia ze znanych kolein — obecność tej osoby zdziera z Ciebie wygodne wymówki bez pytania o zgodę.'
     },
     'moon-moon': {
-      h: 'Ten sam rytm nocy i ciszy w mieszkaniu. Oboje czujecie bez tłumaczeń, kiedy zgasić światło, a kiedy podać gorącą herbatę.',
+      h: 'Ten sam rytm nocy i ciszy w mieszkaniu. Oboje rozumiecie bez słów, kiedy druga osoba potrzebuje ciszy, a kiedy obecności.',
       c: 'Dwa odmienne kody strachu — to, co jedno chce zagłuszyć rozmową do rana, drugie dusi pod zamkniętą poduszką.'
     },
     'mercury-moon': {
@@ -167,7 +167,7 @@
     },
     'mars-moon': {
       h: 'Gęsty instynkt ochronny i nagłe pragnienie pod skórą. Wiesz, że w środku nocy nie zostaniesz z zagrożeniem sam.',
-      c: 'Ostre słowo rzucone w nerwach trafia prosto w odsłonięte żebro, zanim ktokolwiek zdąży zdjąć płaszcz.'
+      c: 'Ostre słowo rzucone w nerwach trafia w czuły punkt szybciej, niż druga strona zdąży zareagować.'
     },
     'jupiter-moon': {
       h: 'Szerokie ramiona i pamięć wolna od małostkowej zemsty. Przy sobie oddychacie pełną piersią jak na ganku nad morzem.',
@@ -266,7 +266,7 @@
       c: 'Opozycja biegunów — to, co dla jednego jest bezpiecznym wczoraj, dla drugiego staje się twardym drzwiami w przyszłość.'
     },
     'pluto-venus': {
-      h: 'Magnetyzm schodzący prosto pod kołnierz i skórę. Przyciąganie bez wyłącznika, które zmienia spojrzenie na miłość do końca życia.',
+      h: 'Silne napięcie fizyczne i emocjonalne bez bezpiecznego dystansu. Przyciąganie bez wyłącznika, które zmienia spojrzenie na miłość do końca życia.',
       c: 'Obsesyjna ciemność zazdrości i gra o władzę nad sercem — więź tak gęsta, że trudno z niej wyjść zwykłym pożegnaniem.'
     },
     'mars-pluto': {
@@ -612,7 +612,7 @@
     'Pożar na Progu (Kompozyt w Baranie) — Wasz związek żyje ruchem, bezpośrednią prawdą i odwagą otwierania zamkniętych drzwi. Gdy usiądziecie w wygodnych fotelach z nudą o siódmej wieczorem, iskra natychmiast zmienia się w kłótnię o byle drobiazg.',
     'Zmysłowy Azyl (Kompozyt w Byku) — Ta relacja buduje świat z ciężkiego drewna, ciepłego chleba, dotyku i wierności, która nie drży przy pierwszym chłodzie. Czas pracuje tu na Waszą korzyść, jeśli tylko pamiętacie o żywym pragnieniu ponad rutyną.',
     'Nocny Dialog (Kompozyt w Bliźniętach) — Trzyma Was razem słowo ostre jak stalówka i ciekawość tego, co druga osoba powie zanim zgaśnie lampka. Zbliża Was wspólna podróż i żart rzucony w biegu, lecz chłód wchodzi wtedy, gdy błyskotliwość zastępuje czułość.',
-    'Zamknięte Sanktuarium (Kompozyt w Raku) — Razem stawiacie cichy dom za ciężkimi zasłonami, w którym wolno zdjąć pancerz ulicy bez strachu przed szyderstwem. Waszą siłą jest pamięć o drobnych gestach i obrona własnego progu przed zgiełkiem.',
+    'Zamknięte Sanktuarium (Kompozyt w Raku) — Razem stawiacie cichy dom za ciężkimi zasłonami, w którym można odłożyć codzienną rezerwę bez strachu przed krytyką. Waszą siłą jest pamięć o drobnych gestach i obrona własnego progu przed zgiełkiem.',
     'Królewski Krąg Światła (Kompozyt we Lwie) — Wasz sojusz oddycha dumą, hojnością gestu i potrzebą blasku. Jesteście dla siebie lustrem, w którym rośnie odwaga, dopóki okazujecie sobie zachwyt ponad szarą codziennością.',
     'Rzemiosło Bliskości (Kompozyt w Pannie) — Tu miłość nosi codzienny strój czynu, nie pustych toastów przy winie. Pomagacie sobie porządkować chaos i dźwigać ciężar dnia; uważajcie jedynie, by krytyczne oko nie zagasiło spontaniczności.',
     'Waga Piękna i Miary (Kompozyt w Wadze) — Związek krojony z wyczuciem taktu, symetrii i elegancji przy wspólnym stole. Potrzebujecie pięknej oprawy i spokoju sporu, w którym żadna ze stron nie musi opuszczać głowy ze wstydu.',
@@ -620,7 +620,7 @@
     'Daleki Peron (Kompozyt w Strzelcu) — Wasze „My” potrzebuje przestrzeni większej niż ciasne mieszkanie w bloku. Ożywia Was wspólna wyprawa, śmiech w nieznanym mieście i horyzont, którego nie zasłania codzienna troska.',
     'Kamienna Twierdza (Kompozyt w Koziorożcu) — Dyskretny sojusz budowany z myślą o dekadach, nie o jednej wiośnie. Czas sprawdza tu ciężar danego słowa, a wspólny spokój i lojalność stają się cenniejsze niż chwilowe fajerwerki.',
     'Osobne Niebo (Kompozyt w Wodniku) — Łączycie braterstwo wolnych umysłów z odmową grania cudzych ról przy niedzielnym stole. To więź oparta na przyjaźni i oryginalności, która oddycha tylko przy dużym zaufaniu i swobodzie.',
-    'Cisza Podwodnych Prądów (Kompozyt w Rybach) — Czytacie swoje lęki i sny zanim zapadnie pierwsze słowo w przedpokoju. Tworzycie własny świat chroniony przed zgiełkiem ulicy, pod warunkiem że nie mylicie bliskości z utratą własnych granic.'
+    'Cisza Podwodnych Prądów (Kompozyt w Rybach) — Wyczuwacie swoje napięcie i zmiany nastroju jeszcze przed pierwszą rozmową. Tworzycie własny świat chroniony przed zgiełkiem ulicy, pod warunkiem że nie mylicie bliskości z utratą własnych granic.'
   ];
 
   function getVerdict(d, dos) {
@@ -654,7 +654,7 @@
       'Odwaga pierwszego kroku i życie bez asekuracji; gaśniecie w nudzie i letnich kompromisach.',
       'Budowanie cichej twierdzy z dotyku, solidnego stołu i wierności odpornej na złe czasy.',
       'Nocny dialog do świtu, ciekawość myśli i brak ciężkich kajdan z przyzwyczajenia.',
-      'Dom za grubymi zasłonami, w którym można zdjąć zbroję z ulicy i odetchnąć bez obaw.',
+      'Dom za grubymi zasłonami, w którym można odpuścić czujność i odpocząć bez ciągłej obrony.',
       'Wspólne światło, duma z obecności drugiej osoby i hojność gestu bez drobnych rachunków.',
       'Uważna obecność w czynie, czyste szczegóły dnia i wzajemne porządkowanie życiowego chaosu.',
       'Spokój miary, elegancja sporu i wspólne szukanie piękna w codziennej formie.',
@@ -668,7 +668,7 @@
       'Gorący klimat w czterech ścianach; napięcia oczyszcza krótka burza i szczerość od progu.',
       'Zmysłowy spokój w kuchni, miękka pościel, zapach świeżego chleba i brak pośpiechu o poranku.',
       'Regeneracja przez rozmowę przy stole, wspólny śmiech i otwarte okno na zmianę powietrza.',
-      'Głęboka troska i ciche wyczuwanie nastrojów zanim wybrzmi powitanie w przedpokoju.',
+      'Głęboka troska i ciche wyczuwanie nastrojów zanim padnie pierwsze słowo po powrocie do domu.',
       'Ciepło domu karmione wzajemnym podziwem, dobrym światłem i brakiem drobnych uszczypliwości.',
       'Bezpieczeństwo osadzone w drobnych rytuałach poranka, niezawodności i słowie bez wymówek.',
       'Pokoje wolne od krzyku; spokój wraca tam, gdzie panuje umiar, piękno i miękki głos.',
@@ -729,7 +729,7 @@
       'Dyskretny magnetyzm opanowania, czystości linii i dłoni uważnej na najmniejsze drgnięcie.',
       'Sztuka powolnego uwodzenia w półmroku, miękki jedwab i napięcie wiszące w powietrzu.',
       'Hipnotyczny nurt bez hamulców — spojrzenie jak ostrze, tabu i noc bez znieczulenia.',
-      'Spontaniczna iskra w drodze, śmiech pod płaszczem i brak sztywnego scenariusza.',
+      'Spontaniczność w podróży, poczucie humoru i brak sztywnego scenariusza.',
       'Ciemny płomień pod chłodnym garniturem — rozpala go siła charakteru i powolne zdzieranie dystansu.',
       'Elektryzująca obietnica czegoś niepodobnego do wczoraj i wolność bez taniej rutyny.',
       'Półmrok, muzyka pod żebrami i ciche zatracenie granic przy zgaszonej lampie.'
@@ -775,8 +775,7 @@
   const N = window.__SYNASTRY_NARRATIVES__;
 
   function renderChaptersOneToFour(d, dos, verdict) {
-    const isTestEnv = (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.search.includes('test=true')));
-    const priceDisplay = isTestEnv ? '0 PLN (Test)' : '39 PLN';
+    const priceDisplay = '39 PLN';
     const planetRows = dos.bodyDefs.map(b => {
       const pA = dos.posA[b.key];
       const pB = dos.posB[b.key];
@@ -1018,19 +1017,19 @@
               `OŚ MAŁŻEŃSTWA ☉/☽ (${d.nameB})`,
               `<div style="font-size:1rem;color:#C9A96E;font-weight:600;"><span class="syn-glyph">${dos.mpSunMoonB.glyph}</span> ${dos.mpSunMoonB.name} ${dos.mpSunMoonB.formatted} <span style="opacity:0.65;font-size:0.8rem;">(Mod 90°: ${(dos.mpSunMoonB.lon % 90).toFixed(1)}°)</span></div>
                <div style="font-size:0.76rem;opacity:0.7;margin-top:0.3rem;">Punkt czuły więzi małżeńskiej i zaufania intymnego u ${d.nameB}.</div>`,
-              M(`Punkt spotkania świadomego wyboru z głodem czułości. Pokazuje cichy wzorzec więzi u ${d.nameB} i to, przy kim naprawdę może zdjąć zbroję na całe życie.`, dos.mpSunMoonB, 'marriage')
+              M(`Punkt spotkania świadomego wyboru z głodem czułości. Pokazuje cichy wzorzec więzi u ${d.nameB} i to, przy kim naprawdę może odłożyć codzienną ostrożność na całe życie.`, dos.mpSunMoonB, 'marriage')
             )}
             ${T(
               `OŚ POŻĄDANIA ♀/♂ (${d.nameA})`,
               `<div style="font-size:1rem;color:#FAF8F5;font-weight:600;"><span class="syn-glyph">${dos.mpVenMarA.glyph}</span> ${dos.mpVenMarA.name} ${dos.mpVenMarA.formatted} <span style="opacity:0.65;font-size:0.8rem;">(Mod 90°: ${(dos.mpVenMarA.lon % 90).toFixed(1)}°)</span></div>
                <div style="font-size:0.76rem;opacity:0.7;margin-top:0.3rem;">Kod pasji, uwodzenia i reaktywności zmysłowej (${dos.mpVenMarA.element}).</div>`,
-              M(`Osobisty punkt zapłonu erotycznego (midpoint Wenus i Marsa). Określa, jaki rodzaj aury, energii, dotyku i zmysłowego impulsu natychmiast rozbraja zmysły ${d.nameA} i rozpala namiętność.`, dos.mpVenMarA, 'desire')
+              M(`Punkt napięcia między pragnieniem bliskości a sposobem działania (midpoint Wenus i Marsa). Wskazuje bodziec, który najszybciej przełamuje rezerwę u ${d.nameA} i uruchamia fizyczne przyciąganie.`, dos.mpVenMarA, 'desire')
             )}
             ${T(
               `OŚ POŻĄDANIA ♀/♂ (${d.nameB})`,
               `<div style="font-size:1rem;color:#FAF8F5;font-weight:600;"><span class="syn-glyph">${dos.mpVenMarB.glyph}</span> ${dos.mpVenMarB.name} ${dos.mpVenMarB.formatted} <span style="opacity:0.65;font-size:0.8rem;">(Mod 90°: ${(dos.mpVenMarB.lon % 90).toFixed(1)}°)</span></div>
                <div style="font-size:0.76rem;opacity:0.7;margin-top:0.3rem;">Punkt zapłonu erotycznego i ekspresji uczuć (${dos.mpVenMarB.element}, Δ90°: ${dos.ebertinDesireDelta.toFixed(1)}°).</div>`,
-              M(`Osobisty punkt zapłonu erotycznego (midpoint Wenus i Marsa). Określa, jaki rodzaj aury, energii, dotyku i zmysłowego impulsu natychmiast rozbraja zmysły ${d.nameB} i rozpala namiętność.`, dos.mpVenMarB, 'desire')
+              M(`Bezpośredni klucz temperamentu seksualnego (punkt środkowy Wenus i Marsa). Określa styl inicjatywy, tempa i kontaktu fizycznego, na który ciało ${d.nameB} reaguje najmocniej.`, dos.mpVenMarB, 'desire')
             )}
           </div>
         </div>
@@ -1139,8 +1138,7 @@
   let isReportUnlocked = false;
 
   function renderChaptersFiveToSevenAndPaywall(d, dos, verdict) {
-    const isTestEnv = (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.search.includes('test=true')));
-    const priceDisplay = isTestEnv ? '0 PLN (Test)' : '39 PLN';
+    const priceDisplay = '39 PLN';
     const isFemA = d.genderA === 'f';
     const isFemB = d.genderB === 'f';
     const profSunA = d.sunA.profile[isFemA ? 'f' : 'm'];
@@ -1187,7 +1185,7 @@
               <div class="syn-chapter-num">ROZDZIAŁ V • PROTOKÓŁ DEESKALACJI KRYZYSU I PSYCHOLOGIA CIENIA</div>
               <h4 class="syn-chapter-title">Instrukcja Obsługi Napięcia, Gniewu (♂) i Bezpieczeństwa (☽)</h4>
               <p style="font-size:0.9rem;line-height:1.68;color:rgba(250,248,245,0.86);margin-bottom:1rem;">
-                W sytuacjach przeciążenia emocjonalnego <strong>${d.nameA}</strong> reaguje z poziomu Księżyca w znaku <strong>${dos.posA.moon.gen}</strong> oraz Marsa w znaku <strong>${dos.posA.mars.gen} (${dos.posA.mars.element})</strong>, natomiast <strong>${d.nameB}</strong> uruchamia mechanizm obronny Księżyca w znaku <strong>${dos.posB.moon.gen}</strong> i Marsa w znaku <strong>${dos.posB.mars.gen} (${dos.posB.mars.element})</strong>. Zamiast walczyć z objawem, zastosujcie poniższy klucz rozbrajania pancerza obronnego:
+                W sytuacjach przeciążenia emocjonalnego <strong>${d.nameA}</strong> reaguje z poziomu Księżyca w znaku <strong>${dos.posA.moon.gen}</strong> oraz Marsa w znaku <strong>${dos.posA.mars.gen} (${dos.posA.mars.element})</strong>, natomiast <strong>${d.nameB}</strong> uruchamia mechanizm obronny Księżyca w znaku <strong>${dos.posB.moon.gen}</strong> i Marsa w znaku <strong>${dos.posB.mars.gen} (${dos.posB.mars.element})</strong>. Zamiast walczyć z objawem, zastosujcie poniższy klucz rozbrajania mechanizmu obronnego:
               </p>
               <div class="syn-grid-2" style="margin-bottom:0;">
                 <div class="syn-stat-box">
@@ -1244,16 +1242,16 @@
             <button type="button" class="syn-modal-close" id="syn-loss-modal-close" aria-label="Zamknij">&times;</button>
             <div class="syn-loss-badge">
               <span class="syn-loss-dot"></span>
-              <span>⚠️ OMIJA CIĘ 86% ANALIZY RELACJI</span>
+              <span>🔒 SEKCJA DOSSIER WYMAGA ODBLOKOWANIA</span>
             </div>
-            <h3 class="syn-loss-title" style="margin-top:0.35rem;">Widzisz zaledwie 14% Waszego Kosmogramu</h3>
+            <h3 class="syn-loss-title" style="margin-top:0.35rem;">Ten fragment należy do zamkniętych rozdziałów II–VII</h3>
             <p class="syn-loss-desc">
-              Wstępny zarys to za mało, by uniknąć relacyjnych błędów. <strong>Aż 86% kluczowych danych</strong> — w tym punkty zapalne w kłótniach, podświadoma obsesja erotyczna (Pluton ♇ × Lilith ⚸) oraz klucz gaszenia gniewu partnera — pozostaje zablokowane:
+              Przeglądasz wersję próbną profilu pary. Dokładne punkty tarcia w kłótniach, mapa nałożenia planet w domach oraz pełna psychologia cienia otwierają się natychmiast po jednorazowym odblokowaniu dokumentu:
             </p>
             <div class="syn-loss-meter">
               <div class="syn-loss-meter-labels">
-                <span>Odkryto: <strong style="color:#C9A96E;">14%</strong></span>
-                <span>Ukryto przed Tobą: <strong style="color:#FB7185;">86% analizy</strong></span>
+                <span>Odblokowane sekcje: <strong style="color:#C9A96E;">Rozdział I (Zarys)</strong></span>
+                <span>Czeka w pełnej wersji: <strong style="color:#FB7185;">6 zamkniętych rozdziałów</strong></span>
               </div>
               <div class="syn-loss-bar">
                 <div class="syn-loss-bar-fill" style="width:14%;"></div>
@@ -1262,27 +1260,27 @@
             <div class="syn-loss-grid">
               <div class="syn-loss-item">
                 <span class="syn-loss-icon">🔒</span>
-                <div><strong>Punkty Krytyczne & Zwarcia (Aspektarium)</strong><p>16 kątów planetarnych wyznaczających punkty zapalne w relacji</p></div>
+                <div><strong>Mapa Kątów Napięcia (Kwadratury i Opozycje)</strong><p>Dokładne orby planetarne pokazujące, skąd biorą się powtarzalne spięcia</p></div>
               </div>
               <div class="syn-loss-item">
                 <span class="syn-loss-icon">🔒</span>
-                <div><strong>Indeks Obsesji & Sfera Tabu (Pluton × Lilith)</strong><p>Podświadomy magnetyzm, zazdrość i niewypowiedziane pragnienia</p></div>
+                <div><strong>Psychologia Przyciągania i Tabu</strong><p>Analiza śladów Plutona, Lilith oraz Węzłów Księżycowych między Wami</p></div>
               </div>
               <div class="syn-loss-item">
                 <span class="syn-loss-icon">🔒</span>
-                <div><strong>Nakładka 12 Domów od Twojego Ascendentu</strong><p>W które dokładnie sfery Twojego życia uderzają planety partnera</p></div>
+                <div><strong>Sfera Życia pod Wpływem Partnera</strong><p>Kompletna interpretacja wejścia planet drugiej osoby w Twoje domy</p></div>
               </div>
               <div class="syn-loss-item">
                 <span class="syn-loss-icon">🔒</span>
-                <div><strong>Instrukcja Gaszenia Gniewu & Cienia</strong><p>Psychologiczny klucz do rozbrajania mechanizmów obronnych partnera</p></div>
+                <div><strong>Protokół Rozmów w Kryzysie</strong><p>Konkretne wskazówki, jak rozładować stres i bronić zaufania bez wycofania</p></div>
               </div>
             </div>
             <div style="margin-top:1.35rem;text-align:center;">
               <button type="button" class="syn-btn-paywall syn-loss-cta" id="syn-loss-modal-cta">
-                <span>Odblokuj Pozostałe 86% Raportu — ${priceDisplay} &rarr;</span>
+                <span>Przejdź do pełnej analizy (${priceDisplay}) &rarr;</span>
               </button>
               <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(250,248,245,0.65);margin-top:0.45rem;">
-                ✓ Płatność jednorazowa • Natychmiastowy dostęp do 7 rozdziałów + Druk A4
+                ✓ Wersja cyfrowa na miejscu + gotowy wydruk PDF dla obojga
               </div>
             </div>
           </div>
@@ -1303,17 +1301,9 @@
                 <span class="syn-stripe-badge">G Pay</span>
                 <span class="syn-stripe-badge">BLIK</span>
                 <span class="syn-stripe-badge">Karta / Link</span>
-                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#34D399;font-weight:700;margin-left:auto;">${isTestEnv ? '0,00 PLN (Test)' : '39,00 PLN'}</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#34D399;font-weight:700;margin-left:auto;">39,00 PLN</span>
               </div>
             </div>
-
-            ${isTestEnv ? `
-              <div style="margin-bottom:1.15rem;text-align:center;">
-                <button type="button" id="syn-test-bypass-btn" class="syn-btn-secondary" style="width:100%;border-color:#34D399;color:#34D399;font-weight:600;padding:0.75rem 1rem;font-size:12px;">
-                  <span>⚡ Odblokuj natychmiast bez płatności (0 PLN — Test) &rarr;</span>
-                </button>
-              </div>
-            ` : ''}
 
             <div id="syn-payment-element-mount">
               <div class="syn-stripe-loader" id="syn-stripe-loader">
@@ -1326,7 +1316,7 @@
 
             <div style="margin-top:1rem;text-align:center;">
               <button type="button" class="syn-btn-paywall syn-loss-cta" id="syn-stripe-submit-btn" style="display:none;width:100%;">
-                <span>Zapłać ${isTestEnv ? '0,00 PLN (Test)' : '39,00 PLN'} i Odblokuj Raport &rarr;</span>
+                <span>Zapłać 39,00 PLN i Odblokuj Raport &rarr;</span>
               </button>
               <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(250,248,245,0.6);margin-top:0.6rem;">
                 🔒 Szyfrowanie 256-bit SSL • Płatność obsługiwana przez Stripe.com
@@ -1357,18 +1347,8 @@
       }
     };
 
-    const isTestEnv = (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.search.includes('test=true')));
-
     if (paywallBtn) {
       paywallBtn.addEventListener('click', () => {
-        if (isTestEnv) {
-          paywallBtn.innerHTML = '<span>⚡ Odblokowywanie Raportu (0 PLN — Test)...</span>';
-          setTimeout(() => {
-            try { localStorage.setItem('neo_synastry_unlocked', 'true'); } catch (e) {}
-            performUnlock(false);
-          }, 300);
-          return;
-        }
         if (window.NEO_SYNASTRY_CHECKOUT_URL) {
           window.location.href = window.NEO_SYNASTRY_CHECKOUT_URL;
           return;
@@ -1399,15 +1379,6 @@
     if (stripeModal) {
       stripeModal.addEventListener('click', (e) => {
         if (e.target === stripeModal) closeStripeModal();
-      });
-    }
-
-    const testBypassBtn = document.getElementById('syn-test-bypass-btn');
-    if (testBypassBtn) {
-      testBypassBtn.addEventListener('click', () => {
-        closeStripeModal();
-        try { localStorage.setItem('neo_synastry_unlocked', 'true'); } catch (e) {}
-        performUnlock(false);
       });
     }
 
@@ -1520,7 +1491,7 @@
         }
       } catch (e) {}
       if (window.location && window.location.search) {
-        if (window.location.search.includes('unlocked=true') || window.location.search.includes('paid=true')) {
+        if (window.location.search.includes('paid=true')) {
           try { localStorage.setItem('neo_synastry_unlocked', 'true'); } catch (e) {}
           performUnlock(true);
         }

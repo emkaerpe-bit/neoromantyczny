@@ -1,156 +1,142 @@
-/**
- * NEOROMANTYZM — ARCHITEKTURA UKRYTEJ WOLI (CZĘŚĆ 5: SYSTEMY ZŁOŻONE & SELEKTOR)
- * Standard: Human Voice Engine v2.0 (Zafon Noir & Implicit Jung)
- */
 (function () {
   'use strict';
-
   window.__DISPOSITOR_REPORT_DATA__ = window.__DISPOSITOR_REPORT_DATA__ || {};
 
-  // ==========================================
-  // WZAJEMNA RECEPCJA: DIALOG DWÓCH OŚRODKÓW
-  // ==========================================
+  // WZAJEMNA RECEPCJA: DWUWŁADZA DECYZYJNA
   window.__DISPOSITOR_REPORT_DATA__.mutualReception = {
     type: 'mutual',
-    title: 'Wzajemna Recepcja: Spór Dwóch Królów przy Jednym Stole',
-    archetype: 'Równowaga Przeciwieństw — Tajny Pakt Dwóch Głosów',
-    subtitle: 'Na szczycie Twojego drzewa nie siedzi jeden władca. Dwie potężne siły zamieniły się kluczami do swoich komnat i nieustannie negocjują każdy Twój krok.',
-    structureTheory: 'Dwie planety goszczące nawzajem w swoich domach tworzą układ bez jednej korony — jak dwaj rywale związani przysięgą przy jednym stole, z których żaden nie potrafi wydać rozkazu bez zgody drugiego. W spokoju daje Ci to niezwykłą elastyczność i zdolność widzenia obu stron każdej historii. W chwili napięcia zaczyna się jednak wyczerpujący ping-pong decyzji, w którym jedna połowa Ciebie odwołuje to, co druga właśnie podpisała.',
+    title: 'Wzajemna Recepcja: Mediator',
+    archetype: 'Archetyp: Mediator',
+    subtitle: 'Na szczycie Twojego horoskopu nie rządzi pojedyncza instancja. Dwie równoważne siły wymieniają się wpływami i żadna nie podejmuje ruchu bez zgody drugiej.',
+    structureTheory: 'Dwie planety pozostające we wzajemnej recepcji tworzą system dwupartyjny w Twojej psychice. Kiedy czujesz się bezpiecznie, daje Ci to niezwykłą elastyczność: potrafisz jednocześnie myśleć długoterminowo i reagować na emocje otoczenia. Pod presją zaczyna się jednak wyczerpujący ping-pong decyzyjny, w którym jedna połowa Ciebie odwołuje obietnice podpisane godzinę wcześniej przez drugą.',
     coreDiagnosis: {
-      vector: 'Zamiast szukać jednego głosu, wyznaczyć obu królom osobne prowincje i osobne godziny władzy.',
-      psychDynamics: 'Nosisz w sobie rzadki dar godzenia ognia z zimną wodą. Wiesz, jak rozmawiać z twardym realistą przy śniadaniu i ze wzburzonym marzycielem o północy. Problem zaczyna się wtedy, gdy musisz podjąć jedną nieodwracalną decyzję: zanim ręka podpisze umowę, drugi głos w Tobie podsuwa zupełnie inną mapę i całe popołudnie znika w sporze ze samym sobą.',
-      sovereigntyRole: 'Jesteś urodzonym tłumaczem między skłóconymi światami. Widzisz odcienie szarości tam, gdzie tłum rzuca kamieniami na ślepo.'
+      vector: 'Przestać szukać jednego prostego głosu i przypisać obu instancjom oddzielne obszary odpowiedzialności.',
+      psychDynamics: 'Łatwo rozumiesz przeciwstawne punkty widzenia, dzięki czemu świetnie sprawdzasz się w roli mediatora między zwaśnionymi stronami. Problem pojawia się wtedy, gdy musisz podjąć nieodwracalny krok w życiu prywatnym: zanim wyślesz odpowiedź, drugi biegun podsuwa zupełnie inną strategię i cały dzień ucieka w wahaniu.',
+      sovereigntyRole: 'Twoja przewaga polega na łączeniu pozornie sprzecznych stylów działania — twardej kalkulacji z wyczuciem relacji.'
     },
     nourishmentProtocol: {
-      somatic: 'Ruch w zmiennym rytmie — długi spacer po bruku, spokojne rozciąganie obu stron klatki piersiowej i równy oddech wyciszający kołatanie decyzji.',
-      environment: 'Pokój dający zarówno kąt do pracy w ciszy przy lampie, jak i okno otwarte na ruchliwą ulicę poniżej.',
-      dailyRitual: 'Rano zapytaj cicho siebie: która połowa ma dziś pierwsze słowo przed południem, a której oddam głos wieczorem.'
+      somatic: 'Ruch naprzemienny (pływanie, szybki marsz, bieganie), który synchronizuje napięcie w obu połowach ciała i wycisza gonitwę myśli.',
+      environment: 'Wyraźny podział zadań na dwa bloki dnia: osobny czas na pracę analityczną i osobny na kontakty z ludźmi.',
+      dailyRitual: 'Rano zdecyduj, która z dwóch głównych potrzeb ma pierwszeństwo przed południem, a której oddasz wieczór.'
     },
     shadowAndEmergency: {
       exhaustionSignals: [
-        'Zmienianie zdania o świcie i odwoływanie go przed zmierzchem, aż zniknie zapał do obu planów.',
-        'Ciche zmęczenie ciągłymi negocjacjami za własnymi drzwiami, zanim wyjdziesz choćby po chleb.',
-        'Poczucie, że w jednej pracy grasz dwie wykluczające się role i w żadnej nie jesteś cały.'
+        'Zmienianie zdania rano i wycofywanie decyzji wieczorem, aż tracisz zapał do obu wariantów.',
+        'Przewlekłe zmęczenie wewnętrznymi negocjacjami jeszcze zanim zaczniesz właściwe działanie.',
+        'Wrażenie, że w jednej pracy wykonujesz dwie wykluczające się role i w żadnej nie odpoczywasz.'
       ],
-      sabotagePattern: 'Wewnętrzny paraliż przy rozwidleniu dróg. Zamiast wybrać kierunek i poprawić kurs po drodze, pozwalasz obu stronom szachować się nawzajem aż pociąg odjedzie z peronu.',
-      emergency24h: 'Oddaj na dwadzieścia cztery godziny wyłączne rządy jednej ze stron. Druga dostaje przymusowe milczenie aż do jutrzejszej kawy.'
+      sabotagePattern: 'Paraliż na rozwidleniu dróg: zamiast wybrać jeden kierunek i korygować go w biegu, pozwalasz obu popędom blokować się nawzajem aż szansa wygasa.',
+      emergency24h: 'Oddaj wyłączne prawo decyzji jednej ze stron na najbliższe 24 godziny i zablokuj drugą przed dopisywaniem kolejnych wątpliwości.'
     },
     relationshipDynamics: {
-      intimateNeed: 'Kogoś o szerokich plecach i cierpliwym uchu, kto nie boi się Twojej zmienności ani dwóch temperatur jednego serca.',
-      vulnerabilityFear: 'Lęk przed przymusem wybrania tylko jednej wąskiej roli i odcięcia drugiej połowy życia nożem.',
-      boundaryRule: 'Twoja złożoność nie jest dwulicowością, dopóki wobec bliskiej osoby stoisz w prawdzie co do własnych granic.'
+      intimateNeed: 'Partnera stabilnego emocjonalnie, który nie wpada w panikę, gdy potrzebujesz dwóch różnych perspektyw w jednej rozmowie.',
+      vulnerabilityFear: 'Strach przed byciem zmuszonym do wyboru jednej wąskiej roli życiowej kosztem drugiej połowy własnych ambicji.',
+      boundaryRule: 'Twoja złożoność jest siłą dopóty, dopóki jasno komunikujesz bliskiej osobie swoje aktualne granice.'
     },
     careerAndWealth: {
-      wealthLever: 'Łączenie dalekich od siebie dziedzin, negocjacje wysokiego szczebla, dyplomacja, doradztwo i mosty między światem liczb a ludźmi.',
-      careerTrap: 'Wąski korytarz jednej reguły bez prawa do własnego zdania ani zmiany narzędzia.'
+      wealthLever: 'Łączenie odległych dziedzin, negocjacje partnerskie, doradztwo strategiczne oraz role na styku produktu i psychologii klienta.',
+      careerTrap: 'Monotonna praca z jedną sztywną instrukcją bez prawa do zmiany narzędzia i własnej oceny.'
     },
     decisionalFilter: {
       questions: [
-        'Czy ten wybór daje przestrzeń obu moim głosom, czy jeden brutalnie zamyka w piwnicy?',
-        'Czy naprawdę potrzebuję kolejnego namysłu, czy po prostu boję się podpisać własny wybór?',
-        'Jaka jest trzecia droga, której nie widzę ze strachu przed ryzykiem?'
+        'Czy ten wybór daje miejsce obu moim priorytetom, czy brutalnie wycina jeden z nich?',
+        'Czy naprawdę potrzebuję kolejnego dnia namysłu, czy tylko odkładam odpowiedzialność za wybór?',
+        'Jaki trzeci kompromisowy ruch przełamie obecny impas jeszcze w tym tygodniu?'
       ],
-      powerAxiom: 'Dwa przeciwieństwa przy jednym stole stają się niezłomną siłą w chwili, gdy przestają walczyć o ten sam stołek.'
+      powerAxiom: 'Dwa przeciwieństwa stają się przewagą w momencie, gdy przestają konkurować o tę samą godzinę w kalendarzu.'
     }
   };
 
-  // ==========================================
   // PĘTLA PLANETARNA: ZAMKNIĘTY OBIEG PSYCHICZNY
-  // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.loop = {
     type: 'loop',
-    title: 'Pętla Decyzyjna: Labirynt Zamkniętego Obiegu',
-    archetype: 'Strażnik Tajnej Krypty — Wędrowiec Własnego Kręgu',
-    subtitle: 'Twoja psychika nie szuka króla na zewnątrz — wszystkie decyzje krążą po zamkniętej klatce schodowej, wracając co noc do punktu wyjścia.',
-    structureTheory: 'Gdy trzy lub więcej planet przekazuje sobie berło w zamkniętym kręgu, powstaje samowystarczalny obieg odporny na cudze rozkazy. Z jednej strony mało kto potrafi Cię złamać albo przekupić z ulicy — Twoje wnętrze odradza się jak cichy zegarek nakręcany własnym ruchem. Z drugiej strony łatwo ugrzęznąć we własnej głowie jak w niekończącej się rundzie po tych samych schodach, dopóki nie wyprowadzisz napięcia w twardy czyn.',
+    title: 'Pętla Decyzyjna: Analityk',
+    archetype: 'Archetyp: Analityk',
+    subtitle: 'Twoja psychika nie deleguje władzy na zewnątrz — wszystkie motywacje krążą po zamkniętej orbicie i wracają do punktu wyjścia.',
+    structureTheory: 'Gdy trzy lub więcej planet tworzy zamkniętą pętlę dyspozycji, powstaje układ niezwykle odporny na cudze naciski. Trudno zmusić Cię do decyzji szantażem lub pośpiechem z zewnątrz. Ryzykiem tego mechanizmu jest jednak nadmierne mielenie myśli bez przejścia do czynu — impuls krąży w głowie godzinami, zanim ciało wykona pierwszy krok.',
     coreDiagnosis: {
-      vector: 'Przerwać nocne krążenie myśli jednym małym, namacalnym ruchem w świetle dnia.',
-      psychDynamics: 'Nie masz w sobie jednego ostatecznego trybunału. Jedna potrzeba odsyła Cię do drugiej, druga do trzeciej, a trzecia cicho wraca na start przy porannej herbacie. Dlatego potrafisz przeanalizować prosty problem z dziesięciu stron, rozkładając go na atomy pod światło lampy, podczas gdy ciało wciąż siedzi bez ruchu na krześle.',
-      sovereigntyRole: 'Masz własne, podziemne źródło regeneracji. Gdy świat trzęsie się w posadach, Ty potrafisz przetrwać długie oblężenie dzięki samej sile wewnętrznego obiegu.'
+      vector: 'Przerwać wielodniowe krążenie analiz jednym małym, mierzalnym działaniem w świecie rzeczywistym.',
+      psychDynamics: 'Każda decyzja musi przejść przez kilka wewnętrznych filtrów naraz: logikę, emocje, bezpieczeństwo i sens. Dlatego potrafisz rozważyć prosty temat z dziesięciu stron, odwlekając wysłanie jednej wiadomości albo zakończenie relacji, mimo że w głębi duszy znasz werdykt od dawna.',
+      sovereigntyRole: 'Masz własne, autonomiczne źródło regeneracji i potrafisz wytrzymać długie oblężenie bez szukania ratunku na zewnątrz.'
     },
     nourishmentProtocol: {
-      somatic: 'Równy, rytmiczny wysiłek ciała — szybki marsz przez park, pływanie lub długa droga rowerem, która wyprowadza prąd z głowy w mięśnie.',
-      environment: 'Czysty stół, spokojne światło bez ostrych błysków, obecność wody lub drewna i wyraźny zegar wyznaczający koniec rozważań.',
-      dailyRitual: 'Wieczorem zapisz na luźnej kartce sprawę mieloną przez cały dzień, złóż papier na pół i odłóż do szuflady przed północą.'
+      somatic: 'Rytmiczny trening wytrzymałościowy — bieg, rower lub pływanie — który wyprowadza nadmiar napięcia myślowego w pracę mięśni.',
+      environment: 'Prosty harmonogram dnia, czytelny limit czasu na podjęcie decyzji oraz brak zbędnych rozpraszaczy podczas pracy.',
+      dailyRitual: 'Wieczorem zapisz temat mielony przez cały dzień i wyznacz twardą godzinę jutro, o której podejmiesz testowy krok.'
     },
     shadowAndEmergency: {
       exhaustionSignals: [
-        'Gorączkowe powtarzanie w myślach tej samej rozmowy jeszcze długo po tym, jak ucichły głosy i zgasło światło na klatce schodowej.',
-        'Zdrętwiałe dłonie i poczucie uwięzienia między dwiema ścianami zegarów, które wybijają północ w przeciwną stronę.',
-        'Ciężar przed postawieniem ostatniej kreski atramentem — jakby każdy ostateczny podpis odbierał Ci resztkę powietrza.'
+        'Odtwarzanie w głowie tej samej rozmowy kilka dni po jej zakończeniu z poprawianiem własnych odpowiedzi.',
+        'Uczucie wewnętrznego zatoru i napięcia w szyi, kiedy kilka spraw naraz czeka na jedno „tak” albo „nie”.',
+        'Odkładanie ostatecznego podpisu lub deklaracji pod pozorem zbierania jeszcze jednej opinii.'
       ],
-      sabotagePattern: 'Uciekasz w kolejną noc rozważań. Gdy nadchodzi chwila nieodwracalnego cięcia, zrzucasz ciężar na następną planetę w tym zamkniętym kręgu, szukając jeszcze jednego dowodu na papierze, byle tylko nie otworzyć drzwi na wiatr.',
-      emergency24h: 'Przetnij węzeł cudzą ręką. Rzuć monetą na drewniany stół albo poproś kogoś, komu ufasz: wybierz za mnie jedno z dwojga przed zmierzchem. Zewnętrzny ruch kruszy lustra od środka.'
+      sabotagePattern: 'Wchodzisz w kolejny cykl weryfikacji dokładnie w chwili, gdy przychodzi czas wykonania ruchu — przenosząc ciężar na kolejną wątpliwość zamiast zamknąć etap.',
+      emergency24h: 'Zastosuj zewnętrzny bezpiecznik: ustaw 15 minut na liście argumentów, a po sygnale wykonaj najmniejszy nieodwracalny ruch jeszcze dziś.'
     },
     relationshipDynamics: {
-      intimateNeed: 'Ktoś o ciężkich, ciepłych dłoniach i prostym spojrzeniu, kto wchodzi do pokoju w mokrym płaszczu i jednym krótkim zdaniem wyprowadza Cię z labiryntu własnych podejrzeń.',
-      vulnerabilityFear: 'Panika przed zatrzaskiem — że znajdziesz się w pokoju bez klamek, gdzie żadne słowo niczego już nie zmieni.',
-      boundaryRule: 'Nie musisz rozrysować całej mapy ulicy, żeby zrobić jeden krok za próg. Ruch oczyszcza krew szybciej niż kolejna lampka przy biurku.'
+      intimateNeed: 'Osoby konkretnej i bezpośredniej, która potrafi spokojnym faktem lub pytaniem wyciągnąć Cię z pętli nadmiernego analizowania.',
+      vulnerabilityFear: 'Obawa przed sytuacją bez wyjścia, w której cudza decyzja odbierze Ci kontrolę nad własnym losem.',
+      boundaryRule: 'Nie musisz przewidzieć dziesięciu kolejnych ruchów, żeby postawić pierwszy krok w relacji — dynamika wyjaśni się w działaniu.'
     },
     careerAndWealth: {
-      wealthLever: 'Tam, gdzie inni gubią wątek, Ty widzisz cały układ naczyń połączonych — procesy, negocjacje wielostronne i zawiłe łańcuchy decyzji bez jednego widocznego szefa.',
-      careerTrap: 'Miejsca pełne niedomówień i rozmytych podpisów, w których nikt nie chce położyć dłoni na stole i powiedzieć: biorę to na siebie.'
+      wealthLever: 'Projektowanie złożonych systemów, audyty procesów, negocjacje wielostronne oraz zarządzanie projektami pełnymi współzależności.',
+      careerTrap: 'Środowiska o rozmytej odpowiedzialności, w których nikt nie podejmuje ostatecznych decyzji i spory ciągną się miesiącami.'
     },
     decisionalFilter: {
       questions: [
-        'Czy to naprawdę świeża myśl, czy tylko dziesiąty powrót pod tę samą latarnię we mgle?',
-        'Co najgorszego spadnie na mój stół, jeśli postawię kropkę jeszcze przed północą?',
-        'Czy nazywam rozwagą zwykły strach przed zamknięciem za sobą starych drzwi?'
+        'Czy to nowy argument, czy już piąte okrążenie wokół dokładnie tej samej obawy?',
+        'Co najgorszego realnie się wydarzy, jeśli zamknę ten wybór dzisiaj wieczorem?',
+        'Czy nazywam rozwagą zwykły strach przed zamknięciem zapasowych furtek?'
       ],
-      powerAxiom: 'Przecinam krąg jednym ruchem. Wolność zaczyna się tam, gdzie kończy się nocne ważenie tych samych cieni.'
+      powerAxiom: 'Przecinam analizę ruchem — jasność pojawia się dopiero po wykonaniu pierwszego kroku.'
     }
   };
 
-  // ==========================================
   // PODWÓJNA SUWERENNOŚĆ: DWA AUTONOMICZNE RDZENIE
-  // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.splitSovereignty = {
     type: 'split',
-    title: 'Podwójna Suwerenność: Dwa Domy Pod Jednym Dachem',
-    archetype: 'Podzielona Korona i Straż Graniczna Między Dwoma Światami',
-    subtitle: 'W Twojej karcie biją dwa osobne źródła światła. Nie zlewaj ich w jedną lampę — daj każdemu własny pokój.',
-    structureTheory: 'Obecność dwóch lub więcej ostatecznych dyspozytorów tworzy architekturę Podzielonej Władzy. Pod jednym dachem stoją dwa niepodległe państwa bez wspólnej granicy celnej ani jednego tronu. Kto próbuje na siłę stopić oba głosy w jedną gładką melodię, słyszy w końcu zgrzyt żelaza o kamień. Spokój przychodzi dopiero wtedy, gdy uznajesz prawo każdego suwerena do własnych godzin, własnego języka i własnego stołu.',
+    title: 'Podwójna Suwerenność: Strateg',
+    archetype: 'Archetyp: Strateg',
+    subtitle: 'W Twojej karcie działają dwa niezależne źródła władzy. Zamiast próbować je stopić na siłę, przydziel każdemu własną rolę w tygodniu.',
+    structureTheory: 'Obecność dwóch lub więcej ostatecznych dyspozytorów tworzy architekturę podzielonej władzy. Dwa obszary Twojego życia rządzą się zupełnie różnymi prawami. Jeśli usiłujesz zastosować ten sam styl zachowania w obu naraz, pojawia się chroniczny zgrzyt. Spokój pojawia się wtedy, gdy przestajesz wymagać od siebie jednowymiarowości.',
     coreDiagnosis: {
-      vector: 'Dwie osobne osie ciężkości — dwa królestwa o różnych prawach i osobnych strażnikach.',
-      psychDynamics: 'Twoja natura nie zbiega się w jednym punkcie jak u większości ludzi. Jedno skrzydło Twojego życia może wymagać zimnej precyzji, stalowych nerwów i surowej rachuby, podczas gdy za drugimi drzwiami kryje się ktoś wrażliwy na szelest papieru, półmrok i niedopowiedziany gest. Nie musisz przepraszać za ten kontrast ani wygładzać krawędzi, by wyglądać na prostszego człowieka. Twoja sztuka polega na płynnym przekraczaniu progu bez wnoszenia błota z jednej izby do drugiej.',
-      sovereigntyRole: 'Potrafisz prowadzić dwa zupełnie różne porządki z równą godnością — dopóki pamiętasz, gdzie wisi który klucz.'
+      vector: 'Oddzielić role zawodowe od prywatnych tak, aby oba bieguny miały swoje miejsce i czas.',
+      psychDynamics: 'Jedno skrzydło Twojego charakteru może wymagać twardej dyscypliny i analitycznego chłodu, podczas gdy drugie domaga się spontaniczności, sztuki lub głębokiej bliskości. Nie musisz wygładzać tego kontrastu pod cudze oczekiwania — wystarczy nie mieszać reguł z jednego obszaru do drugiego.',
+      sovereigntyRole: 'Potrafisz zarządzać zupełnie różnymi środowiskami z równą skutecznością, dopóki jasno wyznaczasz granicę przejścia między nimi.'
     },
     nourishmentProtocol: {
-      somatic: 'Wyraźny próg dla ciała: zmień marynarkę, zdejmij zegarek albo przejdź trzy ulice pieszo, zanim po pracy przekroczysz próg własnej kuchni.',
-      environment: 'Dwa osobne biurka światła: miejsce pracy bez śladów czułych pamiątek i sypialnia bez otwartych segregatorów ani poświaty ekranów.',
-      dailyRitual: 'Gdy zamykasz wieczorem teczkę lub komputer, zgaś górną lampę na pięć minut. Jedna część Ciebie właśnie zeszła z warty; druga ma teraz prawo oddychać.'
+      somatic: 'Wyraźny rytuał przejścia po pracy: krótki spacer, zmiana stroju albo trening fizyczny oddzielający tryb zadaniowy od prywatnego.',
+      environment: 'Oddzielna strefa pracy bez osobistych rozpraszaczy oraz sypialnia wolna od służbowego telefonu i otwartych dokumentów.',
+      dailyRitual: 'Po zakończeniu obowiązków zamknij laptopa świadomym gestem — jeden obszar zszedł z dyżuru, drugi przejmuje wieczór.'
     },
     shadowAndEmergency: {
       exhaustionSignals: [
-        'Przynoszenie chłodu sali konferencyjnej pod nocną kołdrę albo miękkości listów miłosnych do twardego stołu negocjacji.',
-        'Cichy wyrzut sumienia przy porannej kawie, że przy innych ludziach zakładasz zupełnie inny płaszcz niż przy najbliższych.',
-        'Poczucie rozbicia w środku popołudnia, gdy oba Twoje światy naraz dobijają się do tych samych drzwi.'
+        'Przenoszenie chłodu negocjacji biznesowych do rozmów z partnerem albo nadmiernej miękkości do twardych umów.',
+        'Poczucie winy, że przy znajomych z pracy jesteś zupełnie inną osobą niż w prywatnym gronie.',
+        'Rozdarcie w środku dnia, gdy oba priorytety domagają się pełnej uwagi w tym samym momencie.'
       ],
-      sabotagePattern: 'Wojna domowa przy jednym stole. Gdy jedna część Ciebie wdziera się w terytorium drugiej, zamiast ostrza masz w dłoni dwa stępione klucze i przestajesz rozpoznawać własny podpis.',
-      emergency24h: 'Zatrzaśnij jedne drzwi do jutra rana. Dziś oddaj głos wyłącznie jednemu skrzydłu swojego życia; drugie niech poczeka za zasłoną bez wtrącania się w decyzję.'
+      sabotagePattern: 'Konflikt ról przy jednym zadaniu: kiedy wymagania obu ośrodków zderzają się naraz, paraliżujesz działanie i tracisz pewność co do własnych motywacji.',
+      emergency24h: 'Zawieś na jeden dzień mniej pilny biegun i poświęć całą uwagę wyłącznie jednej roli, bez wpuszczania drugich kryteriów.'
     },
     relationshipDynamics: {
-      intimateNeed: 'Ktoś o pewnym spojrzeniu, kto nie drży na myśl, że nosisz w sobie zamknięty pokój z własnym światłem — i nie potrzebuje wglądu w każdą szufladę, by Ci ufać.',
-      vulnerabilityFear: 'Obawa, że ktoś nazwie Twoją złożoność fałszem, bo nie rozumie, jak pod jednym płaszczem mieszczą się lód i płomień.',
-      boundaryRule: 'Nie musisz być płaski jak kartka papieru, żeby być prawdziwy. Dwa różne głosy w jednej piersi to bogactwo, nie zdrada.'
+      intimateNeed: 'Osoby dojrzałej emocjonalnie, która szanuje Twoją wielowymiarowość i nie traktuje prywatnej potrzeby dystansu jako odrzucenia.',
+      vulnerabilityFear: 'Obawa, że ktoś uzna Twoją zmienność ról za brak autentyczności lub ukrywanie intencji.',
+      boundaryRule: 'Nie musisz być jednorodny przez całą dobę, żeby pozostać uczciwy wobec partnera.'
     },
     careerAndWealth: {
-      wealthLever: 'Podwójny tor — zderzenie chłodnej kalkulacji z rzemiosłem duszy, sztuką albo pracą w cieniu wielkiego biznesu.',
-      careerTrap: 'Zamknięte miejsca z jednym mundurem na całą dobę, które wymagają, byś oddał im nawet swoje noce i milczenie.'
+      wealthLever: 'Łączenie dwóch specjalizacji — na przykład analityki finansowej z pracą kreatywną albo zarządzania zespołem z rolą ekspercką.',
+      careerTrap: 'Praca wymagająca całodobowej dostępności i jednolitej postawy bez przestrzeni na Twoje drugie oblicze.'
     },
     decisionalFilter: {
       questions: [
-        'Do którego z moich dwóch domów należy ta sprawa — do biurka za dnia, czy do lampy nocnej?',
-        'Czy nie wnoszę właśnie kurzu z jednej ulicy na czysty dywan drugiego pokoju?',
-        'Która połowa mojej natury została w tym tygodniu zamknięta bez światła i powietrza?'
+        'Do którego z moich dwóch obszarów należy ta sprawa — do sfery twardego wyniku czy relacji i sensu?',
+        'Czy nie przenoszę właśnie napięcia z pracy do domu lub prywatnych emocji do negocjacji?',
+        'Która część mojej natury została w tym tygodniu całkowicie zagłodzona?'
       ],
-      powerAxiom: 'Moja dwoistość jest moim sekretem, nie pęknięciem. Rządzę dwoma królestwami, dopóki znam godzinę każdej warty.'
+      powerAxiom: 'Moja dwoistość stanowi przewagę — pod warunkiem, że pilnuję grafiku obu ról.'
     }
   };
 
-  // ==========================================
-  // GŁÓWNY SELEKTOR DANYCH RAPORTU
-  // ==========================================
   window.__DISPOSITOR_REPORT_DATA__.getReportForHierarchy = function (hierarchy, planets) {
     const allPlanets = window.__DISPOSITOR_REPORT_DATA__.planets || {};
     const f = hierarchy.finalDispositors || [];
@@ -163,13 +149,11 @@
       return p.title.split(':')[0].replace(/\s*we Władztwie/i, '').trim();
     }
 
-    // Przypadek 1: Pojedynczy Ostateczny Dyspozytor
     if (f.length === 1) {
       const key = f[0];
       if (allPlanets[key]) return allPlanets[key];
     }
 
-    // Przypadek 2: Podwójna Suwerenność
     if (f.length > 1) {
       const namesList = f.map(cleanName);
       const names = namesList.length === 2
@@ -182,7 +166,6 @@
       });
     }
 
-    // Przypadek 3: Wzajemna Recepcja
     if (mr.length > 0) {
       const pair = mr[0];
       const names = pair.map(cleanName).join(' & ');
@@ -193,7 +176,6 @@
       });
     }
 
-    // Przypadek 4: Pętla Zamknięta
     if (loops.length > 0) {
       const loop = loops[0];
       const names = loop.map(cleanName).join(' &rarr; ');
@@ -204,7 +186,6 @@
       });
     }
 
-    // Fallback: Słońce
     return allPlanets['sun'] || {};
   };
 })();

@@ -6,88 +6,88 @@
   Object.assign(window.__DISPOSITOR_REPORT_DATA__.planets, {
     neptune: {
       planetKey: 'neptune',
-      title: 'Neptun: Przewodnik po Niewidzialnych Wodach',
-      archetype: 'Wizjoner Mgły — Strażnik Cienkiej Granicy',
-      subtitle: 'Gdy Neptun w Rybach domyka drzewo dyspozytorów, twarde kontury świata zaczynają drżeć jak odbicie w deszczowej kałuży.',
-      structureTheory: 'Najgłębsze decyzje nie zapadają u Ciebie przy świetle jarzeniówki nad arkuszem liczb. Gdy Neptun bierze berło, granicę między Twoim pragnieniem a nastrojem całego miasta dzieli zaledwie cienka firanka. Albo uczysz się nazywać kształty w tej mgle, albo toniesz w cudzych opowieściach bez własnego brzegu.',
+      title: 'Neptun: Mistyk',
+      archetype: 'Archetyp: Mistyk',
+      subtitle: 'Gdy Neptun w Rybach zamyka Twoje drzewo dyspozytorów, żyjesz z wyjątkowo czułym słuchem na podteksty, ale bez twardych granic łatwo gubisz kontakt z konkretem.',
+      structureTheory: 'Twoja ocena rzeczywistości opiera się na atmosferze, podtekstach i ukrytych intencjach ludzi wokół Ciebie. Masz dar łączenia wątków artystycznych, psychologicznych i duchowych z realnym obrazem świata. Dopóki zachowujesz rytm dnia i konkretne zobowiązania, Twoja empatia przyciąga zaufanie; kiedy odpuszczasz strukturę, wpadasz w prokrastynację i chaos finansowy.',
       coreDiagnosis: {
-        vector: 'Oddzielić czysty głos przeczucia od ciężaru cudzych oczekiwań i nie błądzić bez kotwicy.',
-        psychDynamics: 'Wyczuwasz fałsz w cudzym uśmiechu jeszcze zanim wybrzmi powitanie przy progu, ale często sam sobie nie wierzysz i szukasz miękkich usprawiedliwień. Gdy rzeczywistość robi się zbyt kanciasta i hałaśliwa, kusi Cię ucieczka w marzenia, bezsenne noce albo znieczulenie rutyną bez obecności.',
-        sovereigntyRole: 'Twoja siła leży w wyobraźni, sztuce i cichej empatii, która rozbraja najtwardszych graczy. Nie musisz krzyczeć przy stole — wystarczy jeden obraz albo jedno zdanie trafiające prosto w czyjąś tęsknotę.'
+        vector: 'Połączyć niezwykłą wrażliwość na ludzi z twardą higieną granic, terminami i dbałością o własny interes.',
+        psychDynamics: 'Łatwo wyłapujesz kłamstwo lub ból ukryte pod czyimś spokojnym tonem, ale masz tendencję do idealizowania ludzi na początku znajomości. Zamiast sprawdzić fakty, wierzysz w potencjał partnera lub projektu tak długo, aż rzeczywistość zmusza Cię do gwałtownego przebudzenia. Pod presją uciekasz w rozmywanie decyzji i unikanie konfrontacji.',
+        sovereigntyRole: 'Twoja siła polega na rozumieniu emocji i symboli, do których sztywni racjonaliści nie mają dostępu — pod warunkiem, że pamiętasz o faktach na piśmie.'
       },
       nourishmentProtocol: {
-        somatic: 'Ciepła kąpiel z solą, długi sen w ciemnym pokoju i kontakt bosej stopy z zimną deską albo ziemią.',
-        environment: 'Miękkie światło lamp wieczorem, muzyka bez nachalnych słów i wyraźny próg między pracą a ciszą.',
-        dailyRitual: 'Dziesięć minut po przebudzeniu zapisz jedno konkretne zadanie materialne, zanim odpłyniesz w domysły i nastroje.'
+        somatic: 'Kontakt z wodą, regularny sen bez ekranów późno w nocy oraz stabilne, odżywcze posiłki uziemiające rozbiegany układ nerwowy.',
+        environment: 'Cicha przestrzeń twórcza z wyraźnym oddzieleniem strefy snu od miejsca załatwiania spraw finansowych i zawodowych.',
+        dailyRitual: 'Zapisz codziennie jedną mierzalną, przyziemną rzecz do zamknięcia przed południem — zanim wejdziesz w pracę koncepcyjną.'
       },
       shadowAndEmergency: {
         exhaustionSignals: [
-          'Dziwne zmęczenie po krótkim spotkaniu towarzyskim, jakbyś niósł cudzy płaszcz przez pół miasta.',
-          'Idealizowanie ludzi na podstawie jednego spojrzenia i bolesne rozczarowanie przy zwykłej rozmowie o rachunkach.',
-          'Odkładanie twardych decyzji w nieskończoność w nadziei, że mgła sama je rozwiąże przed piątkiem.'
+          'Przejmowanie cudzych kryzysów i nastrojów tak mocno, że wieczorem nie wiesz, co właściwie należy do Ciebie.',
+          'Odkładanie otwartych spraw urzędowych, płatności lub trudnej rozmowy z nadzieją, że same ucichną.',
+          'Ucieczka w rozpraszacze — scrollowanie, używki lub fantazje — gdy napięcie w relacji staje się zbyt ostre.'
         ],
-        sabotagePattern: 'Wchodzisz w relację jak cichy wybawiciel albo męczennik bez słów. Oddajesz własny czas komuś zagubionemu, a kiedy druga strona nie odgaduje Twoich potrzeb, znikasz bez śladu w urazie.',
-        emergency24h: 'Zrób jedną namacalną, przyziemną rzecz — uporządkuj rachunek, wystaw spóźnioną fakturę albo wypowiedz twardą odmowę bez zbędnego tłumaczenia.'
+        sabotagePattern: 'Wchodzisz w rolę wybawcy osób niezdolnych do wzięcia odpowiedzialności za siebie, a potem cierpisz w milczeniu z powodu braku wzajemności.',
+        emergency24h: 'Zrób bilans jednego konkretnego zobowiązania: sprawdź konto, podpisz zaległy dokument albo ustal jasny warunek w relacji bez niedopowiedzeń.'
       },
       relationshipDynamics: {
-        intimateNeed: 'Więzi bez zbędnych gier, gdzie można pomilczeć w jednym pokoju i wciąż czuć wspólną grawitację.',
-        vulnerabilityFear: 'Lęk przed tym, że zdejmując różowe szkła zobaczysz zwykłą, letnią pustkę zamiast wymarzonej opowieści.',
-        boundaryRule: 'Współczucie bez granic zamienia się w niewidzialny dług. Kochaj realnego człowieka, nie jego obietnicę w Twojej głowie.'
+        intimateNeed: 'Głębokiego porozumienia bez udawania oraz partnera, który sam stoi twardo na ziemi i nie wykorzystuje Twojej łagodności.',
+        vulnerabilityFear: 'Lęk przed brutalnym rozczarowaniem i przekonanie, że postawienie twardej granicy zniszczy romantyzm relacji.',
+        boundaryRule: 'Prawdziwe współczucie ma czytelne zasady. Pomagasz wtedy, gdy zostawiasz drugiej osobie odpowiedzialność za jej własne decyzje.'
       },
       careerAndWealth: {
-        wealthLever: 'Zarabiasz tam, gdzie wizja, estetyka, kino, słowo, pomoc psychologiczna lub wyczucie podskórnych nastrojów zmieniają ludzkie decyzje.',
-        careerTrap: 'Bezduszna biurokracja oparta wyłącznie na suchych słupkach i krzykliwa sprzedaż obca Twojej naturze.'
+        wealthLever: 'Sztuka, reżyseria, muzyka, psychoterapia, branding, fotografia i każda branża tłumacząca emocje na język obrazu lub narracji.',
+        careerTrap: 'Brak jasnych umów i wyceny swojej pracy, kończący się rozdawaniem talentu poniżej kosztów.'
       },
       decisionalFilter: {
         questions: [
-          'Czy widzę tę osobę i ten plan w ostrym świetle południa, czy tylko w miękkim zmierzchu moich marzeń?',
-          'Czy robię to z autentycznej inspiracji, czy uciekam przed nudą lub trudną rozmową?',
-          'Gdzie dokładnie kończę się ja, a zaczyna cudzy kłopot?'
+          'Czy podejmuję tę decyzję na podstawie faktów z ostatniego miesiąca, czy na podstawie tego, kim ta osoba mogłaby się stać?',
+          'Czy pomagam z wolnego wyboru, czy boję się poczucia winy po odmowie?',
+          'Jaki konkretny termin lub liczba musi dziś paść, żebym nie zostawił sprawy w zawieszeniu?'
         ],
-        powerAxiom: 'Tylko żeglarz znający głębokość własnego nurtu może bezpiecznie odpłynąć od brzegu.'
+        powerAxiom: 'Intuicja widzi najdalej wtedy, gdy idzie w parze z trzeźwą rachubą.'
       }
     },
     pluto: {
       planetKey: 'pluto',
-      title: 'Pluton: Król Ciemnego Podziemia',
-      archetype: 'Alchemik Przełomu — Władca Przemian',
-      subtitle: 'Gdy Pluton w Skorpionie rządzi całym horoskopem, półprawdy kruszą się w Twoich dłoniach jak suchy tynk.',
-      structureTheory: 'Pod gładką powierzchnią codziennych uprzejmości zawsze słyszysz tykanie zegara. Pluton na czele hierarchii nie wybacza życia na pół gwizdka ani letnich sojuszy zawieranych z wygody. Każda sfera, w której próbujesz udawać mniejszy apetyt, niż masz naprawdę, wcześniej czy później pęka z hukiem.',
+      title: 'Pluton: Alchemik',
+      archetype: 'Archetyp: Alchemik',
+      subtitle: 'Gdy Pluton w Skorpionie zamyka hierarchię planetarną, powierzchowne układy odpadają od Ciebie same, bo nie potrafisz żyć w półprawdzie.',
+      structureTheory: 'Twoja psychika funkcjonuje w cyklach całkowitego oczyszczenia i rekonstrukcji. Zawsze wyczuwasz ukryty układ sił w relacji lub firmie — kto jest uzależniony, kto blefuje, a gdzie leży prawdziwa dźwignia wpływu. Kiedy próbujesz udawać letnią bezkonfliktowość, napięcie gromadzi się pod powierzchnią, aż wymusza radykalne zerwanie starego etapu.',
       coreDiagnosis: {
-        vector: 'Porzucić potrzebę cichego kontrolowania wszystkiego i zaufać własnej sile odrodzenia.',
-        psychDynamics: 'Widzisz rysy na porcelanie i lęk w cudzych źrenicach, zanim ktokolwiek poda Ci rękę na powitanie. Długo znosisz niewygodę z kamiennym spokojem, zbierając fakty po ciemku, aż w jednej sekundzie zamykasz rozdział i palisz most za plecami bez oglądania się wstecz.',
-        sovereigntyRole: 'Twoja obecność budzi respekt nawet w milczeniu. W chwilach kryzysu, kiedy wszyscy inni gubią klucze do wyjścia, Ty odzyskujesz lodowatą jasność wzroku.'
+        vector: 'Zastąpić potrzebę totalnej kontroli nad otoczeniem spokojnym panowaniem nad własnymi reakcjami.',
+        psychDynamics: 'Nie ufasz na kredyt: w pierwszej fazie znajomości uważnie obserwujesz słabe punkty innych ludzi, trzymając własne karty przy sobie. Twoim głównym mechanizmem w stresie jest podejrzliwość i pamiętanie dawnych nielojalności. Dopiero gdy przestajesz testować bliskich, Twoja głębia zamienia się w niezrównaną lojalność i odwagę.',
+        sovereigntyRole: 'W sytuacjach kryzysowych nie szukasz winnych ani pocieszenia — tniesz zbędne straty i zaczynasz odbudowę tam, gdzie inni stoją w miejscu.'
       },
       nourishmentProtocol: {
-        somatic: 'Ciężki wysiłek fizyczny aż do potu, sauna albo lodowaty prysznic i głębokie wydechy uwalniające napięcie z brzucha.',
-        environment: 'Ciemne drewno, ciężki metal, pełna prywatność, zero plotek i małych intryg przy wspólnym stole.',
-        dailyRitual: 'Pięć minut wieczorem nad czystą kartką: nazwij bez litości jedną iluzję, którą dziś wciąż podtrzymujesz ze strachu.'
+        somatic: 'Intensywny wysiłek fizyczny o dużej sile lub techniki głębokiego rozluźniania miednicy i przepony, gdzie blokuje się tłumiony gniew.',
+        environment: 'Pełna prywatność w sprawach osobistych, zero przypadkowych doradców w ważnych decyzjach i pełna kontrola nad własnymi finansami.',
+        dailyRitual: 'Zidentyfikuj jedną sprawę lub relację, którą próbujesz kontrolować z lęku przed stratą, i świadomie poluzuj nacisk na 24 godziny.'
       },
       shadowAndEmergency: {
         exhaustionSignals: [
-          'Paraliżująca podejrzliwość, przez którą w zwykłym spóźnieniu widzisz ukryty spisek lub zdradę.',
-          'Wyczerpująca gra w trzymanie wszystkich kart przy orderze nawet przed najbliższą osobą.',
-          'Fascynacja kryzysami i niszczenie spokoju w chwili, gdy wreszcie zrobiło się bezpiecznie.'
+          'Przekonanie, że każde drobne niedopowiedzenie partnera to dowód ukrytej zdrady lub manipulacji.',
+          'Zasada „wszystko albo nic”, prowadząca do palenia całych etapów życia z powodu jednego konfliktu.',
+          'Ciche gromadzenie haków i argumentów w pamięci na wypadek przyszłego rozstania.'
         ],
-        sabotagePattern: 'Testujesz lojalność ludzi tak długo i tak bezlitośnie, aż w końcu pękają i odchodzą — potwierdzając Twój najczarniejszy scenariusz, że nikomu nie wolno ufać.',
-        emergency24h: 'Powiedz jedną niewygodną prawdę wprost w oczy zamiast planować chłodny odwet w milczeniu.'
+        sabotagePattern: 'Prowokujesz kryzys w dobrym momencie tylko po to, by sprawdzić, czy druga osoba naprawdę przy Tobie zostanie — i sam ten sprawdzian często niszczy zaufanie.',
+        emergency24h: 'Powiedz szczerze, czego się obawiasz w tej sytuacji, zanim sięgniesz po ironię, milczenie lub ultimatum.'
       },
       relationshipDynamics: {
-        intimateNeed: 'Więzi aż do kości — spotkania bez pancerza, w którym żadne z Was nie boi się własnego mroku.',
-        vulnerabilityFear: 'Śmiertelny strach, że jeśli odsłonisz miękkie miejsce, druga strona użyje go przeciwko Tobie w złej godzinie.',
-        boundaryRule: 'Prawdziwa bliskość nie polega na prześwietlaniu cudzej duszy jak podejrzanego, lecz na odwadze zdjęcia własnej zbroi.'
+        intimateNeed: 'Bezkompromisowej szczerości, intensywności bez gier pozorów i partnera, który nie ucieka przed ciemnymi stronami psychiki.',
+        vulnerabilityFear: 'Śmiertelny lęk przed oddaniem kontroli i staniem się ofiarą cudzej przewagi emocjonalnej lub finansowej.',
+        boundaryRule: 'Prawdziwa moc nie potrzebuje tajnej kontroli nad drugim człowiekiem. Zaufanie zaczyna się tam, gdzie nie wymagasz pełnego dostępu do cudzej głowy.'
       },
       careerAndWealth: {
-        wealthLever: 'Kryzysy, restrukturyzacje, finanse dużego kalibru, psychologia głębi, śledztwa, leczenie i prowadzenie ludzi przez przełom.',
-        careerTrap: 'Płytka, cukierkowa powierzchowność i praca pod miernym szefem, który boi się Twojej przenikliwości.'
+        wealthLever: 'Restrukturyzacja, psychologia głębi, finanse, zarządzanie kryzysem, prawo karne, śledztwa, badania oraz inwestycje wysokiego ryzyka.',
+        careerTrap: 'Praca w powierzchownym marketingu obiecującym bezproblemowe szczęście bez pokrycia.'
       },
       decisionalFilter: {
         questions: [
-          'Czy kieruje mną odwaga prawdy, czy chłodna chęć odwetu i zatrzymania kontroli?',
-          'Co w moim życiu dawno już umarło, a ja wciąż sztucznie podtrzymuję w tym tętno?',
-          'Jaką cenę zapłacę za milczenie w tej sprawie za pięć lat?'
+          'Czy kończę tę sprawę, bo naprawdę straciła sens, czy boję się utracić kontrolę na kolejnym etapie?',
+          'Czy mówię teraz całą prawdę, czy zostawiam sobie ukrytą furtkę do manipulacji?',
+          'Co we mnie musi się zmienić, żebym przestał przyciągać te same gry o władzę?'
         ],
-        powerAxiom: 'Ten, kto przeżył własną noc bez mrugnięcia okiem, nie lęka się żadnego cienia za drzwiami.'
+        powerAxiom: 'Ostateczna siła należy do osoby, która przechodzi przez stratę bez utraty godności i bez zemsty.'
       }
     }
   });

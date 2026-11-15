@@ -6,88 +6,88 @@
   Object.assign(window.__DISPOSITOR_REPORT_DATA__.planets, {
     sun: {
       planetKey: 'sun',
-      title: 'Słońce we Władztwie: Ostatnia Twierdza Woli',
-      archetype: 'Suwerenny Król — Opiekun Wewnętrznego Płomienia',
-      subtitle: 'Gdy Słońce w Lwie zamyka całe drzewo dyspozytorów, żadna maska nie zdoła Cię ukryć przed własnym lustrem.',
-      structureTheory: 'Samotny władca na szczycie hierarchii przypomina ciężką mosiężną klamkę, za którą stoi już tylko Twój własny pokój. Żadna inna funkcja w kosmogramie nie ma nad nim zwierzchnictwa. Albo stajesz się autorem własnego losu w pełnym blasku dnia, albo gaśniesz po cichu, próbując ogrzać cudze salony pożyczonym ogniem.',
+      title: 'Słońce: Suweren',
+      archetype: 'Archetyp: Suweren',
+      subtitle: 'Gdy Słońce w Lwie domyka całe drzewo dyspozytorów, Twoje decyzje zależą od jednego kryterium: czy możesz się pod nimi podpisać własnym nazwiskiem.',
+      structureTheory: 'Wszystkie pozostałe popędy w Twoim horoskopie oddają głos potrzebie wyrazistej tożsamości. Kiedy tworzysz, prowadzisz zespół lub wchodzisz w relację na swoich zasadach, masz naturalny magnetyzm i odporność na presję. Gdy jednak zniżasz poprzeczkę i grasz rolę skrojoną pod cudzy komfort, pojawia się szybkie wypalenie i cynizm.',
       coreDiagnosis: {
-        vector: 'Przełamać lęk przed widzialnością i odrzucić półśrodki.',
-        psychDynamics: 'Czujesz fizyczny chłód w piersi za każdym razem, gdy musisz zniżyć głos i dopasować krok do cudzej miernoty. Nie chodzi tu o próżność. Chodzi o przetrwanie rdzenia. Gdy oddajesz kierownicę konwenansom albo lękowi przed oceną, tracisz smak porannej kawy, a ciało natychmiast zaciąga hamulec w postaci szarego zmęczenia.',
-        sovereigntyRole: 'Twój autorytet rodzi się z ryzyka, nie z poklasku. Kiedy przestajesz żebrać o aprobatę przy zamkniętych drzwiach, ludzie sami ustępują Ci miejsca w przejściu.'
+        vector: 'Zamienić głód zewnętrznego uznania w stabilne poczucie wartości, które nie chwieje się przy pierwszej krytyce.',
+        psychDynamics: 'W pracy i relacjach potrzebujesz sprawczości, ponieważ wykonywanie cudzych poleceń bez wpływu na kształt całości odbiera Ci motywację. W sytuacjach towarzyskich instynktownie wyczuwasz, kto dominuje w grupie, i źle znosisz bycie tłem. Kiedy wchodzisz w stres, łatwo mylisz konstruktywną uwagę partnera z atakiem na swoją godność.',
+        sovereigntyRole: 'Twój autorytet wynika z gotowości do wzięcia pełnej odpowiedzialności za ryzyko. Tam, gdzie inni szukają zbiorowej zgody, Ty stawiasz wyraźny kierunek.'
       },
       nourishmentProtocol: {
-        somatic: 'Światło na karku, wyprostowany mostek i twardy krok na bruku. Potrzebujesz wysiłku, który rozgrzewa krew, inaczej zastygła wola zamienia się w bezsenność i zaciśniętą szczękę.',
-        environment: 'Wysokie sufity, naturalne drewno, porządek na biurku i zero taniego chaosu wokół.',
-        dailyRitual: 'Kwadrans bez telefonu o świcie. Zapisz ręcznie w notatniku jedną rzecz, którą robisz dziś wyłącznie na własny rachunek.'
+        somatic: 'Trening otwierający klatkę piersiową i wzmacniający prostownik grzbietu — napięcie emocjonalne najpierw odkłada się u Ciebie w górnej części pleców i mostku.',
+        environment: 'Przejrzysta przestrzeń pracy z dobrym światłem dziennym oraz osobny projekt, nad którym masz stuprocentową decyzyjność.',
+        dailyRitual: 'Zacznij dzień od 30 minut pracy nad najważniejszym własnym celem, zanim otworzysz cudze wiadomości i maile.'
       },
       shadowAndEmergency: {
         exhaustionSignals: [
-          'Ciężka duma, która każe Ci milczeć zamiast poprosić o pomoc, gdy grunt pali się pod nogami.',
-          'Głód pustych pochwał w gronie ludzi, których w głębi duszy w ogóle nie szanujesz.',
-          'Chłodny cynizm nakładany rano jak gruby wełniany płaszcz, żeby nikt nie dotknął rozczarowania.'
+          'Wybuch dumy lub teatralne obrażenie się w chwili, gdy nikt nie zauważa Twojego wysiłku.',
+          'Nadmiarowe kontrolowanie wizerunku z obawy, że chwila słabości przekreśli Twój autorytet.',
+          'Sztywne trzymanie się błędnej decyzji wyłącznie po to, żeby nie przyznać się przed grupą do pomyłki.'
         ],
-        sabotagePattern: 'Własnoręcznie budujesz scenę, po czym oddajesz główną rolę komuś mniejszemu, bo w ostatniej chwili boisz się ciężaru korony. Później cierpisz w milczeniu za kulisami, obwiniając świat o ślepotę.',
-        emergency24h: 'Zdejmij maskę skromności w jednej rozmowie i powiedz wprost, jakiej stawki albo jakiej decyzji naprawdę żądasz.'
+        sabotagePattern: 'Wiążesz poczucie własnej wartości z wynikiem ostatniego projektu lub reakcją innych ludzi. Wystarczy chłodniejsza odpowiedź w wiadomości, żebyś zakwestionował wszystko, co zbudowałeś.',
+        emergency24h: 'Zdejmij maskę nieomylności wobec jednej zaufanej osoby i powiedz wprost, z czym dziś nie dajesz rady.'
       },
       relationshipDynamics: {
-        intimateNeed: 'Partnerstwa dwóch równej miary ogni. Potrzebujesz przy sobie kogoś, kto ma własny kręgosłup i nie roztapia się w Twoim cieniu.',
-        vulnerabilityFear: 'Paniczny wstyd przed chwilą, w której opadnie Ci garda i ktoś zobaczy, że za złotą fasadą również potrafisz drżeć.',
-        boundaryRule: 'Nigdy nie zmniejszaj własnego formatu po to, by ukochana osoba mogła poczuć się bezpieczniej przy Twoim stole.'
+        intimateNeed: 'Partnerstwa opartego na wzajemnym podziwie i szczerości — osoby, która ma własne ambicje i nie rywalizuje z Tobą o uwagę otoczenia.',
+        vulnerabilityFear: 'Strach przed przeciętnością oraz lęk, że po zdjęciu zawodowych sukcesów staniesz się dla bliskich przezroczysty.',
+        boundaryRule: 'Bliskość wymaga równości. Nie kupuj lojalności wielkimi gestami i nie zamieniaj związku w audiencję.'
       },
       careerAndWealth: {
-        wealthLever: 'Twoje nazwisko jako rękojmia jakości. Zarabiasz najlepiej wtedy, gdy bierzesz osobistą odpowiedzialność za kierunek, styl i finał gry.',
-        careerTrap: 'Szare korytarze bezimiennych korporacji, gdzie Twoje decyzje rozwadnia lękliwy komitet z trzeciego piętra.'
+        wealthLever: 'Liderowanie, budowanie marki osobistej, konsulting, przedsiębiorczość oraz stanowiska wymagające wizji i jednoosobowej decyzji.',
+        careerTrap: 'Praca wykonawcza w anonimowej strukturze, gdzie Twój wkład podpisuje ktoś inny.'
       },
       decisionalFilter: {
         questions: [
-          'Czy robię to z własnej woli, czy z głodu oklasków przy cudzym stoliku?',
-          'Co zostałoby z tego wyboru, gdyby nikt nigdy nie miał się o nim dowiedzieć?',
-          'Gdzie dokładnie zamilkłem w tej sprawie z czystego tchórzostwa?'
+          'Czy robię ten krok, bo naprawdę mnie wyraża, czy tylko dla podtrzymania cudzego zachwytu?',
+          'Czy potrafię obronić tę decyzję wtedy, gdy nikt nie będzie klaskał?',
+          'Czy daję bliskim tyle samo przestrzeni na błyszczenie, ile rezerwuję dla siebie?'
         ],
-        powerAxiom: 'Ten, kto nosi ogień w dłoniach, nie pyta wiatru o zgodę, tylko osłania płomień i idzie dalej.'
+        powerAxiom: 'Pewność siebie nie potrzebuje głośnej oprawy — kończy się dopiero wtedy, gdy oddajesz innym pilota do swojego nastroju.'
       }
     },
     moon: {
       planetKey: 'moon',
-      title: 'Księżyc we Władztwie: Dom w Głębi Przypływu',
-      archetype: 'Strażniczka Pamięci — Przewodniczka po Nocnych Wodach',
-      subtitle: 'Gdy Księżyc w Raku stoi na czele drzewa, Twój instynkt wyprzedza rozum o trzy uderzenia serca.',
-      structureTheory: 'Cały Twój los krąży wokół temperatury wnętrza — cichej komnaty pamięci, do której nikt obcy nie dostaje klucza od frontu. Rozsądek potrafi ułożyć zgrabne argumenty na papierze, lecz o tym, kto wejdzie za Twój próg, decyduje ledwo uchwytny dreszcz w brzuchu jeszcze zanim zapadną pierwsze słowa.',
+      title: 'Księżyc: Opiekun',
+      archetype: 'Archetyp: Opiekun',
+      subtitle: 'Gdy Księżyc w Raku stoi na czele hierarchii, żadna logiczna kalkulacja nie przetrwa, jeśli Twoje ciało wyczuje fałsz lub chłód.',
+      structureTheory: 'Wszystkie decyzje przechodzą u Ciebie przez filtr bezpieczeństwa emocjonalnego i lojalności. Zanim zaufasz argumentom, rejestrujesz mikrozmiany w tonie głosu, spóźnienia i poziom zaangażowania drugiej strony. Dopóki czujesz grunt pod nogami, tworzysz głęboką, stabilną więź; gdy pojawia się zagrożenie odrzucenia, zamykasz dostęp szybciej, niż ktokolwiek zdąży zareagować.',
       coreDiagnosis: {
-        vector: 'Ufać nocnemu radarowi ciała i nie tłumaczyć się z własnej wrażliwości przed ludźmi o twardej skórze.',
-        psychDynamics: 'Pamiętasz ton głosu sprzed dziesięciu lat lepiej niż daty z podręcznika. Wchodzisz do pokoju i czujesz gęstość powietrza, zanim ktokolwiek odstawi filiżankę na spodeczek. Kiedy ignorujesz ten głos w imię chłodnej kalkulacji, ciało wystawia rachunek przez żołądek, migrenę albo ciężką bezsenność przed świtem.',
-        sovereigntyRole: 'Twoja moc jest miękka jak woda, która cierpliwie drąży granit. Nie musisz podnosić głosu — wystarczy, że zamkniesz emocjonalne drzwi, a wokół natychmiast robi się zimno.'
+        vector: 'Odróżnić autentyczne przeczucie od starych reakcji obronnych wyniesionych z domu rodzinnego.',
+        psychDynamics: 'Potrafisz bezbłędnie wyczuć cudzy nastrój w pierwszej minucie rozmowy, co często wpędza Cię w rolę cichego opiekuna lub mediatora. Problem zaczyna się wtedy, gdy przejmujesz odpowiedzialność za emocje całego otoczenia, a własne potrzeby dusisz tak długo, aż wybuchają jako nagły chłód i wycofanie bez wyjaśnienia.',
+        sovereigntyRole: 'Twoja intuicja wychwytuje ukryte napięcia w zespole i związku na długo przed wybuchem otwartego konfliktu.'
       },
       nourishmentProtocol: {
-        somatic: 'Ciepła woda, dotyk naturalnego lnu, spokojny oddech aż do dna przepony i sen bez niebieskiego blasku ekranów.',
-        environment: 'Cichy azyl z grubymi zasłonami, w którym nikt nie wchodzi bez zapowiedzi ani nie przestawia Twoich przedmiotów.',
-        dailyRitual: 'Wieczorna herbata w zupełnej ciszy. Zapytaj siebie przed snem, który dzisiejszy ciężar tak naprawdę w ogóle nie należał do Ciebie.'
+        somatic: 'Ciepła kąpiel, spokojny sen o stałych porach i świadome rozluźnianie brzucha — Twój stres natychmiast uderza w żołądek i układ pokarmowy.',
+        environment: 'Bezpieczne mieszkanie, w którym nikt nie wpada bez zapowiedzi i w którym obowiązuje jasny podział na pracę i odpoczynek.',
+        dailyRitual: 'Wieczorem przez 10 minut oddziel swoje dzisiejsze zmęczenie od problemów ludzi, z którymi rozmawiałeś w ciągu dnia.'
       },
       shadowAndEmergency: {
         exhaustionSignals: [
-          'Pochłanianie cudzych nastrojów tak głęboko, że wieczorem nie wiesz już, co jest Twoim smutkiem, a co pożyczonym echem.',
-          'Zamykanie się w lodowatej skorupie milczenia zamiast jednego jasnego zdania o tym, co Cię zabolało.',
-          'Głód bezpieczeństwa zaspokajany kurczowym trzymaniem się relacji, które dawno straciły tlen.'
+          'Wycofanie w milczenie i karanie partnera dystansem zamiast powiedzenia wprost, co Cię zabolało.',
+          'Nadmierna opiekuńczość używana nieświadomie po to, by uzależnić innych od swojej obecności.',
+          'Częste wracanie do starych urazów sprzed lat podczas bieżącej sprzeczki o drobiazg.'
         ],
-        sabotagePattern: 'Stajesz się niewidzialną opiekunką lub wybawicielem dla dorosłych ludzi, którzy nigdy o to nie prosili. Potem dusisz w sobie cichą gorycz, bo nikt nie zauważył ceny Twojego poświęcenia.',
-        emergency24h: 'Oddaj jedną sprawę, którą dźwigasz z przyzwyczajenia i z lęku przed poczuciem winy. Pozwól innym ponieść ciężar własnych błędów.'
+        sabotagePattern: 'Sprawdzasz, czy druga osoba domyśli się, czego potrzebujesz, bez Twojej prośby. Gdy nie zgadnie, potwierdzasz sobie bolesne przekonanie, że nikomu nie zależy wystarczająco mocno.',
+        emergency24h: 'Nazwij jedną swoją potrzebę wprost jednym prostym zdaniem, bez aluzji i testowania cudzej domyślności.'
       },
       relationshipDynamics: {
-        intimateNeed: 'Domu budowanego z obecności, nie z pustych obietnic. Bezpieczeństwa, przy którym można zdjąć zbroję bez obawy o cios w plecy.',
-        vulnerabilityFear: 'Lęk przed opuszczeniem w chwili, gdy okaże się, że pod opanowanym uśmiechem nosisz stare, niezaleczone głody.',
-        boundaryRule: 'Prawdziwa troska nie polega na zgadywaniu cudzych pragnień. Milczące poświęcenie zawsze kończy się rachunkiem wystawionym po latach.'
+        intimateNeed: 'Przewidywalności emocjonalnej, czułości na co dzień oraz poczucia, że druga strona zostaje w pokoju także podczas gorszego nastroju.',
+        vulnerabilityFear: 'Paniczny lęk przed byciem ciężarem dla innych i powtórzeniem chłodu, który pamiętasz z dawnych lat.',
+        boundaryRule: 'Wrażliwość daje siłę dopiero wtedy, gdy idzie w parze z umiejętnością odmowy. Nie ratuj ludzi kosztem własnego snu.'
       },
       careerAndWealth: {
-        wealthLever: 'Tworzysz wartość tam, gdzie liczy się opieka, pamięć kulturowa, atmosfera, intuicja psychologiczna i lojalne społeczności.',
-        careerTrap: 'Lodowate wyścigi oparte na brutalnej rywalizacji bez krzty zaufania i ludzkiego zaplecza.'
+        wealthLever: 'Psychologia, medycyna, nieruchomości, praca z ludźmi, gastronomia, budowanie społeczności opartych na zaufaniu i wysokim poczuciu bezpieczeństwa.',
+        careerTrap: 'Agresywna sprzedaż bez etyki lub środowisko pracy oparte na ciągłym upokarzaniu słabszych.'
       },
       decisionalFilter: {
         questions: [
-          'Czy moje ciało rozluźnia się na tę myśl, czy ściska mnie w dołku mimo gładkich słów?',
-          'Czy idę tam z miłości do siebie, czy ze starego strachu przed samotnością?',
-          'Czego szukam w tej osobie — partnera czy brakującego rodzica?'
+          'Czy ta reakcja wynika z tego, co wydarzyło się dzisiaj, czy ze starego lęku przed porzuceniem?',
+          'Czy pomagam tej osobie z sympatii, czy kupuję sobie prawo do bycia potrzebnym?',
+          'Czego potrzebuje teraz moje ciało, żebym przestał reagować z pozycji obrony?'
         ],
-        powerAxiom: 'Kto strzeże własnych wód przed obcą trucizną, ten nawet w środku burzy zachowuje spokojny port.'
+        powerAxiom: 'Twoja intuicja to precyzyjny radar — pod warunkiem, że nie mylisz teraźniejszości z echem dawnych zranień.'
       }
     }
   });

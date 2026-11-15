@@ -543,7 +543,7 @@ const SYNASTRY_PROFILES_A = [
       secretGift: 'Nocna jazda po pustym torze lub flakon ciężkich perfum z nutą skóry, dymu i czarnego pieprzu.'
     },
     f: {
-      conflict: 'Zapala się w jednej sekundzie jak sucha gałąź wrzucona na ruszt. Odwracanie wzroku i odkładanie rozmowy do jutra traktuje jak próbę zamknięcia jej w klatce.',
+      conflict: 'Zapala się w kilka sekund, gdy wyczuje lekceważenie. Odwracanie uwagi i odkładanie trudnej rozmowy na bliżej nieokreślone jutro odbiera jako narzucanie jej ciszy.',
       venusGift: 'Ceni gesty odważne i żywe. Pociąga ją partner, który nie kuli się pod stołem przy pierwszym piorunie i potrafi narzucić własny rytm wieczoru.',
       openKey: 'Konkret bez kręcenia, własna inicjatywa i odwaga spojrzenia jej prosto w oczy.',
       secretGift: 'Niszowy ekstrakt perfum z nutą różowego pieprzu i żywicy albo dwa bilety wręczone godzinę przed wyjazdem.'
@@ -570,7 +570,7 @@ const SYNASTRY_PROFILES_A = [
       conflict: 'Chowa się za ostrym żartem i zaczyna ciąć słowem jak skalpelem. Im gęstsza atmosfera emocjonalna w mieszkaniu, tym szybciej zmienia temat lub ucieka w ironię.',
       venusGift: 'Budzi go rozmowa z drugim dnem, zaskoczenie i błyskotliwy flirt ponad stołem. Podarunek bez opowieści i haczyka usypia go już po otwarciu pudełka.',
       openKey: 'Lekkość słów, świeża myśl i brak ciężkiego przesłuchania za zamkniętymi drzwiami.',
-      secretGift: 'Limitowany album fotograficzny albo bilety na nocny spektakl w innym mieście wyciągnięte z kieszeni płaszcza.'
+      secretGift: 'Limitowany album fotograficzny albo bilety na nocny spektakl w innym mieście podarowane przed wspólną kolacją.'
     },
     f: {
       conflict: 'Gdy czuje ciężar wyrzutów i próbę zamknięcia w rutynie, odpala ciętą ripostę albo znika z rozmowy za szklaną szybą własnych spraw.',
@@ -597,7 +597,7 @@ const SYNASTRY_PROFILES_A = [
   {
     sign: 'Lew',
     m: {
-      conflict: 'Kiedy traktujesz go jak zwykłego przechodnia przy stole, duma zastyga mu na twarzy w królewski lód. Najgłębiej rani go letnia obojętność.',
+      conflict: 'Kiedy traktujesz go jak zwykłego przechodnia przy stole, zamyka się w urażonej dumie i chłodnej rezerwie. Najmocniej rani go obojętność partnerki.',
       venusGift: 'Potrzebuje rozmachu, światła i gestu, przy którym pokój na chwilę milknie. Rzecz dla niego musi przypominać insygnia szacunku.',
       openKey: 'Lojalność przy ludziach, zachwyt bez fałszu i miejsce honorowe przy Twoim boku.',
       secretGift: 'Rzemieślniczy sygnet z 18-karatowego złota albo zamknięta degustacja rocznikowej whisky wieczorem.'
@@ -618,7 +618,7 @@ const SYNASTRY_PROFILES_A = [
       secretGift: 'Japońskie pióro wieczne o czystej linii albo skórzana teczka podróżna szyta ręcznie we Florencji.'
     },
     f: {
-      conflict: 'Kiedy zmęczenie odbiera jej cierpliwość, zaczyna wytykać krzywo postawioną filiżankę i brak precyzji w Twoich słowach, osłaniając własny lęk przed rozsypaniem domu.',
+      conflict: 'Kiedy zmęczenie odbiera jej cierpliwość, zaczyna poprawiać drobne usterki w Twoim zachowaniu i organizacji domu, osłaniając własny lęk przed rozsypaniem domu.',
       venusGift: 'Wycisza ją minimalizm bez krzykliwych metek, naturalny surowiec i gest odciążający ją bez pytania.',
       openKey: 'Czyn mocniejszy niż obietnica i przejęcie jednego trudnego ciężaru z jej listy.',
       secretGift: 'Apteczny flakon czystych olejków albo dyskretny pierścionek z surowym kamieniem.'
@@ -632,7 +632,7 @@ const SYNASTRY_PROFILES_B = [
   {
     sign: 'Waga',
     m: {
-      conflict: 'Nienawidzi wrzasku i taniej sceny w przedpokoju. Wycofuje się w grzeczny, chłodny dystans, długo waży szale i nagle zamyka drzwi na dobre.',
+      conflict: 'Unika ostrego krzyku i chaotycznych scen. Wycofuje się w uprzejmy dystans, długo analizuje bilans relacji i zamyka ją jednym spokojnym zdaniem.',
       venusGift: 'Oddycha miarą, światłem i taktem. Brzydkie opakowanie albo przypadkowy drobiazg ze sklepu obok potrafią zgasić w nim cały zapał.',
       openKey: 'Kultura rozmowy, ładna oprawa wspólnego wieczoru i uwaga bez patrzenia w zegarek.',
       secretGift: 'Flakon niszowych perfum z paryskiego domu albo kolekcjonerski album starej architektury.'
@@ -647,7 +647,7 @@ const SYNASTRY_PROFILES_B = [
   {
     sign: 'Skorpion',
     m: {
-      conflict: 'Nie uznaje półprawd ani miękkich wykrętów. W sporze milczy, zbiera okruchy spojrzeń i uderza bezbłędnie w to jedno miejsce, które chowasz pod płaszczem.',
+      conflict: 'Nie uznaje półprawd ani miękkich wykrętów. W sporze milczy, zbiera okruchy spojrzeń i trafia bezbłędnie w najbardziej wrażliwy punkt Twoich intencji.',
       venusGift: 'Gardzi błahostką z wystawy. Pragnie rzeczy z mrokiem, ciężarem i tajemnicą — takich, po których czuje się dotyk głębiej niż przez skórę.',
       openKey: 'Naga szczerość bez pudru i odwaga zostania przy nim, gdy w pokoju zapada noc.',
       secretGift: 'Ekstrakt perfum z czarnym oudem, skórą i kadzidłem albo bibliofilskie wydanie książki o władzy i namiętności.'
@@ -683,7 +683,7 @@ const SYNASTRY_PROFILES_B = [
       secretGift: 'Klasyczny zegarek na pasku ze skóry, aktówka z włoskiej licówki albo rocznikowa butelka z prywatnej piwnicy.'
     },
     f: {
-      conflict: 'Wkłada nieprzeniknioną uprzejmość i odchodzi bez awantury. Pod pancerzem samowystarczalności nosi obawę, że kiedy się oprze, ramię obok ustąpi.',
+      conflict: 'Wkłada nieprzeniknioną uprzejmość i odchodzi bez awantury. Pod maską pełnej samowystarczalności nosi obawę, że kiedy się oprze, ramię obok ustąpi.',
       venusGift: 'Ceni dyskretną doskonałość formy i rzeczy odporne na czas. Gardzi tanim hałasem; wypatruje rzemiosła o cichym ciężarze.',
       openKey: 'Spójność czynu ze słowem i przejęcie ciężaru bez proszenia po raz trzeci.',
       secretGift: 'Ciężki szal z czystego kaszmiru, prosta torebka bez logo albo pierścień z matowego onyksu.'
@@ -692,7 +692,7 @@ const SYNASTRY_PROFILES_B = [
   {
     sign: 'Wodnik',
     m: {
-      conflict: 'Wyłącza emocje jak światło w przedpokoju i obserwuje kłótnię z dystansu, jakby stał za szybą. Im głośniej prosisz o łzy, tym dalej odpływa.',
+      conflict: 'Wyłącza zaangażowanie emocjonalne w ułamku sekundy i obserwuje kłótnię z dystansu, jakby stał za szybą. Im głośniej prosisz o łzy, tym dalej odpływa.',
       venusGift: 'Pociąga go osobliwość, zgrzyt kontrapunktu i przedmiot nie z tego katalogu. Masowa produkcja ze sklepowej sieci go nudzi i obraża.',
       openKey: 'Przyjaźń mocniejsza niż zaborczość, ostra myśl i zgoda na jego własny rytm nocy.',
       secretGift: 'Surowy gramofon o czystym brzmieniu, rzadki sprzęt audio albo sygnowana grafika młodego artysty.'
@@ -721,6 +721,64 @@ const SYNASTRY_PROFILES_B = [
   }
 ];
 const SYNASTRY_PROFILES = SYNASTRY_PROFILES_A.concat(SYNASTRY_PROFILES_B);
+
+const DEFAULT_WHEEL_HINT = '✦ Dotknij lub najedź na dowolną planetę, znak lub aspekt na kole, aby odkryć jego znaczenie';
+
+function getMoonElementAndModality(signName) {
+  const el = ['Baran', 'Lew', 'Strzelec'].includes(signName) ? 'Ogień' :
+             ['Byk', 'Panna', 'Koziorożec'].includes(signName) ? 'Ziemia' :
+             ['Bliźnięta', 'Waga', 'Wodnik'].includes(signName) ? 'Powietrze' : 'Woda';
+  const mod = ['Baran', 'Rak', 'Waga', 'Koziorożec'].includes(signName) ? 'Kardynalny' :
+              ['Byk', 'Lew', 'Skorpion', 'Wodnik'].includes(signName) ? 'Stały' : 'Zmienny';
+  return { el, mod };
+}
+
+function buildRelationalCollisionBridge(chartA, chartB, nameA, nameB, syn) {
+  const mA = chartA && chartA.moon ? chartA.moon : { name: 'Baran' };
+  const mB = chartB && chartB.moon ? chartB.moon : { name: 'Byk' };
+  const infoA = getMoonElementAndModality(mA.name);
+  const infoB = getMoonElementAndModality(mB.name);
+  const pairKey = [infoA.el, infoB.el].sort().join('+');
+  const friction = syn && typeof syn.friction === 'number' ? syn.friction : 50;
+
+  let loopDesc = '';
+  if (pairKey === 'Ogień+Woda') {
+    const fireName = infoA.el === 'Ogień' ? nameA : nameB;
+    const waterName = infoA.el === 'Woda' ? nameA : nameB;
+    loopDesc = `${fireName} podnosi temperaturę rozmowy i naciska na natychmiastową odpowiedź, co ${waterName} odbiera jako atak i zamyka dostęp do emocji. Im bardziej ${waterName} milknie, tym ostrzej ${fireName} domaga się reakcji. Zawieszenie broni działa tu tylko przez kwadrans przerwy przed dalszą rozmową.`;
+  } else if (pairKey === 'Powietrze+Ziemia') {
+    const earthName = infoA.el === 'Ziemia' ? nameA : nameB;
+    const airName = infoA.el === 'Powietrze' ? nameA : nameB;
+    loopDesc = `${earthName} żąda konkretnych obietnic, dat i faktów, podczas gdy ${airName} chce najpierw przedyskutować kontekst bez presji. ${earthName} widzi w tym unikanie odpowiedzialności, a ${airName} czuje się przesłuchiwany. Wyjściem z pętli jest oddzielenie rozmowy o uczuciach od ustaleń kalendarzowych.`;
+  } else if (pairKey === 'Ogień+Ziemia') {
+    loopDesc = `Jedno z Was naciska na natychmiastową zmianę kursu pod wpływem impulsu, a drugie blokuje ruch z ostrożności o konsekwencje. Gdy brakuje zaufania, spontaniczność brzmi jak lekkomyślność, a rozwagę odbiera się jako chłód. Przełom daje jasny podział: kto testuje pomysł, a kto pilnuje budżetu.`;
+  } else if (pairKey === 'Powietrze+Woda') {
+    const airName = infoA.el === 'Powietrze' ? nameA : nameB;
+    const waterName = infoA.el === 'Woda' ? nameA : nameB;
+    loopDesc = `W napięciu ${airName} próbuje rozłożyć emocje na logiczne argumenty, co ${waterName} odbiera jako obojętność wobec własnego bólu. W efekcie ${waterName} wycofuje zaufanie, a ${airName} traci cierpliwość do domyślania się intencji. Tu najpierw trzeba wysłuchać tonu, dopiero potem szukać racji.`;
+  } else if (infoA.el === infoB.el) {
+    loopDesc = `Oboje macie Księżyc w żywiole ${infoA.el} (${mA.name} i ${mB.name}), więc reagujecie na stres tym samym odruchem obronnym — spór łatwo zamienia się w lustrzane odbijanie tego samego mechanizmu. Przełamanie impasu wymaga, aby jedna strona świadomie zmieniła ton jako pierwsza.`;
+  } else {
+    loopDesc = `Połączenie żywiołów ${infoA.el} i ${infoB.el} przy tarciu ${friction}% tworzy wyraźny kontrast tempa: jedna strona potrzebuje bliskości do uspokojenia nerwów, a druga krótkiego dystansu, by nie powiedzieć za dużo w złości.`;
+  }
+
+  const modNote = (infoA.mod === 'Stały' && infoB.mod === 'Stały')
+    ? ' Przy dwóch znakach stałych kluczowe ryzyko to wielodniowa wojna na przeczekanie, kto odezwie się pierwszy.'
+    : (infoA.mod === 'Kardynalny' && infoB.mod === 'Kardynalny')
+    ? ' Przy dwóch modalnościach kardynalnych obie strony walczą o narzucenie tempa rozwiązania sporu.'
+    : '';
+
+  return `
+    <div style="margin-top:1.15rem;padding:0.95rem 1.15rem;background:rgba(251,113,133,0.06);border-left:3px solid #FB7185;border-radius:0.75rem;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#FB7185;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.35rem;font-weight:700;">
+        ✦ PĘTLA WYZWALACZ–REAKCJA (${mA.name} &times; ${mB.name} • Tarcie ${friction}%)
+      </div>
+      <p style="font-size:0.86rem;line-height:1.62;color:rgba(250,248,245,0.88);margin:0;">
+        ${loopDesc}${modNote}
+      </p>
+    </div>
+  `;
+}
 
 
 // Part 4: Synastry Results Dashboard Renderer (Gender-aware: Male 'm' & Female 'f')
@@ -854,7 +912,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
           </div>
           <div id="syn-wheel-active-info" class="syn-wheel-info-bar">
             <div class="syn-wib-body" style="opacity:0.75;text-align:center;">
-              ✦ Dotknij lub najedź na dowolną planetę, znak lub aspekt na kole, aby odkryć jego znaczenie
+              ${DEFAULT_WHEEL_HINT}
             </div>
           </div>
           <div class="syn-no-print" style="text-align:center;margin-top:1.1rem;display:flex;gap:0.6rem;justify-content:center;flex-wrap:wrap;">
@@ -924,6 +982,8 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
           </p>
         </div>
 
+        ${buildRelationalCollisionBridge({ moon: moonA, mars: marA }, { moon: moonB, mars: marB }, nameA, nameB, syn)}
+
         <div style="padding:0.95rem 1.15rem;background:rgba(201,169,110,0.06);border-left:3px solid #C9A96E;border-radius:0.75rem;margin-top:1.25rem;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#C9A96E;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.35rem;font-weight:600;">
             ✦ Co zamyka ${isFemB ? 'partnerkę' : 'partnera'} (${nameB}) na bliskość:
@@ -951,7 +1011,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
 
         <div style="padding:1rem 1.25rem;background:rgba(201,169,110,0.08);border:1px solid rgba(201,169,110,0.3);border-radius:0.85rem;margin-top:1.25rem;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#C9A96E;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.35rem;">
-            ✦ Jak rozbroić ${isFemB ? 'jej' : 'jego'} pancerz:
+            ✦ Jak rozbroić ${isFemB ? 'jej' : 'jego'} mechanizm obronny:
           </div>
           <p style="font-size:0.88rem;line-height:1.6;color:rgba(250,248,245,0.9);margin:0;">
             ${jProfVenB.disarm || profSunB.openKey}
@@ -1001,7 +1061,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
     let lockedTarget = null;
     const defaultInfoHtml = `
       <div class="syn-wib-body" style="opacity:0.75;text-align:center;">
-        ✦ Dotknij lub najedź na dowolną planetę, znak lub aspekt na kole, aby odkryć jego znaczenie
+        ${DEFAULT_WHEEL_HINT}
       </div>`;
 
     function updateView(hit) {
@@ -1138,17 +1198,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
   }
 
   function loadInitialState() {
-    const isTestEnv = (typeof window !== 'undefined' && (
-      window.location.hostname === 'localhost' ||
-      window.location.hostname === '127.0.0.1' ||
-      window.location.hostname.startsWith('192.168.') ||
-      window.location.search.includes('test=true')
-    ));
-
-    const def = isTestEnv ? {
-      nameA: 'Kasia', genderA: 'f', dateA: '2002-03-16', timeA: '12:05', cityA: 'Warszawa',
-      nameB: 'Michał', genderB: 'm', dateB: '1999-04-30', timeB: '14:25', cityB: 'Kraków'
-    } : {
+    const def = {
       nameA: '', genderA: 'f', dateA: '', timeA: '', cityA: '',
       nameB: '', genderB: 'm', dateB: '', timeB: '', cityB: ''
     };

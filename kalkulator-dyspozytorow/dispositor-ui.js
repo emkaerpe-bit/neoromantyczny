@@ -4,17 +4,69 @@
  */
 (function () {
   const RULER_INTERPRETATIONS = {
-    sun: 'Nie znosisz cudzego cienia. Wchodzisz do pokoju w mokrym od deszczu płaszczu i od progu mierzysz temperaturę spojrzeń — nie z próżności, lecz z głodu własnego miejsca przy stole. Każda próba wciśnięcia Cię w cudzy krój kończy się cichym buntem albo powolnym stygnięciem krwi.',
-    moon: 'Żyjesz według podskórnych pływów. Wyłapujesz chłód w milczeniu bliskiej osoby, zanim porcelana zdąży stygnąć na stole. Twoją siłą i przekleństwem jest bezbłędna pamięć serca — intymność bywa twierdzą z ciężkich zasłon, a jedna zdrada potrafi zatrzasnąć ją bez powrotu.',
-    mercury: 'Twój umysł nie zna godziny policyjnej. Składasz rozrzucone fakty szybciej, niż inni dopijają pierwsze espresso. Zdanie jest dla Ciebie stalówką i skalpelem zarazem. Dusi Cię jałowa rozmowa o pogodzie i dzień ułożony pod czyjeś ziewanie.',
-    venus: 'Nosisz w sobie bezbłędny zmysł miary, ciężaru tkaniny i cichego taktu. Odrzuca Cię hałas, pośpiech oraz emocjonalne niechlujstwo. Gdy ktoś depcze Twój próg godności, nie urządzasz scen przy otwartym oknie — po prostu odchodzisz nocnym pociągiem, bez jednego krzyku.',
-    mars: 'Czysta iskra i wrogość wobec bezradnego rozkładania rąk. Kiedy inni wciąż ważą argumenty nad zimną herbatą, Ty już przekręcasz klucz w zamku i bierzesz konsekwencje na własną skórę. W kryzysie odzyskujesz ostrość wzroku, kiedy reszta chowa głowę w kołnierz.',
-    jupiter: 'Horyzont wyznacza Twoją jedyną miarę. Dusisz się w niskich pokojach, w kłótniach o drobiazgi i w bezpiecznej, letniej asekuracji. Masz w sobie nieuleczalny głód sensu, choć bywa, że obietnice Twojej wyobraźni uciekają o trzy mile przed twardym brukiem.',
-    saturn: 'Ciężar odpowiedzialności, który dźwigasz w ciszy, jakbyś niósł ołowianą walizkę po stromych schodach. Nic w Twoim życiorysie nie leżało za darmo na ladzie. Wiesz, ile kosztuje każde słowo i nie kupujesz dróg na skróty — z czasem zyskujesz autorytet kogoś, kto przeżył własną zimę.',
-    uranus: 'Wrodzony wstręt do stada i letnich kompromisów. Rozcinasz niewygodne układy jednym czystym ruchem nożyc, gdy tylko poczujesz zapach klatki. Samotność bywa słoną ceną za niezależność, lecz bez niej tracisz powietrze w płucach.',
-    neptune: 'Chodzisz po cienkiej granicy między jawą a podziemną rzeką przeczuć. Chłoniesz cudzy ciężar jak ciemny aksamit, nieraz myląc obce łzy z własnym losem. Twoją siłą bywa wzrok sięgający za zasłonę faktów; największą pułapką — ucieczka w mgłę przed szorstkim dniem.',
-    pluto: 'Bezwzględna odmowa gry na pół gwizdka. Widzisz rysę na lustrze i drżenie palców pod cudzym uśmiechem, zanim padnie pierwsze powitanie. Przechodzisz przez kryzysy jak przez ogień — tam, gdzie inni tracą grunt, Ty dziwnie dobrze widzisz w ciemności.'
+    sun: 'W nowym towarzystwie w ciągu pięciu minut przejmujesz rolę osoby, od której zależy rytm rozmowy. Czujesz fizyczny spadek energii w sytuacjach, w których Twój wkład ginie w zbiorowej anonimowości. Gdy ktoś próbuje ustawić Cię w szeregu bez wyraźnego powodu, odruchowo wycofujesz zaangażowanie albo budujesz własną scenę obok.',
+    moon: 'Skanujesz nastrój w pokoju zanim ktokolwiek zda sobie sprawę, że coś jest nie tak. Pamiętasz ton głosu sprzed miesięcy znacznie dokładniej niż same argumenty, a na chłód lub niedopowiedzenie partnera reagujesz natychmiastowym zamknięciem emocjonalnym. Bliskość budujesz powoli, sprawdzając najpierw, czy druga strona potrafi unieść Twoją wrażliwość.',
+    mercury: 'Porządkujesz rzeczywistość przez pytania, notatki i wyłapywanie niespójności w cudzych zdaniach. Nuda intelektualna męczy Cię bardziej niż nadmiar pracy, dlatego szybko tracisz cierpliwość do spotkań bez puenty. Pod presją zaczynasz analizować każdą sylabę drugiej osoby, zamiast po prostu zapytać, o co jej chodzi.',
+    venus: 'Twoim kompasem jest jakość relacji, proporcja i estetyka codziennego wyboru — od sposobu prowadzenia sporu po to, jak wydajesz pieniądze. Nie robisz publicznych scen: kiedy ktoś wielokrotnie ignoruje Twoje granice, po prostu wygaszasz obecność i odcinasz dostęp do swojej uwagi bez zbędnych tłumaczeń.',
+    mars: 'Działasz szybko, bo bierne czekanie na cudzą decyzję podnosi Ci ciśnienie bardziej niż samo ryzyko pomyłki. W sporze wolisz ostrą, otwartą konfrontację niż wielodniowe obrażanie się, a przy pierwszym kryzysie odruchowo bierzesz stery na siebie, zanim reszta zdąży ustalić plan.',
+    jupiter: 'Potrzebujesz przestrzeni do ruchu, długiego horyzontu i poczucia, że to, co robisz, otwiera kolejne drzwi. Drobiazgowe rozliczanie cudzych potknięć zabija Twój zapał w kilka dni. W relacjach i pracy dajesz dużo zaufania na start, choć czasem obiecujesz więcej czasu lub zasobów, niż faktycznie mieści Twój kalendarz.',
+    saturn: 'Wchodzisz w zobowiązania z ołówkiem w ręku: liczysz koszty, czas i realną trwałość, zanim złożysz deklarację. Trudno kupić Cię tanim entuzjazmem, bo z doświadczenia wiesz, kto sprząta po cudzych obietnicach. Z zewnątrz sprawiasz wrażenie osoby niedostępnej, choć wobec zaufanych ludzi wykazujesz żelazną lojalność.',
+    uranus: 'Nienawidzisz sztucznych konwenansów i układów podtrzymywanych wyłącznie z przyzwyczajenia. Kiedy środowisko zaczyna Cię formatować pod jeden szablon, ucinasz kontakt jednym krótkim komunikatem i zmieniasz kierunek bez oglądania się za siebie. Prawdziwą bliskość tworzysz tylko tam, gdzie druga osoba szanuje Twoją autonomię.',
+    neptune: 'Wychwytujesz intencje i ukryte motywy ludzi znacznie szybciej, niż wynika to z ich słów. Granica między Twoim nastrojem a emocjami partnera bywa bardzo cienka, przez co łatwo bierzesz na siebie cudzy ciężar. Gdy świat robi się zbyt brutalny lub hałaśliwy, uciekasz w odkładanie decyzji i prywatny świat wyobraźni.',
+    pluto: 'Od pierwszej minuty wyczuwasz, kto w pokoju rozdaje karty, a kto tylko udaje pewność siebie. Półśrodki i grzecznościowa gra męczą Cię do tego stopnia, że wolisz pełne zerwanie od letniego kompromisu. W sytuacjach granicznych, gdy inni tracą rezon, zyskujesz chłodną, bezkompromisową trzeźwość.'
   };
+
+  function traceChainPath(startKey, chainMap) {
+    const path = [startKey];
+    let curr = startKey;
+    const seen = new Set([startKey]);
+    for (let step = 0; step < 12; step++) {
+      const next = chainMap[curr];
+      if (!next || next === curr || seen.has(next)) {
+        if (next && next !== curr && seen.has(next)) path.push(next);
+        break;
+      }
+      path.push(next);
+      seen.add(next);
+      curr = next;
+    }
+    return path;
+  }
+
+  function buildMaskVsSovereignSynthesis(rulerPlanet, currentChart, dispData) {
+    if (!rulerPlanet || !dispData) return '';
+    const pByKey = Object.fromEntries(currentChart.planets.map(p => [p.key, p]));
+    const pathKeys = traceChainPath(rulerPlanet.key, dispData.chainMap || {});
+    const pathNames = pathKeys.map(k => pByKey[k] ? `${pByKey[k].glyph} ${pByKey[k].name}` : k).join(' → ');
+    const fdKeys = dispData.finalDispositors || [];
+    let verdictTitle = '';
+    let verdictBody = '';
+
+    if (fdKeys.includes(rulerPlanet.key)) {
+      verdictTitle = 'Spójność Monolityczna: Maska i Suweren to ta sama siła';
+      verdictBody = `Twój Władca Ascendentu (${rulerPlanet.name} w znaku ${rulerPlanet.signName}) jest jednocześnie Twoim Władcą Ostatecznym. Ludzie dostają na starcie dokładnie tę energię, która zarządza Twoimi decyzjami w kryzysie — bez ukrytej agendy. Ryzyko tego układu to tunelowe widzenie: gdy przychodzi presja, podkręcasz swoje domyślne zachowanie zamiast zmienić strategię.`;
+    } else if (fdKeys.length > 0) {
+      const sov = pByKey[fdKeys[0]];
+      const subData = dispData.summaryMap[fdKeys[0]] || { percentage: 0 };
+      verdictTitle = `Dwie Instancje: ${rulerPlanet.name} otwiera drzwi, ${sov.name} podpisuje wyrok`;
+      verdictBody = `Świat poznaje Cię przez styl, jaki narzuca ${rulerPlanet.name} w znaku ${rulerPlanet.signName}, ale za zamkniętymi drzwiami każda ważna decyzja wędruje ścieżką: <strong style="color:#C9A96E;">${pathNames}</strong>. Tam stery przejmuje ${sov.name} w znaku ${sov.signName} (${Math.round(subData.percentage)}% wpływu w psychice). Kiedy otoczenie bierze Twoje pierwsze wrażenie za cały Twój charakter, często bywa zaskoczone, jak twardo lub niespodziewanie stawiasz ostateczną granicę.`;
+    } else if (dispData.mutualReceptions && dispData.mutualReceptions.length > 0) {
+      const pair = dispData.mutualReceptions[0].map(k => pByKey[k] ? pByKey[k].name : k).join(' ↔ ');
+      verdictTitle = `Maska deleguje władzę do Duetu (${pair})`;
+      verdictBody = `Pierwszy impuls (${rulerPlanet.name}) wpada w ścieżkę <strong style="color:#C9A96E;">${pathNames}</strong> i kończy w dwuwładzy ${pair}. Z zewnątrz możesz wydawać się bardziej zdecydowany niż czujesz się w środku, bo finalna decyzja wymaga zgody dwóch przeciwnych potrzeb naraz.`;
+    } else {
+      verdictTitle = `Maska w obiegu Rady Nadzorczej (Pętla Decyzyjna)`;
+      verdictBody = `Twój styl wejścia w relacje (${rulerPlanet.name}) przekazuje impuls w głąb zamkniętego obiegu: <strong style="color:#C9A96E;">${pathNames}</strong>. Zanim podejmiesz kluczowy ruch życiowy, sprawdzasz sprawę pod kilkoma kątami naraz — to chroni przed naiwnością, ale w momentach stresu potrafi przeciągać decyzję w nieskończoność.`;
+    }
+
+    return `
+      <div class="disp-card" style="border-color:rgba(201,169,110,0.38);background:rgba(201,169,110,0.04);margin-bottom:1.25rem;">
+        <div class="disp-badge" style="background:rgba(201,169,110,0.18);">SYNTEZA KOMBINATORYCZNA • ZDERZENIE MASKI Z SUWERENEM</div>
+        <h4 style="font-family:'Playfair Display',serif;font-size:1.12rem;color:#FAF8F5;margin:0.2rem 0 0.5rem;">${verdictTitle}</h4>
+        <p style="font-size:0.86rem;line-height:1.62;color:rgba(250,248,245,0.82);margin:0;">${verdictBody}</p>
+      </div>
+    `;
+  }
 
   let currentChart = null;
   let useModernMode = false;
@@ -191,10 +243,11 @@
 
     // 2. Chart Ruler (Ascendant)
     let chartRulerHtml = '';
+    let rulerPlanet = null;
     if (currentChart.ascSign) {
       const ascKey = currentChart.ascSign.key;
       const rulerKey = rulers[ascKey];
-      const rulerPlanet = currentChart.planets.find(p => p.key === rulerKey);
+      rulerPlanet = currentChart.planets.find(p => p.key === rulerKey);
       const desc = RULER_INTERPRETATIONS[rulerKey] || '';
 
       chartRulerHtml = `
@@ -222,6 +275,9 @@
     let finalBoxHtml = '';
     if (dispData.finalDispositors.length > 0) {
       const fdKeys = dispData.finalDispositors;
+      const primaryFd = currentChart.planets.find(pl => pl.key === fdKeys[0]);
+      const primarySub = dispData.summaryMap[fdKeys[0]] || { directSubjects: [], indirectSubjects: [] };
+      const ruledCount = primarySub.directSubjects.length + primarySub.indirectSubjects.length;
       const fdNames = fdKeys.map(k => {
         const p = currentChart.planets.find(pl => pl.key === k);
         const data = dispData.summaryMap[k] || { percentage: 0 };
@@ -241,7 +297,7 @@
             ${fdNames}
           </div>
           <p style="font-size:0.88rem;line-height:1.6;color:rgba(250,248,245,0.8);margin:0;">
-            Twój wewnętrzny monarcha. To jedyna siła w Twojej psychice, która nie musi pytać nikogo o zgodę. Gdy opadają pozory, a kryzys zmusza Cię do ostatecznego wyboru — to właśnie tutaj zapada bezapelacyjny wyrok. To Twój rdzeń sprawczości, ale też punkt, w którym najłatwiej o ślepy upór.
+            ${primaryFd ? `${primaryFd.name} w znaku ${primaryFd.signName} podporządkowuje sobie ${ruledCount} instancji Twojego horoskopu i nie podlega żadnej innej planecie.` : ''} Gdy opadają argumenty innych ludzi, a kryzys zmusza Cię do wyboru bez asekuracji — to dokładnie tutaj zapada ostateczna decyzja. W integracji to źródło sprawczości; w stresie punkt ślepego uporu.
           </p>
         </div>
       `;
@@ -259,20 +315,26 @@
             ${mrPairs}
           </h4>
           <p style="font-size:0.88rem;line-height:1.6;color:rgba(250,248,245,0.8);margin:0;">
-            Zamiast pojedynczego monarchy, Twoim życiem zarządza zsynchronizowany duet dwóch energii. Nieustanny dialog wewnętrzny: jedna planeta trzyma klucze do skarbca drugiej. Gdy współpracują — masz wielką elastyczność. W kryzysie — grozi Ci przeciąganie liny i paraliż decyzyjny.
+            Zamiast pojedynczego decydenta, Twoją psychiką zarządza duet dwóch planet, które wymieniają się uprawnieniami: żadna nie ruszy naprzód bez zgody drugiej. Na poziomie integracji daje to rzadką elastyczność w negocjacjach i umiejętność patrzenia z dwóch stron naraz. Pod presją grozi Ci wielogodzinne ważenie za i przeciw oraz odkładanie cięcia.
           </p>
         </div>
       `;
     } else if (dispData.loops.length > 0) {
+      const loopNames = dispData.loops[0].map(k => {
+        const p = currentChart.planets.find(pl => pl.key === k);
+        return p ? `${p.name} (${p.signName})` : k;
+      }).join(' → ');
       finalBoxHtml = `
         <div class="disp-card" style="margin-bottom:1.25rem;">
           <div class="disp-badge">PĘTLA PLANETARNA • RADA NADZORCZA</div>
           <p style="font-size:0.88rem;line-height:1.6;color:rgba(250,248,245,0.8);margin:0;">
-            Rada cieni w Twojej podświadomości. Zamknięty obieg energii, w którym każda motywacja wędruje przez kilka instancji psychiki. Złożona, wielowątkowa osobowość — rzadko podejmujesz impulsywne kroki, bo każda decyzja musi zostać przegłosowana przez kilka sfer Twojego życia.
+            Zamknięty obieg decyzji: <strong style="color:#C9A96E;">${loopNames}</strong>. Każdy ważny impuls krąży między kilkoma kryteriami naraz — zanim powiesz „tak” w relacji lub pracy, musisz uzyskać zgodę wszystkich instancji w tej pętli. To chroni przed naiwnością, lecz w zmęczeniu wywołuje paraliż analityczny.
           </p>
         </div>
       `;
     }
+
+    const maskVsSovereignHtml = buildMaskVsSovereignSynthesis(rulerPlanet, currentChart, dispData);
 
     // 4. Atmakaraka (Soul Planet)
     const atmakaraka = [...currentChart.planets]
@@ -293,7 +355,7 @@
             </div>
           </div>
           <p style="font-size:0.82rem;color:rgba(250,248,245,0.7);margin:0.25rem 0 0;line-height:1.5;">
-            Król Duszy w tradycji wedyjskiej. Wskazuje na najgłębsze pragnienie Twojego ego oraz karmiczny punkt zwrotny. To tutaj życie zadaje Ci najtrudniejsze pytania, dopóki nie nauczysz się odpuszczać przymusu kontroli.
+            ${atmakaraka.name} na ${atmakaraka.degInSign}° znaku ${atmakaraka.signName} wyznacza obszar, w którym najtrudniej odpuścić Ci potrzebę kontroli. To tutaj najmocniej reagujesz na krytykę, ponieważ tu mieści się główna lekcja zaufania do własnej drogi bez ciągłego udowadniania swojej wartości.
           </p>
         </div>
       `;
@@ -539,6 +601,7 @@
           <div class="disp-lab-analysis">
             ${chartRulerHtml}
             ${finalBoxHtml}
+            ${maskVsSovereignHtml}
             ${atmakarakaHtml}
             ${retroBoxHtml}
 

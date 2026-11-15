@@ -63,7 +63,7 @@
         color: '#C9A96E',
         hard: {
           archetype: 'Próba Napięcia & Weryfikacja Siły',
-          core: 'Ostre tarcie dwóch sił przy jednym stole — wymaga odwagi wyjścia ze starej zbroi.',
+          core: 'Wyraźne tarcie dwóch sił w tym samym obszarze życia zmusza do porzucenia starych mechanizmów unikania odpowiedzialności.',
           shadow: 'Opór przed koniecznym cięciem i nocny strach przed utratą kontroli.',
           maturePower: 'Spokojny, nieprzekupny kręgosłup i panowanie nad własnym czasem.'
         },

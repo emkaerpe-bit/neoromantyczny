@@ -54,7 +54,7 @@
             <div><span style="color:#C9A96E;">[02]</span> Rozdział II: Pole Bitwy w Twoim Domu • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '🔒 Wersja Pełna'}</span></div>
             <div><span style="color:#C9A96E;">[03]</span> Rozdział III: Strategia 3 Fal Tranzytu • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '🔒 Wersja Pełna'}</span></div>
             <div><span style="color:#C9A96E;">[04]</span> Rozdział IV: Dźwignia Dyspozytora jako Bezpiecznika • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '🔒 Wersja Pełna'}</span></div>
-            <div><span style="color:#C9A96E;">[05]</span> Rozdział V: Kodeks Rezyliencji Chronosa (7 Reguł) • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '🔒 Wersja Pełna'}</span></div>
+            <div><span style="color:#C9A96E;">[05]</span> Rozdział V: 7 Żelaznych Reguł Dojrzałości • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '🔒 Wersja Pełna'}</span></div>
           </div>
         </div>
 
@@ -110,7 +110,7 @@
                 <p>Kalendarz trzech przejść kątowych 0°00'. Procedura operacyjna na czas retrogradacji Saturna (Korytarz Cienia).</p>
               </div>
               <div style="padding:1.25rem; background:rgba(255,255,255,0.03); border-radius:8px;">
-                <h4 style="font-family:'Playfair Display', serif; font-size:1.2rem; color:#FAF8F5;">Rozdział V: Kodeks Rezyliencji Chronosa</h4>
+                <h4 style="font-family:'Playfair Display', serif; font-size:1.2rem; color:#FAF8F5;">Rozdział V: 7 Żelaznych Reguł Dojrzałości</h4>
                 <p>7 Żelaznych Reguł Dojrzałości Chronosa. Instrukcja krystalizacji nowej tożsamości na kolejne 29 lat życia.</p>
               </div>
             </div>

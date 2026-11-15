@@ -10,8 +10,6 @@
   let activeProduct = 'prezentownik';
   let activeCallback = null;
 
-  const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
-
   const PRODUCTS_CONFIG = {
     'prezentownik': {
       tag: 'NATYCHMIASTOWY DOSTĘP CYFROWY (PDF)',

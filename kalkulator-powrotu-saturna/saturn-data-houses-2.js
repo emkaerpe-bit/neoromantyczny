@@ -1,58 +1,54 @@
-/**
- * NEOROMANTYCZNY — SATURN W 12 DOMACH ASTROLOGICZNYCH (CZĘŚĆ 2: DOMY 7 - 12)
- * Standard Human Voice Engine v2.0 (Zafón Noir & Implicit Jung)
- */
 (function () {
   window.SATURN_HOUSES_DATA = window.SATURN_HOUSES_DATA || {};
 
   const HOUSES_PART_2 = {
     7: {
       house: 7,
-      title: 'VII Dom (Descendent — Lustro Drugiego Człowieka i Przysięga)',
-      area: 'Bliskie związki, małżeństwo, wspólnicy oraz ci, którzy stają naprzeciwko nas.',
-      meaning: 'Jednoczesny głód drugiej dłoni na stole i lęk przed oddaniem komuś klucza do własnego spokoju. Częste przyciąganie ludzi surowych, starszych lub oszczędnych w czułości.',
-      audit: 'Najtwardsza próba dla pary. Układy oparte na lęku przed samotnością lub na pustych pozorach rozpadają się do cna, natomiast prawdziwe więzi dojrzewają do jasnego słowa „zostaję”.',
-      gift: 'Przymierze dwóch dorosłych ludzi, którzy znają swoje blizny i wybierają siebie świadomie bez teatralnych obietnic.'
+      title: 'Związki Partnerskie, Małżeństwo i Spółki',
+      area: 'Bliskie relacje jeden na jeden, umowy małżeńskie i biznesowe, równowaga brania i dawania.',
+      meaning: 'W relacjach łatwo wahasz się między zbyt wysokim murem obronnym a wiązaniem się z osobami, którym chcesz udowadniać swoją użyteczność zamiast oczekiwać równego partnerstwa.',
+      audit: 'Powrót Saturna weryfikuje każdy niedomówiony układ w parze i we współpracy zawodowej. Związki utrzymywane wyłącznie przyzwyczajeniem albo lękiem przed samotnością wymagają gruntownej rozmowy o zasadach.',
+      gift: 'Budujesz dojrzałą relację partnerską opartą na wzajemnym szacunku, jasnych granicach oraz odpowiedzialności obu stron za wspólny kierunek.'
     },
     8: {
       house: 8,
-      title: 'VIII Dom (Wspólny Dług, Tabu, Ciało i Ogień Zmiany)',
-      area: 'Wspólne pieniądze, kredyty, intymność bez maski i stare tajemnice rodzinne.',
-      meaning: 'Opór przed całkowitym odsłonięciem przy zgaszonym świetle oraz ciężar spraw, które w rodzinie zamiatano pod dywan od pokoleń.',
-      audit: 'Stare ego umiera jak ogień w piecu nad ranem. Saturn każe uregulować wspólne rachunki, oddać długi i przestać traktować bliskość jak grę o kontrolę nad drugą osobą.',
-      gift: 'Siła odrodzonego z popiołów. Przestajesz bać się utraty, zazdrości czy cudzego szantażu — wchodzisz w głąb bez drżenia rąk.'
+      title: 'Intymność, Wspólne Finanse i Kryzysy',
+      area: 'Kredyty, podatki, wspólny majątek, głęboka bliskość emocjonalna oraz lęk przed utratą kontroli.',
+      meaning: 'Najtrudniejszym miejscem jest oddanie drugiej osobie realnego zaufania tam, gdzie w grę wchodzą pieniądze, wspólna przyszłość lub odsłonięcie własnych słabości.',
+      audit: 'Między 28. a 30. rokiem życia na powierzchnię wychodzą sprawy długów, spadków, wspólnego budżetu lub głęboko tłumionej zazdrości. Unikanie trudnych rozliczeń przestaje działać.',
+      gift: 'Zyskujesz psychiczną odporność w sytuacjach granicznych, umiejętność mądrego zarządzania kapitałem oraz głęboką, odważną intymność bez manipulacji.'
     },
     9: {
       house: 9,
-      title: 'IX Dom (Światopogląd, Daleka Droga i Własne Prawo)',
-      area: 'Przekonania, nauka, podróże poza znane granice, prawo i słowo pisane.',
-      meaning: 'Głód sensu zderzający się z nieufnością wobec gładkich kazań. Przeświadczenie, że w każdą prawdę trzeba najpierw popukać dłonią, by sprawdzić, czy nie brzmi jak pusty dzban.',
-      audit: 'Wielkie teorie spadają ze schodów na bruk codzienności. Saturn pyta: „Co zostaje z Twojej szlachetnej filozofii w szary deszczowy wtorek bez braw?”.',
-      gift: 'Spokojna mądrość przewodnika. Twoje zdanie waży jak ciężki podpis atramentem, bo sam przeszedłeś to, o czym mówisz.'
+      title: 'Światopogląd, Podróże, Prawo i Edukacja',
+      area: 'System wartości, nauka wyższa, sprawy urzędowe, dalekie wyjazdy oraz własna filozofia życia.',
+      meaning: 'Zamiast szukać jednej ścieżki w praktyce, łatwo wpadasz albo w cyniczny sceptycyzm wobec wszelkich idei, albo w dogmatyczne trzymanie się cudzych autorytetów.',
+      audit: 'Egzamin dojrzałości obejmuje studia, certyfikaty, kwestie prawne lub emigrację. Teoria bez pokrycia w doświadczeniu rozpada się w konfrontacji z realnym światem.',
+      gift: 'Wypracowujesz spójny kompas moralny i praktyczną mądrość, stając się samodzielnym ekspertem, który uczy innych przez własny przykład.'
     },
     10: {
       house: 10,
-      title: 'X Dom (Medium Coeli — Nazwisko, Praca i Miejsce w Mieście)',
-      area: 'Kariera, odpowiedzialność publiczna, reputacja i ślad zostawiany po sobie.',
-      meaning: 'Saturn wraca na swój najwyższy dziedziniec. Towarzyszy temu ambicja bez znieczulenia i wczesne poczucie, że każda rysa na imieniu kosztuje dwa razy więcej niż u innych.',
-      audit: 'Wielki sprawdzian korony. Jeśli Twoja pozycja stała na rzetelnej cegle rzemiosła — wzniesiesz się wyżej niż dotąd; jeśli na pozie i skrótach — wiatr zdejmie fałszywy szyld przed całym miastem.',
-      gift: 'Cichy, żelazny autorytet. Nazwisko, za które nie musisz się tłumaczyć i którego żadna plotka przy stoliku nie zdoła nadgryźć.'
+      title: 'Kariera, Powołanie i Status Publiczny',
+      area: 'Pozycja zawodowa, reputacja w branży, ambicje życiowe oraz relacja z przełożonymi.',
+      meaning: 'Towarzyszy Ci presja, że jeszcze nie osiągnąłeś dość wiele na swój wiek — przez to albo bierzesz stanowiska niepasujące do Twojego charakteru, albo sabotujesz awanse ze strachu przed oceną.',
+      audit: 'Najbardziej widowiskowy sektor Powrotu Saturna: jeśli wspinałeś się po cudzej drabinie sukcesu dla spełnienia oczekiwań rodziny, przychodzi moment zmiany branży lub objęcia sterów w swojej firmie.',
+      gift: 'Osiągasz trwałą pozycję zawodową opartą na własnym nazwisku, rzetelności i umiejętności prowadzenia innych z chłodnym spokojem.'
     },
     11: {
       house: 11,
-      title: 'XI Dom (Towarzysze Drogi, Bractwo i Odległy Horyzont)',
-      area: 'Przyjaźnie, wspólnoty, ludzie wybrani do jednego stołu oraz dalekie plany.',
-      meaning: 'Chłód na skraju głośnych sal i wrażenie, że w tłumie znajomych nikt naprawdę nie słyszy, o czym milczysz pod płaszczem.',
-      audit: 'Ciche oczyszczenie notesu z przypadkowych numerów. Odchodzą znajomości utrzymywane wyłącznie z nudów lub nawyku, a w ich miejsce zostaje garstka wiernych ludzi.',
-      gift: 'Krąg nielicznych sojuszników o twardym słowie i wielkie przedsięwzięcia, które wyprzedzają hałas dzisiejszej mody.'
+      title: 'Przyjaźnie, Społeczność i Długofalowe Plany',
+      area: 'Kręgi towarzyskie, networking zawodowy, projekty grupowe i wizja przyszłości na dekadę naprzód.',
+      meaning: 'W grupach bywasz zdystansowanym obserwatorem, obawiającym się, że bliższe wejście we wspólnotę skończy się rozczarowaniem lub utratą niezależności.',
+      audit: 'Między 28. a 30. rokiem życia krąg znajomych naturalnie się przerzedza. Przypadkowe kontakty bez wspólnych wartości odchodzą, ustępując miejsca nielicznym, sprawdzonym sojuszom.',
+      gift: 'Otaczasz się ludźmi o podobnej etyce pracy i budujesz realne plany długoterminowe, w których współpraca daje Ci siłę zamiast odbierać wolność.'
     },
     12: {
       house: 12,
-      title: 'XII Dom (Zamknięty Pokój, Sny, Cisza i Koniec Starego Cyklu)',
-      area: 'Ukryte lęki, samotność, sny, ciche długi przeszłości i zamknięte rozdziały.',
-      meaning: 'Jeden z najbardziej intymnych zapisów w całym kosmogramie. Częste noszenie niewidzialnej winy za cudze błędy i nawyk potykania się o własne stopy tuż przed samą metą.',
-      audit: 'Nocne sprzątanie piwnicy pamięci. Saturn zapala małą świecę w kącie, którego unikałeś latami, byś zamknął stare rachunki w ciszy i bez świadków.',
-      gift: 'Głęboki, cichy pokój w sercu. Uwolnienie ze starych, dusznych lęków oraz siła człowieka, który zajrzał we własną ciemność i wyszedł z niej cały.'
+      title: 'Podświadomość, Wyciszenie i Ukryte Schematy',
+      area: 'Niewidoczne nawyki samosabotażu, regeneracja psychiczna, lęki nocne oraz praca w ukryciu.',
+      meaning: 'Najwięcej energii ucieka Ci po cichu na wewnętrzną samokrytykę i wyparte żale, o których rzadko komukolwiek mówisz na głos.',
+      audit: 'Saturn zaprasza do bezlitosnej, lecz uzdrawiającej szczerości ze sobą podczas samotnych wieczorów lub terapii. Przemęczenie bez odcięcia się od nadmiaru bodźców zmusza do zwolnienia tempa.',
+      gift: 'Odkrywasz niewzruszony spokój wewnętrzny, kończysz niewidoczne schematy podcinania sobie skrzydeł i budujesz mądrą intuicję odporną na chaos świata.'
     }
   };
 

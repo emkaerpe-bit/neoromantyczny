@@ -1,70 +1,66 @@
-/**
- * NEOROMANTYCZNY — SATURN RETURN DATA: ZNAKI CZĘŚĆ 1 (BARAN - PANNA)
- * Standard Human Voice Engine v2.0 (Zafón Noir & Implicit Jung) & Midnight Luxe
- */
 (function () {
   window.SATURN_SIGNS_DATA = window.SATURN_SIGNS_DATA || {};
 
   const SIGNS_PART_1 = {
     Aries: {
       sign: 'Baran',
-      archetype: 'Więzień Niecierpliwości & Cichy Szermierz',
-      dignityStatus: 'Upadek (Fall) — ogień wyrywa się do przodu pod ciężarem zamarzniętego zegara',
-      wound: 'Stary strach przed bezsilnością i staniem w miejscu, kiedy inni biorą na klatce schodowej to, po co bałeś się sięgnąć pierwszy.',
-      preReturnArmor: 'Zrywasz się do biegu zanim otworzysz drzwi — wywalasz zamki ramieniem albo zamierasz w fotelu z zaciśniętymi pięściami, boisz się bowiem spóźnić o jedno uderzenie serca.',
-      auditCrisis: 'Saturn chwyta rozpędzoną rękę w pół gestu i wygasza płomień złości, byś zobaczył, jak wiele bitew toczyłeś wyłącznie z własnym cieniem.',
-      matureGift: 'Spokojna, chłodna odwaga mistrza szermierki. Jedno celne cięcie o właściwej godzinie zamiast dziesięciu ślepych szarż w ciemnym korytarzu.',
-      lifeLesson: 'Prawdziwa siła nie mierzy się tempem ciosu, lecz tym, jak długo ustoisz bez mrugnięcia w deszczu.'
+      archetype: 'Archetyp: Wojownik',
+      dignityStatus: 'Upadek (Fall)',
+      wound: 'Od dziecka słyszałeś, że Twój gniew psuje atmosferę, a samodzielna inicjatywa bez pytania starszych kończy się upokorzeniem. Nauczyłeś się więc dławić pierwszy impuls zanim zdążysz powiedzieć „chcę”.',
+      preReturnArmor: 'Przed trzydziestką uciekasz w dwie skrajności: albo paraliżuje Cię lęk przed porażką na starcie, albo rzucasz się na oślep w konflikty zawodowe, żeby udowodnić otoczeniu, że nie boisz się nikogo.',
+      auditCrisis: 'Między 28. a 30. rokiem życia rozpadają się projekty prowadzone wyłącznie z przekory i układy, w których oddawałeś stery innym ludziom. Zostajesz sam wobec decyzji, której nikt za Ciebie nie podpisze.',
+      matureGift: 'Zamiast udowadniać swoją rację głośnym uporem, podejmujesz pierwszą trudną rozmowę w pracy lub relacji na trzeźwo i bierzesz pełną odpowiedzialność za wynik.',
+      lifeLesson: 'Prawdziwa odwaga polega na konsekwentnym dokończeniu własnego kroku, nawet gdy serce bije szybciej ze strachu przed oceną.'
     },
     Taurus: {
       sign: 'Byk',
-      archetype: 'Strażnik Złotej Klatki & Rzemieślnik Ziemi',
-      dignityStatus: 'Peregryn — ciężar klucza z mosiądzu w obcej dzielnicy',
-      wound: 'Pamięć chłodu i głodu, przez którą każdy brak pod ręką wydaje się zapowiedzią wygnania na bruk bez grosza i dachu.',
-      preReturnArmor: 'Trzymasz w szufladzie klucze do martwych układów, wygasłych związków i nudnego biurka, bo ciężar własnego strachu wygrywa z lękiem przed pustym pokojem.',
-      auditCrisis: 'Ziemia pod stopami zaczyna trzeszczeć jak stare deski. Saturn pyta, czy Twój majątek strzeże Twojego życia, czy tylko przedłuża wygodną niewolę.',
-      matureGift: 'Niezachwiany grunt pod nogami. Budujesz dom z dębu i kamienia, któremu żadna nocna burza ani zmiana wiatru nie strąci dachu.',
-      lifeLesson: 'Bogactwo zaczyna się w dniu, gdy przestajesz bać się pustego stołu i wiesz, że Twoje dłonie znów na niego zarobią.'
+      archetype: 'Archetyp: Budowniczy',
+      dignityStatus: 'Neutralny (Przegrzanie Materialne)',
+      wound: 'W Twoim domu pieniądze, jedzenie albo stabilność emocjonalna bywały niestabilne, co zaszczepiło chroniczny niepokój o jutro. Spokój zacząłeś utożsamiać z pełnym kontem i przewidywalnym grafikiem.',
+      preReturnArmor: 'Do 28. roku życia trzymasz się kurczowo niesatysfakcjonującej posady, wygodnej rutyny albo wygasłego związku wyłącznie dlatego, że zmiana pachnie ryzykiem finansowym i utratą kontroli nad codziennością.',
+      auditCrisis: 'Powrót Saturna ucina źródła dochodu lub przywiązania oparte na leniwym kompromisie. Życie stawia Cię pod ścianą dokładnie tam, gdzie kupowałeś święty spokój za cenę własnego rozwoju.',
+      matureGift: 'Budujesz prywatny bufor finansowy i spokojną niezależność, dzięki której nikt nie kupi Twojej lojalności strachem przed brakiem.',
+      lifeLesson: 'Własna wartość powstaje z Twoich realnych kompetencji i umiejętności budowania od zera, a nigdy z kurczowego pilnowania stanu posiadania.'
     },
     Gemini: {
       sign: 'Bliźnięta',
-      archetype: 'Zbieracz Cudzych Głosów & Cierpliwy Pisarz',
-      dignityStatus: 'Peregryn — tysiąc otwartych kopert na jednym biurku',
-      wound: 'Wstyd przed pustką między słowami, gdy w cichym pokoju milkną żarty i zostajesz sam z własnym pytaniem bez odpowiedzi.',
-      preReturnArmor: 'Rozmawiasz o wszystkim naraz, przeskakujesz z książki na książkę i chowasz rany za błyskotliwym dowcipem, aby nikt nie podszedł za blisko.',
-      auditCrisis: 'Szum wiadomości urywa się nagle jak prąd na starej ulicy. Saturn zamyka połowę okien i nakazuje wybrać jedno prawdziwe zdanie zamiast stu pustych obietnic.',
-      matureGift: 'Głos o wadze wyrytego w kamieniu listu. Zamiast gonić cudze opinie, zaczynasz pisać własnym atramentem słowa, przy których ludzie odkładają szkło.',
-      lifeLesson: 'Mądrość nie mieszka w liczbie przeczytanych stron, lecz w jednej prawdzie, której nie wyprzesz się po zmroku.'
+      archetype: 'Archetyp: Analityk',
+      dignityStatus: 'Peregryny (Dyscyplina Intelektu)',
+      wound: 'Czułeś kiedyś wstyd za pochopnie wypowiedziane zdanie albo brak wiedzy przy ludziach uznawanych za mądrzejszych. Od tamtej pory ważysz każde słowo dziesięć razy i unikasz zabierania głosu bez twardych dowodów.',
+      preReturnArmor: 'Zamiast mówić wprost o swoich potrzebach czy stawiać diagnozę problemowi, zasypujesz otoczenie ironią, żartem albo dziesięcioma pobocznymi dygresjami, byle nikt nie dotknął Twojej niepewności.',
+      auditCrisis: 'Około dwudziestego dziewiątego roku życia rozmyte ustalenia w firmie i niedopowiedziane obietnice w relacjach wybuchają jednym żądaniem konkretu. Błyskotliwe wymówki przestają działać.',
+      matureGift: 'Twoje słowa zyskują wagę konkretnego dokumentu — mówisz krótko, rzeczowo, bez przepraszającego tonu i dotrzymujesz terminów co do godziny.',
+      lifeLesson: 'Jedna uczciwa rozmowa nazwana po imieniu rozwiązuje więcej niż miesiące dyplomatycznego kluczenia między wierszami.'
     },
     Cancer: {
       sign: 'Rak',
-      archetype: 'Strażnik Zamkniętego Domu & Własna Przystań',
-      dignityStatus: 'Wygnanie (Detriment) — chłód marmuru naprzeciwko ciepłego ognia kuchni',
-      wound: 'Wczesny chłód przy rodzinnym stole, po którym pamiętasz smak zamkniętych drzwi i przekonanie, że na miłość trzeba zasłużyć milczeniem.',
-      preReturnArmor: 'Chowasz serce pod ciężkim płaszczem albo bierzesz na własne barki cudze ciężary, opiekując się ludźmi, którzy nigdy nie zapytali, czy sam śpisz spokojnie.',
-      auditCrisis: 'Saturn rozcina starą zależność jednym chłodnym cięciem. Upadają iluzje o bezpiecznych schronach pożyczonych od innych, byś przestał żebrać o ciepło pod cudzym oknem.',
-      matureGift: 'Własny dom w środku samego siebie. Umiesz kochać otwartymi dłońmi bez strachu, że gdy zamkniesz okno na zimę, zostaniesz na lodzie.',
-      lifeLesson: 'Dopiero wtedy stajesz się prawdziwym schronieniem dla innych, gdy przestajesz prosić obcych o klucz do własnego spokoju.'
+      archetype: 'Archetyp: Opiekun',
+      dignityStatus: 'Wygnanie (Detriment)',
+      wound: 'W dzieciństwie zbyt wcześnie przejąłeś nastroje dorosłych i poczułeś, że na miłość trzeba zapracować bezbłędnym opanowaniem. Okazywanie słabości lub płaczu kojarzy Ci się podświadomie z odrzuceniem.',
+      preReturnArmor: 'Przed trzydziestką grasz rolę niezawodnego ratownika dla partnerów, przyjaciół i rodziny, jednocześnie budując wysoki mur wokół własnego zmęczenia. Nigdy pierwszy nie prosisz o pomoc.',
+      auditCrisis: 'Pod naporem Powrotu Saturna ciężar jednostronnych relacji i cudzych problemów zaczyna Cię fizycznie wypalać. Okazuje się, że nikt z podopiecznych nie potrafi odwzajemnić Twojej opieki.',
+      matureGift: 'Zakładasz zdrowe granice w domu i przestajesz mylić miłość z poświęceniem. Pozwalasz sobie na normalną kruchość bez wstydu.',
+      lifeLesson: 'Bezpieczeństwo emocjonalne zaczyna się wtedy, gdy sam traktujesz własne potrzeby równie poważnie jak kryzysy swoich bliskich.'
     },
     Leo: {
       sign: 'Lew',
-      archetype: 'Król Bez Widowni & Cichy Suweren',
-      dignityStatus: 'Wygnanie (Detriment) — zgaszona rampa na pustej scenie',
-      wound: 'Piekący lęk, że kiedy zgasną świece i znikną cudze oklaski, w lustrze zostanie tylko zwykły człowiek bez szczególnej wartości.',
-      preReturnArmor: 'Wygrywasz głośnym gestem przy kolacji, szyjesz dumny kostium z pozornego sukcesu albo zamykasz szkice w szufladzie, żeby nie usłyszeć chłodnej oceny.',
-      auditCrisis: 'Reflektory gasną w środku przedstawienia. Saturn zostawia Cię w pustej sali i pyta cicho: „Kim jesteś wtedy, gdy nikt w pokoju nie bije Ci braw?”.',
-      matureGift: 'Spokojna powaga, która wypełnia pokój bez podnoszenia głosu. Światło płynie z wewnątrz — niczego już nie udowadniasz i przed nikim nie klękasz.',
-      lifeLesson: 'Prawdziwy władca nie potrzebuje korony ani tronu, by obecni przy stole zamilkli, gdy bierze oddech.'
+      archetype: 'Archetyp: Suweren',
+      dignityStatus: 'Wygnanie (Detriment)',
+      wound: 'Radość, zabawa i naturalna potrzeba wyróżnienia spotykały się z chłodnym przywołaniem do porządku. Uwierzyłeś, że zasługujesz na uwagę dopiero po wykonaniu nadludzkiej pracy bez cienia błędu.',
+      preReturnArmor: 'Albo chowasz swoje talenty w cieniu zespołu, oddając zasługi innym ze strachu przed publiczną krytyką, albo obsesyjnie kontrolujesz wizerunek, byle nikt nie zobaczył za nim zwykłego zmęczenia.',
+      auditCrisis: 'Saturn odbiera Ci oklaski za role, w których udawałeś kogoś innego, i konfrontuje Cię z pustką codziennej pracy pozbawionej zewnętrznej widowni. Musisz wyjść na scenę z własnym imieniem.',
+      matureGift: 'Tworzysz rzetelne projekty z autentyczną charyzmą, bo przestajesz uzależniać swoją godność od chwilowej aprobaty publiczności.',
+      lifeLesson: 'Prawdziwy autorytet wyrasta z cichej dumy ze swojej codziennej roboty, a nie z gorączkowego szukania uznania w oczach innych.'
     },
     Virgo: {
       sign: 'Panna',
-      archetype: 'Zegarmistrz Szczegółu & Cierpliwy Rzemieślnik',
-      dignityStatus: 'Peregryn — rysa na idealnym szkle pod lupą sumienia',
-      wound: 'Przekonanie wyniesione z dzieciństwa, że masz prawo siedzieć przy stole tylko wtedy, gdy wszystko wokół Ciebie jest bez skazy i uporządkowane co do nitki.',
-      preReturnArmor: 'Poprawiasz krzywe sztućce do późnej nocy, pracujesz za trzech i mierzysz każdy oddech krytycznym ołówkiem, żeby nikt nie znalazł w Tobie słabego miejsca.',
-      auditCrisis: 'Zmęczone ciało kładzie wreszcie karty na stole. Saturn wybija Ci z ręki miarkę perfekcji i pokazuje, że ciągłe poprawianie świata było ucieczką przed zwykłym życiem.',
-      matureGift: 'Spokojne oko mistrza. Wiesz, które ziarno zachować, a które rzucić na wiatr — działasz celnie, czysto i przestajesz biczować siebie za ludzką kruchość.',
-      lifeLesson: 'Piękno rzemiosła nie polega na braku pęknięć, lecz na odwadze zostawienia niedoskonałego śladu swojej ręki.'
+      archetype: 'Archetyp: Rzemieślnik',
+      dignityStatus: 'Ziemny Rzemieślnik',
+      wound: 'Chaos otoczenia wywoływał w Tobie napięcie, więc nauczyłeś się naprawiać rzeczywistość nadmierną kontrolą detalu. Błąd w rachunkach czy spóźnienie wywołują w Tobie nieproporcjonalnie ostry samokrytycyzm.',
+      preReturnArmor: 'Odkładasz ważne decyzje zawodowe pod pretekstem wiecznego doszkalania i dopinania szczegółów, które nikogo poza Tobą nie obchodzą. Oczekujesz też bezbłędności od partnera.',
+      auditCrisis: 'Około dwudziestego dziewiątego roku życia ciało lub kalendarz mówią stop przez przepracowanie i bezsenność. Nadmiar obowiązków wymusza delegowanie zadań oraz rezygnację z mikrozarządzania.',
+      matureGift: 'Odróżniasz sprawy krytyczne od szumu, łącząc mistrzowski warsztat zawodowy ze spokojną wyrozumiałością wobec ludzkich niedoskonałości.',
+      lifeLesson: 'Rzeczy ukończone na osiemdziesiąt procent w terminie zmieniają życie o wiele skuteczniej niż wiecznie polerowany projekt w szufladzie.'
     }
   };
 

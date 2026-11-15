@@ -15,8 +15,7 @@
         localStorage.removeItem('neo_dispositor_unlocked');
         return false;
       }
-      return localStorage.getItem('neo_dispositor_unlocked') === 'true' ||
-             params.get('unlocked') === 'true';
+      return localStorage.getItem('neo_dispositor_unlocked') === 'true';
     } catch (e) {
       return false;
     }
@@ -43,7 +42,7 @@
     const retroSectionsHtml = govRetroPlanets.map(p => {
       const prof = profiles[p.key] || {
         name: p.name + ' (Rx)',
-        archetype: 'Władca w Ruchu Wstecznym: Światło Zwrócone Do Wnętrza',
+        archetype: p.name + ' (Rx) • Strateg',
         summary: 'W Twoim horoskopie ' + p.name + ' porusza się ruchem wstecznym, przenosząc energię sprawczą do wnętrza psychiki.',
         mechanics: 'Każda decyzja podlega rygorystycznej, wewnętrznej weryfikacji. Nie ulegasz presji zewnętrznego świata.',
         shadowWarning: 'Ryzyko paraliżu decyzyjnego, ruminacji i tłumienia autentycznych potrzeb.',
@@ -94,6 +93,50 @@
     }).join('');
 
     return retroSectionsHtml;
+  }
+
+  function buildChainFlowNarrative(chart, hierarchy) {
+    if (!chart || !hierarchy || !hierarchy.chainMap) return '';
+    const pByKey = Object.fromEntries((chart.planets || []).map(p => [p.key, p]));
+    let longestPath = [];
+
+    for (const p of (hierarchy.activePlanets || chart.planets || [])) {
+      const path = [p.key];
+      const seen = new Set([p.key]);
+      let curr = p.key;
+      for (let step = 0; step < 12; step++) {
+        const next = hierarchy.chainMap[curr];
+        if (!next || next === curr || seen.has(next)) {
+          if (next && next !== curr && seen.has(next)) path.push(next);
+          break;
+        }
+        path.push(next);
+        seen.add(next);
+        curr = next;
+      }
+      if (path.length > longestPath.length) longestPath = path;
+    }
+
+    if (longestPath.length < 2) return '';
+    const startP = pByKey[longestPath[0]];
+    const endP = pByKey[longestPath[longestPath.length - 1]];
+    const labels = longestPath.map(k => pByKey[k] ? `${pByKey[k].glyph} ${pByKey[k].name}` : k);
+    const ruledByEnd = ((hierarchy.summaryMap && hierarchy.summaryMap[endP.key]) || { directSubjects: [], indirectSubjects: [] });
+    const totalSub = ruledByEnd.directSubjects.length + ruledByEnd.indirectSubjects.length;
+
+    return `
+      <div style="margin-top:1.35rem;background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.28);border-radius:1rem;padding:1.25rem 1.35rem;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#C9A84C;text-transform:uppercase;margin-bottom:0.4rem;font-weight:700;">
+          OSOBISTY ŁAŃCUCH PRZEKAZU IMPULSU (${longestPath.length} INSTANCJE)
+        </div>
+        <p style="font-size:0.9rem;font-family:'JetBrains Mono',monospace;color:#FAF8F5;margin:0 0 0.6rem;line-height:1.5;">
+          ${labels.join(' &rarr; ')}
+        </p>
+        <p style="font-size:0.92rem;line-height:1.68;color:rgba(250,248,245,0.85);margin:0;">
+          W Twoim horoskopie nawet impuls pochodzący od <strong>${startP.name}</strong> (w znaku ${startP.signName}) nie działa w próżni — przechodzi przez kolejne filtry, aż kończy u <strong>${endP.name}</strong> w znaku ${endP.signName} (który kontroluje łącznie ${totalSub} planet). Zrozumienie tej kolejności wyjaśnia, dlaczego Twoja pierwsza reakcja na stres po chwili zmienia się w strategię właściwą końcowemu władcy tego łańcucha.
+        </p>
+      </div>
+    `;
   }
 
   function renderPaywallTeaser(hierarchy, planets, chart, attempts) {
@@ -183,6 +226,7 @@
             <strong style="color:#C9A84C;">Prawda o Twojej suwerenności:</strong> ${diag.sovereigntyRole || ''}
           </div>
           ${renderRetrogradeChapter1(chart, hierarchy)}
+          ${buildChainFlowNarrative(chart, hierarchy)}
         </section>
 
         <!-- STREFA ROZDZIAŁÓW 2–6 Z MECHANIZMEM CURIOSITY GAP (PAYWALL 20 PLN) -->
@@ -299,6 +343,7 @@
             <strong style="color:#C9A84C;">Prawda o Twojej suwerenności:</strong> ${diag.sovereigntyRole || ''}
           </div>
           ${renderRetrogradeChapter1(chart, currentHierarchy)}
+          ${buildChainFlowNarrative(chart, currentHierarchy)}
         </section>
 
         <div class="disp-unlocked-zone">

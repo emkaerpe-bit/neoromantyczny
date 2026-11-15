@@ -1,98 +1,94 @@
-/**
- * NEOROMANTYCZNY — SATURN CURIOSITY GAP & PAYWALL REPORT DATA
- * Standard Human Voice Engine v2.0 (Zafón Noir & Implicit Jung)
- */
 (function () {
   window.SATURN_PAYWALL_DATA = {
     houses: {
       1: {
-        sector: 'I Dom (Twarz, Ciało i Kostium Noszony do Ludzi)',
-        auditCore: 'Sprawdzian własnego kręgosłupa: odrzucenie pożyczonego uśmiechu i roli szytej na cudze oklaski.',
-        warning: 'Dalsze granie nie swojej postaci skończy się buntem zmęczonego ciała i poczuciem obcości przed lustrem.',
-        action: 'Zdejmij cudzy płaszcz z ramion i stań we własnym głosie bez pytania sali o pozwolenie.'
+        sector: 'Sektor 1: Tożsamość, Ciało i Pierwsze Wrażenie',
+        auditCore: 'Wyczerpanie ze stałego kontrolowania wizerunku oraz życia pod cudzy scenariusz przestaje się opłacać.',
+        warning: 'Uważaj na upór w utrzymywaniu fasady sukcesu, gdy organizm domaga się zmiany tempa i wyraźnych granic.',
+        action: 'Zbuduj spójny rytm regeneracji i mów wprost o własnym zdaniu na starcie nowych relacji zawodowych.'
       },
       2: {
-        sector: 'II Dom (Chleb, Portfel i Wycena Własnego Czasu)',
-        auditCore: 'Twardy rachunek niezależności materialnej. Koniec trwania przy cudzym stole z samego strachu przed jutrem.',
-        warning: 'Kupowanie spokoju na kredyt albo sprzedawanie godzin w dusznym biurku wyłącznie dla bezpiecznej pensji.',
-        action: 'Postaw własne źródło dochodu na twardym rzemiośle, którego nikt nie odbierze Ci jednym wypowiedzeniem.'
+        sector: 'Sektor 2: Pieniądze, Wycena Pracy i Stabilność',
+        auditCore: 'Przełom finansowy obnaża niedopłacone projekty, brak oszczędności oraz zależność od jednego źródła dochodu.',
+        warning: 'Unikaj zaniżania stawek z obawy przed odmową oraz nerwowych wydatków mających zagłuszyć stres.',
+        action: 'Podnieś ceny swoich usług do poziomu rynkowego i stwórz twardy budżet rezerwy na minimum pół roku.'
       },
       3: {
-        sector: 'III Dom (Słowo, Myśl, Papiery i Najbliższa Ulica)',
-        auditCore: 'Porządek w rozmowach, listach i codziennych umowach z ludźmi wokół Ciebie.',
-        warning: 'Rozmowa o niczym, ucieczka w żart przy ważnym stole i odkładanie jednej szczerej rozmowy na wieczne jutro.',
-        action: 'Wyczyść szufladę z zaległych umów, ucisz zbędny zgiełk i mów tylko tyle, za ile ręczysz nazwiskiem.'
+        sector: 'Sektor 3: Umysł, Umowy i Codzienna Komunikacja',
+        auditCore: 'Rozmyte ustalenia i zwlekanie z jasną odpowiedzią powodują konflikty wymagające natychmiastowego uporządkowania.',
+        warning: 'Przestań analizować każde zdanie w nieskończoność ani chować odmowy pod żartobliwymi dygresjami.',
+        action: 'Zapisuj warunki współpracy w punktach i wytnij połowę zbędnych rozpraszaczy z codziennego grafiku.'
       },
       4: {
-        sector: 'IV Dom (Korzenie, Stary Dom i Pępowina Rodowa)',
-        auditCore: 'Ostatnie oddanie klucza do pokoju dziecięcego. Sprawy dachu nad głową i odcięcia starych oczekiwań rodu.',
-        warning: 'Powtarzanie rodzinnego scenariusza w imię lęku przed gniewem matki lub ojca przy świątecznym stole.',
-        action: 'Postaw własny próg z cegły i ciszy — oddaj rodzicom ich historię, a sobie napisz nowy adres.'
+        sector: 'Sektor 4: Dom, Nieruchomości i Granice Rodzinne',
+        auditCore: 'Wychodzą na jaw niezałatwione sprawy mieszkaniowe oraz ciężar cudzych oczekiwań wyniesionych z dzieciństwa.',
+        warning: 'Nie bierz na siebie odpowiedzialności za emocje wszystkich krewnych kosztem własnego spokoju w domu.',
+        action: 'Uporządkuj kwestie własności, przeprowadzki lub prywatności i ustal jasne zasady kontaktów z rodziną.'
       },
       5: {
-        sector: 'V Dom (Miłość, Dzieło Własnych Rąk i Odwaga Radości)',
-        auditCore: 'Sprawdzian serca i twórczości. Koniec pustych flirtów oraz zaczętych szkiców chowanych do szuflady.',
-        warning: 'Mylenie nerwowego pościgu za uwagą z prawdziwą miłością albo wieczne odkładanie własnego dzieła.',
-        action: 'Zamień niepewny flirt w dorosłą przysięgę albo siądź przy biurku i dokończ jedną rzecz do ostatniej kropki.'
+        sector: 'Sektor 5: Twórczość, Bliskość i Prawo do Radości',
+        auditCore: 'Przelotne układy oraz wiecznie odkładane autorskie pomysły przechodzą surową weryfikację autentyczności.',
+        warning: 'Wystrzegaj się traktowania własnych pasji wyłącznie jak kolejnego egzaminu wymagającego stuprocentowej perfekcji.',
+        action: 'Poświęć stały blok czasu w tygodniu na własne dzieło i angażuj się wyłącznie w relacje dające wzajemność.'
       },
       6: {
-        sector: 'VI Dom (Ciało, Warsztat Dnia i Spokojny Oddech)',
-        auditCore: 'Faktura za lata nieprzespanych nocy i zaciśniętych zębów przy codziennej robocie.',
-        warning: 'Ignorowanie drżenia rąk, zarwane noce oraz tkwienie w pracy zamieniającej dzień w szary młyn.',
-        action: 'Wprowadź czysty rytm snu, posiłku i rzemiosła — potraktuj własne ciało jak jedyny dom bez wyprowadzki.'
+        sector: 'Sektor 6: Praca Codzienna, Zdrowie i System Dnia',
+        auditCore: 'Ciało sygnalizuje granice wytrzymałości po latach nieregularnego snu i przejmowania obowiązków za cały zespół.',
+        warning: 'Odpuść pracoholizm napędzany poczuciem winy oraz odkładanie badań profilaktycznych na następny kwartał.',
+        action: 'Wprowadź sztywną godzinę końca pracy, deleguj zadania rutynowe i oprzyj dzień na mierzalnych nawykach.'
       },
       7: {
-        sector: 'VII Dom (Lustro Drugiego Człowieka, Przysięga i Umowy)',
-        auditCore: 'Najostrzejszy sprawdzian dla pary. Związki bez kręgosłupa pękają, prawdziwe dostają trwałą pieczęć.',
-        warning: 'Zostawanie przy pustym stole wyłącznie z lęku przed samotną zimą albo z przyzwyczajenia.',
-        action: 'Spisz uczciwy kontrakt dwojga wolnych ludzi albo zabierz walizkę i zamknij za sobą drzwi z godnością.'
+        sector: 'Sektor 7: Partnerstwo, Małżeństwo i Spółki',
+        auditCore: 'Asymetria w związku lub we współpracy biznesowej staje się widoczna i domaga się renegocjacji warunków.',
+        warning: 'Zrezygnuj zarówno z cichego wycofywania się przy napięciu, jak i z udowadniania przydatności przez poświęcenie.',
+        action: 'Przeprowadź rzeczową rozmowę o wspólnym kierunku, finansach pary i równym podziale codziennych obowiązków.'
       },
       8: {
-        sector: 'VIII Dom (Wspólne Rachunki, Tabu, Ciało i Ogień Zmiany)',
-        auditCore: 'Śmierć dawnych złudzeń w półmroku pokoju. Sprawy kredytów, spadków oraz intymności bez zasłon.',
-        warning: 'Ciche długi w szufladzie, uzależnienie od cudzych pieniędzy i sprawdzanie partnera pod kluczem podejrzliwości.',
-        action: 'Oddaj każdy dług do ostatniego grosza i wyjdź z gier o władzę w sypialni.'
+        sector: 'Sektor 8: Wspólny Majątek, Długi i Głęboka Bliskość',
+        auditCore: 'Kredyty, podatki, wspólne inwestycje i głęboki strach przed utratą kontroli wymagają pełnej przejrzystości.',
+        warning: 'Odsuwanie trudnych rozliczeń finansowych lub testowanie partnera milczeniem niszczy zaufanie szybciej niż jawny spór.',
+        action: 'Zamknij zaległe zobowiązania prawno-podatkowe i naucz się rozmawiać o lęku oraz potrzebach wprost.'
       },
       9: {
-        sector: 'IX Dom (Światopogląd, Droga i Własne Prawo)',
-        auditCore: 'Koniec wzniosłych kazań bez pokrycia w czynach. Weryfikacja tego, w co naprawdę wierzysz o zmroku.',
-        warning: 'Chowanie życia za kolejnymi dyplomami, dalekimi ucieczkami i pouczaniem innych znad pustej kartki.',
-        action: 'Sprawdzaj własną prawdę na bruku codzienności i połóż na stole dzieło, za którym stoi całe Twoje doświadczenie.'
+        sector: 'Sektor 9: Rozwój, Prawo, Studia i Kierunek Życia',
+        auditCore: 'Teorie bez pokrycia w praktyce ustępują miejsca realnym kwalifikacjom, formalnościom urzędowym i zmianie planów.',
+        warning: 'Uważaj na pokusę ucieczki w kolejny kurs czy daleką podróż wtedy, gdy trzeba dokończyć zaczętą sprawę.',
+        action: 'Wybierz jedną specjalizację wartą lat wysiłku, uporządkuj dokumenty i zamień poglądy w konkretny warsztat.'
       },
       10: {
-        sector: 'X Dom (Nazwisko, Miejsce w Mieście i Reputacja)',
-        auditCore: 'Próba korony na oczach świata. Wznosisz się na rzetelności albo spadasz z pożyczonego tronu.',
-        warning: 'Stawianie kariery na cudzych plecach, tanich skrótach lub w roli obcej Twojej własnej naturze.',
-        action: 'Weź na barki pełny ciężar własnego nazwiska i buduj autorytet, którego nie zmyje jedna plotka.'
+        sector: 'Sektor 10: Kariera, Status i Własne Nazwisko',
+        auditCore: 'Wspinanie się po cudzej drabinie awansów wyczerpuje motywację i zmusza do wzięcia sterów własnej ścieżki.',
+        warning: 'Nie sabotuj poważnych stanowisk ze strachu przed oceną i nie pracuj latami w cieniu mniej kompetentnych osób.',
+        action: 'Określ cel zawodowy na najbliższe trzy lata, zażądaj należnego zakresu decyzyjności lub uruchom własny projekt.'
       },
       11: {
-        sector: 'XI Dom (Towarzysze Drogi, Bractwo i Jutro)',
-        auditCore: 'Ciche wykreślanie pustych numerów z kalendarza. Zostają wyłącznie ci, którzy idą z Tobą w tę samą stronę.',
-        warning: 'Rozmienianie wieczorów na głośnych kręgach ludzi, przy których wciąż czujesz się obcy pod płaszczem.',
-        action: 'Zbierz przy jednym stole garstkę rzetelnych sojuszników o twardym słowie i spójnej wizji jutra.'
+        sector: 'Sektor 11: Przyjaźnie, Środowisko i Długofalowe Plany',
+        auditCore: 'Powierzchowne znajomości wykruszają się naturalnie, robiąc miejsce dla nielicznych, rzetelnych sojuszników.',
+        warning: 'Porzuć rolę chłodnego obserwatora stojącego zawsze z boku zespołu z lęku przed utratą indywidualności.',
+        action: 'Zainwestuj czas w sprawdzone kontakty branżowe i napisz wykonalny plan celów na kolejną dekadę.'
       },
       12: {
-        sector: 'XII Dom (Zamknięty Pokój, Sny i Sprzątanie Piwnicy)',
-        auditCore: 'Ostatnie porządki przed świtem nowego dwudziestodziewięcioletniego kręgu. Rozmowa z własnym cieniem.',
-        warning: 'Ucieczka przed światłem dziennym w znieczulenie, lęk bez nazwy i podkładanie sobie nogi tuż przed progiem.',
-        action: 'Otwórz w ciszy pokój, do którego bałeś się zajrzeć, spłać stare winy wobec siebie i wejdź lekki w nowy dzień.'
+        sector: 'Sektor 12: Psychika, Odzyskanie Sił i Ciche Nawyki',
+        auditCore: 'Wewnętrzna samokrytyka oraz tłumione od lat zmęczenie wymagają spokojnego domknięcia starych spraw.',
+        warning: 'Stałe zapełnianie ciszy kolejnymi zadaniami lub używkami pogłębia bezsenność i podkopuje Twoją intuicję.',
+        action: 'Zadbaj o higienę snu, ogranicz toksyczne bodźce i nazwij nawyki samosabotażu podczas terapii lub szczerej refleksji.'
       }
     },
     protocols: {
       wave1: {
-        phase: 'FALA 1 — PIERWSZE PUKANIE (WEJŚCIE W TRANZYT)',
-        imperative: 'Zauważ rysę na szkle, zanim pęknie cała szyba.',
-        strategy: 'Nie odwracaj wzroku od pierwszych pęknięć w relacji ani w pracy — połóż na stole suche fakty bez upiększeń.'
+        phase: 'Fala I • Wstępny Przegląd Fundamentów',
+        imperative: 'Zatrzymaj niekorzystne układy zanim samoistnie eskalują.',
+        strategy: 'Zidentyfikuj miejsca największego wycieku czasu i pieniędzy. Sprawdź w spokojnej analizie, które zobowiązania utrzymujesz wyłącznie z przyzwyczajenia lub obawy przed opinią rodziny.'
       },
       wave2: {
-        phase: 'FALA 2 — RETROGRADACJA (KORYTARZ CIENIA)',
-        imperative: 'Zakaz trzaskania drzwiami w ślepej panice.',
-        strategy: 'Podczas ruchu wstecznego zegar sprawdza cierpliwość. Nic nie wyrywaj siłą — domknij zaległe długi i niedokończone listy.'
+        phase: 'Fala II • Punkt Przesilenia (Retrogradacja)',
+        imperative: 'Dokończ zaległe decyzje i wycofaj stare błędy w trybie korekty.',
+        strategy: 'Pozorna blokada postępu służy wyłącznie dokładnemu przeliczeniu kosztów. Zanim podpiszesz nowy kontrakt lub rozstaniesz się na stałe, zamknij uczciwie wszystkie otwarte rozliczenia.'
       },
       wave3: {
-        phase: 'FALA 3 — WYJŚCIE PROSTE (PIECZĘĆ DOJRZAŁOŚCI)',
-        imperative: 'Podpisz własnym atramentem nowy ład rzeczy.',
-        strategy: 'Zamknij stare rozdziały bez żalu, spisz jasne zasady na przyszłość i wejdź w kolejną epokę o własnych siłach.'
+        phase: 'Fala III • Zatwierdzenie Nowej Struktury',
+        imperative: 'Wejdź w nowy etap trzydziestolatka na własnych warunkach.',
+        strategy: 'Po przejściu kryzysu zbierasz namacalne owoce dyscypliny. Zatwierdź standardy pracy, finansów i relacji, których od teraz nie obniżasz pod żadnym naciskiem z zewnątrz.'
       }
     }
   };

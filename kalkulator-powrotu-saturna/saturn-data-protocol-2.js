@@ -39,7 +39,7 @@
 
     chapter5: {
       number: 'Rozdział V',
-      title: 'Kodeks Wytrwałości Chronosa: 7 Żelaznych Reguł Dojrzałości',
+      title: '7 Żelaznych Reguł Dojrzałości',
       subtitle: 'Siedem prostych praw dla tych, którzy nie chcą przegrać własnych trzydziestych urodzin',
       rules: [
         {

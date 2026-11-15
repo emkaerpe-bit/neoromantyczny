@@ -1,71 +1,83 @@
-/**
- * NEOROMANTYCZNY — GŁĘBOKA ANALIZA SYNASTRII
- * Architektura Więzi: Prawda o Świecie Emocjonalnym, Obronie i Zmysłach
- */
 (function () {
   window.__JUNGIAN_PROFILES__ = window.__JUNGIAN_PROFILES__ || {};
 
   window.__JUNGIAN_PROFILES__[0] = { // Baran
     sign: 'Baran',
     m: {
-      conflict: 'W kryzysie wybiera otwarte zderzenie. Półsłówka i lodowata cisza przy stole doprowadzają go do białej gorączki — woli pięciominutową burzę niż tydzień chodzenia wokół siebie w miękkich kapciach. Kiedy zamykasz drzwi do sypialni i odwracasz wzrok, w jego żyłach kipi niecierpliwa furia. Pod spodem siedzi prosty strach, że jego ogień przestał robić na Tobie wrażenie.',
-      sensory: 'Nie potrafi pragnąć na pół gwizdka. Widać to od razu: w przyspieszonym oddechu na klatce schodowej, w dłoni zaciskającej się mocno na Twoim nadgarstku, w spojrzeniu bez mrugnięcia. Letnia uprzejmość usypia go jak zły listopadowy serial. Budzi go dopiero opór kogoś, kto ma własny pazur i nie opuszcza wzroku.',
-      disarm: 'Nie licytuj się z nim na krzyk. Postaw szklankę wody na blacie, spójrz spokojnie ponad kołnierzem płaszcza i powiedz krótko, że słyszysz jego złość, ale zostajesz przy swoim. Gdy poczuje, że nie uciekasz i szanujesz jego wysiłek, gniew opada szybciej niż wiatr nad pustym placem.',
-      forbidden: 'Publiczne ośmieszanie go przy obcych, ciche dni za karę i chłodne odmawianie dotyku jak waluty.'
+      conflict: 'W kryzysie dąży do natychmiastowej konfrontacji. Wielogodzinne milczenie i domyślanie się intencji wywołują u niego irytację — woli ostrą pięciominutową wymianę zdań niż tydzień chłodnej uprzejmości. Gdy zamykasz temat bez rozwiązania, jego napięcie rośnie z każdą minutą, bo pod spodem boi się utraty wpływu i odrzucenia.',
+      sensory: 'Reaguje na wyrazistość, pewność siebie i bezpośredniość w kontakcie fizycznym. Grzeczna powściągliwość bardzo szybko studzi jego zainteresowanie. Przyciąga go partnerka, która ma własne zdanie, potrafi odmówić i nie ucieka wzrokiem w trudniejszej chwili.',
+      disarm: 'Nie podkręcaj kłótni krzykiem, ale też nie znikaj za milczeniem. Powiedz krótko, co Cię zdenerwowało, bez długiego wstępu i ustal jasny punkt graniczny. Kiedy widzi konkretną postawę zamiast fochów, napięcie spada u niego błyskawicznie.',
+      forbidden: 'Publiczne podważanie jego decyzji przy znajomych, ciche dni w roli kary i traktowanie bliskości jako nagrody za posłuszeństwo.'
     },
     f: {
-      conflict: 'Zapala się jak suchy list wrzucony w żar kominka. Gdy wyczuje lekceważenie w tonie głosu, wyrzuca całą prawdę tu i teraz, zanim ostygnie herbata w filiżance. Kilkudniowe milczenie partnera odbiera jak próbę zamknięcia jej w dusznej piwnicy. Pod tym wybuchem kryje się paniczny lęk przed bezradnością i utratą własnej twarzy.',
-      sensory: 'Potrzebuje żywej iskry, nie grzecznego uśmiechu ze starej fotografii. Pociąga ją mężczyzna, który w deszczowy wieczór otwiera ciężkie drzwi bez wahania i nie cofa się przed jej gwałtownością. Jej skóra pamięta gorzki zapach rozgrzanego asfaltu po letniej ulewie i oddech tuż przy szyi.',
-      disarm: 'Odłóż pouczający ton i nie mów jej nigdy, żeby „wreszcie spuściła z tonu”. Podejdź blisko, przytrzymaj jej drżące dłonie i wytrzymaj jej wzrok bez ucieczki za gazetę. Świadomość, że stoisz twardo w jej burzy, rozbraja ją w pięć sekund.',
-      forbidden: 'Lekceważące machnięcie ręką, ironiczne ziewanie i ucieczka z domu w połowie zdania.'
+      conflict: 'Reaguje gwałtownie w sekundzie, gdy poczuje lekceważenie w tonie głosu. Mówi całą prawdę od razu, bez filtrowania konsekwencji. Wielogodzinne milczenie partnera odbiera jak celową blokadę i próbę zdominowania jej emocji. Pod tym wybuchem siedzi silny lęk przed bezsilnością i byciem zignorowaną.',
+      sensory: 'Potrzebuje żywej energii, zdecydowanego inicjatora i mężczyzny, który w napiętej sytuacji podejmuje decyzję bez ciągłego wahania. Nudzą ją zachowawcze komplementy i przewidywalny scenariusz randki bez spontaniczności.',
+      disarm: 'Zrezygnuj z pouczającego tonu i nigdy nie mów jej, że przesadza. Podejdź, wysłuchaj jej bez przerywania i pokaż stanowczość bez chłodu. Poczucie, że nie cofasz się pod presją, rozładowuje jej złość w kilkanaście sekund.',
+      forbidden: 'Lekceważące przewracanie oczami, ironia zamiast rozmowy oraz wychodzenie z mieszkania w środku ważnego zdania.'
     }
   };
 
   window.__JUNGIAN_PROFILES__[1] = { // Byk
     sign: 'Byk',
     m: {
-      conflict: 'Zamyka okiennice i stawia ciężką komodę za drzwiami. Gdy w pokoju wybucha nerwowy chaos albo puste ultimatum, nie ruszy się z miejsca ani o cal przez całe tygodnie. Każde popędzanie uważa za brak szacunku. W tym twardym milczeniu mieli obawę, że grunt pod jego stopami zaraz się osunie.',
-      sensory: 'Jego pożądanie ma ciężar starego wina, ciepłego chleba łamanego wieczorem i szorstkiej wełny narzuconej na gołe ramiona. Nie biega po schodach z gorączką nastolatka. Buduje pragnienie powoli, przez dotyk karku, ciężki głos przy uchu i spokój, przy którym przestaje tykać zegar.',
-      disarm: 'Zamiast dwugodzinnej debaty podaj mu ciepły talerz, usiądź blisko na kanapie i oprzyj czoło o jego ramię bez jednego wyrzutu. Zwykła obecność ciała i brak nerwowego pośpiechu kruszą jego upór prędzej niż sto argumentów.',
-      forbidden: 'Lekkomyślne długi, nerwowe szantaże walizką w przedpokoju i drwiny z jego powolności.'
+      conflict: 'Okopuje się na swoim stanowisku i ucina dyskusję. Gdy w domu pojawia się nerwowe ultimatum albo chaos emocjonalny, potrafi trwać w upartym milczeniu przez kilka dni. Każde popędzanie odbiera jako presję bez szacunku, broniąc w ten sposób poczucia stabilności i gruntu pod nogami.',
+      sensory: 'Jego przywiązanie buduje się powoli przez dotyk, zmysłowy komfort, wspólne jedzenie i przewidywalną codzienność. Nie szuka dramatycznych zwrotów akcji. Najmocniej działa na niego spokojna obecność fizyczna, czułość bez pośpiechu i dotrzymywanie słowa.',
+      disarm: 'Zamiast wyciągać ciężkie argumenty o dwunastej w nocy, zadbaj najpierw o spokojny ton i prosty gest troski. Wspólny posiłek bez telefonu i brak nacisku na natychmiastową deklarację rozluźniają jego opór znacznie skuteczniej niż debata.',
+      forbidden: 'Nieprzemyślane wydatki ze wspólnych pieniędzy, szantażowanie rozstaniem podczas sprzeczki i wyśmiewanie jego potrzeby spokoju.'
     },
     f: {
-      conflict: 'Zastyga w lodowatej elegancji. Staje się tak bezbłędnie uprzejma przy kolacji, że chłód między Wami można kroić nożem do masła. Nie tłucze porcelany — po prostu zamyka kurek z ciepłem i patrzy, kiedy sam zauważysz pustkę na poduszce obok.',
-      sensory: 'Ciężki jedwab opadający z ramienia, światło lampki przy łóżku i skóra rozgrzana przy kominku. Szuka mężczyzny solidnego jak stary dębowy stół — człowieka, po którym słychać spokojny oddech i pewność, że jutro rano też tu będzie.',
-      disarm: 'Przejmij na siebie jedną przyziemną sprawę, z którą męczyła się od poniedziałku. Przynieś jej ulubione pieczywo w papierowej torbie, okryj jej stopy ciężkim kocem i poczekaj. Gdy odzyska poczucie gruntu, jej czułość wróci bez jednego słowa.',
-      forbidden: 'Złamane obietnice, bylejakość w gestach, pośpiech w łóżku i tanie wymówki.'
+      conflict: 'Przechodzi w chłodną, bezbłędnie uprzejmą rezerwę. Nie podnosi głosu ani nie robi scen — po prostu wycofuje czułość, ogranicza kontakt do spraw organizacyjnych i obserwuje, kiedy zorientujesz się, że coś pękło. Zbiera zawiedzione obietnice do momentu, w którym zamyka relację na dobre.',
+      sensory: 'Ceni jakość materii, uważny dotyk, zapach, spokojny rytm wieczoru i poczucie bezpieczeństwa materialnego. Szuka partnera słownego i konsekwentnego, przy którym nie musi stale kontrolować wspólnej przyszłości.',
+      disarm: 'Przejmij jedną konkretną, uciążliwą sprawę z jej listy obowiązków i załatw ją bez rozgłosu. Konsekwentne działanie i cierpliwa bliskość przywracają jej zaufanie szybciej niż najdłuższe przeprosiny.',
+      forbidden: 'Niedotrzymywanie drobnych obietnic, pośpiech w intymności oraz lekceważenie budżetu i bezpieczeństwa.'
     }
   };
 
   window.__JUNGIAN_PROFILES__[2] = { // Bliźnięta
     sign: 'Bliźnięta',
     m: {
-      conflict: 'Odpala cienkie ostrze ironii i robi ze sporu salę rozpraw. Zamiast przyznać, że zabolało go Twoje słowo, wytyka z uśmiechem trzy luki logiczne w Twoim zdaniu, doprowadzając Cię do łez bezradności. Pod tą zręcznością siedzi cichy strach przed uwięzieniem w dusznym ciężarze cudzych oczekiwań.',
-      sensory: 'Jego pożądanie zaczyna się przy stole pełnym niedopitych kieliszków i niedokończonych aluzji. Pociąga go bystre oko, cięta odpowiedź rzucona z tylnego siedzenia samochodu i uśmiech pełen tajemnicy. Powtarzalna rutyna zabija w nim krew szybciej niż kłótnia.',
-      disarm: 'Rozbij pat jednym nieoczekiwanym żartem albo wyciągnij go z mieszkania na nocny spacer bez celu. Kiedy znika ciężka atmosfera sądu, znika też jego złośliwa tarcza.',
-      forbidden: 'Czytanie jego telefonu pod nieobecność, ciężka powaga przy każdym śniadaniu i przesłuchania o plany na pięć lat.'
+      conflict: 'Zmienia spór w intelektualną grę na argumenty i ironię. Zamiast powiedzieć wprost, co go zabolało, punktuje nieścisłości logiczne w Twojej wypowiedzi, czym doprowadza drugą stronę do frustracji. Pod tym dystansem chowa się obawa przed ciężkimi emocjami i utratą swobody.',
+      sensory: 'Jego napięcie erotyczne rodzi się w rozmowie, inteligentnym flircie, wspólnych dygresjach i błyskotliwej wymianie wiadomości. Przewidywalna rutyna i brak nowych bodźców wygaszają jego zaangażowanie szybciej niż różnica charakterów.',
+      disarm: 'Nie prowadź przesłuchania. Rozładuj napięcie trafną uwagą, zmień otoczenie krótkim wyjściem z domu i rozmawiaj rzeczowo zamiast uderzać w ciężki patos. Gdy przestaje czuć osaczenie, sam otwiera się emocjonalnie.',
+      forbidden: 'Kontrolowanie jego telefonu i komunikatorów, ciężka powaga przy każdym temacie oraz sztywne wymuszanie planów na lata naprzód.'
     },
     f: {
-      conflict: 'Kiedy powietrze w pokoju robi się gęste jak przed burzą, znika — ciało wciąż siedzi przy stole, ale myśli dawno uciekły na dworzec. Zasypuje napięcie śmiechem albo dziesięcioma telefonami do znajomych, bo przeraża ją myśl o klatce bez klucza.',
-      sensory: 'Śmiech w deszczu pod jednym parasolem, otwarte okno w pociągu i świeżo otwarta książka z księgarni za rogiem. Szuka mężczyzny o żywej głowie, który nie próbuje przypinać jej szpilką do jednej sztywnej roli.',
-      disarm: 'Nie żądaj spowiedzi przy zgaszonym świetle. Rzuć jej ciekawą książkę, dwa bilety do innego miasta albo pytanie, na które sama nie zna jeszcze odpowiedzi.',
-      forbidden: 'Nuda bez ratunku, sceny zazdrości o każdego znajomego i zamykanie jej w czterech ścianach.'
+      conflict: 'Kiedy atmosfera robi się zbyt gęsta od wyrzutów, wyłącza się mentalnie i ucieka w zajęcia poza domem albo dziesiątki wiadomości do znajomych. Przeraża ją relacja zamieniająca się w emocjonalny nadzór bez przestrzeni na własne myśli.',
+      sensory: 'Pociąga ją błyskotliwość, poczucie humoru, wspólne podróże i spontaniczne pomysły rozbijające rutynę. Potrzebuje partnera z własnym życiem i otwartą głową, który nie próbuje jej przypiąć do jednej sztywnej roli domowej.',
+      disarm: 'Odpuść wielogodzinne rozliczanie win. Zaproponuj zmianę scenerii, podrzuć ciekawy temat albo zadaj pytanie, które wybija ją ze schematu obrony.',
+      forbidden: 'Monotonia bez perspektywy zmiany, chorobliwa zazdrość o jej znajomych oraz zamykanie jej w wąskim kręgu obowiązków.'
     }
   };
 
   window.__JUNGIAN_PROFILES__[3] = { // Rak
     sign: 'Rak',
     m: {
-      conflict: 'Wycofuje się za grubą kotarę milczenia, jak stary latarnik podczas sztormu. Zakłada płaszcz chłodu, odpowiada jednym krótkim słowem przy drzwiach i czeka w środku nocy, aż sama zgadniesz, które zdanie rozcięło mu skórę. Pod skorupą siedzi dziecięcy strach przed opuszczeniem na pastwę zimna.',
-      sensory: 'Szuka schronienia, w którym wreszcie może odłożyć zbroję na krzesło. Stara pościel po deszczowym wieczorze, dłoń przesuwająca się wolno po żebrach i cicha muzyka z sąsiedniego pokoju. Kocha tam, gdzie wolno drżeć bez wstydu.',
-      disarm: 'Nie wywołuj go na środek sali do odpowiedzi. Usiądź obok niego po ciemku, przykryj mu ramiona i podaj ciepły kubek bez przesłuchania. Poczucie bezpiecznego progu otwiera go szybciej niż najbardziej wymowne przeprosiny.',
-      forbidden: 'Wyśmiewanie jego wrażliwości, chłodny cynizm przy znajomych i rzucanie złośliwości pod adresem jego domu.'
+      conflict: 'Wycofuje się w ciszę i testuje, czy pójdziesz za nim sprawdzić, co się stało. Pamięta raniący ton głosu miesiącami i zamyka dostęp do swojej wrażliwości, odpowiadając krótkimi zdaniami. Ten dystans wynika z silnego lęku przed ośmieszeniem i opuszczeniem w chwili słabości.',
+      sensory: 'Potrzebuje intymności dającej poczucie pełnej akceptacji bez gry pozorów. Czułość w prywatnym mieszkaniu, uważne słuchanie i fizyczne ciepło otwierają go znacznie głębiej niż zewnętrzny blichtr.',
+      disarm: 'Nie wyciągaj go na ostrą konfrontację przy innych ludziach. Usiądź blisko w spokoju, zapytaj łagodnie, co go dotknęło, i daj jasny sygnał, że nigdzie się nie wybierasz. Poczucie bezpieczeństwa natychmiast znosi jego mur obronny.',
+      forbidden: 'Kpiny z jego emocji przy towarzystwie, zimny cynizm oraz rzucanie złośliwości w stronę jego rodziny.'
     },
     f: {
-      conflict: 'Przechowuje każde gorzkie słowo w zamkniętym puzderku miesiącami. Nie krzyczy przy sąsiadach — po prostu cichnie w kuchni tak, że sam zaczynasz dusić się ciężarem własnej winy w każdym kącie mieszkania.',
-      sensory: 'Ciepła skóra pod miękkim swetrem, światło jednej świecy na parapecie i uścisk tak szczelny, że miejski zgiełk zostaje na klatce schodowej. Pragnie mężczyzny, przy którego boku przestaje pilnować drzwi.',
-      disarm: 'Wsuń jej do kieszeni płaszcza krótką kartkę z własnym charakterem pisma i daj jej słowo, które przeżyje złą pogodę. Mały przedmiot z historią mówi jej więcej niż drogi zegarek bez duszy.',
-      forbidden: 'Podnoszenie głosu w złości, zapominanie o drobnych obietnicach i lekceważenie jej łez.'
+      conflict: 'Magazynuje drobne zranienia w pamięci i milknie tak gęsto, że napięcie w pokoju staje się nieznośne. Nie szuka awantury na pokaz — po prostu wycofuje ciepło domowe, czekając, aż zauważysz jej żal i okażesz skruchę.',
+      sensory: 'Lubi bliskość bez pośpiechu, poczucie wyłączności, uważne pamiętanie o małych szczegółach jej dnia i mężczyznę dającego jej oparcie w gorszym czasie.',
+      disarm: 'Okaż jej konkretną pamięć o drobnej rzeczy, o której wspomniała tydzień temu, i zapewnij ją spokojnie o swoim zaangażowaniu. Mały dowód stałości leczy jej nieufność prędzej niż drogie gesty bez zaangażowania.',
+      forbidden: 'Podnoszenie głosu podczas sporu, lekceważenie jej intuicji oraz niedotrzymywanie drobnych obietnic.'
+    }
+  };
+
+  window.__JUNGIAN_PROFILES__[4] = { // Lew
+    sign: 'Lew',
+    m: {
+      conflict: 'Gdy czuje chłód lub niedocenienie, chowa zranienie za wyniosłą dumą. Prostuje sylwetkę, milknie z poczuciem urażonej godności i szuka potwierdzenia swojej atrakcyjności poza związkiem. Pod tą maską obojętności kryje się obawa, że stał się dla Ciebie kimś drugorzędnym.',
+      sensory: 'Kocha wyrazistość, szczodre gesty, dobrą oprawę randki i wyraźny podziw partnerki. Pragnie kobiety dumnej z tego, że idzie u jego boku, która nie tłumi emocji ani pożądania w łóżku.',
+      disarm: 'Nie upokarzaj go ironią. Powiedz mu w cztery oczy szczerze, co w nim cenisz i dlaczego jest dla Ciebie ważny, zanim zaczniesz omawiać sam problem. Uznanie rozpuszcza jego dumę w kilka sekund.',
+      forbidden: 'Ośmieszanie go przy znajomych, chłodna obojętność w sypialni i rutynowe pochwały z obowiązku.'
+    },
+    f: {
+      conflict: 'Reaguje gwałtownie i bezpośrednio, gdy wyczuje, że traktujesz ją jak oczywisty element tła. Domaga się natychmiastowej uwagi i przeprosin tu i teraz, ponieważ w głębi duszy boi się utraty Twojego podziwu i pozycji numer jeden.',
+      sensory: 'Ceni starannie zaplanowany wieczór, komplementy mówione z przekonaniem, odważny styl i mężczyznę, który nie chowa się przed jej charyzmą w cieniu.',
+      disarm: 'Zrób przemyślany gest poza okazją, odłóż telefon podczas rozmowy i daj jej pełną uwagę bez dzielenia czasu. Poczucie bycia wybraną natychmiast wygasza u niej gniew.',
+      forbidden: 'Skąpstwo emocjonalne, scrollowanie telefonu w trakcie kolacji i branie jej obecności za pewnik.'
     }
   };
 })();
@@ -73,67 +85,83 @@
 (function () {
   window.__JUNGIAN_PROFILES__ = window.__JUNGIAN_PROFILES__ || {};
 
-  window.__JUNGIAN_PROFILES__[4] = { // Lew
-    sign: 'Lew',
-    m: {
-      conflict: 'Gdy poczuje chłód lub lekceważenie, chowa zranienie za dumą monarchy. Wkłada maskę wyniosłego spokoju, prostuje plecy przy stole i zaczyna szukać zachwytu na zewnątrz, choćby przelotnego spojrzenia w lustrze kawiarni. Pod tym teatrem siedzi lęk, że w Twoich oczach stracił blask i stał się jednym z wielu.',
-      sensory: 'Kocha z rozmachem, w pełnym świetle świec, przy ciężkich kotarach i stole bez oszczędzania na detalu. Dłoń położona pewnie na Twoich plecach przy wejściu do lokalu, ciepło ciemnego tytoniu na wełnianym kołnierzu. Pragnie kobiety, przy której nawet wejście po schodach przypomina ciche zwycięstwo.',
-      disarm: 'Nie upokarzaj jego dumy, lecz przemów do niej w cztery oczy. Powiedz mu wieczorem krótko, co dokładnie w nim podziwiasz i dlaczego nie zamieniłabyś jego ramion na żadne inne. Prawdziwe uznanie zrzuca z niego cały majestat chłodu w pięć sekund.',
-      forbidden: 'Publiczne docinki przy stoliku, letnia obojętność w łóżku i komplementy rzucane z obowiązku.'
-    },
-    f: {
-      conflict: 'Wybucha z królewską gwałtownością, gdy poczuje się traktowana jak mebel w przedpokoju. Jej gniew nie kapie jak chłodny deszcz — uderza od razu, żądając jasnego słowa i skruchy tu i teraz. Pod głośnym żądaniem drży cicha obawa, że przestała budzić w Tobie zachwyt.',
-      sensory: 'Jedwab ocierający się o nadgarstki, błysk złota na nagim obojczyku, szampan wypity bez okazji przed północą. Szuka mężczyzny dumnego i szczodrego, który nie skuli się w kącie sali, gdy ona wchodzi w czerwień sukni.',
-      disarm: 'Przynieś jej ciężkie bordowe róże we zwykły wtorek, zapłać rachunek bez patrzenia na drobne i wznieś toast wyłącznie za nią. Gdy poczuje, że jest wybrana ponad cały pokój, każdy gniew topnieje bez śladu.',
-      forbidden: 'Skąpstwo w gestach, patrzenie w telefon przy kolacji i traktowanie jej jak rzeczy oczywistej.'
-    }
-  };
-
   window.__JUNGIAN_PROFILES__[5] = { // Panna
     sign: 'Panna',
     m: {
-      conflict: 'Wycofuje serce za pulpit chłodnego księgowego. Zamiast przyznać się do zranienia, wyciąga bezlitosny rejestr Twoich błędów z ostatniego miesiąca — niedomknięte okno, spóźnienie o siedem minut, nierówno odstawiony kubek. Pod tym skalpelem siedzi przerażenie przed bałaganem, nad którym traci władzę.',
-      sensory: 'Jego intymność żyje w nienagannej czystości białego lnu, świeżym dotyku wykrochmalonej koszuli po wieczornej kąpieli i powolnej uwadze skupionej na jednym drgnięciu Twojej dłoni. Zraża go hałas, kicz i niedbalstwo o szczegóły.',
-      disarm: 'Nie wygrywaj z nim w sądzie na argumenty. Przynieś mu uporządkowany wieczór, przejmij jeden zaległy ciężar z jego listy i podziękuj za małą rzecz, którą zrobił bez pytania. Konkret kruszy jego mur prędzej niż sto deklaracji.',
-      forbidden: 'Wieczne spóźnienia, chaos w szufladach, puste obietnice i łzy wymuszone krzykiem.'
+      conflict: 'Wycofuje emocje i przechodzi w tryb bezlitosnego audytora. Zamiast powiedzieć, co go zabolało, wyciąga listę Twoich konkretnych potknięć z ostatniego miesiąca — spóźnienia, bałagan i niedopatrzenia. Pod tą surowością chowa lęk przed utratą kontroli nad wspólnym życiem.',
+      sensory: 'Jego intymność opiera się na higienie, porządku, dyskretnej elegancji i uważności na najdrobniejszy sygnał Twojego ciała. Zraża go chaos, krzykliwość i niedbałe podejście do codzienności.',
+      disarm: 'Nie walcz z nim na argumenty logiczne. Zadbaj o spokojną atmosferę, przejmij jeden zaległy obowiązek domowy z jego listy i podziękuj za konkretną rzecz, którą zrobił w tym tygodniu.',
+      forbidden: 'Chroniczne spóźnialstwo, bałagan we wspólnej przestrzeni, puste deklaracje oraz emocjonalne manipulacje.'
     },
     f: {
-      conflict: 'Zamienia się w bezlitosną redaktorkę każdego Twojego zdania. Wytyka ton głosu, kolejność sztućców i brak wyobraźni, dopóki nie zabraknie tchu w pokoju. W rzeczywistości ledwo stoi na nogach ze zmęczenia dźwiganiem całego domu na własnym karku.',
-      sensory: 'Cisza uporządkowanego mieszkania przed zmierzchem, chłodne szkło na stoliku i uważny dotyk dłoni bez pośpiechu. Pragnie mężczyzny słownego i równego, przy którym jej niespokojna głowa wreszcie może odłożyć notes.',
-      disarm: 'Powiedz jej spokojnie przy drzwiach, że dziś zajmujesz się wszystkim od A do Z, a potem naprawdę nie pytaj o pięć drobiazgów po drodze. Kubek gorącej herbaty podany w ciszy znaczy dla niej więcej niż przemówienie.',
-      forbidden: 'Niesłowność, dziecięca bezradność w codziennych sprawach i ignorowanie jej cichej roboty.'
+      conflict: 'Staje się przesadnie krytyczna wobec drobiazgów — poprawia każde słowo, wytyka ton głosu i wylicza zaległe sprawy domowe. W rzeczywistości jest skrajnie przemęczona dźwiganiem całego planu dnia na własnych barkach.',
+      sensory: 'Pociąga ją prostota formy, czystość, uporządkowana przestrzeń i uważny dotyk bez nerwowego pośpiechu. Pragnie mężczyzny słownego i zaradnego, przy którym wreszcie może przestać kontrolować każdy szczegół.',
+      disarm: 'Weź odpowiedzialność za konkretną sferę dnia od początku do końca i nie zasypuj jej pięcioma pytaniami po drodze. Realne odciążenie znaczy dla niej więcej niż długie wyznania.',
+      forbidden: 'Niesłowność, wyuczona bezradność w sprawach codziennych i bagatelizowanie jej wysiłku.'
     }
   };
 
   window.__JUNGIAN_PROFILES__[6] = { // Waga
     sign: 'Waga',
     m: {
-      conflict: 'Chowa pazury w aksamitnej rękawiczce dyplomacji. Woli przytaknąć przy stole dla świętego spokoju, a potem zniknąć w uprzejmym chłodzie, z którego nie przebija żadna szczelina. Brzydzi go wulgarna awantura; boi się, że w ogniu kłótni wszystko straci proporcję i rozpadnie się bez ratunku.',
-      sensory: 'Światło kinkietu na białej ścianie, dwa kieliszki dobrego wina, dłoń muśnięta przypadkiem pod obrusem w starej restauracji. Przyciąga go piękno gestu, miękkość głosu i gra spojrzeń bez pospolitego pośpiechu.',
-      disarm: 'Zadbaj o oprawę zanim padnie pierwsze trudne zdanie. Zmień ton, zapal świecę w jadalni i podsuń wyjście, w którym żadne z Was nie wychodzi poniżone. Szacunek do formy otwiera mu gardło do prawdy.',
-      forbidden: 'Wulgarne wyzwiska, trzaskanie drzwiami przy obcych i stawianie pod ścianą grubym ultimatum.'
+      conflict: 'Unika ostrej awantury za cenę własnych nerwów. Zgadza się pozornie w rozmowie dla świętego spokoju, a potem zamyka się w uprzejmym dystansie bez szczerości. Boi się, że gwałtowny konflikt zniszczy równowagę i doprowadzi do brzydkiego rozstania.',
+      sensory: 'Ceni kulturę gestu, spójną oprawę wieczoru, urok osobisty i miękkość komunikacji bez presji. Wulgarne zachowanie i brak taktu natychmiast gaszą w nim pożądanie.',
+      disarm: 'Zadbaj o spokojny ton i formę rozmowy, zanim przejdziesz do zarzutów. Wskaż wspólne rozwiązanie, w którym żadne z Was nie traci godności — szacunek do dialogu natychmiast go otwiera.',
+      forbidden: 'Publiczne wyzwiska, trzaskanie drzwiami i wymuszanie decyzji grubym ultimatum.'
     },
     f: {
-      conflict: 'Stosuje lodowaty chłód przy nienagannym makijażu. Nie podniesie głosu ani o pół tonu, ale sposób, w jaki odstawia filiżankę i przechodzi na oficjalne zwroty, mrozi całe mieszkanie do kości. Zbiera urazy po cichu, aż jednego dnia zamyka walizkę bez powrotu.',
-      sensory: 'Miękki zamsz na krześle, dłoń podana przy wysiadaniu z samochodu, cierpliwy taniec spojrzeń przy wieczornej muzyce. Szuka mężczyzny z wyczuciem taktu, przy którym forma idzie w parze z oddaniem.',
-      disarm: 'Przyjdź z pięknym, przemyślanym gestem, nie z wymówką. Wyjdźcie z kuchni do dobrego miejsca, okaż skruchę za brak delikatności i pozwól jej znów poczuć lekkość wspólnego wieczoru.',
-      forbidden: 'Gburowate żarty, brudne buty na progu uczuć, kłótnie na ulicy i oszczędzanie na wspólnym czasie.'
+      conflict: 'Mrozi kontakt nienagannym, oficjalnym tonem. Nie krzyczy — ale jej sposób odpowiadania półsłówkami i przejście na uprzejmą rezerwę pokazuje, że dawno odsunęła się emocjonalnie. Zbiera niesprawiedliwości po cichu, aż nagle informuje o końcu relacji.',
+      sensory: 'Lubi estetykę detalu, dobry styl, uważną obecność podczas randki i partnera o wysokiej kulturze osobistej, który potrafi rozmawiać z klasą.',
+      disarm: 'Przeproś za brak wyczucia bez wymówek, zaproponuj zmianę miejsca na spokojne i okaż dbałość o jej komfort. Poczucie równości i stylu szybko topi jej rezerwę.',
+      forbidden: 'Wulgarny humor, awantury na ulicy oraz skąpienie uwagi i wspólnego czasu.'
     }
   };
 
   window.__JUNGIAN_PROFILES__[7] = { // Skorpion
     sign: 'Skorpion',
     m: {
-      conflict: 'Zamyka pokój i zaczyna bezgłośne śledztwo. Wyłapuje drgnięcie Twojej powieki, mierzy czas odpowiedzi, rzuca jedno ciche pytanie sprawdzające, czy kłamiesz choćby o milimetr. Pod tą bezlitosną czujnością kryje się dawny strach przed nożem wbitym dokładnie w chwili zaufania.',
-      sensory: 'Nocny mrok bez półśrodków, ciężka skóra płaszcza niosąca chłód ulicy i dym, spojrzenie wbijające się głębiej niż dotyk. Kocha albo do samego końca kości, albo wcale — letnie znajomości budzą w nim pogardę.',
-      disarm: 'Nie kręć i nie łagodź prawdy grzecznym frazesem. Stań przed nim prosto, przyznaj się do własnego strachu lub winy bez wykrętów i wytrzymaj jego wzrok. Nieskalana prawda natychmiast wyłącza jego podejrzliwość.',
-      forbidden: 'Kłamstwo w małej sprawie, kokieteria przy innych i zamykanie drzwi na trudne pytania.'
+      conflict: 'Milknie i przechodzi do cichego śledztwa psychologicznego. Obserwuje spójność Twoich odpowiedzi, sprawdza czas reakcji i zadaje celne pytania testujące, czy mówisz całą prawdę. Pod tą nieufnością kryje się głęboki strach przed zdradą dokładnie w chwili zaufania.',
+      sensory: 'Pociąga go intensywność bez hamulców, fizyczna chemia, głęboki kontakt wzrokowy i lojalność przetestowana w trudnej sytuacji. Letnie, bezpieczne układy budzą w nim znudzenie.',
+      disarm: 'Nie upiększaj faktów i nie kręć w drobiazgach. Przyznaj się wprost do błędu albo własnego lęku i wytrzymaj jego spojrzenie bez uników. Bezwarunkowa prawda natychmiast rozbraja jego podejrzliwość.',
+      forbidden: 'Półprawdy w drobnych sprawach, kokieteria przy innych i zamykanie rozmowy ogólnikami.'
     },
     f: {
-      conflict: 'Zamienia pokój w jezioro pod czarnym lodem. Zanim jeszcze zaczniesz się tłumaczyć, dawno policzyła wszystkie ślady i patrzy spokojnie, jak sam grzęźniesz we własnych półprawdach. Krzyku nie usłyszysz — usłyszysz tylko dźwięk zamykanego zamka.',
-      sensory: 'Ciemny jedwab, ciężki dym wieczoru albo deszcz za szybą sypialni, oddech bez pośpiechu o trzeciej nad ranem. Szuka mężczyzny o stalowym kręgosłupie, który nie ucieknie, gdy pod światłem nocy opadną wszelkie pozory.',
-      disarm: 'Odrzuć tanie komplementy i powiedz jej jedną niewygodną, lecz prawdziwą rzecz prosto w twarz. Przedmiot niosący wagę, ciszę i tajemnicę mówi jej więcej niż bukiet z kwiaciarni przy rondzie.',
-      forbidden: 'Uciekanie wzrokiem, drobne oszustwa, fałszywy spokój i śmiech w chwili, gdy ona mówi serio.'
+      conflict: 'Odcina ciepło z chłodną precyzją. Zanim otworzysz usta z tłumaczeniem, zwykle zna już kontekst i patrzy spokojnie, czy spróbujesz kłamać. Nie urządza scen przy ludziach — po prostu zamyka dostęp do swojej prywatności na stałe.',
+      sensory: 'Szuka mężczyzny psychicznie silnego i szczerego aż do bólu, który nie ucieka przed trudnymi rozmowami o zazdrości, władzy i pragnieniach.',
+      disarm: 'Odłóż powierzchowne komplementy i powiedz jej jedną szczerą, choćby niewygodną prawdę prosto w oczy. Odwaga i wyłączność działają na nią silniej niż jakiekolwiek obietnice.',
+      forbidden: 'Odwracanie wzroku, drobne oszustwa, fałszywy uśmiech w kryzysie i lekceważenie jej pytań.'
+    }
+  };
+
+  window.__JUNGIAN_PROFILES__[8] = { // Strzelec
+    sign: 'Strzelec',
+    m: {
+      conflict: 'Gdy wyczuje duszny ciężar wyrzutów lub kontrolę nad swoim czasem, wypala ostrą prawdę bez dyplomacji i wychodzi na kilka godzin bez odbierania telefonu. Pod tą ucieczką leży lęk przed zamknięciem w nudnym, powtarzalnym schemacie bez swobody.',
+      sensory: 'Budzi go spontaniczność, poczucie humoru, wspólne wyjazdy z małym bagażem i partnerka z własną pasją życiową zamiast kontrolerki sprawdzającej godzinę powrotu.',
+      disarm: 'Nie goń go z kolejnymi pytaniami w połowie złości. Daj mu godzinę przestrzeni na ochłonięcie, a potem wróćcie do tematu lekko i konkretnie — bez poczucia presji sam wraca do rozmowy.',
+      forbidden: 'Kontrolowanie lokalizacji i grafiku, zakazy z zazdrości oraz gaszenie jego planów ciągłym pesymizmem.'
+    },
+    f: {
+      conflict: 'Wchodzi w rolę moralizatorki wytykającej Ci brak perspektywy, żeby ukryć własny strach przed nudą i utratą niezależności. Gdy czuje presję domowych oczekiwań, szybko staje się nerwowa i szuka pretekstu do wyjścia.',
+      sensory: 'Lubi dynamikę, podróże, odważne plany na weekend i mężczyznę z wyobraźnią, przy którym relacja rozwija się zamiast stać w miejscu.',
+      disarm: 'Zaproponuj spontaniczną odmianę rutyny albo rozmowę o nowym kierunku wspólnego życia — poczucie ruchu natychmiast wygasza w niej ton wykładowczyni.',
+      forbidden: 'Zamykanie jej w rutynie samych obowiązków, zazdrość o jej znajomych oraz wieczne narzekanie.'
+    }
+  };
+
+  window.__JUNGIAN_PROFILES__[9] = { // Koziorożec
+    sign: 'Koziorożec',
+    m: {
+      conflict: 'Zamyka się emocjonalnie i przechodzi na służbowy, oschły ton. Odcina dotyk i ucieka w pracę po godzinach, żeby udowodnić pełną samowystarczalność. Pod tym opanowaniem kryje się dawny strach przed zależnością od kogoś, kto zawiedzie w kryzysie.',
+      sensory: 'Pociąga go dyskrecja, klasa bez krzykliwości, konkretna lojalność w złym czasie i kobieta o własnym kręgosłupie zawodowym oraz osobistym.',
+      disarm: 'Nie wymuszaj głośnej spowiedzi emocjonalnej. Odciąż go z jednej zwykłej sprawy logistycznej i zapewnij spokojnie, że ma w Tobie wsparcie bez presji. Konkret otwiera go znacznie szybciej niż nacisk.',
+      forbidden: 'Lekkomyślne podejście do pieniędzy, publiczne sceny oraz łamanie danego słowa.'
+    },
+    f: {
+      conflict: 'Twardnieje bez jednego krzyku. Nie upomina pięć razy — po zawiedzionym zaufaniu zamyka temat krótkim komunikatem i odcina wspólną przyszłość bez oglądania się wstecz. Najbardziej obawia się oparcia na partnerze, który pęka przy pierwszej trudności.',
+      sensory: 'Ceni jakość ponad ilość, spokojną pewność siebie partnera, spójność deklaracji z czynami i prywatną stabilność finansową oraz emocjonalną.',
+      disarm: 'Zrealizuj ważną sprawę, zanim zdąży o nią poprosić, i zakomunikuj to krótko oraz spokojnie. Konsekwencja buduje jej zaufanie mocniej niż piękne deklaracje.',
+      forbidden: 'Obietnice bez pokrycia, wymówki w kryzysie i uciekanie przed dorosłą odpowiedzialnością.'
     }
   };
 })();
@@ -141,67 +169,35 @@
 (function () {
   window.__JUNGIAN_PROFILES__ = window.__JUNGIAN_PROFILES__ || {};
 
-  window.__JUNGIAN_PROFILES__[8] = { // Strzelec
-    sign: 'Strzelec',
-    m: {
-      conflict: 'Gdy poczuje w pokoju duszny ciężar wyrzutów albo próbę założenia mu kagańca, wali w oczy szorstką prawdą bez znieczulenia i trzaska drzwiami na pół nocy. Znika na długim spacerze lub w samochodzie bez telefonu, by znów poczuć przestrzeń. Pod tą ucieczką siedzi paniczny lęk przed ugrzęźnięciem w małym, nudnym świecie bez horyzontu.',
-      sensory: 'Pociąga go otwarte okno nocą, wiatr na skroni, śmiech w nieznanej knajpie daleko od domu i odrobina szaleństwa pod powiekami. Pragnie kobiety, z którą jedzie się w podróż z jedną małą torbą, a nie strażniczki sprawdzającej godzinę na zegarku.',
-      disarm: 'Nie goń za nim w połowie kłótni i nie urządzaj przesłuchania na progu. Daj mu godzinę czystego powietrza, a potem pogadajcie nad mapą albo w śmiechu — gdy nie widzi smyczy, sam wraca najszybciej.',
-      forbidden: 'Kontrolowanie każdego kroku, ciasne zakazy z zazdrości i zabijanie jego zapału chłodnym sceptycyzmem.'
-    },
-    f: {
-      conflict: 'Wspina się na wysoki stołek surowej nauczycielki i zaczyna tłumaczyć Ci życie z góry, jakby Twoje łzy były drobną pomyłką w rachunkach. W gruncie rzeczy przeraża ją wizja życia zamkniętego między zlewozmywakiem a listą powtarzalnych pretensji.',
-      sensory: 'Ciepła skóra spalona popołudniowym słońcem, dziki śmiech nad kieliszkiem na tarasie i brak strachu przed zmianą planów w ostatniej minucie. Szuka mężczyzny z wyobraźnią, który potrafi zostawić stary świat za rogatkami miasta.',
-      disarm: 'Zaskocz ją biletem w jedną stronę na weekend bez walizek albo pytaniem otwierającym jej oczy z zachwytu. Poczucie wspólnej przygody rozpuszcza w niej cały belferski ton.',
-      forbidden: 'Domowe więzienie obowiązków, ciągła zazdrość o jej wolne wieczory i narzekanie przy byle deszczu.'
-    }
-  };
-
-  window.__JUNGIAN_PROFILES__[9] = { // Koziorożec
-    sign: 'Koziorożec',
-    m: {
-      conflict: 'Zatrzaskuje drzwi gabinetu od środka i chłodzi głos do temperatury zimnego marmuru. Odcina dotyk, przechodzi na krótkie komunikaty jak kierownik budowy i zakopuje się w papierach do późna w nocy, żeby udowodnić, że niczego od nikogo nie potrzebuje. Pod tym granitem kryje się stary lęk przed bezsilnością i zdradą w chwili słabości.',
-      sensory: 'Ciężkie drewno biurka, ciemny wełniany płaszcz bez zbędnych ozdób, pewna ręka kładąca klucz na stole. Budzi w nim ogień dyskrecja, lojalność w złej godzinie i kobieta o własnym kręgosłupie, która nie kupuje taniego blichtru.',
-      disarm: 'Nie narzucaj mu głośnej spowiedzi. Zdejmij z jego głowy jedną zwykłą sprawę w ciągu dnia, postaw przed nim gorącą czarną kawę i powiedz spokojnie, że nie musi nieść całego świata sam. Cicha lojalność rozbija jego kamienną zbroję.',
-      forbidden: 'Rozrzutność, dziecinne fochy przy ludziach i łamanie danego słowa przy pierwszej trudności.'
-    },
-    f: {
-      conflict: 'Zastyga z twarzą sędziego, który dawno wydał wyrok. Nie prosi dwa razy, odpowiada jednym zimnym skinieniem głowy i bez krzyku wykreśla człowieka ze swojego kalendarza na zawsze. W środku boi się wyłącznie tego, że oprze się na ramieniu, które pęknie pod ciężarem.',
-      sensory: 'Czysta wełna dotykająca nagiej szyi, ciężkie szkło w dłoni, dyskretna pewność w każdym geście bez krzykliwych metek. Pragnie mężczyzny z twardego kruszcu — kogoś, przy kim deszcz za oknem przestaje mieć znaczenie.',
-      disarm: 'Zrób jedną trudną rzecz zanim o nią poprosi i powiedz krótko przy kolacji, że sprawa jest zamknięta. Spójny czyn i przedmiot o trwałej wartości mówią jej więcej niż tysiąc wierszy.',
-      forbidden: 'Puste obietnice bez pokrycia, miękkie wykręty i uciekanie od ciężaru dorosłego życia.'
-    }
-  };
-
   window.__JUNGIAN_PROFILES__[10] = { // Wodnik
     sign: 'Wodnik',
     m: {
-      conflict: 'Odłącza serce jednym ruchem przełącznika i zaczyna oglądać Waszą kłótnię z drugiego końca sali, jak dziwaczny eksperyment pod mikroskopem. Im głośniej prosisz o łzy i wyznania, tym dalej odchodzi za szybę własnych myśli. Boi się klatki, która odbierze mu powietrze i własny rytm.',
-      sensory: 'Chłodny deszcz nocą na opustoszałej ulicy, dziwny humor zrozumiały tylko dla Was dwojga, nocne rozmowy o rzeczach, o których nikt inny nie śmie mówić głośno. Przyciąga go niezależność umysłu i brak tanich gier.',
-      disarm: 'Odłóż ciężki melodramat do szuflady. Rzuć niespodziewaną myśl, uszanuj jego potrzebę oddechu w drugim pokoju i rozmawiaj jak równy z równym. Gdy przestajesz ciągnąć za rękaw, sam siada obok Ciebie.',
-      forbidden: 'Sceny zazdrości, wymuszanie deklaracji pod szantażem i wciskanie go w utarty garnitur norm.'
+      conflict: 'Wyłącza zaangażowanie emocjonalne i zaczyna obserwować kłótnię jak zewnętrzny komentator. Im głośniej domagasz się wyznań i łez, tym dalej cofa się w chłodną analizę. Broni w ten sposób autonomii przed poczuciem osaczenia.',
+      sensory: 'Przyciąga go niekonwencjonalne poczucie humoru, nocne rozmowy o ideach, wolność osobista i brak zazdrosnych gier o kontrolę.',
+      disarm: 'Odstaw ciężki dramat na bok. Rzuć błyskotliwą obserwację, uszanuj jego potrzebę godziny w drugim pokoju i rozmawiaj jak partner, nie nadzorca. Gdy nie ciągniesz na siłę, wraca sam.',
+      forbidden: 'Sceny zazdrości, wymuszanie deklaracji pod szantażem emocjonalnym i wtłaczanie w sztywne konwenanse.'
     },
     f: {
-      conflict: 'Staje się nagle przezroczysta — ciało odpowiada monosylabami, lecz jej duch dawno odleciał na wyższe piętro, gdzie nie sięga żaden krzyk. Boi się świata, który próbuje ją uciszyć i zamknąć w ciasnej kuchni cudzych wymagań.',
-      sensory: 'Świt po bezsennej rozmowie na dachu, lekki dotyk palców na zgięciu łokcia, nieoczywista książka położona na poduszce. Szuka sprzymierzeńca myśli, przy którym nie musi udawać nikogo mniejszego niż jest.',
-      disarm: 'Przynieś jej rzecz wymykającą się katalogom albo wciągnij w śmiały plan niepodobny do innych. Poczucie wspólnej wolności otwiera ją szybciej niż najdroższe kolczyki.',
-      forbidden: 'Prowincjonalne kazania o tym, co „wypada kobiecie”, i małoduszne pilnowanie jej przyjaźni.'
+      conflict: 'Staje się niedostępna za uprzejmymi monosylabami — ciałem jest w rozmowie, ale myślami dawno odcięła kontakt. Boi się relacji, w której cudze oczekiwania odbiorą jej prawo do własnego rytmu.',
+      sensory: 'Szuka intelektualnego partnera do wspólnych projektów i nietypowych rozmów, przy którym nie musi zmniejszać swoich ambicji ani przyjaźni.',
+      disarm: 'Zaproponuj nieszablonowy pomysł na wieczór albo szczerą wymianę zdań bez narzucania gotowych ról. Poczucie wspólnej wolności otwiera ją natychmiast.',
+      forbidden: 'Pouczenia o tym, co wypada w związku, oraz kontrolowanie jej niezależnych znajomości.'
     }
   };
 
   window.__JUNGIAN_PROFILES__[11] = { // Ryby
     sign: 'Ryby',
     m: {
-      conflict: 'Rozpływa się w ciszy jak mgła nad kanałem. Kiedy w domu robi się zbyt głośno i brutalnie, znika w muzyce, długim śnie albo pustym patrzeniu w sufit, nie umiejąc ubrać zranienia w twarde zdania. Boi się zderzenia z bezlitosną szorstkością, przed którą nie ma tarczy.',
-      sensory: 'Półmrok przed świtem, ciepły oddech między słowami, dłonie szukające Twojej skóry jak jedynej tratwy po długim dniu. Kocha tam, gdzie opada zbroja ulicy i zostaje samo bezbronne ciepło.',
-      disarm: 'Nie krzycz nad nim i nie szarp go za kołnierz do wyjaśnień. Przytul go w milczeniu, zgaś górną lampę i pozwól odetchnąć bez oceny. Czuła obecność przywraca go do żywych prędzej niż przesłuchanie.',
-      forbidden: 'Brutalny cynizm, kpiny z jego intuicji i zimna kalkulacja przy wspólnym stole.'
+      conflict: 'Wycofuje się w sen, muzykę lub wielogodzinne milczenie, gdy ton rozmowy staje się zbyt brutalny. Nie umie przekuć zranienia w ostrą ripostę, więc znika mentalnie z pokoju, chroniąc się przed szorstkością.',
+      sensory: 'Kocha miękką bliskość bez oceny, uważny dotyk po długim dniu, prywatną czułość oraz zaufanie pozwalające odłożyć wszelkie maski.',
+      disarm: 'Nie dociskaj go przesłuchaniem przy podniesionym głosie. Przytul go spokojnie, wycisz atmosferę i pozwól odetchnąć bez presji szybkiej odpowiedzi.',
+      forbidden: 'Cyniczne docinki, wyśmiewanie jego przeczuć oraz bezduszna kalkulacja przy wspólnych decyzjach.'
     },
     f: {
-      conflict: 'Wypełnia mieszkanie gęstą ciszą żalu, od której sam zaczynasz czuć ciężar w gardle. Nie rzuca talerzami — patrzy tylko tak, jakby stawała się coraz bardziej niewidzialna z każdą minutą Twojej obojętności.',
-      sensory: 'Miękka tkanina po ciepłej kąpieli, światło ulicy odbite w ciemnym szkle okna, dłoń obejmująca ją pewnie w półśnie. Szuka mężczyzny delikatnego w dotyku, lecz twardego jak mur wobec hałasu z zewnątrz.',
-      disarm: 'Obejmij ją mocno zanim padną pytania, wysłuchaj jej bez poprawiania i zostaw jej drobny znak pamięci pisany własną ręką. Odrobina tajemnicy i uważności wraca jej całe światło.',
-      forbidden: 'Lodowaty ton, wyśmiewanie jej przeczuć i brutalny pragmatyzm bez serca.'
+      conflict: 'Wypełnia dom ciężkim, smutnym dystansem zamiast awantury. Nie rzuca ostrych słów — po prostu staje się coraz bardziej wycofana, kiedy wyczuje Twoją obojętność.',
+      sensory: 'Szuka mężczyzny czułego w dotyku, a jednocześnie stabilnego wobec chaosu z zewnątrz, przy którym nie musi obawiać się nagłego ataku.',
+      disarm: 'Obejmij ją zanim zasypiesz ją pytaniami, wysłuchaj bez poprawiania i zostaw drobny, osobisty znak pamięci. Czuła uważność natychmiast przywraca jej zaufanie.',
+      forbidden: 'Lodowaty ton głosu, lekceważenie jej emocji oraz twardy pragmatyzm pozbawiony empatii.'
     }
   };
 })();
@@ -209,44 +205,44 @@
 (function () {
   const MOON_COMBOS = {
     'Ogień-Ogień': {
-      title: 'Dwa Ognie Przy Jednym Kominku',
-      desc: 'Kiedy jest między Wami dobrze, temperatura w pokoju odbiera oddech. Kiedy jednak padnie o jedno słowo za daleko, salon natychmiast zmienia się w pojedynek dumy — każde chce postawić kropkę jako ostatnie. Prawdziwa siła zaczyna się tam, gdzie odróżniacie godność od zwykłego uporu.'
+      title: 'Dwa Wysokie Temperamenty w Jednym Punkcie',
+      desc: 'W dobrych dniach przyciągacie się z ogromną energią i entuzjazmem. Podczas kłótni oba ego walczą jednak o ostatnie słowo, co szybko zamienia drobną różnicę zdań w próbę sił. Trwałość zależy od umiejętności odpuszczenia dumy.'
     },
     'Ogień-Ziemia': {
-      title: 'Gorączka Pędu i Ciężar Kamienia',
-      desc: 'Jedno z Was chce już podpalać mosty i ruszać w noc bez mapy, drugie najpierw sprawdza zamki i podeszwy butów na deszcz. Gdy pośpiech wyzywa rozwagę od chłodu, a rozwaga nazywa odwagę głupotą, między dwojgiem cicho narasta mur.'
+      title: 'Impuls Działania kontra Spokojna Rachuba',
+      desc: 'Jedno z Was chce decydować tu i teraz, drugie najpierw liczy koszty, terminy i ryzyko. Gdy pośpiech nazywa ostrożność brakiem pasji, a ostrożność ocenia spontaniczność jako lekkomyślność, rośnie cicha frustracja.'
     },
     'Ogień-Powietrze': {
-      title: 'Wiatr Niosący Iskry Pod Surowy Dach',
-      desc: 'Słowo jednego podsyca zapał drugiego aż do świtu przy niedopitym winie. Rozmawiacie tak, jakby noc miała się nigdy nie skończyć. Bez kilku twardych, przyziemnych nawyków ten sam ogień potrafi jednak wypalić wszystko przed pierwszą zimą.'
+      title: 'Słowo Napędzające Działanie',
+      desc: 'Rozmawiacie żywo, nakręcacie swoje pomysły i rzadko nudzicie się we wspólnym towarzystwie. Bez kilku stałych nawyków w codziennym grafiku ten wysoki poziom bodźców łatwo prowadzi jednak do zmęczenia i rozproszenia.'
     },
     'Ogień-Woda': {
-      title: 'Żar Rzucony na Ciemną Rzekę',
-      desc: 'Jedno rani bezpośredniością wypowiedzianą w biegu, drugie tonie w gęstej ciszy bez wyjaśnień. Woda studzi zapał ciężkim milczeniem, a ogień parzy delikatność brakiem ostrożności. Magnetyzm między Wami jest ogromny, lecz wymaga uważności jak spacer po cienkim lodzie.'
+      title: 'Bezpośredni Wybuch kontra Wycofana Wrażliwość',
+      desc: 'Jedna strona rzuca ostre słowa w przypływie irytacji i po kwadransie zapomina o sporze, druga pamięta ten ton przez wiele dni i zamyka się emocjonalnie. Silna chemia wymaga tu dużej uważności na granice.'
     },
     'Ziemia-Ziemia': {
-      title: 'Dom z Twardego Granitu',
-      desc: 'Tu nikt nie pakuje walizek o północy po jednej gorszej rozmowie. Ramię przy ramieniu, cegła po cegle, z pamięcią o tym, ile kosztuje każde dane słowo. Waszym jedynym wrogiem bywa ciężka rutyna, w której obowiązek przykrywa zmysłowy dreszcz.'
+      title: 'Stabilny Sojusz Na Lata',
+      desc: 'Nikt nie grozi tu rozstaniem po jednej gorszej rozmowie. Działacie konsekwentnie i szanujecie dane słowo. Jedynym realnym zagrożeniem jest wpadnięcie w czysto logistyczną rutynę bez zmysłowej spontaniczności.'
     },
     'Ziemia-Powietrze': {
-      title: 'Mapa z Pergaminu i Podmuch z Północy',
-      desc: 'Ziemia pyta o koszty i daty, Powietrze dawno szybuje nad dachami następnej dzielnicy. Jeśli Ziemia nie zamknie okien przed przeciągiem myśli, a Powietrze nie usiądzie czasem przy solidnym stole, możecie rozmawiać w dwóch obcych językach.'
+      title: 'Konkret Faktu kontra Swoboda Myśli',
+      desc: 'Ziemia pyta o budżet i konkretny plan, Powietrze analizuje dziesięć nowych koncepcji naraz. Jeśli nie ustalicie wspólnego języka między planem a swobodą, zaczniecie mówić obok siebie.'
     },
     'Ziemia-Woda': {
-      title: 'Brzeg Dający Koryto Ciemnej Rzece',
-      desc: 'Jedno z najbardziej naturalnych spotkań na ziemi: kamień trzyma nurt przed wylaniem z brzegów, a miękka woda rozpuszcza twardą skorupę zmęczenia. Zaufanie osiada tu cicho jak pył na starych księgach, bez zbędnego krzyku.'
+      title: 'Oparcie Dające Spokój Emocjom',
+      desc: 'Jedna z najbardziej naturalnych konfiguracji bezpieczeństwa: konkret i stałość jednej strony koją wahania nastroju drugiej, a czułość ociepla codzienną dyscyplinę.'
     },
     'Powietrze-Powietrze': {
-      title: 'Dialog Dwojga Luster do Białego Świtu',
-      desc: 'Nocne rozmowy o książkach, spojrzenia krzyżujące się ponad hałasem stołu, zachwyt wspólnym dowcipem. Niebezpieczeństwo czai się wtedy, gdy błyskotliwy żart zaczyna zasłaniać ciężki strach albo łzę, której żadne z Was nie chce przyznać na głos.'
+      title: 'Stała Wymiana Myśli i Poczucie Humoru',
+      desc: 'Nie brakuje Wam tematów do rozmów nawet po wielu latach. Ryzyko pojawia się wtedy, gdy błyskotliwy żart zaczyna zastępować szczerą rozmowę o trudnych uczuciach i lękach.'
     },
     'Powietrze-Woda': {
-      title: 'Szkło Rozsądku i Głęboki Przypływ',
-      desc: 'Jedno próbuje złożyć ból w logiczny dowód na serwetce, drugie pragnie tylko mocnego objęcia w ciemnym pokoju bez wykładu. Jeśli nie nauczycie się słuchać tonu zamiast samych wyrazów, poczujecie chłód nawet na jednej poduszce.'
+      title: 'Analiza Logiczna kontra Potrzeba Bliskości',
+      desc: 'Jedna osoba próbuje rozwiązać napięcie racjonalnymi argumentami, podczas gdy druga potrzebuje najpierw zwykłego przytulenia i wysłuchania bez wykładu. Kluczem jest dopasowanie tempa reakcji.'
     },
     'Woda-Woda': {
-      title: 'Dwa Podziemne Nurty Bez Jednego Słowa',
-      desc: 'Czytacie ciężar dnia z samego sposobu, w jaki partner wiesza płaszcz w przedpokoju. Zanim padnie powitanie, już wiesz, co kryje się w jego milczeniu. Głęboka osmoza, która wymaga jednak pilnowania granicy między własnym bólem a cudzym smutkiem.'
+      title: 'Głęboka Osmoza Nastrojów',
+      desc: 'Wyczuwacie swoje zmęczenie i zmianę tonu wiadomości bez długich wyjaśnień. Taka wrażliwość daje niezwykłą intymność, o ile pilnujecie granicy między własnym stresem a nastrojem partnera.'
     }
   };
 
@@ -257,7 +253,7 @@
   }
 
   window.__GENERATE_JUNGIAN_DIAGNOSIS__ = function (d) {
-    const { sunA, moonA, sunB, moonB, syn } = d;
+    const { moonA, moonB, syn } = d;
     const chem = syn.chemistry;
     const sec = syn.security;
     const fric = syn.friction;
@@ -272,18 +268,18 @@
 
     const dynamics = MOON_COMBOS[getComboKey(elA, elB)] || MOON_COMBOS['Ziemia-Woda'];
 
-    let title = 'Ciche Przymierze czy Narkotyczny Magnes?';
-    let hook = 'To nie jest przypadkowy dotyk przy kawiarnianym stoliku. Wasze historie przyciągnęły się w ułamku sekundy jak dwa klucze z różnych zamków, obiecując rozpoznać to, co oboje chowaliście dotąd za zamkniętymi drzwiami.';
+    let title = 'Ciche Przymierze czy Intensywny Magnes?';
+    let hook = 'Ta relacja rzadko pozostaje obojętna. Wasze temperamenty uruchamiają w sobie nawzajem dokładnie te cechy, które na co dzień pozostają ukryte przed resztą otoczenia.';
 
     if (chem >= 80 && fric >= 55) {
-      title = 'Piękna Pułapka: Żar i Ostre Szkło';
-      hook = `Gęste napięcie ciał (${chem}%) ściera się tu z ostrą polaryzacją charakterów (${fric}%). Przyciągacie się w ułamku sekundy mimo zmęczenia i dumy — dokładnie to samo napięcie, które rozpala zmysły, w złej godzinie uruchamia bezlitosną obronę.`;
+      title = 'Wysokie Napięcie: Chemia i Polaryzacja';
+      hook = `Silne przyciąganie fizyczne (${chem}%) spotyka się tu z wyraźnym tarciem charakterów (${fric}%). Ta sama różnica, która budzi fascynację, w chwilach zmęczenia potrafi uruchomić ostrą reakcję obronną po obu stronach.`;
     } else if (sec >= 75) {
-      title = 'Cicha Twierdza: Lojalność Bez Warunków';
-      hook = `Rzadki spokój pod jedną skórą (${sec}%). Nie musicie grać w zgadywanie nastrojów ani sprawdzać zamków przed snem — ta więź buduje schronienie, w którym zdejmuje się zbroję bez strachu o cios w plecy.`;
+      title = 'Bezpieczna Baza: Zaufanie Bez Gier';
+      hook = `Wysoki indeks bezpieczeństwa emocjonalnego (${sec}%). Nie musicie zgadywać swoich intencji ani testować lojalności — ta więź sprzyja odpuszczeniu kontroli i budowaniu na długi dystans.`;
     } else if (chem >= 75) {
-      title = 'Zmysłowy Nurt: Alchemia Spojrzeń';
-      hook = `Żywy, gęsty rezonans ciał (${chem}%). Wystarczy brzmienie głosu w słuchawce albo krok w przedpokoju, by reszta pokoju przestała istnieć.`;
+      title = 'Silny Rezonans i Fizyczna Chemia';
+      hook = `Wyraźne napięcie erotyczne i uwaga skierowana wyłącznie na drugą osobę (${chem}%). Wystarczy krótka wymiana zdań, by reszta tła zeszła na dalszy plan.`;
     }
 
     return {
