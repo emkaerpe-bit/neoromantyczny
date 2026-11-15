@@ -1220,6 +1220,24 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
           cityB: sp.get('cB') || def.cityB
         };
       }
+      const savedRaw = localStorage.getItem(STORAGE_KEY);
+      if (savedRaw) {
+        const saved = JSON.parse(savedRaw);
+        if (saved && saved.dateA && saved.dateB) {
+          return {
+            nameA: saved.nameA || def.nameA,
+            genderA: saved.genderA === 'm' ? 'm' : 'f',
+            dateA: saved.dateA,
+            timeA: saved.timeA || def.timeA,
+            cityA: saved.cityA || def.cityA,
+            nameB: saved.nameB || def.nameB,
+            genderB: saved.genderB === 'f' ? 'f' : 'm',
+            dateB: saved.dateB,
+            timeB: saved.timeB || def.timeB,
+            cityB: saved.cityB || def.cityB
+          };
+        }
+      }
     } catch (e) {}
     return def;
   }
@@ -1378,7 +1396,12 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
     });
 
     if (init.dateA && init.dateB) {
-      computeAndRender(false);
+      let shouldAutoScroll = false;
+      try {
+        const sp = new URLSearchParams(window.location.search);
+        shouldAutoScroll = sp.get('autoscroll') === '1' || (sp.has('dA') && sp.has('dB') && sessionStorage.getItem('neo_just_unlocked') !== 'synastria');
+      } catch (e) {}
+      computeAndRender(shouldAutoScroll);
     }
   }
 

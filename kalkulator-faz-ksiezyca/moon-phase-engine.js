@@ -457,18 +457,53 @@
       <p><strong>Księżyc w znaku ${moonB.moonSign}:</strong> ${signDataB.need || ''}</p>
     `;
 
-    // Dynamiczne przekazanie danych pary wprost do Synastrii
+    // Dynamiczne przekazanie danych pary wprost do Synastrii (URL + localStorage)
+    try {
+      const synState = {
+        nameA: nameA !== 'Osoba 1' ? nameA : '',
+        genderA: 'f',
+        dateA: dateA,
+        timeA: timeA || '',
+        cityA: '',
+        nameB: nameB !== 'Osoba 2' ? nameB : '',
+        genderB: 'm',
+        dateB: dateB,
+        timeB: timeB || '',
+        cityB: ''
+      };
+      localStorage.setItem('neoromantyczny_synastry_v4', JSON.stringify(synState));
+    } catch (e) {}
+
+    const q = new URLSearchParams();
+    if (nameA && nameA !== 'Osoba 1') q.set('nA', nameA);
+    if (dateA) q.set('dA', dateA);
+    if (timeA) q.set('tA', timeA);
+    if (nameB && nameB !== 'Osoba 2') q.set('nB', nameB);
+    if (dateB) q.set('dB', dateB);
+    if (timeB) q.set('tB', timeB);
+    q.set('autoscroll', '1');
+    const qs = q.toString();
+    const synUrl = qs ? `/kalkulator-synastrii/?${qs}` : `/kalkulator-synastrii/`;
+
     const synLink = document.getElementById('synastryCrossLink');
-    if (synLink) {
-      const q = new URLSearchParams();
-      if (nameA && nameA !== 'Osoba 1') q.set('nA', nameA);
-      if (dateA) q.set('dA', dateA);
-      if (timeA) q.set('tA', timeA);
-      if (nameB && nameB !== 'Osoba 2') q.set('nB', nameB);
-      if (dateB) q.set('dB', dateB);
-      if (timeB) q.set('tB', timeB);
-      const qs = q.toString();
-      synLink.href = qs ? `/kalkulator-synastrii/?${qs}` : `/kalkulator-synastrii/`;
+    if (synLink) synLink.href = synUrl;
+
+    const synHeroLink = document.getElementById('synastryHeroCrossLink');
+    if (synHeroLink) synHeroLink.href = synUrl;
+
+    const synHeroText = document.getElementById('synastryHeroCrossText');
+    if (synHeroText) {
+      synHeroText.textContent = `✦ Przelicz Pełną Synastrię dla ${nameA} & ${nameB} (Wenus, Mars, Saturn)`;
+    }
+
+    const synCtaTitle = document.getElementById('synastryCtaTitle');
+    if (synCtaTitle) {
+      synCtaTitle.textContent = `Księżyce ${nameA} (${moonA.moonSign}) i ${nameB} (${moonB.moonSign}) to dopiero połowa obrazu`;
+    }
+
+    const synCtaText = document.getElementById('synastryCtaText');
+    if (synCtaText) {
+      synCtaText.textContent = `Wasze nocne tarcze dają rezonans ${metrics.resonanceScore}%, ale o tym, czy między ${nameA} a ${nameB} wygra trwałe przywiązanie, czy bolesny kryzys ego, decydują ukryte aspekty Wenus z Marsem, ciężar Saturna i Lilith. Odbierz gotowy kosmogram porównawczy oraz dostęp do 7-rozdziałowego Raportu Synastrii (39 PLN) — Wasze daty są już przeniesione.`;
     }
 
     const resWrap = document.getElementById('moonResults');

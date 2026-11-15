@@ -42,16 +42,6 @@
       successSub: 'Wszystkie strefy relokacji są aktywne na mapie.',
       unlockKey: 'neo_acg_unlocked'
     },
-    'numerologia': {
-      tag: 'PORTRET NUMEROLOGICZNY',
-      title: 'Kompletny Portret Liczb',
-      sub: 'Droga Życia, Wibracja Urodzeniowa i Osobiste Cykle.',
-      price: '47,00 PLN',
-      btn: 'Zapłać 47,00 PLN i Odbierz Portret &rarr;',
-      successHeading: 'Portret został odblokowany!',
-      successSub: 'Twój pełny profil numerologiczny jest już dostępny.',
-      unlockKey: 'neo_num_unlocked'
-    },
     'dyspozytorzy': {
       tag: 'ARCHITEKTURA PODŚWIADOMOŚCI',
       title: 'Raport Władcy Horoskopu',
