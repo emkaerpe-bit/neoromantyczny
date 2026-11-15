@@ -1349,8 +1349,12 @@
 
     if (paywallBtn) {
       paywallBtn.addEventListener('click', () => {
-        if (window.NEO_SYNASTRY_CHECKOUT_URL) {
-          window.location.href = window.NEO_SYNASTRY_CHECKOUT_URL;
+        closeLossModal();
+        if (typeof window.openLuxeCheckout === 'function') {
+          window.openLuxeCheckout('synastria', () => {
+            try { localStorage.setItem('neo_synastry_unlocked', 'true'); } catch (e) {}
+            performUnlock(false);
+          });
           return;
         }
         openStripeCheckout();
@@ -1462,7 +1466,14 @@
           const { error, paymentIntent } = await stripeInstance.confirmPayment({
             elements: stripeElementsInstance,
             confirmParams: {
-              return_url: window.location.href.split('?')[0] + '?paid=true'
+              return_url: (() => {
+                const u = new URL(window.location.href);
+                u.searchParams.delete('payment_intent');
+                u.searchParams.delete('payment_intent_client_secret');
+                u.searchParams.delete('redirect_status');
+                u.searchParams.set('luxe_product', 'synastria');
+                return u.toString();
+              })()
             },
             redirect: 'if_required'
           });
@@ -1486,7 +1497,10 @@
 
     if (typeof window !== 'undefined') {
       try {
-        if (localStorage.getItem('neo_synastry_unlocked') === 'true') {
+        const sp = new URLSearchParams(window.location.search);
+        if (sp.get('reset') === '1' || sp.get('lock') === '1') {
+          localStorage.removeItem('neo_synastry_unlocked');
+        } else if (localStorage.getItem('neo_synastry_unlocked') === 'true') {
           performUnlock(true);
           if (sessionStorage.getItem('neo_just_unlocked') === 'synastria') {
             sessionStorage.removeItem('neo_just_unlocked');
@@ -1496,12 +1510,6 @@
           }
         }
       } catch (e) {}
-      if (window.location && window.location.search) {
-        if (window.location.search.includes('paid=true')) {
-          try { localStorage.setItem('neo_synastry_unlocked', 'true'); } catch (e) {}
-          performUnlock(true);
-        }
-      }
     }
 
     const modal = document.getElementById('syn-loss-modal');
