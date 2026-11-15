@@ -160,6 +160,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const cityStr = document.getElementById('disp-city').value || '';
     if (!dateStr) return;
 
+    try {
+      localStorage.setItem('neo_saturn_last_input', JSON.stringify({ date: dateStr, time: timeStr, city: cityStr }));
+    } catch (err) {}
+
     // 1. Obliczenia planetarne
     const currentChart = window.__DISPOSITOR_ENGINE__.calcAllPlanets(dateStr, timeStr, cityStr);
     const satPlanet = currentChart.planets.find(p => p.key === 'saturn');
@@ -328,4 +332,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
+
+  try {
+    const savedSat = localStorage.getItem('neo_saturn_last_input');
+    if (savedSat) {
+      const parsed = JSON.parse(savedSat);
+      if (parsed && parsed.date) {
+        const dateEl = document.getElementById('disp-date');
+        const timeEl = document.getElementById('disp-time');
+        const cityEl = document.getElementById('disp-city');
+        if (dateEl) dateEl.value = parsed.date;
+        if (timeEl && parsed.time) timeEl.value = parsed.time;
+        if (cityEl && parsed.city) cityEl.value = parsed.city;
+        setTimeout(() => {
+          form.dispatchEvent(new Event('submit'));
+          try {
+            if (sessionStorage.getItem('neo_just_unlocked') === 'saturn') {
+              sessionStorage.removeItem('neo_just_unlocked');
+              setTimeout(() => {
+                const proto = document.getElementById('saturnProtocolSection') || resultsContainer;
+                if (proto) proto.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 250);
+            }
+          } catch (err) {}
+        }, 120);
+      }
+    }
+  } catch (err) {}
 });

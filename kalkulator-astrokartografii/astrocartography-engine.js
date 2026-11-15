@@ -1046,6 +1046,14 @@
       }
       if (!selectedBirthCity) selectedBirthCity = allBirthPool[0];
       try {
+        localStorage.setItem('neo_acg_last_input', JSON.stringify({
+          date: d,
+          time: t,
+          birthText: birthInput ? birthInput.value : '',
+          cityName: selectedBirthCity ? selectedBirthCity.name : ''
+        }));
+      } catch (err) {}
+      try {
         runCalculation(d, t);
       } catch (err) {
         console.error('Błąd obliczeń astrokartografii:', err);
@@ -1063,9 +1071,35 @@
       localStorage.setItem('neo_acg_unlocked', '1');
     }
 
-    if (localStorage.getItem('neo_acg_unlocked') === '1') {
+    const acgUnlocked = localStorage.getItem('neo_acg_unlocked');
+    if (acgUnlocked === '1' || acgUnlocked === 'true') {
       paywallWrap.classList.add('is-unlocked');
     }
+    try {
+      const savedAcg = localStorage.getItem('neo_acg_last_input');
+      if (savedAcg) {
+        const parsed = JSON.parse(savedAcg);
+        if (parsed && parsed.date) {
+          const dateEl = document.getElementById('acgDate');
+          const timeEl = document.getElementById('acgTime');
+          if (dateEl) dateEl.value = parsed.date;
+          if (timeEl && parsed.time) timeEl.value = parsed.time;
+          if (birthInput && parsed.birthText) birthInput.value = parsed.birthText;
+          if (parsed.cityName && Array.isArray(allBirthPool)) {
+            const match = allBirthPool.find(c => c.name === parsed.cityName);
+            if (match) selectedBirthCity = match;
+          }
+          if (!selectedBirthCity && Array.isArray(allBirthPool)) selectedBirthCity = allBirthPool[0];
+          runCalculation(parsed.date, parsed.time || '12:00');
+          if (sessionStorage.getItem('neo_just_unlocked') === 'astrokartografia') {
+            sessionStorage.removeItem('neo_just_unlocked');
+            setTimeout(() => {
+              if (paywallWrap) paywallWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 250);
+          }
+        }
+      }
+    } catch (err) {}
     if (unlockBtn) unlockBtn.addEventListener('click', () => {
       if (typeof window.openLuxeCheckout === 'function') {
         window.openLuxeCheckout('astrokartografia', unlockAtlas);
