@@ -60,7 +60,7 @@
       successHeading: 'Raport został odblokowany!',
       successSub: 'Analiza psychologii głębi i władcy horoskopu jest gotowa.',
       unlockKey: 'neo_dispositor_unlocked',
-      directUrl: 'https://buy.stripe.com/fZufZacz78HZgsK6iucwg01'
+      directUrl: 'https://buy.stripe.com/bJeeV67eN0bt7We4amcwg04'
     },
     'saturn': {
       tag: 'THE CHRONOS PROTOCOL • ZAMKNIĘTY RAPORT TRANSFORMACJI',
