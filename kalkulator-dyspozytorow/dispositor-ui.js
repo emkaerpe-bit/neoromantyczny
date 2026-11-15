@@ -4,16 +4,16 @@
  */
 (function () {
   const RULER_INTERPRETATIONS = {
-    sun: 'Nie znosisz cudzego cienia. Wchodzisz do pokoju i mimowolnie mierzysz temperaturę spojrzeń — nie z próżności, lecz z głodu suwerenności. Twoje życie to bezkompromisowe wykuwanie tożsamości; każda próba wciśnięcia Cię w cudzy szablon kończy się cichym buntem lub powolnym wypaleniem.',
-    moon: 'Żyjesz pod dyktando podskórnych prądów. Wyczuwasz napięcie w milczeniu partnera, zanim on sam je nazwie. Twoją siłą i przekleństwem jest pamięć emocjonalna — dom i intymność to dla Ciebie twierdza, a zdrada zaufania zamraża relację bezpowrotnie.',
-    mercury: 'Twój umysł nigdy nie śpi. Łączysz fakty szybciej, niż otoczenie zdąży sformułować pytanie. Słowo jest dla Ciebie skalpelem i tarczą, a największym lękiem — nuda i uwięzienie w powtarzalnej, pozbawionej intelektualnego nerwu codzienności.',
-    venus: 'Instynktowny zmysł proporcji, stylu i relacyjnego taktu. Nie tolerujesz wulgarności, chaosu ani emocjonalnego niechlujstwa. Twój los rozstrzyga się w jakości więzi — potrafisz stworzyć oazę spokoju, lecz gdy ktoś depcze Twoje poczucie godności, odchodzisz chłodno, bez krzyku.',
-    mars: 'Czysta wola działania i awersja do bezradności. Kiedy inni tkwią w paraliżu analitycznym, Ty już podejmujesz decyzję i płacisz za nią własną krwią. Buntujesz się przeciwko bezsilności, a Twój instynkt walki potrafi ocalić sytuacje, które inni uznali za stracone.',
-    jupiter: 'Horyzont to Twoja jedyna granica. Dusisz się w małych formatach, drobiazgowych kłótniach i jałowej asekuracji. Nosisz w sobie nieuleczalną wiarę w sens i rozwój, choć bywa, że obietnice Twojej wyobraźni przerastają ziemskie realia.',
-    saturn: 'Ciężar odpowiedzialności, który dźwigasz z cichą godnością. W Twoim życiu nic nie przyszło za darmo — wiesz, ile kosztuje każda pomyłka i nie wierzysz w drogi na skróty. Z wiekiem zyskujesz magnetyczny autorytet kogoś, kto przetrwał własną zimę.',
-    uranus: 'Wrodzony wstręt do konformizmu. Zrywasz umowy społeczne z chirurgiczną precyzją, jeśli tylko poczujesz zapach klatki. Twoja samotność bywa ceną za suwerenność, ale to właśnie Twoja bezkompromisowa inność wyznacza nowe kierunki.',
-    neptune: 'Zanurzenie w świecie niewidzialnym. Chłoniesz emocje innych jak gąbka, często gubiąc granicę między własnym bólem a cierpieniem świata. Twoją siłą jest intuicja sięgająca poza logikę; Twoim wyzwaniem — nie uciekać w iluzje, gdy rzeczywistość staje się zbyt szorstka.',
-    pluto: 'Radykalna odmowa powierzchowności. Widzisz to, co ludzie desperacko próbują ukryć za uśmiechem i uprzejmością. Żyjesz w cyklach całkowitej destrukcji i odrodzenia — w kryzysie nie pękasz, bo w ciemności czujesz się paradoksalnie u siebie.'
+    sun: 'Nie znosisz cudzego cienia. Wchodzisz do pokoju w mokrym od deszczu płaszczu i od progu mierzysz temperaturę spojrzeń — nie z próżności, lecz z głodu własnego miejsca przy stole. Każda próba wciśnięcia Cię w cudzy krój kończy się cichym buntem albo powolnym stygnięciem krwi.',
+    moon: 'Żyjesz według podskórnych pływów. Wyłapujesz chłód w milczeniu bliskiej osoby, zanim porcelana zdąży stygnąć na stole. Twoją siłą i przekleństwem jest bezbłędna pamięć serca — intymność bywa twierdzą z ciężkich zasłon, a jedna zdrada potrafi zatrzasnąć ją bez powrotu.',
+    mercury: 'Twój umysł nie zna godziny policyjnej. Składasz rozrzucone fakty szybciej, niż inni dopijają pierwsze espresso. Zdanie jest dla Ciebie stalówką i skalpelem zarazem. Dusi Cię jałowa rozmowa o pogodzie i dzień ułożony pod czyjeś ziewanie.',
+    venus: 'Nosisz w sobie bezbłędny zmysł miary, ciężaru tkaniny i cichego taktu. Odrzuca Cię hałas, pośpiech oraz emocjonalne niechlujstwo. Gdy ktoś depcze Twój próg godności, nie urządzasz scen przy otwartym oknie — po prostu odchodzisz nocnym pociągiem, bez jednego krzyku.',
+    mars: 'Czysta iskra i wrogość wobec bezradnego rozkładania rąk. Kiedy inni wciąż ważą argumenty nad zimną herbatą, Ty już przekręcasz klucz w zamku i bierzesz konsekwencje na własną skórę. W kryzysie odzyskujesz ostrość wzroku, kiedy reszta chowa głowę w kołnierz.',
+    jupiter: 'Horyzont wyznacza Twoją jedyną miarę. Dusisz się w niskich pokojach, w kłótniach o drobiazgi i w bezpiecznej, letniej asekuracji. Masz w sobie nieuleczalny głód sensu, choć bywa, że obietnice Twojej wyobraźni uciekają o trzy mile przed twardym brukiem.',
+    saturn: 'Ciężar odpowiedzialności, który dźwigasz w ciszy, jakbyś niósł ołowianą walizkę po stromych schodach. Nic w Twoim życiorysie nie leżało za darmo na ladzie. Wiesz, ile kosztuje każde słowo i nie kupujesz dróg na skróty — z czasem zyskujesz autorytet kogoś, kto przeżył własną zimę.',
+    uranus: 'Wrodzony wstręt do stada i letnich kompromisów. Rozcinasz niewygodne układy jednym czystym ruchem nożyc, gdy tylko poczujesz zapach klatki. Samotność bywa słoną ceną za niezależność, lecz bez niej tracisz powietrze w płucach.',
+    neptune: 'Chodzisz po cienkiej granicy między jawą a podziemną rzeką przeczuć. Chłoniesz cudzy ciężar jak ciemny aksamit, nieraz myląc obce łzy z własnym losem. Twoją siłą bywa wzrok sięgający za zasłonę faktów; największą pułapką — ucieczka w mgłę przed szorstkim dniem.',
+    pluto: 'Bezwzględna odmowa gry na pół gwizdka. Widzisz rysę na lustrze i drżenie palców pod cudzym uśmiechem, zanim padnie pierwsze powitanie. Przechodzisz przez kryzysy jak przez ogień — tam, gdzie inni tracą grunt, Ty dziwnie dobrze widzisz w ciemności.'
   };
 
   let currentChart = null;
@@ -332,7 +332,7 @@
             ${retroItemsHtml}
           </div>
           <p style="font-size:0.88rem;line-height:1.65;color:rgba(250,248,245,0.8);margin:0;">
-            Główna instancja decyzyjna Twojego horoskopu (${governingRetroPlanets.map(p => p.name).join(', ')}) porusza się w ruchu wstecznym. W psychologii głębi C.G. Junga oznacza to, że Twoja energia życiowa nie ulega impulsom zewnętrznym ani powierzchownym modom. Każda decyzja podlega głębokiej wewnętrznej destylacji i weryfikacji przez sumienie, zanim zostanie zamanifestowana w świecie.
+            Główna instancja decyzyjna Twojego horoskopu (${governingRetroPlanets.map(p => p.name).join(', ')}) cofa się po niebie jak ktoś, kto przed wyjściem z domu jeszcze raz ogląda pokój w lustrze. Twoja siła życiowa nie ulega tłumowi ani chwilowym modom na ulicy. Każda decyzja dojrzewa w ciszy za zamkniętymi okiennicami, zanim w ogóle nabierze kształtu przed światem.
           </p>
         </div>
       `;
@@ -592,7 +592,7 @@
             Chcesz zrozumieć, dlaczego wciąż sabotujesz własne decyzje?
           </h3>
           <p style="font-size:0.92rem;line-height:1.75;color:rgba(250,248,245,0.85);max-width:620px;margin:0 auto 1.5rem;">
-            Drzewo dyspozytorów obnaża to, czego nie widać na powierzchni: nieświadome sojusze planet, uwikłania emocjonalne i punkty, w których Twoja wola traci ster. Umów się na intymną analizę psychologiczną swojego kosmogramu z autorem Neoromantyzmu.
+            Drzewo dyspozytorów obnaża to, czego nie widać za dnia: podskórne sojusze planet, ukryte uwikłania i miejsca, w których Twoja wola cicho oddaje ster. Umów się na intymną analizę swojego kosmogramu z autorem Neoromantyzmu.
           </p>
           <a href="mailto:kontakt@neoromantyczny.pl?subject=Konsultacja%20-%20Analiza%20Drzewa%20Dyspozytorow" class="disp-btn disp-btn-consultation" style="text-decoration:none;display:inline-block;padding:0.95rem 1.5rem;color:#0D0D12;max-width:100%;box-sizing:border-box;word-break:break-word;">
             Zarezerwuj konsultację: kontakt@neoromantyczny.pl

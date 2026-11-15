@@ -122,184 +122,184 @@
 
   const PAIR_TEXTS = {
     'sun-sun': {
-      h: 'Zgodność rdzeni tożsamości. Wasze ambicje, styl życia i potrzeba autentyczności wzajemnie się napędzają bez walki o terytorium.',
-      c: 'Konfrontacja dwóch silnych autonomii. Relacja wymaga wyraźnego podziału sfer wpływu, by uniknąć cichej rywalizacji o dominację.'
+      h: 'Dwa silne ogniska przy jednym stole bez walki o krzesło. Wasza duma nawzajem się podsyca, zamiast wygaszać światło w pokoju.',
+      c: 'Pojedynek dwóch królów pod jednym dachem. Bez jasnego podziału pól prędzej czy później jedno zacznie przygaszać drugie spojrzeniem.'
     },
     'moon-sun': {
-      h: 'Klasyczny aspekt małżeński (Yin–Yang). Świadoma wola jednej strony naturalnie chroni i zasila emocjonalne bezpieczeństwo drugiej.',
-      c: 'Zderzenie życiowego kierunku z podświadomym nawykiem. Wymaga oddzielenia dumy ego od dziecięcej potrzeby bycia zaopiekowanym.'
+      h: 'Zgrany krok dnia i nocy: pewna ręka jednego chroni miękkie wnętrze drugiego zanim padnie choćby jedno słowo.',
+      c: 'Zderzenie twardej dumy z głodem opieki — gdy jedna strona gra niedostępność, druga zamyka okiennice ze wstydu.'
     },
     'mercury-sun': {
-      h: 'Sojusz woli i intelektu. Rozmowy stają się kuźnią wspólnych planów, a głos partnera wzmacnia poczucie własnej sprawczości.',
-      c: 'Różnica między deklaracją a intencją — słowa mogą być odbierane jako autorytarne lub uderzające w osobistą dumę.'
+      h: 'Rozmowa płynie tak lekko, jakbyście kończyli myśli z jednej kartki. Słowo drugiego rozjaśnia to, co rano wydawało się mgłą.',
+      c: 'Walka o to, czyje zdanie zamyka spór — jedno czuje się pouczane, drugie słucha własnego głosu jak sędziego.'
     },
     'sun-venus': {
-      h: 'Złoty promień czułości i zachwytu. Obecność partnera zmiękcza pancerz obronny, wnosząc w codzienność piękno, romans i aprobatę.',
-      c: 'Rozdźwięk między stylem kochania a potrzebą uznania; ryzyko przedkładania pozornej harmonii nad trudną prawdę.'
+      h: 'Ciepłe światło przy którym zrzuca się mokry płaszcz z ulicy. W tym towarzystwie najzwyklejszy wieczór smakuje jak mały luksus.',
+      c: 'Pokusa grania w piękną harmonię kosztem przemilczanej zadry, dopóki kielich nie przeleje się przy błahej uwadze.'
     },
     'mars-sun': {
-      h: 'Potężny generator witalności, odwagi i pasji. Działacie na siebie jak katalizator — od sypialni po wspólne zdobywanie celów.',
-      c: 'Wysokie napięcie woli i temperamentu. Iskra pożądania łatwo przechodzi w spór o to, kto nadaje ton i tempo relacji.'
+      h: 'Żywy prąd pod skórą: przy sobie nie zasypiacie ani w sypialni, ani przed trudną decyzją o świcie.',
+      c: 'Iskra rzucona na suchą słomę — namiętność łatwo przechodzi tu w spór o to, kto ma klucz do drzwi.'
     },
     'jupiter-sun': {
-      h: 'Królewski aspekt ekspansji i hojności ducha. Przy tym partnerze rośnie wiara we własne możliwości, optymizm i rozmach życiowy.',
-      c: 'Tendencja do składania obietnic ponad miarę lub wspólnego przesadzania z ryzykiem kosztem przyziemnego realizmu.'
+      h: 'Powiew wolności ponad dachami. Przy sobie rośnie odwaga, śmiech i wiara, że jutro pomieści Wasze większe plany.',
+      c: 'Hojne obietnice rzucane ponad winem, po których o siódmej rano brakuje chleba i twardego planu.'
     },
     'saturn-sun': {
-      h: 'Architektura dojrzałej odpowiedzialności. Poczucie, że na partnerze można oprzeć całe życie, budujące respekt i długofalowe imperium.',
-      c: 'Dynamika mistrza i cenzora — nieuświadomiony lęk przed oceną może chłodzić spontaniczną radość i ekspresję.'
+      h: 'Ciężki fundament pod stopami — czujesz przy tej osobie, że słowo nie pęknie przy pierwszym listopadowym przymrozku.',
+      c: 'Cień surowego sędziego za biurkiem: lęk przed chłodną oceną potrafi zgasić każdą spontaniczną czułość w połowie zdania.'
     },
     'node-sun': {
-      h: 'Światło na ścieżce przeznaczenia. Jedna osoba staje się dla drugiej kluczowym przewodnikiem ku jej najwyższemu potencjałowi.',
-      c: 'Karmiczny imperatyw zmiany — spotkanie wyrywa ze strefy komfortu i wymusza przedefiniowanie życiowej tożsamości.'
+      h: 'Spotkanie z tym ciężarem przeznaczenia, po którym nie wraca się już na starą ulicę takim samym krokiem.',
+      c: 'Przymus wyjścia ze znanych kolein — obecność tej osoby zdziera z Ciebie wygodne wymówki bez pytania o zgodę.'
     },
     'moon-moon': {
-      h: 'Empatyczna osmoza i wspólny rytm domowy. Wasze układy nerwowe wyciszają się w identycznych warunkach intymności.',
-      c: 'Odmienne kody regulacji emocji — to, co jedną stronę koi (np. cisza lub rozmowa), drugą może wprowadzać w niepokój.'
+      h: 'Ten sam rytm nocy i ciszy w mieszkaniu. Oboje czujecie bez tłumaczeń, kiedy zgasić światło, a kiedy podać gorącą herbatę.',
+      c: 'Dwa odmienne kody strachu — to, co jedno chce zagłuszyć rozmową do rana, drugie dusi pod zamkniętą poduszką.'
     },
     'mercury-moon': {
-      h: 'Umysł tłumaczący niewypowiedziane uczucia. Potraficie nazwać lęki i pragnienia partnera bez oceniania ich logiką.',
-      c: 'Konflikt racjonalizacji z wrażliwością: próba logicznego „naprawienia” nastroju partnera bywa odbierana jako brak empatii.'
+      h: 'Rzadki dar nazwania cudzej tęsknoty zanim rozmówca sam pojmie, skąd bierze się chłód w jego głosie.',
+      c: 'Rozbieranie łez na suche argumenty jak zegarka na stole — logika rani tu miękkie serce swoją bezradną precyzją.'
     },
     'moon-venus': {
-      h: 'Kwintesencja czułości, domowego luksusu i zmysłowego ukojenia. Jedno z najsłodszych połączeń dających poczucie bycia kochanym.',
-      c: 'Niezgodność języków troski — głód emocjonalny ściera się z potrzebą estetycznego dystansu lub nadmiernym dogadzaniem.'
+      h: 'Słodycz i spokój jak zapach czystej pościeli w deszczowy wieczór. Dom przy tej osobie naprawdę leczy chłód dnia.',
+      c: 'Dwa inne języki czułości: jedno potrzebuje ciasnego uścisku w kuchni, drugie elegancji, dystansu i ładnej oprawy.'
     },
     'mars-moon': {
-      h: 'Surowy, instynktowny magnetyzm. Głęboka emocjonalność spotyka bezkompromisową ochronę i gorący impuls fizyczny.',
-      c: 'Wysoka reaktywność emocjonalna: niecierpliwość lub ostry ton Marsa może ranić kruchą, podświadomą sferę Księżyca.'
+      h: 'Gęsty instynkt ochronny i nagłe pragnienie pod skórą. Wiesz, że w środku nocy nie zostaniesz z zagrożeniem sam.',
+      c: 'Ostre słowo rzucone w nerwach trafia prosto w odsłonięte żebro, zanim ktokolwiek zdąży zdjąć płaszcz.'
     },
     'jupiter-moon': {
-      h: 'Emocjonalny azyl i wielkoduszność. Wzajemne wybaczanie, ciepło rodzinne i poczucie wewnętrznego bezpieczeństwa przy partnerze.',
-      c: 'Zalew emocjonalny lub wyolbrzymianie nastrojów; obietnice opieki mogą rozmywać się w braku codziennej konsekwencji.'
+      h: 'Szerokie ramiona i pamięć wolna od małostkowej zemsty. Przy sobie oddychacie pełną piersią jak na ganku nad morzem.',
+      c: 'Nadmiar nastrojów zalewających cały pokój — wielkie gesty opieki czasem rozmywają się przed końcem tygodnia.'
     },
     'moon-saturn': {
-      h: 'Niezłomna kotwica w kryzysie. Kiedy świat wokół drży, ta więź zapewnia trzeźwość, wierność i ochronny mur bezpieczeństwa.',
-      c: 'Emocjonalna powściągliwość i chłód: potrzeba czułości może odbijać się od muru obowiązku, dyscypliny lub milczenia.'
+      h: 'Niezłomna kotwica w złej pogodzie. Kiedy inni gubią głowy w panice, ta więź trzyma trzeźwość i zamyka drzwi przed wiatrem.',
+      c: 'Chłód obowiązku przedłożony nad czułą dłoń — pragnienie bliskości odbija się nieraz od muru milczenia.'
     },
     'moon-node': {
-      h: 'Karmiczne rozpoznanie dusz. Natychmiastowe poczucie przynależności, jakbyście kontynuowali więź sprzed obecnego wcielenia.',
-      c: 'Intensywny dług emocjonalny zmuszający oboje do porzucenia dawnych rodzinnych schematów i mechanizmów obronnych.'
+      h: 'Dziwne, nagłe rozpoznanie przy pierwszym uścisku dłoni, jakbyście kiedyś pili razem wino w innym życiu.',
+      c: 'Gęsty supeł dawnych przywiązań zmuszający oboje do porzucenia starych rodzinnych ról bez znieczulenia.'
     },
     'mercury-mercury': {
-      h: 'Intelektualne lustro. Rozumiecie podteksty, ironię, architekturę myśli i poczucie humoru bez konieczności kończenia zdań.',
-      c: 'Odmienny rytm przetwarzania informacji — w stresie łatwo o spór o definicje, słowa i nadinterpretację tonu głosu.'
+      h: 'Te same aluzje w locie, niedokończone półuśmiechy i nocne rozmowy o książkach bez patrzenia na zegarek.',
+      c: 'W kłótni rzucacie w siebie precyzyjne szpile — oboje słuchacie bardziej brzmienia zdań niż bólu pod nimi.'
     },
     'mercury-venus': {
-      h: 'Poetycka czułość w komunikacji. Słowa mają tu moc afrodyzjaku i balsamu — łatwość mówienia o uczuciach, sztuce i pięknie.',
-      c: 'Rozbieżność między deklaracją słowną a realnym gestem miłosnym; wygładzanie trudnych tematów z lęku przed utratą harmonii.'
+      h: 'Słowa miękkie jak aksamit i listy, które chowasz w szufladzie na lata. Rozmowa sama w sobie staje się pieszczotą.',
+      c: 'Owijanie trudnej prawdy w zbyt ładny papier, żeby tylko nie popsuć klimatu przy stoliku.'
     },
     'mars-mercury': {
-      h: 'Błyskawiczny refleks intelektualny i odwaga mówienia wprost. Dyskusje są gorące, inspirujące i natychmiast przekuwane w czyn.',
-      c: 'Ostrze sarkazmu i werbalny pojedynek — w gniewie słowa stają się pociskami, które trudno cofnąć po opadnięciu emocji.'
+      h: 'Szybki dowcip jak pojedynek na szpady, po którym myśl od razu zmienia się we wspólny krok za drzwi.',
+      c: 'Ostra ironia w gniewie potrafi ciąć głębiej niż krzyk — trudno potem cofnąć zdanie wypowiedziane z uśmiechem.'
     },
     'jupiter-mercury': {
-      h: 'Szeroki horyzont myślowy, filozoficzne nocne rozmowy i wzajemne inspirowanie się do nauki, podróży oraz wielkich wizji.',
-      c: 'Zderzenie wielkiej teorii z detalami codzienności — ryzyko moralizowania lub gubienia faktów w nadmiarze dygresji.'
+      h: 'Nocne dyskusje rozpychające ściany pokoju aż pod odległe granice. Uczycie się nawzajem patrzeć szerzej.',
+      c: 'Przeskakiwanie faktów na rzecz wielkich tez — spór o rację zamiast zwykłego słuchania.'
     },
     'mercury-saturn': {
-      h: 'Architektura dojrzałego dialogu. Słowa ważą tu tyle co podpisany kontrakt: trzeźwy osąd, mądre doradztwo i intelektualny szacunek.',
-      c: 'Ciężar niewypowiedzianej krytyki — rygor logiczny może blokować spontaniczną wymianę myśli lub wywoływać obronne milczenie.'
+      h: 'Słowa mają ciężar złotej monety na ladzie: zero plotek, za to trzeźwy osąd i zaufanie do umowy na całe lata.',
+      c: 'Surowy ton poprawiający każde Twoje potknięcie chłodzi zapał i zamyka usta na klucz.'
     },
     'mercury-node': {
-      h: 'Rozmowy zmieniające bieg życia. Jedna myśl lub rada partnera potrafi przestawić zwrotnicę na właściwy tor przeznaczenia.',
-      c: 'Niepokojące przebudzenie mentalne — słowa partnera kwestionują stare dogmaty i zmuszają do nowego sposobu myślenia.'
+      h: 'Jedno zdanie tej osoby potrafi przestawić zwrotnicę całego Twojego roku jak cichy klucz w ciemnym korytarzu.',
+      c: 'Słowa, przed którymi najpierw się bronisz, bo burzą wygodną opowieść o własnym życiu.'
     },
     'venus-venus': {
-      h: 'Wspólny kod estetyczny, zmysłowy i towarzyski. Kochacie ten sam rodzaj piękna, dotyku, prezentów i celebrowania chwili.',
-      c: 'Odmienne definicje luksusu i okazywania czułości; co dla jednej strony jest dowodem miłości, dla drugiej bywa zbyt powierzchowne.'
+      h: 'Zgodność smaku, dotyku i ciężaru ciszy. Lubicie ten sam kształt kieliszka, światło lampki i tempo poranka.',
+      c: 'Cicha rywalizacja o drobne przywileje albo odmienna miara tego, jak w praktyce wygląda czuły gest.'
     },
     'mars-venus': {
-      h: 'Magnetyzm czystej alchemii erotycznej. Pragnienie (Mars) i powab (Wenus) splatają się w niewymuszonym tańcu polaryzacji.',
-      c: 'Iskra o wysokim napięciu: obsesyjna fascynacja fizyczna przeplata się z walką o dominację, zazdrością i testowaniem granic.'
+      h: 'Stara, niezawodna alchemia przyciągania — jedno rzuca płomień spojrzenia, drugie przyciąga ciężarem dłoni bez jednego zdania.',
+      c: 'Wysokie napięcie pod powierzchnią: magnetyzm miesza się z zazdrością i walką o to, kto prowadzi w tym tańcu.'
     },
     'jupiter-venus': {
-      h: 'Królewski aspekt obfitości, radości życia i hojności serca. Razem przyciągacie szczęście, towarzyski blask i zmysłowy rozmach.',
-      c: 'Hedonistyczne rozleniwienie lub rozrzutność — ryzyko ucieczki w przyjemności zamiast konfrontacji z realnymi wyzwaniami.'
+      h: 'Złote popołudnie bez liczenia zegarka — przy tej osobie rośnie szczodrość serca, śmiech i chęć do życia na wielką skalę.',
+      c: 'Ucieczka przed zwykłym rachunkiem za prąd i twardą rozmową w łatwe rozrywki na kredyt.'
     },
     'saturn-venus': {
-      h: 'Wierność ponad czasem. Miłość traktowana jako święte przymierze, lojalność w próbach i inwestycja uczuciowa na dekady.',
-      c: 'Lęk przed odrzuceniem maskowany chłodem lub warunkowaniem uczuć; wymaga świadomego rozmrażania czułości każdego dnia.'
+      h: 'Wierność sprawdzona w lutowy mróz, nie tylko w czerwcu. Uczucie nabiera tu ciężaru złotej obrączki i słowa danego na lata.',
+      c: 'Lęk przed zranieniem ukryty za oschłą rezerwą — serce każe czekać przy zamkniętych drzwiach aż druga strona udowodni zasługę.'
     },
     'node-venus': {
-      h: 'Karmiczny dar serca. Relacja otwiera zdolność do głębszego, bezwarunkowego kochania i uzdrawia dawne rany odrzucenia.',
-      c: 'Uwodzicielska iluzja przeszłości — konieczność odróżnienia nawykowego przywiązania od dojrzałego wyboru partnerskiego.'
+      h: 'Spotkanie otwierające serce po latach zimy. Przy kimś takim łatwiej uwierzyć, że warto zdjąć kolczugę na progu.',
+      c: 'Słodkie złudzenie z przeszłości: łatwo tu pomylić stary głód za opiekuńczą ręką z dorosłą miłością.'
     },
     'mars-mars': {
-      h: 'Wspólny wektor działania i niespożyta energia. W łóżku i w projektach życiowych nadajecie na tej samej częstotliwości adrenaliny.',
-      c: 'Zderzenie dwóch taranów. Brak bufora w gniewie wymaga przekierowania nadmiaru ognia na wspólny sport, pasję lub cel zewnętrzny.'
+      h: 'Ten sam rytm kroku i apetytu w łóżku. Gdy ruszacie po swoje, iskry idą pod obcasami w tę samą stronę.',
+      c: 'Dwa rozpędzone tarany na jednym wąskim moście — bez wspólnego wysiłku lub celu szybko obracacie zapał przeciwko sobie.'
     },
     'jupiter-mars': {
-      h: 'Triumfalna synergia odwagi i sukcesu. Razem podejmujecie śmiałe decyzje, mnożąc swoją sprawczość, pasję i apetyt na życie.',
-      c: 'Brawura i przelicytowanie sił — skłonność do nakręcania się nawzajem w gniewie lub podejmowania zbyt ryzykownych szarż.'
+      h: 'Odwaga podkręcona o stopień wyżej: razem skaczecie dalej, podejmujecie śmielsze decyzje i mniej boicie się ryzyka.',
+      c: 'Brawura ponad miarę — w gniewie lub hazardzie podbijacie stawkę aż zabraknie hamulców przed zakrętem.'
     },
     'mars-saturn': {
-      h: 'Stalowa wytrzymałość i strategiczna moc. Impuls jednej strony zyskuje dyscyplinę drugiej, tworząc niezniszczalny tandem w działaniu.',
-      c: 'Układ gazu i hamulca: bolesna frustracja, gdy inicjatywa i pożądanie Marsa zderzają się z kontrolą lub oporem Saturna.'
+      h: 'Pęd dostaje wreszcie ciężki ster i długi oddech: to tandem zdolny przetrwać długie oblężenie bez pęknięcia.',
+      c: 'Stopa na gazie przy zaciągniętym ręcznym hamulcu — chęć jednej strony rozbija się o kamienny mur ostrożności drugiej.'
     },
     'mars-node': {
-      h: 'Katalizator odwagi karmicznej. Partner popycha Cię do działania tam, gdzie wcześniej paraliżował Cię strach lub wahanie.',
-      c: 'Karmiczne pole bitwy — gwałtowne pragnienie i konflikt uczą stawiania czystych granic bez uciekania się do agresji.'
+      h: 'Pchnięcie na właściwe tory wtedy, gdy sam stałeś od lat na peronie z walizką pełną wahań.',
+      c: 'Gorące pole bitwy uczące mówić „nie” prosto w oczy, bez wbijania szpil za plecami.'
     },
     'jupiter-jupiter': {
-      h: 'Zgodność światopoglądowa, etyczna i duchowa. Patrzymy w tę samą stronę horyzontu, dzieląc wspólny system wartości.',
-      c: 'Spór ideologiczny lub rywalizacja o rację moralną — wymaga szacunku dla odmiennej filozofii życiowej partnera.'
+      h: 'Patrzycie z tego samego okna na ten sam horyzont — podobne zasady honoru, smaku wolności i sensu drogi.',
+      c: 'Każde broni własnej racji z wysokości ambony, zamiast sprawdzić, jak to wygląda z drugiego krzesła.'
     },
     'jupiter-saturn': {
-      h: 'Królewska równowaga wizji i struktury. Jedna strona wnosi skrzydła ekspansji, druga fundament, na którym można bezpiecznie lądować.',
-      c: 'Przeciąganie liny między optymizmem a sceptycyzmem; wymaga połączenia śmiałych marzeń z twardym planem realizacji.'
+      h: 'Jedno wnosi wiatr w żagle, drugie trzyma twardy kil pod wodą — rzadka równowaga marzenia z kamiennym planem.',
+      c: 'Wieczne przeciąganie liny między rozmachem a lękiem o jutro, dopóki obu stronom nie opadną ręce.'
     },
     'jupiter-node': {
-      h: 'Błogosławieństwo na ścieżce rozwoju. Wspólny wzrost społeczny, duchowy i materialny zapisany w potencjale spotkania.',
-      c: 'Pokusa pójścia na skróty — obietnica łatwego sukcesu wymaga zakotwiczenia w autentycznej pracy nad relacją.'
+      h: 'Cichy pomyślny wiatr w dobrych drzwiach: obecność tej osoby otwiera szerszą scenę i większe szczęście do ludzi.',
+      c: 'Pokusa wiary w łatwy los bez odrobienia własnej, żmudnej lekcji przyziemnej konsekwencji.'
     },
     'saturn-saturn': {
-      h: 'Pokoleniowa i strukturalna jednomyślność. Podobne rozumienie granic, obowiązków, finansów i architektury bezpieczeństwa.',
-      c: 'Podwójny rygor i nadmiar kontroli — relacja potrzebuje świadomego wpuszczania lekkości, zabawy i spontaniczności.'
+      h: 'Ten sam szacunek dla czasu, ciężaru pracy i słowa wyrytego w kamieniu. Zero złudzeń, za to spokojne oparcie.',
+      c: 'Podwójna surowość w czterech ścianach — bez świadomego wpuszczenia śmiechu życie łatwo zamienia się tu w sam obowiązek.'
     },
     'node-saturn': {
-      h: 'Karmiczny filar dojrzałości. Spotkanie uczy najwyższej formy odpowiedzialności za drugiego człowieka i wspólne dzieło.',
-      c: 'Ciężka lekcja czasu i granic: konieczność spłacenia dawnych zobowiązań i zamknięcia niedojrzałych rozdziałów przeszłości.'
+      h: 'Przymierze budujące kręgosłup na lata. Czas sprawdza tu prawdę uczuć i oddziela słomiany zapał od wierności.',
+      c: 'Ciężar dawnych niedomkniętych rachunków zmuszający do spłaty długu odpowiedzialności bez drogi na skróty.'
     },
     'node-node': {
-      h: 'Wspólny wektor pokoleniowy i duchowy. Idziecie przez życie z tym samym kompasem ewolucyjnym i poczuciem misji.',
-      c: 'Opozycja węzłów karmicznych (pełnia przeznaczenia) — to, co dla jednej osoby jest przeszłością, dla drugiej stanowi przyszłość.'
+      h: 'Ten sam puls epoki i kierunek w drodze: rozumiecie podskórnie, przed czym uciekacie i czego szukacie za zakrętem.',
+      c: 'Opozycja biegunów — to, co dla jednego jest bezpiecznym wczoraj, dla drugiego staje się twardym drzwiami w przyszłość.'
     },
     'pluto-venus': {
-      h: 'Hipnotyczna alchemia pożądania i emocjonalnego zespolenia. Miłość o plutonicznej głębi, która odrzuca powierzchowność i przemienia oboje.',
-      c: 'Indeks obsesji: magnetyczne uzależnienie, zazdrość i gra o władzę nad sercem partnera — więź niemal niemożliwa do zerwania.'
+      h: 'Magnetyzm schodzący prosto pod kołnierz i skórę. Przyciąganie bez wyłącznika, które zmienia spojrzenie na miłość do końca życia.',
+      c: 'Obsesyjna ciemność zazdrości i gra o władzę nad sercem — więź tak gęsta, że trudno z niej wyjść zwykłym pożegnaniem.'
     },
     'mars-pluto': {
-      h: 'Pierwotna, nieokiełznana siła seksualna i wola przetrwania. Razem stanowicie niepokonaną potęgę zdolną przenosić góry.',
-      c: 'Starcie tytanów: ekstremalne napięcie erotyczne i walka o dominację. Wymaga absolutnej uczciwości, by pasja nie zmieniła się w wojnę.'
+      h: 'Pierwotna siła i namiętność bez znieczulenia. Razem nie pękacie w ciemnej uliczce ani w najcięższej godzinie próby.',
+      c: 'Walka tytanów na noże pod kołdrą i przy stole — bez bezwzględnej uczciwości pasja zmienia się w wojnę nerwów.'
     },
     'moon-pluto': {
-      h: 'Psychologiczna rentgenowska bliskość. Wyczuwacie swoje niewypowiedziane lęki i pragnienia na poziomie podświadomym.',
-      c: 'Emocjonalny wir i zaborczość: lęk przed utratą kontroli prowadzi do testowania wierności i prób zawłaszczenia duszy partnera.'
+      h: 'Wzrok prześwietlający nastroje głębiej niż jakiekolwiek przesłuchanie. Czujecie własny strach jeszcze zanim zapadnie cisza.',
+      c: 'Gęsty wir zaborczości: sprawdzanie telefonu, testowanie wierności i głód posiadania drugiej duszy na własność.'
     },
     'pluto-sun': {
-      h: 'Głęboka regeneracja i przebudzenie osobistej mocy. Obecność partnera wydobywa z Ciebie charyzmę, o której istnieniu nie wiedziałeś.',
-      c: 'Walka o suwerenność ego: silny opór przed zdominowaniem przez magnetyczną osobowość drugiej strony.'
+      h: 'Spotkanie z ogniem oczyszczającym z pozorów. Przy tej osobie zrzucasz stare ubranie słabości i poznajesz własny ciężar.',
+      c: 'Twardy opór dumy przed oddaniem choćby cala pola silniejszemu magnetyzmowi partnera.'
     },
     'lilith-venus': {
-      h: 'Uwolnienie zmysłowego tabu. Bezpieczna przestrzeń na dzikość, estetyczną śmiałość i spełnienie ukrytych fantazji miłosnych.',
-      c: 'Zakazany owoc: fascynacja tym, co nieosiągalne lub niebezpieczne; napięcie między oficjalną rolą partnera a cieniem pożądania.'
+      h: 'Cichy klucz do zakazanego pokoju — tutaj znikają wstydliwe granice i opadają szkolne zakazy przy zgaszonym świetle.',
+      c: 'Napięcie między grzeczną rolą pokazywaną rodzinie a dzikim głodem, który woła o swoje w nocy.'
     },
     'lilith-mars': {
-      h: 'Surowy, bezwstydny magnetyzm cielesny. Instynktowne rozpoznanie swoich najgłębszych impulsów erotycznych bez cenzury.',
-      c: 'Prowokacja i nieposkromiony bunt: dzika chemia fizyczna, która nie toleruje podporządkowania ani domowej rutyny.'
+      h: 'Surowy, nieposkromiony prąd ciał bez żadnej dyplomacji. Pożądanie nie pyta tu o pozwolenie ani o porę.',
+      c: 'Bunt i ostra prowokacja w chwili, gdy codzienna rutyna próbuje przypiąć Wam obojgu krótką smycz.'
     },
     'lilith-moon': {
-      h: 'Uzdrowienie odrzuconych części duszy. Akceptacja mroczniejszych nastrojów i pierwotnej intuicji partnera.',
-      c: 'Konfrontacja bezpieczeństwa domowego z lękiem przed opuszczeniem i emocjonalnym wygnaniem.'
+      h: 'Przyjęcie tego, co inni nazwali ciemnym albo trudnym — odzyskujesz prawo do własnych przeczuć i łez bez wstydu.',
+      c: 'Starcie pragnienia bezpiecznego domu z dzikim lękiem przed odrzuceniem i samotnością o zmierzchu.'
     },
     'lilith-sun': {
-      h: 'Magnetyzm autentyczności. Partner fascynuje swoją niezależnością, niepokornością i odmową grania społecznych ról.',
-      c: 'Cień dumy: podświadome testowanie granic autonomii i prowokowanie autorytetu drugiej strony.'
+      h: 'Pociąga Cię w niej lub w nim bezczelna wolność od cudzych opinii i odmowa grania grzecznej roli pod publiczkę.',
+      c: 'Ciche prowokowanie dumy i sprawdzanie, jak daleko wolno się posunąć zanim pęknie cierpliwość drugiej strony.'
     },
     'lilith-pluto': {
-      h: 'Podwójny kod cienia i transformacji. Zdolność do wspólnego zejścia w najgłębsze warstwy psychiki i tabu bez lęku.',
-      c: 'Skrajna intensywność podświadoma — przyciąganie oparte na tajemnicy, obsesji i nieujawnionych pragnieniach.'
+      h: 'Podwójny mrok schodzący w najgłębsze zaułki psychiki bez latarki i bez lęku przed prawdą ukrytą pod skórą.',
+      c: 'Niezwykła siła przyciągania oparta na sekrecie, obsesji i niewypowiedzianych do końca pragnieniach.'
     }
   };
 
@@ -609,158 +609,130 @@
 
 (function () {
   const COMPOSITE_ARCHETYPES = [
-    'Dynamiczny Katalizator (Kompozyt w Baranie) — Wasz związek żyje ruchem, pasją, inicjatywą i wspólnym zdobywaniem świata. Trzecia Encja tej relacji nie znosi stagnacji: potrzebujecie wspólnych wyzwań, by iskra nie zmieniła się w zniecierpliwienie.',
-    'Zmysłowe Imperium (Kompozyt w Byku) — Trzecia Encja Waszej relacji dąży do budowania namacalnego piękna, bezpieczeństwa materialnego, rytuałów dotyku i niezachwianej lojalności. To architektura spokoju, w której liczy się jakość, smak i czas.',
-    'Intelektualny Salon (Kompozyt w Bliźniętach) — Fundamentem Waszego „My” jest nieustanny dialog, wymiana idei, wspólne podróże i ciekawość, która nigdy się nie starzeje. Zbliża Was rozmowa do świtu i wspólne odkrywanie nowych perspektyw.',
-    'Intymne Sanktuarium (Kompozyt w Raku) — Wasza relacja tworzy zamknięty, głęboko chroniony azyl emocjonalny. Razem budujecie dom dusz, w którym można zrzucić każdą społeczną maskę i doświadczyć bezwarunkowej czułości.',
-    'Królewska Scena (Kompozyt we Lwie) — Wasz sojusz promieniuje ciepłem, dumą, hojnością i rozmachem. Jesteście dla siebie nawzajem lustrem wielkości i życiowej kreacji — relacja kwitnie, gdy okazujecie sobie podziw i królewski gest.',
-    'Alchemia Precyzji (Kompozyt w Pannie) — Wasza więź opiera się na codziennej uważności, wzajemnym wsparciu w rozwoju i trosce wyrażanej przez konkretne czyny, nie puste obietnice. Razem doskonalicie swoje życie i dajecie sobie realne oparcie.',
-    'Estetyczna Harmonia (Kompozyt w Wadze) — Relacja zaprojektowana jak dzieło sztuki. Szukacie w sobie piękna, dyplomacji, symetrii i wyrafinowanego partnerstwa, w którym żaden głos nie dominuje kosztem drugiego.',
-    'Magnetyczny Węzeł (Kompozyt w Skorpionie) — Więź o ekstremalnej głębi psychologicznej, intymnej i transformacyjnej. Ta relacja nie toleruje półśrodków ani powierzchowności: wymaga całkowitego obnażenia prawdy i absolutnej wierności.',
-    'Wspólny Horyzont (Kompozyt w Strzelcu) — Wasz związek to ekspedycja filozoficzna, duchowa i podróżnicza. Dajecie sobie wiatr w skrzydła, wolność oddechową i wizję życia znacznie większego niż szara codzienność.',
-    'Ponadczasowa Twierdza (Kompozyt w Koziorożcu) — Relacja o architekturze Old Money: dyskretna, poważna, obliczona na dekady wspólnego budowania statusu, autorytetu i nienaruszalnego zaufania.',
-    'Awangardowy Sojusz (Kompozyt w Wodniku) — Wasze „My” łamie utarte schematy społeczne. Łączycie głęboką przyjaźń intelektualną z bezwzględnym szacunkiem dla indywidualnej przestrzeni i oryginalności partnera.',
-    'Mistyczna Osmoza (Kompozyt w Rybach) — Więź telepatyczna, poetycka i duchowa. Rozumiecie swoje nastroje, sny i wrażliwość bez słów, tworząc własny, intymny mikroświat chroniony przed hałasem świata.'
+    'Pożar na Progu (Kompozyt w Baranie) — Wasz związek żyje ruchem, bezpośrednią prawdą i odwagą otwierania zamkniętych drzwi. Gdy usiądziecie w wygodnych fotelach z nudą o siódmej wieczorem, iskra natychmiast zmienia się w kłótnię o byle drobiazg.',
+    'Zmysłowy Azyl (Kompozyt w Byku) — Ta relacja buduje świat z ciężkiego drewna, ciepłego chleba, dotyku i wierności, która nie drży przy pierwszym chłodzie. Czas pracuje tu na Waszą korzyść, jeśli tylko pamiętacie o żywym pragnieniu ponad rutyną.',
+    'Nocny Dialog (Kompozyt w Bliźniętach) — Trzyma Was razem słowo ostre jak stalówka i ciekawość tego, co druga osoba powie zanim zgaśnie lampka. Zbliża Was wspólna podróż i żart rzucony w biegu, lecz chłód wchodzi wtedy, gdy błyskotliwość zastępuje czułość.',
+    'Zamknięte Sanktuarium (Kompozyt w Raku) — Razem stawiacie cichy dom za ciężkimi zasłonami, w którym wolno zdjąć pancerz ulicy bez strachu przed szyderstwem. Waszą siłą jest pamięć o drobnych gestach i obrona własnego progu przed zgiełkiem.',
+    'Królewski Krąg Światła (Kompozyt we Lwie) — Wasz sojusz oddycha dumą, hojnością gestu i potrzebą blasku. Jesteście dla siebie lustrem, w którym rośnie odwaga, dopóki okazujecie sobie zachwyt ponad szarą codziennością.',
+    'Rzemiosło Bliskości (Kompozyt w Pannie) — Tu miłość nosi codzienny strój czynu, nie pustych toastów przy winie. Pomagacie sobie porządkować chaos i dźwigać ciężar dnia; uważajcie jedynie, by krytyczne oko nie zagasiło spontaniczności.',
+    'Waga Piękna i Miary (Kompozyt w Wadze) — Związek krojony z wyczuciem taktu, symetrii i elegancji przy wspólnym stole. Potrzebujecie pięknej oprawy i spokoju sporu, w którym żadna ze stron nie musi opuszczać głowy ze wstydu.',
+    'Ciemny Nurt Prawdy (Kompozyt w Skorpionie) — Więź bez półśrodków i letniej wody. Tu wszystko schodzi aż pod skórę: albo obnażacie przed sobą prawdę bez cenzury, albo zjadacie się w ciszy podejrzeń za zamkniętym oknem.',
+    'Daleki Peron (Kompozyt w Strzelcu) — Wasze „My” potrzebuje przestrzeni większej niż ciasne mieszkanie w bloku. Ożywia Was wspólna wyprawa, śmiech w nieznanym mieście i horyzont, którego nie zasłania codzienna troska.',
+    'Kamienna Twierdza (Kompozyt w Koziorożcu) — Dyskretny sojusz budowany z myślą o dekadach, nie o jednej wiośnie. Czas sprawdza tu ciężar danego słowa, a wspólny spokój i lojalność stają się cenniejsze niż chwilowe fajerwerki.',
+    'Osobne Niebo (Kompozyt w Wodniku) — Łączycie braterstwo wolnych umysłów z odmową grania cudzych ról przy niedzielnym stole. To więź oparta na przyjaźni i oryginalności, która oddycha tylko przy dużym zaufaniu i swobodzie.',
+    'Cisza Podwodnych Prądów (Kompozyt w Rybach) — Czytacie swoje lęki i sny zanim zapadnie pierwsze słowo w przedpokoju. Tworzycie własny świat chroniony przed zgiełkiem ulicy, pod warunkiem że nie mylicie bliskości z utratą własnych granic.'
   ];
 
   function getVerdict(d, dos) {
     const { chemistry, security, friction } = d.syn;
     if (chemistry >= 80 && dos.karmaHits >= 2) {
       return {
-        title: 'ARCHETYP PRZEZNACZENIA (KARMICZNA ALCHEMIA)',
-        summary: `Między ${d.nameA} (${d.sunA.name}) a ${d.nameB} (${d.sunB.name}) zachodzi rzadki rezonans osi karmicznej (${dos.karmaHits} ścisłych aktywacji Węzła Północnego ☊) połączony z potężnym magnetyzmem (${chemistry}%). To relacja o charakterze inicjacyjnym — spotkanie aktywuje najgłębsze warstwy podświadomości i zmienia trajektorię obu życiorysów.`
+        title: 'PIĘTNO PRZEZNACZENIA (SUPEŁ CZASU)',
+        summary: `Między ${d.nameA} (${d.sunA.name}) a ${d.nameB} (${d.sunB.name}) działa rzadki rezonans Węzła Północnego ☊ (${dos.karmaHits} ścisłe zetknięcia) złączony z wysokim napięciem ciał (${chemistry}%). To spotkanie nie zostawia człowieka takim samym — otwiera stare komnaty pamięci i zmienia kierunek dalszej drogi obojga.`
       };
     }
     if (chemistry >= 78 && friction >= 60) {
       return {
-        title: 'MAGNETYCZNY PARADOKS (OGIEŃ I LÓD)',
-        summary: `Ekstremalne przyciąganie Wenus–Mars (${chemistry}%) ściera się tu z wysokim ładunkiem napięcia dynamicznego (${friction}%). Wasza relacja generuje potężną temperaturę emocjonalną: ta sama polaryzacja, która wywołuje fascynację od pierwszego spojrzenia, w chwilach stresu wymaga dojrzałego zarządzania granicami.`
+        title: 'ŻAR I ZIMNE SZKŁO (MAGNETYCZNE NAPIĘCIE)',
+        summary: `Silne przyciąganie Wenus–Mars (${chemistry}%) ściera się tu z wysoką temperaturą sporu (${friction}%). Jedno spojrzenie potrafi zapalić pokój w sekundę, ale ta sama iskra w złej godzinie domaga się twardych granic, żeby nie spalić zaufania.`
       };
     }
     if (security >= 75 && dos.saturnFinal >= 70) {
       return {
-        title: 'KRÓLEWSKA TWIERDZA (SOJUSZ DŁUGODYSTANSOWY)',
-        summary: `Wyjątkowa harmonia świateł horoskopu (${security}%) wsparta silną sferą Trwałości i Granic Saturna (${dos.saturnFinal}%). Wasze kosmogramy tworzą stabilną, dyskretną architekturę zaufania, w której namiętność i bliskość mają szansę dojrzewać przez lata bez lęku o fundamenty.`
+        title: 'TWIERDZA Z KAMIENIA (PRZYMIERZE NA LATA)',
+        summary: `Wyjątkowa zgodność świateł (${security}%) podparta twardym fundamentem Saturna (${dos.saturnFinal}%). Budujecie spokojny, dyskretny dach nad głową, pod którym bliskość ma czas dojrzewać latami bez lęku o fundamenty.`
       };
     }
     return {
-      title: 'SOJUSZ EWOLUCYJNY (LUSTRO TRANSFORMACJI)',
-      summary: `Wielowymiarowy układ kosmogramów (Indeks Całkowity: ${dos.totalIndex}%), w którym różnice temperamentów ${d.nameA} (${d.sunA.name}, Księżyc w znaku ${dos.posA.moon.gen}) i ${d.nameB} (${d.sunB.name}, Księżyc w znaku ${dos.posB.moon.gen}) działają jak katalizator dojrzałości emocjonalnej, erotycznej i intelektualnej.`
+      title: 'SPOTKANIE DWÓCH LUSTER (PRÓBA DOJRZAŁOŚCI)',
+      summary: `Złożony układ obu horoskopów (Indeks Całkowity: ${dos.totalIndex}%), w którym odmienne natury ${d.nameA} (${d.sunA.name}, Księżyc w znaku ${dos.posA.moon.gen}) oraz ${d.nameB} (${d.sunB.name}, Księżyc w znaku ${dos.posB.moon.gen}) wybijają Was z bezpiecznej rutyny ku głębszej prawdzie o sobie.`
     };
   }
 
   const MIDPOINT_SIGN_DESCRIPTIONS = {
-    desire: [
-      'Pożądanie zapala się natychmiastowym żarem, bezpośredniością i zuchwałą inicjatywą; nie znosi gierek ani czekania.',
-      'Zmysłowość gęsta, powolna i namacalna; rozpala ją dotyk skóry, zapach, wykwintne jedzenie i brak pośpiechu.',
-      'Zapłon erotyczny zaczyna się w głowie; błyskotliwy flirt, szermierka słowna, prowokujący żart i dwuznaczność.',
-      'Namiętność spleciona z czułością i zaufaniem; otwiera się w pełni dopiero w intymnym, bezpiecznym azylu.',
-      'Pożądanie karmi się podziwem, celebracją i dumą; pragnie królewskiego gestu, adoracji i poczucia bycia kimś jedynym.',
-      'Zmysłowość dyskretna, wysublimowana i uważna; rozbraja ją czystość intencji i uważność na subtelne sygnały ciała.',
-      'Erotyka jako sztuka harmonii i uwodzenia; kluczem jest estetyka, nastrojowa oprawa, gra spojrzeń i partnerska równość.',
-      'Ekstremalny magnetyzm, namiętność totalna i bezkompromisowa; szuka połączenia na krawędzi tabu bez cenzury.',
-      'Pożądanie dzikie, radosne i pełne wolności; zapala się w przygodzie i śmiechu, a gaśnie przy próbach kontroli.',
-      'Wytrawny, głęboki żar ukryty pod powściągliwością; zyskuje z czasem, rozpala go siła charakteru, dojrzałość i klasa.',
-      'Elektryzująca, niekonwencjonalna fascynacja; pociąga to, co wymyka się schematom, wolność i oryginalność.',
-      'Namiętność mistyczna, romantyczna i bezgraniczna; rozpala ją poezja chwili, zmysłowa melancholia i zatracenie granic.'
-    ],
-    marriage: [
-      'Partnerstwo oparte na wspólnej odwadze, szczerości i działaniu; spełnienie daje partner, który nie gasi autonomii.',
-      'Związek jako bezpieczna, trwała twierdza; wymaga zmysłowego spokoju, lojalności i wspólnego budowania dobrostanu.',
-      'Więź oparta na przyjaźni, ciągłej rozmowie i ciekawości świata; harmonia rodzi się z lekkości i swobody myśli.',
-      'Głębokie gniazdo emocjonalne i czuła troska; jedność buduje się przez chronienie swoich wrażliwości i domowe ciepło.',
-      'Sojusz pełen dumy i wzajemnego podziwu; spełnienie daje partner, przy którym można błyszczeć i czuć szacunek.',
-      'Cicha lojalność, szacunek i codzienna troska; bezpieczeństwo płynie z niezawodności w trudach i wzajemnej pomocy.',
-      'Małżeństwo jako idealna harmonia, dyplomacja i symetria; spełnienie daje poczucie równości i kultura bycia.',
-      'Nierozerwalny pakt dusz bez miejsca na półprawdy; spełnienie wymaga bezwzględnej lojalności i całkowitego zaufania.',
-      'Sojusz wolnych dusz ku wspólnemu horyzontowi; więź umacniają wspólne idee, podróże i przestrzeń na własny oddech.',
-      'Ponadczasowa architektura zaufania; małżeństwo jak projekt na dekady budowany na odpowiedzialności i klasie.',
-      'Nowoczesne partnerstwo oparte na lojalnej przyjaźni i równości; spełnienie daje brak sztywnych konwenansów.',
-      'Więź duchowa i bezwarunkowa; poczucie „człowieka na całe życie” rodzi się ze zrozumienia bez słów i empatii.'
-    ],
     compSun: [
-      'Wspólną tożsamością jest odwaga i przecieranie nowych szlaków; relacja rozkwita przy wspólnych wyzwaniach.',
-      'Misją związku jest budowanie trwałego dobrostanu, spokoju, piękna i zmysłowej stabilności na lata.',
-      'Tożsamość oparta na dialogu, wymianie myśli i podróżach; zbliża Was stymulacja umysłowa i wspólny humor.',
-      'Związek istnieje, by stworzyć intymny azyl emocjonalny, w którym oboje zrzucacie każdą społeczną maskę.',
-      'Para stworzona, by promieniować ciepłem, dumą i twórczym rozmachem; relacja kwitnie przy wzajemnym podziwie.',
-      'Uważność, porządek i realne wsparcie w codzienności; razem doskonalicie życie i dajecie sobie praktyczne oparcie.',
-      'Związek jak dzieło sztuki — poszukiwanie harmonii, estetyki, dyplomacji i wyrafinowanego partnerstwa.',
-      'Więź o potężnym ładunku transformacji; istniejecie, by poznać najgłębszą prawdę o sobie i uzdrowić dawne rany.',
-      'Życie jako wielka wyprawa filozoficzno-podróżnicza; dajecie sobie nawzajem optymizm i wiarę w wielkie cele.',
-      'Związek w stylu Old Money: dyskretny, poważny, obliczony na wspólne budowanie autorytetu i nienaruszalnej pozycji.',
-      'Łamanie utartych schematów; łączycie głębokie partnerstwo intelektualne z szacunkiem dla wolności partnera.',
-      'Więź poetycka i duchowa; rozumiecie swoje nastroje bez słów, tworząc intymny mikroświat chroniony przed zgiełkiem.'
+      'Odwaga pierwszego kroku i życie bez asekuracji; gaśniecie w nudzie i letnich kompromisach.',
+      'Budowanie cichej twierdzy z dotyku, solidnego stołu i wierności odpornej na złe czasy.',
+      'Nocny dialog do świtu, ciekawość myśli i brak ciężkich kajdan z przyzwyczajenia.',
+      'Dom za grubymi zasłonami, w którym można zdjąć zbroję z ulicy i odetchnąć bez obaw.',
+      'Wspólne światło, duma z obecności drugiej osoby i hojność gestu bez drobnych rachunków.',
+      'Uważna obecność w czynie, czyste szczegóły dnia i wzajemne porządkowanie życiowego chaosu.',
+      'Spokój miary, elegancja sporu i wspólne szukanie piękna w codziennej formie.',
+      'Bezlitosna prawda pod skórą — albo schodzicie na dno swoich cieni razem, albo każde zamyka drzwi.',
+      'Otwarty horyzont, wspólna podróż bez mapy i wiara większa niż ciasne lęki podwórka.',
+      'Dyskretna siła na lata; czas działa tu na korzyść słowa wyrytego w kamieniu.',
+      'Braterstwo wolnych umysłów bez grania narzuconych ról przy niedzielnym stole.',
+      'Cicha osmoza snów i przeczuć za progiem osłoniętym od hałasu ulicy.'
     ],
     compMoon: [
-      'Klimat domowy gorący, szczery i pełen ognia; napięcia oczyszczacie natychmiastową rozmową i spontanicznością.',
-      'Zmysłowy relaks, ciepło i spokój w czterech ścianach; dom jest bezpieczną twierdzą o niespiesznym rytmie.',
-      'Klimat karmi się rozmową; ulgę przynosi wspólny śmiech, dyskusje i lekkość — dusi Was ciężka atmosfera.',
-      'Głęboka intymność, czułość i wzajemne wyczuwanie nastrojów; Wasz dom staje się sanktuarium czułości.',
-      'W domowym azylu potrzebujecie serdeczności i komplementów; uczucia rozkwitają przy szczerym zachwycie.',
-      'Spokój przynoszą codzienne rytuały, troska wyrażana czynami i porządek; bezpieczeństwo daje wzajemna niezawodność.',
-      'Najważniejszy jest spokój, delikatność i brak agresji; regenerujecie się w pięknym, harmonijnym otoczeniu.',
-      'Skrajna głębia emocjonalna i potrzeba wyłączności; przetrwanie wspólnych kryzysów cementuje Wasze serca.',
-      'Domowy klimat pełen optymizmu, luzu i humoru; emocjonalną regenerację przynosi planowanie nowych wyjazdów.',
-      'Emocje powściągliwe, ale niesamowicie wierne i trwałe; bezpieczeństwo daje odpowiedzialność i obecność.',
-      'Swoboda emocjonalna bez duszącej kontroli; odpoczywacie, dając sobie nawzajem przestrzeń na pasje i autonomię.',
-      'Oceaniczna czułość, intuicyjne współodczuwanie i poezja; atmosfera marzeń, empatii i duchowego schronienia.'
+      'Gorący klimat w czterech ścianach; napięcia oczyszcza krótka burza i szczerość od progu.',
+      'Zmysłowy spokój w kuchni, miękka pościel, zapach świeżego chleba i brak pośpiechu o poranku.',
+      'Regeneracja przez rozmowę przy stole, wspólny śmiech i otwarte okno na zmianę powietrza.',
+      'Głęboka troska i ciche wyczuwanie nastrojów zanim wybrzmi powitanie w przedpokoju.',
+      'Ciepło domu karmione wzajemnym podziwem, dobrym światłem i brakiem drobnych uszczypliwości.',
+      'Bezpieczeństwo osadzone w drobnych rytuałach poranka, niezawodności i słowie bez wymówek.',
+      'Pokoje wolne od krzyku; spokój wraca tam, gdzie panuje umiar, piękno i miękki głos.',
+      'Gęsta intymność i pragnienie wyłączności — przetrwanie trudnych nocy spaja Was jak stal.',
+      'Dom otwarty na drogę, humor i oddech większy niż rachunki na kuchennym blacie.',
+      'Wierność bez głośnych deklaracji; zaufanie rośnie powoli jak dąb na surowym wietrze.',
+      'Powietrze pod wspólnym dachem — odpoczywacie wtedy, gdy nikt nie trzyma drugiego za rękaw.',
+      'Miękka cisza, w której rozumiecie swoje zmęczenie bez tłumaczenia całego dnia od początku.'
     ],
     compVenus: [
-      'Miłość pełna żaru, niespodzianek i śmiałych gestów; randki z adrenaliną i podarunki wywołujące szybsze bicie serca.',
-      'Zmysłowy luksus, wykwintne kolacje, jedwab i aromaty; miłość wyraża się przez dotyk, komfort i namacalne piękno.',
-      'Flirt słowny, wspólne wyjścia, spontaniczne bilety i upominki z dowcipem; w miłości podnieca Was świeżość i lekkość.',
-      'Romantyzm intymny, pamiątki z historią i kolacje we dwoje mówiące: „chronię to, co między nami najczulsze”.',
-      'Królewski gest, hojność, celebracja randek i prezenty podkreślające wyjątkowość ukochanej osoby i blask relacji.',
-      'Czułość ukryta w dyskretnej trosce; prezenty perfekcyjnie dobrane pod potrzeby partnera i dbałość o wspólny spokój.',
-      'Klasyczny romantyzm: harmonia formy, Quiet Luxury, sztuka, teatr, kwiaty i kultura wzajemnego uwodzenia.',
-      'Zmysłowe napięcie, intrygujące prezenty z nutą tajemnicy, nocne rozmowy i bliskość bez barier intymnych.',
-      'Randki w drodze, bilety lotnicze, egzotyczne smaki i obdarowywanie się doświadczeniami, które otwierają horyzont.',
-      'Elegancja Old Money, szlachetne materiały, rocznikowe trunki i przedmioty, które zyskują na wartości z czasem.',
-      'Niszowe perfumy, awangardowy design i randki łamiące schematy; łączy Was oryginalność i szacunek dla odmienności.',
-      'Magia, nastrojowa muzyka, zmysłowe kadzidła i prezenty odwołujące się do Waszych snów i duchowej bliskości.'
+      'Miłość pełna niespodzianek, śmiałego gestu i gorącego uścisku na progu.',
+      'Dyskretny luksus, dobre wino, jedwab pod palcami i czułość bez oglądania się na zegarek.',
+      'Błyskotliwy flirt słowem, spontaniczne bilety i upominek z sekretną historią.',
+      'Ciepło zapisane w pamiątkach, kolacji we dwoje przy świecy i trosce o pamięć chwil.',
+      'Królewskie gesty bez liczenia minut i radość celebrowania siebie ponad szary dzień.',
+      'Delikatna troska schowana w detalu dobranym tak trafnie, że zapiera dech.',
+      'Klasyczna elegancja spotkania, półmrok kawiarni, teatr i szacunek w każdym dotyku.',
+      'Nocne napięcie, prezenty z ciemnym podtekstem i bliskość bez zasłon wstydu.',
+      'Spotkania w drodze, smak nieznanych ulic i wspólne otwieranie mapy przed snem.',
+      'Cicha klasa rzeczy trwałych — szlachetny materiał i wierność ponad kaprys mody.',
+      'Osobliwa, niepowtarzalna oprawa chwil, której nikt nie podrobi z gotowego katalogu.',
+      'Poezja półmroku, muzyka z płyty winylowej i czułość odrywająca od twardego bruku.'
     ],
     compMars: [
-      'Błyskawiczna inicjatywa, pasja i gorąca temperatura w sypialni; decyzje podejmujecie szybko i bez wahania.',
-      'Wytrwałość, upór i zmysłowa, niespieszna siła; w intymności liczy się trwałość, cierpliwość i konsekwencja.',
-      'Spryt, elastyczność i erotyka stymulowana umysłowo; napięcia rozładowujecie celnym żartem lub dynamicznym dialogiem.',
-      'Działanie napędzane obroną relacji i bezpieczeństwem; w intymności potrzebujecie delikatności i emocjonalnej ochrony.',
-      'Twórczy rozmach, odwaga i namiętność pełna żaru; działacie z dumą i pewnością siebie, celebrując sukcesy.',
-      'Przemyślana strategia, precyzja i skuteczność; wspólne cele osiągacie dzięki żelaznej dyscyplinie i organizacji.',
-      'Działanie przez dyplomację, wdzięk i negocjacje; w sporach dążycie do sprawiedliwego kompromisu bez agresji.',
-      'Niepowstrzymana determinacja i hipnotyczny magnetyzm w sypialni; w trudnych chwilach działacie z chirurgiczną precyzją.',
-      'Entuzjazm, rozmach i apetyt na ryzyko; wspólna energia popycha Was do śmiałych planów i dalekich podróży.',
-      'Długofalowe, strategiczne parcie do przodu; Wasza wspólna sprawczość i odporność rosną z każdym rokiem.',
-      'Oryginalne, nieszablonowe metody działania; spory rozwiązujecie chłodnym dystansem, nie pozwalając na rutynę.',
-      'Intuicyjne, subtelne działanie; w sferze intymnej szukacie całkowitego stopienia dusz i ciał z głęboką wrażliwością.'
+      'Szybka decyzja, namiętność bez wahań i ramię gotowe przebić każdą ścianę.',
+      'Cierpliwa siła i ciężka wytrzymałość — jak woda drążąca kamień rok po roku.',
+      'Zwinność w działaniu i spory rozbrajane celnym żartem zamiast zaciśniętych pięści.',
+      'Energia wstaje natychmiast w obronie domu i tych, których przygarnęliście pod swój dach.',
+      'Odwaga wielkiego kroku, wspólna duma i żar niebojący się otwartej sceny.',
+      'Chłodna precyzja i rzemiosło — wspólne cele dowozicie bez zbędnego zgiełku.',
+      'Dyplomacja i urok zamiast brutalnej siły, dopóki nie zostanie przekroczona granica taktu.',
+      'Bezkompromisowa determinacja i ciemny żar w sypialni nieznający półśrodków.',
+      'Rozmach i apetyt na ryzyko wyprowadzające Was daleko poza bezpieczne opłotki.',
+      'Długa strategia i chłodne nerwy w burzy — z czasem Wasza wspólna siła tylko gęstnieje.',
+      'Nieszablonowy krok z dala od cudzego szeregu; działa u Was to, co łamie schemat.',
+      'Miękka siła przeczucia i ciche dopasowanie ciał bez potrzeby gwałtownego krzyku.'
     ],
     marriage: [
-      'Więź potrzebuje ognia i wyrazistej tożsamości; szukasz partnera odważnego, gotowego iść ramię w ramię bez kompleksów.',
-      'Fundamentem jest wierność, dotyk i namacalne bezpieczeństwo; dom musi być stabilną oazą wolną od finansowej i emocjonalnej chwiejności.',
-      'Więź karmi się intelektualnym porozumieniem; partner musi być Twoim najlepszym przyjacielem, z którym przegadasz każdą noc.',
-      'Głęboka potrzeba intymnego schronienia; partner musi dawać bezwarunkowe ciepło, czułość i absolutną ochronę domowego azylu.',
-      'Pragnienie dumy ze związku; partner imponuje klasą i sercem, a wzajemny podziw i lojalność są tlenem dla Waszej miłości.',
-      'Bezpieczeństwo rodzi się z codziennej troski, słowności i wzajemnego dbania o zdrowie; liczą się czyny, nie puste deklaracje.',
-      'Poszukiwanie harmonii i kultury dialogu; związek ma być estetyczną równowagą, w której spory gasi się z klasą i szacunkiem.',
-      'Pragnienie bezwzględnej prawdy i fuzji dusz; partnerstwo na całe życie, które nie boi się kryzysów i odrzuca powierzchowność.',
-      'Więź oparta na wspólnym horyzoncie, wolności i humorze; szukasz towarzysza wielkich życiowych podróży i poszerzania granic.',
-      'Dojrzały sojusz na dekady; szukasz partnera odpowiedzialnego, z którym zbudujesz niezłomną pozycję i trwałe dziedzictwo.',
-      'Partnerstwo wolnych dusz; szacunek dla inności, głęboka lojalność intelektualna i brak duszacych ról społecznych.',
-      'Telepatyczna bliskość i duchowe zespolenie; szukasz partnera o wielkiej wrażliwości, z którym słowa stają się zbędne.'
+      'Potrzebujesz ognia i partnera z własnym kręgosłupem, który dotrzyma Ci kroku bez lęku.',
+      'Fundamentem jest ciało, stałość dłoni i wspólny stół bezpieczny od kaprysów fortuny.',
+      'Żywy dialog przez lata — Twój towarzysz na całe życie musi najpierw zostać Twoim przyjacielem.',
+      'Bezpieczny azyl za zamkniętym oknem, gdzie czułość i lojalność chronią przed chłodem świata.',
+      'Wspólna duma i zachwyt, przy których oboje możecie stać wyprostowani w pełnym świetle.',
+      'Cicha niezawodność codziennych czynów ważąca tysiąc razy więcej niż głośne przysięgi.',
+      'Elegancja spotkania, równe szale i spór prowadzony bez poniżenia żadnej ze stron.',
+      'Pakt aż do kości bez półprawd — potrzebujesz partnera niebojącego się nocy i głębokiej próby.',
+      'Wspólny horyzont, humor w deszczu i powietrze dające obojgu prawo do własnych skrzydeł.',
+      'Twarda architektura zaufania na dekady, budowana powoli i ponad chwilową burzą.',
+      'Sojusz wolnych ludzi oparty na szacunku dla odrębności, nie na klatce przyzwyczajeń.',
+      'Cisza zrozumienia bez tysiąca tłumaczeń i wrażliwość otulona wspólną czułością.'
     ],
     desire: [
-      'Błyskawiczny zapłon przez śmiałość, inicjatywę i bezpośredni magnetyzm; podnieca bezkompromisowa pewność siebie i ogień.',
-      'Zmysłowy zapłon przez dotyk, niespieszne pieszczoty, luksusowe tkaniny, zmysłowe aromaty i cielesne ciepło partnera.',
-      'Erotyka stymulowana umysłowo — flirt słowny, szermierka spojrzeń, intrygujące wiadomości i wzajemna ciekawość ciał.',
-      'Namiętność rozkwita w poczuciu bezpieczeństwa i bezgranicznej czułości; dotyk musi nieść intymne zaufanie i opiekę.',
-      'Królewski zapłon zmysłów; pożądanie rośnie, gdy partner celebruje Twoją atrakcyjność i adoruje Cię z magnetycznym zachwytem.',
-      'Zapłon przez dyskretną uważność, estetyczną czystość i zmysłowy detal; pociąga wyczucie, opanowanie i czułość gestu.',
-      'Uwodzenie w stylu Quiet Luxury: wyrafinowana gra spojrzeń, nastrojowe światło, wdzięk i nienaganna kultura intymna.',
-      'Hipnotyczny, mroczny magnetyzm; zapłon przez intensywne spojrzenie, dotyk na granicy tabu i całkowite zatracenie w partnerze.',
-      'Namiętność podsycana spontanicznością i przygodą; erotyczna swoboda, humor i randki poza utartym schematem.',
-      'Głęboki, nieposkromiony żar pod chłodną maską; pociąga siła charakteru, prestiż i powolne rozbrajanie dystansu.',
-      'Zmysłowa fascynacja oryginalnością i swobodą; podnieca intelektualne porozumienie i wolność od przewidywalności.',
-      'Poetycka ekstaza zmysłów; stopienie ciał w nastrojowej muzyce, magicznej aurze i całkowitej emocjonalnej fuzji.'
+      'Szybki zapłon od iskry spojrzenia, pewności kroku i dotyku bez wahania.',
+      'Gęste pragnienie budowane przez smak, dotyk skóry, ciepły materiał i czas bez zegarka.',
+      'Napięcie rodzące się w słowie, półuśmiechu i aluzji rzuconej ponad stołem.',
+      'Pożądanie rozkwita dopiero wtedy, gdy drzwi są szczelnie zamknięte, a serce czuje dom.',
+      'Żar rośnie w świetle podziwu i gestu mówiącego bez cienia skąpstwa: patrzę wyłącznie na Ciebie.',
+      'Dyskretny magnetyzm opanowania, czystości linii i dłoni uważnej na najmniejsze drgnięcie.',
+      'Sztuka powolnego uwodzenia w półmroku, miękki jedwab i napięcie wiszące w powietrzu.',
+      'Hipnotyczny nurt bez hamulców — spojrzenie jak ostrze, tabu i noc bez znieczulenia.',
+      'Spontaniczna iskra w drodze, śmiech pod płaszczem i brak sztywnego scenariusza.',
+      'Ciemny płomień pod chłodnym garniturem — rozpala go siła charakteru i powolne zdzieranie dystansu.',
+      'Elektryzująca obietnica czegoś niepodobnego do wczoraj i wolność bez taniej rutyny.',
+      'Półmrok, muzyka pod żebrami i ciche zatracenie granic przy zgaszonej lampie.'
     ]
   };
 
@@ -916,7 +888,7 @@
             'NAKŁADKA DOMÓW PARTNERSKICH (HOUSE OVERLAYS)',
             dos.houseOverlays.length > 0
               ? `<div style="font-size:0.92rem;font-family:'Playfair Display',serif;color:#C9A96E;font-weight:700;margin-top:0.15rem;">Aktywne Domy: ${dos.houseOverlays.slice(0, 3).map(o => `${o.body.glyph}→${o.house}. Dom`).join(' • ')}</div>
-                 <div style="font-size:0.76rem;opacity:0.7;margin-top:0.2rem;">Wyliczono dokładną projekcję planet na 12 domów Ascendentu</div>`
+                 <div style="font-size:0.76rem;opacity:0.7;margin-top:0.2rem;">Wyliczono dokładne położenie planet w 12 domach Ascendentu</div>`
               : `<div style="font-size:0.9rem;font-family:'Playfair Display',serif;color:rgba(250,248,245,0.75);margin-top:0.15rem;">Wpisz godzinę urodzenia wyżej ↑</div>
                  <div style="font-size:0.76rem;opacity:0.65;margin-top:0.2rem;">Odblokowuje 7. Dom Małżeński i 8. Dom Seksualności</div>`,
             'Pokazuje, w którą sferę Twojego życia (np. 7. Dom Małżeństwa, 8. Dom Intymności i Tabu, 5. Dom Romansu) bezpośrednio uderzają planety partnera.',
@@ -1040,13 +1012,13 @@
               `OŚ MAŁŻEŃSTWA ☉/☽ (${d.nameA})`,
               `<div style="font-size:1rem;color:#C9A96E;font-weight:600;"><span class="syn-glyph">${dos.mpSunMoonA.glyph}</span> ${dos.mpSunMoonA.name} ${dos.mpSunMoonA.formatted} <span style="opacity:0.65;font-size:0.8rem;">(Mod 90°: ${(dos.mpSunMoonA.lon % 90).toFixed(1)}°)</span></div>
                <div style="font-size:0.76rem;opacity:0.7;margin-top:0.3rem;">Wewnętrzny wzorzec partnerstwa i integracji Yin–Yang u ${d.nameA}.</div>`,
-              M(`Midpoint Słońca i Księżyca — punkt integracji świadomej woli z głęboką potrzebą bezpieczeństwa emocjonalnego. Wskazuje wewnętrzny archetyp partnerstwa idealnego u ${d.nameA} i warunek konieczny, by w związku czuć się w pełni sobą.`, dos.mpSunMoonA, 'marriage')
+              M(`Punkt spotkania woli z nocną potrzebą bezpiecznego progu. Odsłania cichy wzorzec miłości u ${d.nameA} oraz warunek, bez którego w tym związku zaczyna brakować tlenu.`, dos.mpSunMoonA, 'marriage')
             )}
             ${T(
               `OŚ MAŁŻEŃSTWA ☉/☽ (${d.nameB})`,
               `<div style="font-size:1rem;color:#C9A96E;font-weight:600;"><span class="syn-glyph">${dos.mpSunMoonB.glyph}</span> ${dos.mpSunMoonB.name} ${dos.mpSunMoonB.formatted} <span style="opacity:0.65;font-size:0.8rem;">(Mod 90°: ${(dos.mpSunMoonB.lon % 90).toFixed(1)}°)</span></div>
                <div style="font-size:0.76rem;opacity:0.7;margin-top:0.3rem;">Punkt czuły więzi małżeńskiej i zaufania intymnego u ${d.nameB}.</div>`,
-              M(`Midpoint Słońca i Księżyca — punkt integracji świadomej woli z potrzebą bliskości. Wskazuje wewnętrzny archetyp partnerstwa u ${d.nameB} i to, jakie cechy partnera dają mu/jej poczucie: „to człowiek na całe życie”.`, dos.mpSunMoonB, 'marriage')
+              M(`Punkt spotkania świadomego wyboru z głodem czułości. Pokazuje cichy wzorzec więzi u ${d.nameB} i to, przy kim naprawdę może zdjąć zbroję na całe życie.`, dos.mpSunMoonB, 'marriage')
             )}
             ${T(
               `OŚ POŻĄDANIA ♀/♂ (${d.nameA})`,

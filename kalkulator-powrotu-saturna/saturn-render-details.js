@@ -63,15 +63,15 @@
         color: '#C9A96E',
         hard: {
           archetype: 'Próba Napięcia & Weryfikacja Siły',
-          core: 'Napięcie kątowe zmuszające do zintegrowania przeciwstawnych energii i wypracowania dojrzałości.',
-          shadow: 'Opór przed konieczną dyscypliną i lęk przed niepowodzeniem.',
-          maturePower: 'Niezłomna integracja i mistrzowskie panowanie nad własnym losem.'
+          core: 'Ostre tarcie dwóch sił przy jednym stole — wymaga odwagi wyjścia ze starej zbroi.',
+          shadow: 'Opór przed koniecznym cięciem i nocny strach przed utratą kontroli.',
+          maturePower: 'Spokojny, nieprzekupny kręgosłup i panowanie nad własnym czasem.'
         },
         soft: {
-          archetype: 'Harmonijna Integracja & Spokój',
-          core: 'Naturalny przepływ i wsparcie dla energii Saturna, ułatwiające osiąganie stabilizacji.',
-          shadow: 'Zbytnia bierność w strefie komfortu.',
-          maturePower: 'Stabilny, organiczny wzrost prestiżu i wewnętrznego autorytetu.'
+          archetype: 'Ciche Przymierze & Spokój',
+          core: 'Naturalne wsparcie dla ciężaru Saturna, układające plany w trwały kształt bez zgiełku.',
+          shadow: 'Pokusa zbytniej wygody w znanym, bezpiecznym kącie.',
+          maturePower: 'Cichy, długotrwały wzrost imienia i zaufania wśród ludzi.'
         }
       };
 

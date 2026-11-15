@@ -1,104 +1,94 @@
-/**
- * NEOROMANTYZM — STUDIUM PSYCHOLOGII GŁĘBI (CZĘŚĆ 4: NEPTUN & PLUTON)
- * Standard: Human Voice 2026, Dojrzałość Psychoanalityczna, C.G. Jung
- */
 (function () {
   'use strict';
-
-  window.__DISPOSITOR_REPORT_DATA__ = window.__DISPOSITOR_REPORT_DATA__ || {};
+  window.__DISPOSITOR_REPORT_DATA__ = window.__DISPOSITOR_REPORT_DATA__ || { planets: {}, hierarchies: {} };
   window.__DISPOSITOR_REPORT_DATA__.planets = window.__DISPOSITOR_REPORT_DATA__.planets || {};
 
-  // ==========================================
-  // NEPTUN: PRZEPUSZCZALNOŚĆ GRANIC & GŁĘBOKA EMPATIA
-  // ==========================================
-  window.__DISPOSITOR_REPORT_DATA__.planets.neptune = {
-    planetKey: 'neptune',
-    title: 'Neptun: Przepuszczalność Granic i Głęboka Empatia',
-    archetype: 'Zanurzenie w Nieświadomości, Wrażliwość i Zmysł Metafizyczny',
-    subtitle: 'Twoja skóra psychiczna jest cieńsza niż u innych. Czujesz to, co niewidzialne, zanim ktokolwiek wypowie choćby słowo.',
-    structureTheory: 'Gdy Neptun (we władztwie w Rybach) wieńczy drzewo dyspozytorów, klasyczna architektura psychiki ulega rozpuszczeniu na rzecz matrycy oceanicznej. Zgodnie z analizą Liz Greene i Roberta Handa, nie mamy tu do czynienia z hierarchią władzy, lecz z polem transpersonalnym, w którym myśli, wola i ambicje zostają podporządkowane potrzebie współczucia, transcendencji lub ucieczki. Wyzwaniem tego układu jest brak szczelnych filtrów somatycznych — bez ugruntowania w materii otoczenie z łatwością wyczerpuje Twoje zasoby psychiczne.',
-    coreDiagnosis: {
-      vector: 'Rozpuszczenie Granic — naturalna zdolność do empatii, kontaktu ze sztuką i wyczuwania ukrytych prądów życia.',
-      psychDynamics: 'Kiedy Neptun wieńczy Twoje drzewo psychiki, twardy, zmaterializowany świat bywa dla Ciebie bolesny i za ciasny. Jesteś jak czuła membrana, która chłonie nastroje, lęki i przemilczane emocje całego otoczenia. Posiadasz niezwykłą wyobraźnię i dar leczenia atmosfery swoją cichą obecnością. Jednak Twoim największym cieniem jest brak szczelnych granic psychicznych: kiedy rzeczywistość Cię przytłacza, uciekasz w iluzje, ratowanie ludzi zaburzonych lub w poczucie bezradnej ofiary losu.',
-      sovereigntyRole: 'Przypominasz światu o istnieniu duszy, łagodności i przebaczenia w czasach, gdy wszyscy walczą o władzę i pieniądze.'
+  Object.assign(window.__DISPOSITOR_REPORT_DATA__.planets, {
+    neptune: {
+      planetKey: 'neptune',
+      title: 'Neptun: Przewodnik po Niewidzialnych Wodach',
+      archetype: 'Wizjoner Mgły — Strażnik Cienkiej Granicy',
+      subtitle: 'Gdy Neptun w Rybach domyka drzewo dyspozytorów, twarde kontury świata zaczynają drżeć jak odbicie w deszczowej kałuży.',
+      structureTheory: 'Najgłębsze decyzje nie zapadają u Ciebie przy świetle jarzeniówki nad arkuszem liczb. Gdy Neptun bierze berło, granicę między Twoim pragnieniem a nastrojem całego miasta dzieli zaledwie cienka firanka. Albo uczysz się nazywać kształty w tej mgle, albo toniesz w cudzych opowieściach bez własnego brzegu.',
+      coreDiagnosis: {
+        vector: 'Oddzielić czysty głos przeczucia od ciężaru cudzych oczekiwań i nie błądzić bez kotwicy.',
+        psychDynamics: 'Wyczuwasz fałsz w cudzym uśmiechu jeszcze zanim wybrzmi powitanie przy progu, ale często sam sobie nie wierzysz i szukasz miękkich usprawiedliwień. Gdy rzeczywistość robi się zbyt kanciasta i hałaśliwa, kusi Cię ucieczka w marzenia, bezsenne noce albo znieczulenie rutyną bez obecności.',
+        sovereigntyRole: 'Twoja siła leży w wyobraźni, sztuce i cichej empatii, która rozbraja najtwardszych graczy. Nie musisz krzyczeć przy stole — wystarczy jeden obraz albo jedno zdanie trafiające prosto w czyjąś tęsknotę.'
+      },
+      nourishmentProtocol: {
+        somatic: 'Ciepła kąpiel z solą, długi sen w ciemnym pokoju i kontakt bosej stopy z zimną deską albo ziemią.',
+        environment: 'Miękkie światło lamp wieczorem, muzyka bez nachalnych słów i wyraźny próg między pracą a ciszą.',
+        dailyRitual: 'Dziesięć minut po przebudzeniu zapisz jedno konkretne zadanie materialne, zanim odpłyniesz w domysły i nastroje.'
+      },
+      shadowAndEmergency: {
+        exhaustionSignals: [
+          'Dziwne zmęczenie po krótkim spotkaniu towarzyskim, jakbyś niósł cudzy płaszcz przez pół miasta.',
+          'Idealizowanie ludzi na podstawie jednego spojrzenia i bolesne rozczarowanie przy zwykłej rozmowie o rachunkach.',
+          'Odkładanie twardych decyzji w nieskończoność w nadziei, że mgła sama je rozwiąże przed piątkiem.'
+        ],
+        sabotagePattern: 'Wchodzisz w relację jak cichy wybawiciel albo męczennik bez słów. Oddajesz własny czas komuś zagubionemu, a kiedy druga strona nie odgaduje Twoich potrzeb, znikasz bez śladu w urazie.',
+        emergency24h: 'Zrób jedną namacalną, przyziemną rzecz — uporządkuj rachunek, wystaw spóźnioną fakturę albo wypowiedz twardą odmowę bez zbędnego tłumaczenia.'
+      },
+      relationshipDynamics: {
+        intimateNeed: 'Więzi bez zbędnych gier, gdzie można pomilczeć w jednym pokoju i wciąż czuć wspólną grawitację.',
+        vulnerabilityFear: 'Lęk przed tym, że zdejmując różowe szkła zobaczysz zwykłą, letnią pustkę zamiast wymarzonej opowieści.',
+        boundaryRule: 'Współczucie bez granic zamienia się w niewidzialny dług. Kochaj realnego człowieka, nie jego obietnicę w Twojej głowie.'
+      },
+      careerAndWealth: {
+        wealthLever: 'Zarabiasz tam, gdzie wizja, estetyka, kino, słowo, pomoc psychologiczna lub wyczucie podskórnych nastrojów zmieniają ludzkie decyzje.',
+        careerTrap: 'Bezduszna biurokracja oparta wyłącznie na suchych słupkach i krzykliwa sprzedaż obca Twojej naturze.'
+      },
+      decisionalFilter: {
+        questions: [
+          'Czy widzę tę osobę i ten plan w ostrym świetle południa, czy tylko w miękkim zmierzchu moich marzeń?',
+          'Czy robię to z autentycznej inspiracji, czy uciekam przed nudą lub trudną rozmową?',
+          'Gdzie dokładnie kończę się ja, a zaczyna cudzy kłopot?'
+        ],
+        powerAxiom: 'Tylko żeglarz znający głębokość własnego nurtu może bezpiecznie odpłynąć od brzegu.'
+      }
     },
-    nourishmentProtocol: {
-      somatic: 'Czysta woda: pływanie w jeziorze lub morzu, kąpiele z solą, picie dużej ilości wody źródlanej. Spokojne formy ruchu bez rywalizacji (łagodny spacer, stretching). Unikaj alkoholu i leków otumaniających — Twój układ nerwowy łatwo traci kontakt z rzeczywistością.',
-      environment: 'Świątynia spokoju: przyjazne światło, miękka muzyka instrumentalna, obecność naturalnych tkanin i roślin. Całkowity brak krzyku, pośpiechu i agresywnych bodźców wizualnych.',
-      dailyRitual: 'Wieczorne oczyszczenie: przed snem obmyj twarz chłodną wodą i wyobraź sobie, że oddajesz ziemi wszystkie emocje, które nie należą do Ciebie. Powiedz sobie: „Oddaję to, co cudze. Zostaję przy sobie”.'
-    },
-    shadowAndEmergency: {
-      exhaustionSignals: [
-        'Uczucie odrealnienia, depersonalizacja, ciągłe zapominanie o sprawach przyziemnych.',
-        'Przewlekłe znużenie życiem, chęć przespania całego dnia i unikanie jakichkolwiek decyzji.',
-        'Wchodzenie w relacje z ludźmi bezradnymi lub uzależnionymi z pragnieniem ich „zbawienia”.'
-      ],
-      sabotagePattern: 'Syndrom zbawcy i ofiary. Pozwalasz ludziom przekraczać Twoje granice i żerować na Twoim współczuciu, a gdy zabraknie Ci sił — czujesz się skrzywdzony przez cały świat, nie widząc, że sam otworzyłeś drzwi do własnego zniszczenia.',
-      emergency24h: 'Twarde lądowanie. Zjedz ciepły, gęsty, słony posiłek. Weź prysznic, szorując ciało gąbką. Sprawdź stan konta i zapłać zaległy rachunek. Porozmawiaj z kimś twardo stąpającym po ziemi. Wróć do materii.'
-    },
-    relationshipDynamics: {
-      intimateNeed: 'Partner stabilny, uziemiony, o dobrym sercu, który nie kpi z Twojej wrażliwości, ale trzyma bezpieczną kotwicę w realiach dnia codziennego.',
-      vulnerabilityFear: 'Lęk przed byciem brutalnie wykorzystanym, obdartym ze złudzeń i wyśmianym za wiarę w dobro.',
-      boundaryRule: 'Twoje współczucie nie może oznaczać zgody na samozagładę. Nie musisz tonąć razem z kimś, kto nie chce chwycić koła ratunkowego.'
-    },
-    careerAndWealth: {
-      wealthLever: 'Psychologia głębi, muzyka, film, fotografia, sztuka, opieka hospicyjna, medycyna holistyczna i praca z ludzkim cierpieniem.',
-      careerTrap: 'Korporacyjny wyścig szczurów, twarda sprzedaż oparta na manipulacji i brak etyki.'
-    },
-    decisionalFilter: {
-      questions: [
-        '1. Czy widzę tę osobę taką, jaka jest naprawdę, czy tylko moje wyobrażenie o tym, kim mogłaby być?',
-        '2. Czy nie poświęcam własnego spokoju i zdrowia, by zaspokoić czyjeś niekończące się żądania?',
-        '3. Czy ta decyzja opiera się na faktach, czy na pobożnym życzeniu?'
-      ],
-      powerAxiom: 'Moja łagodność jest darem, ale tylko jasne granice pozwalają mi przetrwać w świecie materii.'
+    pluto: {
+      planetKey: 'pluto',
+      title: 'Pluton: Król Ciemnego Podziemia',
+      archetype: 'Alchemik Przełomu — Władca Przemian',
+      subtitle: 'Gdy Pluton w Skorpionie rządzi całym horoskopem, półprawdy kruszą się w Twoich dłoniach jak suchy tynk.',
+      structureTheory: 'Pod gładką powierzchnią codziennych uprzejmości zawsze słyszysz tykanie zegara. Pluton na czele hierarchii nie wybacza życia na pół gwizdka ani letnich sojuszy zawieranych z wygody. Każda sfera, w której próbujesz udawać mniejszy apetyt, niż masz naprawdę, wcześniej czy później pęka z hukiem.',
+      coreDiagnosis: {
+        vector: 'Porzucić potrzebę cichego kontrolowania wszystkiego i zaufać własnej sile odrodzenia.',
+        psychDynamics: 'Widzisz rysy na porcelanie i lęk w cudzych źrenicach, zanim ktokolwiek poda Ci rękę na powitanie. Długo znosisz niewygodę z kamiennym spokojem, zbierając fakty po ciemku, aż w jednej sekundzie zamykasz rozdział i palisz most za plecami bez oglądania się wstecz.',
+        sovereigntyRole: 'Twoja obecność budzi respekt nawet w milczeniu. W chwilach kryzysu, kiedy wszyscy inni gubią klucze do wyjścia, Ty odzyskujesz lodowatą jasność wzroku.'
+      },
+      nourishmentProtocol: {
+        somatic: 'Ciężki wysiłek fizyczny aż do potu, sauna albo lodowaty prysznic i głębokie wydechy uwalniające napięcie z brzucha.',
+        environment: 'Ciemne drewno, ciężki metal, pełna prywatność, zero plotek i małych intryg przy wspólnym stole.',
+        dailyRitual: 'Pięć minut wieczorem nad czystą kartką: nazwij bez litości jedną iluzję, którą dziś wciąż podtrzymujesz ze strachu.'
+      },
+      shadowAndEmergency: {
+        exhaustionSignals: [
+          'Paraliżująca podejrzliwość, przez którą w zwykłym spóźnieniu widzisz ukryty spisek lub zdradę.',
+          'Wyczerpująca gra w trzymanie wszystkich kart przy orderze nawet przed najbliższą osobą.',
+          'Fascynacja kryzysami i niszczenie spokoju w chwili, gdy wreszcie zrobiło się bezpiecznie.'
+        ],
+        sabotagePattern: 'Testujesz lojalność ludzi tak długo i tak bezlitośnie, aż w końcu pękają i odchodzą — potwierdzając Twój najczarniejszy scenariusz, że nikomu nie wolno ufać.',
+        emergency24h: 'Powiedz jedną niewygodną prawdę wprost w oczy zamiast planować chłodny odwet w milczeniu.'
+      },
+      relationshipDynamics: {
+        intimateNeed: 'Więzi aż do kości — spotkania bez pancerza, w którym żadne z Was nie boi się własnego mroku.',
+        vulnerabilityFear: 'Śmiertelny strach, że jeśli odsłonisz miękkie miejsce, druga strona użyje go przeciwko Tobie w złej godzinie.',
+        boundaryRule: 'Prawdziwa bliskość nie polega na prześwietlaniu cudzej duszy jak podejrzanego, lecz na odwadze zdjęcia własnej zbroi.'
+      },
+      careerAndWealth: {
+        wealthLever: 'Kryzysy, restrukturyzacje, finanse dużego kalibru, psychologia głębi, śledztwa, leczenie i prowadzenie ludzi przez przełom.',
+        careerTrap: 'Płytka, cukierkowa powierzchowność i praca pod miernym szefem, który boi się Twojej przenikliwości.'
+      },
+      decisionalFilter: {
+        questions: [
+          'Czy kieruje mną odwaga prawdy, czy chłodna chęć odwetu i zatrzymania kontroli?',
+          'Co w moim życiu dawno już umarło, a ja wciąż sztucznie podtrzymuję w tym tętno?',
+          'Jaką cenę zapłacę za milczenie w tej sprawie za pięć lat?'
+        ],
+        powerAxiom: 'Ten, kto przeżył własną noc bez mrugnięcia okiem, nie lęka się żadnego cienia za drzwiami.'
+      }
     }
-  };
-
-  // ==========================================
-  // PLUTON: KONFRONTACJA Z CIENIEM & ODRODZENIE
-  // ==========================================
-  window.__DISPOSITOR_REPORT_DATA__.planets.pluto = {
-    planetKey: 'pluto',
-    title: 'Pluton: Konfrontacja z Cieniem i Psychologiczne Odrodzenie',
-    archetype: 'Archetyp Przeobrażenia, Radykalna Prawda i Odporność Psychiczna',
-    subtitle: 'Widzisz przez maski. Wiesz, czym jest ból, strata i kryzys — i wiesz, jak za każdym razem wstać silniejszym.',
-    structureTheory: 'W analizie dyspozytorów Donny Cunningham, Pluton na szczycie hierarchii (we władztwie w Skorpionie) tworzy układ katartyczno-alchemiczny. Każda inna planeta w Twoim kosmogramie służy bezwzględnemu obnażaniu iluzji, integracji cienia i dochodzeniu do nienaruszalnej prawdy. Marc Edmund Jones i C.G. Jung wskazywali, że niebezpieczeństwem tej pozycji jest »kompulsja kontroli« i zbroja nieufności: w obawie przed bezbronnością jednostka woli sama zdetonować relację lub projekt, niż zaryzykować zaufanie drugiemu człowiekowi.',
-    coreDiagnosis: {
-      vector: 'Głębia Transformacji — nienawiść do pozorów, powierzchowności i kłamstwa.',
-      psychDynamics: 'Kiedy Pluton wieńczy Twoje drzewo dyspozytorów, Twoja psychika posiada zdolność rentgenowskiego prześwietlania ludzi. Od razu wiesz, kiedy ktoś kłamie, manipuluje lub udaje kogoś, kim nie jest. Prawdopodobnie przeszedłeś w życiu przez sytuacje graniczne, które zniszczyłyby innych ludzi — ale w Tobie wykuły stalową odporność. Największym wyzwaniem Twojej natury jest jednak lęk przed ponownym zranieniem: aby się chronić, zaczynasz kontrolować wszystko i wszystkich wokół, budując wokół siebie twierdzę nieufności.',
-      sovereigntyRole: 'Jesteś chirurgiem prawdy. Nie boisz się trudnych tematów, śmierci, cienia ani tabu — oczyszczasz to, co zepsute, by mogło narodzić się nowe życie.'
-    },
-    nourishmentProtocol: {
-      somatic: 'Głęboki detoks ciała: post okresowy, sauna, praca z oddechem uwalniającym napięcia z miednicy i brzucha. Wysiłek fizyczny, który pozwala rozładować potężne napięcie wewnętrzne.',
-      environment: 'Dyskretna, intymna przestrzeń, w której nikt nie może Cię zaskoczyć ani naruszyć Twojej prywatności. Ciemne, głębokie barwy (grafit, ciemny dąb, burgund). Bezpieczne schronienie dla Twoich spraw.',
-      dailyRitual: 'Rytuał odpuszczenia kontroli: przed snem spójrz na swoje zaciśnięte dłonie, otwórz je powoli i powiedz sobie: „Nie muszę kontrolować każdego oddechu świata. Wiem, jak przetrwać każdą burzę”.'
-    },
-    shadowAndEmergency: {
-      exhaustionSignals: [
-        'Obsesyjne sprawdzanie intencji partnera lub wspólników, doszukiwanie się zdrady w każdym geście.',
-        'Napięcie w dole brzucha, bezsenność i poczucie, że „zaraz wydarzy się katastrofa”.',
-        'Zimna chęć odwetu i zniszczenia relacji, zanim ktoś zdoła zranić Ciebie.'
-      ],
-      sabotagePattern: 'Wyprzedzające uderzenie. Z lęku przed byciem porzuconym lub zdradzonym, sam detonujesz związek lub firmę, udowadniając sobie gorzką prawdę: „nikomu nie można ufać”.',
-      emergency24h: 'Kapitulacja przed życiem. Zamknij się w ciemnym pokoju w samotności. Wypłacz lub wykrzycz stary ból w poduszkę bez świadków. Pozwól sobie poczuć bezsilność. Prawdziwe odrodzenie zaczyna się na dnie.'
-    },
-    relationshipDynamics: {
-      intimateNeed: 'Więź bezwarunkowa, bezkompromisowa i głęboka do szpiku kości. Partner o żelaznej lojalności, który nie boi się Twoich mrocznych stron i mówi prawdę prosto w oczy.',
-      vulnerabilityFear: 'Paniczny lęk przed obnażeniem własnej bezbronności i utratą władzy nad swoim losem.',
-      boundaryRule: 'Kontrola to nie bliskość. Największym aktem odwagi w Twoim życiu jest zaufanie mimo pamięci o dawnych ranach.'
-    },
-    careerAndWealth: {
-      wealthLever: 'Zarządzanie kryzysowe, wielki kapitał, restrukturyzacja, psychoterapia traumy, dochodzenia, medycyna ratunkowa i transformacja upadających struktur.',
-      careerTrap: 'Praca powierzchowna, małe intrygi biurowe i środowiska ludzi bez honoru.'
-    },
-    decisionalFilter: {
-      questions: [
-        '1. Czy ta decyzja wynika z mojej siły i prawdy, czy z panicznego lęku przed utratą kontroli?',
-        '2. Czy nie próbuję kogoś zniszczyć tylko po to, by uśmierzyć własny dawny ból?',
-        '3. Co musi w tej sytuacji umrzeć, bym mógł naprawdę pójść naprzód?'
-      ],
-      powerAxiom: 'Niczego nie muszę się bać. Przeszedłem przez ogień i potrafię odrodzić się z każdego popiołu.'
-    }
-  };
+  });
 })();

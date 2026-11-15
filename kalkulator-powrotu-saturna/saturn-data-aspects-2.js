@@ -1,6 +1,6 @@
 /**
  * NEOROMANTYCZNY — SATURN ASPECTS DATA (PART 2: TRANS-SATURN & KARMIC POINTS)
- * Standard: Human Voice 2026, Psychologia Głębi C.G. Junga, Liz Greene
+ * Standard Human Voice Engine v2.0 (Zafón Noir & Implicit Jung)
  */
 (function () {
   window.SATURN_ASPECTS_PART2 = {
@@ -10,12 +10,12 @@
       glyph: '♅',
       color: '#26C6DA',
       hard: {
-        text: 'Wewnętrzna wojna domowa między obsesją bezpieczeństwa a nagłą chęcią rzucenia wszystkiego w diabły. Boisz się zmian, więc tkwisz w dusznych układach do momentu, w którym tama pęka i dochodzi do destrukcyjnego wybuchu.',
-        integration: 'Dojrzałość polega na odwadze wprowadzania nowoczesnych, odważnych reform na własnych warunkach, zanim zmusi Cię do tego los. Łączysz rewolucyjną wizję z solidną praktyką.'
+        text: 'Cicha wojna pod jednym dachem między przywiązaniem do bezpiecznych kluczy a nagłą ochotą, by jednej nocy spakować walizkę i trzasnąć bramą na zawsze. Trwasz w dusznych układach z lęku przed zmianą tak długo, aż burza sama zrywa dach.',
+        integration: 'Dorosłość polega tu na odwadze otwierania okien na własnych warunkach — zmieniasz stare mury, zanim czas wymusi ucieczkę przez płot.'
       },
       soft: {
-        text: 'Dar konstruktywnego modernizowania struktur. Nie niszczysz tego, co stare, dla samej rebelii; potrafisz tchnąć świeże życie w tradycyjne systemy.',
-        integration: 'Autorytet w środowiskach innowatorów. Widzisz trendy przyszłości i potrafisz osadzić je w twardych realiach rynku.'
+        text: 'Rzadki dar odnawiania starych domów bez wysadzania ich w powietrze dla samego poklasku tłumu.',
+        integration: 'Widzisz kształt jutra wyraźniej niż sąsiedzi za stołem i potrafisz osadzić odważny pomysł w twardych ramach codzienności.'
       }
     },
     neptune: {
@@ -24,12 +24,12 @@
       glyph: '♆',
       color: '#42A5F5',
       hard: {
-        text: 'Bolesne zderzenie marzeń z twardą rzeczywistością. Skłonność do uciekania przed rachunkami i trudnymi rozmowami w świat fantazji, używek lub poczucia bezradności. Kryzys 28–30 lat bezlitośnie zdziera różowe okulary.',
-        integration: 'Odkrywasz, że prawdziwa wrażliwość nie wymaga izolacji od świata. Przekuwasz artystyczne i duchowe wizje w konkretne, namacalne formy, zyskując trzeźwe współczucie wolne od naiwności.'
+        text: 'Zderzenie pięknego snu z ostrym kantem biurka i rachunkiem za czynsz w nieotwartej kopercie. Pokusa ucieczki w znieczulenie, mgliste obietnice albo cichą bezradność pęka między 28. a 30. rokiem życia jak słodkie kłamstwo przy zapalonej lampie.',
+        integration: 'Wrażliwość nie wymaga zamykania się na strychu przed światem — zaczynasz wlewać swoje przeczucia w namacalną pracę, słowo lub sztukę o czystych brzegach.'
       },
       soft: {
-        text: 'Zdolność do nadawania marzeniom dyscypliny i granic. Nie bujasz w obłokach — Twoja intuicja jest praktycznym narzędziem nawigacyjnym.',
-        integration: 'Umiejętność realizowania wzniosłych projektów z zachowaniem żelaznej dyscypliny budżetowej i organizacyjnej.'
+        text: 'Umiejętność łapania subtelnej mgły intuicji w twarde naczynie rzemiosła i konkretnego planu na papierze.',
+        integration: 'Prowadzisz delikatne, twórcze sprawy z precyzją księgowego — łącząc czułość serca z czystym rachunkiem godzin.'
       }
     },
     pluto: {
@@ -38,12 +38,12 @@
       glyph: '♇',
       color: '#BA68C8',
       hard: {
-        text: 'Ciężki kaliber psychologiczny. Wczesne doświadczenie bezsilności wobec opresyjnych osób lub okoliczności zrodziło obsesyjną potrzebę kontroli. W relacjach to walka o dominację, nieufność i lęk przed tym, że ktoś odkryje Twoje słabe punkty.',
-        integration: 'Kiedy przestajesz toczyć podjazdową wojnę z otoczeniem, uwalniasz potężną moc samoregeneracji. Przechodzisz przez każdy życiowy kryzys jak feniks przez ogień — nie do złamania, suwerenny i w pełni świadomy swojej siły.'
+        text: 'Dawna pamięć spotkania z cudzą bezwzględnością zostawiła pod skórą żelazną nieufność i nawyk trzymania dłoni na zasuwie. W miłości i pracy często toczysz cichą wojnę o to, kto ma władzę w pokoju, bo oddanie klucza wydaje Ci się wyrokiem bezbronności.',
+        integration: 'Kiedy opuszczasz broń i kończysz podjazdową grę o przewagę, podnosisz się z każdego popiołu silniejszy i odporny na jakikolwiek szantaż.'
       },
       soft: {
-        text: 'Niewzruszona siła woli i dyskrecja. Działasz w ciszy, głęboko i nieodwracalnie.',
-        integration: 'Wybitne zdolności zarządzania kryzysowego. Potrafisz przeprowadzić najtrudniejszą transformację bez paniki i chaosu.'
+        text: 'Spokojna siła bez zbędnego zgiełku. Działasz po cichu, aż do samego dna sprawy, nie cofając ręki przed prawdą.',
+        integration: 'W godzinie kryzysu stajesz się tym człowiekiem przy stole, któremu nie drży głos, gdy za oknem wali się stary porządek.'
       }
     },
     chiron: {
@@ -52,12 +52,12 @@
       glyph: '⚷',
       color: '#B8A456',
       hard: {
-        text: 'Przewlekłe poczucie wadliwości i lęk przed popełnieniem błędu. Ciągły strach przed tym, że inni uznają Cię za niewystarczająco kompetentnego lub dojrzałego, co prowadzi do bolesnej autoizolacji.',
-        integration: 'Zrozumienie, że nikt nie jest doskonały. Przestajesz biczować się za potknięcia, a Twoje własne blizny stają się źródłem najcenniejszej mądrości życiowej, którą potrafisz dzielić się z innymi.'
+        text: 'Stare wrażenie bycia pękniętym dzbanem na półce — jakby wszyscy inni znali reguły dorosłości z urodzenia, a Ty wciąż obawiałeś się, że jedno potknięcie odsłoni Twój rzekomy brak prawa do miejsca przy stole.',
+        integration: 'Kiedy przestajesz wstydzić się blizn i biczować za ludzkie pomyłki, dokładnie te pęknięte miejsca stają się światłem pomagającym innym nie upaść w ciemności.'
       },
       soft: {
-        text: 'Wrodzona pokora i szacunek dla ludzkich ograniczeń. Nie oceniasz ludzi z góry.',
-        integration: 'Dar mądrego doradcy i mentora. Twoja obecność przynosi uspokojenie tym, którzy zmagają się z poczuciem zagubienia.'
+        text: 'Cicha pokora wobec ludzkiej kruchości. Patrzysz na cudze błędy bez wyższości chłodnego sędziego.',
+        integration: 'Twoja obecność uspokaja wzburzony pokój szybciej niż długie kazania — stajesz się mądrym powiernikiem w trudnych nocach.'
       }
     },
     node: {
@@ -66,12 +66,12 @@
       glyph: '☊',
       color: '#7986CB',
       hard: {
-        text: 'Saturn blokuje ucieczkę w stare, dziecinne przyzwyczajenia. Wymaga porzucenia bezpiecznej strefy komfortu i wzięcia pełnej odpowiedzialności za własne powołanie.',
-        integration: 'Przełamanie oporu i wejście na właściwą ścieżkę życiową. Każdy wysiłek włożony w rozwój przynosi trwałe, niezniszczalne owoce.'
+        text: 'Saturn zatrzaskuje tylne drzwi do wygodnego, dobrze znanego pokoju dawnych przyzwyczajeń. Koniec odkładania życia na bezpieczne jutro — czas wyjść w nieznany korytarz bez cudzego parasola.',
+        integration: 'Po przekroczeniu oporu każdy uczciwy krok zaczyna układać się w drogę o zadziwiającej trwałości i ciężarze.'
       },
       soft: {
-        text: 'Poczucie głębokiej synchronii z czasem. Trudności życiowe nie paraliżują, lecz są traktowane jak kolejne szczeble wtajemniczenia.',
-        integration: 'Spokojna, konsekwentna realizacja życiowego celu z pełnym poczuciem sensu.'
+        text: 'Ciche porozumienie z zegarem zdarzeń. Nawet ciężkie lekcje przychodzą jak kolejne szczeble schodów prowadzących dokładnie tam, gdzie trzeba.',
+        integration: 'Spokojne dorastanie do własnego powołania bez zbędnego teatru i wyrywania włosów z głowy.'
       }
     },
     lilith: {
@@ -80,12 +80,12 @@
       glyph: '⚸',
       color: '#E57373',
       hard: {
-        text: 'Blokowanie własnej dzikiej, pierwotnej natury z lęku przed odrzuceniem przez otoczenie. Próba podporządkowania instynktów surowym normom społecznym wywołuje wewnętrzne napięcie.',
-        integration: 'Odzyskanie suwerenności i magnetyzmu bez wstydu i poczucia winy. Integrujesz swój Cień, stając się człowiekiem kompletnym.'
+        text: 'Tłumienie własnej dzikiej prawdy ze strachu, że gdyby sąsiedzi usłyszeli ją po zmroku, cofnęliby Ci zaproszenie do stołu. Spętanie instynktu pod gładkim kołnierzykiem budzi głuchy bunt i wstyd.',
+        integration: 'Odzyskujesz godność bez przepraszania za swoje pragnienia — stajesz przed światem cały, łącząc klasę z własnym ciemnym ogniem.'
       },
       soft: {
-        text: 'Naturalna odwaga bycia sobą przy zachowaniu pełnej klasy i godności.',
-        integration: 'Niezrównany magnetyzm osobisty i wierność własnej prawdzie bez konieczności agresywnej prowokacji.'
+        text: 'Naturalny takt połączony z odwagą trwania przy swoim głosie, bez tanich prowokacji na pokaz.',
+        integration: 'Cichy, niepodrabialny magnetyzm płynący ze zgody na wszystko, co w Tobie żywe i prawdziwe.'
       }
     },
     fortune: {
@@ -94,12 +94,12 @@
       glyph: '⊗',
       color: '#81C784',
       hard: {
-        text: 'Poczucie, że nic nie przychodzi łatwo. Los zmusza Cię do budowania powodzenia przez bezwzględną dyscyplinę, prawość i rzetelność.',
-        integration: 'Prawdziwy, niezniszczalny dobrostan materialny i wewnętrzny spokój, którego nie naruszy żaden rynkowy wstrząs.'
+        text: 'Przekonanie, że nic w życiu nie spada z nieba za darmo, a każde dobre słowo czy zarobiony grosz wymaga dwukrotnie dłuższego marszu pod deszczem.',
+        integration: 'Wszystko, co osiągasz własnymi rękami, ma twarde ściany z kamienia — żadna nagła zmiana wiatru nie zdmuchnie tego z Twojego biurka.'
       },
       soft: {
-        text: 'Pomyślność przychodzi u Ciebie przez rzetelną pracę i powściągliwość. Szczęście jest logiczną konsekwencją Twoich wyborów.',
-        integration: 'Zbudowanie trwałego majątku i wewnętrznego spokoju w pełnej harmonii z czasem.'
+        text: 'Spokojne powodzenie wyrastające z uczciwej miary, wierności sobie i braku gonitwy za cudzą zazdrością.',
+        integration: 'Majątek i pogoda wieczorów przychodzą dokładnie w tym samym tempie, w jakim układasz własne sprawy w ciszy.'
       }
     }
   };

@@ -15,39 +15,39 @@
 
   const RULER_THEMES = {
     mars: {
-      power: 'Napęd Wolitywny i Odwaga Granic',
-      lesson: 'Twoja odporność i dyscyplina zależą bezpośrednio od energii Marsa. Impuls do działania i obrony własnego terytorium musi zostać przekuty w strategiczną cierpliwość.',
-      actionTip: 'Uporządkuj kwestie sporne, asertywność i zarządzanie gniewem w sektorze, w którym przebywa Twój Mars.'
+      power: 'Ostrze Woli i Odwaga Własnych Granic',
+      lesson: 'Twoja wytrzymałość nie pochodzi z biernego czekania, lecz z energii Marsa. Ogień złości i pośpiech muszą zmienić się w spokojną, stalową precyzję cięcia.',
+      actionTip: 'Rozstrzygnij stare spory, nazwij głośno swoje granice i skieruj gniew w czyn w domu, w którym mieszka Twój Mars.'
     },
     venus: {
-      power: 'Wartość Własna, Relacje i Finanse',
-      lesson: 'Twoja dojrzałość nie powstanie z samotnej walki, lecz z harmonii, smaku, zaufania do siebie i uczciwych kontraktów relacyjnych.',
-      actionTip: 'Sprawdź stan swoich sojuszy, umów partnerskich i finansowej suwerenności w sektorze Twojej Wenus.'
+      power: 'Wartość Własna, Bliskość i Zaufanie do Piękna',
+      lesson: 'Twoja dorosłość nie rodzi się w samotnej twierdzy, lecz w uczciwej wymianie, dobrym smaku oraz przywiązaniu wolnym od strachu przed stratą.',
+      actionTip: 'Przejrzyj zawarte po cichu kompromisy, umowy finansowe i wierność sobie w domu zajmowanym przez Twoją Wenus.'
     },
     mercury: {
-      power: 'Precyzja Myślenia i Rzemiosło Słowa',
-      lesson: 'Saturn buduje strukturę w oparciu o fakty, chłodną logikę i eliminację chaosu informacyjnego. Słowo jest Twoim podpisem i pieczęcią.',
-      actionTip: 'Doprowadź do porządku dokumenty, umowy i zapanuj nad rozproszeniem uwagi w domu rządzonym przez Merkurego.'
+      power: 'Rzemiosło Słowa i Czystość Myśli',
+      lesson: 'Saturn stawia tu ściany z faktów, rzetelnych notatek i rozmowy bez krętactwa. Jedno dane przez Ciebie słowo powinno ważyć więcej niż sterta papierów.',
+      actionTip: 'Zamknij rozgrzebane sprawy na biurku, przeczytaj drobny druk w umowach i wycisz szum w sprawach domu Twojego Merkurego.'
     },
     moon: {
-      power: 'Pamięć Emocjonalna i Bezpieczeństwo Rdzenne',
-      lesson: 'Dojrzałość Saturna wymaga od Ciebie integracji uczuć i odcięcia pępowiny rodowej. Ucieczka w chłód i pancerz nie rozwiąże głodu bliskości.',
-      actionTip: 'Zaopiekuj się swoimi podstawowymi potrzebami emocjonalnymi i zdefiniuj, czym jest dla Ciebie prawdziwy dom.'
+      power: 'Pamięć Domu i Schronienie Wewnątrz',
+      lesson: 'Nie wybudujesz trwałego życia na lodzie. Dojrzałość żąda tu pojednania z własną wrażliwością i wyjścia spod cienia dawnych rodzinnych lęków.',
+      actionTip: 'Zadbaj o prywatną przestrzeń, ciepło codzienności i własne emocje tam, gdzie w horoskopie oddycha Twój Księżyc.'
     },
     sun: {
-      power: 'Suwerenność Tożsamości i Autorytet Lidera',
-      lesson: 'Saturn czerpie siłę z Twojego rdzennego poczucia godności. Masz stać się autorytetem dla samego siebie, nie czekając na brawa i poklask otoczenia.',
-      actionTip: 'Weź 100% odpowiedzialności za to, kim jesteś i przestań przepraszać za swoją widzialność w świecie.'
+      power: 'Cicha Godność i Odwaga Stania w Świetle',
+      lesson: 'Twój kręgosłup wyrasta ze świadomego szacunku do własnego nazwiska. Koniec chowania głowy w kołnierz i czekania na pozwolenie obcych osób przy stole.',
+      actionTip: 'Weź pełny ciężar swojej drogi na własne barki i przestań zmniejszać się dla cudzej wygody w domu Twojego Słońca.'
     },
     jupiter: {
-      power: 'Wizja Moralna, Filozofia i Wyższy Sens',
-      lesson: 'Saturn wymaga oparcia wysiłku na solidnym fundamencie etycznym. Bez głębszej wiary w sens Twoja dyscyplina zamieni się w jałowy ciężar.',
-      actionTip: 'Zweryfikuj swoje życiowe drogowskazy i połącz ciężką pracę z wielką, długoterminową wizją.'
+      power: 'Kierunek Sumienia i Długi Oddech',
+      lesson: 'Bez głębszego sensu zwykła dyscyplina szybko zamienia się w ciężkie jarzmo. Szukaj prawdy, za którą pójdziesz bez wahania nawet w deszczowy poranek.',
+      actionTip: 'Sprawdź, czy codzienna praca zgadza się z tym, w co naprawdę wierzysz, w sektorze rządzonym przez Twojego Jowisza.'
     },
     saturn: {
-      power: 'Władca Ostateczny (Final Sovereign Dispositor)',
-      lesson: 'Twój Saturn przebywa we własnym królestwie. Nie podlega żadnej zewnętrznej instancji odwoławczej. Nosisz w sobie wrodzony kompas hierarchii i czasu.',
-      actionTip: 'Nie szukaj mistrza na zewnątrz — Saturn wymaga, abyś sam stał się ostatecznym punktem odniesienia.'
+      power: 'Władca Ostateczny (Samotny Tron Czasu)',
+      lesson: 'Twój Saturn siedzi we własnym pokoju i nikomu nie składa meldunków. Masz w sobie surowy, nieprzekupny zegar sumienia i wrodzony zmysł długiej gry.',
+      actionTip: 'Przestań szukać mistrza w obcych drzwiach — to Ty jesteś ostateczną instancją, przed którą podpisujesz swój własny wyrok.'
     }
   };
 

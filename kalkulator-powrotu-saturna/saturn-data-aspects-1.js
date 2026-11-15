@@ -1,6 +1,6 @@
 /**
  * NEOROMANTYCZNY — SATURN ASPECTS DATA (PART 1: PLANETY OSOBISTE & JOWISZ)
- * Standard: Human Voice 2026, Psychologia Głębi C.G. Junga, Liz Greene
+ * Standard Human Voice Engine v2.0 (Zafón Noir & Implicit Jung)
  */
 (function () {
   window.SATURN_ASPECTS_PART1 = {
@@ -10,12 +10,12 @@
       glyph: '☉',
       color: '#FFD700',
       hard: {
-        text: 'Wychowanie w cieniu nieustannych oczekiwań albo wczesny brak ojca, który wymusił przedwczesną dorosłość. Znasz ten wewnętrzny głos: nieważne, ile zrobisz, wciąż czujesz, że musisz zasłużyć na prawo do szacunku. W pracy orzesz do upadłego, maskując syndrom oszusta żelazną samodyscypliną. W wieku 28–30 lat to przestaje działać — ciało i psychika odmawiają dalszego spalania się dla cudzej aprobaty.',
-        integration: 'Dojrzałość zaczyna się w chwili, gdy zrzucasz konieczność udowadniania czegokolwiek światu. Gdy sam stajesz się dla siebie suwerennym autorytetem, zyskujesz cichą, niewzruszoną siłę lidera, której nie zachwieje żaden zewnętrzny kryzys.'
+        text: 'Dorastanie w długim cieniu cudzych wymagań albo przy stole, na którym brakowało ojcowskiej pewności i musiałeś przedwcześnie włożyć ciężki płaszcz dorosłego. Nosisz pod skórą głos przypominający nieopłacony rachunek: cokolwiek położysz na biurku, zawsze wydaje się za małe, by kupić sobie zwykły szacunek. Około trzydziestki ciągłe zarzynanie się w pracy w imię cudzej aprobaty przestaje działać — ciało po prostu odmawia dalszej gry.',
+        integration: 'Ulga zaczyna się w noc, gdy oddajesz ten pożyczony dług światu i przestajesz prosić o zgodę na własne imię. Stajesz się dla siebie suwerennym oparciem, przy którym zgiełk korytarza milknie.'
       },
       soft: {
-        text: 'Wrodzony zmysł cierpliwego budowania. Nie potrzebujesz poklasku ani spektakularnych gestów; instynktownie rozumiesz, że ranga i szacunek rodzą się z codziennej, żmudnej powtarzalności.',
-        integration: 'Podczas Powrotu Saturna nie doświadczasz dramatycznego rozpadu, lecz naturalnego awansu — otoczenie bez oporów powierza Ci stery i odpowiedzialność za kluczowe decyzje.'
+        text: 'Cierpliwe rzemiosło bez pogoni za tanim światłem na jeden wieczór. Od dawna rozumiesz, że prawdziwy szacunek układa się cegła po cegle, kiedy za oknem dawno zgasły cudze fajerwerki.',
+        integration: 'Podczas Powrotu Saturna zamiast zawalonych ścian dostajesz cichy awans i odpowiedzialność, którą dźwigasz bez drżenia dłoni.'
       }
     },
     moon: {
@@ -24,12 +24,12 @@
       glyph: '☽',
       color: '#E8E6E3',
       hard: {
-        text: 'Poczucie wczesnego emocjonalnego osamotnienia. Bardzo szybko nauczyłeś się, że łzy i bezradność są ryzykowne, więc zamknąłeś miękkie wnętrze za grubym murem opanowania. W relacjach uciekasz w obowiązki, pracę i pragmatyzm za każdym razem, gdy pojawia się ryzyko prawdziwej bezbronności. Lęk przed odrzuceniem sprawia, że wolisz cierpieć w milczeniu, niż poprosić o wsparcie.',
-        integration: 'Powrót Saturna zmusza do zburzenia tej twierdzy. Uświadamiasz sobie, że stłumione emocje nie znikają, lecz niszczą zdrowie od środka. Prawdziwa siła nie polega na byciu z kamienia, lecz na odwadze pokazania drugiemu człowiekowi swoich pęknięć.'
+        text: 'Stary chłód pamiętany jeszcze z nocnego korytarza dzieciństwa. Bardzo wcześnie pojąłeś, że łzy przy stole nie budzą czułości, więc zamknąłeś miękką część serca za grubymi drzwiami opanowania i pragmatyzmu. Kiedy ktoś próbuje podejść naprawdę blisko, wolisz rzucić się w tabelki i pracę, niż zaryzykować bezbronne spojrzenie w półmroku.',
+        integration: 'Saturn rozbiera ten mur z zimnego marmuru, bo stłumiona pamięć zawsze wraca w zmęczonych plecach i bezsennym oddechu. Prawdziwa siła zaczyna się tam, gdzie nie wstydzisz się pęknięcia na własnej porcelanie.'
       },
       soft: {
-        text: 'Rzadka odporność psychiczna i umiejętność trzymania fasonu w chwilach, gdy inni panikują. Potrafisz ukoić własny niepokój bez ucieczki w nałogi czy histerię.',
-        integration: 'Stajesz się bezpieczną przystanią i emocjonalną opoką dla rodziny i partnera, tworząc dom oparty na niezachwianej lojalności.'
+        text: 'Spokojny oddech pośrodku burzy. Kiedy inni upuszczają szkło i tracą głowę w dymie kłótni, Ty potrafisz uciszyć lęk bez ucieczki w tanie znieczulenie.',
+        integration: 'Stajesz się cichą latarnią i ciepłym dachem dla tych, którzy wchodzą z Tobą pod jedną kołdrę na długie lata.'
       }
     },
     mercury: {
@@ -38,12 +38,12 @@
       glyph: '☿',
       color: '#FFA726',
       hard: {
-        text: 'Mózg w trybie wiecznego audytu. Paraliżująca samokrytyka sprawia, że każde słowo i decyzję analizujesz do utraty tchu, bojąc się kompromitacji lub zarzutu powierzchowności. W gorszych momentach uciekasz w cynizm, zjadliwą ironię i unikanie otwartych rozmów.',
-        integration: 'Kiedy przestajesz traktować własne myśli jak pole minowe, ten układ rodzi wybitny rygor intelektualny. Zamiast pustego gadania zyskujesz chirurgiczną precyzję wypowiedzi i zdolność do tworzenia rzeczy o niepodważalnej wartości merytorycznej.'
+        text: 'Umysł pod lupą bezlitosnego korektora, który przy każdej zapisanej linijce wytyka potknięcie stalówką w czerwonym atramencie. Boisz się wypowiedzieć zdanie bez trzech dowodów w kieszeni, więc czasem chowasz niepewność za zjadliwą ironią albo gęstym milczeniem.',
+        integration: 'Gdy przestajesz traktować własną głowę jak sąd polowy, ta surowość zmienia się w wybitną ostrość pióra i słuch, który jednym zdaniem ucina cudze krętactwa.'
       },
       soft: {
-        text: 'Metodyczny, pragmatyczny umysł odporny na mody i dezinformację. Cenisz twarde fakty, rzetelne źródła i przemyślaną logikę.',
-        integration: 'Twoje słowo ma wagę podpisanego aktu notarialnego. W biznesie i życiu prywatnym uchodzisz za głos rozsądku, który potrafi uporządkować każdy chaos.'
+        text: 'Trzeźwe oko i pamięć do szczegółów, nad którymi inni prześlizgują się po wierzchu. Nie ulegasz modnym hasłom — zawsze pytasz o fakty pod spodem.',
+        integration: 'Twoje słowo waży przy stole tyle, co pieczęć na pergaminie — wraca do Ciebie porządek i zaufanie ludzi ceniących rzetelność.'
       }
     },
     venus: {
@@ -52,12 +52,12 @@
       glyph: '♀',
       color: '#66BB6A',
       hard: {
-        text: 'Przeświadczenie, że na miłość i bliskość trzeba zasłużyć nienaganną pracą lub poświęceniem. Podświadomy lęk przed odrzuceniem pcha Cię w stronę relacji chłodnych, skomplikowanych lub takich, w których musisz nieustannie udowadniać swoją przydatność. Często wolisz być sam, niż zaryzykować ból obnażonego serca.',
-        integration: 'Przełom polega na zrozumieniu, że partnerstwo nie jest transakcją barterową ani polem walki o przetrwanie. Uczysz się stawiać zdrowe granice bez chłodu i budować intymność opartą na autentycznej czułości, a nie na strachu przed porzuceniem.'
+        text: 'Podskórne przekonanie, że na bliskość trzeba zasłużyć idealnym zachowaniem, przysługą albo milczącym znoszeniem chłodu. Z lęku przed zamkniętymi drzwiami zbyt często wybierałeś ludzi niedostępnych lub układy, w których ciągle płacisz cudzy rachunek — aż wolisz samotną kolację od kolejnego rozczarowania.',
+        integration: 'Przełom przychodzi wtedy, gdy przestajesz targować się o miłość w korytarzu i zdejmujesz z serca cenę przywiązania. Budujesz czyste granice bez chłodu i wreszcie otwierasz dłonie na zwykłą czułość.'
       },
       soft: {
-        text: 'Dojrzałe poczucie estetyki i lojalność, która nie blednie z biegiem lat. Wybierasz jakość zamiast ilości — zarówno w doborze ubrań, jak i ludzi, z którymi dzielisz stół.',
-        integration: 'Zdolność do budowania stabilnego bezpieczeństwa materialnego oraz relacji miłosnych, które z każdą dekadą stają się głębsze i bardziej harmonijne.'
+        text: 'Wierność dobremu smakowi i ludziom wybranym nie na jeden sezon, lecz na całe dekady. Wolisz jedną dobrą parę rękawiczek niż szafę pełną pustego blichtru.',
+        integration: 'Tworzysz spokojne bezpieczeństwo w portfelu i więzi, które z każdym kolejnym rokiem stają się głębsze zamiast stygnąć.'
       }
     },
     mars: {
@@ -66,12 +66,12 @@
       glyph: '♂',
       color: '#EF5350',
       hard: {
-        text: 'Jednoczesne wciskanie gazu i hamulca. Ogromny napęd do działania i ambicja zderzają się z wewnętrznym paraliżem, lękiem przed porażką i poczuciem winy przy każdej próbie postawienia na swoim. Niewyrażona złość gromadzi się pod powierzchnią, prowadząc do autoagresji lub nagłych, gwałtownych wybuchów frustracji.',
-        integration: 'Gdy nauczysz się planować ruchy z zimną krwią, zyskujesz rzadką odporność na opór materii. Twoja wola staje się nie do złamania — nie marnujesz energii na jałowe awantury, lecz metodycznie eliminujesz przeszkody, krok po kroku.'
+        text: 'Stopa na gazie i zaciągnięty hamulec ręczny na tej samej mokrej ulicy. Potężna wola zderza się ze strachem przed złością lub błędnym ruchem, przez co gniew gnije latami w milczeniu — aż pewnej nocy wybija szybę przy zupełnie błahej kłótni o klucz w zamku.',
+        integration: 'Kiedy zamieniasz gwałtowny bunt w cierpliwą, zimną strategię zegarmistrza, nie ma przeszkody zdolnej utrzymać Cię przed zamkniętą bramą.'
       },
       soft: {
-        text: 'Wybitne wyczucie czasu i cierpliwość stratega. Wiesz dokładnie, kiedy uderzyć, a kiedy poczekać, aż przeciwnik sam popełni błąd.',
-        integration: 'Niezrównana wytrzymałość operacyjna. Doprowadzasz do końca najcięższe wielomiesięczne przedsięwzięcia bez ryzyka załamania czy wypalenia.'
+        text: 'Zmysł właściwej sekundy — wiesz bez hałasu, kiedy podnieść głowę, a kiedy pozwolić przeciwnikowi potknąć się o własny pośpiech.',
+        integration: 'Wytrzymałość na długim dystansie: dowozisz do końca wielomiesięczne dzieła wtedy, gdy inni zostawiają puste krzesła w połowie drogi.'
       }
     },
     jupiter: {
@@ -80,12 +80,12 @@
       glyph: '♃',
       color: '#AB47BC',
       hard: {
-        text: 'Rozdarcie między wielkim rozmachem a paniką przed bankructwem. W chwili, gdy pojawia się życiowa szansa, natychmiast odzywa się wewnętrzny pesymista, torpedując odważne decyzje. Uczysz się równowagi między zaufaniem do losu a trzeźwym zarządzaniem ryzykiem.',
-        integration: 'Budujesz sukces na solidnym gruncie — nie pompujesz baniek spekulacyjnych, lecz zamieniasz wielkie wizje w mierzalne, trwałe instytucje.'
+        text: 'Wahadło między wielkim marzeniem a zimnym szeptem na ucho, że każdy krok ponad stan skończy się upadkiem na bruk. Kiedy otwierają się nowe drzwi, cichy rachmistrz za plecami natychmiast podsuwa najczarniejszy scenariusz i gasi zapał.',
+        integration: 'Zamiast budować zamki z mgły, stawiasz rozległe dzieła na kamiennym fundamencie — bez pustych obietnic, za to na wiele lat naprzód.'
       },
       soft: {
-        text: 'Zrównoważony, etyczny optymizm poparty pracowitością. Rozumiesz prawo karmy: zbierasz to, co zasiałeś rzetelnym wysiłkiem.',
-        integration: 'Osiągasz naturalny autorytet społeczny i powodzenie, które nie budzi zawiści, bo opiera się na uczciwości i sprawiedliwym traktowaniu innych.'
+        text: 'Pogoda ducha oparta na rzetelnej cegle własnej pracy, nie na ślepym łucie szczęścia przy stole do gry.',
+        integration: 'Przychodzi spokojne powodzenie i autorytet bez cienia zawiści, bo każdy widzi, ile uczciwego potu wylałeś na tę drogę.'
       }
     }
   };

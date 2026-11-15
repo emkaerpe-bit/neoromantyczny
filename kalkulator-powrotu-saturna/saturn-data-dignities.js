@@ -1,54 +1,54 @@
 /**
  * NEOROMANTYCZNY — SATURN ESSENTIAL & ACCIDENTAL DIGNITIES
- * System godności planetarnych Ibn Ezry & psychologia archetypowa
+ * Standard Human Voice Engine v2.0 (Zafón Noir & Implicit Jung)
  */
 (function () {
   window.SATURN_DIGNITY_DATA = {
     domicile: {
       type: 'Domicyl',
       badgeClass: 'badge-gold',
-      summary: 'Saturn przebywa w swoim królestwie (Koziorożec lub Wodnik). Działa z najwyższą naturalną suwerennością.',
-      meaning: 'Nie potrzebuje zewnętrznego pozwolenia na działanie. Z natury rozumiesz wagę czasu, dyscypliny i hierarchii. Twój powrót Saturna nie jest zniszczeniem, lecz intronizacją — formalnym odebraniem berła dorosłości.',
-      risk: 'Ryzyko nadmiernej bezwzględności, cynizmu, skamieniałości emocjonalnej i syndromu tyrana.'
+      summary: 'Saturn zasiada przy własnym dębowym stole w Koziorożcu lub Wodniku — działa bez pytania kogokolwiek o zgodę.',
+      meaning: 'Od wczesnych lat wyczuwasz ciężar czasu, wagę obietnicy i koszt każdego skrótu. Twój Powrót Saturna nie przypomina burzy wyrywającej okna, lecz cichą intronizację — przejęcie własnych kluczy do domu, który sam budujesz.',
+      risk: 'Chłód w dotyku, zamykanie serca na zamek z mosiądzu oraz surowość, przy której najbliżsi boją się popełnić choćby drobny błąd.'
     },
     exaltation: {
       type: 'Wywyższenie',
       badgeClass: 'badge-gold',
-      summary: 'Saturn w Wadze. Honorowy gość w pałacu sprawiedliwości i harmonii.',
-      meaning: 'Twoja dojrzałość wyraża się w najwyższej kulturze osobistej, bezstronności i wyczuciu umów. Rozumiesz, że prawdziwy porządek rodzi się z równowagi sił. Powrót Saturna przynosi weryfikację jakości Twoich relacji i sojuszy.',
-      risk: 'Ryzyko paraliżu decyzyjnego wynikającego z chęci zachowania nieskazitelnego wizerunku i idealnej równowagi.'
+      summary: 'Saturn w Wadze — honorowy gość w sali sprawiedliwości, proporcji i czystych umów.',
+      meaning: 'Twoja dojrzałość dojrzewa w słowie trzymanym mimo wiatru, w takcie i uczciwym dzieleniu racji. Powrót Saturna kładzie na szali każdy związek oraz kontrakt, zostawiając tylko te, które nie wymagają przemilczeń.',
+      risk: 'Zastygnięcie w pół kroku i zwlekanie z trudną decyzją tak długo, aż deszcz zmyje obie szanse z bruku.'
     },
     peregrine: {
       type: 'Peregryn',
       badgeClass: 'badge-silver',
-      summary: 'Saturn nie posiada w danym znaku godności zasadniczej. Działa jak podróżnik w obcej krainie.',
-      meaning: 'Nie dziedziczysz gotowych, tradycyjnych wzorców dyscypliny. Musisz samodzielnie, metodą prób i błędów, wykuć własny kodeks moralny i zawodowy. Jesteś zdany na pomoc dyspozytora (planety władającej Twoim znakiem Saturna).',
-      risk: 'Okresy zagubienia, brak zakorzenienia w autorytetach lub próby kopiowania cudzych schematów sukcesu, które u Ciebie nie działają.'
+      summary: 'Saturn w obcym znaku wędruje bez rodowego herbu — sam musi wykuć swój klucz i mapę.',
+      meaning: 'Nie dostałeś w spadku gotowej recepty na dyscyplinę. Własny kręgosłup budujesz metodą potknięć, poprawek i cichych wieczorów nad kartką, słuchając uważnie planety rządzącej Twoim znakiem Saturna.',
+      risk: 'Długie błąkanie po cudzych drogach i pożyczanie masek sukcesu skrojonych pod zupełnie innego człowieka.'
     },
     detriment: {
       type: 'Wygnanie',
       badgeClass: 'badge-bronze',
-      summary: 'Saturn przebywa w znaku przeciwnym do swojego władztwa (Rak lub Lew).',
-      meaning: 'Struktura i chłód Saturna zderzają się z intymnością lub dumą. Twoja droga do dojrzałości prowadzi przez przepracowanie wczesnego poczucia odrzucenia, chłodu emocjonalnego lub braku aprobaty. Powrót Saturna wymusza nauczenie się szacunku do samego siebie bez konieczności udowadniania czegokolwiek światu.',
-      risk: 'Budowanie fasad z chłodu lub arogancji, aby nikt nie dostrzegł wewnętrznej bezbronności.'
+      summary: 'Saturn stoi naprzeciwko swojego domu w Raku lub Lwie — w krainie czułości albo dumnego blasku.',
+      meaning: 'Surowy strażnik czasu spotyka tu potrzebę ciepła albo uznania przy pełnej sali. Twoja dorosłość zaczyna się w noc, gdy leczysz dawne wrażenie bycia nieproszonym gościem i uczysz się szanować siebie bez cudzego podpisu.',
+      risk: 'Szycie zbroi z chłodu albo hałaśliwej dumy, aby nikt za stołem nie zauważył starego drżenia dłoni.'
     },
     fall: {
       type: 'Upadek',
       badgeClass: 'badge-crimson',
-      summary: 'Saturn w Baranie — znak upadku z powodu sprzeczności ognia i lodu.',
-      meaning: 'Gwałtowny impuls do natychmiastowego zwycięstwa spotyka się z nieubłaganą lekcją cierpliwości. Uczysz się, że wielkie rzeczy wymagają czasu i strategicznej powściągliwości. Powrót Saturna łamie nawyk uderzania głową w mur.',
-      risk: 'Wypalenie nerwowe, chroniczna frustracja i poczucie, że cały świat celowo rzuca Ci kłody pod nogi.'
+      summary: 'Saturn w Baranie — zderzenie niecierpliwej iskry z zimnym żelazem zegara.',
+      meaning: 'Ogromny głód natychmiastowego zwycięstwa musi tu usiąść przy stole cierpliwości. Zyskujesz niezwykłą precyzję dopiero wtedy, gdy przestajesz wybijać zamknięte drzwi głową i uczysz się czekać na właściwą godzinę.',
+      risk: 'Gwałtowne wypalenie, gniew skierowany w siebie i poczucie, że cały świat celowo dokłada Ci ciężaru do plecaka.'
     },
     retrograde: {
       natalRx: {
         title: 'Saturn Natalnie Retrogradujący (♄ Rx)',
-        status: 'Odwrócenie Wektora Kontroli do Wnętrza',
-        explanation: 'Twój wewnętrzny cenzor pracuje na potrójnych obrotach. Podczas gdy inni szukają autorytetu na zewnątrz, Ty nosisz w sobie bezlitosnego sędziego. Syndrom oszusta może towarzyszyć Ci nawet przy spektakularnych sukcesach. Powrót Saturna przynosi wyzwolenie: uświadamiasz sobie, że nikt nie wymaga od Ciebie tyle, ile Ty sam od siebie.'
+        status: 'Sędzia Zwrócony do Środka',
+        explanation: 'Kiedy inni szukają surowego mistrza na zewnątrz, Ty masz go przy swoim biurku od urodzenia. Nawet po dobrze wykonanym zadaniu cichy głos za plecami szepcze, że to za mało; Powrót Saturna przynosi ulgę, bo uczysz się uciszać bezlitosnego krytyka i oddajesz mu krzesło za drzwiami.'
       },
       direct: {
         title: 'Saturn Natalnie Prosty (♄ Direct)',
-        status: 'Struktura Zorientowana Zewnętrznie',
-        explanation: 'Doświadczasz ograniczeń i wymagań Saturna przede wszystkim w relacji ze światem zewnętrznym — instytucjami, prawem, szefami i formalnymi zobowiązaniami. Twoja konfrontacja z dojrzałością ma charakter namacalny i społeczny.'
+        status: 'Próba Zapisana w Materii Świata',
+        explanation: 'Ciężar Saturna objawia się przede wszystkim twarzą w twarz z rzeczywistością — w urzędach, rachunkach, awansach, kontraktach i twardych granicach stawianych przez innych ludzi. Dojrzałość mierzy się tu tym, co naprawdę zbudujesz i utrzymasz własnymi rękami.'
       }
     }
   };

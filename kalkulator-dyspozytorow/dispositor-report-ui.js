@@ -43,7 +43,7 @@
     const retroSectionsHtml = govRetroPlanets.map(p => {
       const prof = profiles[p.key] || {
         name: p.name + ' (Rx)',
-        archetype: 'Władca w Ruchu Wstecznym: Przeniesienie Funkcji Psychicznej do Wnętrza',
+        archetype: 'Władca w Ruchu Wstecznym: Światło Zwrócone Do Wnętrza',
         summary: 'W Twoim horoskopie ' + p.name + ' porusza się ruchem wstecznym, przenosząc energię sprawczą do wnętrza psychiki.',
         mechanics: 'Każda decyzja podlega rygorystycznej, wewnętrznej weryfikacji. Nie ulegasz presji zewnętrznego świata.',
         shadowWarning: 'Ryzyko paraliżu decyzyjnego, ruminacji i tłumienia autentycznych potrzeb.',
@@ -160,7 +160,7 @@
         <!-- DIAGNOZA STRUKTURY DRZEWA (MARC EDMUND JONES & ROBERT HAND) -->
         <section style="margin-bottom:2.25rem;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.3);border-radius:1rem;padding:1.4rem 1.35rem;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#C9A84C;text-transform:uppercase;margin-bottom:0.45rem;font-weight:700;">
-            DIAGNOZA STRUKTURALNA (MARC EDMUND JONES & ROBERT HAND)
+            ARCHITEKTURA DRZEWA • UKRYTA OSNOWA
           </div>
           <p style="font-size:0.95rem;line-height:1.75;color:rgba(250,248,245,0.9);margin:0;font-style:italic;">
             ${data.structureTheory}
@@ -168,10 +168,10 @@
         </section>
         ` : ''}
 
-        <!-- ROZDZIAŁ 1: RDZEŃ TOŻSAMOŚCI & ARCHETYP (ODSŁONIĘTY DLA UŻYTKOWNIKA) -->
+        <!-- ROZDZIAŁ 1: RDZEŃ TOŻSAMOŚCI (ODSŁONIĘTY DLA UŻYTKOWNIKA) -->
         <section style="margin-bottom:2.25rem;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#C9A84C;margin-bottom:0.4rem;font-weight:700;">
-            ROZDZIAŁ 01 • RDZEŃ TOŻSAMOŚCI & ARCHETYP [ODSŁONIĘTY]
+            ROZDZIAŁ 01 • GŁÓWNA OŚ TOŻSAMOŚCI [ODSŁONIĘTY]
           </div>
           <h3 style="font-family:'Playfair Display',serif;font-size:1.35rem;color:#FAF8F5;margin:0 0 0.85rem;line-height:1.35;">
             ${data.archetype}
@@ -200,7 +200,7 @@
                 Odblokuj Pozostałe 5 Rozdziałów
               </h3>
               <p style="font-size:0.9rem;line-height:1.6;color:rgba(250,248,245,0.75);max-width:480px;margin:0 auto 1.25rem;">
-                Poznaj protokół somatyczny zasilania Twojego władcy, anatomię nieświadomego sabotażu, reguły granic w miłości oraz pobierz pełny raport w formacie PDF A4.
+                Poznaj protokół cielesnego zasilania Twojego władcy, anatomię ukrytego sabotażu, reguły granic w miłości oraz pobierz pełny raport w formacie PDF A4.
               </p>
 
               <div style="display:flex;justify-content:center;gap:0.45rem;flex-wrap:wrap;margin-bottom:1.5rem;">
@@ -276,7 +276,7 @@
         <!-- DIAGNOZA STRUKTURY DRZEWA (MARC EDMUND JONES & ROBERT HAND) -->
         <section style="margin-bottom:2.25rem;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.3);border-radius:1rem;padding:1.4rem 1.35rem;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#C9A84C;text-transform:uppercase;margin-bottom:0.45rem;font-weight:700;">
-            DIAGNOZA STRUKTURALNA (MARC EDMUND JONES & ROBERT HAND)
+            ARCHITEKTURA DRZEWA • UKRYTA OSNOWA
           </div>
           <p style="font-size:0.95rem;line-height:1.75;color:rgba(250,248,245,0.9);margin:0;font-style:italic;">
             ${data.structureTheory}
@@ -284,10 +284,10 @@
         </section>
         ` : ''}
 
-        <!-- ROZDZIAŁ 1: RDZEŃ TOŻSAMOŚCI & ARCHETYP -->
+        <!-- ROZDZIAŁ 1: GŁÓWNA OŚ TOŻSAMOŚCI -->
         <section style="margin-bottom:2.25rem;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#C9A84C;margin-bottom:0.4rem;font-weight:700;">
-            ROZDZIAŁ 01 • RDZEŃ TOŻSAMOŚCI & ARCHETYP
+            ROZDZIAŁ 01 • GŁÓWNA OŚ TOŻSAMOŚCI
           </div>
           <h3 style="font-family:'Playfair Display',serif;font-size:1.35rem;color:#FAF8F5;margin:0 0 0.85rem;line-height:1.35;">
             ${data.archetype}
@@ -367,7 +367,7 @@
             </ul>
           </div>
           <div style="margin-bottom:1rem;">
-            <strong style="color:#FB7185;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Wzorzec sabotażu (Jung):</strong>
+            <strong style="color:#FB7185;font-size:0.95rem;display:block;margin-bottom:0.35rem;">Mechanizm wewnętrznego sabotażu:</strong>
             <p style="font-size:0.92rem;line-height:1.65;color:rgba(250,248,245,0.8);margin:0;">${shadow.sabotagePattern || ''}</p>
           </div>
           <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(251,113,133,0.3);border-radius:0.75rem;padding:0.85rem 1rem;">
@@ -388,7 +388,7 @@
                     ${prof.shadowWarning || 'Zamiast skomunikować potrzebę, analizujesz sytuację w nieskończoność w ciszy.'}
                   </p>
                   <p style="font-size:0.88rem;line-height:1.6;color:rgba(250,248,245,0.75);margin:0;">
-                    <strong style="color:#C9A84C;">Antidotum Somatyczne:</strong> ${prof.somaticReset || 'Uziemienie stóp i gwałtowna zmiana bodźców sensorycznych.'}
+                    <strong style="color:#C9A84C;">Kotwica dla ciała:</strong> ${prof.somaticReset || 'Oprzyj stopy płasko na podłodze, weź zimną szklankę wody w dłonie i odetchnij spokojnie.'}
                   </p>
                 </div>
               `;

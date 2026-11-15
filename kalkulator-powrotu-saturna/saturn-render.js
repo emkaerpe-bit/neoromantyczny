@@ -39,13 +39,13 @@
             1. Co oznacza Twój Saturn w Znaku ${satPlanet.signName}?
           </h4>
           <p style="font-size:0.92rem; line-height:1.7; color:rgba(250,248,245,0.85); margin:0 0 0.8rem;">
-            <strong style="color:#C9A96E;">Pierwotna rana i lęk:</strong> ${signData.wound}
+            <strong style="color:#C9A96E;">Dawna rana i pamięć chłodu:</strong> ${signData.wound}
           </p>
           <p style="font-size:0.92rem; line-height:1.7; color:rgba(250,248,245,0.85); margin:0 0 0.8rem;">
-            <strong style="color:#C9A96E;">Pancerz przed 28. r.ż.:</strong> ${signData.preReturnArmor}
+            <strong style="color:#C9A96E;">Kostium obronny przed 28. r.ż.:</strong> ${signData.preReturnArmor}
           </p>
           <p style="font-size:0.92rem; line-height:1.7; color:rgba(250,248,245,0.85); margin:0;">
-            <strong style="color:#C9A96E;">Kryzys audytu w Powrocie Saturna:</strong> ${signData.auditCrisis}
+            <strong style="color:#C9A96E;">Nocny rachunek Powrotu Saturna:</strong> ${signData.auditCrisis}
           </p>
         </div>
 
@@ -55,13 +55,13 @@
             2. Co oznacza Saturn w Twoim ${houseNum}. Domu? (${hInfo.title})
           </h4>
           <p style="font-size:0.92rem; line-height:1.7; color:rgba(250,248,245,0.85); margin:0 0 0.8rem;">
-            <strong style="color:#C9A96E;">Sektor życiowy pod ostrzałem:</strong> ${hInfo.area}
+            <strong style="color:#C9A96E;">Obszar wystawiony na próbę:</strong> ${hInfo.area}
           </p>
           <p style="font-size:0.92rem; line-height:1.7; color:rgba(250,248,245,0.85); margin:0 0 0.8rem;">
-            <strong style="color:#C9A96E;">Psychologiczne znaczenie:</strong> ${hInfo.meaning}
+            <strong style="color:#C9A96E;">Cichy mechanizm:</strong> ${hInfo.meaning}
           </p>
           <p style="font-size:0.92rem; line-height:1.7; color:rgba(250,248,245,0.85); margin:0;">
-            <strong style="color:#C9A96E;">Próba ognia:</strong> ${hInfo.audit}
+            <strong style="color:#C9A96E;">Sprawdzian w półmroku:</strong> ${hInfo.audit}
           </p>
         </div>
 
@@ -71,7 +71,7 @@
             3. Synteza: Co to oznacza dla Ciebie w praktyce?
           </h4>
           <p style="font-size:0.92rem; line-height:1.7; color:rgba(250,248,245,0.9); margin:0 0 0.75rem;">
-            Kiedy archetyp <strong>${satPlanet.signName}</strong> łączy się z <strong>${houseNum}. Domem</strong>, Saturn domaga się przekucia energii znaku w namacalne struktury tego sektora życia. Nie możesz dłużej uciekać w wyuczone mechanizmy obronne. Saturn wymaga, abyś wziął 100% odpowiedzialności za ten obszar.
+            Kiedy surowa natura znaku <strong>${satPlanet.signName}</strong> splata się z <strong>${houseNum}. Domem</strong>, czas żąda wykucia tej energii w twardym, namacalnym kształcie codzienności. Nie da się dłużej zasłaniać starym pancerzem — w tym dokładnie pokoju przyjdzie Ci stanąć o własnych siłach.
           </p>
           <p style="font-size:0.92rem; line-height:1.7; color:#E5CC7C; margin:0;">
             <strong>Dar dojrzałości:</strong> ${hInfo.gift} ${signData.matureGift}

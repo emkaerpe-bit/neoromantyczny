@@ -537,91 +537,91 @@ const SYNASTRY_PROFILES_A = [
   {
     sign: 'Baran',
     m: {
-      conflict: 'Reaguje błyskawicznym wyrzutem adrenaliny. Cisza i odkładanie rozmowy na później są dla niego jak policzek — woli krótkie, głośne starcie niż ciche dni.',
-      venusGift: 'Kocha gesty zuchwałe, spontaniczne i pełne ryzyka. Nudzą go bezpieczne klasyki; potrzebuje dowodu, że jesteś gotowa rzucić wszystko i ruszyć z nim w nieznane.',
-      openKey: 'Bezpośredni komunikat bez podtekstów i wyzwań rzucanych jego autonomii.',
-      secretGift: 'Voucher na nocny przejazd sportowym autem po torze lub niszowe perfumy z nutą skóry, czarnego pieprzu i dymu'
+      conflict: 'W kłótni uderza od razu jak trzask zamykanych drzwi. Milczenie uważa za obelgę — woli pięć minut ognia przy stole niż dwa dni chodzenia wokół siebie w ciężkich kapciach.',
+      venusGift: 'Kocha gesty zuchwałe, nieoczekiwane i bez asekuracji. Grzeczne drobiazgi go nudzą; potrzebuje znaku, że potrafisz spakować torbę przed północą i ruszyć bez wahania.',
+      openKey: 'Proste zdanie bez aluzji, brak gier i szacunek dla jego prawa do pierwszego kroku.',
+      secretGift: 'Nocna jazda po pustym torze lub flakon ciężkich perfum z nutą skóry, dymu i czarnego pieprzu.'
     },
     f: {
-      conflict: 'Reaguje błyskawicznym wyrzutem adrenaliny. Cisza i odkładanie rozmowy na później są dla niej jak policzek — woli krótkie, gorące starcie niż ciche dni.',
-      venusGift: 'Kocha gesty zuchwałe, odważne i nieprzewidywalne. Nudzą ją grzeczne klasyki; potrzebuje dowodu, że nie boisz się jej ognia i dotrzymasz jej kroku.',
-      openKey: 'Bezpośredni komunikat bez podtekstów, inicjatywa i szacunek dla jej niezależności.',
-      secretGift: 'Niszowy ekstrakt perfum z nutą różowego pieprzu i ambry lub spontaniczny wypad weekendowy z biletem wręczonym na godzinę przed odlotem'
+      conflict: 'Zapala się w jednej sekundzie jak sucha gałąź wrzucona na ruszt. Odwracanie wzroku i odkładanie rozmowy do jutra traktuje jak próbę zamknięcia jej w klatce.',
+      venusGift: 'Ceni gesty odważne i żywe. Pociąga ją partner, który nie kuli się pod stołem przy pierwszym piorunie i potrafi narzucić własny rytm wieczoru.',
+      openKey: 'Konkret bez kręcenia, własna inicjatywa i odwaga spojrzenia jej prosto w oczy.',
+      secretGift: 'Niszowy ekstrakt perfum z nutą różowego pieprzu i żywicy albo dwa bilety wręczone godzinę przed wyjazdem.'
     }
   },
   {
     sign: 'Byk',
     m: {
-      conflict: 'Wchodzi w tryb oblężonej twierdzy. Gdy czuje presję, zamyka się w ciężkim milczeniu i potrafi tygodniami nie ustąpić ani o milimetr.',
-      venusGift: 'Jego językiem miłości jest namacalny, ciężki luksus. Dotyk, kaszmir, obłędne jedzenie i przedmioty, które starzeją się z klasą.',
-      openKey: 'Fizyczna obecność, spokój głosu i niepodważalne poczucie bezpieczeństwa oraz lojalności.',
-      secretGift: 'Ciężki szlafrok z czesanego kaszmiru lub rzemieślnicza woda kolońska o zapachu figowca i starego drzewa sandałowego'
+      conflict: 'Zamyka bramy twierdzy od wewnątrz. Pod naciskiem nie przyśpiesza — staje w poprzek pokoju jak głaz i milczy tygodniami, broniąc swojego spokoju.',
+      venusGift: 'Jego serce otwiera ciężka, namacalna jakość. Dobre mięso na ciepłym talerzu, szorstki kaszmir na skórze i rzeczy, które nabierają patyny z upływem lat.',
+      openKey: 'Spokojna dłoń na karku, cichy głos w kuchni i wierność bez nerwowych wahań.',
+      secretGift: 'Ciężki szlafrok z czesanego kaszmiru albo rzemieślnicza woda kolońska z figowcem i starym sandałowcem.'
     },
     f: {
-      conflict: 'Wchodzi w tryb oblężonej twierdzy. Gdy czuje presję lub chaos, zamyka się w zmysłowym chłodzie i potrafi tygodniami nie ustąpić ani o milimetr.',
-      venusGift: 'Jej językiem miłości jest zmysłowy, namacalny luksus. Jedwab, dotyk, wyrafinowane smaki i przedmioty o ponadczasowej urodzie.',
-      openKey: 'Cierpliwa czułość, spokój głosu i niepodważalne poczucie bezpieczeństwa materialno-emocjonalnego.',
-      secretGift: 'Jedwabny szlafrok w odcieniu szampana lub rzemieślnicza świeca o zapachu figowca, tuberozy i drzewa sandałowego'
+      conflict: 'Kiedy w pokoju brakuje jej oparcia i taktu, zastyga w chłodnej elegancji. Nie podnosi głosu — po prostu gasi światło ciepła i zostawia Cię samego na mrozie.',
+      venusGift: 'Kocha prawdę materii wyczuwalną pod palcami. Gładki jedwab, stare drewno, powolną kolację przy jednej lampce i piękno odporne na mody.',
+      openKey: 'Cierpliwa obecność, dotyk bez pośpiechu i pewność, że obietnica znaczy u Ciebie więcej niż humor.',
+      secretGift: 'Jedwabny szlafrok w kolorze szampana albo ciężka świeca o zapachu figowca i drzewa sandałowego.'
     }
   },
   {
     sign: 'Bliźnięta',
     m: {
-      conflict: 'Ucieka w intelektualną ironię, sarkazm lub zmianę tematu. Gdy robi się zbyt duszno emocjonalnie, odcina się słowem jak skalpelem.',
-      venusGift: 'Podnieca go stymulacja umysłowa, nieprzewidywalność i błyskotliwy flirt. Prezent musi mieć historię, drugie dno lub prowokować do rozmowy.',
-      openKey: 'Intryga intelektualna, lekkość w komunikacji i brak emocjonalnego szantażu.',
-      secretGift: 'Limitowane wydanie albumu fotograficznego Taschen lub bilety-niespodzianki na nocny spektakl w innym mieście'
+      conflict: 'Chowa się za ostrym żartem i zaczyna ciąć słowem jak skalpelem. Im gęstsza atmosfera emocjonalna w mieszkaniu, tym szybciej zmienia temat lub ucieka w ironię.',
+      venusGift: 'Budzi go rozmowa z drugim dnem, zaskoczenie i błyskotliwy flirt ponad stołem. Podarunek bez opowieści i haczyka usypia go już po otwarciu pudełka.',
+      openKey: 'Lekkość słów, świeża myśl i brak ciężkiego przesłuchania za zamkniętymi drzwiami.',
+      secretGift: 'Limitowany album fotograficzny albo bilety na nocny spektakl w innym mieście wyciągnięte z kieszeni płaszcza.'
     },
     f: {
-      conflict: 'Ucieka w błyskotliwą ironię, chłód słowny lub zmianę tematu. Gdy czuje się osaczona ciężkimi emocjami, potrafi odciąć się jednym celnym zdaniem.',
-      venusGift: 'Podnieca ją intelektualny flirt, zaskoczenie i gra skojarzeń. Prezent dla niej musi mieć drugie dno, dowcip lub intrygującą historię.',
-      openKey: 'Stymulacja umysłowa, lekkość bycia i przestrzeń na jej zmienny rytm dnia.',
-      secretGift: 'Kolekcjonerski album mody/sztuki Taschen lub koperta z zagadką prowadzącą do ukrytej kolacji w nieznanym jej miejscu'
+      conflict: 'Gdy czuje ciężar wyrzutów i próbę zamknięcia w rutynie, odpala ciętą ripostę albo znika z rozmowy za szklaną szybą własnych spraw.',
+      venusGift: 'Porywa ją dowcip, szermierka skojarzeń i gest otwierający okno na świat. Ceni przedmioty z ukrytą historią zamiast banałów z witryny przy głównej ulicy.',
+      openKey: 'Żywy umysł, brak zazdrości o jej krąg i swoboda w zmianie planów przed zmierzchem.',
+      secretGift: 'Kolekcjonerska księga sztuki albo koperta z zagadką prowadząca do nieznanej restauracji na końcu miasta.'
     }
   },
   {
     sign: 'Rak',
     m: {
-      conflict: 'Wycofuje się do pancerza, sprawdzając, czy zauważysz jego milczenie. Pamięta ton głosu i jedno nieostrożne słowo sprzed trzech lat.',
-      venusGift: 'Szuka intymnego azylu i emocjonalnej głębi. Najbardziej poruszają go przedmioty, które mówią: „Znam Twoje najczulsze wspomnienia i chronię Twój spokój”.',
-      openKey: 'Cierpliwa czułość, zapewnienie o wyłączności i ochrona jego wrażliwego wnętrza przed światem.',
-      secretGift: 'Zegarek lub spinki z dyskretnym grawerunkiem współrzędnych Waszego pierwszego spotkania lub ciężki koc z wełny merino'
+      conflict: 'Cofa się do najciemniejszego kąta swojej skorupy i sprawdza po cichu, czy pójdziesz za nim w korytarz. Pamięta ton głosu sprzed trzech zim.',
+      venusGift: 'Pragnie domowego azylu i rzeczy świadczących o pamięci. Najmocniej trafia do niego gest mówiący wprost: pamiętam, co Cię kiedyś bolało.',
+      openKey: 'Bezwarunkowe schronienie, czułość bez świadków i zero kpin z jego miękkich miejsc.',
+      secretGift: 'Zegarek lub spinki z dyskretnym grawerunkiem współrzędnych pierwszego spotkania albo ciężki koc z wełny merynosów.'
     },
     f: {
-      conflict: 'Wycofuje się do pancerza, testując, czy pójdziesz za nią. Pamięta ton głosu i jedno nieostrożne słowo sprzed trzech lat.',
-      venusGift: 'Szuka intymnego azylu, nostalgii i czułości. Najbardziej poruszają ją przedmioty, które mówią: „Pamiętam każdą naszą chwilę i chronię Twoje serce”.',
-      openKey: 'Cierpliwa czułość, poczucie wyłączności i bezpieczna przystań wolna od szorstkości.',
-      secretGift: 'Złoty medalion z grawerunkiem współrzędnych Waszego pierwszego spotkania lub pościel z czystego jedwabiu morwowego'
+      conflict: 'Milknie w kuchni jak stara latarnia przed burzą i patrzy, czy w ogóle zauważysz pustkę między Wami. Zbiera chłodne zdania w pamięci na czarną godzinę.',
+      venusGift: 'Szuka ciepła z dala od hałasu ulicy. Najcenniejsze są dla niej drobiazgi niosące wspomnienie wspólnego świtu i troskę o jej spokój.',
+      openKey: 'Stałość obecności, ramię odgradzające ją od cudzej szorstkości i pamięć o drobnych datach.',
+      secretGift: 'Złoty medalion z wyrytą datą albo pościel z ciężkiego morwowego jedwabiu.'
     }
   },
   {
     sign: 'Lew',
     m: {
-      conflict: 'Gdy czuje się zignorowany lub niedoceniony, jego duma zamienia się w królewski chłód. Najgorszą zbrodnią jest dla niego obojętność i brak podziwu.',
-      venusGift: 'Pragnie zachwytu, rozmachu i celebracji. Prezent dla niego musi wyglądać jak trofeum — coś, co podkreśla jego wyjątkowy status w Twoich oczach.',
-      openKey: 'Publiczna lojalność, szczery podziw i traktowanie go jak absolutnego centrum Twojego wszechświata.',
-      secretGift: 'Rzemieślniczy sygnet lub spinki z 18-karatowego złota albo prywatna degustacja rocznikowych whisky z sommelierem'
+      conflict: 'Kiedy traktujesz go jak zwykłego przechodnia przy stole, duma zastyga mu na twarzy w królewski lód. Najgłębiej rani go letnia obojętność.',
+      venusGift: 'Potrzebuje rozmachu, światła i gestu, przy którym pokój na chwilę milknie. Rzecz dla niego musi przypominać insygnia szacunku.',
+      openKey: 'Lojalność przy ludziach, zachwyt bez fałszu i miejsce honorowe przy Twoim boku.',
+      secretGift: 'Rzemieślniczy sygnet z 18-karatowego złota albo zamknięta degustacja rocznikowej whisky wieczorem.'
     },
     f: {
-      conflict: 'Gdy czuje się zignorowana lub traktowana zwyczajnie, jej duma zamienia się w królewski chłód. Najgorszą zbrodnią jest dla niej bylejakość.',
-      venusGift: 'Pragnie zachwytu, blasku i wielkiego gestu. Prezent dla niej musi przypominać klejnot koronny — dowód, że jest jedyną królową w Twoim życiu.',
-      openKey: 'Publiczny zachwyt, pełna lojalność i celebrowanie jej obecności bez czekania na specjalną okazję.',
-      secretGift: 'Biżuteria z 18-karatowego złota o rzeźbiarskiej formie lub prywatna kolacja degustacyjna przy świecach z widokiem na panoramę miasta'
+      conflict: 'Gdy czuje się niedostrzegana w Twoim planie dnia, zamienia spojrzenie w zimny kryształ. Nie prosi dwa razy o uwagę — wychodzi z sali sama.',
+      venusGift: 'Lubi pełny format i światło bez oszczędzania na detalu. Prezent ma jej przypominać, że jest wybrana ponad cały gwar ulicy.',
+      openKey: 'Otwarty zachwyt w oczach innych, hojność bez liczenia minut i odwaga wielkiego gestu.',
+      secretGift: 'Rzeźbiarska biżuteria ze złota albo kolacja przy świecach nad ciemną panoramą miasta.'
     }
   },
   {
     sign: 'Panna',
     m: {
-      conflict: 'Zamiast krzyczeć, zaczyna punktować błędy z chirurgiczną precyzją. Jego chłód i perfekcjonizm to tarcza przed chaosem, którego panicznie się boi.',
-      venusGift: 'Miłość wyraża przez uważność na mikro-detale. Docenia czystą formę, mistrzowską inżynierię i przedmioty, które rozwiązują problem, zanim go nazwie.',
-      openKey: 'Dotrzymywanie słowa w najdrobniejszych sprawach i szacunek dla jego uporządkowanego świata.',
-      secretGift: 'Japońskie pióro wieczne o minimalistycznej linii lub skórzany organizer podróżny wykonany ręcznie we Florencji'
+      conflict: 'Zamiast krzyku wyciąga ołówek i odhacza kolejne usterki z chłodną miną zegarmistrza. Surowość jest tu murem przeciw chaosowi, przed którym drży.',
+      venusGift: 'Czyta miłość w drobiazgach niewidocznych dla tłumu. Porywa go szlachetne rzemiosło, cisza linii i rzecz rozwiązująca jego codzienny kłopot.',
+      openKey: 'Punktualność, słowność w małych rzeczach i szacunek do porządku w jego pokoju.',
+      secretGift: 'Japońskie pióro wieczne o czystej linii albo skórzana teczka podróżna szyta ręcznie we Florencji.'
     },
     f: {
-      conflict: 'Zamiast krzyczeć, zaczyna punktować błędy z chirurgiczną precyzją. Jej chłód i perfekcjonizm to tarcza przed chaosem, którego panicznie się boi.',
-      venusGift: 'Miłość wyraża przez uważność na mikro-detale. Docenia czystą estetykę, organiczny skład i przedmioty, które koją jej przebodźcowany umysł.',
-      openKey: 'Dotrzymywanie słowa w najdrobniejszych sprawach i odciążenie jej z codziennego napięcia.',
-      secretGift: 'Zestaw niszowych olejków adaptogennych w aptecznym szkle lub minimalistyczna biżuteria z surowym kamieniem szlachetnym'
+      conflict: 'Kiedy zmęczenie odbiera jej cierpliwość, zaczyna wytykać krzywo postawioną filiżankę i brak precyzji w Twoich słowach, osłaniając własny lęk przed rozsypaniem domu.',
+      venusGift: 'Wycisza ją minimalizm bez krzykliwych metek, naturalny surowiec i gest odciążający ją bez pytania.',
+      openKey: 'Czyn mocniejszy niż obietnica i przejęcie jednego trudnego ciężaru z jej listy.',
+      secretGift: 'Apteczny flakon czystych olejków albo dyskretny pierścionek z surowym kamieniem.'
     }
   }
 ];
@@ -632,91 +632,91 @@ const SYNASTRY_PROFILES_B = [
   {
     sign: 'Waga',
     m: {
-      conflict: 'Za wszelką cenę unika otwartej wojny i wulgarności, wycofując się w uprzejmy dystans. Długo waży racje, by nagle podjąć chłodną, ostateczną decyzję.',
-      venusGift: 'Oddycha estetyką, symetrią i klasą. Brzydkie opakowanie lub przypadkowy gadżet potrafią fizycznie zgasić jego zaangażowanie.',
-      openKey: 'Kultura sporu, wyrafinowana oprawa wspólnych chwil i partnerska równowaga w dawaniu uwagi.',
-      secretGift: 'Flakon niszowych perfum z paryskiej perfumerii lub kolekcjonerski album designu i architektury'
+      conflict: 'Nienawidzi wrzasku i taniej sceny w przedpokoju. Wycofuje się w grzeczny, chłodny dystans, długo waży szale i nagle zamyka drzwi na dobre.',
+      venusGift: 'Oddycha miarą, światłem i taktem. Brzydkie opakowanie albo przypadkowy drobiazg ze sklepu obok potrafią zgasić w nim cały zapał.',
+      openKey: 'Kultura rozmowy, ładna oprawa wspólnego wieczoru i uwaga bez patrzenia w zegarek.',
+      secretGift: 'Flakon niszowych perfum z paryskiego domu albo kolekcjonerski album starej architektury.'
     },
     f: {
-      conflict: 'Za wszelką cenę unika otwartej wojny, uśmiechając się, gdy w środku narasta żal. Długo tłumi frustrację, by nagle zamknąć drzwi na zawsze.',
-      venusGift: 'Oddycha estetyką, harmonią i wyrafinowaniem. Brak wyczucia smaku lub pośpiech potrafią fizycznie zgasić jej pożądanie.',
-      openKey: 'Kultura sporu, piękna oprawa wspólnych wieczorów i uwaga poświęcona jej bez rozpraszaczy.',
-      secretGift: 'Flakon niszowych perfum z paryskiego domu zapachowego lub rzeźbiarski wazon z dmuchanego szkła Murano'
+      conflict: 'Uśmiecha się nienagannie nad kieliszkiem, gdy w środku rośnie już lodowaty osad. Długo znosi zgrzyty po cichu, aż pewnego ranka nie zostawia nawet kartki.',
+      venusGift: 'Szuka harmonii w dotyku, proporcji i głosie. Pośpiech oraz nieokrzesanie zabijają jej pragnienie zanim skończy się kolacja.',
+      openKey: 'Delikatność sporu, wieczór dopięty w szczegółach i obecność bez rozpraszania wzrokiem.',
+      secretGift: 'Flakon niszowych perfum z Paryża albo rzeźbiarski wazon z ciężkiego szkła Murano.'
     }
   },
   {
     sign: 'Skorpion',
     m: {
-      conflict: 'Nie wybacza półprawd. W konflikcie schodzi na sam dół psychiki — milczy, obserwuje i uderza dokładnie w ten punkt, który najbardziej ukrywasz.',
-      venusGift: 'Gardzi powierzchownością. Pragnie magnetyzmu, tajemnicy, tabu i przedmiotów, które mają ładunek władzy, mroku lub intymnej głębi.',
-      openKey: 'Absolutna, nawet bolesna szczerość i odwaga do zejścia w jego mrok bez oceniania.',
-      secretGift: 'Ekstrakt perfum z czarnym oudem, kadzidłem i skórą lub limitowane wydanie książki o psychologii władzy i cienia'
+      conflict: 'Nie uznaje półprawd ani miękkich wykrętów. W sporze milczy, zbiera okruchy spojrzeń i uderza bezbłędnie w to jedno miejsce, które chowasz pod płaszczem.',
+      venusGift: 'Gardzi błahostką z wystawy. Pragnie rzeczy z mrokiem, ciężarem i tajemnicą — takich, po których czuje się dotyk głębiej niż przez skórę.',
+      openKey: 'Naga szczerość bez pudru i odwaga zostania przy nim, gdy w pokoju zapada noc.',
+      secretGift: 'Ekstrakt perfum z czarnym oudem, skórą i kadzidłem albo bibliofilskie wydanie książki o władzy i namiętności.'
     },
     f: {
-      conflict: 'Nie wybacza półprawd ani zdrady emocjonalnej. W konflikcie zamienia się w lód i prześwietla Cię na wylot, wyczuwając każdy fałszywy ton.',
-      venusGift: 'Gardzi powierzchownością. Pragnie magnetyzmu, tajemnicy, zmysłowego napięcia i przedmiotów o silnym ładunku erotycznym lub symbolicznym.',
-      openKey: 'Absolutna, nawet bolesna szczerość, magnetyczna wyłączność i odwaga do spotkania z jej głębią.',
-      secretGift: 'Jedwabna bielizna nocna w kolorze obsydianu lub ekstrakt perfum z czarnym oudem, ciemną różą i ambrą'
+      conflict: 'Nie wybacza małego fałszu, bo odczytuje z niego całą przyszłość. Zamienia sypialnię w czarny lód i patrzy spokojnie, jak sam plączesz się w wymówkach.',
+      venusGift: 'Czeka na intensywność bez hamulców. Drobiazg ma nieść zmysłowe napięcie, nocną tajemnicę albo odważny znak oddania.',
+      openKey: 'Prawda prosto w oczy, wyłączność bez cienia dwuznaczności i siła, która nie drży pod jej wzrokiem.',
+      secretGift: 'Obsydianowy jedwab nocny albo ciężki ekstrakt z ciemnej róży, oudu i żywicy.'
     }
   },
   {
     sign: 'Strzelec',
     m: {
-      conflict: 'Gdy czuje klatkę, kontrolę lub moralizowanie, natychmiast szuka wyjścia ewakuacyjnego. Mówi brutalną prawdę prosto w oczy, nie rozumiejąc, dlaczego to zabolało.',
-      venusGift: 'Kocha horyzont, wolność i wielkie idee. Najlepszy prezent dla niego to taki, który pachnie dalekim światem, filozofią albo spontaniczną wyprawą.',
-      openKey: 'Przestrzeń na niezależność, wspólny śmiech i brak prób udomowienia go na siłę.',
-      secretGift: 'Skórzana torba weekendowa z biletem lotniczym w środku lub rzadki, starzony trunek z odległego zakątka świata'
+      conflict: 'Kiedy wyczuje klatkę wyrzutów albo próbę prowadzenia go na krótkiej smyczy, rzuca w twarz ostrą prawdę bez znieczulenia i wychodzi przewietrzyć głowę.',
+      venusGift: 'Kocha przestrzeń, daleki horyzont i śmiech w biegu. Prezent musi obiecywać przygodę, książkę pisaną w drodze albo smak innego miasta.',
+      openKey: 'Oddech bez kontroli, wspólny żart w złej chwili i zero prób przypinania go do krzesła.',
+      secretGift: 'Skórzana torba weekendowa z biletem lotniczym w kieszeni albo stary, rzadki trunek przywieziony z daleka.'
     },
     f: {
-      conflict: 'Gdy czuje zaborczość, rutynę lub kontrolę, natychmiast dusi się i ucieka. Mówi szczerą do bólu prawdę w emocjach, ale nie chowa urazy na długo.',
-      venusGift: 'Kocha przestrzeń, przygodę i rozmach intelektualny. Najbardziej porywają ją prezenty, które otwierają nowe horyzonty lub zabierają ją w drogę.',
-      openKey: 'Przestrzeń na wolność, autentyczny entuzjazm i bycie jej towarzyszem podróży, a nie strażnikiem.',
-      secretGift: 'Ręcznie oprawiony dziennik podróżny z ukrytym w środku biletem lotniczym lub biżuteria inspirowana dawną astronomią'
+      conflict: 'W dusznej rutynie zaczyna się szarpać i uciekać. W złości mówi o dwa zdania za dużo, lecz gdy tylko minie wiatr, nie nosi starej urazy w kieszeni.',
+      venusGift: 'Ożywia ją ruch, horyzont i odwaga wyobraźni. Najbardziej poruszają ją rzeczy otwierające nową drogę albo wyrywające ją z piątkowej nudy.',
+      openKey: 'Wolność kroku, żywy entuzjazm i rola towarzysza drogi zamiast domowego strażnika.',
+      secretGift: 'Ręcznie szyty dziennik podróży z biletem w okładce albo biżuteria ze wzorem dawnych map nieba.'
     }
   },
   {
     sign: 'Koziorożec',
     m: {
-      conflict: 'Zamraża emocje i przechodzi w tryb zarządu kryzysowego. Buduje mur z faktów i obowiązków, pod którym ukrywa lęk przed utratą kontroli i szacunku.',
-      venusGift: 'Szacunek i klasa Old Money. Ceni rzeczy ponadczasowe, dyskretne, bez krzykliwego logo, które świadczą o mistrzowskim rzemiośle i trwałości.',
-      openKey: 'Niezawodność, szacunek dla jego ambicji i stworzenie bezpiecznej przystani, w której nie musi być niezniszczalny.',
-      secretGift: 'Klasyczny zegarek na skórzanym pasku, aktówka z włoskiej skóry licowej lub rocznikowe wino z prywatnej winnicy'
+      conflict: 'Zamyka się za biurkiem z ciemnego drewna i chłodzi głos jak stal. Odcina czułość, chowając za murem obowiązków strach, że kiedyś okaże słabość i przegra.',
+      venusGift: 'Rozumie cichą klasę bez krzykliwych metek. Szlachetny metal, stara skóra i rzecz kupiona na dwadzieścia lat znaczą więcej niż sezonowy szał.',
+      openKey: 'Słowo twarde jak kamień, szacunek do jego pracy i pokój, w którym nie musi stale stać na warcie.',
+      secretGift: 'Klasyczny zegarek na pasku ze skóry, aktówka z włoskiej licówki albo rocznikowa butelka z prywatnej piwnicy.'
     },
     f: {
-      conflict: 'Zamraża emocje i przechodzi w tryb chłodnej dyplomacji. Buduje mur z samowystarczalności, pod którym ukrywa lęk przed rozczarowaniem i słabością.',
-      venusGift: 'Klasa Quiet Luxury. Ceni przedmioty szlachetne, dyskretne i trwałe — gardzi tanią pokazówką, doceniając kunszt, który przetrwa dekady.',
-      openKey: 'Słowność, podziw dla jej siły oraz zdjęcie z jej barków konieczności kontrolowania wszystkiego.',
-      secretGift: 'Kaszmirowy szal o architektonicznym splocie, klasyczna skórzana torebka bez krzykliwego logo lub biżuteria z czarnym onyksem'
+      conflict: 'Wkłada nieprzeniknioną uprzejmość i odchodzi bez awantury. Pod pancerzem samowystarczalności nosi obawę, że kiedy się oprze, ramię obok ustąpi.',
+      venusGift: 'Ceni dyskretną doskonałość formy i rzeczy odporne na czas. Gardzi tanim hałasem; wypatruje rzemiosła o cichym ciężarze.',
+      openKey: 'Spójność czynu ze słowem i przejęcie ciężaru bez proszenia po raz trzeci.',
+      secretGift: 'Ciężki szal z czystego kaszmiru, prosta torebka bez logo albo pierścień z matowego onyksu.'
     }
   },
   {
     sign: 'Wodnik',
     m: {
-      conflict: 'Włącza emocjonalny dystans i patrzy na kłótnię jak naukowiec przez szybę laboratorium. Im bardziej naciskasz na dramat, tym bardziej staje się nieuchwytny.',
-      venusGift: 'Fascynuje go unikatowość, futuryzm i wszystko, co wyłamuje się ze schematu. Prezent musi być jedyny w swoim rodzaju — masówka go obraża.',
-      openKey: 'Przyjaźń jako fundament relacji, poszanowanie jego autonomii umysłowej i brak zaborczości.',
-      secretGift: 'Gramofon o surowym, industrialnym designie, niszowy gadżet audiofilski lub sygnowana grafika sztuki nowoczesnej'
+      conflict: 'Wyłącza emocje jak światło w przedpokoju i obserwuje kłótnię z dystansu, jakby stał za szybą. Im głośniej prosisz o łzy, tym dalej odpływa.',
+      venusGift: 'Pociąga go osobliwość, zgrzyt kontrapunktu i przedmiot nie z tego katalogu. Masowa produkcja ze sklepowej sieci go nudzi i obraża.',
+      openKey: 'Przyjaźń mocniejsza niż zaborczość, ostra myśl i zgoda na jego własny rytm nocy.',
+      secretGift: 'Surowy gramofon o czystym brzmieniu, rzadki sprzęt audio albo sygnowana grafika młodego artysty.'
     },
     f: {
-      conflict: 'Włącza chłodny, intelektualny dystans i staje się emocjonalnie przezroczysta. Gdy próbujesz zamknąć ją w konwenansach, znika bez uprzedzenia.',
-      venusGift: 'Fascynuje ją oryginalność, awangarda i wolność myśli. Prezent dla niej musi być niszowy i niepowtarzalny — sieciówkowa klasyka ją nudzi.',
-      openKey: 'Partnerstwo intelektualne, fascynacja jej odmiennością i pełne poszanowanie jej przestrzeni osobistej.',
-      secretGift: 'Autorska biżuteria od niszowego rzeźbiarza, molekularne perfumy niszowe lub winylowe wydanie muzyki alternatywnej'
+      conflict: 'Znika za szklaną taflą chłodnej uprzejmości i staje się nieobecna mimo obecności przy stole. Gdy próbujesz wcisnąć ją w cudzy schemat, odchodzi bez pożegnania.',
+      venusGift: 'Otwiera ją to, co osobne, dziwne i wolne od schematu. Szuka znaku, że naprawdę dostrzegasz w niej kogoś niepodobnego do reszty ulicy.',
+      openKey: 'Rozmowa na równej wysokości, zachwyt jej innością i prywatny pokój dla własnych myśli.',
+      secretGift: 'Rzeźbiarska biżuteria z małej pracowni, zapach o chłodnej mineralnej nucie albo winyl z dalekiego archiwum.'
     }
   },
   {
     sign: 'Ryby',
     m: {
-      conflict: 'Chłonie cudze napięcie jak gąbka, po czym wycofuje się we mgłę, ciszę lub melancholię. Gdy rzeczywistość staje się zbyt brutalna, ucieka w swój wewnętrzny świat.',
-      venusGift: 'Szuka magii, głębi i duchowego porozumienia bez słów. Najmocniej trafiają do niego prezenty, które działają na wyobraźnię, muzykę i podświadomość.',
-      openKey: 'Delikatność, empatyczne słuchanie między wierszami i wspólne rytuały odcinające od zgiełku świata.',
-      secretGift: 'Winylowe wydanie nastrojowej muzyki filmowej, słuchawki studyjne lub rzemieślnicze kadzidła z żywicy i cedru'
+      conflict: 'Wchłania napięcie całego pokoju jak ciemna wełna deszcz, po czym rozpływa się we mgle, śnie lub milczeniu. Szorstki świat wypiera go do środka.',
+      venusGift: 'Wypatruje znaków między wierszami i muzyki pod skórą. Najmocniej działają rzeczy uruchamiające pamięć, sen i cichą wyobraźnię.',
+      openKey: 'Miękka dłoń, słuchanie tego, co zostało przemilczane, i ucieczka od wrzasku ulicy.',
+      secretGift: 'Winyl z nocną muzyką filmową, ciężkie słuchawki albo żywiczne kadzidło o zapachu cedru i dymu.'
     },
     f: {
-      conflict: 'Chłonie Twoje emocje jak gąbka, po czym rozpływa się w milczeniu, łzach lub niedomówieniach. Szorstki ton głosu rani ją głębiej niż jakiekolwiek argumenty.',
-      venusGift: 'Szuka poezji, magii i mistycznego zespolenia. Najgłębiej poruszają ją prezenty, które działają na zmysły, sen, zapach i podświadomość.',
-      openKey: 'Czuła obecność, czytanie między wierszami i stworzenie dla niej baśniowego azylu z dala od hałasu świata.',
-      secretGift: 'Rytualny zestaw kąpielowy z solą z Morza Martwego i olejkiem z róży damasceńskiej lub jedwabna opaska na oczy z aromaterapią'
+      conflict: 'Chłonie Twój gniew aż po kości, a potem cichnie w łzach albo ucieka za zasłonę niedomówień. Ostry ton rani ją głębiej niż twardy fakt.',
+      venusGift: 'Pragnie poezji w zwykłym geście i odrobiny baśni po zachodzie słońca. Rzecz ma wyciszać zmysły i budować bezpieczną noc.',
+      openKey: 'Czułość zanim padną zarzuty, wiara w jej przeczucie i zamknięcie drzwi przed zgiełkiem.',
+      secretGift: 'Wieczorny rytuał kąpielowy z solą morską i różą damasceńską albo jedwabna opaska na oczy.'
     }
   }
 ];
@@ -820,9 +820,9 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
   const cityInfoB = cB.city ? `${cB.city.name} (${cB.tzLabel.split(',')[0]})` : 'Polska';
 
   container.innerHTML = `
-    <!-- 1. GŁÓWNA DIAGNOZA ARCHETYPOWA -->
+    <!-- 1. GŁÓWNA DIAGNOZA WIĘZI -->
     <div class="syn-card syn-jungian-hero-card" style="margin-bottom: 2rem; border-color: rgba(201,169,110,0.35); background: linear-gradient(180deg, rgba(24,24,32,0.96) 0%, rgba(13,13,19,0.96) 100%); box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(201,169,110,0.1);">
-      <div class="syn-card-tag" style="letter-spacing:0.18em;color:#C9A96E;">✦ ARCHETYP RELACJI & DIAGNOZA WIĘZI</div>
+      <div class="syn-card-tag" style="letter-spacing:0.18em;color:#C9A96E;">✦ GŁĘBIA RELACJI & DIAGNOZA WIĘZI</div>
       <h2 class="syn-card-heading" style="font-size:1.6rem;color:#FAF8F5;border:none;padding-bottom:0.25rem;margin-bottom:0.75rem;line-height:1.3;">
         ${jungianDiag.title}
       </h2>
@@ -1034,7 +1034,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
             <span class="syn-wib-title" style="color:${color};">${p.person} • ${p.glyph} ${p.label} w znaku ${p.sign} (${p.deg})</span>
             <span class="syn-wib-tag" style="color:${color};font-family:'JetBrains Mono',monospace;">${p.role}</span>
           </div>
-          <div class="syn-wib-body"><strong>Archetyp w Synastrii:</strong> ${p.meaning}</div>`;
+          <div class="syn-wib-body"><strong>Rola w Synastrii:</strong> ${p.meaning}</div>`;
       } else if (type === 'sign') {
         const s = hit.dataset;
         popHtml = `
