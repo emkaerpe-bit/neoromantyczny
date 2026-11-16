@@ -46,6 +46,7 @@ export async function handler(event, context) {
 
   let productKey = 'synastria';
   let pairInfo = '';
+  let chartHash = '';
   if (event.body) {
     try {
       const payload = JSON.parse(event.body);
@@ -56,7 +57,12 @@ export async function handler(event, context) {
         productKey = payload.product;
       } else if (payload.pair) {
         productKey = 'synastria';
+      }
+      if (payload.pair) {
         pairInfo = ' dla pary ' + String(payload.pair).slice(0, 80);
+      }
+      if (payload.chartHash) {
+        chartHash = String(payload.chartHash).replace(/[^a-zA-Z0-9_|:.,-]/g, '').slice(0, 140);
       }
     } catch (e) {
       return { statusCode: 400, headers: corsHeaders, body: JSON.stringify({ error: 'Nieprawidłowy format JSON.' }) };
@@ -67,13 +73,17 @@ export async function handler(event, context) {
     const prod = PRODUCTS[productKey] || PRODUCTS['synastria'];
     const description = prod.description + pairInfo;
 
-    const postData = new URLSearchParams({
+    const params = {
       amount: prod.amount,
       currency: 'pln',
       'automatic_payment_methods[enabled]': 'true',
       description: description,
       'metadata[product]': productKey
-    }).toString();
+    };
+    if (chartHash) {
+      params['metadata[chart_hash]'] = chartHash;
+    }
+    const postData = new URLSearchParams(params).toString();
 
     const options = {
       hostname: 'api.stripe.com',

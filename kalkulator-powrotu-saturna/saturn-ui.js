@@ -82,19 +82,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!form) return;
 
   let lastCalculatedData = null;
+  let currentSatHash = '';
 
   function isSaturnUnlocked() {
-    try {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('reset') === '1' || params.get('lock') === '1') {
-        localStorage.removeItem('neo_saturn_unlocked');
-        try { window.history.replaceState({}, '', window.location.pathname); } catch (e) {}
-        return false;
-      }
-      return localStorage.getItem('neo_saturn_unlocked') === 'true';
-    } catch (e) {
-      return false;
-    }
+    return Boolean(window.NeoChartLock && window.NeoChartLock.isUnlocked('saturn', currentSatHash));
   }
 
   function bindProtocolEvents() {
@@ -103,18 +94,17 @@ document.addEventListener('DOMContentLoaded', function () {
       unlockBtn.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
+        const opts = { chartHash: currentSatHash };
         if (typeof window.openLuxeCheckout === 'function') {
           window.openLuxeCheckout('saturn', function () {
-            try { localStorage.setItem('neo_saturn_unlocked', 'true'); } catch (err) {}
             reRenderSaturnReport();
-          });
+          }, opts);
         } else {
           setTimeout(function () {
             if (typeof window.openLuxeCheckout === 'function') {
               window.openLuxeCheckout('saturn', function () {
-                try { localStorage.setItem('neo_saturn_unlocked', 'true'); } catch (err) {}
                 reRenderSaturnReport();
-              });
+              }, opts);
             }
           }, 300);
         }
@@ -168,6 +158,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // 2. OBLICZENIA W SYSTEMIE PLACIDUSA (Precyzja matematyczna NASA / Swiss Ephemeris)
     const jd = currentChart.jd;
     const cityObj = currentChart.city || { lat: 52.23, lon: 21.01 };
+    currentSatHash = window.NeoChartLock
+      ? window.NeoChartLock.buildHash('saturn', { date: dateStr, time: timeStr, city: cityStr, lat: cityObj.lat, lon: cityObj.lon })
+      : '';
     const placidusCusps = window.SaturnPlacidus.calcPlacidusCusps(jd, cityObj.lat, cityObj.lon);
 
     // Dom Saturna w Placidusie

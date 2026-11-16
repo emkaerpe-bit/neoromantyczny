@@ -1,4 +1,5 @@
 import https from 'https';
+import crypto from 'crypto';
 
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 
@@ -42,16 +43,19 @@ export async function handler(event) {
 
   let paymentIntentId = event.queryStringParameters?.payment_intent || '';
   let productKey = event.queryStringParameters?.product || '';
+  let chartHash = event.queryStringParameters?.chartHash || '';
 
   if (event.httpMethod === 'POST' && event.body) {
     try {
       const body = JSON.parse(event.body);
       paymentIntentId = body.paymentIntentId || body.payment_intent || paymentIntentId;
       productKey = body.product || productKey;
+      chartHash = body.chartHash || chartHash;
     } catch (_e) {
       return respond(headers, 400, { verified: false, error: 'Nieprawidłowy format JSON.' });
     }
   }
+  const cleanChartHash = String(chartHash || '').replace(/[^a-zA-Z0-9_|:.,-]/g, '').slice(0, 140);
 
   if (!/^pi_[a-zA-Z0-9_]+$/.test(paymentIntentId)) {
     return respond(headers, 400, { verified: false, error: 'Nieprawidłowy identyfikator płatności.' });
@@ -80,16 +84,25 @@ export async function handler(event) {
           }
 
           const metaProduct = parsed.metadata && parsed.metadata.product;
+          const metaHash = (parsed.metadata && parsed.metadata.chart_hash) || '';
           const productMatch = !metaProduct || metaProduct === productKey;
+          const hashMatch = !metaHash || (cleanChartHash && metaHash === cleanChartHash);
           const amountValid = parsed.amount >= expectedAmount && parsed.currency === 'pln';
-          const verified = parsed.status === 'succeeded' && amountValid && productMatch;
+          const verified = parsed.status === 'succeeded' && amountValid && productMatch && hashMatch;
+          const boundHash = metaHash || cleanChartHash || productKey;
+          const unlockToken = verified
+            ? crypto.createHmac('sha256', STRIPE_SECRET_KEY.trim()).update(`${productKey}|${boundHash}|${paymentIntentId}`).digest('hex')
+            : '';
 
           const responsePayload = {
             verified,
             status: parsed.status,
             amount: parsed.amount,
             currency: parsed.currency,
-            product: productKey
+            product: productKey,
+            chartHash: boundHash,
+            paymentIntentId,
+            unlockToken
           };
           if (verified && productKey === 'prezentownik' && process.env.EBOOK_URL) {
             responsePayload.downloadUrl = process.env.EBOOK_URL;

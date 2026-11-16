@@ -10,6 +10,108 @@
   let isStripeReady = false;
   let activeProduct = 'prezentownik';
   let activeCallback = null;
+  let activeChartHash = '';
+  let activePairLabel = '';
+
+  const UNLOCKS_STORAGE_KEY = 'neo_chart_unlocks_v1';
+  const LEGACY_UNLOCK_KEYS = ['neo_saturn_unlocked', 'neo_dispositor_unlocked', 'neo_acg_unlocked', 'neo_synastry_unlocked', 'neo_chiron_unlocked'];
+  try {
+    LEGACY_UNLOCK_KEYS.forEach((k) => { localStorage.removeItem(k); });
+  } catch (e) {}
+
+  function normLocToken(val) {
+    const map = { 'ą':'a','ć':'c','ę':'e','ł':'l','ń':'n','ó':'o','ś':'s','ź':'z','ż':'z' };
+    return String(val || '')
+      .split('(')[0]
+      .trim()
+      .toLowerCase()
+      .replace(/[ąćęłńóśźż]/g, (c) => map[c] || c)
+      .replace(/[^a-z0-9]+/g, '_')
+      .replace(/^_+|_+$/g, '') || 'pl';
+  }
+
+  function formatCoordsOrCity(city, lat, lon) {
+    if (lat != null && lon != null && !isNaN(Number(lat)) && !isNaN(Number(lon))) {
+      return Number(lat).toFixed(2) + ',' + Number(lon).toFixed(2);
+    }
+    return normLocToken(city);
+  }
+
+  const NeoChartLock = {
+    buildHash(productKey, inputs) {
+      const p = String(productKey || 'calc').replace(/[^a-z0-9_-]/gi, '').toLowerCase();
+      const d = inputs || {};
+      if (p === 'synastria') {
+        const dA = String(d.dateA || '').trim();
+        const tA = String(d.timeA || '12:00').trim();
+        const cA = formatCoordsOrCity(d.cityA, d.latA, d.lonA);
+        const dB = String(d.dateB || '').trim();
+        const tB = String(d.timeB || '12:00').trim();
+        const cB = formatCoordsOrCity(d.cityB, d.latB, d.lonB);
+        return `${p}|${dA}|${tA}|${cA}|${dB}|${tB}|${cB}`.slice(0, 140);
+      }
+      const dt = String(d.date || '').trim();
+      const tm = String(d.time || '12:00').trim();
+      const loc = formatCoordsOrCity(d.city, d.lat, d.lon);
+      return `${p}|${dt}|${tm}|${loc}`.slice(0, 140);
+    },
+    readStore() {
+      try {
+        const raw = localStorage.getItem(UNLOCKS_STORAGE_KEY);
+        const parsed = raw ? JSON.parse(raw) : {};
+        return (parsed && typeof parsed === 'object') ? parsed : {};
+      } catch (e) {
+        return {};
+      }
+    },
+    writeStore(store) {
+      try { localStorage.setItem(UNLOCKS_STORAGE_KEY, JSON.stringify(store)); } catch (e) {}
+    },
+    clearProduct(productKey) {
+      const st = this.readStore();
+      delete st[productKey];
+      this.writeStore(st);
+    },
+    isUnlocked(productKey, chartHash) {
+      try {
+        const sp = new URLSearchParams(window.location.search);
+        if (sp.get('reset') === '1' || sp.get('lock') === '1') {
+          this.clearProduct(productKey);
+          try {
+            sp.delete('reset');
+            sp.delete('lock');
+            const qs = sp.toString();
+            window.history.replaceState({}, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
+          } catch (err) {}
+          return false;
+        }
+      } catch (e) {}
+      if (!productKey || !chartHash) return false;
+      const st = this.readStore();
+      const entry = st[productKey] && st[productKey][chartHash];
+      return Boolean(
+        entry &&
+        typeof entry.pi === 'string' && /^pi_[a-zA-Z0-9_]+$/.test(entry.pi) &&
+        typeof entry.token === 'string' && /^[a-f0-9]{64}$/i.test(entry.token)
+      );
+    },
+    markUnlocked(productKey, chartHash, verifyData) {
+      const targetHash = (verifyData && verifyData.chartHash) || chartHash;
+      if (!productKey || !targetHash || !verifyData || !verifyData.verified) return false;
+      if (!/^pi_[a-zA-Z0-9_]+$/.test(verifyData.paymentIntentId || '')) return false;
+      if (!/^[a-f0-9]{64}$/i.test(verifyData.unlockToken || '')) return false;
+      const st = this.readStore();
+      if (!st[productKey] || typeof st[productKey] !== 'object') st[productKey] = {};
+      st[productKey][targetHash] = {
+        pi: verifyData.paymentIntentId,
+        token: verifyData.unlockToken,
+        ts: Date.now()
+      };
+      this.writeStore(st);
+      return true;
+    }
+  };
+  window.NeoChartLock = NeoChartLock;
 
   const PRODUCTS_CONFIG = {
     'prezentownik': {
@@ -147,9 +249,11 @@
     if (submitBtn) submitBtn.addEventListener('click', handleSubmit);
   }
 
-  function openModal(productKey = 'prezentownik', callback = null) {
+  function openModal(productKey = 'prezentownik', callback = null, opts = null) {
     activeProduct = productKey || 'prezentownik';
     activeCallback = callback;
+    activeChartHash = (opts && opts.chartHash) ? String(opts.chartHash).slice(0, 140) : `${activeProduct}|default`;
+    activePairLabel = (opts && opts.pair) ? String(opts.pair).slice(0, 80) : '';
 
     ensureModalMounted();
 
@@ -190,7 +294,7 @@
     document.body.style.overflow = '';
   }
 
-  function showSuccess(verifiedDownloadUrl) {
+  function showSuccess(verifiedDownloadUrl, verifyData) {
     const prod = PRODUCTS_CONFIG[activeProduct] || PRODUCTS_CONFIG['prezentownik'];
     const cBody = document.getElementById('luxe-checkout-body');
     const sBody = document.getElementById('luxe-checkout-success');
@@ -199,7 +303,7 @@
     const sBtn = document.getElementById('luxe-success-download-btn') || document.getElementById('luxe-download-btn');
 
     if (prod.unlockKey) {
-      try { localStorage.setItem(prod.unlockKey, 'true'); } catch (e) {}
+      NeoChartLock.markUnlocked(activeProduct, activeChartHash, verifyData);
     }
 
     const dlUrl = (verifiedDownloadUrl && /^https:\/\//i.test(verifiedDownloadUrl)) ? verifiedDownloadUrl : '';
@@ -216,6 +320,7 @@
         sBtn.onclick = (e) => {
           e.preventDefault();
           closeModal();
+          try { sessionStorage.setItem('neo_just_unlocked', activeProduct); } catch (err) {}
           window.location.reload();
         };
       }
@@ -225,7 +330,7 @@
     if (sBody) sBody.style.display = 'block';
 
     if (typeof activeCallback === 'function') {
-      activeCallback(activeProduct);
+      activeCallback(activeProduct, activeChartHash, verifyData);
     }
   }
 
@@ -272,7 +377,7 @@
       const res = await fetch('/api/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ product: productKey })
+        body: JSON.stringify({ product: productKey, chartHash: activeChartHash, pair: activePairLabel })
       });
       const data = await res.json();
       if (!res.ok || data.error) {
@@ -322,7 +427,7 @@
     }
   }
 
-  function buildReturnUrl(productKey) {
+  function buildReturnUrl(productKey, chartHash) {
     if (productKey === 'prezentownik') {
       return `${window.location.origin}/success?product=prezentownik`;
     }
@@ -331,14 +436,15 @@
     url.searchParams.delete('payment_intent_client_secret');
     url.searchParams.delete('redirect_status');
     url.searchParams.set('luxe_product', productKey);
+    if (chartHash) url.searchParams.set('luxe_chart', chartHash);
     return url.toString();
   }
 
-  async function verifyPaymentOnServer(paymentIntentId, productKey) {
+  async function verifyPaymentOnServer(paymentIntentId, productKey, chartHash) {
     const res = await fetch('/api/verify-payment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ paymentIntentId, product: productKey })
+      body: JSON.stringify({ paymentIntentId, product: productKey, chartHash: chartHash || '' })
     });
     const data = await res.json();
     if (!res.ok || !data.verified) {
@@ -362,7 +468,7 @@
     try {
       const { error, paymentIntent } = await stripeInstance.confirmPayment({
         elements: stripeElementsInstance,
-        confirmParams: { return_url: buildReturnUrl(activeProduct) },
+        confirmParams: { return_url: buildReturnUrl(activeProduct, activeChartHash) },
         redirect: 'if_required'
       });
 
@@ -373,8 +479,8 @@
           submitBtn.innerHTML = `<span>${prod.btn}</span>`;
         }
       } else if (paymentIntent && paymentIntent.status === 'succeeded') {
-        const verifyData = await verifyPaymentOnServer(paymentIntent.id, activeProduct);
-        showSuccess(verifyData && verifyData.downloadUrl);
+        const verifyData = await verifyPaymentOnServer(paymentIntent.id, activeProduct, activeChartHash);
+        showSuccess(verifyData && verifyData.downloadUrl, verifyData);
       } else if (paymentIntent && paymentIntent.status === 'processing') {
         if (errorBox) errorBox.innerHTML = '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M8.5 5.2h15M8.5 26.8h15" stroke-width="1.65"/><path d="M9.8 5.2v21.6M22.2 5.2v21.6" stroke-width="0.8" opacity="0.45"/><path d="M11.8 5.2c0 5.4 4.2 8.2 4.2 10.8c0-2.6 4.2-5.4 4.2-10.8" stroke-width="1.45"/><path d="M11.8 26.8c0-5.4 4.2-8.2 4.2-10.8c0 2.6 4.2 5.4 4.2 10.8" stroke-width="1.45"/><path d="M13.5 26.8L16 23.2l2.5 3.6Z" stroke="none" fill="currentColor" fill-opacity="0.42"/></svg>Płatność jest w trakcie przetwarzania przez bank. Odśwież stronę za chwilę.';
       }
@@ -392,19 +498,21 @@
     const paymentIntentId = params.get('payment_intent');
     const redirectStatus = params.get('redirect_status');
     const productKey = params.get('luxe_product');
+    const chartHashParam = params.get('luxe_chart') || '';
     if (!paymentIntentId || !productKey || redirectStatus !== 'succeeded') return;
 
     try {
-      await verifyPaymentOnServer(paymentIntentId, productKey);
+      const verifyData = await verifyPaymentOnServer(paymentIntentId, productKey, chartHashParam);
       const prod = PRODUCTS_CONFIG[productKey];
       if (prod && prod.unlockKey) {
-        try { localStorage.setItem(prod.unlockKey, 'true'); } catch (e) {}
+        NeoChartLock.markUnlocked(productKey, verifyData.chartHash || chartHashParam, verifyData);
       }
       const cleanUrl = new URL(window.location.href);
       cleanUrl.searchParams.delete('payment_intent');
       cleanUrl.searchParams.delete('payment_intent_client_secret');
       cleanUrl.searchParams.delete('redirect_status');
       cleanUrl.searchParams.delete('luxe_product');
+      cleanUrl.searchParams.delete('luxe_chart');
       window.history.replaceState({}, '', cleanUrl.toString());
       if (prod && prod.unlockKey) {
         try { sessionStorage.setItem('neo_just_unlocked', productKey); } catch (e) {}

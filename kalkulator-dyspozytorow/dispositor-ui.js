@@ -200,6 +200,15 @@
       } catch (err) {}
 
       currentChart = window.__DISPOSITOR_ENGINE__.calcAllPlanets(date, time, city);
+      currentChart.chartHash = window.NeoChartLock
+        ? window.NeoChartLock.buildHash('dyspozytorzy', {
+            date,
+            time: time || '12:00',
+            city,
+            lat: currentChart.city && currentChart.city.lat,
+            lon: currentChart.city && currentChart.city.lon
+          })
+        : '';
       const dispData = window.__DISPOSITOR_ENGINE__.calculateDispositorChain(currentChart.planets, useModernMode);
       if (dispData.finalDispositors && dispData.finalDispositors.length > 0) {
         selectedPlanetKey = dispData.finalDispositors[0];

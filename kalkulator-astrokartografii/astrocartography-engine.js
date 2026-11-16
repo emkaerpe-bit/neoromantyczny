@@ -1028,6 +1028,24 @@
     });
 
     const form = document.getElementById('acgForm');
+    const paywallWrap = document.getElementById('acgPaywallWrap');
+    let currentAcgHash = '';
+
+    function syncAcgLockState(d, t, birthCity) {
+      currentAcgHash = window.NeoChartLock
+        ? window.NeoChartLock.buildHash('astrokartografia', {
+            date: d,
+            time: t || '12:00',
+            city: birthCity ? birthCity.name : '',
+            lat: birthCity && birthCity.lat,
+            lon: birthCity && birthCity.lon
+          })
+        : '';
+      const isUnl = Boolean(window.NeoChartLock && window.NeoChartLock.isUnlocked('astrokartografia', currentAcgHash));
+      if (paywallWrap) paywallWrap.classList.toggle('is-unlocked', isUnl);
+      return isUnl;
+    }
+
     form.addEventListener('submit', e => {
       e.preventDefault();
       const dateEl = document.getElementById('acgDate');
@@ -1056,6 +1074,7 @@
           cityName: selectedBirthCity ? selectedBirthCity.name : ''
         }));
       } catch (err) {}
+      syncAcgLockState(d, t, selectedBirthCity);
       try {
         runCalculation(d, t);
       } catch (err) {
@@ -1063,21 +1082,15 @@
       }
     });
 
-    const paywallWrap = document.getElementById('acgPaywallWrap');
     const modal = document.getElementById('acgStripeModal');
     const unlockBtn = document.getElementById('acgUnlockBtn');
     const closeBtn = document.getElementById('acgModalClose');
 
     function unlockAtlas() {
-      paywallWrap.classList.add('is-unlocked');
-      modal.classList.remove('is-active');
-      localStorage.setItem('neo_acg_unlocked', '1');
+      if (paywallWrap) paywallWrap.classList.add('is-unlocked');
+      if (modal) modal.classList.remove('is-active');
     }
 
-    const acgUnlocked = localStorage.getItem('neo_acg_unlocked');
-    if (acgUnlocked === '1' || acgUnlocked === 'true') {
-      paywallWrap.classList.add('is-unlocked');
-    }
     try {
       const savedAcg = localStorage.getItem('neo_acg_last_input');
       if (savedAcg) {
@@ -1097,6 +1110,7 @@
           if (justUnlocked) {
             window.__ACG_SUPPRESS_SUBMIT_SCROLL__ = true;
           }
+          syncAcgLockState(parsed.date, parsed.time || '12:00', selectedBirthCity);
           runCalculation(parsed.date, parsed.time || '12:00');
           if (justUnlocked) {
             sessionStorage.removeItem('neo_just_unlocked');
@@ -1109,7 +1123,7 @@
     } catch (err) {}
     if (unlockBtn) unlockBtn.addEventListener('click', () => {
       if (typeof window.openLuxeCheckout === 'function') {
-        window.openLuxeCheckout('astrokartografia', unlockAtlas);
+        window.openLuxeCheckout('astrokartografia', unlockAtlas, { chartHash: currentAcgHash });
       } else if (modal) {
         modal.classList.add('is-active');
       }

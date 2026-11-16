@@ -1137,6 +1137,17 @@
 
 (function () {
   let isReportUnlocked = false;
+  let currentSynHash = '';
+
+  function getSynChartHash(d) {
+    if (!window.NeoChartLock || !d) return '';
+    return window.NeoChartLock.buildHash('synastria', {
+      dateA: d.dateA, timeA: d.timeA, cityA: d.cityA,
+      latA: d.cA && d.cA.city && d.cA.city.lat, lonA: d.cA && d.cA.city && d.cA.city.lon,
+      dateB: d.dateB, timeB: d.timeB, cityB: d.cityB,
+      latB: d.cB && d.cB.city && d.cB.city.lat, lonB: d.cB && d.cB.city && d.cB.city.lon
+    });
+  }
 
   function renderChaptersFiveToSevenAndPaywall(d, dos, verdict) {
     const priceDisplay = '39 PLN';
@@ -1330,6 +1341,8 @@
 
   window.__SYNASTRY_REPORT_MOUNT__ = function (mountEl, d) {
     if (!mountEl || !window.__SYNASTRY_BUILD_DOSSIER__) return;
+    currentSynHash = getSynChartHash(d);
+    isReportUnlocked = Boolean(window.NeoChartLock && window.NeoChartLock.isUnlocked('synastria', currentSynHash));
     const dos = window.__SYNASTRY_BUILD_DOSSIER__(d);
     const verdict = window.__SYNASTRY_NARRATIVES__.getVerdict(d, dos);
     mountEl.innerHTML = renderChaptersFiveToSevenAndPaywall(d, dos, verdict);
@@ -1353,9 +1366,8 @@
         closeLossModal();
         if (typeof window.openLuxeCheckout === 'function') {
           window.openLuxeCheckout('synastria', () => {
-            try { localStorage.setItem('neo_synastry_unlocked', 'true'); } catch (e) {}
             performUnlock(false);
-          });
+          }, { chartHash: currentSynHash, pair: `${d.nameA} x ${d.nameB}` });
           return;
         }
         openStripeCheckout();
@@ -1411,7 +1423,7 @@
         const res = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ pair: `${d.nameA} x ${d.nameB}` })
+          body: JSON.stringify({ product: 'synastria', pair: `${d.nameA} x ${d.nameB}`, chartHash: currentSynHash })
         });
 
         const data = await res.json();
@@ -1473,6 +1485,7 @@
                 u.searchParams.delete('payment_intent_client_secret');
                 u.searchParams.delete('redirect_status');
                 u.searchParams.set('luxe_product', 'synastria');
+                if (currentSynHash) u.searchParams.set('luxe_chart', currentSynHash);
                 return u.toString();
               })()
             },
@@ -1490,13 +1503,13 @@
             const vRes = await fetch(verifyUrl, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ paymentIntentId: paymentIntent.id, product: 'synastria' })
+              body: JSON.stringify({ paymentIntentId: paymentIntent.id, product: 'synastria', chartHash: currentSynHash })
             });
             const vData = await vRes.json();
             if (!vRes.ok || !vData.verified) {
               throw new Error(vData.error || 'Płatność nie została jeszcze potwierdzona przez Stripe.');
             }
-            try { localStorage.setItem('neo_synastry_unlocked', 'true'); } catch (e) {}
+            if (window.NeoChartLock) window.NeoChartLock.markUnlocked('synastria', currentSynHash, vData);
             closeStripeModal();
             performUnlock(false);
           } else if (paymentIntent && paymentIntent.status === 'processing') {
@@ -1510,19 +1523,13 @@
       });
     }
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && isReportUnlocked) {
       try {
-        const sp = new URLSearchParams(window.location.search);
-        if (sp.get('reset') === '1' || sp.get('lock') === '1') {
-          localStorage.removeItem('neo_synastry_unlocked');
-        } else if (localStorage.getItem('neo_synastry_unlocked') === 'true') {
-          performUnlock(true);
-          if (sessionStorage.getItem('neo_just_unlocked') === 'synastria') {
-            sessionStorage.removeItem('neo_just_unlocked');
-            setTimeout(() => {
-              if (section) section.scrollIntoView({ behavior: 'auto', block: 'start' });
-            }, 60);
-          }
+        if (sessionStorage.getItem('neo_just_unlocked') === 'synastria') {
+          sessionStorage.removeItem('neo_just_unlocked');
+          setTimeout(() => {
+            if (section) section.scrollIntoView({ behavior: 'auto', block: 'start' });
+          }, 60);
         }
       } catch (e) {}
     }

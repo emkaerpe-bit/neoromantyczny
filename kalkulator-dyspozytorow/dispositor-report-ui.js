@@ -7,18 +7,11 @@
 
   let currentReportData = null;
   let currentHierarchy = null;
+  let currentChartHash = '';
 
-  function isUnlocked() {
-    try {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('reset') === '1' || params.get('lock') === '1') {
-        localStorage.removeItem('neo_dispositor_unlocked');
-        return false;
-      }
-      return localStorage.getItem('neo_dispositor_unlocked') === 'true';
-    } catch (e) {
-      return false;
-    }
+  function isUnlocked(chart) {
+    const h = (chart && chart.chartHash) || currentChartHash;
+    return Boolean(window.NeoChartLock && window.NeoChartLock.isUnlocked('dyspozytorzy', h));
   }
 
   function getGoverningRetrogradePlanets(hierarchy, chart) {
@@ -171,8 +164,9 @@
     }
 
     currentReportData = window.__DISPOSITOR_REPORT_DATA__.getReportForHierarchy(hierarchy, planets);
+    if (chart && chart.chartHash) currentChartHash = chart.chartHash;
 
-    if (isUnlocked()) {
+    if (isUnlocked(chart)) {
       renderFullReport(currentReportData, chart);
       return;
     }
@@ -275,11 +269,11 @@
     const unlockBtn = document.getElementById('disp-unlock-btn');
     if (unlockBtn) {
       unlockBtn.addEventListener('click', () => {
+        const h = (chart && chart.chartHash) || currentChartHash;
         if (typeof window.openLuxeCheckout === 'function') {
           window.openLuxeCheckout('dyspozytorzy', () => {
-            try { localStorage.setItem('neo_dispositor_unlocked', 'true'); } catch (e) {}
             renderFullReport(currentReportData, chart);
-          });
+          }, { chartHash: h });
         }
       });
     }
