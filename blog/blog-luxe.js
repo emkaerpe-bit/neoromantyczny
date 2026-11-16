@@ -376,4 +376,22 @@
   }
 
   setTimeout(initGlossary, 500);
+
+  // 7. LIVE CMS EDITOR LOADER (0s Redeploy)
+  function loadLiveEditor() {
+    if (document.getElementById('neo-live-editor-script')) return;
+    var s = document.createElement('script');
+    s.id = 'neo-live-editor-script';
+    s.src = '/blog/live-editor.js';
+    document.body.appendChild(s);
+  }
+  if (location.search.indexOf('edit=1') !== -1 || localStorage.getItem('neo_admin_token')) {
+    loadLiveEditor();
+  }
+  window.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.shiftKey && (e.key === 'E' || e.key === 'e')) {
+      e.preventDefault();
+      loadLiveEditor();
+    }
+  });
 })();
