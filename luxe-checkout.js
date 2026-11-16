@@ -14,7 +14,7 @@
   let activePairLabel = '';
 
   const UNLOCKS_STORAGE_KEY = 'neo_chart_unlocks_v1';
-  const LEGACY_UNLOCK_KEYS = ['neo_saturn_unlocked', 'neo_dispositor_unlocked', 'neo_acg_unlocked', 'neo_synastry_unlocked', 'neo_chiron_unlocked'];
+  const LEGACY_UNLOCK_KEYS = ['neo_saturn_unlocked', 'neo_dispositor_unlocked', 'neo_acg_unlocked', 'neo_synastry_unlocked', 'neo_chiron_unlocked', 'neo_solar_unlocked'];
   try {
     LEGACY_UNLOCK_KEYS.forEach((k) => { localStorage.removeItem(k); });
   } catch (e) {}
@@ -49,6 +49,14 @@
         const tB = String(d.timeB || '12:00').trim();
         const cB = formatCoordsOrCity(d.cityB, d.latB, d.lonB);
         return `${p}|${dA}|${tA}|${cA}|${dB}|${tB}|${cB}`.slice(0, 140);
+      }
+      if (p === 'solariusz') {
+        const dt = String(d.date || '').trim();
+        const tm = String(d.time || '12:00').trim();
+        const birthLoc = formatCoordsOrCity(d.city, d.lat, d.lon);
+        const yr = String(d.targetYear || new Date().getFullYear()).trim();
+        const relLoc = formatCoordsOrCity(d.relocCity || d.city, d.relocLat != null ? d.relocLat : d.lat, d.relocLon != null ? d.relocLon : d.lon);
+        return `${p}|${dt}|${tm}|${birthLoc}|${yr}|${relLoc}`.slice(0, 140);
       }
       const dt = String(d.date || '').trim();
       const tm = String(d.time || '12:00').trim();
@@ -175,6 +183,17 @@
       successHeading: 'Raport został odblokowany!',
       successSub: 'Wszystkie 5 rozdziałów Klucza Chirona jest już aktywnych.',
       unlockKey: 'neo_chiron_unlocked',
+      directUrl: 'https://buy.stripe.com/bJeeV67eN0bt7We4amcwg04'
+    },
+    'solariusz': {
+      tag: 'ARCHITEKTURA ROKU • RAPORT SOLARIUSZA 1:1',
+      title: 'Pełny Raport Solariusza i Relokacji',
+      sub: 'Analiza osi roku, wyrok Władcy Czasu (Profekcje), aspekty do Radixu, 4 przesilenia kwartałów i PDF A4.',
+      price: '39,00 PLN',
+      btn: 'Zapłać 39,00 PLN i Odblokuj Solariusz &rarr;',
+      successHeading: 'Twój Solariusz został odblokowany!',
+      successSub: 'Wszystkie 6 rozdziałów analizy rocznej i eksport PDF A4 są już aktywne.',
+      unlockKey: 'neo_solar_unlocked',
       directUrl: 'https://buy.stripe.com/bJeeV67eN0bt7We4amcwg04'
     }
   };

@@ -9,7 +9,8 @@ const EXPECTED_AMOUNTS = {
   astrokartografia: 3900,
   dyspozytorzy: 2900,
   saturn: 4700,
-  chiron: 2900
+  chiron: 2900,
+  solariusz: 3900
 };
 
 function getCorsHeaders(event) {

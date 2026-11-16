@@ -1,0 +1,115 @@
+/* NEOROMANTYCZNY — KALKULATOR SOLARIUSZA (MIDNIGHT LUXE) */
+.solar-flashback-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.solar-year-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  color: rgba(250, 248, 245, 0.8);
+  padding: 0.42rem 0.9rem;
+  border-radius: 9999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.solar-year-pill:hover,
+.solar-year-pill.is-active {
+  background: rgba(201, 168, 76, 0.18);
+  border-color: #C9A84C;
+  color: #FAF8F5;
+}
+.solar-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.solar-kpi-card {
+  background: rgba(26, 26, 34, 0.75);
+  border: 1px solid rgba(201, 168, 76, 0.22);
+  border-radius: 14px;
+  padding: 1.15rem;
+}
+.solar-kpi-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #C9A84C;
+  margin-bottom: 0.4rem;
+}
+.solar-kpi-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  color: #FAF8F5;
+  margin-bottom: 0.35rem;
+}
+.solar-kpi-sub {
+  font-size: 0.82rem;
+  color: rgba(250, 248, 245, 0.68);
+  line-height: 1.5;
+}
+.solar-paywall-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(20, 20, 27, 0.9);
+  padding: 2rem 1.5rem;
+  margin-top: 1.75rem;
+}
+.solar-blur-preview {
+  filter: blur(6px);
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.55;
+  max-height: 220px;
+  overflow: hidden;
+}
+.solar-paywall-overlay {
+  position: relative;
+  z-index: 2;
+  margin-top: -4rem;
+  background: linear-gradient(180deg, rgba(20,20,27,0.75) 0%, #14141B 25%);
+  padding: 2rem 1.25rem 0.5rem;
+  text-align: center;
+}
+.solar-chapter {
+  background: rgba(26, 26, 34, 0.85);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.solar-chapter h3 {
+  font-family: 'Playfair Display', serif;
+  color: #FAF8F5;
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem;
+}
+.solar-reloc-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.65rem;
+}
+@media print {
+  #luxe-header-nav, footer, .disp-btn-wrap, .solar-flashback-bar, .no-print, #neo-cookie-banner {
+    display: none !important;
+  }
+  body { background: #FFFFFF !important; color: #111111 !important; }
+  .disp-card, .solar-chapter, .solar-kpi-card {
+    background: #FFFFFF !important;
+    color: #111111 !important;
+    border-color: #D4C5A9 !important;
+    box-shadow: none !important;
+  }
+  .solar-chapter h3, .solar-kpi-val { color: #111111 !important; }
+}
