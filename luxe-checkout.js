@@ -63,6 +63,17 @@
       successSub: 'Wszystkie 5 rozdziałów Protokołu Chronosa jest już aktywnych.',
       unlockKey: 'neo_saturn_unlocked',
       directUrl: 'https://buy.stripe.com/bJecMY8iRe2jdgy9uGcwg03'
+    },
+    'chiron': {
+      tag: 'KLUCZ CHIRONA • RAPORT TRANSFORMACJI',
+      title: 'Raport Pierwotnej Rany i Złotego Daru Chirona',
+      sub: 'Pełna psychologia rany, aspekty do planet osobistych, kalendarz Powrotu Chirona i alchemia uzdrowienia.',
+      price: '29,00 PLN',
+      btn: 'Zapłać 29,00 PLN i Odblokuj Raport &rarr;',
+      successHeading: 'Raport został odblokowany!',
+      successSub: 'Wszystkie 5 rozdziałów Klucza Chirona jest już aktywnych.',
+      unlockKey: 'neo_chiron_unlocked',
+      directUrl: 'https://buy.stripe.com/bJeeV67eN0bt7We4amcwg04'
     }
   };
 

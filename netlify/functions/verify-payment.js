@@ -7,7 +7,8 @@ const EXPECTED_AMOUNTS = {
   synastria: 3900,
   astrokartografia: 3900,
   dyspozytorzy: 2900,
-  saturn: 4700
+  saturn: 4700,
+  chiron: 2900
 };
 
 const CORS_HEADERS = {
