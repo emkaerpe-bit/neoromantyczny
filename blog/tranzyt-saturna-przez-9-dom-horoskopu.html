@@ -27,4 +27,22 @@
 <li><a href="#matryca-domu" class="hover:text-champagne transition-colors">04 Zapis dziewiątego sektora</a></li>
 <li><a href="#protokol-przetrwania" class="hover:text-champagne transition-colors">05 Kompas etyczny</a></li>
 <li><a href="#faq-sekcja" class="hover:text-champagne transition-colors">06 FAQ</a></li></ul></div></aside>
-</div></section></main><script src="/blog/blog-luxe.js" defer></script></body></html>
+</div></section></main><script src="/blog/blog-luxe.js" defer></script><script>
+(function() {
+  var nav = document.getElementById('navbar') || document.querySelector('nav');
+  if (!nav) return;
+  var isScrolled = false;
+  function updateNav() {
+    var scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    var shouldScroll = scrollPos > 50;
+    if (shouldScroll !== isScrolled) {
+      isScrolled = shouldScroll;
+      if (isScrolled) nav.classList.add('navbar-scrolled');
+      else nav.classList.remove('navbar-scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+})();
+</script>
+</body></html>
