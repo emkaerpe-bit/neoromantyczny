@@ -109,7 +109,8 @@
           </button>
 
           <div class="luxe-stripe-footer">
-            🔒 SSL 256-bit • Bezpieczne szyfrowanie Stripe
+            🔒 SSL 256-bit • Bezpieczne szyfrowanie Stripe<br>
+            <span style="font-size:0.74rem;opacity:0.8;">Zasady płatności i RODO: <a href="/polityka-prywatnosci/" style="color:#C9A84C;text-decoration:underline;">Polityka Prywatności</a></span>
           </div>
         </div>
 

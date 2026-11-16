@@ -136,12 +136,40 @@
     <meta name="facebook-domain-verification" content="gj3zt9fprbwpw7tbg9s3zm7rr8tnpn" />
 
     
-    <!-- Meta Pixel Code -->
+    <!-- Google Consent Mode v2 + Consent-Gated Tracking (GA4, Clarity, Meta Pixel) -->
     <script>
-    // Defer Meta Pixel even further and use Idle deadline
-    window.addEventListener('load', () => {
-      const initPixel = () => {
-        setTimeout(() => {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag(){window.dataLayer.push(arguments);};
+      window.gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+      (function () {
+        var analyticsLoaded = false;
+        var marketingLoaded = false;
+        function loadAnalytics() {
+          if (analyticsLoaded) return;
+          analyticsLoaded = true;
+          var gtmScript = document.createElement('script');
+          gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-1EL4DX70SG';
+          gtmScript.async = true;
+          document.head.appendChild(gtmScript);
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-1EL4DX70SG');
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "vwqhwp92jz");
+        }
+        function loadMarketing() {
+          if (marketingLoaded) return;
+          marketingLoaded = true;
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
           n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -150,56 +178,24 @@
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window,document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
-
-          const pageViewId = 'pv-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+          var pageViewId = 'pv-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
           fbq('init', '2083061389142070');
           fbq('track', 'PageView', {}, { eventID: pageViewId });
           window.pixelPageViewId = pageViewId;
-        }, 4000);
-      };
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(initPixel);
-      } else {
-        initPixel();
-      }
-    });
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2083061389142070&ev=PageView&noscript=1"
-    /></noscript>
-
-    <!-- Analytics & Tracking (Deferred) -->
-    <script>
-      // Optimization: Using requestIdleCallback for tracking to ensure zero impact on TBT/LCP
-      const deferTracking = () => {
-        const run = () => {
-          setTimeout(() => {
-            // Google Tag Manager
-            const gtmScript = document.createElement('script');
-            gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-1EL4DX70SG';
-            gtmScript.async = true;
-            document.head.appendChild(gtmScript);
-            
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-1EL4DX70SG');
-
-            // Clarity
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "vwqhwp92jz");
-          }, 3000);
-        };
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(run);
-        } else {
-          window.addEventListener('load', run);
         }
-      };
-      deferTracking();
+        function bindConsent() {
+          if (!window.neoConsent) return;
+          window.neoConsent.onChange(function (c) {
+            if (c.analytics) loadAnalytics();
+            if (c.marketing) loadMarketing();
+          });
+        }
+        window.addEventListener('load', function () {
+          var run = function () { setTimeout(bindConsent, 1200); };
+          if ('requestIdleCallback' in window) requestIdleCallback(run);
+          else run();
+        });
+      })();
     </script>
     
     <!-- Premium Favicon -->
@@ -624,6 +620,7 @@
                         <p class="text-base">
                             Jeśli Prezentownik zawiedzie Twoje oczekiwania, masz <strong class="text-ivory">7 dni na decyzję</strong>. Jeśli uznasz, że to nie to – napisz do mnie na adres: <a href="mailto:kontakt@neoromantyczny.pl" class="text-primary hover:underline font-medium">kontakt@neoromantyczny.pl</a>, a zwrócę Ci całą kwotę. Bez zbędnych pytań. 🌑✨
                         </p>
+                        <p class="text-xs text-text/50">Płatność realizuje Stripe, a korespondencję i zwroty przetwarzamy zgodnie z <a href="/polityka-prywatnosci/" class="text-primary hover:underline">Polityką Prywatności</a>.</p>
                         <div class="pt-6 border-t border-white/5">
                             <p class="text-[10px] text-text/30 leading-relaxed italic">
                                 * Według badań: „Od rozczarowania do drugiego obiegu. 67% Polaków dostaje nietrafione prezenty, a po świętach rośnie ich odsprzedaż” przeprowadzonego przez Allegro z dnia 29.12.2025 r.
@@ -960,9 +957,11 @@
             
 
             <div class="mt-8 flex flex-col items-center gap-6 w-full">
-                <div class="flex gap-8 text-[10px] font-mono text-text/30 uppercase tracking-[0.2em]">
+                <div class="flex gap-8 text-[10px] font-mono text-text/30 uppercase tracking-[0.2em]" style="flex-wrap:wrap;justify-content:center;row-gap:0.75rem;">
                     <a href="/blog/" class="hover:text-primary transition-colors">Blog</a>
                     <a href="/faq/" class="hover:text-primary transition-colors">Baza Wiedzy (FAQ)</a>
+                    <a href="/polityka-prywatnosci/" class="hover:text-primary transition-colors">Polityka Prywatności</a>
+                    <button type="button" data-open-cookie-settings class="hover:text-primary transition-colors" style="background:none;border:0;padding:0;color:inherit;font:inherit;cursor:pointer;text-transform:uppercase;letter-spacing:0.2em;">Ustawienia cookies</button>
                     <a href="mailto:kontakt@neoromantyczny.pl" class="hover:text-primary transition-colors">Kontakt</a>
                 </div>
                 <a href="/faq/" aria-label="Baza Wiedzy i FAQ Zodiakalnego Prezentownika" class="group flex flex-col items-center gap-2 opacity-30 hover:opacity-100 transition-all duration-700 ease-in-out cursor-pointer">
@@ -1095,7 +1094,8 @@
             link.addEventListener('click', function(e) {
                 const eventId = 'atc-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
                 
-                if (typeof fbq !== 'undefined') {
+                const consent = window.neoConsent && window.neoConsent.get();
+                if (consent && consent.marketing && typeof fbq !== 'undefined') {
                     fbq('track', 'AddToCart', { 
                         value: 47.00, 
                         currency: 'PLN', 
@@ -1104,7 +1104,7 @@
                     }, { eventID: eventId });
                 }
 
-                if (typeof gtag !== 'undefined') {
+                if (consent && consent.analytics && typeof gtag !== 'undefined') {
                     gtag('event', 'add_to_cart', {
                         'currency': 'PLN',
                         'value': 47.00,
@@ -1158,7 +1158,7 @@
           </button>
 
           <div class="luxe-stripe-footer">
-            🔒 Bezpieczne szyfrowanie SSL 256-bit &bull; Powered by Stripe
+            🔒 Bezpieczne szyfrowanie SSL 256-bit &bull; Powered by Stripe<br><span style="font-size:0.74rem;opacity:0.8;">Zasady płatności i RODO: <a href="/polityka-prywatnosci/" style="color:#C9A84C;text-decoration:underline;">Polityka Prywatności</a></span>
           </div>
         </div>
 
@@ -1202,5 +1202,6 @@
       <symbol id="zodiac-ryby" viewBox="0 0 32 32"><path d="M 10 8.5 C 14.5 12.5, 14.5 19.5, 10 23.5 M 22 8.5 C 17.5 12.5, 17.5 19.5, 22 23.5 M 7.5 16 L 24.5 16" fill="none" stroke="url(#neo-gold)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     </svg>
     <script src="/luxe-checkout.js?v=1.0" defer></script>
+    <script src="/luxe-consent.js?v=1.0" defer></script>
 </body>
 </html>

@@ -1,0 +1,144 @@
+/* Neoromantyczny Midnight Luxe Cookie Consent & Settings UI */
+#neo-cookie-banner {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2rem);
+  max-width: 780px;
+  background: rgba(15, 15, 22, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 168, 76, 0.32);
+  border-radius: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  color: #FAF8F5;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.78), 0 0 25px rgba(201, 168, 76, 0.1);
+  z-index: 999990;
+  box-sizing: border-box;
+}
+#neo-cookie-banner[hidden], #neo-consent-modal[hidden] { display: none !important; }
+.neo-cb-kicker {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  margin-bottom: 0.45rem;
+}
+.neo-cb-text {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: rgba(250, 248, 245, 0.82);
+  margin: 0 0 1rem 0;
+}
+.neo-cb-text a { color: #C9A84C; text-decoration: underline; }
+.neo-cb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+.neo-cb-btn {
+  appearance: none;
+  border-radius: 9999px;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  font-family: inherit;
+}
+.neo-cb-btn:hover { transform: translateY(-1px); }
+.neo-cb-btn-gold {
+  background: #C9A84C;
+  color: #0D0D12;
+  border: 1px solid #C9A84C;
+}
+.neo-cb-btn-outline {
+  background: rgba(255, 255, 255, 0.06);
+  color: #FAF8F5;
+  border: 1px solid rgba(250, 248, 245, 0.28);
+}
+.neo-cb-btn-ghost {
+  background: transparent;
+  color: rgba(250, 248, 245, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  margin-right: auto;
+}
+#neo-consent-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 6, 10, 0.78);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 999995;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+.neo-cm-card {
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #13131A;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 1.5rem;
+  padding: 1.6rem;
+  color: #FAF8F5;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.85);
+}
+.neo-cm-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.neo-cm-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  margin: 0;
+  color: #FAF8F5;
+}
+.neo-cm-close {
+  background: none;
+  border: none;
+  color: rgba(250, 248, 245, 0.65);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+.neo-cm-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 0.75rem;
+}
+.neo-cm-row strong { display: block; font-size: 0.9rem; color: #FAF8F5; margin-bottom: 0.2rem; }
+.neo-cm-row span { display: block; font-size: 0.76rem; color: rgba(250, 248, 245, 0.64); line-height: 1.45; }
+.neo-cm-switch { accent-color: #C9A84C; width: 1.15rem; height: 1.15rem; cursor: pointer; flex-shrink: 0; }
+.neo-cm-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.15rem;
+}
+@media (max-width: 640px) {
+  #neo-cookie-banner { bottom: 0.75rem; padding: 1.05rem 1.1rem; border-radius: 1.25rem; }
+  .neo-cb-actions { justify-content: stretch; }
+  .neo-cb-btn { flex: 1 1 auto; text-align: center; padding: 0.65rem 0.9rem; }
+  .neo-cb-btn-ghost { margin-right: 0; }
+}

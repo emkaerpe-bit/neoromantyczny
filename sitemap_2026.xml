@@ -43,6 +43,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://neoromantyczny.pl/polityka-prywatnosci/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://neoromantyczny.pl/blog/bledy-prezentowe-zodiakara</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>monthly</changefreq>

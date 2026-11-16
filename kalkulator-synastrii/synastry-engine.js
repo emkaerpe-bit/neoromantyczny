@@ -1368,6 +1368,9 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
               <span>Oblicz Synastrię i Napięcie Relacji</span>
               <span>&rarr;</span>
             </button>
+            <p style="margin:0.85rem 0 0;font-size:0.75rem;color:rgba(250,248,245,0.52);line-height:1.5;">
+              Obliczenia wykonują się lokalnie w Twojej przeglądarce (<code>localStorage</code>); daty urodzenia nie trafiają do bazy danych. <a href="/polityka-prywatnosci/" style="color:#C9A84C;text-decoration:underline;">Polityka Prywatności</a>
+            </p>
           </div>
         </form>
 

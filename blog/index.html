@@ -1257,7 +1257,7 @@
             </div>
         </section>
 
-        <!-- Newsletter (tymczasowo wyłączony — zostawiony w kodzie do ewentualnego przywrócenia)
+        <!-- Newsletter (tymczasowo wyłączony — zostawiony w kodzie do ewentualnego przywrócenia; PRZED WŁĄCZENIEM DODAĆ DOMYŚLNIE ODZNACZONY CHECKBOX ZGODY RODO + LINK DO /polityka-prywatnosci/)
         <section class="bg-ivory py-32 px-8 rounded-t-[4rem]">
             <div class="container mx-auto max-w-4xl text-center">
                 <h2 class="text-obsidian text-5xl font-serif mb-8 leading-tight">Dołącz do <span class="italic">Grona Świadomych Darczyńców.</span></h2>
@@ -1278,7 +1278,18 @@
         </section>
         -->
 
-        <footer data-nosnippet class="bg-obsidian py-20"></footer>
+        <footer data-nosnippet class="bg-obsidian py-16 border-t border-white/5 text-center">
+            <div class="max-w-6xl mx-auto px-6 flex flex-col items-center gap-5">
+                <p class="font-serif text-sm text-ivory/50 tracking-widest uppercase m-0">&copy; 2026 Zodiakalny Prezentownik • Neoromantyczny</p>
+                <div class="flex flex-wrap justify-center gap-6 text-[10px] font-mono text-ivory/40 uppercase tracking-[0.2em]">
+                    <a href="/" class="hover:text-champagne transition-colors">Strona główna</a>
+                    <a href="/faq/" class="hover:text-champagne transition-colors">Baza Wiedzy (FAQ)</a>
+                    <a href="/polityka-prywatnosci/" class="hover:text-champagne transition-colors">Polityka Prywatności</a>
+                    <button type="button" data-open-cookie-settings class="hover:text-champagne transition-colors uppercase tracking-[0.2em] cursor-pointer" style="background:none;border:0;padding:0;">Ustawienia cookies</button>
+                    <a href="mailto:kontakt@neoromantyczny.pl" class="hover:text-champagne transition-colors">Kontakt</a>
+                </div>
+            </div>
+        </footer>
     </main>
 
     
@@ -1603,6 +1614,7 @@
         })();
     </script>
     <script src="/cosmic-pulse.js" defer></script>
+    <script src="/luxe-consent.js?v=1.0" defer></script>
 </body>
 </html>
 
