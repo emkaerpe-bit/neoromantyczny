@@ -1156,7 +1156,7 @@
           <div id="luxe-stripe-error"></div>
 
           <button type="button" id="luxe-stripe-submit-btn" class="luxe-btn-submit" style="display:none;">
-            <span>Zapłać 47,00 PLN i Odbierz E-book &rarr;</span>
+            <span id="luxe-submit-label">Zapłać 47,00 PLN i Odbierz E-book &rarr;</span>
           </button>
 
           <div class="luxe-stripe-footer">
@@ -1167,13 +1167,13 @@
         <!-- Ekran sukcesu po opłaceniu -->
         <div id="luxe-checkout-success" style="display:none; text-align:center; padding: 2rem 1rem;">
           <div style="font-size: 2.75rem; margin-bottom: 0.75rem;">✨</div>
-          <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.85rem; color: #FAF8F5; margin-bottom: 0.5rem; font-weight: 700;">
+          <h3 id="luxe-success-heading" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.85rem; color: #FAF8F5; margin-bottom: 0.5rem; font-weight: 700;">
             Płatność zakończona sukcesem!
           </h3>
-          <p style="color: rgba(250, 248, 245, 0.85); font-size: 1rem; line-height: 1.6; margin-bottom: 1.75rem; max-width: 440px; margin-left: auto; margin-right: auto;">
+          <p id="luxe-success-sub" style="color: rgba(250, 248, 245, 0.85); font-size: 1rem; line-height: 1.6; margin-bottom: 1.75rem; max-width: 440px; margin-left: auto; margin-right: auto;">
             Twój e-book <strong>Zodiakalny Prezentownik</strong> jest gotowy do pobrania. Kliknij poniżej, aby natychmiast otworzyć i zapisać plik.
           </p>
-          <a href="https://drive.google.com/uc?export=download&id=14r9HvDx21VVsEKUmhBeCFY5n9fqJLc4u" id="luxe-download-btn" target="_blank" rel="noopener noreferrer" class="luxe-btn-download">
+          <a href="#" id="luxe-download-btn" target="_blank" rel="noopener noreferrer" class="luxe-btn-download">
             <span>Pobierz Zodiakalny Prezentownik (PDF) &darr;</span>
           </a>
           <p style="font-size: 0.8rem; color: rgba(250, 248, 245, 0.5); margin-top: 1.75rem;">
