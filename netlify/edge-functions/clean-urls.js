@@ -14,7 +14,7 @@ async function load(){
   if(!r.ok){localStorage.removeItem('neo_admin_token');token='';auth.style.display='block';panel.style.display='none';if(pw.value)err.textContent='Nieprawidłowe hasło.';return;}
   const d=await r.json();overrides=new Set(d.overrides||[]);auth.style.display='none';panel.style.display='block';err.textContent='';
   const b=await fetch('/blog/').then(x=>x.text());const doc=new DOMParser().parseFromString(b,'text/html');
-  posts=Array.from(doc.querySelectorAll('.blog-article-card')).map(a=>{const h=a.getAttribute('href')||'';return{href:h,slug:h.replace(/^\/blog\//,'').replace(/\/$/,''),title:(a.querySelector('h2')||{}).textContent||''};});
+  posts=Array.from(doc.querySelectorAll('.blog-article-card')).map(a=>{const h=a.getAttribute('href')||'';return{href:h,slug:h.split('/blog/').pop().split('/')[0],title:(a.querySelector('h2')||{}).textContent||''};});
   render();
 }
 const esc=s=>String(s).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
