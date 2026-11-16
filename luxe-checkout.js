@@ -440,6 +440,23 @@
     return url.toString();
   }
 
+  function trackGa4Purchase(paymentIntentId, productKey) {
+    try {
+      if (typeof window.gtag !== 'function' || !paymentIntentId) return;
+      const dedupeKey = 'neo_ga4_tx_' + paymentIntentId;
+      if (sessionStorage.getItem(dedupeKey)) return;
+      sessionStorage.setItem(dedupeKey, '1');
+      const prod = PRODUCTS_CONFIG[productKey] || PRODUCTS_CONFIG['prezentownik'];
+      const numericPrice = parseFloat(String(prod.price || '0').replace(',', '.')) || 0;
+      window.gtag('event', 'purchase', {
+        transaction_id: paymentIntentId,
+        value: numericPrice,
+        currency: 'PLN',
+        items: [{ item_id: productKey, item_name: prod.title || productKey, price: numericPrice, quantity: 1 }]
+      });
+    } catch (_e) {}
+  }
+
   async function verifyPaymentOnServer(paymentIntentId, productKey, chartHash) {
     const res = await fetch('/api/verify-payment', {
       method: 'POST',
@@ -450,6 +467,7 @@
     if (!res.ok || !data.verified) {
       throw new Error(data.error || 'Płatność nie została jeszcze potwierdzona przez Stripe.');
     }
+    trackGa4Purchase(paymentIntentId, productKey);
     return data;
   }
 

@@ -165,6 +165,33 @@
     }
   });
 
+  function bootGoogleTag() {
+    if (window.__neoHasInlineTracking || window.__neoGtmLoaded) return;
+    window.__neoGtmLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.gtag !== 'function') {
+      window.gtag = function () { window.dataLayer.push(arguments); };
+    }
+    window.gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    var cur = readConsent();
+    if (cur) syncGtag(cur);
+    var gs = document.createElement('script');
+    gs.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PBP5CDDN';
+    gs.async = true;
+    document.head.appendChild(gs);
+    window.gtag('js', new Date());
+  }
+
+  bootGoogleTag();
+
   function init() {
     var cur = readConsent();
     if (cur) { syncGtag(cur); ensureTrackingLoaded(cur); }

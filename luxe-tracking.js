@@ -14,12 +14,14 @@
       if (typeof window.gtag !== 'function') {
         window.gtag = function () { window.dataLayer.push(arguments); };
       }
-      var gs = document.createElement('script');
-      gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-1EL4DX70SG';
-      gs.async = true;
-      document.head.appendChild(gs);
-      window.gtag('js', new Date());
-      window.gtag('config', 'G-1EL4DX70SG');
+      if (!window.__neoGtmLoaded) {
+        window.__neoGtmLoaded = true;
+        var gs = document.createElement('script');
+        gs.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PBP5CDDN';
+        gs.async = true;
+        document.head.appendChild(gs);
+        window.gtag('js', new Date());
+      }
 
       (function (c2, l, a, r, i, t, y) {
         c2[a] = c2[a] || function () { (c2[a].q = c2[a].q || []).push(arguments); };
