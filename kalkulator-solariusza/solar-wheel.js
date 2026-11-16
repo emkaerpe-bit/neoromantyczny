@@ -101,12 +101,18 @@
       `;
     }
 
+    const esc = s => String(s || '').replace(/"/g, '&quot;');
+    const D = window.SOLAR_DATA || {};
     const natalAscSa = toSVG(result.natalAsc, asc);
     const nIn = polar(R_CENTER + 4, natalAscSa);
     const nOut = polar(R_ZODIAC_IN - 4, natalAscSa);
+    const ascPx = ((nOut.x / S) * 100).toFixed(1), ascPy = ((nOut.y / S) * 100).toFixed(1);
     const natalAscMarker = `
-      <line x1="${nIn.x.toFixed(1)}" y1="${nIn.y.toFixed(1)}" x2="${nOut.x.toFixed(1)}" y2="${nOut.y.toFixed(1)}" stroke="#2563EB" stroke-width="1.4" stroke-dasharray="4,3"/>
-      <text x="${nOut.x.toFixed(1)}" y="${(nOut.y - 6).toFixed(1)}" text-anchor="middle" font-size="7.5" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#1D4ED8">ASC RADIX</text>
+      <g class="solar-wheel-hit" tabindex="0" data-px="${ascPx}" data-py="${ascPy}" data-title="ASC RADIX (${result.natalAscInfo.signName})" data-sub="Twój stały Ascendent urodzeniowy" data-desc="To punkt startowy Twojego horoskopu urodzeniowego. Miejsce, w które trafia na kole Solariusza, pokazuje, który sektor tego roku dotyka bezpośrednio Twojej osobowości.">
+        <line x1="${nIn.x.toFixed(1)}" y1="${nIn.y.toFixed(1)}" x2="${nOut.x.toFixed(1)}" y2="${nOut.y.toFixed(1)}" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <circle cx="${nOut.x.toFixed(1)}" cy="${nOut.y.toFixed(1)}" r="10" fill="transparent"/>
+        <text x="${nOut.x.toFixed(1)}" y="${(nOut.y - 6).toFixed(1)}" text-anchor="middle" font-size="7.5" font-family="'JetBrains Mono', monospace" font-weight="700" fill="#1D4ED8">ASC RADIX</text>
+      </g>
     `;
 
     let planetsHtml = '';
@@ -115,11 +121,18 @@
       const pRim = polar(R_ZODIAC_IN, p.sa);
       const isTL = p.key === result.timeLordKey;
       const col = COLORS[p.key] || '#1F2226';
+      const px = ((pt.x / S) * 100).toFixed(1), py = ((pt.y / S) * 100).toFixed(1);
+      const hTopic = (D.HOUSE_TOPICS && D.HOUSE_TOPICS[p.house]) || '';
+      const pTip = (D.PLANET_TIPS && D.PLANET_TIPS[p.key]) || '';
+      const sub = `${p.formatted} • ${p.house}. Dom SR${p.isRetrograde ? ' • Retrogradacja ℞' : ''}${isTL ? ' • Władca Roku' : ''}`;
+      const desc = `${pTip}${hTopic ? ` W tym roku działa w ${p.house}. domu (${hTopic.toLowerCase()}).` : ''}`;
       planetsHtml += `
         <line x1="${pRim.x.toFixed(1)}" y1="${pRim.y.toFixed(1)}" x2="${pt.x.toFixed(1)}" y2="${pt.y.toFixed(1)}" stroke="rgba(153,115,40,0.28)" stroke-width="0.9"/>
-        ${isTL ? `<circle cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="15.5" fill="rgba(201,168,76,0.2)" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="2.5,2"/>` : ''}
-        <circle cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="11.5" fill="#FFFFFF" stroke="${isTL ? '#C9A84C' : col}" stroke-width="${isTL ? '2.2' : '1.4'}"/>
-        <text x="${pt.x.toFixed(1)}" y="${(pt.y + 4).toFixed(1)}" text-anchor="middle" font-size="13" fill="${col}" font-weight="700">${TEXT_GLYPHS[p.key] || '*'}</text>
+        <g class="solar-wheel-hit" tabindex="0" data-px="${px}" data-py="${py}" data-title="${esc(p.name)} (${esc(p.signName)})" data-sub="${esc(sub)}" data-desc="${esc(desc)}">
+          ${isTL ? `<circle cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="15.5" fill="rgba(201,168,76,0.2)" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="2.5,2"/>` : ''}
+          <circle class="solar-node-hit-ring" cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="11.5" fill="#FFFFFF" stroke="${isTL ? '#C9A84C' : col}" stroke-width="${isTL ? '2.2' : '1.4'}"/>
+          <text x="${pt.x.toFixed(1)}" y="${(pt.y + 4).toFixed(1)}" text-anchor="middle" font-size="13" fill="${col}" font-weight="700" style="pointer-events:none;">${TEXT_GLYPHS[p.key] || '*'}</text>
+        </g>
       `;
     });
 
@@ -130,9 +143,12 @@
     `;
 
     return `
-      <svg viewBox="0 0 ${S} ${S}" width="100%" height="100%" style="display:block;margin:0 auto;max-width:520px;" xmlns="http://www.w3.org/2000/svg">
-        ${bg}${signsHtml}${housesHtml}${natalAscMarker}${planetsHtml}${centerHtml}
-      </svg>
+      <div class="solar-wheel-wrap">
+        <div id="solar-wheel-popover" class="solar-wheel-popover" style="display:none;" aria-live="polite"></div>
+        <svg viewBox="0 0 ${S} ${S}" width="100%" height="100%" style="display:block;margin:0 auto;max-width:520px;" xmlns="http://www.w3.org/2000/svg">
+          ${bg}${signsHtml}${housesHtml}${natalAscMarker}${planetsHtml}${centerHtml}
+        </svg>
+      </div>
     `;
   }
 

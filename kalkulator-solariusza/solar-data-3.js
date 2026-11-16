@@ -27,16 +27,16 @@ window.SOLAR_DATA.ASPECT_TONES = {
 };
 
 window.SOLAR_DATA.RELOCATION_PRESETS = [
-  { name: 'Warszawa', country: 'Polska', lat: 52.2297, lon: 21.0122 },
-  { name: 'Kraków', country: 'Polska', lat: 50.0647, lon: 19.9450 },
-  { name: 'Gdańsk', country: 'Polska', lat: 54.3520, lon: 18.6466 },
-  { name: 'Rzym', country: 'Włochy', lat: 41.9028, lon: 12.4964 },
-  { name: 'Paryż', country: 'Francja', lat: 48.8566, lon: 2.3522 },
-  { name: 'Lizbona', country: 'Portugalia', lat: 38.7223, lon: -9.1393 },
-  { name: 'Londyn', country: 'Wielka Brytania', lat: 51.5074, lon: -0.1278 },
-  { name: 'Nowy Jork', country: 'USA', lat: 40.7128, lon: -74.0060 },
-  { name: 'Tokio', country: 'Japonia', lat: 35.6762, lon: 139.6503 },
-  { name: 'Denpasar (Bali)', country: 'Indonezja', lat: -8.6705, lon: 115.2126 }
+  { name: 'Warszawa', country: 'Polska', lat: 52.2297, lon: 21.0122, tz: 'Europe/Warsaw' },
+  { name: 'Kraków', country: 'Polska', lat: 50.0647, lon: 19.9450, tz: 'Europe/Warsaw' },
+  { name: 'Gdańsk', country: 'Polska', lat: 54.3520, lon: 18.6466, tz: 'Europe/Warsaw' },
+  { name: 'Rzym', country: 'Włochy', lat: 41.9028, lon: 12.4964, tz: 'Europe/Rome' },
+  { name: 'Paryż', country: 'Francja', lat: 48.8566, lon: 2.3522, tz: 'Europe/Paris' },
+  { name: 'Lizbona', country: 'Portugalia', lat: 38.7223, lon: -9.1393, tz: 'Europe/Lisbon' },
+  { name: 'Londyn', country: 'Wielka Brytania', lat: 51.5074, lon: -0.1278, tz: 'Europe/London' },
+  { name: 'Nowy Jork', country: 'USA', lat: 40.7128, lon: -74.0060, tz: 'America/New_York' },
+  { name: 'Tokio', country: 'Japonia', lat: 35.6762, lon: 139.6503, tz: 'Asia/Tokyo' },
+  { name: 'Denpasar (Bali)', country: 'Indonezja', lat: -8.6705, lon: 115.2126, tz: 'Asia/Makassar' }
 ];
 
 window.SOLAR_DATA.getRelocHouseVerdict = function (srAscNatalHouse) {
@@ -56,4 +56,26 @@ window.SOLAR_DATA.getRelocHouseVerdict = function (srAscNatalHouse) {
     badge: 'Kąt Pracy Wewnętrznej i Korekty (VI / VIII / XII)',
     text: `W tej szerokości geograficznej Ascendent roku wpada w Twój ${srAscNatalHouse}. dom urodzeniowy. Wymaga to wysokiej higieny psychicznej i porządkowania spraw zakulisowych — możesz sprawdzić sąsiednie strefy w symulatorze relokacji powyżej.`
   };
+};
+
+window.SOLAR_DATA.HOUSE_TOPICS = {
+  1: 'Tożsamość, wygląd i własne decyzje', 2: 'Zarobki, oszczędności i poczucie wartości',
+  3: 'Rozmowy, umowy, rodzeństwo i nauka', 4: 'Dom, mieszkanie, rodzina i prywatny spokój',
+  5: 'Romans, twórczość, dzieci i pasja', 6: 'Codzienna praca, nawyki, tryb dnia i zdrowie',
+  7: 'Związek, małżeństwo, wspólnicy i klienci', 8: 'Wspólne pieniądze, kryzysy zaufania i przełomy',
+  9: 'Podróże, zagranica, prawo, studia i wizja', 10: 'Kariera, awans, reputacja i autorytet',
+  11: 'Przyjaciele, grupy, kontakty i długie cele', 12: 'Cisza, podświadomość, regeneracja i zakulisowe plany'
+};
+
+window.SOLAR_DATA.PLANET_TIPS = {
+  sun: 'Centrum grawitacji roku: to tutaj skupia się najwięcej Twojej uwagi, dumy i woli działania.',
+  moon: 'Barometr emocji na najbliższe 12 miesięcy: pokazuje, czego szukasz, by poczuć się bezpiecznie.',
+  mercury: 'Sposób myślenia, rozmowy, dokumenty i negocjacje w tym roku.',
+  venus: 'Jak przyciągasz sympatię, pieniądze, romans i piękno w codziennym życiu.',
+  mars: 'Gdzie kierujesz energię, o co walczysz i co w tym roku najłatwiej wyprowadza Cię z równowagi.',
+  jupiter: 'Twój naturalny mnożnik szczęścia: sektor roku, w którym drzwi otwierają się najłatwiej.',
+  saturn: 'Obszar egzaminu i dojrzałości: tu w tym roku nie przejdzie prowizorka i liczy się konsekwencja.',
+  uranus: 'Niespodziewane zwroty akcji i potrzeba wyrwania się ze starych ram.',
+  neptune: 'Wrażliwość, inspiracja twórcza, ale też miejsce podatne na złudzenia i niedomówienia.',
+  pluto: 'Głęboka przebudowa: punkt roku, w którym stare struktury muszą ustąpić miejsca prawdzie.'
 };

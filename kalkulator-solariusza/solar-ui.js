@@ -64,22 +64,93 @@ document.addEventListener('DOMContentLoaded', function () {
   bindCityAutocomplete('solar-reloc-city', 'solarRelocDropdown');
   if (!form || !resultsEl) return;
 
+  const IS_LOCAL = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+  let localTestBypass = IS_LOCAL;
   let lastResult = null;
   let currentSolarHash = '';
 
+  function initSolarPortalTooltip() {
+    let portal = document.getElementById('solar-portal-tooltip');
+    if (!portal) {
+      portal = document.createElement('div');
+      portal.id = 'solar-portal-tooltip';
+      document.body.appendChild(portal);
+    }
+    let activeAnchor = null;
+    function pos(anchor) {
+      const r = anchor.getBoundingClientRect(), pr = portal.getBoundingClientRect();
+      const left = Math.max(14, Math.min(window.innerWidth - pr.width - 14, r.left + r.width / 2 - pr.width / 2));
+      const top = r.top >= pr.height + 16 ? r.top - pr.height - 10 : Math.min(window.innerHeight - pr.height - 12, r.bottom + 10);
+      portal.style.left = Math.round(left) + 'px';
+      portal.style.top = Math.round(top) + 'px';
+    }
+    function show(anchor) {
+      const tip = anchor && anchor.querySelector('.solar-tooltip-pop');
+      if (!tip) return;
+      activeAnchor = anchor;
+      portal.innerHTML = tip.innerHTML;
+      portal.classList.add('is-visible');
+      pos(anchor);
+    }
+    function hide() { activeAnchor = null; portal.classList.remove('is-visible'); }
+    document.addEventListener('mouseover', e => { const a = e.target.closest('.solar-has-tooltip'); if (a) show(a); });
+    document.addEventListener('mouseout', e => { const a = e.target.closest('.solar-has-tooltip'); if (a && (!e.relatedTarget || !a.contains(e.relatedTarget))) hide(); });
+    document.addEventListener('focusin', e => { const a = e.target.closest('.solar-has-tooltip'); if (a) show(a); });
+    document.addEventListener('focusout', e => { if (e.target.closest('.solar-has-tooltip')) hide(); });
+    document.addEventListener('click', e => {
+      const a = e.target.closest('.solar-has-tooltip');
+      if (a) { show(a); } else if (activeAnchor) { hide(); }
+    });
+    window.addEventListener('scroll', hide, { passive: true });
+  }
+  initSolarPortalTooltip();
+
   function isUnlocked() {
+    if (localTestBypass) return true;
     return Boolean(window.NeoChartLock && window.NeoChartLock.isUnlocked('solariusz', currentSolarHash));
   }
+
   function renderReportBlock() {
     if (!lastResult) return;
-    const html = window.SolarRender.renderFreeLayer(lastResult)
+    const testBar = IS_LOCAL ? `
+      <div id="solar-test-bar" class="solar-test-bar no-print">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:#34D399;">TRYB TESTOWY (LOCALHOST): ${localTestBypass ? 'Paywall odblokowany (wszystkie 6 rozdziałów widoczne)' : 'Symulacja blokady Paywall (39 PLN)'}</span>
+        <button type="button" id="solar-test-toggle" class="solar-year-pill">${localTestBypass ? 'Symuluj zablokowany Paywall' : 'Odblokuj ponownie na testy'}</button>
+      </div>` : '';
+    resultsEl.innerHTML = window.SolarRender.renderFreeLayer(lastResult, testBar)
       + window.SolarRender.renderPaywallOrReport(lastResult, isUnlocked());
-    resultsEl.innerHTML = html;
     resultsEl.style.display = 'block';
     bindDynamicEvents();
   }
 
   function bindDynamicEvents() {
+    const testToggle = document.getElementById('solar-test-toggle');
+    if (testToggle) {
+      testToggle.addEventListener('click', () => {
+        localTestBypass = !localTestBypass;
+        renderReportBlock();
+      });
+    }
+
+    const popover = document.getElementById('solar-wheel-popover');
+    if (popover) {
+      resultsEl.querySelectorAll('.solar-wheel-hit').forEach(hit => {
+        const showPop = () => {
+          const py = Number(hit.getAttribute('data-py') || 50);
+          popover.innerHTML = `<div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#C9A84C;text-transform:uppercase;">${hit.getAttribute('data-sub') || ''}</div><strong style="display:block;font-size:0.9rem;margin:0.15rem 0 0.25rem;">${hit.getAttribute('data-title') || ''}</strong><div>${hit.getAttribute('data-desc') || ''}</div>`;
+          popover.style.left = Math.min(78, Math.max(22, Number(hit.getAttribute('data-px') || 50))) + '%';
+          popover.style.top = py + '%';
+          popover.style.transform = py < 36 ? 'translate(-50%, 16%)' : 'translate(-50%, -108%)';
+          popover.style.display = 'block';
+        };
+        hit.addEventListener('mouseenter', showPop);
+        hit.addEventListener('focus', showPop);
+        hit.addEventListener('click', showPop);
+        hit.addEventListener('mouseleave', () => { popover.style.display = 'none'; });
+        hit.addEventListener('blur', () => { popover.style.display = 'none'; });
+      });
+    }
+
     resultsEl.querySelectorAll('[data-solar-year]').forEach(btn => {
       btn.addEventListener('click', () => {
         if (yearEl) yearEl.value = btn.getAttribute('data-solar-year');

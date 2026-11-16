@@ -2,21 +2,24 @@
  * NEOROMANTYCZNY — SOLAR RETURN REPORT RENDERER (FREE LAYER + 6-CHAPTER PAYWALL)
  */
 (function () {
-  function fmtDatePl(dateObj) {
+  function fmtDateInTz(dateObj, tz) {
     return new Intl.DateTimeFormat('pl-PL', {
       year: 'numeric', month: '2-digit', day: '2-digit',
       hour: '2-digit', minute: '2-digit', second: '2-digit',
-      timeZone: 'Europe/Warsaw'
+      timeZone: tz || 'Europe/Warsaw'
     }).format(dateObj);
   }
-  function fmtShortPl(dateObj) {
+  function fmtShortPl(dateObj, tz) {
     return new Intl.DateTimeFormat('pl-PL', {
       year: 'numeric', month: 'long', day: 'numeric',
-      timeZone: 'Europe/Warsaw'
+      timeZone: tz || 'Europe/Warsaw'
     }).format(dateObj);
   }
+  function tipHtml(label, text) {
+    return `<div class="solar-tooltip-pop" role="tooltip"><span class="solar-tt-label">${label}</span><div>${text}</div></div>`;
+  }
 
-  function renderFreeLayer(res) {
+  function renderFreeLayer(res, testBarHtml) {
     const D = window.SOLAR_DATA;
     const sunH = D.SUN_HOUSES[res.srSun.house] || D.SUN_HOUSES[1];
     const ascS = D.ASC_SIGNS[res.srAscInfo.signKey] || D.ASC_SIGNS.Aries;
@@ -24,27 +27,28 @@
     const tl = D.TIME_LORDS[res.timeLordKey] || D.TIME_LORDS.sun;
     const hardCount = res.srToNatalAspects.filter(a => a.tone === 'hard' || a.tone === 'intense').length;
     const hardLabel = hardCount === 1 ? 'punkt zapalny' : (hardCount >= 2 && hardCount <= 4 ? 'punkty zapalne' : 'punktów zapalnych');
-
+    const relocTz = res.input.relocCoords.tz || 'Europe/Warsaw';
     const years = [res.targetYear - 3, res.targetYear - 2, res.targetYear - 1, res.targetYear, res.targetYear + 1, res.targetYear + 2]
       .filter(y => y >= res.birthYear && y <= 2035);
-
     const relocList = window.SolarEngine.previewRelocationCities(res.srJd, res.natalCusps, D.RELOCATION_PRESETS || []);
 
     return `
+      ${testBarHtml || ''}
       <div class="disp-card" style="margin-bottom:1.5rem;border-color:rgba(201,168,76,0.35);">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;">
           <div>
-            <div class="disp-badge">DOKŁADNY MOMENT POWROTU SŁOŃCA • NEWTON-RAPHSON</div>
+            <div class="disp-badge">DOKŁADNY MOMENT POWROTU SŁOŃCA • JPL VSOP87</div>
             <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.45rem,3vw,2.1rem);color:#FAF8F5;margin:0.35rem 0 0.25rem;">
               Solariusz ${res.targetYear}: ${sunH.title}
             </h2>
             <p style="font-family:'JetBrains Mono',monospace;font-size:0.84rem;color:#C9A84C;margin:0;">
-              ${fmtDatePl(res.srDateUtc)} (Warszawa) &bull; UTC: ${res.srDateUtc.toISOString().replace('T', ' ').slice(0, 19)} &bull; Wiek w cyklu: ${res.age} lat
+              ${fmtDateInTz(res.srDateUtc, relocTz)} (${res.input.relocCoords.name}) &bull; UTC: ${res.srDateUtc.toISOString().replace('T', ' ').slice(0, 19)} &bull; Wiek w cyklu: ${res.age} lat
             </p>
           </div>
-          <div style="background:rgba(244,63,94,0.12);border:1px solid rgba(244,63,94,0.35);padding:0.55rem 0.9rem;border-radius:10px;text-align:right;">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#FDA4AF;text-transform:uppercase;">Alerty Roku (SR → Radix)</div>
+          <div class="solar-has-tooltip" tabindex="0" style="background:rgba(244,63,94,0.12);border:1px solid rgba(244,63,94,0.35);padding:0.55rem 0.9rem;border-radius:10px;text-align:right;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#FDA4AF;text-transform:uppercase;">Alerty Roku (SR → Radix) <span class="solar-info-pill">?</span></div>
             <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:#FAF8F5;font-weight:700;">${hardCount} ${hardLabel}</div>
+            ${tipHtml('Co oznaczają Alerty Roku?', 'To liczba ścisłych napięć (koniunkcji, kwadratur i opozycji) pomiędzy planetami w dniu Twoich urodzin a ich miejscem w momencie narodzin. Pokazują obszary z największą presją zmiany.')}
           </div>
         </div>
         <div class="solar-flashback-bar no-print">
@@ -54,25 +58,29 @@
       </div>
 
       <div class="solar-kpi-grid">
-        <div class="solar-kpi-card">
-          <div class="solar-kpi-label">1. Słońce w Domu Solariusza</div>
+        <div class="solar-kpi-card solar-has-tooltip" tabindex="0">
+          <div class="solar-kpi-label">1. Słońce w Domu Solariusza <span class="solar-info-pill">? Wyjaśnienie</span></div>
           <div class="solar-kpi-val">${res.srSun.house}. Dom &bull; ${res.srSun.signName}</div>
           <div class="solar-kpi-sub">${sunH.freeDiag}</div>
+          ${tipHtml('Słońce w Domu Solariusza', `Znak Twojego Słońca nigdy się nie zmienia, ale dom zmienia się co rok. ${res.srSun.house}. Dom to główna scena najbliższych 12 miesięcy (${(D.HOUSE_TOPICS && D.HOUSE_TOPICS[res.srSun.house]) || ''}).`)}
         </div>
-        <div class="solar-kpi-card">
-          <div class="solar-kpi-label">2. Ascendent Roku (${res.input.relocCoords.name})</div>
+        <div class="solar-kpi-card solar-has-tooltip" tabindex="0">
+          <div class="solar-kpi-label">2. Ascendent Roku (${res.input.relocCoords.name}) <span class="solar-info-pill">? Wyjaśnienie</span></div>
           <div class="solar-kpi-val">${res.srAscInfo.glyph} ${res.srAscInfo.signName} (${res.srAscInfo.deg}°)</div>
           <div class="solar-kpi-sub">${ascS.freeSummary}</div>
+          ${tipHtml('Ascendent Solariusza (Maska Roku)', 'To znak wschodzący w dokładnej minucie powrotu Słońca w wybranym mieście urodzin. Określa Twój styl reakcji, pierwsze wrażenie i strategię działania przez kolejne 12 miesięcy.')}
         </div>
-        <div class="solar-kpi-card">
-          <div class="solar-kpi-label">3. Nakładka na Radix</div>
+        <div class="solar-kpi-card solar-has-tooltip" tabindex="0">
+          <div class="solar-kpi-label">3. Nakładka na Radix <span class="solar-info-pill">? Wyjaśnienie</span></div>
           <div class="solar-kpi-val">${res.srAscInNatalHouse}. Dom Urodzeniowy</div>
           <div class="solar-kpi-sub">${ovH.stage}</div>
+          ${tipHtml('Nakładka na Kosmogram Urodzeniowy', `Najważniejszy most między rokiem a życiem: wskazuje, która konkretna sfera z Twojego stałego horoskopu urodzeniowego (${res.srAscInNatalHouse}. Dom) zostaje odblokowana na 12 miesięcy.`)}
         </div>
-        <div class="solar-kpi-card">
-          <div class="solar-kpi-label">4. Władca Roku (Profekcja ${res.profectionHouse}. Domu)</div>
+        <div class="solar-kpi-card solar-has-tooltip" tabindex="0">
+          <div class="solar-kpi-label">4. Władca Roku (Profekcja ${res.profectionHouse}. Domu) <span class="solar-info-pill">? Wyjaśnienie</span></div>
           <div class="solar-kpi-val">${res.timeLordSrPlanet.glyph} ${res.timeLordSrPlanet.name} (w ${res.timeLordSrPlanet.house}. Domu)</div>
           <div class="solar-kpi-sub">${tl.title}. Znak profekcji: ${res.profectionSign.name}.</div>
+          ${tipHtml('Hellenistyczny Władca Roku (Time Lord)', `Co roku na urodziny włącza się kolejny z 12 domów (w wieku ${res.age} lat jest to ${res.profectionHouse}. Dom w znaku ${res.profectionSign.name}). Planeta rządząca tym znakiem staje się „kapitanem” całego Twojego roku.`)}
         </div>
       </div>
 
@@ -81,23 +89,26 @@
           <div class="disp-card disp-wheel-card" style="padding:1.25rem 1rem;">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
               <span class="disp-badge" style="margin:0;">KOŁO SOLARIUSZA • ${res.targetYear}</span>
-              <span style="font-size:0.74rem;font-family:'JetBrains Mono',monospace;color:#C9A84C;">Placidus (${res.input.relocCoords.name})</span>
+              <span style="font-size:0.74rem;font-family:'JetBrains Mono',monospace;color:#C9A84C;">Najedź / kliknij planetę</span>
             </div>
             ${window.SolarWheel.renderSolarReturnWheel(res)}
           </div>
         </div>
         <div class="disp-lab-analysis">
           <div class="disp-card" style="margin-bottom:1.25rem;">
-            <h3 style="font-family:'Playfair Display',serif;color:#FAF8F5;font-size:1.15rem;margin:0 0 0.75rem;">Pozycje Planet w Solariuszu</h3>
+            <h3 style="font-family:'Playfair Display',serif;color:#FAF8F5;font-size:1.15rem;margin:0 0 0.75rem;">Pozycje Planet w Solariuszu <span style="font-size:0.74rem;font-family:'JetBrains Mono',monospace;color:#C9A84C;font-weight:400;">(najedź po opis)</span></h3>
             <table class="disp-table" style="width:100%;">
               <thead><tr><th>Planeta</th><th>Znak i Stopień</th><th>Dom SR</th></tr></thead>
               <tbody>
-                ${res.srPlanets.slice(0, 7).map(p => `
-                  <tr>
-                    <td style="color:#FAF8F5;font-weight:600;">${p.glyph} ${p.name}${p.key === res.timeLordKey ? ' <span style="color:#C9A84C;font-size:0.7rem;">(WŁADCA ROKU)</span>' : ''}</td>
+                ${res.srPlanets.slice(0, 7).map(p => {
+                  const pDesc = `${(D.PLANET_TIPS && D.PLANET_TIPS[p.key]) || ''} W tym cyklu działa przez ${p.house}. Dom (${((D.HOUSE_TOPICS && D.HOUSE_TOPICS[p.house]) || '').toLowerCase()}).${p.isRetrograde ? ' Planeta w retrogradacji (℞) — wymaga rewizji i wolniejszego tempa.' : ''}`;
+                  return `
+                  <tr class="solar-has-tooltip" tabindex="0">
+                    <td style="color:#FAF8F5;font-weight:600;">${p.glyph} ${p.name}${p.isRetrograde ? ' <span title="Retrogradacja" style="color:#FDA4AF;">℞</span>' : ''}${p.key === res.timeLordKey ? ' <span style="color:#C9A84C;font-size:0.7rem;">(WŁADCA ROKU)</span>' : ''}${tipHtml(`${p.name} w ${p.house}. domu`, pDesc)}</td>
                     <td style="font-family:'JetBrains Mono',monospace;font-size:0.82rem;">${p.formatted}</td>
                     <td style="color:#C9A84C;font-weight:700;">${p.house}. Dom</td>
-                  </tr>`).join('')}
+                  </tr>`;
+                }).join('')}
               </tbody>
             </table>
           </div>
@@ -105,7 +116,10 @@
             <div class="disp-badge">SYMULATOR RELOKACJI URODZINOWEJ</div>
             <p style="font-size:0.82rem;color:rgba(250,248,245,0.72);margin:0.35rem 0 0.65rem;">Kliknij miasto spędzania urodzin w ${res.targetYear} roku, aby zobaczyć zmianę Ascendentu i Domu Radixu:</p>
             <div class="solar-reloc-row">
-              ${relocList.map(c => `<button type="button" class="solar-year-pill ${c.name === res.input.relocCoords.name ? 'is-active' : ''}" data-reloc-city="${c.name} (${c.country})">${c.name} &rarr; ${c.ascInfo.signName} (${c.srAscInNatalHouse}. dom)</button>`).join('')}
+              ${relocList.map(c => {
+                const hTheme = (D.HOUSE_TOPICS && D.HOUSE_TOPICS[c.srAscInNatalHouse]) || '';
+                return `<button type="button" class="solar-year-pill solar-has-tooltip ${c.name === res.input.relocCoords.name ? 'is-active' : ''}" data-reloc-city="${c.name} (${c.country})">${c.name} &rarr; ${c.ascInfo.signName} (${c.srAscInNatalHouse}. dom)${tipHtml(`Urodziny w: ${c.name}`, `W tym mieście Ascendent roku ustawia się w znaku ${c.ascInfo.signName}, aktywując Twój ${c.srAscInNatalHouse}. dom natalny (${hTheme.toLowerCase()}). Kliknij, aby przeliczyć cały wykres dla tej lokalizacji.`)}</button>`;
+              }).join('')}
             </div>
           </div>
         </div>
@@ -157,14 +171,20 @@
       `;
     }
 
+    const relocTz = res.input.relocCoords.tz || 'Europe/Warsaw';
     const aspectsHtml = res.srToNatalAspects.length
-      ? res.srToNatalAspects.map(a => `
-          <div style="padding:0.85rem;border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin-bottom:0.65rem;">
+      ? res.srToNatalAspects.map(a => {
+          const srTip = (D.PLANET_TIPS && D.PLANET_TIPS[a.srPlanet.key]) || '';
+          const natTip = (D.PLANET_TIPS && D.PLANET_TIPS[a.natalPlanet.key]) || '';
+          return `
+          <div class="solar-has-tooltip" tabindex="0" style="padding:0.85rem;border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin-bottom:0.65rem;">
             <div style="font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:${a.tone === 'hard' ? '#FDA4AF' : '#C9A84C'};font-weight:700;">
-              SR ${a.srPlanet.name} (${a.srPlanet.signName}) ${a.symbol} ${a.aspectName} Natal ${a.natalPlanet.name} (${a.natalPlanet.signName}) &bull; orb ${a.orb}°
+              SR ${a.srPlanet.name} (${a.srPlanet.signName}) ${a.symbol} ${a.aspectName} Natal ${a.natalPlanet.name} (${a.natalPlanet.signName}) &bull; orb ${a.orb}° <span class="solar-info-pill">?</span>
             </div>
             <p style="font-size:0.86rem;color:rgba(250,248,245,0.82);margin:0.35rem 0 0;">${D.ASPECT_TONES[a.aspectKey] || ''}</p>
-          </div>`).join('')
+            ${tipHtml(`${a.aspectName} (${a.orb}° orb): Co tu pracuje?`, `<strong>Planeta roku (${a.srPlanet.name}):</strong> ${srTip}<br><strong>Punkt urodzeniowy (${a.natalPlanet.name}):</strong> ${natTip}`)}
+          </div>`;
+        }).join('')
       : '<p style="color:rgba(250,248,245,0.75);">Brak bardzo ścisłych aspektów (poniżej 5°) — rok płynie przede wszystkim przez pozycje domów Solariusza.</p>';
 
     return `
@@ -209,8 +229,8 @@
           <h3>Rozdział VI: Kalendarz 4 Przesileń Słonecznych &amp; Protokół Urodzinowy</h3>
           <p>Rok solarny nie działa jednostajnie — kluczowe korekty zapadają w okolicach kwadr i opozycji Słońca do pozycji urodzeniowej:</p>
           <ul style="line-height:1.8;color:rgba(250,248,245,0.88);">
-            <li><strong>Start Cyklu (Solariusz 0°):</strong> ${fmtShortPl(res.srDateUtc)} — wyznacz jeden cel główny i chroń spokój w ciągu 24 godzin przed i po dokładnej minucie powrotu.</li>
-            ${res.quarters.map(q => `<li><strong>${q.label}:</strong> ok. ${fmtShortPl(q.date)}</li>`).join('')}
+            <li><strong>Start Cyklu (Solariusz 0°):</strong> ${fmtShortPl(res.srDateUtc, relocTz)} — wyznacz jeden cel główny i chroń spokój w ciągu 24 godzin przed i po dokładnej minucie powrotu.</li>
+            ${res.quarters.map(q => `<li class="solar-has-tooltip" tabindex="0"><strong>${q.label}:</strong> ok. ${fmtShortPl(q.date, relocTz)} <span class="solar-info-pill">?</span>${tipHtml(q.label, `Gdy Słońce przesuwa się o ${q.deg}° od pozycji urodzeniowej, intencje ze startu Solariusza przechodzą praktyczny egzamin w życiu zewnętrznym.`)}</li>`).join('')}
           </ul>
         </div>
       </div>
