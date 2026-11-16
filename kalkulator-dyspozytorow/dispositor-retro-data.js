@@ -5,7 +5,7 @@
       mars: {
         name: 'Marsa',
         archetype: 'Mars (Rx) • Wojownik',
-        summary: 'Twoja złość nie wybucha od razu przy stole — cofa się do środka i zamienia w zimny, precyzyjny plan działania. Ludzie myślą, że odpuściłeś temat, tymczasem Ty właśnie przeliczasz długoterminowy koszt odwetu.',
+        summary: 'Twoja złość nie wybucha od razu przy stole — cofa się do środka i zamienia w zimny, precyzyjny plan działania. Ludzie myślą, że [[odpuściłaś|odpuściłeś|temat wygasł]], tymczasem Ty właśnie przeliczasz długoterminowy koszt odwetu.',
         mechanics: 'Unikasz otwartego wrzasku, bo szkoda Ci energii na puste przepychanki słowne. Gdy ktoś wielokrotnie narusza Twoje granice, po prostu wycofujesz swoje wsparcie dokładnie w chwili, gdy druga strona najbardziej na nie liczy.',
         shadowWarning: 'Przełknięty sprzeciw osiada w spiętych barkach, zaciskaniu szczęki nocą i pasywnej agresji, która potrafi zamrozić atmosferę w całym zespole.',
         somaticReset: 'Mocny wysiłek fizyczny o krótkim interwale — sprint, podciąganie albo boksowanie worka, które rozładuje adrenalinę, zanim zamieni się w zawiść.'
@@ -15,7 +15,7 @@
         archetype: 'Wenus (Rx) • Dyplomata',
         summary: 'Nie kupujesz głośnych deklaracji ani szybkiej ekscytacji na pierwszej randce. Twoja sympatia dojrzewa powoli, często po cichu i z dala od oczu wspólnych znajomych.',
         mechanics: 'Zanim dopuścisz kogoś do prywatnego życia lub wspólnego budżetu, testujesz jego konsekwencję w zwykłych sytuacjach. Odpycha Cię sztuczny entuzjazm, który wyparowuje przy pierwszym prawdziwym problemie.',
-        shadowWarning: 'Chroniczne sprawdzanie lojalności partnera i zamykanie emocji przed sobą samą w obawie przed wyjściem na naiwną.',
+        shadowWarning: 'Chroniczne sprawdzanie lojalności partnera i zamykanie emocji [[przed sobą samą|przed sobą samym|przed własnym sercem]] w obawie przed wyjściem na [[naiwną|naiwnego|osobę naiwną]].',
         somaticReset: 'Zadbaj o fizyczny komfort bez pośpiechu: spokojna kolacja bez telefonu i jedno proste zdanie o tym, czego realnie potrzebujesz w relacji.'
       },
       mercury: {

@@ -247,6 +247,7 @@
             const justUnlocked = sessionStorage.getItem('neo_just_unlocked') === 'dyspozytorzy';
             if (justUnlocked) {
               window.__DISP_SUPPRESS_SUBMIT_SCROLL__ = true;
+              window.__DISP_JUST_UNLOCKED__ = true;
             }
             setTimeout(() => {
               form.dispatchEvent(new Event('submit'));
@@ -759,6 +760,14 @@
       resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
+
+  window.__DISP_HIGHLIGHT_PLANET__ = function (planetKey) {
+    if (!currentChart || !planetKey) return;
+    selectedPlanetKey = planetKey;
+    renderAll(false);
+    const wheelEl = document.getElementById('disp-wheel-container');
+    if (wheelEl) wheelEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);

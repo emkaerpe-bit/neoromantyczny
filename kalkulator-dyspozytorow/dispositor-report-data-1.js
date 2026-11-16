@@ -1,94 +1,91 @@
 (function () {
   'use strict';
-  window.__DISPOSITOR_REPORT_DATA__ = window.__DISPOSITOR_REPORT_DATA__ || { planets: {}, hierarchies: {} };
-  window.__DISPOSITOR_REPORT_DATA__.planets = window.__DISPOSITOR_REPORT_DATA__.planets || {};
+  window.__DISPOSITOR_REPORT_NLG_DATA__ = window.__DISPOSITOR_REPORT_NLG_DATA__ || {};
 
-  Object.assign(window.__DISPOSITOR_REPORT_DATA__.planets, {
-    sun: {
-      planetKey: 'sun',
-      title: 'Słońce: Suweren',
-      archetype: 'Archetyp: Suweren',
-      subtitle: 'Gdy Słońce w Lwie domyka całe drzewo dyspozytorów, Twoje decyzje zależą od jednego kryterium: czy możesz się pod nimi podpisać własnym nazwiskiem.',
-      structureTheory: 'Wszystkie pozostałe popędy w Twoim horoskopie oddają głos potrzebie wyrazistej tożsamości. Kiedy tworzysz, prowadzisz zespół lub wchodzisz w relację na swoich zasadach, masz naturalny magnetyzm i odporność na presję. Gdy jednak zniżasz poprzeczkę i grasz rolę skrojoną pod cudzy komfort, pojawia się szybkie wypalenie i cynizm.',
-      coreDiagnosis: {
-        vector: 'Zamienić głód zewnętrznego uznania w stabilne poczucie wartości, które nie chwieje się przy pierwszej krytyce.',
-        psychDynamics: 'W pracy i relacjach potrzebujesz sprawczości, ponieważ wykonywanie cudzych poleceń bez wpływu na kształt całości odbiera Ci motywację. W sytuacjach towarzyskich instynktownie wyczuwasz, kto dominuje w grupie, i źle znosisz bycie tłem. Kiedy wchodzisz w stres, łatwo mylisz konstruktywną uwagę partnera z atakiem na swoją godność.',
-        sovereigntyRole: 'Twój autorytet wynika z gotowości do wzięcia pełnej odpowiedzialności za ryzyko. Tam, gdzie inni szukają zbiorowej zgody, Ty stawiasz wyraźny kierunek.'
+  window.__DISPOSITOR_REPORT_NLG_DATA__.TOPOLOGY_PROFILES = {
+    SINGLE_FINAL_DISPOSITOR: {
+      codePrefix: 'SM',
+      name: 'Samotny Monarcha',
+      subtitle: 'Jedna planeta we własnym znaku zbiera pod siebie cały horoskop',
+      introMechanics: 'Wszystkie decyzje w Twojej karcie spływają do jednego ośrodka. Kiedy pojawia się presja, nie kłócisz się ze sobą w głowie i nie zmieniasz zdania trzy razy dziennie — dokładnie wiesz, na czym Ci zależy i co odcinasz.',
+      strengths: [
+        'W kryzysie, gdy inni szukają winnych albo proszą o kolejny dzień do namysłu, zachowujesz trzeźwość i szybko podejmujesz jednoznaczną decyzję.',
+        'Trudno wpłynąć na Ciebie szantażem emocjonalnym lub pośpiechem, bo masz jeden wyraźny kręgosłup priorytetów.'
+      ],
+      discomforts: [
+        'Kiedy ta jedna dominująca planeta pomyli ocenę sytuacji, reszta Twojego charakteru nie koryguje błędu — potrafisz tygodniami upierać się przy złym wyborze z czystej dumy.',
+        'Pod presją przestajesz słuchać cudzych argumentów i traktujesz spokojne uwagi bliskich jak atak na swoją niezależność.'
+      ],
+      friendshipsPattern: 'W przyjaźniach stawiasz na prostą lojalność: nie znosisz dwulicowości i rzadko dajesz drugą szansę osobom, które raz nadużyły Twojego zaufania.',
+      workRoles: {
+        subordinate: '[[Jako podwładna|Jako podwładny|Na stanowisku wykonawczym]] pracujesz dobrze wtedy, gdy szef wyznacza jasny cel i nie poprawia każdego szczegółu po drodze.',
+        collaborator: 'W zespole bez wahania przejmujesz najtrudniejsze zadania, ale męczą Cię długie spotkania bez konkretnej decyzji na końcu.',
+        leader: '[[Jako liderka|Jako lider|W roli lidera]] wyznaczasz wyraźny kierunek i wymagasz konkretów, choć musisz pilnować, by nie zagłuszyć ludzi o spokojniejszym temperamencie.'
       },
-      nourishmentProtocol: {
-        somatic: 'Trening otwierający klatkę piersiową i wzmacniający prostownik grzbietu — napięcie emocjonalne najpierw odkłada się u Ciebie w górnej części pleców i mostku.',
-        environment: 'Przejrzysta przestrzeń pracy z dobrym światłem dziennym oraz osobny projekt, nad którym masz stuprocentową decyzyjność.',
-        dailyRitual: 'Zacznij dzień od 30 minut pracy nad najważniejszym własnym celem, zanim otworzysz cudze wiadomości i maile.'
-      },
-      shadowAndEmergency: {
-        exhaustionSignals: [
-          'Wybuch dumy lub teatralne obrażenie się w chwili, gdy nikt nie zauważa Twojego wysiłku.',
-          'Nadmiarowe kontrolowanie wizerunku z obawy, że chwila słabości przekreśli Twój autorytet.',
-          'Sztywne trzymanie się błędnej decyzji wyłącznie po to, żeby nie przyznać się przed grupą do pomyłki.'
-        ],
-        sabotagePattern: 'Wiążesz poczucie własnej wartości z wynikiem ostatniego projektu lub reakcją innych ludzi. Wystarczy chłodniejsza odpowiedź w wiadomości, żebyś zakwestionował wszystko, co zbudowałeś.',
-        emergency24h: 'Zdejmij maskę nieomylności wobec jednej zaufanej osoby i powiedz wprost, z czym dziś nie dajesz rady.'
-      },
-      relationshipDynamics: {
-        intimateNeed: 'Partnerstwa opartego na wzajemnym podziwie i szczerości — osoby, która ma własne ambicje i nie rywalizuje z Tobą o uwagę otoczenia.',
-        vulnerabilityFear: 'Strach przed przeciętnością oraz lęk, że po zdjęciu zawodowych sukcesów staniesz się dla bliskich przezroczysty.',
-        boundaryRule: 'Bliskość wymaga równości. Nie kupuj lojalności wielkimi gestami i nie zamieniaj związku w audiencję.'
-      },
-      careerAndWealth: {
-        wealthLever: 'Liderowanie, budowanie marki osobistej, konsulting, przedsiębiorczość oraz stanowiska wymagające wizji i jednoosobowej decyzji.',
-        careerTrap: 'Praca wykonawcza w anonimowej strukturze, gdzie Twój wkład podpisuje ktoś inny.'
-      },
-      decisionalFilter: {
-        questions: [
-          'Czy robię ten krok, bo naprawdę mnie wyraża, czy tylko dla podtrzymania cudzego zachwytu?',
-          'Czy potrafię obronić tę decyzję wtedy, gdy nikt nie będzie klaskał?',
-          'Czy daję bliskim tyle samo przestrzeni na błyszczenie, ile rezerwuję dla siebie?'
-        ],
-        powerAxiom: 'Pewność siebie nie potrzebuje głośnej oprawy — kończy się dopiero wtedy, gdy oddajesz innym pilota do swojego nastroju.'
-      }
+      shadowGrowth: 'Zanim zamkniesz sprawę pierwszym stanowczym wyrokiem, wysłuchaj do końca jednej osoby z zewnątrz albo potrzeby, którą zwykle odsuwasz na bok.'
     },
-    moon: {
-      planetKey: 'moon',
-      title: 'Księżyc: Opiekun',
-      archetype: 'Archetyp: Opiekun',
-      subtitle: 'Gdy Księżyc w Raku stoi na czele hierarchii, żadna logiczna kalkulacja nie przetrwa, jeśli Twoje ciało wyczuje fałsz lub chłód.',
-      structureTheory: 'Wszystkie decyzje przechodzą u Ciebie przez filtr bezpieczeństwa emocjonalnego i lojalności. Zanim zaufasz argumentom, rejestrujesz mikrozmiany w tonie głosu, spóźnienia i poziom zaangażowania drugiej strony. Dopóki czujesz grunt pod nogami, tworzysz głęboką, stabilną więź; gdy pojawia się zagrożenie odrzucenia, zamykasz dostęp szybciej, niż ktokolwiek zdąży zareagować.',
-      coreDiagnosis: {
-        vector: 'Odróżnić autentyczne przeczucie od starych reakcji obronnych wyniesionych z domu rodzinnego.',
-        psychDynamics: 'Potrafisz bezbłędnie wyczuć cudzy nastrój w pierwszej minucie rozmowy, co często wpędza Cię w rolę cichego opiekuna lub mediatora. Problem zaczyna się wtedy, gdy przejmujesz odpowiedzialność za emocje całego otoczenia, a własne potrzeby dusisz tak długo, aż wybuchają jako nagły chłód i wycofanie bez wyjaśnienia.',
-        sovereigntyRole: 'Twoja intuicja wychwytuje ukryte napięcia w zespole i związku na długo przed wybuchem otwartego konfliktu.'
+    MUTUAL_RECEPTION: {
+      codePrefix: 'DW',
+      name: 'Duet Władzy',
+      subtitle: 'Dwie równoważne planety dzielą się wpływem i nie działają osobno',
+      introMechanics: 'Dwie planety w Twoim horoskopie wymieniają się uprawnieniami — żadna nie wykona ruchu bez zgody drugiej. Na co dzień daje Ci to dużą elastyczność, ale w sytuacjach stresowych uruchamia wyczerpujące wahanie między dwoma zupełnie różnymi wyjściami.',
+      strengths: [
+        'Potrafisz zrozumieć argumenty obu stron sporu i znaleźć wyjście tam, gdzie inni widzą tylko konflikt interesów.',
+        'Łatwo zmieniasz podejście, gdy stare rozwiązanie przestaje działać, zamiast uparcie powtarzać ten sam błąd.'
+      ],
+      discomforts: [
+        'W ważnych sprawach potrafisz jednego dnia zgodzić się na konkretny plan, a następnego wycofać wszystko w ciszy, bo odezwała się druga strona Twojej natury.',
+        'Tracisz dużo energii na wewnętrzne przekonywanie [[samej|samego|własnych myśli]] przed podjęciem nawet prostych życiowych kroków.'
+      ],
+      friendshipsPattern: 'Najlepiej dogadujesz się z ludźmi o szerokim spojrzeniu, którzy nie próbują zamknąć Cię w jednej sztywnej roli.',
+      workRoles: {
+        subordinate: '[[Jako podwładna|Jako podwładny|Na stanowisku wykonawczym]] świetnie łączysz dwa działy albo różne specjalizacje, o ile masz swobodę kolejności zadań.',
+        collaborator: '[[Jako współpracowniczka|Jako współpracownik|W zespole]] naturalnie rozładowujesz napięcia między ludźmi, choć [[sama|sam|często]] zwlekasz z opowiedzeniem się po jednej stronie.',
+        leader: '[[Jako liderka|Jako lider|W roli lidera]] stawiasz na partnerską rozmowę i elastyczne poprawki, ale w nagłym kryzysie za długo ważysz dwa warianty.'
       },
-      nourishmentProtocol: {
-        somatic: 'Ciepła kąpiel, spokojny sen o stałych porach i świadome rozluźnianie brzucha — Twój stres natychmiast uderza w żołądek i układ pokarmowy.',
-        environment: 'Bezpieczne mieszkanie, w którym nikt nie wpada bez zapowiedzi i w którym obowiązuje jasny podział na pracę i odpoczynek.',
-        dailyRitual: 'Wieczorem przez 10 minut oddziel swoje dzisiejsze zmęczenie od problemów ludzi, z którymi rozmawiałeś w ciągu dnia.'
+      shadowGrowth: 'Zamiast próbować pogodzić oba priorytety w jednej godzinie, przydziel im osobne pory dnia — osobny czas na twarde zadania i osobny na relacje.'
+    },
+    SHADOW_LOOP: {
+      codePrefix: 'RC',
+      name: 'Rada Cieni',
+      subtitle: 'Zamknięty krąg kilku planet bez jednego samodzielnego ośrodka',
+      introMechanics: 'Kilka planet tworzy u Ciebie zamknięty obieg, więc żadna decyzja nie zapada pod wpływem jednej emocji. Trudno zmusić Cię do pochopnego kroku, jednak zwykłe wysłanie wiadomości albo zakończenie relacji potrafi ciągnąć się tygodniami w nieskończonym analizowaniu.',
+      strengths: [
+        'Rzadko podejmujesz naiwne decyzje — zanim złożysz obietnicę lub podpiszesz umowę, sprawdzasz temat pod kilkoma kątami naraz.',
+        'Nie ulegasz zbiorowej panice ani presji otoczenia, bo każda sprawa musi przejść przez Twój własny filtr rozsądku.'
+      ],
+      discomforts: [
+        'Odkładasz proste decyzje tak długo, aż okazja sama znika — szukasz jeszcze jednego argumentu zamiast zamknąć sprawę w pięć minut.',
+        'Odtwarzasz w głowie zakończone rozmowy kilka dni po fakcie i poprawiasz własne odpowiedzi, zamiast zostawić temat za sobą.'
+      ],
+      friendshipsPattern: 'Dobrze czujesz się wśród spokojnych, konkretnych ludzi, którzy szanują Twój czas do namysłu i nie wymuszają deklaracji pod presją.',
+      workRoles: {
+        subordinate: '[[Jako podwładna|Jako podwładny|Na stanowisku wykonawczym]] wyłapujesz błędy w planach niezauważone przez resztę, lecz bez wyraźnego terminu potrafisz poprawiać projekt w nieskończoność.',
+        collaborator: '[[Jako współpracowniczka|Jako współpracownik|W zespole]] chronisz grupę przed ryzykownymi pomyłkami, choć szybsi współpracownicy mogą odbierać Twoją ostrożność jako wahanie.',
+        leader: '[[Jako liderka|Jako lider|W roli lidera]] budujesz przemyślane systemy i procesy, ale w nagłych sytuacjach tracisz tempo przez nadmiar konsultacji.'
       },
-      shadowAndEmergency: {
-        exhaustionSignals: [
-          'Wycofanie w milczenie i karanie partnera dystansem zamiast powiedzenia wprost, co Cię zabolało.',
-          'Nadmierna opiekuńczość używana nieświadomie po to, by uzależnić innych od swojej obecności.',
-          'Częste wracanie do starych urazów sprzed lat podczas bieżącej sprzeczki o drobiazg.'
-        ],
-        sabotagePattern: 'Sprawdzasz, czy druga osoba domyśli się, czego potrzebujesz, bez Twojej prośby. Gdy nie zgadnie, potwierdzasz sobie bolesne przekonanie, że nikomu nie zależy wystarczająco mocno.',
-        emergency24h: 'Nazwij jedną swoją potrzebę wprost jednym prostym zdaniem, bez aluzji i testowania cudzej domyślności.'
+      shadowGrowth: 'Wyznacz sobie krótki, konkretny termin na wykonanie małego kroku w praktyce — wątpliwości znikają dopiero po sprawdzeniu sytuacji w działaniu.'
+    },
+    MULTI_BASIN: {
+      codePrefix: 'RF',
+      name: 'Rozproszona Federacja',
+      subtitle: 'Kilka niezależnych ośrodków rządzi różnymi sferami Twojego życia',
+      introMechanics: 'Twoje życie nie podlega jednemu wspólnemu szefowi. W pracy możesz trzymać twardą dyscyplinę i chłodny dystans, a wieczorem w relacji kierować się zupełnie innymi, znacznie wrażliwszymi zasadami.',
+      strengths: [
+        'Kryzys w jednej dziedzinie nie przewraca od razu całego Twojego życia — potrafisz oddzielić trudny dzień w pracy od spokoju w domu.',
+        'Łączysz w jednym charakterze umiejętności i role, które u większości ludzi nie występują razem.'
+      ],
+      discomforts: [
+        'Kiedy w tym samym momencie pojawiają się wymagania z dwóch różnych stron — na przykład pilny projekt i napięcie w związku — tracisz oparcie i rozpraszasz siły.',
+        'Bliscy bywają zaskoczeni zmianą Twojego zachowania, gdy przypadkiem przeniesiesz chłodny ton z pracy do prywatnej rozmowy.'
+      ],
+      friendshipsPattern: 'Często masz osobne grupy znajomych dla różnych dziedzin życia i rzadko łączysz te środowiska na jednym spotkaniu.',
+      workRoles: {
+        subordinate: '[[Jako podwładna|Jako podwładny|Na stanowisku wykonawczym]] najlepiej pracujesz zadaniowo, kiedy możesz przełączać się między projektami bez sztywnej rutyny.',
+        collaborator: '[[Jako współpracowniczka|Jako współpracownik|W zespole]] gładko dopasowujesz się do różnych ról, dopóki nikt nie wymaga od Ciebie robienia codziennie dokładnie tego samego.',
+        leader: '[[Jako liderka|Jako lider|W roli lidera]] sprawnie prowadzisz kilka niezależnych projektów naraz, ale musisz pilnować wspólnego priorytetu dla całego zespołu.'
       },
-      relationshipDynamics: {
-        intimateNeed: 'Przewidywalności emocjonalnej, czułości na co dzień oraz poczucia, że druga strona zostaje w pokoju także podczas gorszego nastroju.',
-        vulnerabilityFear: 'Paniczny lęk przed byciem ciężarem dla innych i powtórzeniem chłodu, który pamiętasz z dawnych lat.',
-        boundaryRule: 'Wrażliwość daje siłę dopiero wtedy, gdy idzie w parze z umiejętnością odmowy. Nie ratuj ludzi kosztem własnego snu.'
-      },
-      careerAndWealth: {
-        wealthLever: 'Psychologia, medycyna, nieruchomości, praca z ludźmi, gastronomia, budowanie społeczności opartych na zaufaniu i wysokim poczuciu bezpieczeństwa.',
-        careerTrap: 'Agresywna sprzedaż bez etyki lub środowisko pracy oparte na ciągłym upokarzaniu słabszych.'
-      },
-      decisionalFilter: {
-        questions: [
-          'Czy ta reakcja wynika z tego, co wydarzyło się dzisiaj, czy ze starego lęku przed porzuceniem?',
-          'Czy pomagam tej osobie z sympatii, czy kupuję sobie prawo do bycia potrzebnym?',
-          'Czego potrzebuje teraz moje ciało, żebym przestał reagować z pozycji obrony?'
-        ],
-        powerAxiom: 'Twoja intuicja to precyzyjny radar — pod warunkiem, że nie mylisz teraźniejszości z echem dawnych zranień.'
-      }
+      shadowGrowth: 'Przestań mieszać zasady różnych ról — po pracy wyraźnie zamknij tryb zadaniowy, zanim wejdziesz w rozmowę z bliskimi.'
     }
-  });
+  };
 })();
