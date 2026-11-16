@@ -1,6 +1,7 @@
 (function() {
   'use strict';
 
+  const _neoEsc = (x) => String(x || "").replace(/[&<>"']/g, (m) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
   const STRIPE_PK = 'pk_live_51UYWld665tgVOXNONMRtB5ENfc0M22rrNXL5BIRvTw4BNSt3oYOuUtIjFhT3mf6On5QJ3PqkYdMLKSSsESvdJQNA00phk5bG3f';
   let stripeInstance = null;
   let stripeElementsInstance = null;
@@ -109,13 +110,13 @@
           </button>
 
           <div class="luxe-stripe-footer">
-            🔒 SSL 256-bit • Bezpieczne szyfrowanie Stripe<br>
+            <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg>SSL 256-bit • Bezpieczne szyfrowanie Stripe<br>
             <span style="font-size:0.74rem;opacity:0.8;">Zasady płatności i RODO: <a href="/polityka-prywatnosci/" style="color:#C9A84C;text-decoration:underline;">Polityka Prywatności</a></span>
           </div>
         </div>
 
         <div id="luxe-checkout-success" style="display:none;text-align:center;padding:1.5rem 0.5rem;">
-          <div style="font-size:42px;margin-bottom:0.75rem;">✨</div>
+          <div style="font-size:42px;margin-bottom:0.75rem;color:#C9A84C;"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><polygon points="15.5,4 17.3,14.2 25.5,16 17.3,17.8 15.5,28 13.7,17.8 5.5,16 13.7,14.2" stroke-width="1.25" fill="currentColor" fill-opacity="0.18"/><path d="M10.8 11.3l9.4 9.4M20.2 11.3l-9.4 9.4" stroke-width="0.85" opacity="0.75"/><circle cx="24.5" cy="7.5" r="1.1" stroke="none" fill="currentColor"/></svg></div>
           <h3 class="luxe-card-heading" id="luxe-success-heading" style="font-size:1.5rem;">Płatność zakończona!</h3>
           <p class="luxe-card-sub" id="luxe-success-sub" style="margin-bottom:1.5rem;">Twój dostęp został aktywowany.</p>
           <a href="/success.html" id="luxe-success-download-btn" class="luxe-btn-download">
@@ -308,7 +309,7 @@
       if (errorBox) {
         errorBox.innerHTML = `
           <div style="padding:0.85rem; border:1px solid rgba(201,168,76,0.3); background:rgba(201,168,76,0.06); border-radius:10px; margin-top:0.75rem; font-size:0.85rem; color:#FAF8F5; text-align:center; line-height:1.5;">
-            <p style="margin:0 0 0.5rem; color:rgba(250,248,245,0.85);">⚠️ ${err.message}</p>
+            <p style="margin:0 0 0.5rem; color:rgba(250,248,245,0.85);"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>${_neoEsc(err.message)}</p>
             ${prod && prod.directUrl ? `
               <p style="margin:0 0 0.75rem; font-size:0.8rem; color:rgba(250,248,245,0.65);">Możesz bezpiecznie sfinalizować transakcję w nowej karcie:</p>
               <a href="${prod.directUrl}" target="_blank" rel="noopener noreferrer" class="luxe-btn-submit" style="display:inline-flex; align-items:center; justify-content:center; text-decoration:none; padding:0.75rem 1.4rem; font-size:0.88rem;">
@@ -354,7 +355,7 @@
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>⏳ Autoryzacja płatności...</span>';
+      submitBtn.innerHTML = '<span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M8.5 5.2h15M8.5 26.8h15" stroke-width="1.65"/><path d="M9.8 5.2v21.6M22.2 5.2v21.6" stroke-width="0.8" opacity="0.45"/><path d="M11.8 5.2c0 5.4 4.2 8.2 4.2 10.8c0-2.6 4.2-5.4 4.2-10.8" stroke-width="1.45"/><path d="M11.8 26.8c0-5.4 4.2-8.2 4.2-10.8c0 2.6 4.2 5.4 4.2 10.8" stroke-width="1.45"/><path d="M13.5 26.8L16 23.2l2.5 3.6Z" stroke="none" fill="currentColor" fill-opacity="0.42"/></svg>Autoryzacja płatności...</span>';
     }
     if (errorBox) errorBox.innerHTML = '';
 
@@ -366,7 +367,7 @@
       });
 
       if (error) {
-        if (errorBox) errorBox.textContent = `⚠️ ${error.message}`;
+        if (errorBox) errorBox.innerHTML = `<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>${_neoEsc(error.message)}`;
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = `<span>${prod.btn}</span>`;
@@ -375,10 +376,10 @@
         const verifyData = await verifyPaymentOnServer(paymentIntent.id, activeProduct);
         showSuccess(verifyData && verifyData.downloadUrl);
       } else if (paymentIntent && paymentIntent.status === 'processing') {
-        if (errorBox) errorBox.textContent = '⏳ Płatność jest w trakcie przetwarzania przez bank. Odśwież stronę za chwilę.';
+        if (errorBox) errorBox.innerHTML = '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M8.5 5.2h15M8.5 26.8h15" stroke-width="1.65"/><path d="M9.8 5.2v21.6M22.2 5.2v21.6" stroke-width="0.8" opacity="0.45"/><path d="M11.8 5.2c0 5.4 4.2 8.2 4.2 10.8c0-2.6 4.2-5.4 4.2-10.8" stroke-width="1.45"/><path d="M11.8 26.8c0-5.4 4.2-8.2 4.2-10.8c0 2.6 4.2 5.4 4.2 10.8" stroke-width="1.45"/><path d="M13.5 26.8L16 23.2l2.5 3.6Z" stroke="none" fill="currentColor" fill-opacity="0.42"/></svg>Płatność jest w trakcie przetwarzania przez bank. Odśwież stronę za chwilę.';
       }
     } catch (err) {
-      if (errorBox) errorBox.textContent = `⚠️ Błąd: ${err.message}`;
+      if (errorBox) errorBox.innerHTML = `<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>Błąd: ${_neoEsc(err.message)}`;
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.innerHTML = `<span>${prod.btn}</span>`;

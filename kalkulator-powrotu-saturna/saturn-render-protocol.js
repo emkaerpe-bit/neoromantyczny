@@ -14,7 +14,7 @@
         <!-- Nagłówek Raportu -->
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.25rem;">
           <div class="disp-badge" style="background:${isUnlocked ? 'rgba(52,211,153,0.22); color:#A7F3D0;' : 'rgba(201,169,110,0.25); color:#FAF8F5;'}; margin:0;">
-            ${isUnlocked ? '✨ THE CHRONOS PROTOCOL • PEŁNY RAPORT ODBLOKOWANY' : 'THE CHRONOS PROTOCOL • ZAMKNIĘTY RAPORT TRANSFORMACJI'}
+            ${isUnlocked ? '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><polygon points="15.5,4 17.3,14.2 25.5,16 17.3,17.8 15.5,28 13.7,17.8 5.5,16 13.7,14.2" stroke-width="1.25" fill="currentColor" fill-opacity="0.18"/><path d="M10.8 11.3l9.4 9.4M20.2 11.3l-9.4 9.4" stroke-width="0.85" opacity="0.75"/><circle cx="24.5" cy="7.5" r="1.1" stroke="none" fill="currentColor"/></svg>THE CHRONOS PROTOCOL • PEŁNY RAPORT ODBLOKOWANY' : 'THE CHRONOS PROTOCOL • ZAMKNIĘTY RAPORT TRANSFORMACJI'}
           </div>
           <span style="font-family:'JetBrains Mono', monospace; font-size:0.75rem; color:${isUnlocked ? '#34D399' : '#C9A96E'};">
             ${isUnlocked ? 'Status: Autoryzowany (5/5 Rozdziałów)' : 'Standard Midnight Luxe • 47 PLN'}
@@ -51,10 +51,10 @@
           </h4>
           <div style="font-family:'JetBrains Mono', monospace; font-size:0.8rem; color:rgba(250,248,245,0.8); line-height:1.9;">
             <div><span style="color:#C9A96E;">[01]</span> Rozdział I: Anatomia Kryzysu 28–30 Lat • <span style="color:#4ADE80;">ODBLOKOWANY</span></div>
-            <div><span style="color:#C9A96E;">[02]</span> Rozdział II: Pole Bitwy w Twoim Domu • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '🔒 Wersja Pełna'}</span></div>
-            <div><span style="color:#C9A96E;">[03]</span> Rozdział III: Strategia 3 Fal Tranzytu • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '🔒 Wersja Pełna'}</span></div>
-            <div><span style="color:#C9A96E;">[04]</span> Rozdział IV: Dźwignia Dyspozytora jako Bezpiecznika • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '🔒 Wersja Pełna'}</span></div>
-            <div><span style="color:#C9A96E;">[05]</span> Rozdział V: 7 Żelaznych Reguł Dojrzałości • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '🔒 Wersja Pełna'}</span></div>
+            <div><span style="color:#C9A96E;">[02]</span> Rozdział II: Pole Bitwy w Twoim Domu • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg>Wersja Pełna'}</span></div>
+            <div><span style="color:#C9A96E;">[03]</span> Rozdział III: Strategia 3 Fal Tranzytu • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg>Wersja Pełna'}</span></div>
+            <div><span style="color:#C9A96E;">[04]</span> Rozdział IV: Dźwignia Dyspozytora jako Bezpiecznika • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg>Wersja Pełna'}</span></div>
+            <div><span style="color:#C9A96E;">[05]</span> Rozdział V: 7 Żelaznych Reguł Dojrzałości • <span style="color:${isUnlocked ? '#4ADE80' : '#FB7185'};">${isUnlocked ? 'ODBLOKOWANY' : '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg>Wersja Pełna'}</span></div>
           </div>
         </div>
 
@@ -89,12 +89,12 @@
           <!-- Panel Akcji Odblokowanego Raportu -->
           <div style="margin-top:2rem; padding:1.25rem; background:rgba(52,211,153,0.08); border:1px solid rgba(52,211,153,0.3); border-radius:10px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
             <div>
-              <div style="font-weight:700; color:#34D399; font-size:0.95rem;">✨ Pełny Raport Chronosa jest Aktywny</div>
+              <div style="font-weight:700; color:#34D399; font-size:0.95rem;"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><polygon points="15.5,4 17.3,14.2 25.5,16 17.3,17.8 15.5,28 13.7,17.8 5.5,16 13.7,14.2" stroke-width="1.25" fill="currentColor" fill-opacity="0.18"/><path d="M10.8 11.3l9.4 9.4M20.2 11.3l-9.4 9.4" stroke-width="0.85" opacity="0.75"/><circle cx="24.5" cy="7.5" r="1.1" stroke="none" fill="currentColor"/></svg>Pełny Raport Chronosa jest Aktywny</div>
               <div style="font-size:0.8rem; color:rgba(250,248,245,0.7);">Wszystkie 5 rozdziałów zostało pomyślnie odblokowane.</div>
             </div>
             <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
               <button type="button" onclick="window.print()" class="sat-btn-gold" style="padding:0.6rem 1.2rem; font-size:0.82rem; cursor:pointer;">
-                🖨️ Zapisz / Drukuj PDF
+                <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M8.5 5h10l5 5v17h-15V5Z" stroke-width="1.6"/><path d="M18.5 5v5h5" stroke-width="1.05" opacity="0.75"/><path d="M12 14h8M12 17.5h8M12 21h4.5" stroke-width="0.95" opacity="0.72"/><circle cx="19.5" cy="22.5" r="1.4" stroke="none" fill="currentColor" opacity="0.8"/></svg>Zapisz / Drukuj PDF
               </button>
             </div>
           </div>
@@ -118,7 +118,7 @@
             <!-- Karta Konwersji Midnight Luxe (Bezpośredni Checkout / Odblokowanie) -->
             <div class="sat-paywall-overlay" style="position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%; z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.5rem; background:radial-gradient(circle, rgba(15,15,22,0.92) 0%, rgba(10,10,14,0.98) 100%);">
               <span class="disp-badge" style="background:rgba(201,169,110,0.25); color:#FAF8F5; margin-bottom:0.75rem;">
-                🔒 POUFNA INSTRUKCJA OPERACYJNA
+                <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg>POUFNA INSTRUKCJA OPERACYJNA
               </span>
               <h4 style="font-family:'Playfair Display', serif; font-size:clamp(1.35rem, 2.8vw, 1.85rem); color:#FAF8F5; margin:0 0 0.5rem; text-align:center;">
                 Odblokuj Kompletny Protokół Przetrwania (Części II – V)

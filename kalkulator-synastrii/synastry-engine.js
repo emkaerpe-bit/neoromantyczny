@@ -928,7 +928,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
           </div>
           <div class="syn-no-print" style="text-align:center;margin-top:1.1rem;display:flex;gap:0.6rem;justify-content:center;flex-wrap:wrap;">
             <button type="button" id="syn-share-link-btn" class="syn-btn-secondary" style="padding:0.55rem 1.15rem;font-size:10.5px;display:inline-flex;align-items:center;gap:6px;">
-              <span>🔗 Skopiuj link</span>
+              <span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M13 19l6-6" stroke-width="1.35"/><path d="M10.5 14.5l-3 3a4.2 4.2 0 0 0 6 6l3-3" stroke-width="1.55"/><path d="M21.5 17.5l3-3a4.2 4.2 0 0 0-6-6l-3 3" stroke-width="1.55"/></svg>Skopiuj link</span>
             </button>
             <a id="syn-share-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="syn-btn-secondary" style="padding:0.55rem 1.15rem;font-size:10.5px;color:#34D399;border-color:rgba(52,211,153,0.35);text-decoration:none;display:inline-flex;align-items:center;gap:6px;background:rgba(52,211,153,0.08);border-radius:9999px;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:0.05em;transition:all 0.25s ease;">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
@@ -1050,7 +1050,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
         navigator.clipboard.writeText(url).then(() => {
           shareBtn.innerHTML = '<span style="color:#34D399;">✓ Skopiowano link!</span>';
           setTimeout(() => {
-            shareBtn.innerHTML = '<span>🔗 Skopiuj link</span>';
+            shareBtn.innerHTML = '<span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M13 19l6-6" stroke-width="1.35"/><path d="M10.5 14.5l-3 3a4.2 4.2 0 0 0 6 6l3-3" stroke-width="1.55"/><path d="M21.5 17.5l3-3a4.2 4.2 0 0 0-6-6l-3 3" stroke-width="1.55"/></svg>Skopiuj link</span>';
           }, 3000);
         });
       }

@@ -59,7 +59,7 @@
       else { h1El.removeAttribute('contenteditable'); h1El.removeAttribute('data-live-ed'); }
     }
     var btn = document.getElementById('nlb-edit');
-    if (btn) btn.textContent = isEditing ? '✏️ Edycja aktywna' : '✏️ Włącz edycję';
+    if (btn) btn.innerHTML = isEditing ? '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M18.5 7l6.5 6.5l-3 3l-6.5-6.5Z" stroke-width="1.45"/><path d="M15.5 10L8.5 14L6 26l12-2.5L22 16.5" stroke-width="1.55"/><path d="M6 26l7.5-7.5" stroke-width="0.95" opacity="0.75"/><circle cx="14.2" cy="17.8" r="1.2" stroke="none" fill="currentColor"/></svg>Edycja aktywna' : '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M18.5 7l6.5 6.5l-3 3l-6.5-6.5Z" stroke-width="1.45"/><path d="M15.5 10L8.5 14L6 26l12-2.5L22 16.5" stroke-width="1.55"/><path d="M6 26l7.5-7.5" stroke-width="0.95" opacity="0.75"/><circle cx="14.2" cy="17.8" r="1.2" stroke="none" fill="currentColor"/></svg>Włącz edycję';
   }
 
   articleEl.addEventListener('click', function (e) {
@@ -119,10 +119,10 @@
       return;
     }
     bar.innerHTML =
-      '<button id="nlb-edit" class="nlb-gold">✏️ Włącz edycję</button>' +
-      '<button id="nlb-save" class="nlb-gold">💾 Zapisz na żywo (0s)</button>' +
+      '<button id="nlb-edit" class="nlb-gold"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M18.5 7l6.5 6.5l-3 3l-6.5-6.5Z" stroke-width="1.45"/><path d="M15.5 10L8.5 14L6 26l12-2.5L22 16.5" stroke-width="1.55"/><path d="M6 26l7.5-7.5" stroke-width="0.95" opacity="0.75"/><circle cx="14.2" cy="17.8" r="1.2" stroke="none" fill="currentColor"/></svg>Włącz edycję</button>' +
+      '<button id="nlb-save" class="nlb-gold"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><circle cx="16" cy="13.5" r="7" stroke-width="1.6"/><circle cx="16" cy="13.5" r="4.2" stroke-width="0.8" opacity="0.55"/><path d="M12.5 19.8V27l3.5-2.2l3.5 2.2v-7.2" stroke-width="1.35"/></svg>Zapisz na żywo (0s)</button>' +
       '<button id="nlb-reset" class="nlb-ghost">↺ Oryginał</button>' +
-      '<a href="/admin/" class="nlb-ghost">⚙ Panel</a>' +
+      '<a href="/admin/" class="nlb-ghost"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><circle cx="16" cy="16" r="4" stroke-width="1.5"/><circle cx="16" cy="16" r="8.2" stroke-width="2.2" stroke-dasharray="2.4 4.05"/><circle cx="16" cy="16" r="10.8" stroke-width="0.7" opacity="0.45"/></svg>Panel</a>' +
       '<button id="nlb-out" class="nlb-ghost">Wyloguj</button>' +
       '<span id="nlb-status" style="padding:0 4px"></span>';
     document.getElementById('nlb-edit').onclick = function () { toggleEditing(!isEditing); };

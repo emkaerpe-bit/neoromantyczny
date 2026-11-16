@@ -646,7 +646,7 @@
     let intensityBadge = 'Wpływ Subtelny (Tło Relokacyjne)';
     let intensityColor = '#94A3B8';
     if (sc.closest.distKm <= 250) {
-      intensityBadge = '⚡ Ścisła Strefa Mocy (Zenit / Koniunkcja z Osią)';
+      intensityBadge = '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M18.2 4.5L9 16.5h6.5l-2 11L23 14.5h-6.5l1.7-10Z" stroke-width="1.65" fill="currentColor" fill-opacity="0.14"/></svg>Ścisła Strefa Mocy (Zenit / Koniunkcja z Osią)';
       intensityColor = '#34D399';
     } else if (sc.closest.distKm <= 600) {
       intensityBadge = '✦ Silne Pole Magnetyczne Linii';
@@ -833,7 +833,7 @@
           planets: ['jupiter', 'sun', 'mercury', 'mars']
         },
         shadow: {
-          badge: '⚠ FILTR STREF CIENIA • SATURN, PLUTON I MARS',
+          badge: '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>FILTR STREF CIENIA • SATURN, PLUTON I MARS',
           color: '#FB7185',
           title: 'O co chodzi w Strefach Cienia i Ciężaru? (Saturn / Pluton / Mars)',
           desc: 'Ten widok ujawnia miejsca, w których w chwili Twoich narodzin na osiach kątowych (MC, IC, AC, DC) stały planety tarcia, dyscypliny i gwałtownej transformacji. Na linii Saturna (♄) życie zdejmuje różowe okulary: pojawia się ciężka praca, opóźnienia, chłód emocjonalny i surowe egzaminy dojrzałości. Na linii Plutona (♇) dochodzi do głębokich kryzysów, obsesji i palenia starych mostów, a linia Marsa (♂) przynosi adrenalinę, pośpiech i spory.',
@@ -861,7 +861,7 @@
         const isMeridian = (ax === 'MC' || ax === 'IC');
         const lonVal = ax === 'MC' ? hp.mcLon : hp.icLon;
         hoverFormulaHtml = `<div style="margin-top:0.75rem; padding:0.65rem 0.9rem; background:rgba(201,169,110,0.11); border-left:3px solid ${hm.color}; border-radius:0.5rem; font-size:0.81rem; color:#FAF8F5;">
-          <strong style="color:${hm.color};">🔍 Aktywna linia pod kursorem — ${hm.symbol} ${hm.name} ${ax} (${data.AXIS_NAMES[ax]}):</strong>
+          <strong style="color:${hm.color};"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><circle cx="14" cy="13.8" r="7.5" stroke-width="1.65"/><circle cx="14" cy="13.8" r="5.2" stroke-width="0.75" opacity="0.45"/><path d="M19.3 19.1l6.8 6.8" stroke-width="1.85"/><path d="M10.8 11.2a4 4 0 0 1 4-1.2" stroke-width="0.85" opacity="0.75"/></svg>Aktywna linia pod kursorem — ${hm.symbol} ${hm.name} ${ax} (${data.AXIS_NAMES[ax]}):</strong>
           ${isMeridian
             ? `Jest to <strong>pionowy południk geograficzny ${formatLonLat(lonVal, 'E', 'W')}</strong>. Wyznaczono go z równania <code>λ_${ax} = α − GAST${ax === 'IC' ? ' + 180°' : ''}</code>, gdzie Rektascensja ${hm.name} wynosi <strong>α = ${hp.ra.toFixed(2)}°</strong>, a Czas Gwiazdowy Greenwich <strong>GAST = ${chart.gast.toFixed(2)}°</strong>.`
             : `Jest to <strong>łukowata krzywa horyzontu (${ax === 'AC' ? 'wschodu' : 'zachodu'})</strong>. Wyznaczono ją dla każdej szerokości geograficznej φ z równania półłuku dziennego <code>cos H₀ = −tan(φ) · tan(${hp.dec.toFixed(2)}°)</code> wokół południka ${formatLonLat(hp.mcLon, 'E', 'W')}.`}
@@ -876,7 +876,7 @@
             <p style="font-size:0.83rem; line-height:1.62; color:rgba(250,248,245,0.82); margin:0;">${cfg.desc}</p>
           </div>
           <div style="background:rgba(255,255,255,0.025); border:1px solid rgba(201,169,110,0.2); border-radius:0.85rem; padding:0.85rem 1rem;">
-            <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#C9A96E; margin-bottom:0.35rem;">⚙ Na jakiej podstawie tworzy się taka linia na mapie?</div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#C9A96E; margin-bottom:0.35rem;"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><circle cx="16" cy="16" r="4" stroke-width="1.5"/><circle cx="16" cy="16" r="8.2" stroke-width="2.2" stroke-dasharray="2.4 4.05"/><circle cx="16" cy="16" r="10.8" stroke-width="0.7" opacity="0.45"/></svg>Na jakiej podstawie tworzy się taka linia na mapie?</div>
             <div style="font-size:0.8rem; line-height:1.58; color:rgba(250,248,245,0.82);">
               <div style="margin-bottom:0.35rem;">• <strong>Pionowe linie proste (MC ciągła / IC przerywana):</strong> powstają z różnicy <em>Rektascensji planety (α)</em> i <em>Czasu Gwiazdowego Ziemi (GAST)</em> w minucie Twoich narodzin (<code>λ_MC = α − GAST</code>). Wskazują dokładny południk, nad którym planeta stała pionowo w zenicie (MC) lub pod stopami po drugiej stronie globu (IC).</div>
               <div>• <strong>Ukośne fale i łuki (AC ciągła / DC przerywana):</strong> powstają z <em>Deklinacji planety (δ)</em> i kąta nachylenia lokalnego horyzontu (<code>cos H₀ = −tan φ · tan δ</code>). Łączą wszystkie miejsca na Ziemi, w których planeta dokładnie w tej sekundzie wschodziła nad horyzont (AC) lub zachodziła (DC).</div>
@@ -920,7 +920,7 @@
             document.getElementById('cityTesterOutput').innerHTML = renderCityTesterOutput(found);
             if (inspector) {
               const pm = data.PLANET_META[found.closest.planet];
-              inspector.innerHTML = `📍 <strong>${cName} (${found.city.country}):</strong> Najbliższa linia to <span style="color:${pm.color}; font-weight:600;">${pm.symbol} ${pm.name} ${found.closest.axis}</span> (${found.closest.distKm} km) • Relokacyjny Ascendent: <strong>${data.ZODIAC_SIGNS[found.ascSignIdx]}</strong>.`;
+              inspector.innerHTML = `<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 26.8S23 19.5 23 13a7 7 0 1 0-14 0c0 6.5 7 13.8 7 13.8Z" stroke-width="1.6"/><circle cx="16" cy="13" r="2.2" stroke="none" fill="currentColor" opacity="0.85"/></svg><strong>${cName} (${found.city.country}):</strong> Najbliższa linia to <span style="color:${pm.color}; font-weight:600;">${pm.symbol} ${pm.name} ${found.closest.axis}</span> (${found.closest.distKm} km) • Relokacyjny Ascendent: <strong>${data.ZODIAC_SIGNS[found.ascSignIdx]}</strong>.`;
             }
           }
         });
@@ -972,7 +972,7 @@
 
       document.getElementById('freeLoveCard').innerHTML = renderCityCardHtml(loveRanked[0], loveRanked[0].loveBest, '♀ Twoje Miasto Miłości Nr 1', '#F472B6');
       document.getElementById('freeWealthCard').innerHTML = renderCityCardHtml(wealthRanked[0], wealthRanked[0].wealthBest, '♃ Twoja Stolica Pieniędzy Nr 1', '#34D399');
-      document.getElementById('freeShadowCard').innerHTML = renderCityCardHtml(shadowRanked[0], shadowRanked[0].shadowBest, '⚠ Strefa Ciężaru Nr 1 (Unikaj)', '#FB7185');
+      document.getElementById('freeShadowCard').innerHTML = renderCityCardHtml(shadowRanked[0], shadowRanked[0].shadowBest, '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>Strefa Ciężaru Nr 1 (Unikaj)', '#FB7185');
 
       const startTesterCity = loveRanked[1] ? loveRanked[1].city : selectedTesterCity;
       selectedTesterCity = startTesterCity;

@@ -3,6 +3,7 @@
  * Architektura Ground Truth: Efemerydy JPL/Meeus, Midpointy Krótkiego Łuku, Tarcza 90°, Davison & Paywall CRO
  */
 (function () {
+  const _neoEsc = (x) => String(x || "").replace(/[&<>"']/g, (m) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
   const DEG = Math.PI / 180;
   const RAD = 180 / Math.PI;
   const ZODIAC_NAMES = ['Baran','Byk','Bliźnięta','Rak','Lew','Panna','Waga','Skorpion','Strzelec','Koziorożec','Wodnik','Ryby'];
@@ -761,7 +762,7 @@
           <span class="syn-tt-label">✦ Znaczenie w Waszym Związku</span>
           <div class="syn-tt-def">${defText}</div>
           ${basisText ? `
-            <span class="syn-tt-label" style="margin-top:0.65rem;">⚙ Na Jakiej Podstawie Wyliczane</span>
+            <span class="syn-tt-label" style="margin-top:0.65rem;"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><circle cx="16" cy="16" r="4" stroke-width="1.5"/><circle cx="16" cy="16" r="8.2" stroke-width="2.2" stroke-dasharray="2.4 4.05"/><circle cx="16" cy="16" r="10.8" stroke-width="0.7" opacity="0.45"/></svg>Na Jakiej Podstawie Wyliczane</span>
             <div style="font-size:0.77rem;line-height:1.52;color:rgba(201,169,110,0.92);">${basisText}</div>
           ` : ''}
         </div>
@@ -871,7 +872,7 @@
           ${T(
             'BILANS ŻYWIOŁÓW PARY (16 PUNKTÓW)',
             `<div style="font-size:0.82rem;font-family:'JetBrains Mono',monospace;color:#FAF8F5;margin-top:0.25rem;">
-               🔥${dos.elemCount['Ogień']} • 🌍${dos.elemCount['Ziemia']} • 💨${dos.elemCount['Powietrze']} • 💧${dos.elemCount['Woda']}
+               <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.22em 0 0;color:#C9A96E" aria-hidden="true"><path d="M16.5 4.8C13.8 9.2 9.5 13 9.5 18.2a6.5 6.5 0 0 0 13 0c0-3.2-1.8-5.6-3.2-7.8c-.4 1.6-1.4 2.5-2.3 2.5c.2-2.6-.2-5.4-.5-8.1Z" stroke-width="1.65"/><path d="M16 15.8c1.2 1.8 1.5 3.3 1 4.6a1.8 1.8 0 0 1-2.5-.2c-.3-1.4.4-2.8 1.5-4.4Z" stroke-width="0.9" fill="currentColor" fill-opacity="0.28"/><line x1="11" y1="26.8" x2="21" y2="26.8" stroke-width="1" opacity="0.65"/></svg>${dos.elemCount['Ogień']} • <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.22em 0 0;color:#C9A96E" aria-hidden="true"><path d="M9.5 26.8C12 20 14.5 13.5 20.5 6" stroke-width="1.6"/><path d="M17.2 11.2c-4.8-.8-7.5-3.2-6.8-6.4c3.5.4 6 2.5 6.8 6.4Z" stroke-width="1.45"/><path d="M14.2 17.8c4.6-1 8-.2 9.5 2.5c-3 2-6.5 1.2-9.5-2.5Z" stroke-width="1.45"/><path d="M11.8 22.5c-3.8-.5-6-.2-6.8 2.2c2.8 1.4 5.2.5 6.8-2.2Z" stroke-width="1.15" opacity="0.75"/></svg>${dos.elemCount['Ziemia']} • <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.22em 0 0;color:#C9A96E" aria-hidden="true"><path d="M4.8 13.5c4.5-2.5 10.2-2 15.2-2a3.2 3.2 0 1 0-3-4.2" stroke-width="1.65"/><path d="M6.5 18.2h17a3 3 0 1 1-2.6 4.4" stroke-width="1.35"/><path d="M5.5 23.2c3.2 0 6.8 0 9.5 0a2 2 0 1 1-1.8 2.9" stroke-width="0.95" opacity="0.7"/></svg>${dos.elemCount['Powietrze']} • <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.22em 0 0;color:#C9A96E" aria-hidden="true"><path d="M4.5 20.5c3.5-4.8 6.2-6 9.5-4.5c2.2 1 2.2 4.2 0 4.5c-1.8.2-2.6-1.2-1.8-2.2" stroke-width="1.65"/><path d="M12.5 22c4.5 1.8 8.8.8 14.5-2.5" stroke-width="1.5"/><path d="M22.2 6.5c1.8 2.8 2.8 4.4 2.8 5.8a2.8 2.8 0 1 1-5.6 0c0-1.4 1-3 2.8-5.8Z" stroke-width="1.3" fill="currentColor" fill-opacity="0.22"/></svg>${dos.elemCount['Woda']}
              </div>
              <div style="font-size:0.76rem;opacity:0.65;margin-top:0.2rem;">Kardynalne: ${dos.modCount['Kardynalna']} | Stałe: ${dos.modCount['Stała']} | Zmienne: ${dos.modCount['Zmienna']}</div>`,
             'Wypadkowa Waszych temperamentów: Ogień daje pasję, Ziemia stabilność i zmysłowość, Powietrze rozmowę, a Woda bliskość emocjonalną.'
@@ -900,7 +901,7 @@
       <div class="syn-loss-gate" id="syn-loss-gate">
         <div class="syn-loss-badge">
           <span class="syn-loss-dot"></span>
-          <span>⚠️ OMIJA CIĘ 86% ANALIZY RELACJI</span>
+          <span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>OMIJA CIĘ 86% ANALIZY RELACJI</span>
         </div>
         <h4 class="syn-loss-title">Widzisz zaledwie 14% Waszego Kosmogramu</h4>
         <p class="syn-loss-desc">
@@ -917,19 +918,19 @@
         </div>
         <div class="syn-loss-grid">
           <div class="syn-loss-item">
-            <span class="syn-loss-icon">🔒</span>
+            <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
             <div><strong>Punkty Krytyczne & Zwarcia (Aspektarium)</strong><p>16 kątów planetarnych wyznaczających punkty zapalne w relacji</p></div>
           </div>
           <div class="syn-loss-item">
-            <span class="syn-loss-icon">🔒</span>
+            <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
             <div><strong>Indeks Obsesji & Sfera Tabu (Pluton × Lilith)</strong><p>Podświadomy magnetyzm, zazdrość i niewypowiedziane pragnienia</p></div>
           </div>
           <div class="syn-loss-item">
-            <span class="syn-loss-icon">🔒</span>
+            <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
             <div><strong>Nakładka 12 Domów od Twojego Ascendentu</strong><p>W które dokładnie sfery Twojego życia uderzają planety partnera</p></div>
           </div>
           <div class="syn-loss-item">
-            <span class="syn-loss-icon">🔒</span>
+            <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
             <div><strong>Instrukcja Gaszenia Gniewu & Cienia</strong><p>Psychologiczny klucz do rozbrajania mechanizmów obronnych partnera</p></div>
           </div>
         </div>
@@ -1057,7 +1058,7 @@
           ${dos.tabooAspects.length > 0 ? `
             <div style="margin-top:1.35rem;">
               <div class="syn-card-tag" style="color:#FB7185;margin-bottom:0.6rem;font-weight:700;">
-                ⚡ AKTYWNE ZWARCIA PLUTON / LILITH W WASZYM KOSMOGRAMIE (${dos.tabooAspects.length})
+                <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M18.2 4.5L9 16.5h6.5l-2 11L23 14.5h-6.5l1.7-10Z" stroke-width="1.65" fill="currentColor" fill-opacity="0.14"/></svg>AKTYWNE ZWARCIA PLUTON / LILITH W WASZYM KOSMOGRAMIE (${dos.tabooAspects.length})
               </div>
               <div class="syn-table-wrap">
                 <table class="syn-table">
@@ -1242,7 +1243,7 @@
             <button type="button" class="syn-modal-close" id="syn-loss-modal-close" aria-label="Zamknij">&times;</button>
             <div class="syn-loss-badge">
               <span class="syn-loss-dot"></span>
-              <span>🔒 SEKCJA DOSSIER WYMAGA ODBLOKOWANIA</span>
+              <span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg>SEKCJA DOSSIER WYMAGA ODBLOKOWANIA</span>
             </div>
             <h3 class="syn-loss-title" style="margin-top:0.35rem;">Ten fragment należy do zamkniętych rozdziałów II–VII</h3>
             <p class="syn-loss-desc">
@@ -1259,19 +1260,19 @@
             </div>
             <div class="syn-loss-grid">
               <div class="syn-loss-item">
-                <span class="syn-loss-icon">🔒</span>
+                <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
                 <div><strong>Mapa Kątów Napięcia (Kwadratury i Opozycje)</strong><p>Dokładne orby planetarne pokazujące, skąd biorą się powtarzalne spięcia</p></div>
               </div>
               <div class="syn-loss-item">
-                <span class="syn-loss-icon">🔒</span>
+                <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
                 <div><strong>Psychologia Przyciągania i Tabu</strong><p>Analiza śladów Plutona, Lilith oraz Węzłów Księżycowych między Wami</p></div>
               </div>
               <div class="syn-loss-item">
-                <span class="syn-loss-icon">🔒</span>
+                <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
                 <div><strong>Sfera Życia pod Wpływem Partnera</strong><p>Kompletna interpretacja wejścia planet drugiej osoby w Twoje domy</p></div>
               </div>
               <div class="syn-loss-item">
-                <span class="syn-loss-icon">🔒</span>
+                <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
                 <div><strong>Protokół Rozmów w Kryzysie</strong><p>Konkretne wskazówki, jak rozładować stres i bronić zaufania bez wycofania</p></div>
               </div>
             </div>
@@ -1319,7 +1320,7 @@
                 <span>Zapłać 39,00 PLN i Odblokuj Raport &rarr;</span>
               </button>
               <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(250,248,245,0.6);margin-top:0.6rem;">
-                🔒 Szyfrowanie 256-bit SSL • Płatność obsługiwana przez Stripe.com
+                <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg>Szyfrowanie 256-bit SSL • Płatność obsługiwana przez Stripe.com
               </div>
             </div>
           </div>
@@ -1448,7 +1449,7 @@
       } catch (err) {
         if (stripeLoader) stripeLoader.style.display = 'none';
         if (stripeErrorBox) {
-          stripeErrorBox.innerHTML = `⚠️ ${err.message}`;
+          stripeErrorBox.innerHTML = `<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>${_neoEsc(err.message)}`;
         }
       } finally {
         isStripeLoading = false;
@@ -1459,7 +1460,7 @@
       stripeSubmitBtn.addEventListener('click', async () => {
         if (!stripeInstance || !stripeElementsInstance) return;
         stripeSubmitBtn.disabled = true;
-        stripeSubmitBtn.innerHTML = '<span>⏳ Autoryzacja płatności (BLIK / Apple Pay)...</span>';
+        stripeSubmitBtn.innerHTML = '<span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M8.5 5.2h15M8.5 26.8h15" stroke-width="1.65"/><path d="M9.8 5.2v21.6M22.2 5.2v21.6" stroke-width="0.8" opacity="0.45"/><path d="M11.8 5.2c0 5.4 4.2 8.2 4.2 10.8c0-2.6 4.2-5.4 4.2-10.8" stroke-width="1.45"/><path d="M11.8 26.8c0-5.4 4.2-8.2 4.2-10.8c0 2.6 4.2 5.4 4.2 10.8" stroke-width="1.45"/><path d="M13.5 26.8L16 23.2l2.5 3.6Z" stroke="none" fill="currentColor" fill-opacity="0.42"/></svg>Autoryzacja płatności (BLIK / Apple Pay)...</span>';
         if (stripeErrorBox) stripeErrorBox.innerHTML = '';
 
         try {
@@ -1479,7 +1480,7 @@
           });
 
           if (error) {
-            stripeErrorBox.textContent = `⚠️ ${error.message}`;
+            stripeErrorBox.innerHTML = `<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>${_neoEsc(error.message)}`;
             stripeSubmitBtn.disabled = false;
             stripeSubmitBtn.innerHTML = '<span>Zapłać 39,00 PLN i Odblokuj Raport &rarr;</span>';
           } else if (paymentIntent && paymentIntent.status === 'succeeded') {
@@ -1499,10 +1500,10 @@
             closeStripeModal();
             performUnlock(false);
           } else if (paymentIntent && paymentIntent.status === 'processing') {
-            stripeErrorBox.textContent = '⏳ Płatność jest w trakcie przetwarzania przez bank. Odśwież stronę za chwilę.';
+            stripeErrorBox.innerHTML = '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M8.5 5.2h15M8.5 26.8h15" stroke-width="1.65"/><path d="M9.8 5.2v21.6M22.2 5.2v21.6" stroke-width="0.8" opacity="0.45"/><path d="M11.8 5.2c0 5.4 4.2 8.2 4.2 10.8c0-2.6 4.2-5.4 4.2-10.8" stroke-width="1.45"/><path d="M11.8 26.8c0-5.4 4.2-8.2 4.2-10.8c0 2.6 4.2 5.4 4.2 10.8" stroke-width="1.45"/><path d="M13.5 26.8L16 23.2l2.5 3.6Z" stroke="none" fill="currentColor" fill-opacity="0.42"/></svg>Płatność jest w trakcie przetwarzania przez bank. Odśwież stronę za chwilę.';
           }
         } catch (e) {
-          stripeErrorBox.textContent = `⚠️ Błąd połączenia: ${e.message}`;
+          stripeErrorBox.innerHTML = `<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>Błąd połączenia: ${_neoEsc(e.message)}`;
           stripeSubmitBtn.disabled = false;
           stripeSubmitBtn.innerHTML = '<span>Zapłać 39,00 PLN i Odblokuj Raport &rarr;</span>';
         }

@@ -322,7 +322,7 @@
                         <button data-filter="Archetypy" class="filter-btn text-[10px] items-center uppercase tracking-widest text-ivory/40 border border-white/5 px-6 py-2 rounded-full hover:border-champagne hover:text-champagne transition-all duration-300">Archetypy &amp; Wielka Trójka (5)</button>
                         <button data-filter="Life-style" class="filter-btn text-[10px] items-center uppercase tracking-widest text-ivory/40 border border-white/5 px-6 py-2 rounded-full hover:border-champagne hover:text-champagne transition-all duration-300">Relacje &amp; Styl (6)</button>
                         <button data-filter="Astrologia Prezentowa" class="filter-btn text-[10px] items-center uppercase tracking-widest text-ivory/40 border border-white/5 px-6 py-2 rounded-full hover:border-champagne hover:text-champagne transition-all duration-300">Poradniki Prezentowe (6)</button>
-                        <button data-filter="bookmarks" class="filter-btn text-[10px] items-center uppercase tracking-widest text-ivory/40 border border-white/5 px-6 py-2 rounded-full hover:border-champagne hover:text-champagne transition-all duration-300">Zapisane 🔖 (0)</button>
+                        <button data-filter="bookmarks" class="filter-btn text-[10px] items-center uppercase tracking-widest text-ivory/40 border border-white/5 px-6 py-2 rounded-full hover:border-champagne hover:text-champagne transition-all duration-300">Zapisane <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.26em 0 0" aria-hidden="true"><path d="M9.5 5h13v22l-6.5-4.8L9.5 27V5Z" stroke-width="1.6"/><path d="M9.5 8.5h13" stroke-width="0.8" opacity="0.55"/><path d="M16 12.2l1.6 2.5L16 17.2l-1.6-2.5Z" stroke-width="1" fill="currentColor" fill-opacity="0.25"/></svg>(0)</button>
                     </div>
                 </div>
                 <div id="article-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 mb-16">
@@ -1451,7 +1451,7 @@
                     var bBtn = document.querySelector('[data-filter="bookmarks"]');
                     if (bBtn) {
                         var bCount = allCards.filter(isBookmarked).length;
-                        bBtn.innerHTML = 'Zapisane 🔖 (' + bCount + ')';
+                        bBtn.innerHTML = 'Zapisane <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.25em" aria-hidden="true"><path d="M9.5 5h13v22l-6.5-4.8L9.5 27V5Z" stroke-width="1.6"/><path d="M9.5 8.5h13" stroke-width="0.8" opacity="0.55"/><path d="M16 12.2l1.6 2.5L16 17.2l-1.6-2.5Z" stroke-width="1" fill="currentColor" fill-opacity="0.25"/></svg>(' + bCount + ')';
                     }
                 }
 
