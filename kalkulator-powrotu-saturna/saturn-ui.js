@@ -91,10 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
         try { window.history.replaceState({}, '', window.location.pathname); } catch (e) {}
         return false;
       }
-      if (params.get('paid') === 'true') {
-        try { localStorage.setItem('neo_saturn_unlocked', 'true'); } catch (e) {}
-        return true;
-      }
       return localStorage.getItem('neo_saturn_unlocked') === 'true';
     } catch (e) {
       return false;
