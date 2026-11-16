@@ -138,6 +138,7 @@
     
     <!-- Google Consent Mode v2 + Consent-Gated Tracking (GA4, Clarity, Meta Pixel) -->
     <script>
+      window.__neoHasInlineTracking = true;
       window.dataLayer = window.dataLayer || [];
       window.gtag = function gtag(){window.dataLayer.push(arguments);};
       window.gtag('consent', 'default', {
@@ -399,11 +400,17 @@
                     </div>
                 </div>
 
-                <a href="https://buy.stripe.com/dRm28k8iRbUb4K2fT4cwg00?utm_source=blog&utm_medium=cta" rel="nofollow noopener" class="hero-element group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-obsidian bg-primary rounded-full overflow-hidden transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_30px_rgba(201,168,76,0.3)] hover:shadow-[0_0_50px_rgba(201,168,76,0.5)]">
-                    <span class="relative z-10 flex items-center gap-3">
-                        Odkryj Zodiakalny Prezentownik <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                    </span>
-                </a>
+                <div class="hero-element" style="display:flex;flex-wrap:wrap;gap:0.9rem;align-items:center;justify-content:center;">
+                    <a href="https://buy.stripe.com/dRm28k8iRbUb4K2fT4cwg00?utm_source=blog&utm_medium=cta" rel="nofollow noopener" class="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-obsidian bg-primary rounded-full overflow-hidden transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-[0_0_30px_rgba(201,168,76,0.3)] hover:shadow-[0_0_50px_rgba(201,168,76,0.5)]">
+                        <span class="relative z-10 flex items-center gap-3">
+                            Odkryj Zodiakalny Prezentownik <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                    </a>
+                    <a href="/kalkulator-prezentowy/" style="display:inline-flex;align-items:center;gap:0.5rem;padding:1.05rem 1.55rem;border-radius:9999px;border:1px solid rgba(201,168,76,0.45);background:rgba(255,255,255,0.03);color:#FAF8F5;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.25s ease;" onmouseenter="this.style.borderColor='#C9A84C';this.style.background='rgba(201,168,76,0.12)';" onmouseleave="this.style.borderColor='rgba(201,168,76,0.45)';this.style.background='rgba(255,255,255,0.03)';">
+                        <span>Lub dobierz za darmo w Kalkulatorze</span>
+                        <span style="color:#C9A84C;">&rarr;</span>
+                    </a>
+                </div>
             </div>
             
             <div class="flex-1 w-full max-w-[16rem] sm:max-w-xs lg:max-w-sm hero-element relative mt-20 lg:mt-0 lg:ml-12 mx-auto pt-10 lg:pt-0">
@@ -936,6 +943,90 @@
                             <span>Czytaj przewodnik dla Ryb</span>
                             <span>&rarr;</span>
                         </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ═══════════ DARMOWE KALKULATORY ASTRA ENGINE (LEJEK WIRALOWY + GEO) ═══════════ -->
+        <section id="narzedzia-astro" style="padding:72px 0;border-top:1px solid rgba(201,168,76,0.12);background:rgba(255,255,255,0.01);">
+            <div style="max-width:1280px;margin:0 auto;padding:0 24px;">
+                <div style="text-align:center;max-width:760px;margin:0 auto 44px auto;">
+                    <span style="display:inline-block;font-family:var(--font-mono,monospace);font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C9A84C;border:1px solid rgba(201,168,76,0.3);background:rgba(201,168,76,0.06);padding:6px 16px;border-radius:9999px;margin-bottom:18px;">
+                        Astra Engine • 7 Darmowych Narzędzi Online
+                    </span>
+                    <h2 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.85rem,3.5vw,2.85rem);color:#FAF8F5;line-height:1.2;margin:0 0 14px 0;">
+                        Nie zgaduj z samego znaku Słońca. <span style="color:#C9A84C;font-style:italic;">Oblicz dokładny kosmogram.</span>
+                    </h2>
+                    <p style="color:#9E9890;font-size:16px;line-height:1.65;margin:0;">
+                        Sprawdź ukryte potrzeby Księżyca, dopasowanie partnerskie i precyzyjny Ascendent w naszych interaktywnych kalkulatorach astrologii humanistycznej.
+                    </p>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;">
+                    <a href="/kalkulator-prezentowy/" style="display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px;border-radius:16px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.42);text-decoration:none;transition:all 0.25s ease;" onmouseenter="this.style.transform='translateY(-3px)';this.style.borderColor='#C9A84C';" onmouseleave="this.style.transform='translateY(0)';this.style.borderColor='rgba(201,168,76,0.42)';">
+                        <div>
+                            <div style="font-family:var(--font-mono,monospace);font-size:10px;color:#C9A84C;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🎁 HIT • DOBÓR UPOMINKU</div>
+                            <h3 style="font-family:var(--font-display,Georgia,serif);font-size:18px;font-weight:700;color:#FAF8F5;margin:0 0 6px;">Kalkulator Prezentowy</h3>
+                            <p style="font-size:13px;color:rgba(250,248,245,0.72);margin:0;line-height:1.5;">Oblicza Wielką Trójkę partnera i dobiera prezent pod jego emocje</p>
+                        </div>
+                        <div style="margin-top:14px;font-size:12px;font-weight:700;color:#C9A84C;">Uruchom za darmo &rarr;</div>
+                    </a>
+                    <a href="/kalkulator-faz-ksiezyca/" style="display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px;border-radius:16px;background:rgba(19,17,28,0.85);border:1px solid rgba(201,168,76,0.22);text-decoration:none;transition:all 0.25s ease;" onmouseenter="this.style.transform='translateY(-3px)';this.style.borderColor='#C9A84C';" onmouseleave="this.style.transform='translateY(0)';this.style.borderColor='rgba(201,168,76,0.22)';">
+                        <div>
+                            <div style="font-family:var(--font-mono,monospace);font-size:10px;color:#C9A84C;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🌙 VIRAL • PLAKAT 9:16</div>
+                            <h3 style="font-family:var(--font-display,Georgia,serif);font-size:18px;font-weight:700;color:#FAF8F5;margin:0 0 6px;">Fazy Księżyca Par</h3>
+                            <p style="font-size:13px;color:#9E9890;margin:0;line-height:1.5;">Zobacz czy Wasze księżyce z nocy narodzin tworzą wspólną Pełnię</p>
+                        </div>
+                        <div style="margin-top:14px;font-size:12px;font-weight:600;color:#C9A84C;">Sprawdź Wasze tarcze &rarr;</div>
+                    </a>
+                    <a href="/kalkulator-synastrii/" style="display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px;border-radius:16px;background:rgba(19,17,28,0.85);border:1px solid rgba(201,168,76,0.22);text-decoration:none;transition:all 0.25s ease;" onmouseenter="this.style.transform='translateY(-3px)';this.style.borderColor='#C9A84C';" onmouseleave="this.style.transform='translateY(0)';this.style.borderColor='rgba(201,168,76,0.22)';">
+                        <div>
+                            <div style="font-family:var(--font-mono,monospace);font-size:10px;color:#C9A84C;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">💞 RELACJA • WENUS &amp; MARS</div>
+                            <h3 style="font-family:var(--font-display,Georgia,serif);font-size:18px;font-weight:700;color:#FAF8F5;margin:0 0 6px;">Kalkulator Synastrii</h3>
+                            <p style="font-size:13px;color:#9E9890;margin:0;line-height:1.5;">Indeks chemii, bezpieczeństwa i ukrytych tarć w Waszym związku</p>
+                        </div>
+                        <div style="margin-top:14px;font-size:12px;font-weight:600;color:#C9A84C;">Porównaj kosmogramy &rarr;</div>
+                    </a>
+                    <a href="/kalkulator-ascendentu/" style="display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px;border-radius:16px;background:rgba(19,17,28,0.85);border:1px solid rgba(201,168,76,0.22);text-decoration:none;transition:all 0.25s ease;" onmouseenter="this.style.transform='translateY(-3px)';this.style.borderColor='#C9A84C';" onmouseleave="this.style.transform='translateY(0)';this.style.borderColor='rgba(201,168,76,0.22)';">
+                        <div>
+                            <div style="font-family:var(--font-mono,monospace);font-size:10px;color:#C9A84C;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🔮 KLASYK • 3 SEKUNDY</div>
+                            <h3 style="font-family:var(--font-display,Georgia,serif);font-size:18px;font-weight:700;color:#FAF8F5;margin:0 0 6px;">Kalkulator Ascendentu</h3>
+                            <p style="font-size:13px;color:#9E9890;margin:0;line-height:1.5;">Wyznacz swoje Słońce, Księżyc i znak wschodzący z minuty urodzenia</p>
+                        </div>
+                        <div style="margin-top:14px;font-size:12px;font-weight:600;color:#C9A84C;">Oblicz Wielką Trójkę &rarr;</div>
+                    </a>
+                    <a href="/kalkulator-astrokartografii/" style="display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px;border-radius:16px;background:rgba(19,17,28,0.85);border:1px solid rgba(201,168,76,0.22);text-decoration:none;transition:all 0.25s ease;" onmouseenter="this.style.transform='translateY(-3px)';this.style.borderColor='#C9A84C';" onmouseleave="this.style.transform='translateY(0)';this.style.borderColor='rgba(201,168,76,0.22)';">
+                        <div>
+                            <div style="font-family:var(--font-mono,monospace);font-size:10px;color:#C9A84C;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🗺️ RELOKACJA • MAPA ŚWIATA</div>
+                            <h3 style="font-family:var(--font-display,Georgia,serif);font-size:18px;font-weight:700;color:#FAF8F5;margin:0 0 6px;">Astrokartografia</h3>
+                            <p style="font-size:13px;color:#9E9890;margin:0;line-height:1.5;">Gdzie na Ziemi leżą Twoje linie Wenus (miłość) i Jowisza (sukces)?</p>
+                        </div>
+                        <div style="margin-top:14px;font-size:12px;font-weight:600;color:#C9A84C;">Otwórz mapę linii &rarr;</div>
+                    </a>
+                    <a href="/kalkulator-dyspozytorow/" style="display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px;border-radius:16px;background:rgba(19,17,28,0.85);border:1px solid rgba(201,168,76,0.22);text-decoration:none;transition:all 0.25s ease;" onmouseenter="this.style.transform='translateY(-3px)';this.style.borderColor='#C9A84C';" onmouseleave="this.style.transform='translateY(0)';this.style.borderColor='rgba(201,168,76,0.22)';">
+                        <div>
+                            <div style="font-family:var(--font-mono,monospace);font-size:10px;color:#C9A84C;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🏛️ PSYCHOLOGIA • WŁADCA</div>
+                            <h3 style="font-family:var(--font-display,Georgia,serif);font-size:18px;font-weight:700;color:#FAF8F5;margin:0 0 6px;">Drzewo Dyspozytorów</h3>
+                            <p style="font-size:13px;color:#9E9890;margin:0;line-height:1.5;">Która planeta naprawdę steruje Twoimi decyzjami i podświadomością?</p>
+                        </div>
+                        <div style="margin-top:14px;font-size:12px;font-weight:600;color:#C9A84C;">Wyznacz władcę &rarr;</div>
+                    </a>
+                    <a href="/kalkulator-powrotu-saturna/" style="display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px;border-radius:16px;background:rgba(19,17,28,0.85);border:1px solid rgba(201,168,76,0.22);text-decoration:none;transition:all 0.25s ease;" onmouseenter="this.style.transform='translateY(-3px)';this.style.borderColor='#C9A84C';" onmouseleave="this.style.transform='translateY(0)';this.style.borderColor='rgba(201,168,76,0.22)';">
+                        <div>
+                            <div style="font-family:var(--font-mono,monospace);font-size:10px;color:#C9A84C;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🪐 CHRONOS • 28–30 LAT</div>
+                            <h3 style="font-family:var(--font-display,Georgia,serif);font-size:18px;font-weight:700;color:#FAF8F5;margin:0 0 6px;">Powrót Saturna</h3>
+                            <p style="font-size:13px;color:#9E9890;margin:0;line-height:1.5;">Dokładne daty 3 fal tranzytu i audyt domu życiowych przełomów</p>
+                        </div>
+                        <div style="margin-top:14px;font-size:12px;font-weight:600;color:#C9A84C;">Oblicz swój zegar &rarr;</div>
+                    </a>
+                    <a href="/blog/prezent-na-swieta-i-mikolajki-dla-znaku-zodiaku" style="display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px;border-radius:16px;background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.32);text-decoration:none;transition:all 0.25s ease;" onmouseenter="this.style.transform='translateY(-3px)';this.style.borderColor='#C9A84C';" onmouseleave="this.style.transform='translateY(0)';this.style.borderColor='rgba(201,168,76,0.32)';">
+                        <div>
+                            <div style="font-family:var(--font-mono,monospace);font-size:10px;color:#C9A84C;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;">🎄 SEZON Q4 • MIKOŁAJKI &amp; ŚWIĘTA</div>
+                            <h3 style="font-family:var(--font-display,Georgia,serif);font-size:18px;font-weight:700;color:#FAF8F5;margin:0 0 6px;">Prezenty pod Choinkę (12 Znaków)</h3>
+                            <p style="font-size:13px;color:rgba(250,248,245,0.72);margin:0;line-height:1.5;">Świąteczna matryca trafionych upominków na Mikołajki i Gwiazdkę</p>
+                        </div>
+                        <div style="margin-top:14px;font-size:12px;font-weight:700;color:#C9A84C;">Zobacz poradnik 2026 &rarr;</div>
                     </a>
                 </div>
             </div>

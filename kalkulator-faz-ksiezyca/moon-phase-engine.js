@@ -539,5 +539,19 @@
         if (currentState) downloadSoulmatePoster(currentState);
       });
     }
+
+    // Auto-run if shared via viral URL (?dA=YYYY-MM-DD&dB=YYYY-MM-DD)
+    const urlP = new URLSearchParams(window.location.search);
+    const dA = urlP.get('dA');
+    const dB = urlP.get('dB');
+    if (dA && dB) {
+      const nA = urlP.get('nA');
+      const nB = urlP.get('nB');
+      if (nA && document.getElementById('nameA')) document.getElementById('nameA').value = nA.slice(0, 40);
+      if (nB && document.getElementById('nameB')) document.getElementById('nameB').value = nB.slice(0, 40);
+      if (document.getElementById('dateA')) document.getElementById('dateA').value = dA;
+      if (document.getElementById('dateB')) document.getElementById('dateB').value = dB;
+      renderAppResults();
+    }
   });
 })();

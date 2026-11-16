@@ -63,6 +63,15 @@
     });
   }
 
+  function ensureTrackingLoaded(c) {
+    if (!c || (!c.analytics && !c.marketing) || window.__neoHasInlineTracking) return;
+    if (document.getElementById('neo-tracking-js')) return;
+    var s = document.createElement('script');
+    s.id = 'neo-tracking-js';
+    s.src = '/luxe-tracking.js?v=1.0';
+    document.head.appendChild(s);
+  }
+
   function saveConsent(analytics, marketing) {
     var state = { necessary: true, analytics: !!analytics, marketing: !!marketing, updatedAt: new Date().toISOString() };
     try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (_e) {}
@@ -71,6 +80,7 @@
     syncGtag(state);
     hideBanner();
     closeSettings();
+    ensureTrackingLoaded(state);
     listeners.forEach(function (fn) { try { fn(state); } catch (_e) {} });
     return state;
   }
@@ -157,7 +167,7 @@
 
   function init() {
     var cur = readConsent();
-    if (cur) syncGtag(cur);
+    if (cur) { syncGtag(cur); ensureTrackingLoaded(cur); }
     else showBanner();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
