@@ -124,7 +124,8 @@ document.addEventListener('DOMContentLoaded', function () {
       lastCalculatedData.dignityData,
       lastCalculatedData.dispInfo,
       lastCalculatedData.passes,
-      unlocked
+      unlocked,
+      lastCalculatedData.satCtx
     );
     container.outerHTML = newHtml;
     bindProtocolEvents();
@@ -142,20 +143,21 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     const dateStr = document.getElementById('disp-date').value;
-    const timeStr = document.getElementById('disp-time').value || '12:00';
+    const rawTimeStr = document.getElementById('disp-time').value || '';
+    const timeStr = rawTimeStr || '12:00';
     const cityStr = document.getElementById('disp-city').value || '';
     if (!dateStr) return;
 
     try {
-      localStorage.setItem('neo_saturn_last_input', JSON.stringify({ date: dateStr, time: timeStr, city: cityStr }));
+      localStorage.setItem('neo_saturn_last_input', JSON.stringify({ date: dateStr, time: rawTimeStr, city: cityStr }));
     } catch (err) {}
 
     // 1. Obliczenia planetarne
-    const currentChart = window.__DISPOSITOR_ENGINE__.calcAllPlanets(dateStr, timeStr, cityStr);
+    const currentChart = window.__DISPOSITOR_ENGINE__.calcAllPlanets(dateStr, rawTimeStr, cityStr);
     const satPlanet = currentChart.planets.find(p => p.key === 'saturn');
     if (!satPlanet) return;
 
-    // 2. OBLICZENIA W SYSTEMIE PLACIDUSA (Precyzja matematyczna NASA / Swiss Ephemeris)
+    // 2. OBLICZENIA W SYSTEMIE PLACIDUSA (z fallbackiem Whole Sign ≥66°33′)
     const jd = currentChart.jd;
     const cityObj = currentChart.city || { lat: 52.23, lon: 21.01 };
     currentSatHash = window.NeoChartLock
@@ -163,10 +165,12 @@ document.addEventListener('DOMContentLoaded', function () {
       : '';
     const placidusCusps = window.SaturnPlacidus.calcPlacidusCusps(jd, cityObj.lat, cityObj.lon);
 
-    // Dom Saturna w Placidusie
-    const satHouse = currentChart.hasTime 
-      ? window.SaturnPlacidus.getPlanetHousePlacidus(satPlanet.longitude, placidusCusps, cityObj.lat, placidusCusps.armc, placidusCusps.eps)
-      : 1;
+    const isPolar = Math.abs(Number(cityObj.lat) || 0) >= 66.55;
+    const satHouse = !currentChart.hasTime
+      ? 1
+      : (isPolar
+          ? (((Math.floor(satPlanet.longitude / 30) - Math.floor(placidusCusps[1] / 30) + 12) % 12) + 1)
+          : window.SaturnPlacidus.getPlanetHousePlacidus(satPlanet.longitude, placidusCusps, cityObj.lat, placidusCusps.armc, placidusCusps.eps));
     satPlanet.house = satHouse;
 
     currentChart.houses = { cusps: placidusCusps, system: 'Placidus' };
@@ -196,16 +200,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const utcDate = new Date((jd - 2440587.5) * 86400000);
     const userAge = (now.getTime() - utcDate.getTime()) / (365.25 * 86400000);
-    const cycleNum = userAge > 42 ? 2 : 1;
+    const cycleNum = userAge > 72 ? 3 : (userAge > 42 ? 2 : 1);
     const passes = window.SaturnEngine.findSaturnReturns(utcDate, satPlanet.longitude, cycleNum);
+    const satCtx = window.SaturnContext
+      ? window.SaturnContext.buildContext({
+          chart: currentChart, satPlanet, dispInfo, aspects, passes,
+          transitLon: currentTransitSatLon, userAge, cycleNum, dateStr
+        })
+      : null;
 
     // 5. Render Koła Zodiakalnego (Czysty Natal / Tranzyt bez śladów po dyspozytorach)
     const svgWheelHtml = window.SaturnWheel.renderSaturnReturnWheel(currentChart, currentTransitSatLon);
 
     // 6. Składanie Raportu: Raport ZACZYNA SIĘ OD ZNAKU I DOMU
-    const diagnosisHtml = window.SaturnRender.renderMainDiagnosisCard(satPlanet, signData, houseData, dignityData, satPlanet.isRetrograde, dispInfo);
-    const passesHtml = window.SaturnRenderDetails.renderPassesHtml(passes);
-    const aspectsHtml = window.SaturnRenderDetails.renderAspectsList(aspects);
+    const diagnosisHtml = window.SaturnRender.renderMainDiagnosisCard(satPlanet, signData, houseData, dignityData, satPlanet.isRetrograde, dispInfo, satCtx);
+    const passesHtml = window.SaturnRenderDetails.renderPassesHtml(passes, satCtx);
+    const aspectsHtml = window.SaturnRenderDetails.renderAspectsList(aspects, satCtx);
+
+    const hasTime = satCtx ? satCtx.facts.hasTime : currentChart.hasTime;
+    const wheelSysLabel = !hasTime ? 'Brak (Tryb Bez Godziny)' : (satCtx ? satCtx.facts.houseSystemLabel : 'Placidus');
+    const passesHeading = passes.length <= 1 ? 'Harmonogram Przejścia Tranzytu' : 'Harmonogram 3 Fal Tranzytu';
+    const passesSub = passes.length <= 1 ? 'Pojedyncza koniunkcja ścisła 0°00′ (ruch prosty):' : 'Ścisłe koniunkcje kątowe 0°00′ (Pętla Retrogradacyjna):';
+    const digRoot = window.SATURN_DIGNITY_DATA || {};
+    const retroObj = digRoot.retrograde ? (satPlanet.isRetrograde ? digRoot.retrograde.natalRx : digRoot.retrograde.direct) : null;
+    const sectObj = (hasTime && satCtx && satCtx.facts.sect && digRoot.sect) ? digRoot.sect[satCtx.facts.sect] : null;
+    const T = window.SaturnTooltips;
+    const tip = (lbl, key, extraCls, pillTxt) => {
+      if (!T || !T.GLOSSARY) return lbl;
+      let o = T.GLOSSARY[key];
+      if (!o && key && key.startsWith('dignity_') && T.GLOSSARY.dignity) o = T.GLOSSARY.dignity[key.slice(8)];
+      return o ? T.renderTipBadge(lbl, o.title, o.def, o.basis || '', extraCls || 'sat-tip-clean', pillTxt) : lbl;
+    };
+    const wheelSysBadge = tip(`System Domów: ${wheelSysLabel} `, 'houseSystem', 'sat-tip-clean');
+    const condInfoPill = tip('', 'dignity_' + (satCtx ? satCtx.facts.dignityKey : dignityKey), 'sat-tip-clean', 'ⓘ ZNACZENIE');
+    const sectInfoPill = sectObj ? tip('', 'sect_' + satCtx.facts.sect, 'sat-tip-clean', 'ⓘ ZNACZENIE') : '';
+    const retroInfoPill = retroObj ? tip('', satPlanet.isRetrograde ? 'natal_rx' : 'natal_direct', 'sat-tip-clean', 'ⓘ ZNACZENIE') : '';
+    const dispInfoPill = tip('', 'dispositor', 'sat-tip-clean', 'ⓘ ZNACZENIE');
 
     resultsContainer.innerHTML = `
       <!-- 1. GŁÓWNA DIAGNOZA: SATURN W ZNAKU I DOMU (PLACIDUS) -->
@@ -218,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
               <div class="disp-badge" style="margin:0;">KOŁO ZODIAKALNE • ASTRA ENGINE</div>
               <span style="font-size:0.75rem; font-family:'JetBrains Mono', monospace; color:#C9A96E;">
-                System Domów: Placidus
+                ${wheelSysBadge}
               </span>
             </div>
             <div id="disp-wheel-container">
@@ -240,36 +270,58 @@ document.addEventListener('DOMContentLoaded', function () {
             </p>
           </div>
 
-          <!-- Harmonogram 3 Fal -->
+          <!-- Harmonogram Przejść -->
           <div class="disp-card" style="margin-bottom:1.25rem;">
             <h4 style="font-family:'Playfair Display', serif; font-size:1.2rem; color:#FAF8F5; margin:0 0 0.4rem;">
-              Harmonogram 3 Fal Tranzytu
+              ${passesHeading}
             </h4>
             <p style="font-size:0.8rem; color:rgba(250,248,245,0.6); margin:0 0 0.85rem;">
-              Ścisłe koniunkcje kątowe 0°00' (Pętla Retrogradacyjna):
+              ${passesSub}
             </p>
             ${passesHtml}
           </div>
 
-          <!-- Kondycja Godnościowa & Dyspozytor Saturna -->
+          <!-- Kondycja Godnościowa, Sekta, Retrogradacja & Dyspozytor Saturna -->
           <div class="disp-card">
-            <h4 style="font-family:'Playfair Display', serif; font-size:1.15rem; color:#FAF8F5; margin:0 0 0.4rem;">
-              Kondycja: ${dignityData.type || 'Zodiakalna'}
-            </h4>
-            <p style="font-size:0.86rem; line-height:1.6; color:rgba(250,248,245,0.85); margin:0 0 0.6rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; margin-bottom:0.55rem; flex-wrap:wrap;">
+              <h4 style="font-family:'Playfair Display', serif; font-size:1.2rem; color:#FAF8F5; margin:0;">
+                Kondycja: ${dignityData.type || 'Zodiakalna'}
+              </h4>
+              ${condInfoPill}
+            </div>
+            <p style="font-size:0.86rem; line-height:1.62; color:rgba(250,248,245,0.85); margin:0 0 0.75rem;">
               ${dignityData.meaning || ''}
             </p>
-            <p style="font-size:0.82rem; color:#FB7185; margin:0 0 0.85rem;">
-              <strong>Ryzyko cienia:</strong> ${dignityData.risk || ''}
-            </p>
+            <div style="padding:0.72rem 0.9rem; background:rgba(251,113,133,0.06); border:1px solid rgba(251,113,133,0.22); border-radius:8px; font-size:0.82rem; line-height:1.55; color:#FECDD3; margin-bottom:0.8rem;">
+              <strong style="color:#FB7185;">Ryzyko:</strong> ${dignityData.risk || ''}
+            </div>
+            ${sectObj ? `
+              <div style="padding:0.8rem 0.9rem; background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.07); border-radius:8px; margin-bottom:0.75rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:0.4rem; margin-bottom:0.35rem; flex-wrap:wrap;">
+                  <span style="font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:#C9A96E; font-weight:700; text-transform:uppercase;">${sectObj.label}</span>
+                  ${sectInfoPill}
+                </div>
+                <p style="font-size:0.83rem; line-height:1.58; color:rgba(250,248,245,0.86); margin:0;">${sectObj.text}</p>
+              </div>
+            ` : ''}
+            ${retroObj ? `
+              <div style="padding:0.8rem 0.9rem; background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.07); border-radius:8px; margin-bottom:0.75rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:0.4rem; margin-bottom:0.35rem; flex-wrap:wrap;">
+                  <span style="font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:#E5CC7C; font-weight:700; text-transform:uppercase;">${retroObj.title} • ${retroObj.status}</span>
+                  ${retroInfoPill}
+                </div>
+                <p style="font-size:0.83rem; line-height:1.58; color:rgba(250,248,245,0.86); margin:0;">${retroObj.explanation}</p>
+              </div>
+            ` : ''}
             ${dispInfo ? `
-              <div style="margin-top:0.85rem; padding:0.85rem; background:rgba(201,169,110,0.06); border:1px solid rgba(201,169,110,0.22); border-radius:8px;">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem; flex-wrap:wrap; gap:0.3rem;">
-                  <span style="font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:#C9A96E; font-weight:700; text-transform:uppercase;">
-                    Dyspozytor Saturna • ${dispInfo.isSelfRuled ? 'Władca Ostateczny' : 'Planeta Zarządzająca'}
+              <div style="padding:0.85rem 0.9rem; background:rgba(201,169,110,0.06); border:1px solid rgba(201,169,110,0.22); border-radius:8px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.45rem; flex-wrap:wrap; gap:0.35rem;">
+                  <span style="font-family:'JetBrains Mono', monospace; font-size:0.72rem; color:#C9A96E; font-weight:700; text-transform:uppercase; display:inline-flex; align-items:center; gap:0.4rem;">
+                    <span>Dyspozytor Saturna • ${dispInfo.isSelfRuled ? 'Władca Ostateczny' : 'Planeta Zarządzająca'}</span>
+                    ${dispInfoPill}
                   </span>
                   <span style="font-family:'JetBrains Mono', monospace; font-size:0.75rem; color:#60A5FA; font-weight:700;">
-                    ${dispInfo.glyph} ${dispInfo.name} w ${dispInfo.signLocative || dispInfo.signName} (${dispInfo.degreeInSign}) • ${dispInfo.house}. Dom (Placidus)
+                    ${dispInfo.glyph} ${dispInfo.name} w ${dispInfo.signLocative || dispInfo.signName} (${dispInfo.degreeInSign})${hasTime ? ` • ${dispInfo.house}. Dom` : ''}
                   </span>
                 </div>
                 <p style="font-size:0.84rem; line-height:1.55; color:rgba(250,248,245,0.9); margin:0 0 0.45rem;">
@@ -282,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   <span style="font-size:0.78rem; color:rgba(250,248,245,0.7);">
                     Hierarchia władzy psychiki:
                   </span>
-                  <a href="/kalkulator-dyspozytorow/?date=${encodeURIComponent(dateStr)}&time=${encodeURIComponent(timeStr)}&city=${encodeURIComponent(cityStr)}" class="sat-disp-cta" style="display:inline-flex; align-items:center; gap:0.4rem; color:#C9A96E; font-size:0.78rem; font-weight:700; text-decoration:none; padding:0.35rem 0.75rem; background:rgba(201,169,110,0.1); border:1px solid rgba(201,169,110,0.3); border-radius:9999px; transition:all 0.2s ease;">
+                  <a href="/kalkulator-dyspozytorow/?date=${encodeURIComponent(dateStr)}&time=${encodeURIComponent(rawTimeStr)}&city=${encodeURIComponent(cityStr)}" class="sat-disp-cta" style="display:inline-flex; align-items:center; gap:0.4rem; color:#C9A96E; font-size:0.78rem; font-weight:700; text-decoration:none; padding:0.35rem 0.75rem; background:rgba(201,169,110,0.1); border:1px solid rgba(201,169,110,0.3); border-radius:9999px; transition:all 0.2s ease;">
                     <span>Zbadaj Drzewo Dyspozytorów</span>
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </a>
@@ -297,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ${aspectsHtml}
 
       <!-- 4. PROTOKÓŁ PRZETRWANIA POWROTU SATURNA (CURIOSITY GAP & DIRECT CHECKOUT 47 PLN) -->
-      ${window.SaturnRenderProtocol ? window.SaturnRenderProtocol.renderChronosProtocol(satPlanet, signData, houseData, dignityData, dispInfo, passes, isSaturnUnlocked()) : ''}
+      ${window.SaturnRenderProtocol ? window.SaturnRenderProtocol.renderChronosProtocol(satPlanet, signData, houseData, dignityData, dispInfo, passes, isSaturnUnlocked(), satCtx) : ''}
 
       <!-- Konsultacja VIP High-Ticket -->
       <div style="margin-top:1.5rem; text-align:center;">
@@ -307,7 +359,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
     `;
 
-    lastCalculatedData = { satPlanet, signData, houseData, dignityData, dispInfo, passes };
+    lastCalculatedData = { satPlanet, signData, houseData, dignityData, dispInfo, passes, satCtx };
     resultsContainer.style.display = 'block';
     bindProtocolEvents();
 
@@ -345,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function () {
           if (justUnlocked) {
             sessionStorage.removeItem('neo_just_unlocked');
             setTimeout(() => {
-              const proto = document.getElementById('saturnProtocolSection') || resultsContainer;
+              const proto = document.getElementById('chronos-protocol-report') || resultsContainer;
               if (proto) proto.scrollIntoView({ behavior: 'auto', block: 'start' });
             }, 80);
           }

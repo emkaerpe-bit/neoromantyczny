@@ -1,6 +1,6 @@
 /**
  * NEOROMANTYCZNY — SATURN DISPOSITOR ENGINE & SYNTHESIS
- * Wyznaczanie władcy znaku Saturna, jego lokalizacji (Placidus) i roli w powrocie Saturna
+ * Wyznaczanie władcy znaku Saturna, jego godności oraz osobnych warstw Free vs Paid
  */
 (function () {
   const TRAD_RULERS = {
@@ -16,38 +16,45 @@
   const RULER_THEMES = {
     mars: {
       power: 'Ostrze Woli i Odwaga Własnych Granic',
-      lesson: 'Twoja wytrzymałość wyrasta ze zdecydowania Marsa. Zamiast tłumić złość lub działać w pośpiechu, przekuwasz energię w spokojną, precyzyjną asertywność.',
-      actionTip: 'Rozstrzygnij stare spory, nazwij głośno swoje granice i skieruj inicjatywę w czyn w domu, w którym mieszka Twój Mars.'
+      lesson: 'Twoja wytrzymałość wyrasta ze zdecydowania Marsa: zamiast tłumić złość lub działać w pośpiechu, przekuwasz impet w spokojną, precyzyjną asertywność.',
+      actionTip: 'Nazwij głośno własne granice i skieruj inicjatywę w czyn w obszarze swojego Marsa.',
+      deepProtocol: 'W kryzysie nie walcz z objawami zmęczenia samą siłą woli. Zidentyfikuj jeden zadawniony konflikt, w którym unikasz konfrontacji, i zamknij go rzeczową rozmową w ciągu siedmiu dni.'
     },
     venus: {
-      power: 'Wartość Własna, Bliskość i Zaufanie do Piękna',
-      lesson: 'Twoja dorosłość dojrzewa poprzez uczciwą wymianę, zdrowe poczucie estetyki oraz przywiązanie wolne od lęku przed odrzuceniem.',
-      actionTip: 'Przejrzyj zawarte po cichu kompromisy, umowy finansowe i wierność sobie w domu zajmowanym przez Twoją Wenus.'
+      power: 'Wartość Własna, Bliskość i Zaufanie',
+      lesson: 'Dorosłość dojrzewa tu poprzez uczciwą wymianę, wyczucie proporcji oraz więzi wolne od lęku przed odrzuceniem.',
+      actionTip: 'Przejrzyj ciche ustępstwa, stawki finansowe i wierność sobie w sektorze Wenus.',
+      deepProtocol: 'Każde niedopowiedzenie o pieniądzach albo wzajemności podcina stabilność Saturna. Sprawdź, gdzie zgadzasz się na zaniżoną wycenę czasu, i wyrównaj warunki przed kolejnym krokiem.'
     },
     mercury: {
       power: 'Rzemiosło Słowa i Czystość Myśli',
-      lesson: 'Saturn wymaga tu trzeźwych faktów, rzetelnych notatek i rozmowy bez krętactwa. Jedno dane przez Ciebie słowo powinno ważyć więcej niż sterta papierów.',
-      actionTip: 'Zamknij rozgrzebane sprawy na biurku, przeczytaj drobny druk w umowach i wycisz szum informacyjny w domu Twojego Merkurego.'
+      lesson: 'Saturn wymaga trzeźwych faktów, uporządkowanych notatek i rozmów bez uników. Jedna obietnica powinna ważyć więcej niż stos deklaracji.',
+      actionTip: 'Zamknij rozgrzebane sprawy na biurku i wycisz szum informacyjny w sektorze Merkurego.',
+      deepProtocol: 'Kiedy pojawia się chaos decyzyjny, przestań szukać kolejnej opinii z zewnątrz. Wypisz na jednej kartce fakty, terminy i koszty, a potem podejmij najprostszą wykonalną decyzję.'
     },
     moon: {
       power: 'Pamięć Domu i Emocjonalne Oparcie',
-      lesson: 'Stabilna dorosłość zaczyna się od pojednania z własną wrażliwością oraz wyjścia spod wpływu dawnych rodzinnych lęków.',
-      actionTip: 'Zadbaj o prywatną przestrzeń, spokój codzienności i równowagę emocjonalną tam, gdzie w horoskopie pracuje Twój Księżyc.'
+      lesson: 'Trwała dorosłość zaczyna się od uszanowania własnej wrażliwości oraz wyjścia spod presji dawnych rodzinnych lęków.',
+      actionTip: 'Zadbaj o prywatną przystań, sen i równowagę emocjonalną w sektorze swojego Księżyca.',
+      deepProtocol: 'Przeciążenie Saturna najpierw uderza w poczucie bezpieczeństwa i regenerację. Zanim podejmiesz ważny krok zawodowy, ustabilizuj rytm posiłków, ciszy wieczornej oraz granic w mieszkaniu.'
     },
     sun: {
       power: 'Cicha Godność i Odwaga Stania w Świetle',
-      lesson: 'Twój kręgosłup wyrasta ze świadomego szacunku do własnego nazwiska. Czas przestać chować głowę w cieniu zespołu i czekać na pozwolenie innych.',
-      actionTip: 'Weź pełny ciężar swojej drogi na własne barki i przestań zmniejszać się dla cudzej wygody w domu Twojego Słońca.'
+      lesson: 'Kręgosłup wyrasta ze świadomego szacunku do własnego imienia: pora wyjść z cienia zespołu i przestać czekać na cudze pozwolenie.',
+      actionTip: 'Weź odpowiedzialność za kierunek drogi i nie zmniejszaj siebie dla cudzej wygody w sektorze Słońca.',
+      deepProtocol: 'Odblokowanie Saturna następuje w chwili, gdy podpisujesz dzieło własnym nazwiskiem zamiast ukrywać się za rolą pomocnika. Wyznacz jeden widoczny cel i broń go konsekwentnie.'
     },
     jupiter: {
       power: 'Kierunek Sumienia i Długi Oddech',
-      lesson: 'Bez głębszego sensu zwykła dyscyplina szybko zamienia się w nużący obowiązek. Wybierz prawdę, za którą pójdziesz konsekwentnie w zwykłe robocze poranki.',
-      actionTip: 'Sprawdź, czy codzienna praca zgadza się z tym, w co naprawdę wierzysz, w sektorze rządzonym przez Twojego Jowisza.'
+      lesson: 'Bez głębszego sensu surowa dyscyplina szybko zamienia się w ciężki obowiązek. Wybierz kierunek, za którym pójdziesz spokojnie w zwykłe robocze dni.',
+      actionTip: 'Sprawdź, czy codzienne zajęcia zgadzają się z Twoimi przekonaniami w sektorze Jowisza.',
+      deepProtocol: 'Kiedy rośnie zwątpienie, nie dokładaj sobie samych zakazów — odśwież szerszy cel na kolejną dekadę i odetnij projekty niezgodne z Twoją etyką pracy.'
     },
     saturn: {
       power: 'Władca Ostateczny (Samodzielny Standard)',
-      lesson: 'Twój Saturn rządzi samym sobą i nikomu nie składa pustych meldunków. Masz w sobie surowy zegar sumienia oraz wrodzony zmysł długiej gry.',
-      actionTip: 'Przestań szukać zewnętrznego sędziego dla swoich wyborów — to Ty jesteś ostateczną instancją, przed którą zatwierdzasz własne decyzje.'
+      lesson: 'Twój Saturn włada własnym znakiem i nikomu nie składa pustych meldunków: posiadasz surowy zegar sumienia oraz wrodzony zmysł długiej gry.',
+      actionTip: 'Przestań szukać zewnętrznego sędziego dla swoich decyzji — zatwierdzasz je samodzielnie.',
+      deepProtocol: 'Brak zewnętrznego dyspozytora oznacza pełną odpowiedzialność bez wymówek. Zastąp surowego krytyka spokojnym planem kwartału i mierz postęp wyłącznie realnym rezultatem.'
     }
   };
 
@@ -57,7 +64,6 @@
     const isSelfRuled = (satPlanet.signKey === 'Capricorn' || satPlanet.signKey === 'Aquarius');
     const rulerPlanet = planets.find(p => p.key === rulerKey) || satPlanet;
 
-    // Dom Placidusa dla dyspozytora
     let rulerHouse = rulerPlanet.house || 1;
     if (window.SaturnPlacidus && cusps) {
       rulerHouse = window.SaturnPlacidus.getPlanetHousePlacidus(rulerPlanet.longitude, cusps, lat, cusps.armc, cusps.eps);
@@ -65,29 +71,16 @@
     }
 
     const theme = RULER_THEMES[rulerKey] || RULER_THEMES.saturn;
-    const signLoc = SIGN_LOCATIVE[rulerPlanet.signKey] || rulerPlanet.signName;
-    const satSignLoc = SIGN_LOCATIVE[satPlanet.signKey] || satPlanet.signName;
-
     return {
-      rulerKey,
-      isSelfRuled,
-      name: rulerPlanet.name,
-      glyph: rulerPlanet.glyph,
-      signKey: rulerPlanet.signKey,
-      signName: rulerPlanet.signName,
-      signLocative: signLoc,
-      satSignLocative: satSignLoc,
+      rulerKey, isSelfRuled, name: rulerPlanet.name, glyph: rulerPlanet.glyph,
+      signKey: rulerPlanet.signKey, signName: rulerPlanet.signName,
+      signLocative: SIGN_LOCATIVE[rulerPlanet.signKey] || rulerPlanet.signName,
+      satSignLocative: SIGN_LOCATIVE[satPlanet.signKey] || satPlanet.signName,
       degreeInSign: rulerPlanet.degreeInSign || `${rulerPlanet.deg || 0}°`,
-      house: rulerHouse,
-      isRetrograde: Boolean(rulerPlanet.isRetrograde),
-      power: theme.power,
-      lesson: theme.lesson,
-      actionTip: theme.actionTip
+      house: rulerHouse, isRetrograde: Boolean(rulerPlanet.isRetrograde),
+      power: theme.power, lesson: theme.lesson, actionTip: theme.actionTip, deepProtocol: theme.deepProtocol
     };
   }
 
-  window.SaturnDispositor = {
-    getSaturnDispositorInfo,
-    SIGN_LOCATIVE
-  };
+  window.SaturnDispositor = { getSaturnDispositorInfo, SIGN_LOCATIVE };
 })();

@@ -79,7 +79,7 @@
   }
 
   function findSaturnReturns(birthDate, natalLon, cycleNum = 1) {
-    const cycleYears = cycleNum === 2 ? 58.9 : 29.45;
+    const cycleYears = cycleNum === 3 ? 88.35 : (cycleNum === 2 ? 58.9 : 29.45);
     const centerTime = birthDate.getTime() + cycleYears * 365.25 * 86400000;
     const windowDays = 480; // +/- 240 days around center
     const startTime = centerTime - windowDays * 86400000;
@@ -131,6 +131,11 @@
       }
       prevT = t;
       prevDiff = curDiff;
+    }
+
+    if (hits.length === 1 && !hits[0].isRetro) {
+      hits[0].type = 'Pojedyncze Przejście Bezpośrednie (Ruch Prosty)';
+      hits[0].isSinglePass = true;
     }
 
     return hits;

@@ -1,101 +1,83 @@
 (function () {
   window.SATURN_ASPECTS_PART2 = {
     uranus: {
-      name: 'Uran',
-      genitive: 'z Uranem',
-      glyph: '♅',
-      color: '#26C6DA',
+      name: 'Uran', genitive: 'z Uranem', glyph: '♅', color: '#26C6DA',
       hard: {
-        text: 'Silne tarcie między pragnieniem całkowitej niezależności a poczuciem obowiązku wobec struktur, w których żyjesz. Kiedy zasady stają się zbyt ciasne, pojawia się pokusa gwałtownego zerwania więzi lub odejścia z pracy z dnia na dzień.',
-        integration: 'Modernizujesz swoje życie i zawód w zaplanowanych etapach, zachowując pełną autonomię umysłu bez niszczenia wypracowanego dorobku.'
+        text: 'Ostre napięcie między potrzebą pełnej wolności a poczuciem obowiązku wobec struktur, w których funkcjonujesz. Gdy zasady robią się zbyt ciasne, kusi nagłe zerwanie więzi albo odejście z dnia na dzień.',
+        tightBoost: 'Ścisły orb ostrzega przed impulsywnym paleniem mostów: reformuj zasady etapami, zamiast niszczyć wypracowaną bazę.',
+        integration: 'Unowocześniasz tryb życia i pracy w przemyślanych krokach, zachowując niezależność myśli przy zachowaniu ciągłości dorobku.'
       },
       soft: {
-        text: 'Rzadki talent do przekuwania śmiałych, oryginalnych pomysłów w sprawnie działające systemy i rentowne projekty zawodowe.',
-        integration: 'Wprowadzasz mądre innowacje w codziennej rutynie i potrafisz łączyć wizjonerstwo z żelazną odpowiedzialnością za wykonanie.'
+        text: 'Rzadki talent do przekładania śmiałych, nietypowych pomysłów na sprawnie działające systemy i opłacalne projekty.',
+        integration: 'Wprowadzasz mądre ulepszenia w codziennej rutynie i łączysz wizjonerstwo z żelazną odpowiedzialnością za wykonanie.'
       }
     },
     neptune: {
-      name: 'Neptun',
-      genitive: 'z Neptunem',
-      glyph: '♆',
-      color: '#42A5F5',
+      name: 'Neptun', genitive: 'z Neptunem', glyph: '♆', color: '#42A5F5',
       hard: {
-        text: 'Okresowe mgły zwątpienia, rozmycie granic w bliskich relacjach oraz pokusa odsuwania trudnych spraw formalnych na bliżej nieokreślone później.',
-        integration: 'Uczysz się spisywać ustalenia na papierze i wprowadzać proste codzienne rutyny, które zakotwiczają Twoją wrażliwość w konkretnych faktach.'
+        text: 'Okresowe mgły zwątpienia, rozmycie granic w bliskich więziach oraz pokusa odsuwania trudnych spraw formalnych na bliżej nieokreślone później.',
+        tightBoost: 'Mały orb wymaga twardej kontroli faktów: spisuj każde ustalenie i sprawdzaj liczby dwa razy przed podpisem.',
+        integration: 'Wprowadzasz proste codzienne rutyny i jasne notatki, które zakotwiczają wrażliwość w sprawdzalnych realiach.'
       },
       soft: {
-        text: 'Spokojna intuicja wsparta trzeźwym zmysłem organizacyjnym: widzisz subtelne nastroje ludzi, jednocześnie twardo pilnując terminów i budżetu.',
-        integration: 'Twoja empatia przybiera formę mądrej, namacalnej pomocy, która nie prowadzi do wypalenia ani finansowej naiwności.'
+        text: 'Spokojna intuicja wsparta zmysłem organizacyjnym: wyczuwasz ukryte intencje ludzi, jednocześnie pilnując terminów i budżetu.',
+        integration: 'Empatia przybiera tu formę konkretnej, skutecznej pomocy bez finansowej naiwności ani wyczerpania.'
       }
     },
     pluto: {
-      name: 'Pluton',
-      genitive: 'z Plutonem',
-      glyph: '♇',
-      color: '#BA68C8',
+      name: 'Pluton', genitive: 'z Plutonem', glyph: '♇', color: '#BA68C8',
       hard: {
-        text: 'Głęboka niechęć do oddania komukolwiek kontroli nad sytuacją, połączona z lękiem przed bezradnością w kryzysowych momentach życia.',
-        integration: 'Zamiast walczyć o dominację z otoczeniem, budujesz autentyczną odporność psychiczną i odwagę do zaczynania czystego etapu po trudnym rozstaniu.'
+        text: 'Głęboki opór przed oddaniem komukolwiek sterów nad sytuacją, połączony z lękiem przed bezradnością w chwilach przełomu.',
+        tightBoost: 'Ścisły kontakt potrafi zamienić drobny spór w walkę o przetrwanie — sprawdź, czy zagrożenie naprawdę jest tak duże.',
+        integration: 'Zamiast walczyć o dominację z otoczeniem, budujesz cichą odporność i odwagę do zaczynania od nowa po zamkniętym rozdziale.'
       },
       soft: {
-        text: 'Ogromna siła regeneracji po życiowych zmianach i zdolność prowadzenia wieloletnich projektów wymagających absolutnej dyskrecji oraz stalowych nerwów.',
-        integration: 'Spokojnie przejmujesz dowodzenie w sytuacjach, gdy inni tracą głowę, wyprowadzając sprawy ze ślepego zaułka.'
+        text: 'Wysoka zdolność regeneracji po życiowych zmianach oraz nerwy ze stali przy prowadzeniu wieloletnich spraw wymagających dyskrecji.',
+        integration: 'Spokojnie przejmujesz dowodzenie w chwilach, gdy inni tracą rezon, wyprowadzając trudne sprawy na prostą.'
       }
     },
     chiron: {
-      name: 'Chiron',
-      genitive: 'z Chironem',
-      glyph: '⚷',
-      color: '#B8A456',
+      name: 'Chiron', genitive: 'z Chironem', glyph: '⚷', color: '#B8A456',
       hard: {
-        text: 'Stara rana związana z poczuciem niedopasowania lub bycia ocenionym zbyt surowo w chwilach słabości. Wymagasz od siebie stuprocentowej doskonałości, żeby nikt nigdy więcej nie wytknął Ci błędu.',
-        integration: 'Akceptujesz własne ograniczenia jak normalny element ludzkiej drogi i przekształcasz swoje dawne trudności w trzeźwą empatię wobec innych.'
+        text: 'Dawne poczucie niedopasowania lub bycia ocenionym zbyt surowo w chwili słabości. Wymagasz od siebie stuprocentowej doskonałości, żeby nikt więcej nie wytknął błędu.',
+        integration: 'Akceptujesz własne granice jako naturalną część ludzkiej drogi i przekształcasz dawne trudności w trzeźwą empatię.'
       },
       soft: {
-        text: 'Naturalny dar mentora, który sam przeszedł trudną lekcję dyscypliny i potrafi wspierać innych rzeczową radą bez wywyższania się.',
-        integration: 'Twoje doświadczenia układają się w spokojną mądrość praktyka, przy którym ludzie czują się bezpiecznie i traktowani poważnie.'
+        text: 'Dar mentora, który przeszedł własną lekcję dyscypliny i potrafi wspierać otoczenie rzeczową wskazówką bez wywyższania się.',
+        integration: 'Doświadczenie układa się w spokojną mądrość praktyka, przy którym ludzie czują się traktowani poważnie.'
       }
     },
     node: {
-      name: 'Węzeł Północny',
-      genitive: 'z Węzłem Księżycowym',
-      glyph: '☊',
-      color: '#7986CB',
+      name: 'Węzeł Północny', genitive: 'z Węzłem Księżycowym', glyph: '☊', color: '#7986CB',
       hard: {
-        text: 'Poczucie spóźnienia względem rówieśników albo wrażenie, że każda droga zawodowa wymaga podjęcia niewygodnej odpowiedzialności, zanim zaczniesz czuć się pewnie.',
-        integration: 'Odkrywasz, że dojrzałość w tym obszarze przychodzi właśnie przez podjęcie odważnej, długofalowej roli w społeczeństwie mimo początkowych obaw.'
+        text: 'Wrażenie spóźnienia wobec rówieśników albo odczucie, że każdy krok zawodowy wymaga podjęcia ciężaru odpowiedzialności przed nabraniem pewności.',
+        integration: 'Dojrzałość przychodzi przez wejście w odważną, długofalową rolę publiczną pomimo początkowych wahań.'
       },
       soft: {
-        text: 'Płynne zgranie osobistych wyborów z dojrzałym kierunkiem życiowym — we właściwym momencie trafiają do Ciebie ludzie gotowi do uczciwej współpracy.',
-        integration: 'Budujesz swoją przyszłość na solidnych decyzjach, które z każdym rokiem wzmacniają Twoje poczucie sensu.'
+        text: 'Naturalne zgranie osobistych wyborów z dojrzałym kierunkiem rozwoju — we właściwym momencie pojawiają się rzetelni sojusznicy.',
+        integration: 'Układasz przyszłość na solidnych decyzjach, które z każdym rokiem wzmacniają poczucie sensu.'
       }
     },
     lilith: {
-      name: 'Czarny Księżyc (Lilith)',
-      genitive: 'z Lilith',
-      glyph: '⚸',
-      color: '#E57373',
+      name: 'Czarny Księżyc (Lilith)', genitive: 'z Lilith', glyph: '⚸', color: '#E57373',
       hard: {
-        text: 'Tłumiona złość za lata dostosowywania się do grzecznych oczekiwań otoczenia oraz silny bunt wobec jakichkolwiek prób narzucania Ci cudzych reguł.',
-        integration: 'Odzyskujesz swój dziki, autentyczny głos i wypowiadasz własne „nie” w kulturalny, lecz całkowicie nieprzekupny sposób.'
+        text: 'Tłumiona złość za lata dopasowywania się do grzecznych oczekiwań otoczenia oraz silny bunt wobec wszelkich prób narzucania Ci obcych reguł.',
+        integration: 'Odzyskujesz autentyczny głos i wypowiadasz własne „nie” w kulturalny, lecz całkowicie nieprzekupny sposób.'
       },
       soft: {
-        text: 'Magnetyczny spokój osoby, która zna swoją ciemniejszą stronę, w związku z czym nikt nie potrafi zaszantażować jej poczuciem winy.',
-        integration: 'Łączysz trzeźwą samodyscyplinę z wiernością własnym pragnieniom bez zbędnego buntu na pokaz.'
+        text: 'Spokojna pewność osoby znającej swoją ciemniejszą stronę, dzięki czemu nikt nie potrafi zaszantażować jej poczuciem winy.',
+        integration: 'Łączysz samodyscyplinę z wiernością własnym pragnieniom bez zbędnej demonstracji buntu.'
       }
     },
     fortune: {
-      name: 'Punkt Szczęścia',
-      genitive: 'z Punktem Szczęścia',
-      glyph: '⊗',
-      color: '#81C784',
+      name: 'Punkt Szczęścia', genitive: 'z Punktem Szczęścia', glyph: '⊗', color: '#81C784',
       hard: {
-        text: 'Przekonanie, że nic wartościowego nie przychodzi lekko, a każdy sukces trzeba wywalczyć nadludzkim wysiłkiem ponad miarę sił.',
-        integration: 'Twoja wytrwałość owocuje trwałym dorobkiem materialnym i wewnętrznym spokojem — tego, co wypracowałeś samodzielnie, żadne wahanie nastrojów Ci nie odbierze.'
+        text: 'Przekonanie, że nic trwałego nie przychodzi lekko, a każdy rezultat trzeba wyszarpać wysiłkiem ponad miarę sił.',
+        integration: 'Wytrwałość przynosi wymierny dorobek oraz spokój: tego, co powstaje Twoją ręką, chwilowe wahania nastroju nie zabiorą.'
       },
       soft: {
-        text: 'Stabilne powodzenie płynące z uczciwej miary, wierności sobie oraz mądrego zarządzania własnymi talentami w dłuższym horyzoncie czasu.',
-        integration: 'Dobrobyt i satysfakcja układają się dokładnie w tym samym rytmie, w jakim dbasz o ład w swoich codziennych sprawach.'
+        text: 'Stabilne powodzenie płynące z uczciwej miary, wierności sobie i rozsądnego gospodarowania talentami w długim horyzoncie.',
+        integration: 'Satysfakcja i owoce pracy układają się dokładnie w takim tempie, w jakim dbasz o ład codziennych spraw.'
       }
     }
   };
