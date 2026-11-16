@@ -1479,16 +1479,30 @@
           });
 
           if (error) {
-            stripeErrorBox.innerHTML = `⚠️ ${error.message}`;
+            stripeErrorBox.textContent = `⚠️ ${error.message}`;
             stripeSubmitBtn.disabled = false;
             stripeSubmitBtn.innerHTML = '<span>Zapłać 39,00 PLN i Odblokuj Raport &rarr;</span>';
-          } else if (paymentIntent && (paymentIntent.status === 'succeeded' || paymentIntent.status === 'processing')) {
+          } else if (paymentIntent && paymentIntent.status === 'succeeded') {
+            const verifyUrl = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+              ? '/api/verify-payment'
+              : '/.netlify/functions/verify-payment';
+            const vRes = await fetch(verifyUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ paymentIntentId: paymentIntent.id, product: 'synastria' })
+            });
+            const vData = await vRes.json();
+            if (!vRes.ok || !vData.verified) {
+              throw new Error(vData.error || 'Płatność nie została jeszcze potwierdzona przez Stripe.');
+            }
             try { localStorage.setItem('neo_synastry_unlocked', 'true'); } catch (e) {}
             closeStripeModal();
             performUnlock(false);
+          } else if (paymentIntent && paymentIntent.status === 'processing') {
+            stripeErrorBox.textContent = '⏳ Płatność jest w trakcie przetwarzania przez bank. Odśwież stronę za chwilę.';
           }
         } catch (e) {
-          stripeErrorBox.innerHTML = `⚠️ Błąd połączenia: ${e.message}`;
+          stripeErrorBox.textContent = `⚠️ Błąd połączenia: ${e.message}`;
           stripeSubmitBtn.disabled = false;
           stripeSubmitBtn.innerHTML = '<span>Zapłać 39,00 PLN i Odblokuj Raport &rarr;</span>';
         }
@@ -1559,7 +1573,7 @@
     }
 
     const triggerPrint = () => {
-      isReportUnlocked = true;
+      if (!isReportUnlocked) return;
       closeLossModal();
       if (section) section.classList.add('is-unlocked');
       window.print();

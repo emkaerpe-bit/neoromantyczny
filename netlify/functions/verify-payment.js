@@ -11,24 +11,33 @@ const EXPECTED_AMOUNTS = {
   chiron: 2900
 };
 
-const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'Content-Type',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Content-Type': 'application/json; charset=utf-8'
-};
+function getCorsHeaders(event) {
+  const origin = (event && event.headers && (event.headers.origin || event.headers.Origin)) || '';
+  const allowOrigin = /^https:\/\/(www\.)?neoromantyczny\.pl$/.test(origin) || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)
+    ? origin
+    : 'https://neoromantyczny.pl';
+  return {
+    'Access-Control-Allow-Origin': allowOrigin,
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Vary': 'Origin',
+    'Content-Type': 'application/json; charset=utf-8'
+  };
+}
 
-function respond(statusCode, payload) {
-  return { statusCode, headers: CORS_HEADERS, body: JSON.stringify(payload) };
+function respond(headers, statusCode, payload) {
+  return { statusCode, headers, body: JSON.stringify(payload) };
 }
 
 export async function handler(event) {
+  const headers = getCorsHeaders(event);
+
   if (event.httpMethod === 'OPTIONS') {
-    return { statusCode: 200, headers: CORS_HEADERS, body: '' };
+    return { statusCode: 200, headers, body: '' };
   }
 
   if (!STRIPE_SECRET_KEY) {
-    return respond(500, { verified: false, error: 'Brak konfiguracji STRIPE_SECRET_KEY na serwerze.' });
+    return respond(headers, 500, { verified: false, error: 'Brak konfiguracji STRIPE_SECRET_KEY na serwerze.' });
   }
 
   let paymentIntentId = event.queryStringParameters?.payment_intent || '';
@@ -40,12 +49,17 @@ export async function handler(event) {
       paymentIntentId = body.paymentIntentId || body.payment_intent || paymentIntentId;
       productKey = body.product || productKey;
     } catch (_e) {
-      return respond(400, { verified: false, error: 'Nieprawidłowy format JSON.' });
+      return respond(headers, 400, { verified: false, error: 'Nieprawidłowy format JSON.' });
     }
   }
 
   if (!/^pi_[a-zA-Z0-9_]+$/.test(paymentIntentId)) {
-    return respond(400, { verified: false, error: 'Nieprawidłowy identyfikator płatności.' });
+    return respond(headers, 400, { verified: false, error: 'Nieprawidłowy identyfikator płatności.' });
+  }
+
+  const expectedAmount = EXPECTED_AMOUNTS[productKey];
+  if (!expectedAmount) {
+    return respond(headers, 400, { verified: false, error: 'Nieznany lub brakujący produkt.' });
   }
 
   return new Promise((resolve) => {
@@ -62,27 +76,28 @@ export async function handler(event) {
         try {
           const parsed = JSON.parse(body);
           if (res.statusCode < 200 || res.statusCode >= 300) {
-            return resolve(respond(res.statusCode, { verified: false, error: parsed.error?.message || 'Błąd Stripe API.' }));
+            return resolve(respond(headers, res.statusCode, { verified: false, error: parsed.error?.message || 'Błąd Stripe API.' }));
           }
 
-          const expectedAmount = EXPECTED_AMOUNTS[productKey];
-          const amountValid = !expectedAmount || (parsed.amount >= expectedAmount && parsed.currency === 'pln');
-          const verified = parsed.status === 'succeeded' && amountValid;
+          const metaProduct = parsed.metadata && parsed.metadata.product;
+          const productMatch = !metaProduct || metaProduct === productKey;
+          const amountValid = parsed.amount >= expectedAmount && parsed.currency === 'pln';
+          const verified = parsed.status === 'succeeded' && amountValid && productMatch;
 
-          return resolve(respond(verified ? 200 : 402, {
+          return resolve(respond(headers, verified ? 200 : 402, {
             verified,
             status: parsed.status,
             amount: parsed.amount,
             currency: parsed.currency,
-            product: productKey || null
+            product: productKey
           }));
         } catch (_e) {
-          return resolve(respond(500, { verified: false, error: 'Błąd przetwarzania odpowiedzi Stripe.' }));
+          return resolve(respond(headers, 500, { verified: false, error: 'Błąd przetwarzania odpowiedzi Stripe.' }));
         }
       });
     });
 
-    req.on('error', (err) => resolve(respond(500, { verified: false, error: err.message })));
+    req.on('error', (err) => resolve(respond(headers, 500, { verified: false, error: err.message })));
     req.end();
   });
 }

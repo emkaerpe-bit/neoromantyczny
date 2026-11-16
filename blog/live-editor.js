@@ -8,7 +8,8 @@
   var h1El = document.querySelector('header h1') || document.querySelector('h1');
   if (!slug || slug.indexOf('/') !== -1 || !articleEl) return;
 
-  var token = localStorage.getItem('neo_admin_token') || '';
+  localStorage.removeItem('neo_admin_token');
+  var isAuthed = false;
   var isEditing = false;
 
   var css = document.createElement('style');
@@ -44,10 +45,8 @@
     targets.forEach(function (el) {
       if (el.closest('[data-nosnippet]') || el.closest('#silos-relacje') || el.closest('.p-12')) return;
       if (enable) {
-        if (el.tagName === 'DETAILS' || el.closest('details')) {
-          var det = el.closest('details');
-          if (det) det.open = true;
-        }
+        var det = el.closest('details');
+        if (det) det.open = true;
         el.setAttribute('contenteditable', 'true');
         el.setAttribute('data-live-ed', 'true');
       } else {
@@ -80,7 +79,8 @@
     try {
       var res = await fetch('/api/live-cms', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-admin-token': token },
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
         body: JSON.stringify({ slug: slug, h1: h1El ? h1El.textContent.trim() : '', articleInnerHtml: clone.innerHTML })
       });
       var data = await res.json();
@@ -95,23 +95,24 @@
     if (!confirm('Przywrócić pierwotny statyczny tekst z repozytorium?')) return;
     setStatus('Przywracanie...', '#C9A84C');
     var res = await fetch('/api/live-cms?slug=' + encodeURIComponent(slug), {
-      method: 'DELETE', headers: { 'x-admin-token': token }
+      method: 'DELETE', credentials: 'same-origin'
     });
     if (res.ok) location.reload();
     else setStatus('Błąd przywracania', '#f87171');
   }
 
-  async function renderBar() {
-    if (!token) {
+  function renderBar() {
+    if (!isAuthed) {
       bar.innerHTML = '<span style="color:#C9A84C;font-weight:700">Live CMS</span><input id="nlb-pw" type="password" placeholder="Hasło admina"/><button id="nlb-login" class="nlb-gold">Odblokuj</button><span id="nlb-status"></span>';
       var pw = document.getElementById('nlb-pw');
       var doLogin = async function () {
-        var t = (pw.value || '').trim();
-        var r = await fetch('/api/live-cms', { headers: { 'x-admin-token': t } });
+        var r = await fetch('/api/live-cms/login', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin',
+          body: JSON.stringify({ password: (pw.value || '').trim() })
+        });
         if (!r.ok) { setStatus('Błędne hasło', '#f87171'); return; }
-        token = t; localStorage.setItem('neo_admin_token', t);
-        await renderBar();
-        toggleEditing(true);
+        isAuthed = true; localStorage.setItem('neo_cms_ui', '1');
+        renderBar(); toggleEditing(true);
       };
       document.getElementById('nlb-login').onclick = doLogin;
       pw.onkeydown = function (e) { if (e.key === 'Enter') doLogin(); };
@@ -127,11 +128,17 @@
     document.getElementById('nlb-edit').onclick = function () { toggleEditing(!isEditing); };
     document.getElementById('nlb-save').onclick = saveLive;
     document.getElementById('nlb-reset').onclick = resetLive;
-    document.getElementById('nlb-out').onclick = function () {
-      localStorage.removeItem('neo_admin_token'); toggleEditing(false); bar.remove();
+    document.getElementById('nlb-out').onclick = async function () {
+      await fetch('/api/live-cms/logout', { method: 'POST', credentials: 'same-origin' });
+      localStorage.removeItem('neo_cms_ui'); toggleEditing(false); bar.remove();
     };
     if (location.search.indexOf('edit=1') !== -1) toggleEditing(true);
   }
 
-  renderBar();
+  fetch('/api/live-cms', { credentials: 'same-origin' }).then(function (r) {
+    isAuthed = r.ok;
+    if (isAuthed) localStorage.setItem('neo_cms_ui', '1');
+    else localStorage.removeItem('neo_cms_ui');
+    renderBar();
+  }).catch(renderBar);
 })();

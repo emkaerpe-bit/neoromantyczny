@@ -11,46 +11,59 @@ const PRODUCTS = {
   'chiron': { amount: '2900', description: 'Klucz Chirona: Raport Pierwotnej Rany i Uzdrowienia' }
 };
 
+function getCorsHeaders(event) {
+  const origin = (event && event.headers && (event.headers.origin || event.headers.Origin)) || '';
+  const allowOrigin = /^https:\/\/(www\.)?neoromantyczny\.pl$/.test(origin) || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)
+    ? origin
+    : 'https://neoromantyczny.pl';
+  return {
+    'Access-Control-Allow-Origin': allowOrigin,
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Vary': 'Origin',
+    'Content-Type': 'application/json; charset=utf-8'
+  };
+}
+
 export async function handler(event, context) {
+  const corsHeaders = getCorsHeaders(event);
+
   if (event.httpMethod === 'OPTIONS') {
-    return {
-      statusCode: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS'
-      },
-      body: ''
-    };
+    return { statusCode: 200, headers: corsHeaders, body: '' };
   }
 
   if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: JSON.stringify({ error: 'Method Not Allowed' }) };
+    return { statusCode: 405, headers: corsHeaders, body: JSON.stringify({ error: 'Method Not Allowed' }) };
   }
 
   if (!STRIPE_SECRET_KEY) {
     return {
       statusCode: 500,
-      headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' },
+      headers: corsHeaders,
       body: JSON.stringify({ error: 'Brak konfiguracji STRIPE_SECRET_KEY w środowisku serwera Netlify.' })
     };
   }
 
-  return new Promise((resolve) => {
-    let productKey = 'synastria';
-    let pairInfo = '';
-    if (event.body) {
-      try {
-        const payload = JSON.parse(event.body);
-        if (payload.product && PRODUCTS[payload.product]) {
-          productKey = payload.product;
-        } else if (payload.pair) {
-          productKey = 'synastria';
-          pairInfo = ' dla pary ' + payload.pair;
+  let productKey = 'synastria';
+  let pairInfo = '';
+  if (event.body) {
+    try {
+      const payload = JSON.parse(event.body);
+      if (payload.product !== undefined) {
+        if (!PRODUCTS[payload.product]) {
+          return { statusCode: 400, headers: corsHeaders, body: JSON.stringify({ error: 'Nieznany produkt.' }) };
         }
-      } catch (e) {}
+        productKey = payload.product;
+      } else if (payload.pair) {
+        productKey = 'synastria';
+        pairInfo = ' dla pary ' + String(payload.pair).slice(0, 80);
+      }
+    } catch (e) {
+      return { statusCode: 400, headers: corsHeaders, body: JSON.stringify({ error: 'Nieprawidłowy format JSON.' }) };
     }
+  }
 
+  return new Promise((resolve) => {
     const prod = PRODUCTS[productKey] || PRODUCTS['synastria'];
     const description = prod.description + pairInfo;
 
@@ -58,7 +71,8 @@ export async function handler(event, context) {
       amount: prod.amount,
       currency: 'pln',
       'automatic_payment_methods[enabled]': 'true',
-      description: description
+      description: description,
+      'metadata[product]': productKey
     }).toString();
 
     const options = {
@@ -82,10 +96,7 @@ export async function handler(event, context) {
           if (res.statusCode >= 200 && res.statusCode < 300) {
             resolve({
               statusCode: 200,
-              headers: {
-                'Content-Type': 'application/json; charset=utf-8',
-                'Access-Control-Allow-Origin': '*'
-              },
+              headers: corsHeaders,
               body: JSON.stringify({
                 clientSecret: parsed.client_secret,
                 amount: parsed.amount,
@@ -96,14 +107,14 @@ export async function handler(event, context) {
           } else {
             resolve({
               statusCode: res.statusCode,
-              headers: { 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*' },
+              headers: corsHeaders,
               body: JSON.stringify({ error: parsed.error?.message || 'Błąd Stripe API' })
             });
           }
         } catch (e) {
           resolve({
             statusCode: 500,
-            headers: { 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*' },
+            headers: corsHeaders,
             body: JSON.stringify({ error: 'Błąd przetwarzania odpowiedzi Stripe.' })
           });
         }
@@ -113,7 +124,7 @@ export async function handler(event, context) {
     req.on('error', (err) => {
       resolve({
         statusCode: 500,
-        headers: { 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*' },
+        headers: corsHeaders,
         body: JSON.stringify({ error: err.message })
       });
     });

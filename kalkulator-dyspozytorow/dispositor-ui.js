@@ -113,7 +113,7 @@
 
       activeIdx = currentMatches.length ? 0 : -1;
       if (!currentMatches.length) {
-        dropdownEl.innerHTML = `<div class="disp-autocomplete-empty">Nie znaleziono miasta „${query}”. Wpisz ręcznie lub wybierz najbliższe większe miasto.</div>`;
+        dropdownEl.innerHTML = `<div class="disp-autocomplete-empty">Nie znaleziono miasta „${String(query || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}”. Wpisz ręcznie lub wybierz najbliższe większe miasto.</div>`;
         dropdownEl.classList.add('is-open');
         return;
       }

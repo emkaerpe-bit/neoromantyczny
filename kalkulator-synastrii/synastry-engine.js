@@ -365,6 +365,9 @@
   };
 
   function renderBiWheelSvg(chartA, chartB, aspects, nameA = 'Osoba A', nameB = 'Osoba B') {
+    const escSvg = (s) => String(s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const safeA = escSvg(nameA);
+    const safeB = escSvg(nameB);
     const cx = 160, cy = 160, rOuter = 138, rMid = 104, rInner = 74;
     const ZODIAC_SVG_PATHS = ["<path d=\"M 8.5 13.5 C 7.5 8.5, 14 7.5, 16 14.5 L 16 25 M 23.5 13.5 C 24.5 8.5, 18 7.5, 16 14.5\"/>","<circle cx=\"16\" cy=\"19\" r=\"5.2\"/><path d=\"M 8.5 9.5 C 10.5 14, 21.5 14, 23.5 9.5\"/>","<path d=\"M 8.5 9 C 12.5 11.2, 19.5 11.2, 23.5 9 M 8.5 23 C 12.5 20.8, 19.5 20.8, 23.5 23 M 12.8 10.3 L 12.8 21.7 M 19.2 10.3 L 19.2 21.7\"/>","<circle cx=\"10.2\" cy=\"13.5\" r=\"3.2\"/><circle cx=\"21.8\" cy=\"18.5\" r=\"3.2\"/><path d=\"M 7.5 11.7 C 11 7.6, 19.5 7.6, 25 11 M 24.5 20.3 C 21 24.4, 12.5 24.4, 7 21\"/>","<circle cx=\"10.5\" cy=\"18.5\" r=\"3\"/><path d=\"M 12.8 16.2 C 11.5 9.5, 19.5 7.5, 20.5 13.5 C 21.2 17.5, 18.5 22, 22 22.5 C 23.5 22.7, 24.5 21.5, 24.5 20.2\"/>","<path d=\"M 7.5 11.5 C 8.5 9.5, 10 9.5, 10 12 L 10 21 M 10 13 C 10 9.5, 14.2 9.5, 14.2 13 L 14.2 21 M 14.2 13 C 14.2 9.5, 18.4 9.5, 18.4 13 L 18.4 20.5 C 18.4 23.5, 21 24.5, 23 23 M 18.4 15 C 21.5 12.5, 24.5 14.5, 22.5 18.5 C 21 21, 17.5 22.5, 15.8 24\"/>","<path d=\"M 7.5 18.5 L 12.2 18.5 A 4.8 4.8 0 1 1 19.8 18.5 L 24.5 18.5 M 7.5 22.5 L 24.5 22.5\"/>","<path d=\"M 7.5 11.5 C 8.5 9.5, 10 9.5, 10 12 L 10 21 M 10 13 C 10 9.5, 14.2 9.5, 14.2 13 L 14.2 21 M 14.2 13 C 14.2 9.5, 18.4 9.5, 18.4 13 L 18.4 20 C 18.4 23, 21.5 23, 24 19.5 M 21.2 19.2 L 24.2 19.2 L 24.2 22.2\"/>","<path d=\"M 8.5 23.5 L 23.5 8.5 M 16.5 8.5 L 23.5 8.5 L 23.5 15.5 M 11.5 14.5 L 17.5 20.5\"/>","<path d=\"M 7.5 11.5 L 10 10 L 13.2 20.5 L 16.8 11.5 C 18 9, 21.5 9.5, 21.5 13.5 C 21.5 18, 24.2 21, 21 23.5 C 18.5 25, 16.2 23, 17.2 20.5 C 18.2 18.5, 21.5 18.8, 24 21\"/>","<path d=\"M 7.5 14.5 L 10.5 11.5 L 13.2 14.5 L 16 11.5 L 18.8 14.5 L 21.5 11.5 L 24.5 14.5 M 7.5 20.5 L 10.5 17.5 L 13.2 20.5 L 16 17.5 L 18.8 20.5 L 21.5 17.5 L 24.5 20.5\"/>","<path d=\"M 10 8.5 C 14.5 12.5, 14.5 19.5, 10 23.5 M 22 8.5 C 17.5 12.5, 17.5 19.5, 22 23.5 M 7.5 16 L 24.5 16\"/>"];
 
@@ -430,7 +433,7 @@
            data-type="aspect"
            data-name="${asp.name}"
            data-color="${asp.color}"
-           data-planets="${nameA} (${asp.pA.glyph} ${asp.pA.label}) &harr; ${nameB} (${asp.pB.glyph} ${asp.pB.label})"
+           data-planets="${safeA} (${asp.pA.glyph} ${asp.pA.label}) &harr; ${safeB} (${asp.pB.glyph} ${asp.pB.label})"
            data-meaning="${safeDesc}"
            data-cx="${midX}"
            data-cy="${midY}">
@@ -464,7 +467,7 @@
       dots += `
         <g class="syn-wheel-hit" tabindex="0" role="button"
            data-type="planet"
-           data-person="${nameA}"
+           data-person="${safeA}"
            data-role="Biel (Ty)"
            data-label="${def.label}"
            data-glyph="${p.g}"
@@ -503,7 +506,7 @@
       dots += `
         <g class="syn-wheel-hit" tabindex="0" role="button"
            data-type="planet"
-           data-person="${nameB}"
+           data-person="${safeB}"
            data-role="Złoto (Partner)"
            data-label="${def.label}"
            data-glyph="${p.g}"
@@ -733,7 +736,13 @@ function getMoonElementAndModality(signName) {
   return { el, mod };
 }
 
-function buildRelationalCollisionBridge(chartA, chartB, nameA, nameB, syn) {
+function escapeHtmlSyn(s) {
+  return String(s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function buildRelationalCollisionBridge(chartA, chartB, rawNameA, rawNameB, syn) {
+  const nameA = escapeHtmlSyn(rawNameA);
+  const nameB = escapeHtmlSyn(rawNameB);
   const mA = chartA && chartA.moon ? chartA.moon : { name: 'Baran' };
   const mB = chartB && chartB.moon ? chartB.moon : { name: 'Byk' };
   const infoA = getMoonElementAndModality(mA.name);
@@ -809,7 +818,9 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
   const jProfVenB  = (jData[venB.idx] && jData[venB.idx][isFemB ? 'f' : 'm']) || venB.profile[isFemB ? 'f' : 'm'];
   const jProfSunB  = (jData[sunB.idx] && jData[sunB.idx][isFemB ? 'f' : 'm']) || sunB.profile[isFemB ? 'f' : 'm'];
 
-  const loveTitleB = `Jak kocha ${nameB}?`;
+  const safeNameA = escapeHtmlSyn(nameA);
+  const safeNameB = escapeHtmlSyn(nameB);
+  const loveTitleB = `Jak kocha ${safeNameB}?`;
   const pronounGenB = isFemB ? 'jej' : 'jego';
   const pronounAccB = isFemB ? 'ją' : 'go';
   const sunNounB    = isFemB ? `Urodzeniowe Słońce partnerki` : `Urodzeniowe Słońce partnera`;
@@ -858,9 +869,9 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
     return `
       <div class="syn-key-aspect-card" style="border-left-color:${a.color};">
         <div class="syn-key-aspect-planets">
-          <span class="syn-ka-partner"><strong>${nameA}:</strong> <span class="syn-glyph">${a.pA.glyph}</span> ${a.pA.label}</span>
+          <span class="syn-ka-partner"><strong>${safeNameA}:</strong> <span class="syn-glyph">${a.pA.glyph}</span> ${a.pA.label}</span>
           <span class="syn-ka-arrow">&harr;</span>
-          <span class="syn-ka-partner"><strong>${nameB}:</strong> <span class="syn-glyph">${a.pB.glyph}</span> ${a.pB.label}</span>
+          <span class="syn-ka-partner"><strong>${safeNameB}:</strong> <span class="syn-glyph">${a.pB.glyph}</span> ${a.pB.label}</span>
         </div>
         <div class="syn-key-aspect-badge-wrap">
           <span class="syn-asp-badge" tabindex="0" style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:${a.color};">
@@ -902,9 +913,9 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
       <div class="syn-grid-2" style="align-items:center; margin-bottom:0;">
         <div>
           <div class="syn-card-tag">PODWÓJNE KOŁO SYNASTRYCZNE (BI-WHEEL)</div>
-          <h3 class="syn-card-heading" style="border:none;padding-bottom:0.2rem;margin-bottom:0.35rem;">${nameA} <span style="color:#C9A96E;">&times;</span> ${nameB}</h3>
+          <h3 class="syn-card-heading" style="border:none;padding-bottom:0.2rem;margin-bottom:0.35rem;">${safeNameA} <span style="color:#C9A96E;">&times;</span> ${safeNameB}</h3>
           <p style="font-size:0.8rem;color:rgba(250,248,245,0.62);margin-bottom:0.85rem;line-height:1.5;">
-            Biel: <strong>${nameA}</strong> (${cityInfoA}) • Złoto: <strong>${nameB}</strong> (${cityInfoB})
+            Biel: <strong>${safeNameA}</strong> (${cityInfoA}) • Złoto: <strong>${safeNameB}</strong> (${cityInfoB})
           </p>
           <div class="syn-wheel-container" id="syn-wheel-container">
             ${svgWheel}
@@ -966,7 +977,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
         
         <div style="margin-bottom:1.25rem;padding-bottom:1.15rem;border-bottom:1px solid rgba(255,255,255,0.06);">
           <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#C9A96E;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.45rem;">
-            <strong>${nameA}</strong> • Księżyc w znaku ${moonA.name} <span class="syn-glyph">${moonA.glyph}</span>, Mars w ${marA.name}
+            <strong>${safeNameA}</strong> • Księżyc w znaku ${moonA.name} <span class="syn-glyph">${moonA.glyph}</span>, Mars w ${marA.name}
           </div>
           <p style="font-size:0.92rem;line-height:1.7;color:rgba(250,248,245,0.88);margin:0;">
             ${jProfMoonA.conflict}
@@ -975,7 +986,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
 
         <div style="margin-bottom:1.25rem;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#C9A96E;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.45rem;">
-            <strong>${nameB}</strong> • Księżyc w znaku ${moonB.name} <span class="syn-glyph">${moonB.glyph}</span>, Mars w ${marB.name}
+            <strong>${safeNameB}</strong> • Księżyc w znaku ${moonB.name} <span class="syn-glyph">${moonB.glyph}</span>, Mars w ${marB.name}
           </div>
           <p style="font-size:0.92rem;line-height:1.7;color:rgba(250,248,245,0.88);margin:0;">
             ${jProfMoonB.conflict}
@@ -986,7 +997,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
 
         <div style="padding:0.95rem 1.15rem;background:rgba(201,169,110,0.06);border-left:3px solid #C9A96E;border-radius:0.75rem;margin-top:1.25rem;">
           <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#C9A96E;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.35rem;font-weight:600;">
-            ✦ Co zamyka ${isFemB ? 'partnerkę' : 'partnera'} (${nameB}) na bliskość:
+            ✦ Co zamyka ${isFemB ? 'partnerkę' : 'partnera'} (${safeNameB}) na bliskość:
           </div>
           <p style="font-size:0.86rem;line-height:1.6;color:rgba(250,248,245,0.85);margin:0;">
             ${jProfMoonB.forbidden || 'Chłód, cynizm i nielojalność.'}
@@ -1171,7 +1182,8 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
   initWheelInteractions();
 
   if (window.__SYNASTRY_REPORT_MOUNT__) {
-    window.__SYNASTRY_REPORT_MOUNT__(document.getElementById('syn-paywall-mount'), d);
+    const safeReportData = Object.assign({}, d, { nameA: safeNameA, nameB: safeNameB });
+    window.__SYNASTRY_REPORT_MOUNT__(document.getElementById('syn-paywall-mount'), safeReportData);
   }
   if (window.__INIT_PORTAL_TOOLTIP__) {
     window.__INIT_PORTAL_TOOLTIP__();
@@ -1300,20 +1312,20 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="nameA">Twoje Imię (opcjonalnie)</label>
-                <input class="syn-input" id="nameA" type="text" value="${init.nameA}" />
+                <input class="syn-input" id="nameA" type="text" value="${escapeHtmlSyn(init.nameA)}" />
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="dateA">Data Urodzenia *</label>
-                <input class="syn-input" id="dateA" type="date" value="${init.dateA}" required />
+                <input class="syn-input" id="dateA" type="date" value="${escapeHtmlSyn(init.dateA)}" required />
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="timeA">Godzina Urodzenia (opcjonalnie – dla Ascendentu)</label>
-                <input class="syn-input" id="timeA" type="time" value="${init.timeA}" />
+                <input class="syn-input" id="timeA" type="time" value="${escapeHtmlSyn(init.timeA)}" />
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="cityA">Miejsce narodzin (dla precyzyjnego Ascendentu)</label>
                 <div class="syn-input-relative">
-                  <input class="syn-input syn-input-with-icon" id="cityA" type="text" placeholder="np. Warszawa" value="${init.cityA || ''}" autocomplete="off" />
+                  <input class="syn-input syn-input-with-icon" id="cityA" type="text" placeholder="np. Warszawa" value="${escapeHtmlSyn(init.cityA || '')}" autocomplete="off" />
                   <svg class="syn-input-pin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </div>
               </div>
@@ -1331,20 +1343,20 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="nameB">Imię Partnera / Partnerki</label>
-                <input class="syn-input" id="nameB" type="text" value="${init.nameB}" />
+                <input class="syn-input" id="nameB" type="text" value="${escapeHtmlSyn(init.nameB)}" />
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="dateB">Data Urodzenia Partnera *</label>
-                <input class="syn-input" id="dateB" type="date" value="${init.dateB}" required />
+                <input class="syn-input" id="dateB" type="date" value="${escapeHtmlSyn(init.dateB)}" required />
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="timeB">Godzina Urodzenia (opcjonalnie)</label>
-                <input class="syn-input" id="timeB" type="time" value="${init.timeB}" />
+                <input class="syn-input" id="timeB" type="time" value="${escapeHtmlSyn(init.timeB)}" />
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="cityB">Miejsce narodzin Partnera (opcjonalnie)</label>
                 <div class="syn-input-relative">
-                  <input class="syn-input syn-input-with-icon" id="cityB" type="text" placeholder="np. Warszawa" value="${init.cityB || ''}" autocomplete="off" />
+                  <input class="syn-input syn-input-with-icon" id="cityB" type="text" placeholder="np. Warszawa" value="${escapeHtmlSyn(init.cityB || '')}" autocomplete="off" />
                   <svg class="syn-input-pin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </div>
               </div>

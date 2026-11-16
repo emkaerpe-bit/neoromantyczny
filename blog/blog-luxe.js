@@ -385,7 +385,7 @@
     s.src = '/blog/live-editor.js';
     document.body.appendChild(s);
   }
-  if (location.search.indexOf('edit=1') !== -1 || localStorage.getItem('neo_admin_token')) {
+  if (location.search.indexOf('edit=1') !== -1 || localStorage.getItem('neo_cms_ui') === '1' || localStorage.getItem('neo_admin_token')) {
     loadLiveEditor();
   }
   window.addEventListener('keydown', function(e) {

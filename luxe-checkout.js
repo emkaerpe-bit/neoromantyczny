@@ -365,7 +365,7 @@
       });
 
       if (error) {
-        if (errorBox) errorBox.innerHTML = `⚠️ ${error.message}`;
+        if (errorBox) errorBox.textContent = `⚠️ ${error.message}`;
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = `<span>${prod.btn}</span>`;
@@ -374,10 +374,10 @@
         await verifyPaymentOnServer(paymentIntent.id, activeProduct);
         showSuccess();
       } else if (paymentIntent && paymentIntent.status === 'processing') {
-        if (errorBox) errorBox.innerHTML = '⏳ Płatność jest w trakcie przetwarzania przez bank. Odśwież stronę za chwilę.';
+        if (errorBox) errorBox.textContent = '⏳ Płatność jest w trakcie przetwarzania przez bank. Odśwież stronę za chwilę.';
       }
     } catch (err) {
-      if (errorBox) errorBox.innerHTML = `⚠️ Błąd: ${err.message}`;
+      if (errorBox) errorBox.textContent = `⚠️ Błąd: ${err.message}`;
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.innerHTML = `<span>${prod.btn}</span>`;
