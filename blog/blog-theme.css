@@ -190,3 +190,65 @@ nav.navbar-scrolled div.hidden.md\:flex a:not(.bg-champagne):hover {
     box-sizing: border-box !important;
   }
 }
+
+/* 4. Blog Micro-FAQ Accordions & Silos Spacing (Desktop + Mobile) */
+article h2[id^="faq-"] + div {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.9rem !important;
+  margin: 1.5rem 0 2.5rem !important;
+}
+
+article details {
+  background: rgba(255, 255, 255, 0.035) !important;
+  border: 1px solid rgba(201, 168, 76, 0.22) !important;
+  border-radius: 1rem !important;
+  padding: 1.2rem 1.45rem !important;
+  transition: border-color 0.25s ease, background-color 0.25s ease !important;
+}
+
+article details:hover,
+article details[open] {
+  border-color: rgba(201, 168, 76, 0.48) !important;
+  background: rgba(201, 168, 76, 0.055) !important;
+}
+
+article details > summary {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  cursor: pointer !important;
+  list-style: none !important;
+  line-height: 1.45 !important;
+}
+
+article details > summary::-webkit-details-marker {
+  display: none !important;
+}
+
+article details > summary > span:last-child {
+  flex-shrink: 0 !important;
+  font-size: 1rem !important;
+  transition: transform 0.25s ease !important;
+}
+
+article details[open] > summary > span:last-child {
+  transform: rotate(180deg) !important;
+}
+
+article details > div {
+  margin-top: 0.9rem !important;
+  padding-top: 0.9rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  line-height: 1.72 !important;
+}
+
+article div[id^="silos-"] {
+  margin-top: 2.5rem !important;
+  margin-bottom: 2.5rem !important;
+  padding: 1.5rem !important;
+  border-radius: 1rem !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
