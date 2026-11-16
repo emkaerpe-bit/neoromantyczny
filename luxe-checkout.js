@@ -19,7 +19,6 @@
       btn: 'Zapłać 47,00 PLN i Odbierz E-book &rarr;',
       successHeading: 'Płatność zakończona pomyślnie!',
       successSub: 'Twój e-book Zodiakalny Prezentownik jest gotowy do pobrania.',
-      downloadUrl: 'https://drive.google.com/uc?export=download&id=14r9HvDx21VVsEKUmhBeCFY5n9fqJLc4u',
       directUrl: 'https://buy.stripe.com/dRm28k8iRbUb4K2fT4cwg00'
     },
     'synastria': {
@@ -189,7 +188,7 @@
     document.body.style.overflow = '';
   }
 
-  function showSuccess() {
+  function showSuccess(verifiedDownloadUrl) {
     const prod = PRODUCTS_CONFIG[activeProduct] || PRODUCTS_CONFIG['prezentownik'];
     const cBody = document.getElementById('luxe-checkout-body');
     const sBody = document.getElementById('luxe-checkout-success');
@@ -201,12 +200,13 @@
       try { localStorage.setItem(prod.unlockKey, 'true'); } catch (e) {}
     }
 
+    const dlUrl = (verifiedDownloadUrl && /^https:\/\//i.test(verifiedDownloadUrl)) ? verifiedDownloadUrl : '';
     if (sHead) sHead.innerText = prod.successHeading;
     if (sSub) sSub.innerText = prod.successSub;
     if (sBtn) {
       sBtn.innerHTML = prod.unlockKey ? 'Przejdź do Raportu &rarr;' : 'Pobierz Zodiakalny Prezentownik (PDF) &darr;';
-      sBtn.href = prod.downloadUrl || '#';
-      if (!prod.unlockKey && prod.downloadUrl) {
+      sBtn.href = dlUrl || '#';
+      if (!prod.unlockKey && dlUrl) {
         sBtn.setAttribute('target', '_blank');
         sBtn.setAttribute('rel', 'noopener noreferrer');
       }
@@ -371,8 +371,8 @@
           submitBtn.innerHTML = `<span>${prod.btn}</span>`;
         }
       } else if (paymentIntent && paymentIntent.status === 'succeeded') {
-        await verifyPaymentOnServer(paymentIntent.id, activeProduct);
-        showSuccess();
+        const verifyData = await verifyPaymentOnServer(paymentIntent.id, activeProduct);
+        showSuccess(verifyData && verifyData.downloadUrl);
       } else if (paymentIntent && paymentIntent.status === 'processing') {
         if (errorBox) errorBox.textContent = '⏳ Płatność jest w trakcie przetwarzania przez bank. Odśwież stronę za chwilę.';
       }

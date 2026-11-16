@@ -57,7 +57,6 @@
   </main>
   <script>
     (async function () {
-      const EBOOK_URL = 'https://drive.google.com/uc?export=download&id=14r9HvDx21VVsEKUmhBeCFY5n9fqJLc4u';
       const params = new URLSearchParams(window.location.search);
       const pi = params.get('payment_intent');
       const product = params.get('product') || 'prezentownik';
@@ -89,9 +88,27 @@
           showBlocked('Płatność nie została jeszcze zaksięgowana przez Stripe. Jeśli środki zostały pobrane, napisz do nas podając numer transakcji.');
           return;
         }
+        const dlUrl = (data.downloadUrl && /^https:\/\//i.test(data.downloadUrl)) ? data.downloadUrl : '';
         titleEl.innerHTML = 'Płatność zakończona <span>sukcesem!</span>';
-        descEl.innerHTML = 'Twój e-book <strong>Zodiakalny Prezentownik</strong> jest gotowy do pobrania. Kliknij poniżej, aby zapisać plik PDF.';
-        actionEl.innerHTML = `<a href="${EBOOK_URL}" target="_blank" rel="noopener noreferrer" class="btn">Pobierz Zodiakalny Prezentownik (PDF) &darr;</a><br><a href="/blog/" class="btn-ghost">Przejdź na bloga &rarr;</a>`;
+        if (dlUrl) {
+          descEl.innerHTML = 'Twój e-book <strong>Zodiakalny Prezentownik</strong> jest gotowy do pobrania. Kliknij poniżej, aby zapisać plik PDF.';
+          actionEl.innerHTML = '';
+          const dlLink = document.createElement('a');
+          dlLink.href = dlUrl;
+          dlLink.target = '_blank';
+          dlLink.rel = 'noopener noreferrer';
+          dlLink.className = 'btn';
+          dlLink.textContent = 'Pobierz Zodiakalny Prezentownik (PDF) ↓';
+          const blogLink = document.createElement('a');
+          blogLink.href = '/blog/';
+          blogLink.className = 'btn-ghost';
+          blogLink.textContent = 'Przejdź na bloga →';
+          actionEl.appendChild(dlLink);
+          actionEl.appendChild(document.createElement('br'));
+          actionEl.appendChild(blogLink);
+        } else {
+          descEl.textContent = 'Płatność została potwierdzona! Link do pobrania nie jest obecnie dostępny — napisz na kontakt@neoromantyczny.pl podając numer transakcji.';
+        }
       } catch (_err) {
         showBlocked('Nie udało się połączyć z serwerem weryfikacji płatności. Odśwież stronę za chwilę lub napisz do nas.');
       }

@@ -84,13 +84,17 @@ export async function handler(event) {
           const amountValid = parsed.amount >= expectedAmount && parsed.currency === 'pln';
           const verified = parsed.status === 'succeeded' && amountValid && productMatch;
 
-          return resolve(respond(headers, verified ? 200 : 402, {
+          const responsePayload = {
             verified,
             status: parsed.status,
             amount: parsed.amount,
             currency: parsed.currency,
             product: productKey
-          }));
+          };
+          if (verified && productKey === 'prezentownik' && process.env.EBOOK_URL) {
+            responsePayload.downloadUrl = process.env.EBOOK_URL;
+          }
+          return resolve(respond(headers, verified ? 200 : 402, responsePayload));
         } catch (_e) {
           return resolve(respond(headers, 500, { verified: false, error: 'Błąd przetwarzania odpowiedzi Stripe.' }));
         }

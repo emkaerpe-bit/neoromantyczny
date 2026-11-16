@@ -85,10 +85,11 @@ export default async (request, context) => {
       return new Response(ADMIN_HTML, { status: 200, headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } });
     }
 
-    const expected = (typeof Netlify !== "undefined" && Netlify.env ? Netlify.env.get("ADMIN_PASSWORD") : "") || "neoromantyczny2026";
+    const expected = (typeof Netlify !== "undefined" && Netlify.env ? Netlify.env.get("ADMIN_PASSWORD") : "") || "";
     const secFlag = url.protocol === "https:" ? "; Secure" : "";
 
     if (path === "/api/live-cms/login" && request.method === "POST") {
+      if (!expected) return jsonRes({ error: "CMS not configured" }, 503);
       const body = await request.json().catch(() => ({}));
       if (String(body.password || "") !== expected) return jsonRes({ error: "Unauthorized" }, 401);
       const tok = await getSessionToken(expected);
@@ -98,6 +99,7 @@ export default async (request, context) => {
       return jsonRes({ ok: true }, 200, { "Set-Cookie": `${COOKIE_NAME}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secFlag}` });
     }
     if (path === "/api/live-cms") {
+      if (!expected) return jsonRes({ error: "CMS not configured" }, 503);
       const tok = await getSessionToken(expected);
       const okAuth = getCookie(request, COOKIE_NAME) === tok || request.headers.get("x-admin-token") === expected;
       if (!okAuth) return jsonRes({ error: "Unauthorized" }, 401);
