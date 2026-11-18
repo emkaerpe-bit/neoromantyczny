@@ -78,7 +78,7 @@
   }
 
   function getCityById(rawInput) {
-    const clean = String(rawInput || '').trim();
+    const clean = String(rawInput || '').replace(/[<>"'`&]/g, '').trim().slice(0, 80);
     if (!clean) {
       return { id: 'default', name: 'Warszawa', lat: 52.05, lon: 20.43, tz: 'Europe/Warsaw', group: 'Polska' };
     }
@@ -885,8 +885,8 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
       </div>`;
   }).join('');
 
-  const cityInfoA = cA.city ? `${cA.city.name} (${cA.tzLabel.split(',')[0]})` : 'Polska';
-  const cityInfoB = cB.city ? `${cB.city.name} (${cB.tzLabel.split(',')[0]})` : 'Polska';
+  const cityInfoA = cA.city ? `${escapeHtmlSyn(cA.city.name)} (${escapeHtmlSyn(cA.tzLabel.split(',')[0])})` : 'Polska';
+  const cityInfoB = cB.city ? `${escapeHtmlSyn(cB.city.name)} (${escapeHtmlSyn(cB.tzLabel.split(',')[0])})` : 'Polska';
 
   container.innerHTML = `
     <!-- 1. GŁÓWNA DIAGNOZA WIĘZI -->
@@ -1440,12 +1440,6 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
     try {
       const stateObj = { nameA: rawNameA, genderA, dateA, timeA, cityA, nameB: rawNameB, genderB, dateB, timeB, cityB };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(stateObj));
-      if (window.history && window.history.replaceState) {
-        const sp = new URLSearchParams(window.location.search);
-        sp.set('nA', rawNameA); sp.set('gA', genderA); sp.set('dA', dateA); sp.set('tA', timeA); sp.set('cA', cityA);
-        sp.set('nB', rawNameB); sp.set('gB', genderB); sp.set('dB', dateB); sp.set('tB', timeB); sp.set('cB', cityB);
-        window.history.replaceState(null, '', window.location.pathname + '?' + sp.toString() + window.location.hash);
-      }
     } catch (e) {}
 
     const astro = window.__SYNASTRY_ASTRO__;

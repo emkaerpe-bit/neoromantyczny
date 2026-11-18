@@ -103,7 +103,8 @@
     if (partial) return partial;
 
     // 3. Fallback do precyzyjnego standardu centrum Polski (52.05, 20.43 - identyczny jak w kalkulatorze ascendentu)
-    return { id: 'custom', name: name.trim(), lat: 52.05, lon: 20.43, tz: 'Europe/Warsaw' };
+    const safeCustomName = String(name || '').replace(/[<>"'`&]/g, '').trim().slice(0, 80);
+    return { id: 'custom', name: safeCustomName || 'Warszawa', lat: 52.05, lon: 20.43, tz: 'Europe/Warsaw' };
   }
 
   function getTzOffset(y, m, d, hh, mm) {

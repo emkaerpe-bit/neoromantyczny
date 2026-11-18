@@ -81,11 +81,50 @@ document.addEventListener('DOMContentLoaded', function () {
   setupCityAutocomplete();
   if (!form) return;
 
+  const IS_LOCAL = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+  let localTestBypass = false;
   let lastCalculatedData = null;
   let currentSatHash = '';
 
   function isSaturnUnlocked() {
+    if (localTestBypass) return true;
     return Boolean(window.NeoChartLock && window.NeoChartLock.isUnlocked('saturn', currentSatHash));
+  }
+
+  function ensureLocalTestBar() {
+    if (!IS_LOCAL || !document.body) return;
+    let bar = document.getElementById('sat-local-test-bar');
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.id = 'sat-local-test-bar';
+      bar.style.cssText = 'position:fixed;right:16px;bottom:16px;z-index:9998;display:flex;align-items:center;gap:10px;padding:9px 14px;border-radius:999px;background:rgba(14,12,18,0.94);border:1px solid rgba(212,175,55,0.45);box-shadow:0 10px 28px rgba(0,0,0,0.45);font-family:Inter,system-ui,sans-serif;font-size:12px;color:#f4efe6;backdrop-filter:blur(10px);';
+      bar.innerHTML = '<span id="sat-test-status" style="color:#d4af37;font-weight:600;letter-spacing:0.03em;"></span><button type="button" id="sat-test-toggle" style="cursor:pointer;border:1px solid rgba(212,175,55,0.55);background:rgba(212,175,55,0.14);color:#f7e7b4;padding:5px 11px;border-radius:999px;font-size:11px;font-weight:600;"></button>';
+      document.body.appendChild(bar);
+      const toggleBtn = document.getElementById('sat-test-toggle');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          localTestBypass = !localTestBypass;
+          ensureLocalTestBar();
+          reRenderSaturnReport();
+        });
+      }
+    }
+    const statusEl = document.getElementById('sat-test-status');
+    const toggleBtn = document.getElementById('sat-test-toggle');
+    if (statusEl) {
+      statusEl.textContent = localTestBypass ? 'LOCALHOST · ODBLOKOWANY' : 'LOCALHOST · PAYWALL';
+    }
+    if (toggleBtn) {
+      toggleBtn.textContent = localTestBypass ? 'Symuluj Paywall (47 PLN)' : 'Odblokuj testowo';
+    }
+  }
+
+  if (IS_LOCAL) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', ensureLocalTestBar);
+    } else {
+      ensureLocalTestBar();
+    }
   }
 
   function bindProtocolEvents() {

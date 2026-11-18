@@ -775,7 +775,7 @@
 (function () {
   const N = window.__SYNASTRY_NARRATIVES__;
 
-  function renderChaptersOneToFour(d, dos, verdict) {
+  function renderChaptersOneToFour(d, dos, verdict, unlocked = false) {
     const priceDisplay = '39 PLN';
     const planetRows = dos.bodyDefs.map(b => {
       const pA = dos.posA[b.key];
@@ -946,6 +946,10 @@
 
       <!-- ZABLOKOWANA CZĘŚĆ DOSSIER (ROZDZIAŁY II - VII) -->
       <div class="syn-locked-content" id="syn-locked-dossier">
+        ${!unlocked ? `
+        <div class="syn-report-chapter"><div class="syn-chapter-num">ROZDZIAŁ II • PEŁNA EFEMERYDA 10 PUNKTÓW & ASPEKTARIUM</div><p style="opacity:0.65;">Szczegółowa tabela pozycji i aspektów międzyplanetarnych zostanie wygenerowana po odblokowaniu raportu.</p></div>
+        <div class="syn-report-chapter"><div class="syn-chapter-num">ROZDZIAŁ III • HOROSKOP KOMPOZYTOWY & DAVISON</div><p style="opacity:0.65;">Analiza Trzeciej Encji oraz punktów środkowych Słońce/Księżyc/Wenus/Mars dostępna po odblokowaniu.</p></div>
+        <div class="syn-report-chapter"><div class="syn-chapter-num">ROZDZIAŁ IV • KOSMOBIOLOGIA EBERTINA, PLUTON/LILITH & DOMY</div><p style="opacity:0.65;">Indeks obsesji i nakładka domów partnerskich otwierają się natychmiast po zakupie.</p></div>` : `
         <div class="syn-report-chapter">
           <div class="syn-chapter-num">ROZDZIAŁ II • PEŁNA EFEMERYDA 10 PUNKTÓW (Z PLUTONEM I LILITH) & ASPEKTARIUM</div>
           <h4 class="syn-chapter-title">Pozycje Planetarne i Ścisłe Aspekty Międzyplanetarne</h4>
@@ -1129,15 +1133,18 @@
               Aby odblokować tabelę <strong>Nakładki Domów Partnerskich</strong> (w tym 7. Dom Małżeństwa, 8. Dom Seksualności i Finansów oraz 5. Dom Romansu), uzupełnij godzinę urodzenia przynajmniej jednej osoby w formularzu na górze strony.
             </p>
           `}
-        </div>`;
+        </div>`}`;
   }
 
   window.__SYNASTRY_RENDER_CH1_4__ = renderChaptersOneToFour;
 })();
 
 (function () {
+  const _neoEsc = (x) => String(x || "").replace(/[&<>"']/g, (m) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
   let isReportUnlocked = false;
   let currentSynHash = '';
+  let lastSynMountEl = null;
+  let lastSynRawData = null;
 
   function getSynChartHash(d) {
     if (!window.NeoChartLock || !d) return '';
@@ -1149,7 +1156,8 @@
     });
   }
 
-  function renderChaptersFiveToSevenAndPaywall(d, dos, verdict) {
+  function renderChaptersFiveToSevenAndPaywall(d, dos, verdict, unlocked = false, rawD = null) {
+    const mailD = rawD || d;
     const priceDisplay = '39 PLN';
     const isFemA = d.genderA === 'f';
     const isFemB = d.genderB === 'f';
@@ -1160,16 +1168,16 @@
     const profVenA = d.venA.profile[isFemA ? 'f' : 'm'];
     const profVenB = d.venB.profile[isFemB ? 'f' : 'm'];
 
-    const mailSubject = encodeURIComponent(`Konsultacja Synastrii Partnerskiej 1:1: ${d.nameA} (${d.sunA.name}) & ${d.nameB} (${d.sunB.name})`);
+    const mailSubject = encodeURIComponent(`Konsultacja Synastrii Partnerskiej 1:1: ${mailD.nameA} (${mailD.sunA.name}) & ${mailD.nameB} (${mailD.sunB.name})`);
     const mailBody = encodeURIComponent(
       `Dzień dobry,\n\nProszę o prywatną analizę synastrii partnerskiej 1:1:\n` +
-      `- Osoba 1 (${d.nameA}): ur. ${d.dateA} | Słońce: ${d.sunA.name}, Księżyc: ${d.moonA.name}, Wenus: ${d.venA.name}, Mars: ${d.marA.name}\n` +
-      `- Osoba 2 (${d.nameB}): ur. ${d.dateB} | Słońce: ${d.sunB.name}, Księżyc: ${d.moonB.name}, Wenus: ${d.venB.name}, Mars: ${d.marB.name}\n` +
-      `- Wyliczone indeksy: Zgodność całkowita ${dos.totalIndex}%, Chemia ${d.syn.chemistry}%, Bezpieczeństwo ${d.syn.security}%, Napięcie ${d.syn.friction}%\n\n` +
+      `- Osoba 1 (${mailD.nameA}): ur. ${mailD.dateA} | Słońce: ${mailD.sunA.name}, Księżyc: ${mailD.moonA.name}, Wenus: ${mailD.venA.name}, Mars: ${mailD.marA.name}\n` +
+      `- Osoba 2 (${mailD.nameB}): ur. ${mailD.dateB} | Słońce: ${mailD.sunB.name}, Księżyc: ${mailD.moonB.name}, Wenus: ${mailD.venB.name}, Mars: ${mailD.marB.name}\n` +
+      `- Wyliczone indeksy: Zgodność całkowita ${dos.totalIndex}%, Chemia ${mailD.syn.chemistry}%, Bezpieczeństwo ${mailD.syn.security}%, Napięcie ${mailD.syn.friction}%\n\n` +
       `Najważniejsze pytanie dotyczące naszej relacji:\n`
     );
 
-    const ch1_4 = window.__SYNASTRY_RENDER_CH1_4__(d, dos, verdict);
+    const ch1_4 = window.__SYNASTRY_RENDER_CH1_4__(d, dos, verdict, unlocked);
 
     return `
       <section class="syn-paywall-section ${isReportUnlocked ? 'is-unlocked' : ''}" id="syn-dossier-section">
@@ -1193,6 +1201,9 @@
         <div class="syn-teaser-body">
           ${ch1_4}
 
+            ${!unlocked ? `
+            <div class="syn-report-chapter"><div class="syn-chapter-num">ROZDZIAŁ V–VII • PROTOKÓŁ KRYZYSOWY, KONTRAKT KARMICZNY I ZŁOTY PREZENT</div><p style="opacity:0.65;">Instrukcja deeskalacji napięć oraz psychologiczny profil prezentowy Wenus dostępne po odblokowaniu.</p></div>
+          </div>` : `
             <div class="syn-report-chapter">
               <div class="syn-chapter-num">ROZDZIAŁ V • PROTOKÓŁ DEESKALACJI KRYZYSU I PSYCHOLOGIA CIENIA</div>
               <h4 class="syn-chapter-title">Instrukcja Obsługi Napięcia, Gniewu (♂) i Bezpieczeństwa (☽)</h4>
@@ -1245,7 +1256,7 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div>`}
         </div>
 
         <!-- LOSS AVERSION POPUP MODAL (#syn-loss-modal) -->
@@ -1339,13 +1350,16 @@
       </section>`;
   }
 
-  window.__SYNASTRY_REPORT_MOUNT__ = function (mountEl, d) {
+  window.__SYNASTRY_REPORT_MOUNT__ = function (mountEl, d, forceUnlock = false) {
     if (!mountEl || !window.__SYNASTRY_BUILD_DOSSIER__) return;
+    lastSynMountEl = mountEl;
+    lastSynRawData = d;
     currentSynHash = getSynChartHash(d);
-    isReportUnlocked = Boolean(window.NeoChartLock && window.NeoChartLock.isUnlocked('synastria', currentSynHash));
-    const dos = window.__SYNASTRY_BUILD_DOSSIER__(d);
-    const verdict = window.__SYNASTRY_NARRATIVES__.getVerdict(d, dos);
-    mountEl.innerHTML = renderChaptersFiveToSevenAndPaywall(d, dos, verdict);
+    isReportUnlocked = Boolean(forceUnlock || (window.NeoChartLock && window.NeoChartLock.isUnlocked('synastria', currentSynHash)));
+    const safeD = { ...d, nameA: _neoEsc(d.nameA), nameB: _neoEsc(d.nameB) };
+    const dos = window.__SYNASTRY_BUILD_DOSSIER__(safeD);
+    const verdict = window.__SYNASTRY_NARRATIVES__.getVerdict(safeD, dos);
+    mountEl.innerHTML = renderChaptersFiveToSevenAndPaywall(safeD, dos, verdict, isReportUnlocked, d);
 
     const section = document.getElementById('syn-dossier-section');
     const paywallBtn = document.getElementById('syn-paywall-checkout-btn');
@@ -1353,6 +1367,12 @@
     const printBot = document.getElementById('syn-print-pdf-bottom');
 
     const performUnlock = (instant = false) => {
+      if (!isReportUnlocked && lastSynMountEl && lastSynRawData) {
+        window.__SYNASTRY_REPORT_MOUNT__(lastSynMountEl, lastSynRawData, true);
+        const sec = document.getElementById('syn-dossier-section');
+        if (sec && !instant) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
       isReportUnlocked = true;
       if (section) section.classList.add('is-unlocked');
       if (printTop) printTop.style.display = 'inline-flex';

@@ -533,7 +533,10 @@ body {
   .acg-paywall-gate {
     display: none !important;
   }
-  .acg-locked-blur {
+  #acgPaywallWrap:not(.is-unlocked) .acg-locked-blur {
+    display: none !important;
+  }
+  #acgPaywallWrap.is-unlocked .acg-locked-blur {
     filter: none !important;
     opacity: 1 !important;
   }

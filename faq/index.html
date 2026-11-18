@@ -517,12 +517,12 @@
       gap: 1rem !important;
     }
     /* Logo: mniejszy font żeby zwolnić miejsce */
-    nav.fixed > div:first-child span {
+    nav.fixed > :first-child span {
       font-size: 0.85rem !important;
       line-height: 1.4 !important;
     }
     /* Przycisk CTA: mniejszy padding i font */
-    nav.fixed > a.bg-champagne {
+    nav.fixed > a.bg-primary, nav.fixed > a.bg-champagne {
       padding-left: 0.75rem !important;
       padding-right: 0.75rem !important;
       padding-top: 0.4rem !important;
@@ -530,7 +530,7 @@
       font-size: 0.75rem !important;
     }
     /* Ukryj strzałkę w przycisku na mobile żeby zaoszczędzić miejsce */
-    nav.fixed > a.bg-champagne svg {
+    nav.fixed > a.bg-primary svg, nav.fixed > a.bg-champagne svg {
       display: none !important;
     }
     /* METADATA ARTYKUŁU: wymuś jeden wiersz przez mniejszy font i tracking */
@@ -551,10 +551,11 @@
 </head>
 <body class="p-6 md:p-12 custom-scrollbar selection:bg-primary selection:text-obsidian scroll-smooth bg-obsidian text-ivory">
 <div class="noise-overlay"></div>
-<div class="max-w-4xl mx-auto">
+<nav data-nosnippet id="navbar" class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-4xl px-8 py-3.5 rounded-full flex items-center justify-between border border-primary/25 bg-[#14141C]/80 backdrop-blur-xl shadow-2xl"><a href="/" class="flex items-center gap-3" style="text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary shrink-0" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg><span class="font-serif font-bold text-lg tracking-wide text-ivory">Neoromantyczny</span></a><div class="hidden md:flex gap-8 text-sm font-medium text-ivory/70"><a href="/" class="hover:text-primary transition-colors">Główna</a><a href="/blog/" class="hover:text-primary transition-colors">Artykuły</a><a href="/kalkulator-prezentowy/" class="hover:text-primary transition-colors">Kalkulator</a><a href="/faq/" class="text-primary">Baza Wiedzy</a></div><a href="https://buy.stripe.com/dRm28k8iRbUb4K2fT4cwg00?utm_source=faq&utm_medium=cta" class="bg-primary text-obsidian px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition-transform flex items-center gap-2 group shadow-lg shadow-primary/20">Odbierz Dostęp<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></nav>
+<div class="max-w-4xl mx-auto pt-24 md:pt-20">
 <!-- POWRÓT DO STRONY GŁÓWNEJ -->
 <div class="mb-8 text-center md:text-left">
-<a class="inline-flex items-center text-primary hover:text-ivory transition-colors duration-300 text-sm tracking-wider uppercase" href="../">
+<a class="inline-flex items-center text-primary hover:text-ivory transition-colors duration-300 text-sm tracking-wider uppercase" href="/">
 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                 Powrót do strony głównej
             </a>

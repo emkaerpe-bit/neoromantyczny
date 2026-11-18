@@ -167,6 +167,7 @@
 
   function bootGoogleTag() {
     if (window.__neoHasInlineTracking || window.__neoGtmLoaded) return;
+    if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') return;
     window.__neoGtmLoaded = true;
     window.dataLayer = window.dataLayer || [];
     if (typeof window.gtag !== 'function') {

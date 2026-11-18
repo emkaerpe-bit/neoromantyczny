@@ -477,12 +477,6 @@
     } catch (e) {}
 
     const q = new URLSearchParams();
-    if (nameA && nameA !== 'Osoba 1') q.set('nA', nameA);
-    if (dateA) q.set('dA', dateA);
-    if (timeA) q.set('tA', timeA);
-    if (nameB && nameB !== 'Osoba 2') q.set('nB', nameB);
-    if (dateB) q.set('dB', dateB);
-    if (timeB) q.set('tB', timeB);
     q.set('autoscroll', '1');
     const qs = q.toString();
     const synUrl = qs ? `/kalkulator-synastrii/?${qs}` : `/kalkulator-synastrii/`;

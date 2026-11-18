@@ -86,7 +86,7 @@
         const res = await fetch('/api/verify-payment', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ paymentIntentId: pi, product })
+          body: JSON.stringify({ paymentIntentId: pi, product, chartHash: 'prezentownik|default' })
         });
         const data = await res.json();
         if (!res.ok || !data.verified) {

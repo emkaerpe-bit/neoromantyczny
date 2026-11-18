@@ -35,23 +35,91 @@ const jsonRes = (data, status = 200, extra = {}) => new Response(JSON.stringify(
   headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", ...extra }
 });
 
-async function getSessionToken(secret) {
-  const bytes = new TextEncoder().encode(secret + ":neo_cms_salt_v1");
-  const hash = await crypto.subtle.digest("SHA-256", bytes);
-  return Array.from(new Uint8Array(hash)).map((b) => b.toString(16).padStart(2, "0")).join("");
+const cmsLoginFails = new Map();
+const CMS_FAIL_WINDOW_MS = 600000;
+const CMS_MAX_FAILS = 5;
+
+function getClientIp(request) {
+  const raw = request.headers.get("x-nf-client-connection-ip") || request.headers.get("x-forwarded-for") || "unknown";
+  return raw.split(",")[0].trim();
+}
+
+function isLoginLocked(ip) {
+  const now = Date.now();
+  const rec = cmsLoginFails.get(ip);
+  if (!rec) return false;
+  if (now - rec.start > CMS_FAIL_WINDOW_MS) { cmsLoginFails.delete(ip); return false; }
+  return rec.count >= CMS_MAX_FAILS;
+}
+
+function recordLoginFail(ip) {
+  const now = Date.now();
+  const rec = cmsLoginFails.get(ip);
+  if (!rec || now - rec.start > CMS_FAIL_WINDOW_MS) cmsLoginFails.set(ip, { start: now, count: 1 });
+  else rec.count += 1;
+}
+
+function timingSafeEqualStr(a, b) {
+  const enc = new TextEncoder();
+  const ba = enc.encode(String(a || ""));
+  const bb = enc.encode(String(b || ""));
+  const maxLen = Math.max(ba.length, bb.length, 1);
+  let diff = ba.length ^ bb.length;
+  for (let i = 0; i < maxLen; i++) diff |= (ba[i % (ba.length || 1)] ^ bb[i % (bb.length || 1)]);
+  return diff === 0;
+}
+
+async function signSessionToken(secret, ttlSec = 86400) {
+  const exp = Math.floor(Date.now() / 1000) + ttlSec;
+  const nonce = crypto.randomUUID();
+  const payload = `${exp}.${nonce}`;
+  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(secret + ":neo_cms_hmac_v2"), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(payload));
+  const hex = Array.from(new Uint8Array(sig)).map((b) => b.toString(16).padStart(2, "0")).join("");
+  return `${payload}.${hex}`;
+}
+
+async function verifySessionToken(token, secret) {
+  if (!token || !secret) return false;
+  const parts = String(token).split(".");
+  if (parts.length !== 3) return false;
+  const [expStr, nonce, hex] = parts;
+  const exp = Number(expStr);
+  if (!Number.isFinite(exp) || exp < Math.floor(Date.now() / 1000) || !nonce || !/^[a-f0-9]{64}$/i.test(hex)) return false;
+  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(secret + ":neo_cms_hmac_v2"), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(`${expStr}.${nonce}`));
+  const expectedHex = Array.from(new Uint8Array(sig)).map((b) => b.toString(16).padStart(2, "0")).join("");
+  return timingSafeEqualStr(hex, expectedHex);
 }
 
 function getCookie(req, name) {
   const raw = req.headers.get("cookie") || "";
   const m = raw.match(new RegExp("(?:^|;\\s*)" + name + "=([^;]*)"));
-  return m ? decodeURIComponent(m[1]) : "";
+  try { return m ? decodeURIComponent(m[1]) : ""; } catch (_e) { return ""; }
+}
+
+function decodeHtmlEntities(str) {
+  return String(str || "")
+    .replace(/&#(\d+);?/g, (_, d) => String.fromCharCode(Number(d)))
+    .replace(/&#x([0-9a-f]+);?/gi, (_, h) => String.fromCharCode(parseInt(h, 16)));
 }
 
 function sanitizeCmsHtml(html) {
-  return String(html || "")
-    .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, "")
-    .replace(/\son[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, "")
-    .replace(/javascript:/gi, "");
+  let out = String(html || "");
+  for (let i = 0; i < 2; i++) {
+    out = out
+      .replace(/<(script|iframe|object|embed|form)\b[\s\S]*?<\/\1\s*>/gi, "")
+      .replace(/<\/?(script|iframe|object|embed|base|meta|form|link|animate|set)\b[^>]*>/gi, "")
+      .replace(/(?:^|[\s/"'<>`])on[a-z0-9_-]+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, " ")
+      .replace(/(?:^|[\s/"'<>`])srcdoc\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, " ");
+  }
+  out = out.replace(/(\b(?:href|src|xlink:href|action|formaction)\s*=\s*)(?:"([^"]*)"|'([^']*)'|([^\s>]+))/gi, (m, pfx, q1, q2, q3) => {
+    const rawVal = q1 ?? q2 ?? q3 ?? "";
+    const norm = decodeHtmlEntities(rawVal).replace(/[\u0000-\u0020]+/g, "").toLowerCase();
+    if (/^(javascript|vbscript):|^data:\s*text\/html/.test(norm)) return `${pfx}"#blocked"`;
+    return m;
+  });
+  return out.replace(/javascript:|vbscript:|data:\s*text\/html/gi, "");
 }
 
 function applyLiveOverride(html, doc) {
@@ -87,22 +155,37 @@ export default async (request, context) => {
 
     const expected = (typeof Netlify !== "undefined" && Netlify.env ? Netlify.env.get("ADMIN_PASSWORD") : "") || "";
     const secFlag = url.protocol === "https:" ? "; Secure" : "";
+    const isAllowedOrigin = (req) => {
+      const org = req.headers.get("origin") || "";
+      if (/^https:\/\/(www\.)?neoromantyczny\.pl$/.test(org)) return true;
+      return (url.hostname === "localhost" || url.hostname === "127.0.0.1") && /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(org);
+    };
 
     if (path === "/api/live-cms/login" && request.method === "POST") {
       if (!expected) return jsonRes({ error: "CMS not configured" }, 503);
+      if (!isAllowedOrigin(request)) return jsonRes({ error: "Forbidden origin" }, 403);
+      const ip = getClientIp(request);
+      if (isLoginLocked(ip)) return jsonRes({ error: "Too many login attempts. Try again later." }, 429);
       const body = await request.json().catch(() => ({}));
-      if (String(body.password || "") !== expected) return jsonRes({ error: "Unauthorized" }, 401);
-      const tok = await getSessionToken(expected);
-      return jsonRes({ ok: true }, 200, { "Set-Cookie": `${COOKIE_NAME}=${tok}; Path=/; HttpOnly; SameSite=Lax; Max-Age=604800${secFlag}` });
+      if (!timingSafeEqualStr(String(body.password || ""), expected)) {
+        recordLoginFail(ip);
+        return jsonRes({ error: "Unauthorized" }, 401);
+      }
+      cmsLoginFails.delete(ip);
+      const tok = await signSessionToken(expected, 86400);
+      return jsonRes({ ok: true }, 200, { "Set-Cookie": `${COOKIE_NAME}=${tok}; Path=/; HttpOnly; SameSite=Lax; Max-Age=86400${secFlag}` });
     }
     if (path === "/api/live-cms/logout" && request.method === "POST") {
+      if (!isAllowedOrigin(request)) return jsonRes({ error: "Forbidden origin" }, 403);
       return jsonRes({ ok: true }, 200, { "Set-Cookie": `${COOKIE_NAME}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secFlag}` });
     }
     if (path === "/api/live-cms") {
       if (!expected) return jsonRes({ error: "CMS not configured" }, 503);
-      const tok = await getSessionToken(expected);
-      const okAuth = getCookie(request, COOKIE_NAME) === tok || request.headers.get("x-admin-token") === expected;
+      const okAuth = await verifySessionToken(getCookie(request, COOKIE_NAME), expected);
       if (!okAuth) return jsonRes({ error: "Unauthorized" }, 401);
+      if ((request.method === "POST" || request.method === "DELETE") && !isAllowedOrigin(request)) {
+        return jsonRes({ error: "Forbidden origin" }, 403);
+      }
       const store = getStore(STORE_NAME);
       if (request.method === "GET") {
         const slug = url.searchParams.get("slug");

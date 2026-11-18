@@ -1010,6 +1010,7 @@ body {
   .disp-chain-grid,
   .disp-cross-nav,
   .disp-paywall-overlay,
+  .disp-blurred-zone:not(.is-unlocked),
   .disp-print-btn,
   .disp-badge,
   .disp-btn,

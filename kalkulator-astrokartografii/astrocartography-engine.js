@@ -953,6 +953,43 @@
       return picked;
     }
 
+    let lastRankedDossier = null;
+
+    function renderDossierContent(isUnl) {
+      if (!lastRankedDossier) return;
+      const { loveRanked, wealthRanked, homeRanked, shadowRanked } = lastRankedDossier;
+      if (!isUnl) {
+        const skel = [1, 2, 3].map(n => '<div style="padding:0.85rem;margin-bottom:0.65rem;border:1px solid rgba(255,255,255,0.08);border-radius:0.85rem;background:rgba(255,255,255,0.02);opacity:0.65;"><strong>Pozycja TOP #' + n + '</strong> • Dane odblokowane po zakupie Atlasu</div>').join('');
+        document.getElementById('dossierLoveList').innerHTML = skel;
+        document.getElementById('dossierWealthList').innerHTML = skel;
+        document.getElementById('dossierHomeList').innerHTML = skel;
+        document.getElementById('dossierShadowList').innerHTML = skel;
+        document.getElementById('dossierRemoteActivation').innerHTML = '<div style="padding:1rem;border:1px solid rgba(255,255,255,0.08);border-radius:1rem;opacity:0.65;">Protokół zdalnej aktywacji linii Wenus i Jowisza dostępny po odblokowaniu raportu.</div>';
+        return;
+      }
+      document.getElementById('dossierLoveList').innerHTML = loveRanked.slice(0, 5).map((sc, i) => renderDossierRowHtml(sc, sc.loveBest, i)).join('');
+      document.getElementById('dossierWealthList').innerHTML = wealthRanked.slice(0, 5).map((sc, i) => renderDossierRowHtml(sc, sc.wealthBest, i)).join('');
+      document.getElementById('dossierHomeList').innerHTML = homeRanked.slice(0, 5).map((sc, i) => renderDossierRowHtml(sc, sc.homeBest, i)).join('');
+      document.getElementById('dossierShadowList').innerHTML = shadowRanked.slice(0, 5).map((sc, i) => renderDossierRowHtml(sc, sc.shadowBest, i)).join('');
+
+      document.getElementById('dossierRemoteActivation').innerHTML = `
+        <div class="acg-grid-2" style="margin-bottom:0;">
+          <div style="background:rgba(244,114,182,0.06); border:1px solid rgba(244,114,182,0.28); border-radius:1rem; padding:1.25rem;">
+            <div class="acg-kicker" style="color:#F472B6;">Zdalna Aktywacja Linii Wenus (${loveRanked[0].city.name})</div>
+            <p style="font-size:0.86rem; line-height:1.65; color:rgba(250,248,245,0.85); margin:0;">
+              Twoja najsilniejsza linia magnetyzmu przebiega przez <strong>${loveRanked[0].city.name} (${loveRanked[0].city.country})</strong>. Otocz się estetyką, muzyką, perfumami lub kuchnią tego regionu w swojej sypialni i na randkach — w astrokartografii rezonans kulturowy miejsca uruchamia tę samą oś 7. domu bez pakowania walizek.
+            </p>
+          </div>
+          <div style="background:rgba(52,211,153,0.06); border:1px solid rgba(52,211,153,0.28); border-radius:1rem; padding:1.25rem;">
+            <div class="acg-kicker" style="color:#34D399;">Zdalna Aktywacja Linii Jowisza (${wealthRanked[0].city.name})</div>
+            <p style="font-size:0.86rem; line-height:1.65; color:rgba(250,248,245,0.85); margin:0;">
+              Twój wektor ekspansji finansowej kulminuje w pobliżu miasta <strong>${wealthRanked[0].city.name} (${wealthRanked[0].city.country})</strong>. Szukaj klientów, pracodawców, rynków zbytu lub partnerów biznesowych powiązanych z tym krajem — kontrakty z tego kierunku geograficznego idą najłatwiej.
+            </p>
+          </div>
+        </div>
+      `;
+    }
+
     function runCalculation(dateStr, timeStr) {
       currentChart = computeAllPlanets(dateStr, timeStr, selectedBirthCity);
       const worldPool = db ? db.worldCities : data.WORLD_CITIES;
@@ -979,27 +1016,9 @@
       if (testerInput) testerInput.value = `${startTesterCity.name} (${startTesterCity.shortCountry || startTesterCity.country})`;
       document.getElementById('cityTesterOutput').innerHTML = renderCityTesterOutput(scoreCityForChart(startTesterCity, currentChart));
 
-      document.getElementById('dossierLoveList').innerHTML = loveRanked.slice(0, 5).map((sc, i) => renderDossierRowHtml(sc, sc.loveBest, i)).join('');
-      document.getElementById('dossierWealthList').innerHTML = wealthRanked.slice(0, 5).map((sc, i) => renderDossierRowHtml(sc, sc.wealthBest, i)).join('');
-      document.getElementById('dossierHomeList').innerHTML = homeRanked.slice(0, 5).map((sc, i) => renderDossierRowHtml(sc, sc.homeBest, i)).join('');
-      document.getElementById('dossierShadowList').innerHTML = shadowRanked.slice(0, 5).map((sc, i) => renderDossierRowHtml(sc, sc.shadowBest, i)).join('');
-
-      document.getElementById('dossierRemoteActivation').innerHTML = `
-        <div class="acg-grid-2" style="margin-bottom:0;">
-          <div style="background:rgba(244,114,182,0.06); border:1px solid rgba(244,114,182,0.28); border-radius:1rem; padding:1.25rem;">
-            <div class="acg-kicker" style="color:#F472B6;">Zdalna Aktywacja Linii Wenus (${loveRanked[0].city.name})</div>
-            <p style="font-size:0.86rem; line-height:1.65; color:rgba(250,248,245,0.85); margin:0;">
-              Twoja najsilniejsza linia magnetyzmu przebiega przez <strong>${loveRanked[0].city.name} (${loveRanked[0].city.country})</strong>. Otocz się estetyką, muzyką, perfumami lub kuchnią tego regionu w swojej sypialni i na randkach — w astrokartografii rezonans kulturowy miejsca uruchamia tę samą oś 7. domu bez pakowania walizek.
-            </p>
-          </div>
-          <div style="background:rgba(52,211,153,0.06); border:1px solid rgba(52,211,153,0.28); border-radius:1rem; padding:1.25rem;">
-            <div class="acg-kicker" style="color:#34D399;">Zdalna Aktywacja Linii Jowisza (${wealthRanked[0].city.name})</div>
-            <p style="font-size:0.86rem; line-height:1.65; color:rgba(250,248,245,0.85); margin:0;">
-              Twój wektor ekspansji finansowej kulminuje w pobliżu miasta <strong>${wealthRanked[0].city.name} (${wealthRanked[0].city.country})</strong>. Szukaj klientów, pracodawców, rynków zbytu lub partnerów biznesowych powiązanych z tym krajem — kontrakty z tego kierunku geograficznego idą najłatwiej.
-            </p>
-          </div>
-        </div>
-      `;
+      lastRankedDossier = { loveRanked, wealthRanked, homeRanked, shadowRanked };
+      const wrapEl = document.getElementById('acgPaywallWrap');
+      renderDossierContent(Boolean(wrapEl && wrapEl.classList.contains('is-unlocked')));
 
       const resSec = document.getElementById('acgResultsSection');
       resSec.classList.add('is-visible');
@@ -1088,6 +1107,7 @@
 
     function unlockAtlas() {
       if (paywallWrap) paywallWrap.classList.add('is-unlocked');
+      renderDossierContent(true);
       if (modal) modal.classList.remove('is-active');
     }
 

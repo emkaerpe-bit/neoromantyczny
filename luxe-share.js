@@ -3,10 +3,7 @@
 
   function buildShareUrl() {
     var url = new URL(window.location.href);
-    url.searchParams.delete('payment_intent');
-    url.searchParams.delete('payment_intent_client_secret');
-    url.searchParams.delete('redirect_status');
-    url.searchParams.set('utm_source', 'viral_share');
+    url.search = '?utm_source=viral_share';
     return url.toString();
   }
 

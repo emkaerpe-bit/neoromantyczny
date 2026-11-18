@@ -9,12 +9,15 @@ const EXPECTED_AMOUNTS = {
   astrokartografia: 3900,
   dyspozytorzy: 2900,
   saturn: 4700,
-  chiron: 2900
+  chiron: 2900,
+  solariusz: 3900
 };
 
 function getCorsHeaders(event) {
   const origin = (event && event.headers && (event.headers.origin || event.headers.Origin)) || '';
-  const allowOrigin = /^https:\/\/(www\.)?neoromantyczny\.pl$/.test(origin) || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)
+  const isDevEnv = process.env.NETLIFY_DEV === 'true' || (typeof process.env.CONTEXT === 'string' && process.env.CONTEXT !== 'production');
+  const allowLocal = isDevEnv && /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+  const allowOrigin = /^https:\/\/(www\.)?neoromantyczny\.pl$/.test(origin) || allowLocal
     ? origin
     : 'https://neoromantyczny.pl';
   return {
@@ -85,13 +88,14 @@ export async function handler(event) {
 
           const metaProduct = parsed.metadata && parsed.metadata.product;
           const metaHash = (parsed.metadata && parsed.metadata.chart_hash) || '';
-          const productMatch = !metaProduct || metaProduct === productKey;
-          const hashMatch = !metaHash || (cleanChartHash && metaHash === cleanChartHash);
+          const productMatch = metaProduct ? metaProduct === productKey : productKey === 'prezentownik';
+          const hashMatch = productKey === 'prezentownik' || !metaHash || (cleanChartHash && metaHash === cleanChartHash);
           const amountValid = parsed.amount >= expectedAmount && parsed.currency === 'pln';
           const verified = parsed.status === 'succeeded' && amountValid && productMatch && hashMatch;
           const boundHash = metaHash || cleanChartHash || productKey;
+          const unlockTs = Date.now();
           const unlockToken = verified
-            ? crypto.createHmac('sha256', STRIPE_SECRET_KEY.trim()).update(`${productKey}|${boundHash}|${paymentIntentId}`).digest('hex')
+            ? crypto.createHmac('sha256', STRIPE_SECRET_KEY.trim()).update(`${productKey}|${boundHash}|${paymentIntentId}|${unlockTs}`).digest('hex')
             : '';
 
           const responsePayload = {
@@ -102,6 +106,7 @@ export async function handler(event) {
             product: productKey,
             chartHash: boundHash,
             paymentIntentId,
+            unlockTs,
             unlockToken
           };
           if (verified && productKey === 'prezentownik' && process.env.EBOOK_URL) {
@@ -114,7 +119,7 @@ export async function handler(event) {
       });
     });
 
-    req.on('error', (err) => resolve(respond(headers, 500, { verified: false, error: err.message })));
+    req.on('error', (_err) => resolve(respond(headers, 500, { verified: false, error: 'Błąd weryfikacji połączenia ze Stripe.' })));
     req.end();
   });
 }

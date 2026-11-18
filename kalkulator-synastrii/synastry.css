@@ -1130,6 +1130,7 @@ body {
   body { background: #0D0D12 !important; color: #FAF8F5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   #luxe-header-nav, #syn-form, .syn-paywall-overlay, .syn-no-print, .syn-tooltip-pop, .syn-info-pill { display: none !important; }
   .syn-container { padding: 1rem 0 !important; max-width: 100% !important; }
-  .syn-locked-content { filter: none !important; opacity: 1 !important; }
+  .syn-paywall-section:not(.is-unlocked) .syn-locked-content { display: none !important; }
+  .syn-paywall-section.is-unlocked .syn-locked-content { filter: none !important; opacity: 1 !important; max-height: none !important; overflow: visible !important; }
   .syn-card, .syn-report-chapter, .syn-paywall-section { break-inside: avoid; box-shadow: none !important; border-color: rgba(201, 169, 110, 0.4) !important; }
 }

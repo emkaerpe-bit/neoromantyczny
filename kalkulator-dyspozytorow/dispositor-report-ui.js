@@ -127,13 +127,20 @@
 
     const data = currentReportData;
     const unlocked = isUnlocked(currentChart);
-    const birthInfo = `Dane: ${currentChart.hasTime ? 'z godziną' : 'bez godziny (12:00)'} • ${currentChart.city && currentChart.city.name ? currentChart.city.name : 'Polska'}`;
+    const escCity = String(currentChart.city && currentChart.city.name ? currentChart.city.name : 'Polska').replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+    const birthInfo = `Dane: ${currentChart.hasTime ? 'z godziną' : 'bez godziny (12:00)'} • ${escCity}`;
     const bannerHtml = V.renderBannerHeader(data, birthInfo, unlocked, activeGender);
     const introExtras = renderRetrogradeChapter1(currentChart, currentHierarchy) + buildChainFlowNarrative(currentChart, currentHierarchy);
 
     if (!unlocked) {
       const sec1 = V.renderSectionCard(data.sections[0], introExtras, true);
-      const lockedSecs = data.sections.slice(1).map(s => V.renderSectionCard(s, '', true)).join('');
+      const lockedSecs = data.sections.slice(1).map(s => `
+        <section class="disp-report-section is-active">
+          <div class="disp-nlg-sec-kicker">ROZDZIAŁ ${s.num} • ${String(s.tabLabel || '').replace(/^\d+\.\s*/, '').toUpperCase()}</div>
+          <h3 class="disp-nlg-sec-heading">${s.heading}</h3>
+          <p class="disp-nlg-text" style="opacity:0.55;">Pełna analiza tego rozdziału dostępna jest po odblokowaniu raportu.</p>
+        </section>
+      `).join('');
       container.innerHTML = `
         <article class="disp-full-report-card">
           ${bannerHtml}

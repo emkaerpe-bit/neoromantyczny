@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 # Jawne uprawnienia dla wyszukiwarek AI i systemów RAG (GEO 2026)
 User-agent: OAI-SearchBot

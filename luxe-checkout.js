@@ -92,7 +92,9 @@
       return Boolean(
         entry &&
         typeof entry.pi === 'string' && /^pi_[a-zA-Z0-9_]+$/.test(entry.pi) &&
-        typeof entry.token === 'string' && /^[a-f0-9]{64}$/i.test(entry.token)
+        typeof entry.token === 'string' && /^[a-f0-9]{64}$/i.test(entry.token) &&
+        !/^([a-f0-9])\1+$/i.test(entry.token) &&
+        typeof entry.ts === 'number' && entry.ts > 0 && entry.ts <= Date.now() + 60000
       );
     },
     markUnlocked(productKey, chartHash, verifyData) {
@@ -174,8 +176,17 @@
       btn: 'Zapłać 29,00 PLN i Odblokuj Raport &rarr;',
       successHeading: 'Raport został odblokowany!',
       successSub: 'Wszystkie 5 rozdziałów Klucza Chirona jest już aktywnych.',
-      unlockKey: 'neo_chiron_unlocked',
-      directUrl: 'https://buy.stripe.com/bJeeV67eN0bt7We4amcwg04'
+      unlockKey: 'neo_chiron_unlocked'
+    },
+    'solariusz': {
+      tag: 'SOLARIUSZ ROCZNY • PROFEKCJA I RELOKACJA',
+      title: 'Pełny Raport Solariusza (Solar Return)',
+      sub: 'Prognoza 12 miesięcy, Władca Roku wg Dorotheusa, aspekty do Radixu i mapa 4 przesileń roku.',
+      price: '39,00 PLN',
+      btn: 'Zapłać 39,00 PLN i Odblokuj Raport &rarr;',
+      successHeading: 'Raport został odblokowany!',
+      successSub: 'Wszystkie 6 rozdziałów Solariusza jest już aktywnych.',
+      unlockKey: 'neo_solar_unlocked'
     }
   };
 

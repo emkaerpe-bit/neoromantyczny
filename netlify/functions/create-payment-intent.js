@@ -8,12 +8,38 @@ const PRODUCTS = {
   'astrokartografia': { amount: '3900', description: 'Atlas Astrokartograficzny (Pełny Raport Relokacyjny)' },
   'dyspozytorzy': { amount: '2900', description: 'Architektura Podświadomości: Raport Władcy Horoskopu' },
   'saturn': { amount: '4700', description: 'Protokół Przetrwania Powrotu Saturna (The Chronos Protocol)' },
-  'chiron': { amount: '2900', description: 'Klucz Chirona: Raport Pierwotnej Rany i Uzdrowienia' }
+  'chiron': { amount: '2900', description: 'Klucz Chirona: Raport Pierwotnej Rany i Uzdrowienia' },
+  'solariusz': { amount: '3900', description: 'Pełny Raport Solariusza (6 Rozdziałów + PDF A4)' }
 };
+
+const ipRateBuckets = new Map();
+const RATE_WINDOW_MS = 60000;
+const RATE_MAX_REQ = 15;
+
+function isRateLimited(event) {
+  const hdrs = (event && event.headers) || {};
+  const rawIp = hdrs['x-nf-client-connection-ip'] || hdrs['client-ip'] || hdrs['x-forwarded-for'] || 'unknown';
+  const ip = String(rawIp).split(',')[0].trim();
+  const now = Date.now();
+  if (ipRateBuckets.size > 500) {
+    for (const [k, v] of ipRateBuckets.entries()) {
+      if (now - v.start > RATE_WINDOW_MS) ipRateBuckets.delete(k);
+    }
+  }
+  const bucket = ipRateBuckets.get(ip);
+  if (!bucket || now - bucket.start > RATE_WINDOW_MS) {
+    ipRateBuckets.set(ip, { start: now, count: 1 });
+    return false;
+  }
+  bucket.count += 1;
+  return bucket.count > RATE_MAX_REQ;
+}
 
 function getCorsHeaders(event) {
   const origin = (event && event.headers && (event.headers.origin || event.headers.Origin)) || '';
-  const allowOrigin = /^https:\/\/(www\.)?neoromantyczny\.pl$/.test(origin) || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)
+  const isDevEnv = process.env.NETLIFY_DEV === 'true' || (typeof process.env.CONTEXT === 'string' && process.env.CONTEXT !== 'production');
+  const allowLocal = isDevEnv && /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+  const allowOrigin = /^https:\/\/(www\.)?neoromantyczny\.pl$/.test(origin) || allowLocal
     ? origin
     : 'https://neoromantyczny.pl';
   return {
@@ -34,6 +60,10 @@ export async function handler(event, context) {
 
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, headers: corsHeaders, body: JSON.stringify({ error: 'Method Not Allowed' }) };
+  }
+
+  if (isRateLimited(event)) {
+    return { statusCode: 429, headers: corsHeaders, body: JSON.stringify({ error: 'Zbyt wiele prób. Odczekaj chwilę i spróbuj ponownie.' }) };
   }
 
   if (!STRIPE_SECRET_KEY) {
@@ -131,11 +161,11 @@ export async function handler(event, context) {
       });
     });
 
-    req.on('error', (err) => {
+    req.on('error', (_err) => {
       resolve({
         statusCode: 500,
         headers: corsHeaders,
-        body: JSON.stringify({ error: err.message })
+        body: JSON.stringify({ error: 'Błąd połączenia z operatorem płatności Stripe.' })
       });
     });
 
