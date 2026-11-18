@@ -2,6 +2,7 @@
   'use strict';
 
   const _neoEsc = (x) => String(x || "").replace(/[&<>"']/g, (m) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+  // biome-ignore lint/security/noSecrets: public Stripe Publishable Key designed for frontend
   const STRIPE_PK = 'pk_live_51UYWld665tgVOXNONMRtB5ENfc0M22rrNXL5BIRvTw4BNSt3oYOuUtIjFhT3mf6On5QJ3PqkYdMLKSSsESvdJQNA00phk5bG3f';
   let stripeInstance = null;
   let stripeElementsInstance = null;
@@ -124,6 +125,7 @@
       btn: 'Zapłać 47,00 PLN i Odbierz E-book &rarr;',
       successHeading: 'Płatność zakończona pomyślnie!',
       successSub: 'Twój e-book Zodiakalny Prezentownik jest gotowy do pobrania.',
+      // biome-ignore lint/security/noSecrets: public Stripe Payment Link URL
       directUrl: 'https://buy.stripe.com/dRm28k8iRbUb4K2fT4cwg00'
     },
     'synastria': {
@@ -155,6 +157,7 @@
       successHeading: 'Raport został odblokowany!',
       successSub: 'Analiza psychologii głębi i władcy horoskopu jest gotowa.',
       unlockKey: 'neo_dispositor_unlocked',
+      // biome-ignore lint/security/noSecrets: public Stripe Payment Link URL
       directUrl: 'https://buy.stripe.com/bJeeV67eN0bt7We4amcwg04'
     },
     'saturn': {
@@ -166,6 +169,7 @@
       successHeading: 'Raport został odblokowany!',
       successSub: 'Wszystkie 5 rozdziałów Protokołu Chronosa jest już aktywnych.',
       unlockKey: 'neo_saturn_unlocked',
+      // biome-ignore lint/security/noSecrets: public Stripe Payment Link URL
       directUrl: 'https://buy.stripe.com/bJecMY8iRe2jdgy9uGcwg03'
     },
     'chiron': {
@@ -490,6 +494,7 @@
 
     if (submitBtn) {
       submitBtn.disabled = true;
+      // biome-ignore lint/security/noSecrets: inline SVG spinner markup
       submitBtn.innerHTML = '<span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M8.5 5.2h15M8.5 26.8h15" stroke-width="1.65"/><path d="M9.8 5.2v21.6M22.2 5.2v21.6" stroke-width="0.8" opacity="0.45"/><path d="M11.8 5.2c0 5.4 4.2 8.2 4.2 10.8c0-2.6 4.2-5.4 4.2-10.8" stroke-width="1.45"/><path d="M11.8 26.8c0-5.4 4.2-8.2 4.2-10.8c0 2.6 4.2 5.4 4.2 10.8" stroke-width="1.45"/><path d="M13.5 26.8L16 23.2l2.5 3.6Z" stroke="none" fill="currentColor" fill-opacity="0.42"/></svg>Autoryzacja płatności...</span>';
     }
     if (errorBox) errorBox.innerHTML = '';
@@ -511,6 +516,7 @@
         const verifyData = await verifyPaymentOnServer(paymentIntent.id, activeProduct, activeChartHash);
         showSuccess(verifyData && verifyData.downloadUrl, verifyData);
       } else if (paymentIntent && paymentIntent.status === 'processing') {
+        // biome-ignore lint/security/noSecrets: inline SVG waiting status markup
         if (errorBox) errorBox.innerHTML = '<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M8.5 5.2h15M8.5 26.8h15" stroke-width="1.65"/><path d="M9.8 5.2v21.6M22.2 5.2v21.6" stroke-width="0.8" opacity="0.45"/><path d="M11.8 5.2c0 5.4 4.2 8.2 4.2 10.8c0-2.6 4.2-5.4 4.2-10.8" stroke-width="1.45"/><path d="M11.8 26.8c0-5.4 4.2-8.2 4.2-10.8c0 2.6 4.2 5.4 4.2 10.8" stroke-width="1.45"/><path d="M13.5 26.8L16 23.2l2.5 3.6Z" stroke="none" fill="currentColor" fill-opacity="0.42"/></svg>Płatność jest w trakcie przetwarzania przez bank. Odśwież stronę za chwilę.';
       }
     } catch (err) {
