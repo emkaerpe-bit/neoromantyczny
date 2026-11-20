@@ -13,18 +13,49 @@ const EXPECTED_AMOUNTS = {
   solariusz: 3900
 };
 
-function getCorsHeaders(event) {
+const ipRateBuckets = new Map();
+const RATE_WINDOW_MS = 60000;
+const RATE_MAX_REQ = 20;
+
+function isRateLimited(event) {
+  const hdrs = (event && event.headers) || {};
+  const rawIp = hdrs['x-nf-client-connection-ip'] || hdrs['client-ip'] || hdrs['x-forwarded-for'] || 'unknown';
+  const ip = String(rawIp).split(',')[0].trim();
+  const now = Date.now();
+  if (ipRateBuckets.size > 500) {
+    for (const [k, v] of ipRateBuckets.entries()) {
+      if (now - v.start > RATE_WINDOW_MS) ipRateBuckets.delete(k);
+    }
+  }
+  const bucket = ipRateBuckets.get(ip);
+  if (!bucket || now - bucket.start > RATE_WINDOW_MS) {
+    ipRateBuckets.set(ip, { start: now, count: 1 });
+    return false;
+  }
+  bucket.count += 1;
+  return bucket.count > RATE_MAX_REQ;
+}
+
+function isAllowedOrigin(event) {
   const origin = (event && event.headers && (event.headers.origin || event.headers.Origin)) || '';
   const isDevEnv = process.env.NETLIFY_DEV === 'true' || (typeof process.env.CONTEXT === 'string' && process.env.CONTEXT !== 'production');
-  const allowLocal = isDevEnv && /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
-  const allowOrigin = /^https:\/\/(www\.)?neoromantyczny\.pl$/.test(origin) || allowLocal
-    ? origin
-    : 'https://neoromantyczny.pl';
+  if (/^https:\/\/(www\.)?neoromantyczny\.pl$/.test(origin)) return true;
+  if (isDevEnv && (/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin) || /^https:\/\/[a-z0-9-]+\.netlify\.app$/.test(origin))) {
+    return true;
+  }
+  return false;
+}
+
+function getCorsHeaders(event) {
+  const origin = (event && event.headers && (event.headers.origin || event.headers.Origin)) || '';
+  const allowOrigin = isAllowedOrigin(event) ? origin : 'https://neoromantyczny.pl';
   return {
     'Access-Control-Allow-Origin': allowOrigin,
     'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Vary': 'Origin',
+    'X-Content-Type-Options': 'nosniff',
+    'Cache-Control': 'no-store',
     'Content-Type': 'application/json; charset=utf-8'
   };
 }
@@ -40,20 +71,32 @@ export async function handler(event) {
     return { statusCode: 200, headers, body: '' };
   }
 
-  if (!STRIPE_SECRET_KEY) {
-    return respond(headers, 500, { verified: false, error: 'Brak konfiguracji STRIPE_SECRET_KEY na serwerze.' });
+  if (event.httpMethod !== 'POST') {
+    return respond(headers, 405, { verified: false, error: 'Method Not Allowed' });
   }
 
-  let paymentIntentId = event.queryStringParameters?.payment_intent || '';
-  let productKey = event.queryStringParameters?.product || '';
-  let chartHash = event.queryStringParameters?.chartHash || '';
+  if (!isAllowedOrigin(event)) {
+    return respond(headers, 403, { verified: false, error: 'Niedozwolone źródło żądania.' });
+  }
 
-  if (event.httpMethod === 'POST' && event.body) {
+  if (isRateLimited(event)) {
+    return respond(headers, 429, { verified: false, error: 'Zbyt wiele prób weryfikacji. Odczekaj chwilę i spróbuj ponownie.' });
+  }
+
+  if (!STRIPE_SECRET_KEY) {
+    return respond(headers, 500, { verified: false, error: 'Usługa weryfikacji płatności jest chwilowo niedostępna.' });
+  }
+
+  let paymentIntentId = '';
+  let productKey = '';
+  let chartHash = '';
+
+  if (event.body) {
     try {
       const body = JSON.parse(event.body);
-      paymentIntentId = body.paymentIntentId || body.payment_intent || paymentIntentId;
-      productKey = body.product || productKey;
-      chartHash = body.chartHash || chartHash;
+      paymentIntentId = body.paymentIntentId || body.payment_intent || '';
+      productKey = body.product || '';
+      chartHash = body.chartHash || '';
     } catch (_e) {
       return respond(headers, 400, { verified: false, error: 'Nieprawidłowy format JSON.' });
     }
@@ -83,13 +126,16 @@ export async function handler(event) {
         try {
           const parsed = JSON.parse(body);
           if (res.statusCode < 200 || res.statusCode >= 300) {
-            return resolve(respond(headers, res.statusCode, { verified: false, error: parsed.error?.message || 'Błąd Stripe API.' }));
+            const safeMsg = res.statusCode >= 500
+              ? 'Błąd operatora płatności. Spróbuj ponownie za chwilę.'
+              : (parsed.error?.message || 'Błąd Stripe API.');
+            return resolve(respond(headers, res.statusCode, { verified: false, error: safeMsg }));
           }
 
           const metaProduct = parsed.metadata && parsed.metadata.product;
           const metaHash = (parsed.metadata && parsed.metadata.chart_hash) || '';
           const productMatch = metaProduct ? metaProduct === productKey : productKey === 'prezentownik';
-          const hashMatch = productKey === 'prezentownik' || !metaHash || (cleanChartHash && metaHash === cleanChartHash);
+          const hashMatch = productKey === 'prezentownik' || Boolean(metaHash && cleanChartHash && metaHash === cleanChartHash);
           const amountValid = parsed.amount >= expectedAmount && parsed.currency === 'pln';
           const verified = parsed.status === 'succeeded' && amountValid && productMatch && hashMatch;
           const boundHash = metaHash || cleanChartHash || productKey;

@@ -13,6 +13,8 @@
   let activeCallback = null;
   let activeChartHash = '';
   let activePairLabel = '';
+  let modalEventsBound = false;
+  let lastFocusedEl = null;
 
   const UNLOCKS_STORAGE_KEY = 'neo_chart_unlocks_v1';
   const LEGACY_UNLOCK_KEYS = ['neo_saturn_unlocked', 'neo_dispositor_unlocked', 'neo_acg_unlocked', 'neo_synastry_unlocked', 'neo_chiron_unlocked'];
@@ -38,10 +40,59 @@
     return normLocToken(city);
   }
 
+  function sha256Hex(str) {
+    const bytes = typeof TextEncoder !== 'undefined'
+      ? new TextEncoder().encode(String(str || ''))
+      : Array.from(unescape(encodeURIComponent(String(str || ''))), (c) => c.charCodeAt(0));
+    const K = [
+      0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
+      0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
+      0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,
+      0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,
+      0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,
+      0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,
+      0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,
+      0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2
+    ];
+    const H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+    const bitLen = bytes.length * 8;
+    const padLen = ((bytes.length + 9 + 63) >> 6) << 6;
+    const msg = new Uint8Array(padLen);
+    msg.set(bytes);
+    msg[bytes.length] = 0x80;
+    const view = new DataView(msg.buffer);
+    view.setUint32(padLen - 8, Math.floor(bitLen / 0x100000000), false);
+    view.setUint32(padLen - 4, bitLen >>> 0, false);
+    const w = new Uint32Array(64);
+    const r = (x, n) => (x >>> n) | (x << (32 - n));
+    for (let off = 0; off < padLen; off += 64) {
+      for (let i = 0; i < 16; i++) w[i] = view.getUint32(off + i * 4, false);
+      for (let i = 16; i < 64; i++) {
+        const s0 = r(w[i - 15], 7) ^ r(w[i - 15], 18) ^ (w[i - 15] >>> 3);
+        const s1 = r(w[i - 2], 17) ^ r(w[i - 2], 19) ^ (w[i - 2] >>> 10);
+        w[i] = (w[i - 16] + s0 + w[i - 7] + s1) >>> 0;
+      }
+      let [a, b, c, d, e, f, g, h] = H;
+      for (let i = 0; i < 64; i++) {
+        const S1 = r(e, 6) ^ r(e, 11) ^ r(e, 25);
+        const ch = (e & f) ^ ((~e) & g);
+        const t1 = (h + S1 + ch + K[i] + w[i]) >>> 0;
+        const S0 = r(a, 2) ^ r(a, 13) ^ r(a, 22);
+        const maj = (a & b) ^ (a & c) ^ (b & c);
+        const t2 = (S0 + maj) >>> 0;
+        h = g; g = f; f = e; e = (d + t1) >>> 0; d = c; c = b; b = a; a = (t1 + t2) >>> 0;
+      }
+      H[0] = (H[0] + a) >>> 0; H[1] = (H[1] + b) >>> 0; H[2] = (H[2] + c) >>> 0; H[3] = (H[3] + d) >>> 0;
+      H[4] = (H[4] + e) >>> 0; H[5] = (H[5] + f) >>> 0; H[6] = (H[6] + g) >>> 0; H[7] = (H[7] + h) >>> 0;
+    }
+    return H.map((x) => x.toString(16).padStart(8, '0')).join('');
+  }
+
   const NeoChartLock = {
     buildHash(productKey, inputs) {
       const p = String(productKey || 'calc').replace(/[^a-z0-9_-]/gi, '').toLowerCase();
       const d = inputs || {};
+      let raw;
       if (p === 'synastria') {
         const dA = String(d.dateA || '').trim();
         const tA = String(d.timeA || '12:00').trim();
@@ -49,12 +100,14 @@
         const dB = String(d.dateB || '').trim();
         const tB = String(d.timeB || '12:00').trim();
         const cB = formatCoordsOrCity(d.cityB, d.latB, d.lonB);
-        return `${p}|${dA}|${tA}|${cA}|${dB}|${tB}|${cB}`.slice(0, 140);
+        raw = `${p}|${dA}|${tA}|${cA}|${dB}|${tB}|${cB}`;
+      } else {
+        const dt = String(d.date || '').trim();
+        const tm = String(d.time || '12:00').trim();
+        const loc = formatCoordsOrCity(d.city, d.lat, d.lon);
+        raw = `${p}|${dt}|${tm}|${loc}`;
       }
-      const dt = String(d.date || '').trim();
-      const tm = String(d.time || '12:00').trim();
-      const loc = formatCoordsOrCity(d.city, d.lat, d.lon);
-      return `${p}|${dt}|${tm}|${loc}`.slice(0, 140);
+      return `${p}_${sha256Hex('neo_chart_v2|' + raw).slice(0, 32)}`;
     },
     readStore() {
       try {
@@ -195,10 +248,13 @@
   };
 
   function ensureModalMounted() {
-    if (document.getElementById('luxe-stripe-modal')) return;
+    if (document.getElementById('luxe-stripe-modal')) {
+      if (!modalEventsBound) bindModalEvents();
+      return;
+    }
 
     const modalHtml = `
-    <div class="luxe-modal-backdrop" id="luxe-stripe-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="luxe-modal-backdrop" id="luxe-stripe-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="luxe-modal-heading">
       <div class="luxe-modal-card">
         <button type="button" class="luxe-modal-close" id="luxe-stripe-modal-close" aria-label="Zamknij">&times;</button>
         
@@ -236,7 +292,7 @@
           <div style="font-size:42px;margin-bottom:0.75rem;color:#C9A84C;"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><polygon points="15.5,4 17.3,14.2 25.5,16 17.3,17.8 15.5,28 13.7,17.8 5.5,16 13.7,14.2" stroke-width="1.25" fill="currentColor" fill-opacity="0.18"/><path d="M10.8 11.3l9.4 9.4M20.2 11.3l-9.4 9.4" stroke-width="0.85" opacity="0.75"/><circle cx="24.5" cy="7.5" r="1.1" stroke="none" fill="currentColor"/></svg></div>
           <h3 class="luxe-card-heading" id="luxe-success-heading" style="font-size:1.5rem;">Płatność zakończona!</h3>
           <p class="luxe-card-sub" id="luxe-success-sub" style="margin-bottom:1.5rem;">Twój dostęp został aktywowany.</p>
-          <a href="/success.html" id="luxe-success-download-btn" class="luxe-btn-download">
+          <a href="/success" id="luxe-success-download-btn" class="luxe-btn-download">
             Pobierz Materiały &rarr;
           </a>
         </div>
@@ -248,6 +304,8 @@
   }
 
   function bindModalEvents() {
+    if (modalEventsBound) return;
+    modalEventsBound = true;
     const modal = document.getElementById('luxe-stripe-modal');
     const closeBtn = document.getElementById('luxe-stripe-modal-close');
     const submitBtn = document.getElementById('luxe-stripe-submit-btn');
@@ -259,7 +317,8 @@
       });
     }
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
+      const m = document.getElementById('luxe-stripe-modal');
+      if (e.key === 'Escape' && m && m.classList.contains('is-active')) closeModal();
     });
     if (submitBtn) submitBtn.addEventListener('click', handleSubmit);
   }
@@ -295,8 +354,12 @@
     if (priceEl) priceEl.innerText = prod.price;
     if (labelEl) labelEl.innerHTML = prod.btn;
 
+    lastFocusedEl = document.activeElement;
+    modal.setAttribute('aria-hidden', 'false');
     modal.classList.add('is-active');
     document.body.style.overflow = 'hidden';
+    const closeBtn = document.getElementById('luxe-stripe-modal-close');
+    if (closeBtn) closeBtn.focus();
 
     // Mount or re-mount Stripe
     initStripe(activeProduct);
@@ -306,7 +369,12 @@
     const modal = document.getElementById('luxe-stripe-modal');
     if (!modal) return;
     modal.classList.remove('is-active');
+    modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') {
+      lastFocusedEl.focus();
+    }
+    lastFocusedEl = null;
   }
 
   function showSuccess(verifiedDownloadUrl, verifyData) {
@@ -326,10 +394,13 @@
     if (sSub) sSub.innerText = prod.successSub;
     if (sBtn) {
       sBtn.innerHTML = prod.unlockKey ? 'Przejdź do Raportu &rarr;' : 'Pobierz Zodiakalny Prezentownik (PDF) &darr;';
-      sBtn.href = dlUrl || '#';
+      sBtn.href = dlUrl || '/success';
       if (!prod.unlockKey && dlUrl) {
         sBtn.setAttribute('target', '_blank');
         sBtn.setAttribute('rel', 'noopener noreferrer');
+      } else {
+        sBtn.removeAttribute('target');
+        sBtn.removeAttribute('rel');
       }
       if (prod.unlockKey) {
         sBtn.onclick = (e) => {
@@ -338,6 +409,8 @@
           try { sessionStorage.setItem('neo_just_unlocked', activeProduct); } catch (err) {}
           window.location.reload();
         };
+      } else {
+        sBtn.onclick = null;
       }
     }
 
@@ -352,17 +425,22 @@
   async function ensureStripeLoaded() {
     if (typeof window.Stripe !== 'undefined') return true;
 
+    let failed = false;
     let s = document.querySelector('script[src*="js.stripe.com"]');
     if (!s) {
       s = document.createElement('script');
       s.src = 'https://js.stripe.com/v3/';
       s.async = true;
+      s.addEventListener('error', () => { failed = true; }, { once: true });
       document.head.appendChild(s);
+    } else {
+      s.addEventListener('error', () => { failed = true; }, { once: true });
     }
 
     const start = Date.now();
-    while (Date.now() - start < 4500) {
+    while (Date.now() - start < 6000) {
       if (typeof window.Stripe !== 'undefined') return true;
+      if (failed) return false;
       await new Promise(r => setTimeout(r, 80));
     }
     return typeof window.Stripe !== 'undefined';
@@ -421,6 +499,24 @@
         if (loader) loader.style.display = 'none';
         if (submitBtn) submitBtn.style.display = 'flex';
         isStripeReady = true;
+      });
+      paymentElement.on('loaderror', () => {
+        if (loader) loader.style.display = 'none';
+        if (submitBtn) submitBtn.style.display = 'none';
+        const prod = PRODUCTS_CONFIG[productKey] || PRODUCTS_CONFIG['prezentownik'];
+        if (errorBox) {
+          errorBox.innerHTML = `
+            <div style="padding:0.85rem; border:1px solid rgba(201,168,76,0.3); background:rgba(201,168,76,0.06); border-radius:10px; margin-top:0.75rem; font-size:0.85rem; color:#FAF8F5; text-align:center; line-height:1.5;">
+              <p style="margin:0 0 0.5rem; color:rgba(250,248,245,0.85);">Formularz płatności Stripe nie mógł zostać wyrenderowany (sprawdź połączenie lub bloker skryptów).</p>
+              ${prod && prod.directUrl ? `
+                <p style="margin:0 0 0.75rem; font-size:0.8rem; color:rgba(250,248,245,0.65);">Możesz bezpiecznie sfinalizować transakcję w nowej karcie:</p>
+                <a href="${prod.directUrl}" target="_blank" rel="noopener noreferrer" class="luxe-btn-submit" style="display:inline-flex; align-items:center; justify-content:center; text-decoration:none; padding:0.75rem 1.4rem; font-size:0.88rem;">
+                  Przejdź do Kasy Stripe (${prod.price}) &rarr;
+                </a>
+              ` : ''}
+            </div>
+          `;
+        }
       });
 
     } catch (err) {

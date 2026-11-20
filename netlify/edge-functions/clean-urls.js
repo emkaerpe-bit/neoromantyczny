@@ -32,7 +32,13 @@ q.oninput=render;load();
 
 const jsonRes = (data, status = 200, extra = {}) => new Response(JSON.stringify(data), {
   status,
-  headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", ...extra }
+  headers: {
+    "Content-Type": "application/json; charset=utf-8",
+    "Cache-Control": "no-store",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "no-referrer",
+    ...extra
+  }
 });
 
 const cmsLoginFails = new Map();
@@ -150,7 +156,20 @@ export default async (request, context) => {
       return Response.redirect(url.toString(), 301);
     }
     if (path === "/admin" || path === "/admin/") {
-      return new Response(ADMIN_HTML, { status: 200, headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" } });
+      return new Response(ADMIN_HTML, {
+        status: 200,
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
+          "Cache-Control": "no-store",
+          "X-Robots-Tag": "noindex, nofollow",
+          "X-Frame-Options": "DENY",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "no-referrer",
+          "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+          "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+          "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none';"
+        }
+      });
     }
 
     const expected = (typeof Netlify !== "undefined" && Netlify.env ? Netlify.env.get("ADMIN_PASSWORD") : "") || "";

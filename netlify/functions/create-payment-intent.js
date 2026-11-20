@@ -35,18 +35,26 @@ function isRateLimited(event) {
   return bucket.count > RATE_MAX_REQ;
 }
 
-function getCorsHeaders(event) {
+function isAllowedOrigin(event) {
   const origin = (event && event.headers && (event.headers.origin || event.headers.Origin)) || '';
   const isDevEnv = process.env.NETLIFY_DEV === 'true' || (typeof process.env.CONTEXT === 'string' && process.env.CONTEXT !== 'production');
-  const allowLocal = isDevEnv && /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
-  const allowOrigin = /^https:\/\/(www\.)?neoromantyczny\.pl$/.test(origin) || allowLocal
-    ? origin
-    : 'https://neoromantyczny.pl';
+  if (/^https:\/\/(www\.)?neoromantyczny\.pl$/.test(origin)) return true;
+  if (isDevEnv && (/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin) || /^https:\/\/[a-z0-9-]+\.netlify\.app$/.test(origin))) {
+    return true;
+  }
+  return false;
+}
+
+function getCorsHeaders(event) {
+  const origin = (event && event.headers && (event.headers.origin || event.headers.Origin)) || '';
+  const allowOrigin = isAllowedOrigin(event) ? origin : 'https://neoromantyczny.pl';
   return {
     'Access-Control-Allow-Origin': allowOrigin,
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Vary': 'Origin',
+    'X-Content-Type-Options': 'nosniff',
+    'Cache-Control': 'no-store',
     'Content-Type': 'application/json; charset=utf-8'
   };
 }
@@ -62,6 +70,10 @@ export async function handler(event, context) {
     return { statusCode: 405, headers: corsHeaders, body: JSON.stringify({ error: 'Method Not Allowed' }) };
   }
 
+  if (!isAllowedOrigin(event)) {
+    return { statusCode: 403, headers: corsHeaders, body: JSON.stringify({ error: 'Niedozwolone źródło żądania.' }) };
+  }
+
   if (isRateLimited(event)) {
     return { statusCode: 429, headers: corsHeaders, body: JSON.stringify({ error: 'Zbyt wiele prób. Odczekaj chwilę i spróbuj ponownie.' }) };
   }
@@ -70,7 +82,7 @@ export async function handler(event, context) {
     return {
       statusCode: 500,
       headers: corsHeaders,
-      body: JSON.stringify({ error: 'Brak konfiguracji STRIPE_SECRET_KEY w środowisku serwera Netlify.' })
+      body: JSON.stringify({ error: 'Usługa płatności jest chwilowo niedostępna.' })
     };
   }
 
@@ -97,6 +109,10 @@ export async function handler(event, context) {
     } catch (e) {
       return { statusCode: 400, headers: corsHeaders, body: JSON.stringify({ error: 'Nieprawidłowy format JSON.' }) };
     }
+  }
+
+  if (productKey !== 'prezentownik' && !chartHash) {
+    return { statusCode: 400, headers: corsHeaders, body: JSON.stringify({ error: 'Brak identyfikatora wykresu.' }) };
   }
 
   return new Promise((resolve) => {
@@ -145,10 +161,13 @@ export async function handler(event, context) {
               })
             });
           } else {
+            const safeMsg = res.statusCode >= 500
+              ? 'Błąd operatora płatności. Spróbuj ponownie za chwilę.'
+              : (parsed.error?.message || 'Błąd Stripe API');
             resolve({
               statusCode: res.statusCode,
               headers: corsHeaders,
-              body: JSON.stringify({ error: parsed.error?.message || 'Błąd Stripe API' })
+              body: JSON.stringify({ error: safeMsg })
             });
           }
         } catch (e) {

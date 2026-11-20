@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   <span style="font-size:0.78rem; color:rgba(250,248,245,0.7);">
                     Hierarchia władzy psychiki:
                   </span>
-                  <a href="/kalkulator-dyspozytorow/?date=${encodeURIComponent(dateStr)}&time=${encodeURIComponent(rawTimeStr)}&city=${encodeURIComponent(cityStr)}" class="sat-disp-cta" style="display:inline-flex; align-items:center; gap:0.4rem; color:#C9A96E; font-size:0.78rem; font-weight:700; text-decoration:none; padding:0.35rem 0.75rem; background:rgba(201,169,110,0.1); border:1px solid rgba(201,169,110,0.3); border-radius:9999px; transition:all 0.2s ease;">
+                  <a href="/kalkulator-dyspozytorow/" class="sat-disp-cta" data-handoff-dispositor="1" style="display:inline-flex; align-items:center; gap:0.4rem; color:#C9A96E; font-size:0.78rem; font-weight:700; text-decoration:none; padding:0.35rem 0.75rem; background:rgba(201,169,110,0.1); border:1px solid rgba(201,169,110,0.3); border-radius:9999px; transition:all 0.2s ease;">
                     <span>Zbadaj Drzewo Dyspozytorów</span>
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </a>
@@ -401,6 +401,13 @@ document.addEventListener('DOMContentLoaded', function () {
     lastCalculatedData = { satPlanet, signData, houseData, dignityData, dispInfo, passes, satCtx };
     resultsContainer.style.display = 'block';
     bindProtocolEvents();
+    resultsContainer.querySelectorAll('[data-handoff-dispositor]').forEach(link => {
+      link.addEventListener('click', () => {
+        try {
+          localStorage.setItem('neo_dispositor_last_input', JSON.stringify({ date: dateStr, time: rawTimeStr, city: cityStr }));
+        } catch (err) {}
+      });
+    });
 
     // Start odliczania czasu rzeczywistego
     let targetDate = passes.length > 0 ? passes[0].date : new Date(now.getTime() + 86400000 * 30);
