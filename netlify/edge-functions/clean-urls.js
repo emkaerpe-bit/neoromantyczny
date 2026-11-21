@@ -248,11 +248,6 @@ export default async (request, context) => {
 };
 
 export const config = {
-  path: "/*",
-  onError: "bypass",
-  excludedPath: [
-    "/*.webp", "/*.png", "/*.jpg", "/*.jpeg", "/*.svg", "/*.ico",
-    "/*.css", "/*.js", "/*.woff2", "/*.woff", "/*.ttf", "/*.json", "/*.xml", "/*.txt",
-    "/assets/*", "/_next/*"
-  ]
+  path: ["/admin", "/admin/*", "/api/live-cms", "/api/live-cms/*", "/*.html", "/blog/*.html"],
+  onError: "bypass"
 };

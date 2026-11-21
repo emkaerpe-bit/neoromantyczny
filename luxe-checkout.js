@@ -225,16 +225,6 @@
       // biome-ignore lint/security/noSecrets: public Stripe Payment Link URL
       directUrl: 'https://buy.stripe.com/bJecMY8iRe2jdgy9uGcwg03'
     },
-    'chiron': {
-      tag: 'KLUCZ CHIRONA • RAPORT TRANSFORMACJI',
-      title: 'Raport Pierwotnej Rany i Złotego Daru Chirona',
-      sub: 'Pełna psychologia rany, aspekty do planet osobistych, kalendarz Powrotu Chirona i alchemia uzdrowienia.',
-      price: '29,00 PLN',
-      btn: 'Zapłać 29,00 PLN i Odblokuj Raport &rarr;',
-      successHeading: 'Raport został odblokowany!',
-      successSub: 'Wszystkie 5 rozdziałów Klucza Chirona jest już aktywnych.',
-      unlockKey: 'neo_chiron_unlocked'
-    },
     'solariusz': {
       tag: 'SOLARIUSZ ROCZNY • PROFEKCJA I RELOKACJA',
       title: 'Pełny Raport Solariusza (Solar Return)',
@@ -360,6 +350,9 @@
     document.body.style.overflow = 'hidden';
     const closeBtn = document.getElementById('luxe-stripe-modal-close');
     if (closeBtn) closeBtn.focus();
+
+    // Track checkout initiation (consent-gated, deduped)
+    trackBeginCheckout(activeProduct);
 
     // Mount or re-mount Stripe
     initStripe(activeProduct);
@@ -551,20 +544,57 @@
     return url.toString();
   }
 
-  function trackGa4Purchase(paymentIntentId, productKey) {
+  let lastBeginKey = '';
+  let lastBeginTs = 0;
+
+  function trackBeginCheckout(productKey) {
     try {
-      if (typeof window.gtag !== 'function' || !paymentIntentId) return;
-      const dedupeKey = 'neo_ga4_tx_' + paymentIntentId;
-      if (sessionStorage.getItem(dedupeKey)) return;
-      sessionStorage.setItem(dedupeKey, '1');
+      const c = window.neoConsent && typeof window.neoConsent.get === 'function' ? window.neoConsent.get() : null;
+      if (!c) return;
+      const now = Date.now();
+      if (lastBeginKey === productKey && now - lastBeginTs < 1500) return;
+      lastBeginKey = productKey;
+      lastBeginTs = now;
       const prod = PRODUCTS_CONFIG[productKey] || PRODUCTS_CONFIG['prezentownik'];
       const numericPrice = parseFloat(String(prod.price || '0').replace(',', '.')) || 0;
-      window.gtag('event', 'purchase', {
-        transaction_id: paymentIntentId,
-        value: numericPrice,
-        currency: 'PLN',
-        items: [{ item_id: productKey, item_name: prod.title || productKey, price: numericPrice, quantity: 1 }]
-      });
+      if (c.analytics && typeof window.gtag === 'function') {
+        window.gtag('event', 'begin_checkout', {
+          currency: 'PLN',
+          value: numericPrice,
+          items: [{ item_id: productKey, item_name: prod.title || productKey, price: numericPrice, quantity: 1 }]
+        });
+      }
+      if (c.marketing && typeof window.fbq === 'function') {
+        window.fbq('track', 'InitiateCheckout', { content_name: productKey, value: numericPrice, currency: 'PLN' });
+      }
+    } catch (_e) {}
+  }
+
+  function trackGa4Purchase(paymentIntentId, productKey) {
+    try {
+      if (!paymentIntentId) return;
+      const c = window.neoConsent && typeof window.neoConsent.get === 'function' ? window.neoConsent.get() : null;
+      const prod = PRODUCTS_CONFIG[productKey] || PRODUCTS_CONFIG['prezentownik'];
+      const numericPrice = parseFloat(String(prod.price || '0').replace(',', '.')) || 0;
+      if (typeof window.gtag === 'function' && (!c || c.analytics)) {
+        const dedupeKey = 'neo_ga4_tx_' + paymentIntentId;
+        if (!sessionStorage.getItem(dedupeKey)) {
+          sessionStorage.setItem(dedupeKey, '1');
+          window.gtag('event', 'purchase', {
+            transaction_id: paymentIntentId,
+            value: numericPrice,
+            currency: 'PLN',
+            items: [{ item_id: productKey, item_name: prod.title || productKey, price: numericPrice, quantity: 1 }]
+          });
+        }
+      }
+      if (c && c.marketing && typeof window.fbq === 'function') {
+        const fbKey = 'neo_fb_tx_' + paymentIntentId;
+        if (!sessionStorage.getItem(fbKey)) {
+          sessionStorage.setItem(fbKey, '1');
+          window.fbq('track', 'Purchase', { value: numericPrice, currency: 'PLN', content_name: productKey }, { eventID: paymentIntentId });
+        }
+      }
     } catch (_e) {}
   }
 

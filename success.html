@@ -77,6 +77,44 @@
         actionEl.innerHTML = '<a href="/" class="btn">Wróć na stronę główną &rarr;</a>';
       }
 
+      function trackVerifiedPurchase(paymentIntentId, productKey, amountGrosze) {
+        if (!paymentIntentId) return;
+        const val = (typeof amountGrosze === 'number' && amountGrosze > 0) ? (amountGrosze / 100) : 47;
+        let consentBound = false;
+        function fire(consent) {
+          const c = consent || (window.neoConsent && typeof window.neoConsent.get === 'function' ? window.neoConsent.get() : null);
+          if (!c) return false;
+          let doneGa = !c.analytics, doneFb = !c.marketing;
+          try {
+            if (c.analytics && typeof window.gtag === 'function') {
+              const gk = 'neo_ga4_tx_' + paymentIntentId;
+              if (!sessionStorage.getItem(gk)) {
+                sessionStorage.setItem(gk, '1');
+                window.gtag('event', 'purchase', { transaction_id: paymentIntentId, value: val, currency: 'PLN', items: [{ item_id: productKey, item_name: 'Zodiakalny Prezentownik', price: val, quantity: 1 }] });
+              }
+              doneGa = true;
+            }
+            if (c.marketing && typeof window.fbq === 'function') {
+              const fk = 'neo_fb_tx_' + paymentIntentId;
+              if (!sessionStorage.getItem(fk)) {
+                sessionStorage.setItem(fk, '1');
+                window.fbq('track', 'Purchase', { value: val, currency: 'PLN', content_name: productKey }, { eventID: paymentIntentId });
+              }
+              doneFb = true;
+            }
+          } catch (_e) {}
+          return doneGa && doneFb;
+        }
+        let tries = 0;
+        (function poll() {
+          if (!consentBound && window.neoConsent && typeof window.neoConsent.onChange === 'function') {
+            consentBound = true;
+            window.neoConsent.onChange(function (st) { fire(st); });
+          }
+          if (!fire(null) && ++tries < 16) setTimeout(poll, 250);
+        })();
+      }
+
       if (!pi) {
         showBlocked('Ta strona jest dostępna po sfinalizowaniu zamówienia. Jeśli właśnie opłaciłeś e-booka i nie widzisz linku, skontaktuj się z nami.');
         return;
@@ -93,6 +131,7 @@
           showBlocked('Płatność nie została jeszcze zaksięgowana przez Stripe. Jeśli środki zostały pobrane, napisz do nas podając numer transakcji.');
           return;
         }
+        trackVerifiedPurchase(pi, product, data.amount);
         const dlUrl = (data.downloadUrl && /^https:\/\//i.test(data.downloadUrl)) ? data.downloadUrl : '';
         titleEl.innerHTML = 'Płatność zakończona <span>sukcesem!</span>';
         if (dlUrl) {

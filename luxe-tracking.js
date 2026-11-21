@@ -45,7 +45,7 @@
   }
 
   document.addEventListener('click', function (e) {
-    var cta = e.target.closest('a[href*="stripe.com"], [data-luxe-checkout], .js-open-checkout');
+    var cta = e.target.closest('a[href*="stripe.com"]:not([data-luxe-checkout]):not(.js-open-checkout)');
     if (!cta || !window.neoConsent) return;
     var c = window.neoConsent.get();
     if (!c) return;

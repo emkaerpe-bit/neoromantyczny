@@ -8,7 +8,6 @@ const PRODUCTS = {
   'astrokartografia': { amount: '3900', description: 'Atlas Astrokartograficzny (Pełny Raport Relokacyjny)' },
   'dyspozytorzy': { amount: '2900', description: 'Architektura Podświadomości: Raport Władcy Horoskopu' },
   'saturn': { amount: '4700', description: 'Protokół Przetrwania Powrotu Saturna (The Chronos Protocol)' },
-  'chiron': { amount: '2900', description: 'Klucz Chirona: Raport Pierwotnej Rany i Uzdrowienia' },
   'solariusz': { amount: '3900', description: 'Pełny Raport Solariusza (6 Rozdziałów + PDF A4)' }
 };
 

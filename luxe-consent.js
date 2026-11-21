@@ -68,7 +68,7 @@
     if (document.getElementById('neo-tracking-js')) return;
     var s = document.createElement('script');
     s.id = 'neo-tracking-js';
-    s.src = '/luxe-tracking.js?v=1.0';
+    s.src = '/luxe-tracking.js?v=1.1';
     document.head.appendChild(s);
   }
 
