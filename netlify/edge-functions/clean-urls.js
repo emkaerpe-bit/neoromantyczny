@@ -146,12 +146,22 @@ function applyLiveOverride(html, doc) {
   return out;
 }
 
+const CONSOLIDATED_TO_HOME = new Set([
+  "/blog/bledy-prezentowe-zodiakara.html",
+  "/blog/jak-wybrac-prezent-dla-zodiakary.html",
+  "/blog/prezent-dla-zodiakary-jak-sie-nie-wyglupic.html"
+]);
+
 export default async (request, context) => {
   try {
     const url = new URL(request.url);
     const path = url.pathname || "/";
 
     if (path.endsWith(".html")) {
+      if (CONSOLIDATED_TO_HOME.has(path)) {
+        url.pathname = "/";
+        return Response.redirect(url.toString(), 301);
+      }
       url.pathname = path === "/index.html" ? "/" : path.endsWith("/index.html") ? path.slice(0, -10) + "/" : path.slice(0, -5);
       return Response.redirect(url.toString(), 301);
     }

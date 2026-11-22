@@ -97,21 +97,14 @@
             "@type": "Answer",
             "text": "Tradycyjny znak zodiaku (pozycja Słońca) odpowiada za zaledwie 30% osobowości i świadome 'ja'. O rzeczywistym guście estetycznym decyduje znak Wenus, o komforcie emocjonalnym i relaksie znak Księżyca, a o stylu ubioru i pierwszym wrażeniu – Ascendent."
           }
-        },
-        {
-          "@type": "Question",
-          "name": "Czym jest Zodiakalny Prezentownik?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Zodiakalny Prezentownik to praktyczny, 150-stronicowy e-book i kompendium wiedzy psychologiczno-astrologicznej w cenie 47 PLN, zawierający gotowe listy trafionych upominków oraz czerwone flagi prezentowe dla każdego z 12 znaków zodiaku z podziałem na kobiety i mężczyzn."
-          }
         }
       ]
     },
     {
-      "@type": "Product",
+      "@type": ["Product", "Book"],
       "@id": "https://neoromantyczny.pl/#product",
       "name": "Zodiakalny Prezentownik",
+      "bookFormat": "https://schema.org/EBook",
       "inLanguage": "pl-PL",
       "brand": {
         "@id": "https://neoromantyczny.pl/#organization"
@@ -120,10 +113,18 @@
       "description": "Praktyczny przewodnik psychologiczno-astrologiczny: gotowe pomysły na trafione prezenty dla 12 znaków zodiaku z podziałem na płeć.",
       "offers": {
         "@type": "Offer",
-        "url": "https://buy.stripe.com/dRm28k8iRbUb4K2fT4cwg00",
+        "url": "https://neoromantyczny.pl/#oferta",
         "priceCurrency": "PLN",
         "price": "47.00",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "PL",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 7,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
       }
     }
   ]
@@ -355,7 +356,7 @@
                 <div class="absolute inset-0 bg-primary/20 blur-[80px] rounded-full"></div>
                 <picture class="relative z-10 w-full h-auto drop-shadow-2xl floating-mockup">
                     <source srcset="hero_mockup.webp" type="image/webp">
-                    <img src="hero_mockup.png" alt="Zodiakalny Prezentownik - Najlepszy prezent według znaku zodiaku 2026" width="364" height="570" loading="eager" fetchpriority="high" decoding="async" class="w-full h-auto" style="clip-path: inset(3px 0 3px 0);" />
+                    <img src="hero_mockup.png" alt="Zodiakalny Prezentownik – Prezent dla zodiakary dopasowany do znaku zodiaku" width="364" height="570" loading="eager" fetchpriority="high" decoding="async" class="w-full h-auto" style="clip-path: inset(3px 0 3px 0);" />
                 </picture>
             </div>
         </div>

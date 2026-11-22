@@ -36,17 +36,26 @@
 /blog/kalkulator-dyspozytorow   /kalkulator-dyspozytorow/ 301
 /blog/kalkulator-dyspozytorow/* /kalkulator-dyspozytorow/ 301
 
+# Consolidated zodiakara articles -> Landing Page (301! anti-cannibalization)
+/blog/bledy-prezentowe-zodiakara.html               / 301!
+/blog/bledy-prezentowe-zodiakara                    / 301!
+/blog/bledy-prezentowe-zodiakara/                   / 301!
+/blog/jak-wybrac-prezent-dla-zodiakary.html         / 301!
+/blog/jak-wybrac-prezent-dla-zodiakary              / 301!
+/blog/jak-wybrac-prezent-dla-zodiakary/             / 301!
+/blog/prezent-dla-zodiakary-jak-sie-nie-wyglupic.html / 301!
+/blog/prezent-dla-zodiakary-jak-sie-nie-wyglupic    / 301!
+/blog/prezent-dla-zodiakary-jak-sie-nie-wyglupic/   / 301!
+
 # Explicit 301! Forced Redirects for all Blog Articles (.html -> Clean)
 /blog/powrot-saturna-wiek-28-30-lat-jak-przetrwac.html                         /blog/powrot-saturna-wiek-28-30-lat-jak-przetrwac                       301!
 /blog/skorpion-i-ryby-milosc-dopasowanie-partnerskie.html                      /blog/skorpion-i-ryby-milosc-dopasowanie-partnerskie                    301!
-/blog/bledy-prezentowe-zodiakara.html                                          /blog/bledy-prezentowe-zodiakara                                         301!
 /blog/dopasowanie-znakow-zodiaku-jakie-znaki-do-siebie-pasuja.html             /blog/dopasowanie-znakow-zodiaku-jakie-znaki-do-siebie-pasuja           301!
 /blog/chemia-czy-toksycznosc-synastria-partnerska.html                         /blog/chemia-czy-toksycznosc-synastria-partnerska                        301!
 /blog/co-oznacza-znak-ksiezycowy-kalkulator.html                               /blog/co-oznacza-znak-ksiezycowy-kalkulator                              301!
 /blog/dlaczego-on-nienawidzi-niespodzianek.html                                /blog/dlaczego-on-nienawidzi-niespodzianek                               301!
 /blog/jak-dobrac-perfumy-do-ascendentu.html                                    /blog/jak-dobrac-perfumy-do-ascendentu                                   301!
 /blog/jak-obliczyc-ascendent-i-znak-ksiezycowy.html                            /blog/jak-obliczyc-ascendent-i-znak-ksiezycowy                           301!
-/blog/jak-wybrac-prezent-dla-zodiakary.html                                    /blog/jak-wybrac-prezent-dla-zodiakary                                   301!
 /blog/kiedy-podarunek-staje-sie-cicha-klotnia.html                             /blog/kiedy-podarunek-staje-sie-cicha-klotnia                            301!
 /blog/luksusowy-prezent-last-minute.html                                       /blog/luksusowy-prezent-last-minute                                      301!
 /blog/prezent-dla-barana-co-kupic.html                                         /blog/prezent-dla-barana-co-kupic                                        301!
@@ -62,7 +71,6 @@
 /blog/prezent-dla-strzelca-co-kupic.html                                       /blog/prezent-dla-strzelca-co-kupic                                      301!
 /blog/prezent-dla-wagi-co-kupic.html                                           /blog/prezent-dla-wagi-co-kupic                                          301!
 /blog/prezent-dla-wodnika-jak-obdarowac-kogos-kto-zameldowal-sie-w-xxii-wieku.html /blog/prezent-dla-wodnika-jak-obdarowac-kogos-kto-zameldowal-sie-w-xxii-wieku 301!
-/blog/prezent-dla-zodiakary-jak-sie-nie-wyglupic.html                          /blog/prezent-dla-zodiakary-jak-sie-nie-wyglupic                         301!
 /blog/prezent-na-ostatnia-chwile-i-jego-konsekwencje-gdy-czas-spotyka-sie-z-jakoscia.html /blog/luksusowy-prezent-last-minute 301!
 /blog/prezent-na-ostatnia-chwile-i-jego-konsekwencje-gdy-czas-spotyka-sie-z-jakoscia /blog/luksusowy-prezent-last-minute 301!
 /blog/prezent-na-poczatku-zwiazku-co-kupic.html                                /blog/prezent-na-poczatku-zwiazku-co-kupic                               301!
