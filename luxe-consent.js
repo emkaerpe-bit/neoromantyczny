@@ -84,6 +84,14 @@
       neo_analytics: state.analytics,
       neo_marketing: state.marketing
     });
+    if (typeof window.gtag === 'function') {
+      var choice = (state.analytics && state.marketing) ? 'accept_all' : (state.analytics ? 'analytics_only' : (state.marketing ? 'marketing_only' : 'necessary_only'));
+      window.gtag('event', 'consent_choice', {
+        consent_action: choice,
+        neo_analytics: state.analytics,
+        neo_marketing: state.marketing
+      });
+    }
     hideBanner();
     closeSettings();
     ensureTrackingLoaded(state);

@@ -86,4 +86,60 @@
   });
 
   if (window.neoConsent) window.neoConsent.onChange(boot);
+
+  function bindMicroConversions() {
+    var raw = (location.pathname || '/').replace(/\/index\.html$/i, '/').replace(/\.html$/i, '');
+    var slug = raw === '/' ? 'home' : raw.replace(/^\/+|\/+$/g, '');
+    var isCalc = slug.indexOf('kalkulator-') === 0;
+    var calcSent = false;
+    var paywallSent = false;
+    var s50 = false;
+    var s90 = false;
+
+    function fire(name, params) {
+      var c = window.neoConsent ? window.neoConsent.get() : null;
+      if (!c || !c.analytics) return;
+      if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+      if (typeof window.clarity === 'function') window.clarity('event', name);
+    }
+
+    if (isCalc) {
+      document.addEventListener('submit', function () {
+        if (calcSent) return;
+        calcSent = true;
+        if (typeof window.clarity === 'function') window.clarity('set', 'calculator_used', slug);
+        fire('calculator_submit', { calculator: slug });
+      }, true);
+    }
+
+    if (typeof IntersectionObserver === 'function') {
+      var pwTargets = document.querySelectorAll('[data-luxe-checkout], .js-open-checkout, .paywall-blur, .lock-overlay, #paywall, .locked-section, a[href*="stripe.com"]');
+      if (pwTargets.length) {
+        var obs = new IntersectionObserver(function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            if (entries[i].isIntersecting && !paywallSent) {
+              paywallSent = true;
+              if (typeof window.clarity === 'function') window.clarity('set', 'saw_paywall', 'true');
+              fire('paywall_view', { page_slug: slug });
+              obs.disconnect();
+              break;
+            }
+          }
+        }, { threshold: 0.25 });
+        for (var j = 0; j < pwTargets.length; j++) obs.observe(pwTargets[j]);
+      }
+    }
+
+    window.addEventListener('scroll', function () {
+      var doc = document.documentElement;
+      var max = (doc.scrollHeight || 0) - (window.innerHeight || 0);
+      if (max <= 0) return;
+      var pct = ((window.scrollY || doc.scrollTop || 0) / max) * 100;
+      if (!s50 && pct >= 50) { s50 = true; fire('scroll_50', { page_slug: slug }); }
+      if (!s90 && pct >= 90) { s90 = true; fire('scroll_90', { page_slug: slug }); }
+    }, { passive: true });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bindMicroConversions);
+  else bindMicroConversions();
 })();
