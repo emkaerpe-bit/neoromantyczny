@@ -28,6 +28,29 @@
         t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
         y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
       })(window, document, 'clarity', 'script', 'vwqhwp92jz');
+
+      try {
+        var rawPath = (location.pathname || '/').replace(/\/index\.html$/i, '/').replace(/\.html$/i, '');
+        var cleanPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '');
+        var pageSlug = cleanPath === '/' ? 'home' : cleanPath.replace(/^\/+/, '');
+        var pageGroup = 'landing';
+        if (cleanPath.indexOf('/kalkulator-') === 0) pageGroup = 'kalkulator';
+        else if (cleanPath === '/blog') pageGroup = 'blog-hub';
+        else if (cleanPath.indexOf('/blog/') === 0) pageGroup = 'blog-artykul';
+        else if (cleanPath.indexOf('/zodiakalny-prezentownik') === 0 || cleanPath.indexOf('/konsultacja-') === 0) pageGroup = 'oferta';
+        else if (cleanPath.indexOf('/sukces-') === 0) pageGroup = 'sukces-zakupu';
+
+        window.clarity('consentv2', {
+          ad_Storage: c.marketing ? 'granted' : 'denied',
+          analytics_Storage: 'granted'
+        });
+        window.clarity('set', 'page_slug', pageSlug);
+        window.clarity('set', 'page_path', cleanPath);
+        window.clarity('set', 'page_group', pageGroup);
+        if (document.title) {
+          window.clarity('set', 'page_title', document.title.replace(/\s*[|–—-]\s*Neoromantyczny.*$/i, '').trim());
+        }
+      } catch (_e) {}
     }
     if (c.marketing && !fbDone) {
       fbDone = true;
@@ -55,6 +78,10 @@
     }
     if (c.analytics && typeof window.gtag === 'function') {
       window.gtag('event', 'begin_checkout', { currency: 'PLN', item_id: prod });
+    }
+    if (c.analytics && typeof window.clarity === 'function') {
+      window.clarity('set', 'checkout_product', prod);
+      window.clarity('event', 'begin_checkout');
     }
   });
 

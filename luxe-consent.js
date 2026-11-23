@@ -68,7 +68,7 @@
     if (document.getElementById('neo-tracking-js')) return;
     var s = document.createElement('script');
     s.id = 'neo-tracking-js';
-    s.src = '/luxe-tracking.js?v=1.1';
+    s.src = '/luxe-tracking.js?v=1.2';
     document.head.appendChild(s);
   }
 
@@ -78,6 +78,12 @@
     writeCookie({ n: 1, a: state.analytics ? 1 : 0, m: state.marketing ? 1 : 0 });
     if (!state.analytics || !state.marketing) clearOptionalCookies();
     syncGtag(state);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'neo_consent_update',
+      neo_analytics: state.analytics,
+      neo_marketing: state.marketing
+    });
     hideBanner();
     closeSettings();
     ensureTrackingLoaded(state);
@@ -183,6 +189,7 @@
     if (typeof window.gtag !== 'function') {
       window.gtag = function () { window.dataLayer.push(arguments); };
     }
+    window.gtag('set', 'url_passthrough', true);
     window.gtag('consent', 'default', {
       analytics_storage: 'denied',
       ad_storage: 'denied',

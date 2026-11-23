@@ -2,6 +2,7 @@
   window.__neoHasInlineTracking = true;
   window.dataLayer = window.dataLayer || [];
   window.gtag = function gtag() { window.dataLayer.push(arguments); };
+  window.gtag('set', 'url_passthrough', true);
   window.gtag('consent', 'default', {
     analytics_storage: 'denied',
     ad_storage: 'denied',
@@ -33,14 +34,26 @@
     window.gtag('js', new Date());
     window.gtag('config', 'GTM-TL82W42Q');
   }
-  function loadAnalytics() {
+  function loadAnalytics(c) {
     if (clarityLoaded) return;
     clarityLoaded = true;
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+    (function (c2, l, a, r, i, t, y) {
+      c2[a] = c2[a] || function () { (c2[a].q = c2[a].q || []).push(arguments); };
       t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
       y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, 'clarity', 'script', 'vwqhwp92jz');
+    try {
+      window.clarity('consentv2', {
+        ad_Storage: c && c.marketing ? 'granted' : 'denied',
+        analytics_Storage: 'granted'
+      });
+      window.clarity('set', 'page_slug', 'home');
+      window.clarity('set', 'page_path', '/');
+      window.clarity('set', 'page_group', 'landing');
+      if (document.title) {
+        window.clarity('set', 'page_title', document.title.replace(/\s*[|–—-]\s*Neoromantyczny.*$/i, '').trim());
+      }
+    } catch (_e) {}
   }
   function loadMarketing() {
     if (marketingLoaded) return;
@@ -63,7 +76,7 @@
   function bindConsent() {
     if (!window.neoConsent) return false;
     window.neoConsent.onChange(function (c) {
-      if (c.analytics) loadAnalytics();
+      if (c.analytics) loadAnalytics(c);
       if (c.marketing) loadMarketing();
     });
     return true;

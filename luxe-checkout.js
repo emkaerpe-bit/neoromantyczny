@@ -566,6 +566,10 @@
           items: [{ item_id: productKey, item_name: prod.title || productKey, price: numericPrice, quantity: 1 }]
         });
       }
+      if (c.analytics && typeof window.clarity === 'function') {
+        window.clarity('set', 'checkout_product', productKey);
+        window.clarity('event', 'begin_checkout');
+      }
       if (c.marketing && typeof window.fbq === 'function') {
         window.fbq('track', 'InitiateCheckout', { content_name: productKey, value: numericPrice, currency: 'PLN' });
       }
@@ -588,6 +592,10 @@
             currency: 'PLN',
             items: [{ item_id: productKey, item_name: prod.title || productKey, price: numericPrice, quantity: 1 }]
           });
+          if (typeof window.clarity === 'function') {
+            window.clarity('set', 'purchased_product', productKey);
+            window.clarity('event', 'purchase');
+          }
         }
       }
       if (typeof window.gtag === 'function') {
