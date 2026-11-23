@@ -1198,7 +1198,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
 
   const ZODIAC_GEN = ['Barana','Byka','Bliźniąt','Raka','Lwa','Panny','Wagi','Skorpiona','Strzelca','Koziorożca','Wodnika','Ryb'];
 
-  const STORAGE_KEY = 'neoromantyczny_synastry_v4';
+  const STORAGE_KEY = 'neoromantyczny_synastry_v5';
   let genderA = 'f';
   let genderB = 'm';
   let hasCalculated = false;
@@ -1217,6 +1217,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
     try {
       localStorage.removeItem('neoromantyczny_synastry_v2');
       localStorage.removeItem('neoromantyczny_synastry_v3');
+      localStorage.removeItem('neoromantyczny_synastry_v4');
       const sp = new URLSearchParams(window.location.search);
       if (sp.has('dA') && sp.has('dB') && sp.get('dA') && sp.get('dB')) {
         return {
@@ -1232,23 +1233,30 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
           cityB: sp.get('cB') || def.cityB
         };
       }
-      const savedRaw = localStorage.getItem(STORAGE_KEY);
-      if (savedRaw) {
-        const saved = JSON.parse(savedRaw);
-        if (saved && saved.dateA && saved.dateB) {
-          return {
-            nameA: saved.nameA || def.nameA,
-            genderA: saved.genderA === 'm' ? 'm' : 'f',
-            dateA: saved.dateA,
-            timeA: saved.timeA || def.timeA,
-            cityA: saved.cityA || def.cityA,
-            nameB: saved.nameB || def.nameB,
-            genderB: saved.genderB === 'f' ? 'f' : 'm',
-            dateB: saved.dateB,
-            timeB: saved.timeB || def.timeB,
-            cityB: saved.cityB || def.cityB
-          };
+      const isPaymentReturn = sp.has('payment_intent')
+        || sp.get('luxe_product') === 'synastria'
+        || sessionStorage.getItem('neo_just_unlocked') === 'synastria';
+      if (isPaymentReturn) {
+        const savedRaw = localStorage.getItem(STORAGE_KEY);
+        if (savedRaw) {
+          const saved = JSON.parse(savedRaw);
+          if (saved && saved.dateA && saved.dateB) {
+            return {
+              nameA: saved.nameA || def.nameA,
+              genderA: saved.genderA === 'm' ? 'm' : 'f',
+              dateA: saved.dateA,
+              timeA: saved.timeA || def.timeA,
+              cityA: saved.cityA || def.cityA,
+              nameB: saved.nameB || def.nameB,
+              genderB: saved.genderB === 'f' ? 'f' : 'm',
+              dateB: saved.dateB,
+              timeB: saved.timeB || def.timeB,
+              cityB: saved.cityB || def.cityB
+            };
+          }
         }
+      } else {
+        localStorage.removeItem(STORAGE_KEY);
       }
     } catch (e) {}
     return def;
