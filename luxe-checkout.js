@@ -590,6 +590,18 @@
           });
         }
       }
+      if (typeof window.gtag === 'function') {
+        const gadsKey = 'neo_gads_tx_' + paymentIntentId;
+        if (!sessionStorage.getItem(gadsKey)) {
+          sessionStorage.setItem(gadsKey, '1');
+          window.gtag('event', 'conversion', {
+            send_to: 'AW-18591369003/fph2CIfR870dEKuOh6FF',
+            value: numericPrice || 47.0,
+            currency: 'PLN',
+            transaction_id: paymentIntentId
+          });
+        }
+      }
       if (c && c.marketing && typeof window.fbq === 'function') {
         const fbKey = 'neo_fb_tx_' + paymentIntentId;
         if (!sessionStorage.getItem(fbKey)) {

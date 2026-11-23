@@ -41,7 +41,7 @@
   }
 
   function clearOptionalCookies() {
-    var names = ['_ga', '_gid', '_gat', '_fbp', '_fbc', '_clck', '_clsk', 'CLID'];
+    var names = ['_ga', '_gid', '_gat', '_gcl_aw', '_gcl_dc', '_gcl_au', '_fbp', '_fbc', '_clck', '_clsk', 'CLID'];
     var host = location.hostname;
     var domains = ['', host, '.' + host.replace(/^www\./, '')];
     names.forEach(function (n) {
@@ -113,7 +113,7 @@
         // biome-ignore lint/security/noSecrets: static Polish consent modal row HTML
         '<div class="neo-cm-row"><div><strong>Analityczne (GA4, Microsoft Clarity)</strong><span>Pomagają zrozumieć, które artykuły i kalkulatory są najbardziej pomocne. Aktywowane wyłącznie po Twojej zgodzie.</span></div><input type="checkbox" class="neo-cm-switch" id="neo-tog-analytics"></div>',
         // biome-ignore lint/security/noSecrets: static Polish consent modal row HTML
-        '<div class="neo-cm-row"><div><strong>Marketingowe (Meta Pixel)</strong><span>Służą do pomiaru skuteczności komunikacji i konwersji. Aktywowane wyłącznie po Twojej zgodzie.</span></div><input type="checkbox" class="neo-cm-switch" id="neo-tog-marketing"></div>',
+        '<div class="neo-cm-row"><div><strong>Marketingowe (Google Ads, Meta Pixel)</strong><span>Służą do pomiaru skuteczności komunikacji i konwersji. Aktywowane wyłącznie po Twojej zgodzie.</span></div><input type="checkbox" class="neo-cm-switch" id="neo-tog-marketing"></div>',
         '<div class="neo-cm-foot"><button type="button" class="neo-cb-btn neo-cb-btn-outline" id="neo-cm-min">Tylko niezbędne</button>',
         '<div style="display:flex;gap:0.6rem;flex-wrap:wrap;"><button type="button" class="neo-cb-btn neo-cb-btn-outline" id="neo-cm-save">Zapisz wybór</button>',
         '<button type="button" class="neo-cb-btn neo-cb-btn-gold" id="neo-cm-all">Akceptuj wszystkie</button></div></div></div></div>'
@@ -142,7 +142,7 @@
         '<aside id="neo-cookie-banner" data-nosnippet="true" role="dialog" aria-label="Informacja o plikach cookies">',
         // biome-ignore lint/security/noSecrets: static Polish consent banner label
         '<div class="neo-cb-kicker">Prywatność i Pliki Cookies</div>',
-        '<p class="neo-cb-text">Używamy niezbędnych technologii przeglądarki (m.in. dla kalkulatorów i bezpiecznych płatności Stripe) oraz – wyłącznie za Twoją zgodą – analitycznych i marketingowych cookies (GA4, Microsoft Clarity, Meta Pixel). Szczegóły w <a href="/polityka-prywatnosci/">Polityce Prywatności</a>.</p>',
+        '<p class="neo-cb-text">Używamy niezbędnych technologii przeglądarki (m.in. dla kalkulatorów i bezpiecznych płatności Stripe) oraz – wyłącznie za Twoją zgodą – analitycznych i marketingowych cookies (GA4, Microsoft Clarity, Google Ads, Meta Pixel). Szczegóły w <a href="/polityka-prywatnosci/">Polityce Prywatności</a>.</p>',
         '<div class="neo-cb-actions">',
         '<button type="button" class="neo-cb-btn neo-cb-btn-ghost" id="neo-cb-cfg">Ustawienia</button>',
         '<button type="button" class="neo-cb-btn neo-cb-btn-outline" id="neo-cb-min">Tylko niezbędne</button>',
@@ -198,7 +198,14 @@
     gs.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-PBP5CDDN';
     gs.async = true;
     document.head.appendChild(gs);
+    if (!document.querySelector('script[src*="gtag/js?id=GTM-TL82W42Q"]')) {
+      var gt = document.createElement('script');
+      gt.src = 'https://www.googletagmanager.com/gtag/js?id=GTM-TL82W42Q';
+      gt.async = true;
+      document.head.appendChild(gt);
+    }
     window.gtag('js', new Date());
+    window.gtag('config', 'GTM-TL82W42Q');
   }
 
   bootGoogleTag();

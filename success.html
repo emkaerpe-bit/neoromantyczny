@@ -59,7 +59,7 @@
       <button type="button" data-open-cookie-settings style="background:none;border:0;padding:0;color:#C9A84C;font:inherit;cursor:pointer;text-decoration:underline;">Ustawienia cookies</button>
     </p>
   </main>
-  <script src="/luxe-consent.js?v=1.0" defer></script>
+  <script src="/luxe-consent.js?v=1.1"></script>
   <script>
     (async function () {
       const params = new URLSearchParams(window.location.search);
@@ -81,7 +81,23 @@
         if (!paymentIntentId) return;
         const val = (typeof amountGrosze === 'number' && amountGrosze > 0) ? (amountGrosze / 100) : 47;
         let consentBound = false;
+        let doneGads = false;
         function fire(consent) {
+          try {
+            if (!doneGads && typeof window.gtag === 'function') {
+              const ak = 'neo_gads_tx_' + paymentIntentId;
+              if (!sessionStorage.getItem(ak)) {
+                sessionStorage.setItem(ak, '1');
+                window.gtag('event', 'conversion', {
+                  send_to: 'AW-18591369003/fph2CIfR870dEKuOh6FF',
+                  value: val,
+                  currency: 'PLN',
+                  transaction_id: paymentIntentId
+                });
+              }
+              doneGads = true;
+            }
+          } catch (_e) {}
           const c = consent || (window.neoConsent && typeof window.neoConsent.get === 'function' ? window.neoConsent.get() : null);
           if (!c) return false;
           let doneGa = !c.analytics, doneFb = !c.marketing;
@@ -103,7 +119,7 @@
               doneFb = true;
             }
           } catch (_e) {}
-          return doneGa && doneFb;
+          return doneGads && doneGa && doneFb;
         }
         let tries = 0;
         (function poll() {

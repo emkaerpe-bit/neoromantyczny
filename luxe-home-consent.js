@@ -31,6 +31,7 @@
     gtmScript.async = true;
     document.head.appendChild(gtmScript);
     window.gtag('js', new Date());
+    window.gtag('config', 'GTM-TL82W42Q');
   }
   function loadAnalytics() {
     if (clarityLoaded) return;
