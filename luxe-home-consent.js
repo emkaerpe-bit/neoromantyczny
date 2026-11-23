@@ -33,6 +33,7 @@
     document.head.appendChild(gtmScript);
     window.gtag('js', new Date());
     window.gtag('config', 'GTM-TL82W42Q');
+    window.gtag('config', 'AW-18591369003');
   }
   function loadAnalytics(c) {
     if (clarityLoaded) return;
