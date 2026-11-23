@@ -1312,14 +1312,14 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
               <div class="syn-card-tag">OSOBA PIERWSZA (TY)</div>
               <h3 class="syn-card-heading">Twój Kosmogram</h3>
               <div class="syn-field">
-                <label class="syn-label">Twoja Płeć</label>
+                <label class="syn-label">Twoja Płeć *</label>
                 <div class="syn-gender-group" id="gender-group-A">
                   <button type="button" class="syn-gender-btn ${genderA === 'f' ? 'active' : ''}" data-gender="f"><span class="syn-glyph">♀</span> Kobieta</button>
                   <button type="button" class="syn-gender-btn ${genderA === 'm' ? 'active' : ''}" data-gender="m"><span class="syn-glyph">♂</span> Mężczyzna</button>
                 </div>
               </div>
               <div class="syn-field">
-                <label class="syn-label" for="nameA">Twoje Imię (opcjonalnie)</label>
+                <label class="syn-label" for="nameA">Twoje Imię</label>
                 <input class="syn-input" id="nameA" type="text" value="${escapeHtmlSyn(init.nameA)}" />
               </div>
               <div class="syn-field">
@@ -1327,13 +1327,13 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
                 <input class="syn-input" id="dateA" type="date" value="${escapeHtmlSyn(init.dateA)}" required />
               </div>
               <div class="syn-field">
-                <label class="syn-label" for="timeA">Godzina Urodzenia (opcjonalnie – dla Ascendentu)</label>
+                <label class="syn-label" for="timeA">Godzina Urodzenia</label>
                 <input class="syn-input" id="timeA" type="time" value="${escapeHtmlSyn(init.timeA)}" />
               </div>
               <div class="syn-field">
-                <label class="syn-label" for="cityA">Miejsce narodzin (dla precyzyjnego Ascendentu)</label>
+                <label class="syn-label" for="cityA">Miejsce Narodzin</label>
                 <div class="syn-input-relative">
-                  <input class="syn-input syn-input-with-icon" id="cityA" type="text" placeholder="np. Warszawa" value="${escapeHtmlSyn(init.cityA || '')}" autocomplete="off" />
+                  <input class="syn-input syn-input-with-icon" id="cityA" type="text" value="${escapeHtmlSyn(init.cityA || '')}" autocomplete="off" />
                   <svg class="syn-input-pin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </div>
               </div>
@@ -1343,7 +1343,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
               <div class="syn-card-tag">OSOBA DRUGA (PARTNER / PARTNERKA)</div>
               <h3 class="syn-card-heading">Kosmogram Partnera</h3>
               <div class="syn-field">
-                <label class="syn-label">Płeć Partnera / Partnerki</label>
+                <label class="syn-label">Płeć Partnera / Partnerki *</label>
                 <div class="syn-gender-group" id="gender-group-B">
                   <button type="button" class="syn-gender-btn ${genderB === 'f' ? 'active' : ''}" data-gender="f"><span class="syn-glyph">♀</span> Kobieta</button>
                   <button type="button" class="syn-gender-btn ${genderB === 'm' ? 'active' : ''}" data-gender="m"><span class="syn-glyph">♂</span> Mężczyzna</button>
@@ -1358,13 +1358,13 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
                 <input class="syn-input" id="dateB" type="date" value="${escapeHtmlSyn(init.dateB)}" required />
               </div>
               <div class="syn-field">
-                <label class="syn-label" for="timeB">Godzina Urodzenia (opcjonalnie)</label>
+                <label class="syn-label" for="timeB">Godzina Urodzenia</label>
                 <input class="syn-input" id="timeB" type="time" value="${escapeHtmlSyn(init.timeB)}" />
               </div>
               <div class="syn-field">
-                <label class="syn-label" for="cityB">Miejsce narodzin Partnera (opcjonalnie)</label>
+                <label class="syn-label" for="cityB">Miejsce Narodzin Partnera</label>
                 <div class="syn-input-relative">
-                  <input class="syn-input syn-input-with-icon" id="cityB" type="text" placeholder="np. Warszawa" value="${escapeHtmlSyn(init.cityB || '')}" autocomplete="off" />
+                  <input class="syn-input syn-input-with-icon" id="cityB" type="text" value="${escapeHtmlSyn(init.cityB || '')}" autocomplete="off" />
                   <svg class="syn-input-pin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </div>
               </div>
