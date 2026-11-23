@@ -5,7 +5,7 @@ const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 
 const EXPECTED_AMOUNTS = {
   prezentownik: 4700,
-  synastria: 3900,
+  synastria: 6700,
   astrokartografia: 3900,
   dyspozytorzy: 2900,
   saturn: 4700,

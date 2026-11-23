@@ -499,7 +499,7 @@
 
     const synCtaText = document.getElementById('synastryCtaText');
     if (synCtaText) {
-      synCtaText.textContent = `Wasze nocne tarcze dają rezonans ${metrics.resonanceScore}%, ale o tym, czy między ${nameA} a ${nameB} wygra trwałe przywiązanie, czy bolesny kryzys ego, decydują ukryte aspekty Wenus z Marsem, ciężar Saturna i Lilith. Odbierz gotowy kosmogram porównawczy oraz dostęp do 7-rozdziałowego Raportu Synastrii (39 PLN) — Wasze daty są już przeniesione.`;
+      synCtaText.textContent = `Wasze nocne tarcze dają rezonans ${metrics.resonanceScore}%, ale o tym, czy między ${nameA} a ${nameB} wygra trwałe przywiązanie, czy bolesny kryzys ego, decydują ukryte aspekty Wenus z Marsem, ciężar Saturna i Lilith. Odbierz gotowy kosmogram porównawczy oraz dostęp do 7-rozdziałowego Raportu Synastrii (67 PLN) — Wasze daty są już przeniesione.`;
     }
 
     const resWrap = document.getElementById('moonResults');

@@ -4,7 +4,7 @@ const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 
 const PRODUCTS = {
   'prezentownik': { amount: '4700', description: 'Zodiakalny Prezentownik (E-book PDF)' },
-  'synastria': { amount: '3900', description: 'Pełny Raport Synastrii Partnerskiej (7 Rozdziałów + PDF A4)' },
+  'synastria': { amount: '6700', description: 'Pełny Raport Synastrii Partnerskiej (7 Rozdziałów + PDF A4)' },
   'astrokartografia': { amount: '3900', description: 'Atlas Astrokartograficzny (Pełny Raport Relokacyjny)' },
   'dyspozytorzy': { amount: '2900', description: 'Architektura Podświadomości: Raport Władcy Horoskopu' },
   'saturn': { amount: '4700', description: 'Protokół Przetrwania Powrotu Saturna (The Chronos Protocol)' },

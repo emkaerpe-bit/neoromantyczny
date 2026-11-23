@@ -185,11 +185,13 @@
       tag: 'PEŁNY RAPORT SYNASTRII (7 ROZDZIAŁÓW)',
       title: 'Raport Synastrii Partnerskiej',
       sub: 'Kompletna analiza relacyjna dla Waszej pary + wersja PDF A4.',
-      price: '39,00 PLN',
-      btn: 'Zapłać 39,00 PLN i Odblokuj Raport &rarr;',
+      price: '67,00 PLN',
+      btn: 'Zapłać 67,00 PLN i Odblokuj Raport &rarr;',
       successHeading: 'Raport został odblokowany!',
       successSub: 'Wszystkie 7 rozdziałów analizy partnerskiej jest już aktywnych.',
-      unlockKey: 'neo_synastry_unlocked'
+      unlockKey: 'neo_synastry_unlocked',
+      // biome-ignore lint/security/noSecrets: public Stripe Payment Link URL
+      directUrl: 'https://buy.stripe.com/3cI28kcz7cYfa4m22ecwg06'
     },
     'astrokartografia': {
       tag: 'ATLAS ASTROKARTOGRAFICZNY',
