@@ -1275,14 +1275,14 @@
               <span class="syn-loss-dot"></span>
               <span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg>SEKCJA DOSSIER WYMAGA ODBLOKOWANIA</span>
             </div>
-            <h3 class="syn-loss-title" style="margin-top:0.35rem;">Zanim zamkniesz kartę — odpowiedzi na najtrudniejsze pytania są o krok</h3>
+            <h3 class="syn-loss-title">Najtrudniejsze pytania o Waszą relację są o krok</h3>
             <p class="syn-loss-desc">
-              Widzisz dopiero bezpieczny wstęp. Prawdziwe napięcie, asymetria pragnień i test trwałości Waszej pary otwierają się natychmiast w zamkniętych rozdziałach II–VII:
+              Widzisz dopiero wstęp (14%). Prawdziwe napięcie, układ sił i test przetrwania otwierają się natychmiast w rozdziałach II–VII:
             </p>
             <div class="syn-loss-meter">
               <div class="syn-loss-meter-labels">
-                <span>Odblokowane sekcje: <strong style="color:#C9A96E;">Rozdział I (14%)</strong></span>
-                <span>Czeka pod kluczem: <strong style="color:#FB7185;">6 zamkniętych rozdziałów (86%)</strong></span>
+                <span>Odkryto: <strong style="color:#C9A96E;">14% (zarys)</strong></span>
+                <span>Zamknięte: <strong style="color:#FB7185;">86% (6 rozdziałów)</strong></span>
               </div>
               <div class="syn-loss-bar">
                 <div class="syn-loss-bar-fill" style="width:14%;"></div>
@@ -1306,12 +1306,12 @@
                 <div><strong>O co będziecie się ranić? <span class="syn-loss-planet">(Klucz Kryzysowy)</span></strong><p>Zapalniki kłótni, ciche dni i 3 zdania natychmiast gaszące gniew</p></div>
               </div>
             </div>
-            <div style="margin-top:1.35rem;text-align:center;">
+            <div style="margin-top:0.9rem;text-align:center;">
               <button type="button" class="syn-btn-paywall syn-loss-cta" id="syn-loss-modal-cta">
                 <span>Przejdź do pełnej analizy (${priceDisplay}) &rarr;</span>
               </button>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(250,248,245,0.65);margin-top:0.45rem;">
-                ✓ Wersja cyfrowa na miejscu + gotowy wydruk PDF dla obojga
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(250,248,245,0.62);margin-top:0.35rem;">
+                ✓ Dostęp natychmiastowy + gotowy wydruk PDF A4
               </div>
             </div>
           </div>
@@ -1594,6 +1594,18 @@
     if (modal) {
       modal.addEventListener('click', (e) => {
         if (e.target === modal) closeLossModal();
+      });
+    }
+    if (!window.__synLossEscBound) {
+      window.__synLossEscBound = true;
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const activeMod = document.getElementById('syn-loss-modal');
+          if (activeMod && activeMod.classList.contains('is-active')) {
+            activeMod.classList.remove('is-active');
+            activeMod.setAttribute('aria-hidden', 'true');
+          }
+        }
       });
     }
     if (modalCta && paywallBtn) {
