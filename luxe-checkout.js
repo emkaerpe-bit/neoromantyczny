@@ -586,51 +586,98 @@
     } catch (_e) {}
   }
 
-  function trackGa4Purchase(paymentIntentId, productKey) {
+  const PENDING_PURCHASE_KEY = 'neo_pending_purchase_v1';
+
+  function queuePendingPurchase(paymentIntentId, productKey) {
+    if (!paymentIntentId || !productKey) return;
     try {
-      if (!paymentIntentId) return;
-      const c = window.neoConsent && typeof window.neoConsent.get === 'function' ? window.neoConsent.get() : null;
-      const prod = PRODUCTS_CONFIG[productKey] || PRODUCTS_CONFIG['prezentownik'];
-      const numericPrice = parseFloat(String(prod.price || '0').replace(',', '.')) || 0;
-      if (typeof window.gtag === 'function' && (!c || c.analytics)) {
-        const dedupeKey = 'neo_ga4_tx_' + paymentIntentId;
-        if (!sessionStorage.getItem(dedupeKey)) {
-          sessionStorage.setItem(dedupeKey, '1');
-          window.gtag('event', 'purchase', {
-            transaction_id: paymentIntentId,
-            value: numericPrice,
-            currency: 'PLN',
-            items: [{ item_id: productKey, item_name: prod.title || productKey, price: numericPrice, quantity: 1 }]
-          });
-          if (typeof window.clarity === 'function') {
-            window.clarity('set', 'purchased_product', productKey);
-            window.clarity('event', 'purchase');
+      sessionStorage.setItem(PENDING_PURCHASE_KEY, JSON.stringify({ paymentIntentId, productKey }));
+    } catch (_e) {}
+  }
+
+  function trackGa4Purchase(paymentIntentId, productKey) {
+    if (!paymentIntentId) return;
+    const prod = PRODUCTS_CONFIG[productKey] || PRODUCTS_CONFIG['prezentownik'];
+    const numericPrice = parseFloat(String(prod.price || '0').replace(',', '.')) || 0;
+    let consentBound = false;
+
+    function tryFire(consentOverride) {
+      let doneGads = false;
+      const c = consentOverride || (window.neoConsent && typeof window.neoConsent.get === 'function' ? window.neoConsent.get() : null);
+      let doneGa = Boolean(c && !c.analytics);
+      let doneFb = Boolean(!c || !c.marketing);
+
+      try {
+        if (typeof window.gtag === 'function') {
+          const gadsKey = 'neo_gads_tx_' + paymentIntentId;
+          if (!sessionStorage.getItem(gadsKey)) {
+            sessionStorage.setItem(gadsKey, '1');
+            window.gtag('event', 'conversion', {
+              send_to: 'AW-18591369003/fph2CIfR870dEKuOh6FF',
+              value: numericPrice || 47.0,
+              currency: 'PLN',
+              transaction_id: paymentIntentId
+            });
           }
+          doneGads = true;
         }
+        if (typeof window.gtag === 'function' && (!c || c.analytics)) {
+          const dedupeKey = 'neo_ga4_tx_' + paymentIntentId;
+          if (!sessionStorage.getItem(dedupeKey)) {
+            sessionStorage.setItem(dedupeKey, '1');
+            window.gtag('event', 'purchase', {
+              transaction_id: paymentIntentId,
+              value: numericPrice,
+              currency: 'PLN',
+              items: [{ item_id: productKey, item_name: prod.title || productKey, price: numericPrice, quantity: 1 }]
+            });
+            if (typeof window.clarity === 'function') {
+              window.clarity('set', 'purchased_product', productKey);
+              window.clarity('event', 'purchase');
+            }
+          }
+          doneGa = true;
+        }
+        if (c && c.marketing && typeof window.fbq === 'function') {
+          const fbKey = 'neo_fb_tx_' + paymentIntentId;
+          if (!sessionStorage.getItem(fbKey)) {
+            sessionStorage.setItem(fbKey, '1');
+            window.fbq('track', 'Purchase', { value: numericPrice, currency: 'PLN', content_name: productKey }, { eventID: paymentIntentId });
+          }
+          doneFb = true;
+        }
+      } catch (_e) {}
+
+      if (doneGads && doneGa) {
+        try { sessionStorage.removeItem(PENDING_PURCHASE_KEY); } catch (_e) {}
       }
-      if (typeof window.gtag === 'function') {
-        const gadsKey = 'neo_gads_tx_' + paymentIntentId;
-        if (!sessionStorage.getItem(gadsKey)) {
-          sessionStorage.setItem(gadsKey, '1');
-          window.gtag('event', 'conversion', {
-            send_to: 'AW-18591369003/fph2CIfR870dEKuOh6FF',
-            value: numericPrice || 47.0,
-            currency: 'PLN',
-            transaction_id: paymentIntentId
-          });
-        }
+      return doneGads && doneGa && doneFb;
+    }
+
+    let tries = 0;
+    (function poll() {
+      if (!consentBound && window.neoConsent && typeof window.neoConsent.onChange === 'function') {
+        consentBound = true;
+        window.neoConsent.onChange(function (st) { tryFire(st); });
       }
-      if (c && c.marketing && typeof window.fbq === 'function') {
-        const fbKey = 'neo_fb_tx_' + paymentIntentId;
-        if (!sessionStorage.getItem(fbKey)) {
-          sessionStorage.setItem(fbKey, '1');
-          window.fbq('track', 'Purchase', { value: numericPrice, currency: 'PLN', content_name: productKey }, { eventID: paymentIntentId });
-        }
+      if (!tryFire(null) && ++tries < 16) {
+        setTimeout(poll, 250);
+      }
+    })();
+  }
+
+  function flushPendingPurchase() {
+    try {
+      const raw = sessionStorage.getItem(PENDING_PURCHASE_KEY);
+      if (!raw) return;
+      const parsed = JSON.parse(raw);
+      if (parsed && parsed.paymentIntentId && parsed.productKey) {
+        trackGa4Purchase(parsed.paymentIntentId, parsed.productKey);
       }
     } catch (_e) {}
   }
 
-  async function verifyPaymentOnServer(paymentIntentId, productKey, chartHash) {
+  async function verifyPaymentOnServer(paymentIntentId, productKey, chartHash, deferTrackUntilReload) {
     const res = await fetch('/api/verify-payment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -640,7 +687,10 @@
     if (!res.ok || !data.verified) {
       throw new Error(data.error || 'Płatność nie została jeszcze potwierdzona przez Stripe.');
     }
-    trackGa4Purchase(paymentIntentId, productKey);
+    queuePendingPurchase(paymentIntentId, productKey);
+    if (!deferTrackUntilReload) {
+      trackGa4Purchase(paymentIntentId, productKey);
+    }
     return data;
   }
 
@@ -692,11 +742,15 @@
     const redirectStatus = params.get('redirect_status');
     const productKey = params.get('luxe_product');
     const chartHashParam = params.get('luxe_chart') || '';
-    if (!paymentIntentId || !productKey || redirectStatus !== 'succeeded') return;
+    if (!paymentIntentId || !productKey || redirectStatus !== 'succeeded') {
+      flushPendingPurchase();
+      return;
+    }
 
     try {
-      const verifyData = await verifyPaymentOnServer(paymentIntentId, productKey, chartHashParam);
       const prod = PRODUCTS_CONFIG[productKey];
+      const willReload = Boolean(prod && prod.unlockKey);
+      const verifyData = await verifyPaymentOnServer(paymentIntentId, productKey, chartHashParam, willReload);
       if (prod && prod.unlockKey) {
         NeoChartLock.markUnlocked(productKey, verifyData.chartHash || chartHashParam, verifyData);
       }
@@ -707,7 +761,7 @@
       cleanUrl.searchParams.delete('luxe_product');
       cleanUrl.searchParams.delete('luxe_chart');
       window.history.replaceState({}, '', cleanUrl.toString());
-      if (prod && prod.unlockKey) {
+      if (willReload) {
         try { sessionStorage.setItem('neo_just_unlocked', productKey); } catch (e) {}
         window.location.reload();
       }
@@ -730,4 +784,6 @@
 
   window.openLuxeCheckout = openModal;
   window.closeLuxeCheckout = closeModal;
+  window.trackLuxePurchase = trackGa4Purchase;
+  window.trackLuxeBeginCheckout = trackBeginCheckout;
 })();

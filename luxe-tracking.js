@@ -113,20 +113,39 @@
     }
 
     if (typeof IntersectionObserver === 'function') {
-      var pwTargets = document.querySelectorAll('[data-luxe-checkout], .js-open-checkout, .paywall-blur, .lock-overlay, #paywall, .locked-section, a[href*="stripe.com"]');
-      if (pwTargets.length) {
-        var obs = new IntersectionObserver(function (entries) {
-          for (var i = 0; i < entries.length; i++) {
-            if (entries[i].isIntersecting && !paywallSent) {
-              paywallSent = true;
-              if (typeof window.clarity === 'function') window.clarity('set', 'saw_paywall', 'true');
-              fire('paywall_view', { page_slug: slug });
-              obs.disconnect();
-              break;
-            }
+      var pwSelector = '[data-luxe-checkout], .js-open-checkout, .paywall-blur, .lock-overlay, #paywall, .locked-section, a[href*="stripe.com"], #syn-loss-gate, #syn-paywall-checkout-btn, .syn-btn-paywall, #syn-locked-dossier';
+      var observedSet = new WeakSet();
+      var obs = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting && !paywallSent) {
+            paywallSent = true;
+            if (typeof window.clarity === 'function') window.clarity('set', 'saw_paywall', 'true');
+            fire('paywall_view', { page_slug: slug });
+            obs.disconnect();
+            if (mutObs) mutObs.disconnect();
+            break;
           }
-        }, { threshold: 0.25 });
-        for (var j = 0; j < pwTargets.length; j++) obs.observe(pwTargets[j]);
+        }
+      }, { threshold: 0.25 });
+
+      function attachPaywallTargets() {
+        if (paywallSent) return;
+        var pwTargets = document.querySelectorAll(pwSelector);
+        for (var j = 0; j < pwTargets.length; j++) {
+          if (!observedSet.has(pwTargets[j])) {
+            observedSet.add(pwTargets[j]);
+            obs.observe(pwTargets[j]);
+          }
+        }
+      }
+
+      var mutObs = null;
+      attachPaywallTargets();
+      if (isCalc && typeof MutationObserver === 'function' && document.body) {
+        mutObs = new MutationObserver(function () {
+          attachPaywallTargets();
+        });
+        mutObs.observe(document.body, { childList: true, subtree: true });
       }
     }
 

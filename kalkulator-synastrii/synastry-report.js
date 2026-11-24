@@ -1422,6 +1422,9 @@
     const openStripeCheckout = async () => {
       if (isReportUnlocked || !stripeModal) return;
       closeLossModal();
+      if (typeof window.trackLuxeBeginCheckout === 'function') {
+        window.trackLuxeBeginCheckout('synastria');
+      }
       stripeModal.classList.add('is-active');
       stripeModal.setAttribute('aria-hidden', 'false');
 
@@ -1530,6 +1533,9 @@
               throw new Error(vData.error || 'Płatność nie została jeszcze potwierdzona przez Stripe.');
             }
             if (window.NeoChartLock) window.NeoChartLock.markUnlocked('synastria', currentSynHash, vData);
+            if (typeof window.trackLuxePurchase === 'function') {
+              window.trackLuxePurchase(paymentIntent.id, 'synastria');
+            }
             closeStripeModal();
             performUnlock(false);
           } else if (paymentIntent && paymentIntent.status === 'processing') {
