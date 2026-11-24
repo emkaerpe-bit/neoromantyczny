@@ -1621,6 +1621,8 @@
       document.body.appendChild(portal);
     }
     document.body.classList.add('has-syn-portal');
+    if (window.__SYN_PORTAL_BOUND__) return;
+    window.__SYN_PORTAL_BOUND__ = true;
 
     let activeAnchor = null;
 

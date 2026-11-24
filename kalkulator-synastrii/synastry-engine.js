@@ -927,14 +927,16 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
             </div>
           </div>
           <div class="syn-no-print" style="text-align:center;margin-top:1.1rem;display:flex;gap:0.6rem;justify-content:center;flex-wrap:wrap;">
-            <button type="button" id="syn-share-link-btn" class="syn-btn-secondary" style="padding:0.55rem 1.15rem;font-size:10.5px;display:inline-flex;align-items:center;gap:6px;">
-              <span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M13 19l6-6" stroke-width="1.35"/><path d="M10.5 14.5l-3 3a4.2 4.2 0 0 0 6 6l3-3" stroke-width="1.55"/><path d="M21.5 17.5l3-3a4.2 4.2 0 0 0-6-6l-3 3" stroke-width="1.55"/></svg>Skopiuj link</span>
+            <button type="button" id="syn-share-link-btn" class="syn-btn-secondary" aria-live="polite" style="padding:0.55rem 1.15rem;font-size:10.5px;display:inline-flex;align-items:center;gap:6px;position:relative;">
+              <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;pointer-events:none;" aria-hidden="true"><path d="M13 19l6-6" stroke-width="1.35"/><path d="M10.5 14.5l-3 3a4.2 4.2 0 0 0 6 6l3-3" stroke-width="1.55"/><path d="M21.5 17.5l3-3a4.2 4.2 0 0 0-6-6l-3 3" stroke-width="1.55"/></svg>
+              <span id="syn-share-link-label" style="pointer-events:none;">Skopiuj link</span>
             </button>
             <a id="syn-share-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="syn-btn-secondary" style="padding:0.55rem 1.15rem;font-size:10.5px;color:#34D399;border-color:rgba(52,211,153,0.35);text-decoration:none;display:inline-flex;align-items:center;gap:6px;background:rgba(52,211,153,0.08);border-radius:9999px;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:0.05em;transition:all 0.25s ease;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
-              <span>Wyślij na WhatsApp</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none;"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+              <span style="pointer-events:none;">Wyślij na WhatsApp</span>
             </a>
           </div>
+          <div id="syn-share-feedback" class="syn-no-print" aria-live="polite" style="display:none;text-align:center;margin-top:0.55rem;font-size:0.76rem;color:#34D399;font-family:'JetBrains Mono',monospace;"></div>
         </div>
         <div>
           <div class="syn-card-tag">INDEKSY DYNAMIKI RELACJI</div>
@@ -1016,7 +1018,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
 
         <div style="margin-bottom:1.25rem;">
           <p style="font-size:0.92rem;line-height:1.7;color:rgba(250,248,245,0.88);margin:0;">
-            ${jProfVenB.sensory || profVenB.venusGift}
+            ${jProfVenB.sensory || jProfVenB.venusGift}
           </p>
         </div>
 
@@ -1025,7 +1027,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
             ✦ Jak rozbroić ${isFemB ? 'jej' : 'jego'} mechanizm obronny:
           </div>
           <p style="font-size:0.88rem;line-height:1.6;color:rgba(250,248,245,0.9);margin:0;">
-            ${jProfVenB.disarm || profSunB.openKey}
+            ${jProfVenB.disarm || jProfSunB.openKey}
           </p>
         </div>
       </div>
@@ -1042,24 +1044,113 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
     <div id="syn-paywall-mount"></div>
   `;
 
-    const shareBtn = document.getElementById('syn-share-link-btn');
+  function buildShareUrl() {
+    const base = window.location.origin + window.location.pathname;
+    const rawA = (document.getElementById('nameA') && document.getElementById('nameA').value || '').trim();
+    const rawB = (document.getElementById('nameB') && document.getElementById('nameB').value || '').trim();
+    const pairs = [
+      ['dA', d.dateA || ''],
+      ['dB', d.dateB || ''],
+      ['gA', d.genderA === 'm' ? 'm' : 'f'],
+      ['gB', d.genderB === 'f' ? 'f' : 'm']
+    ];
+    if (rawA) pairs.push(['nA', rawA]);
+    if (d.timeA) pairs.push(['tA', d.timeA]);
+    if (d.cityA) pairs.push(['cA', d.cityA]);
+    if (rawB) pairs.push(['nB', rawB]);
+    if (d.timeB) pairs.push(['tB', d.timeB]);
+    if (d.cityB) pairs.push(['cB', d.cityB]);
+    const frag = pairs
+      .filter(p => p[1] !== '')
+      .map(p => encodeURIComponent(p[0]) + '=' + encodeURIComponent(p[1]))
+      .join('&');
+    return frag ? `${base}#${frag}` : base;
+  }
+
+  function copyTextToClipboard(text) {
+    let copied = false;
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '0';
+      ta.style.left = '-9999px';
+      ta.style.opacity = '0';
+      ta.style.pointerEvents = 'none';
+      document.body.appendChild(ta);
+      ta.focus({ preventScroll: true });
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      copied = document.execCommand('copy');
+      document.body.removeChild(ta);
+    } catch (e) {}
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      try {
+        navigator.clipboard.writeText(text).catch(function () {});
+        copied = true;
+      } catch (e) {}
+    }
+    return copied;
+  }
+
+  const shareUrl = buildShareUrl();
+  const shareBtn = document.getElementById('syn-share-link-btn');
+  const shareLabel = document.getElementById('syn-share-link-label');
+  const shareFeedback = document.getElementById('syn-share-feedback');
+  let shareResetTimer = null;
+
   if (shareBtn) {
     shareBtn.addEventListener('click', () => {
-      const url = window.location.href;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(() => {
-          shareBtn.innerHTML = '<span style="color:#34D399;">✓ Skopiowano link!</span>';
-          setTimeout(() => {
-            shareBtn.innerHTML = '<span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M13 19l6-6" stroke-width="1.35"/><path d="M10.5 14.5l-3 3a4.2 4.2 0 0 0 6 6l3-3" stroke-width="1.55"/><path d="M21.5 17.5l3-3a4.2 4.2 0 0 0-6-6l-3 3" stroke-width="1.55"/></svg>Skopiuj link</span>';
-          }, 3000);
-        });
+      const targetUrl = buildShareUrl();
+      const ok = copyTextToClipboard(targetUrl);
+      if (shareResetTimer) clearTimeout(shareResetTimer);
+
+      shareBtn.classList.add('is-copied');
+      shareBtn.setAttribute('data-copied', '1');
+      shareBtn.style.borderColor = 'rgba(52,211,153,0.65)';
+      shareBtn.style.color = '#34D399';
+      shareBtn.style.background = 'rgba(52,211,153,0.12)';
+      if (shareLabel) {
+        shareLabel.textContent = '✓ Skopiowano link!';
       }
+      if (shareFeedback) {
+        shareFeedback.style.display = 'block';
+        if (ok) {
+          shareFeedback.textContent = '✓ Skopiowano bezpośredni link do Waszego wyniku synastrii';
+        } else {
+          shareFeedback.innerHTML = '';
+          const inp = document.createElement('input');
+          inp.type = 'text';
+          inp.readOnly = true;
+          inp.value = targetUrl;
+          inp.className = 'syn-input';
+          inp.style.cssText = 'font-size:11px;padding:0.4rem 0.65rem;max-width:290px;margin:0.25rem auto 0;text-align:center;';
+          shareFeedback.appendChild(inp);
+          inp.focus({ preventScroll: true });
+          inp.select();
+        }
+      }
+
+      shareResetTimer = setTimeout(() => {
+        shareBtn.classList.remove('is-copied');
+        shareBtn.removeAttribute('data-copied');
+        shareBtn.style.borderColor = '';
+        shareBtn.style.color = '';
+        shareBtn.style.background = '';
+        if (shareLabel) {
+          shareLabel.textContent = 'Skopiuj link';
+        }
+        if (shareFeedback && ok) {
+          shareFeedback.style.display = 'none';
+        }
+      }, 3500);
     });
   }
 
   const waBtn = document.getElementById('syn-share-whatsapp-btn');
   if (waBtn) {
-    const waText = `Sprawdź nasz kosmogram partnerski: Chemia ${syn.chemistry}%, Stabilność ${syn.security}%. Zobacz bi-wheel i naszą synastrię: ${window.location.href}`;
+    const waText = `Sprawdź nasz kosmogram partnerski (${nameA} × ${nameB}): Chemia ${syn.chemistry}%, Stabilność ${syn.security}%. Zobacz bi-wheel i naszą synastrię: ${shareUrl}`;
     waBtn.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(waText)}`;
   }
 
@@ -1202,6 +1293,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
   let genderA = 'f';
   let genderB = 'm';
   let hasCalculated = false;
+  let loadedFromSharedLink = false;
 
   function getSignInfo(lon) {
     const idx = Math.floor((((lon % 360) + 360) % 360) / 30);
@@ -1218,19 +1310,28 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
       localStorage.removeItem('neoromantyczny_synastry_v2');
       localStorage.removeItem('neoromantyczny_synastry_v3');
       localStorage.removeItem('neoromantyczny_synastry_v4');
+      const rawHash = (window.location.hash || '').replace(/^#/, '');
+      const hp = new URLSearchParams(rawHash);
       const sp = new URLSearchParams(window.location.search);
-      if (sp.has('dA') && sp.has('dB') && sp.get('dA') && sp.get('dB')) {
+      const sharedParams = (hp.has('dA') && hp.has('dB') && hp.get('dA') && hp.get('dB'))
+        ? hp
+        : ((sp.has('dA') && sp.has('dB') && sp.get('dA') && sp.get('dB')) ? sp : null);
+      if (sharedParams) {
+        loadedFromSharedLink = true;
+        if (rawHash && sharedParams === hp && window.history && typeof window.history.replaceState === 'function') {
+          window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
         return {
-          nameA: sp.get('nA') || def.nameA,
-          genderA: sp.get('gA') === 'm' ? 'm' : 'f',
-          dateA: sp.get('dA') || def.dateA,
-          timeA: sp.get('tA') !== null ? sp.get('tA') : def.timeA,
-          cityA: sp.get('cA') || def.cityA,
-          nameB: sp.get('nB') || def.nameB,
-          genderB: sp.get('gB') === 'f' ? 'f' : 'm',
-          dateB: sp.get('dB') || def.dateB,
-          timeB: sp.get('tB') !== null ? sp.get('tB') : def.timeB,
-          cityB: sp.get('cB') || def.cityB
+          nameA: sharedParams.get('nA') || def.nameA,
+          genderA: sharedParams.get('gA') === 'm' ? 'm' : 'f',
+          dateA: sharedParams.get('dA') || def.dateA,
+          timeA: sharedParams.get('tA') !== null ? sharedParams.get('tA') : def.timeA,
+          cityA: sharedParams.get('cA') || def.cityA,
+          nameB: sharedParams.get('nB') || def.nameB,
+          genderB: sharedParams.get('gB') === 'f' ? 'f' : 'm',
+          dateB: sharedParams.get('dB') || def.dateB,
+          timeB: sharedParams.get('tB') !== null ? sharedParams.get('tB') : def.timeB,
+          cityB: sharedParams.get('cB') || def.cityB
         };
       }
       const isPaymentReturn = sp.has('payment_intent')
@@ -1422,7 +1523,8 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
       let shouldAutoScroll = false;
       try {
         const sp = new URLSearchParams(window.location.search);
-        shouldAutoScroll = sp.get('autoscroll') === '1' || (sp.has('dA') && sp.has('dB') && sessionStorage.getItem('neo_just_unlocked') !== 'synastria');
+        const notJustUnlocked = sessionStorage.getItem('neo_just_unlocked') !== 'synastria';
+        shouldAutoScroll = sp.get('autoscroll') === '1' || ((loadedFromSharedLink || (sp.has('dA') && sp.has('dB'))) && notJustUnlocked);
       } catch (e) {}
       computeAndRender(shouldAutoScroll);
     }
