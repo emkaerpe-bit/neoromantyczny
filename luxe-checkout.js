@@ -143,13 +143,54 @@
       if (!productKey || !chartHash) return false;
       const st = this.readStore();
       const entry = st[productKey] && st[productKey][chartHash];
-      return Boolean(
+      const validShape = Boolean(
         entry &&
         typeof entry.pi === 'string' && /^pi_[a-zA-Z0-9_]+$/.test(entry.pi) &&
         typeof entry.token === 'string' && /^[a-f0-9]{64}$/i.test(entry.token) &&
         !/^([a-f0-9])\1+$/i.test(entry.token) &&
         typeof entry.ts === 'number' && entry.ts > 0 && entry.ts <= Date.now() + 60000
       );
+      if (validShape) {
+        this.verifyIntegrityAsync(productKey, chartHash, entry);
+      }
+      return validShape;
+    },
+    _verifiedCache: new Set(),
+    verifyIntegrityAsync(productKey, chartHash, entry) {
+      try {
+        if (['localhost', '127.0.0.1'].includes(window.location.hostname)) return;
+        const cacheKey = `${productKey}|${chartHash}|${entry.token}`;
+        if (this._verifiedCache.has(cacheKey)) return;
+        this._verifiedCache.add(cacheKey);
+        fetch('/api/verify-payment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            mode: 'check_token',
+            paymentIntentId: entry.pi,
+            product: productKey,
+            chartHash,
+            unlockTs: entry.ts,
+            unlockToken: entry.token
+          })
+        }).then((r) => {
+          if (r.status === 402) {
+            const st = this.readStore();
+            if (st[productKey]) {
+              delete st[productKey][chartHash];
+              this.writeStore(st);
+            }
+            window.location.reload();
+            return null;
+          }
+          return r.ok ? r.json() : null;
+        }).then((data) => {
+          if (data && data.verified && data.unlockToken && data.unlockTs) {
+            this.markUnlocked(productKey, chartHash, data);
+            this._verifiedCache.add(`${productKey}|${chartHash}|${data.unlockToken}`);
+          }
+        }).catch(() => {});
+      } catch (_e) {}
     },
     markUnlocked(productKey, chartHash, verifyData) {
       const targetHash = (verifyData && verifyData.chartHash) || chartHash;
@@ -161,7 +202,7 @@
       st[productKey][targetHash] = {
         pi: verifyData.paymentIntentId,
         token: verifyData.unlockToken,
-        ts: Date.now()
+        ts: Number(verifyData.unlockTs) || Date.now()
       };
       this.writeStore(st);
       return true;

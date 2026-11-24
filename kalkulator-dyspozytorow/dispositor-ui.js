@@ -232,6 +232,11 @@
         if (dateEl) dateEl.value = pDate;
         if (timeEl && params.get('time')) timeEl.value = params.get('time');
         if (cityEl && params.get('city')) cityEl.value = params.get('city');
+        try {
+          ['date', 'time', 'city'].forEach((k) => params.delete(k));
+          const cleanQs = params.toString();
+          window.history.replaceState({}, '', window.location.pathname + (cleanQs ? '?' + cleanQs : '') + window.location.hash);
+        } catch (_e) {}
         setTimeout(() => { form.dispatchEvent(new Event('submit')); }, 120);
       } else {
         const savedRaw = localStorage.getItem('neo_dispositor_last_input');

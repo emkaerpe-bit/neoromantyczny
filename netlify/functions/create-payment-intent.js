@@ -53,6 +53,8 @@ function getCorsHeaders(event) {
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Vary': 'Origin',
     'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'DENY',
+    'Content-Security-Policy': "default-src 'none'; frame-ancestors 'none'",
     'Cache-Control': 'no-store',
     'Content-Type': 'application/json; charset=utf-8'
   };
@@ -77,6 +79,10 @@ export async function handler(event, context) {
     return { statusCode: 429, headers: corsHeaders, body: JSON.stringify({ error: 'Zbyt wiele prób. Odczekaj chwilę i spróbuj ponownie.' }) };
   }
 
+  if (event.body && event.body.length > 4096) {
+    return { statusCode: 413, headers: corsHeaders, body: JSON.stringify({ error: 'Zbyt duży rozmiar żądania.' }) };
+  }
+
   if (!STRIPE_SECRET_KEY) {
     return {
       statusCode: 500,
@@ -86,7 +92,6 @@ export async function handler(event, context) {
   }
 
   let productKey = 'synastria';
-  let pairInfo = '';
   let chartHash = '';
   if (event.body) {
     try {
@@ -98,9 +103,6 @@ export async function handler(event, context) {
         productKey = payload.product;
       } else if (payload.pair) {
         productKey = 'synastria';
-      }
-      if (payload.pair) {
-        pairInfo = ' dla pary ' + String(payload.pair).slice(0, 80);
       }
       if (payload.chartHash) {
         chartHash = String(payload.chartHash).replace(/[^a-zA-Z0-9_|:.,-]/g, '').slice(0, 140);
@@ -116,7 +118,7 @@ export async function handler(event, context) {
 
   return new Promise((resolve) => {
     const prod = PRODUCTS[productKey] || PRODUCTS['synastria'];
-    const description = prod.description + pairInfo;
+    const description = prod.description;
 
     const params = {
       amount: prod.amount,

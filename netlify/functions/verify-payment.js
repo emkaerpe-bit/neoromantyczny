@@ -54,6 +54,8 @@ function getCorsHeaders(event) {
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Vary': 'Origin',
     'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'DENY',
+    'Content-Security-Policy': "default-src 'none'; frame-ancestors 'none'",
     'Cache-Control': 'no-store',
     'Content-Type': 'application/json; charset=utf-8'
   };
@@ -82,6 +84,10 @@ export async function handler(event) {
     return respond(headers, 429, { verified: false, error: 'Zbyt wiele prób weryfikacji. Odczekaj chwilę i spróbuj ponownie.' });
   }
 
+  if (event.body && event.body.length > 4096) {
+    return respond(headers, 413, { verified: false, error: 'Zbyt duży rozmiar żądania.' });
+  }
+
   if (!STRIPE_SECRET_KEY) {
     return respond(headers, 500, { verified: false, error: 'Usługa weryfikacji płatności jest chwilowo niedostępna.' });
   }
@@ -89,6 +95,9 @@ export async function handler(event) {
   let paymentIntentId = '';
   let productKey = '';
   let chartHash = '';
+  let mode = '';
+  let clientUnlockTs = 0;
+  let clientUnlockToken = '';
 
   if (event.body) {
     try {
@@ -96,6 +105,9 @@ export async function handler(event) {
       paymentIntentId = body.paymentIntentId || body.payment_intent || '';
       productKey = body.product || '';
       chartHash = body.chartHash || '';
+      mode = String(body.mode || '');
+      clientUnlockTs = Number(body.unlockTs) || 0;
+      clientUnlockToken = String(body.unlockToken || '');
     } catch (_e) {
       return respond(headers, 400, { verified: false, error: 'Nieprawidłowy format JSON.' });
     }
@@ -109,6 +121,26 @@ export async function handler(event) {
   const expectedAmount = EXPECTED_AMOUNTS[productKey];
   if (!expectedAmount) {
     return respond(headers, 400, { verified: false, error: 'Nieznany lub brakujący produkt.' });
+  }
+
+  if (mode === 'check_token' && clientUnlockTs > 0 && /^[a-f0-9]{64}$/i.test(clientUnlockToken)) {
+    const boundFast = cleanChartHash || productKey;
+    const expectedHex = crypto.createHmac('sha256', STRIPE_SECRET_KEY.trim())
+      .update(`${productKey}|${boundFast}|${paymentIntentId}|${clientUnlockTs}`)
+      .digest('hex');
+    const aBuf = Buffer.from(clientUnlockToken.toLowerCase(), 'hex');
+    const bBuf = Buffer.from(expectedHex, 'hex');
+    if (aBuf.length === bBuf.length && crypto.timingSafeEqual(aBuf, bBuf)) {
+      return respond(headers, 200, {
+        verified: true,
+        hmacValid: true,
+        product: productKey,
+        chartHash: boundFast,
+        paymentIntentId,
+        unlockTs: clientUnlockTs,
+        unlockToken: expectedHex
+      });
+    }
   }
 
   return new Promise((resolve) => {
@@ -125,6 +157,9 @@ export async function handler(event) {
         try {
           const parsed = JSON.parse(body);
           if (res.statusCode < 200 || res.statusCode >= 300) {
+            if (mode === 'check_token' && res.statusCode === 404) {
+              return resolve(respond(headers, 402, { verified: false, forged: true, error: 'Nieprawidłowy token odblokowania.' }));
+            }
             const safeMsg = res.statusCode >= 500
               ? 'Błąd operatora płatności. Spróbuj ponownie za chwilę.'
               : (parsed.error?.message || 'Błąd Stripe API.');

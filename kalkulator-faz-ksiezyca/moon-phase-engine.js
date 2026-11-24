@@ -536,7 +536,7 @@
       });
     }
 
-    // Auto-run if shared via viral URL (?dA=YYYY-MM-DD&dB=YYYY-MM-DD)
+    // Auto-run if shared via viral URL (?dA=YYYY-MM-DD&dB=YYYY-MM-DD) — strip PII from URL immediately
     const urlP = new URLSearchParams(window.location.search);
     const dA = urlP.get('dA');
     const dB = urlP.get('dB');
@@ -547,6 +547,11 @@
       if (nB && document.getElementById('nameB')) document.getElementById('nameB').value = nB.slice(0, 40);
       if (document.getElementById('dateA')) document.getElementById('dateA').value = dA;
       if (document.getElementById('dateB')) document.getElementById('dateB').value = dB;
+      try {
+        ['dA', 'dB', 'nA', 'nB', 'tA', 'tB'].forEach((k) => urlP.delete(k));
+        const cleanQs = urlP.toString();
+        window.history.replaceState({}, '', window.location.pathname + (cleanQs ? '?' + cleanQs : '') + window.location.hash);
+      } catch (_e) {}
       renderAppResults();
     }
   });

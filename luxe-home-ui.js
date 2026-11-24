@@ -50,13 +50,30 @@ if (shufflerWrapper && shufflerWrapper.children.length > 0) {
   }, 1500);
 }
 
+function revealHashTarget(hashStr, smooth) {
+  if (!hashStr || hashStr === '#' || !hashStr.startsWith('#')) return false;
+  let target = null;
+  try { target = document.querySelector(hashStr); } catch (_e) { return false; }
+  if (!target) return false;
+  const det = target.tagName === 'DETAILS' ? target : target.closest('details');
+  if (det && !det.open) det.open = true;
+  target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto' });
+  return true;
+}
+
 // biome-ignore lint/security/noSecrets: CSS anchor selector
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    const href = this.getAttribute('href');
+    if (revealHashTarget(href, true)) e.preventDefault();
   });
+});
+
+if (window.location.hash) {
+  revealHashTarget(window.location.hash, false);
+}
+window.addEventListener('hashchange', () => {
+  revealHashTarget(window.location.hash, true);
 });
 
 // biome-ignore lint/security/noSecrets: CSS Stripe link selector

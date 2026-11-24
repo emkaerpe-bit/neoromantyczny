@@ -174,9 +174,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // Opcjonalne zaczytanie parametrów z URL (np. przy przejściu z innego kalkulatora)
   try {
     const urlParams = new URLSearchParams(window.location.search);
+    const hadPii = Boolean(urlParams.get('date') || urlParams.get('time') || urlParams.get('city'));
     if (urlParams.get('date')) document.getElementById('disp-date').value = urlParams.get('date');
     if (urlParams.get('time')) document.getElementById('disp-time').value = urlParams.get('time');
     if (urlParams.get('city')) document.getElementById('disp-city').value = urlParams.get('city');
+    if (hadPii) {
+      ['date', 'time', 'city'].forEach((k) => urlParams.delete(k));
+      const cleanQs = urlParams.toString();
+      window.history.replaceState({}, '', window.location.pathname + (cleanQs ? '?' + cleanQs : '') + window.location.hash);
+    }
   } catch (e) {}
 
   form.addEventListener('submit', function (e) {
