@@ -186,6 +186,36 @@
     if (e.target.closest('[data-open-cookie-settings]')) {
       e.preventDefault();
       openSettings();
+      return;
+    }
+    var stripeCta = e.target.closest('a[href*="buy.stripe.com"]');
+    if (stripeCta && !stripeCta.closest('#luxe-stripe-modal')) {
+      e.preventDefault();
+      var prod = stripeCta.getAttribute('data-luxe-checkout') || stripeCta.getAttribute('data-product') || 'prezentownik';
+      if (!document.getElementById('neo-luxe-checkout-css')) {
+        var lc = document.createElement('link');
+        lc.id = 'neo-luxe-checkout-css';
+        lc.rel = 'stylesheet';
+        lc.href = '/luxe-checkout.css?v=6.0';
+        document.head.appendChild(lc);
+      }
+      if (typeof window.openLuxeCheckout === 'function') {
+        window.openLuxeCheckout(prod);
+      } else {
+        var existingScript = document.getElementById('neo-luxe-checkout-js');
+        if (!existingScript) {
+          var ls = document.createElement('script');
+          ls.id = 'neo-luxe-checkout-js';
+          ls.src = '/luxe-checkout.js?v=6.1';
+          ls.onload = function () {
+            if (typeof window.openLuxeCheckout === 'function') window.openLuxeCheckout(prod);
+          };
+          ls.onerror = function () {
+            window.location.href = stripeCta.href;
+          };
+          document.head.appendChild(ls);
+        }
+      }
     }
   });
 

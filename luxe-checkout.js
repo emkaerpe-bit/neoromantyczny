@@ -239,7 +239,17 @@
     }
   };
 
+  function ensureModalCssLoaded() {
+    if (document.querySelector('link[href*="luxe-checkout.css"]') || document.getElementById('neo-luxe-checkout-css')) return;
+    const l = document.createElement('link');
+    l.id = 'neo-luxe-checkout-css';
+    l.rel = 'stylesheet';
+    l.href = '/luxe-checkout.css?v=6.0';
+    document.head.appendChild(l);
+  }
+
   function ensureModalMounted() {
+    ensureModalCssLoaded();
     if (document.getElementById('luxe-stripe-modal')) {
       if (!modalEventsBound) bindModalEvents();
       return;
@@ -709,7 +719,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     handleRedirectReturn();
     document.addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-luxe-checkout], .js-open-checkout');
+      const btn = e.target.closest('[data-luxe-checkout], .js-open-checkout, a[href*="buy.stripe.com"]:not(#luxe-stripe-modal a)');
       if (btn) {
         e.preventDefault();
         const prod = btn.getAttribute('data-luxe-checkout') || btn.getAttribute('data-product') || 'prezentownik';

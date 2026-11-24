@@ -107,6 +107,10 @@
               if (!sessionStorage.getItem(gk)) {
                 sessionStorage.setItem(gk, '1');
                 window.gtag('event', 'purchase', { transaction_id: paymentIntentId, value: val, currency: 'PLN', items: [{ item_id: productKey, item_name: 'Zodiakalny Prezentownik', price: val, quantity: 1 }] });
+                if (typeof window.clarity === 'function') {
+                  window.clarity('set', 'purchased_product', productKey);
+                  window.clarity('event', 'purchase');
+                }
               }
               doneGa = true;
             }
