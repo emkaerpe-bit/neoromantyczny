@@ -99,20 +99,12 @@
     return Array.from(best.values()).sort((a, b) => a.dt - b.dt).slice(0, 6);
   }
 
-  function applyPriceCopy(root, isUnlocked) {
+  function applyPriceCopy(root) {
     if (!root) return;
     const btn = document.getElementById('syn-paywall-checkout-btn');
     if (btn) btn.innerHTML = btn.innerHTML.replace(/(?:39|69)\s*PLN/g, '67 PLN');
     const cta = document.getElementById('syn-loss-modal-cta');
     if (cta) cta.innerHTML = cta.innerHTML.replace(/(?:39|69)\s*PLN/g, '67 PLN');
-    if (isUnlocked) return;
-    const gateItems = root.querySelectorAll('#syn-loss-gate .syn-loss-item p');
-    if (gateItems.length >= 4) {
-      gateItems[0].textContent = '16 głównych kątów + aspekty Urana i Neptuna oraz porównanie 1:1 (rozmowa, działanie, sypialnia)';
-      gateItems[1].textContent = 'Pluton × Lilith, Kompozyt, Davison 3D oraz Oś Ebertina 90°';
-      gateItems[2].textContent = 'Dokładna siatka Placidus (Planeta × Dom), codzienność (finanse i dom) i Asymetria Zaangażowania';
-      gateItems[3].textContent = '3 gotowe zdania na kłótnię, test Saturna 1–3–7 lat, Kalendarz 12M i 5 pytań we dwoje';
-    }
   }
 
   function enhanceUnlocked(d, dos) {

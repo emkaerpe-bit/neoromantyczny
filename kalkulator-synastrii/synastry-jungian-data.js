@@ -252,34 +252,76 @@
     return 'Ziemia-Woda';
   }
 
+  const _esc = (s) => String(s || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const SIGN_GEN = {
+    Baran: 'Barana', Byk: 'Byka', 'Bliźnięta': 'Bliźniąt', Rak: 'Raka', Lew: 'Lwa', Panna: 'Panny',
+    Waga: 'Wagi', Skorpion: 'Skorpiona', Strzelec: 'Strzelca', 'Koziorożec': 'Koziorożca', Wodnik: 'Wodnika', Ryby: 'Ryb'
+  };
+  const EL_GEN = { 'Ogień': 'Ognia', Ziemia: 'Ziemi', Powietrze: 'Powietrza', Woda: 'Wody' };
+  const PLANET_INS = { sun: 'Słońcem', moon: 'Księżycem', venus: 'Wenus', mars: 'Marsem' };
+  const getSignEl = (nm) => ['Baran', 'Lew', 'Strzelec'].includes(nm) ? 'Ogień' :
+    ['Byk', 'Panna', 'Koziorożec'].includes(nm) ? 'Ziemia' :
+    ['Bliźnięta', 'Waga', 'Wodnik'].includes(nm) ? 'Powietrze' : 'Woda';
+
   window.__GENERATE_JUNGIAN_DIAGNOSIS__ = function (d) {
-    const { moonA, moonB, syn } = d;
+    const { moonA, moonB, sunA, sunB, venA, marB, syn } = d;
     const chem = syn.chemistry;
     const sec = syn.security;
     const fric = syn.friction;
 
-    const elA = ['Baran','Lew','Strzelec'].includes(moonA.name) ? 'Ogień' :
-                ['Byk','Panna','Koziorożec'].includes(moonA.name) ? 'Ziemia' :
-                ['Bliźnięta','Waga','Wodnik'].includes(moonA.name) ? 'Powietrze' : 'Woda';
+    const nA = _esc(d.nameA || 'Osoba A');
+    const nB = _esc(d.nameB || 'Osoba B');
+    const sA = (sunA && sunA.name) || 'Baran';
+    const sB = (sunB && sunB.name) || 'Waga';
+    const pairTag = `${sA} &times; ${sB}`;
 
-    const elB = ['Baran','Lew','Strzelec'].includes(moonB.name) ? 'Ogień' :
-                ['Byk','Panna','Koziorożec'].includes(moonB.name) ? 'Ziemia' :
-                ['Bliźnięta','Waga','Wodnik'].includes(moonB.name) ? 'Powietrze' : 'Woda';
-
+    const elA = getSignEl(moonA.name);
+    const elB = getSignEl(moonB.name);
+    const sunElA = getSignEl(sA);
+    const sunElB = getSignEl(sB);
     const dynamics = MOON_COMBOS[getComboKey(elA, elB)] || MOON_COMBOS['Ziemia-Woda'];
 
-    let title = 'Ciche Przymierze czy Intensywny Magnes?';
-    let hook = 'Ta relacja rzadko pozostaje obojętna. Wasze temperamenty uruchamiają w sobie nawzajem dokładnie te cechy, które na co dzień pozostają ukryte przed resztą otoczenia.';
+    const topAsp = syn.aspects && syn.aspects[0];
+    const aspAnchor = topAsp
+      ? `Najsilniejszy impuls tworzy tu <strong>${topAsp.name}</strong> (orb ${(topAsp.orb || 0).toFixed(1)}&deg;) między ${PLANET_INS[topAsp.pA.key] || topAsp.pA.label} (${nA}) a ${PLANET_INS[topAsp.pB.key] || topAsp.pB.label} (${nB}). `
+      : `Układ żywiołów Słońca (${sA} i ${sB}) oraz Wenus w znaku ${SIGN_GEN[(venA && venA.name) || sA] || sA} wyznacza Wasz ton bliskości. `;
 
-    if (chem >= 80 && fric >= 55) {
-      title = 'Wysokie Napięcie: Chemia i Polaryzacja';
-      hook = `Silne przyciąganie fizyczne (${chem}%) spotyka się tu z wyraźnym tarciem charakterów (${fric}%). Ta sama różnica, która budzi fascynację, w chwilach zmęczenia potrafi uruchomić ostrą reakcję obronną po obu stronach.`;
-    } else if (sec >= 75) {
-      title = 'Bezpieczna Baza: Zaufanie Bez Gier';
-      hook = `Wysoki indeks bezpieczeństwa emocjonalnego (${sec}%). Nie musicie zgadywać swoich intencji ani testować lojalności — ta więź sprzyja odpuszczeniu kontroli i budowaniu na długi dystans.`;
-    } else if (chem >= 75) {
-      title = 'Silny Rezonans i Fizyczna Chemia';
-      hook = `Wyraźne napięcie erotyczne i uwaga skierowana wyłącznie na drugą osobę (${chem}%). Wystarczy krótka wymiana zdań, by reszta tła zeszła na dalszy plan.`;
+    let title = '';
+    let hook = '';
+
+    if (chem >= 74 && fric >= 56) {
+      title = `Wysokie Napięcie i Magnetyzm: ${pairTag}`;
+      hook = `${aspAnchor}Silne przyciąganie fizyczne (${chem}%) zderza się z wyraźnym tarciem charakterów (${fric}%). To, co między ${nA} a ${nB} najbardziej elektryzuje na starcie, w chwilach zmęczenia potrafi uruchomić ostrą walkę o ostatnie słowo.`;
+    } else if (chem >= 68 && sec >= 68 && fric < 56) {
+      title = `Rzadka Synergia Iskry i Spokoju: ${pairTag}`;
+      hook = `${aspAnchor}W zestawieniu ${nA} i ${nB} wysoka chemia (${chem}%) idzie w parze z naturalnym bezpieczeństwem emocjonalnym (${sec}%) przy niskim tarciu (${fric}%). Pożądanie nie wymaga tu dramatów, by utrzymać temperaturę więzi.`;
+    } else if (sec >= 70 && fric <= 48) {
+      title = `Bezpieczna Przystań bez Gier: ${pairTag}`;
+      hook = `${aspAnchor}Dominuje tu wysoki indeks zaufania i ukojenia (${sec}%) przy łagodnym poziomie spięć (${fric}%). Przy sobie możecie odłożyć gardę — jedynym wyzwaniem będzie świadome podsycanie zmysłowej nieprzewidywalności (${chem}%).`;
+    } else if (sec >= 62 && fric > 48) {
+      title = `Głęboka Więź w Ogniu Różnic: ${pairTag}`;
+      hook = `${aspAnchor}Silne poczucie oparcia (${sec}%) spaja tę relację, ale tarcie na poziomie ${fric}% pokazuje odmienny refleks w stresie. Dopóki ${nA} i ${nB} oddzielają chwilowy gniew od oceny uczuć, spięcia oczyszczają atmosferę zamiast ją niszczyć.`;
+    } else if (chem >= 65 && sec < 62) {
+      title = `Gorący Impuls i Test Zaufania: ${pairTag}`;
+      hook = `${aspAnchor}Zmysłowy magnetyzm (${chem}%) wyprzedza tu poczucie emocjonalnej pewności (${sec}%). Fizyczna uwaga między ${nA} a ${nB} zapala się szybko, ale prawdziwa bliskość wymaga czasu, zanim oboje odsłonicie swoje czułe punkty.`;
+    } else if (fric >= 58) {
+      title = `Zderzenie Silnych Charakterów: ${pairTag}`;
+      hook = `${aspAnchor}Wysoki indeks tarcia (${fric}%) przy chemii ${chem}% oznacza układ dwojga ludzi, którzy nie oddają pola bez walki. Ta relacja nie znosi półprawd ani zamiatania spraw pod dywan — przetrwa tylko przy jasnych granicach po obu stronach.`;
+    } else if (sec - chem >= 10) {
+      title = `Lojalne Przymierze Szukające Iskry: ${pairTag}`;
+      hook = `${aspAnchor}Bezpieczeństwo (${sec}%) wyraźnie przeważa nad spontanicznym ogniem (${chem}%). ${nA} i ${nB} potrafią zbudować solidny, przewidywalny dom, o ile nie pozwolą, by codzienna logistyka wyparła uwodzenie i dotyk.`;
+    } else if (chem - sec >= 10) {
+      title = `Zmysłowe Przyciąganie kontra Ostrożność: ${pairTag}`;
+      hook = `${aspAnchor}Chemia (${chem}%) przyciąga Was mocniej niż gotowość do pełnego odsłonięcia się (${sec}%). Pod pozornym dystansem kryje się uważne badanie gruntu — tu czyny i słowność ważą więcej niż deklaracje.`;
+    } else if (sunElA === sunElB) {
+      title = `Wspólny Kod Żywiołu ${EL_GEN[sunElA] || sunElA}: ${pairTag}`;
+      hook = `${aspAnchor}Oboje niesiecie Słońce w żywiole ${EL_GEN[sunElA] || sunElA}, co przy równowadze chemii (${chem}%) i bezpieczeństwa (${sec}%) daje natychmiastowe rozumienie swoich motywacji — choć w sporach (${fric}%) łatwo o lustrzane odbijanie tych samych nawyków.`;
+    } else if ((sunElA === 'Ogień' && sunElB === 'Powietrze') || (sunElA === 'Powietrze' && sunElB === 'Ogień') || (sunElA === 'Ziemia' && sunElB === 'Woda') || (sunElA === 'Woda' && sunElB === 'Ziemia')) {
+      title = `Naturalne Dopełnienie Temperamentów: ${pairTag}`;
+      hook = `${aspAnchor}Zbalansowany rozkład chemii (${chem}%), bezpieczeństwa (${sec}%) i tarcia (${fric}%) sprawia, że wnosicie do związku to, czego brakuje drugiej stronie — od świeżej inicjatywy (Mars w znaku ${SIGN_GEN[(marB && marB.name) || sB] || sB}) po spokojne domykanie spraw.`;
+    } else {
+      title = `Przyciąganie Odmiennych Światów: ${pairTag}`;
+      hook = `${aspAnchor}Spotkanie żywiołów ${EL_GEN[sunElA] || sunElA} i ${EL_GEN[sunElB] || sunElB} (chemia ${chem}%, bezpieczeństwo ${sec}%, tarcie ${fric}%) wybija ${nA} i ${nB} z utartych schematów — fascynuje właśnie to, jak inaczej reagujecie na bliskość i ryzyko.`;
     }
 
     return {

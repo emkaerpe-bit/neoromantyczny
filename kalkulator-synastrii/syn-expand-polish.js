@@ -70,8 +70,6 @@
           .replace('więź, z której nie sposób się wyzwolić.', 'więź o bardzo silnym, trudnym do zignorowania przyciąganiu.');
       });
     }
-    const gateP = sec.querySelector('#syn-loss-gate .syn-loss-desc');
-    if (gateP) gateP.innerHTML = gateP.innerHTML.replace('Aż 86% kluczowych danych', 'Aż 86% analizy');
   }
 
   function polishAspectCells(root) {

@@ -901,16 +901,16 @@
       <div class="syn-loss-gate" id="syn-loss-gate">
         <div class="syn-loss-badge">
           <span class="syn-loss-dot"></span>
-          <span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>OMIJA CIĘ 86% ANALIZY RELACJI</span>
+          <span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>UKRYTE 86% PRAWDY O WASZEJ WIĘZI</span>
         </div>
-        <h4 class="syn-loss-title">Widzisz zaledwie 14% Waszego Kosmogramu</h4>
+        <h4 class="syn-loss-title">Chemia na starcie to dopiero 14% historii. Co wyjdzie na jaw, gdy opadną pierwsze emocje?</h4>
         <p class="syn-loss-desc">
-          Wstępny zarys to za mało, by uniknąć relacyjnych błędów. <strong>Aż 86% kluczowych danych</strong> — w tym punkty zapalne w kłótniach, podświadoma obsesja erotyczna (Pluton ♇ × Lilith ⚸) oraz klucz gaszenia gniewu partnera — pozostaje zablokowane poniżej:
+          Pierwsza iskra potrafi zmylić nawet najbardziej świadomych ludzi. Zanim zainwestujesz kolejne miesiące uczuć albo przeoczysz cichy sygnał ostrzegawczy, odkryj <strong>pozostałe 86% analizy</strong> — od podświadomego pożądania i układu sił po twardy test przetrwania na lata:
         </p>
         <div class="syn-loss-meter">
           <div class="syn-loss-meter-labels">
-            <span>Odkryto: <strong style="color:#C9A96E;">14%</strong></span>
-            <span>Ukryto przed Tobą: <strong style="color:#FB7185;">86% analizy</strong></span>
+            <span>Odkryto: <strong style="color:#C9A96E;">14% (zarys)</strong></span>
+            <span>Ukryto przed Tobą: <strong style="color:#FB7185;">86% głębokiej analizy</strong></span>
           </div>
           <div class="syn-loss-bar">
             <div class="syn-loss-bar-fill" style="width:14%;"></div>
@@ -919,24 +919,32 @@
         <div class="syn-loss-grid">
           <div class="syn-loss-item">
             <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
-            <div><strong>Punkty Krytyczne & Zwarcia (Aspektarium)</strong><p>16 kątów planetarnych wyznaczających punkty zapalne w relacji</p></div>
+            <div><strong>Sprawdź, czy Wasz związek przetrwa próbę czasu <span class="syn-loss-planet">(Aspekty Saturna ♄)</span></strong><p>Twardy werdykt trwałości na progu 1, 3 i 7 lat — zobacz, czy łączy Was fundament na lata, czy chwilowy haj, który zgaśnie przy pierwszym kryzysie.</p></div>
           </div>
           <div class="syn-loss-item">
             <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
-            <div><strong>Indeks Obsesji & Sfera Tabu (Pluton × Lilith)</strong><p>Podświadomy magnetyzm, zazdrość i niewypowiedziane pragnienia</p></div>
+            <div><strong>Kto kogo bardziej pragnie — i kto ma nad kim władzę? <span class="syn-loss-planet">(Pluton ♇ i Lilith ⚸)</span></strong><p>Ukryty magnetyzm, zazdrość, walka o kontrolę i odpowiedź na pytanie, kto w tej relacji działa na drugą osobę jak zakazany narkotyk.</p></div>
           </div>
           <div class="syn-loss-item">
             <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
-            <div><strong>Nakładka 12 Domów od Twojego Ascendentu</strong><p>W które dokładnie sfery Twojego życia uderzają planety partnera</p></div>
+            <div><strong>Komu zależy mocniej, a kto trzyma dystans? <span class="syn-loss-planet">(Asymetria Uczuć %)</span></strong><p>Procentowy rozkład zaangażowania między Wami — sprawdź, kto nadaje ton relacji, a kto głębiej przeżywa każdy chłód i niedopowiedzenie.</p></div>
           </div>
           <div class="syn-loss-item">
             <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
-            <div><strong>Instrukcja Gaszenia Gniewu & Cienia</strong><p>Psychologiczny klucz do rozbrajania mechanizmów obronnych partnera</p></div>
+            <div><strong>O co będziecie się ranić — i jak przerwać ciche dni? <span class="syn-loss-planet">(Mars × Księżyc, Uran, Neptun)</span></strong><p>Wasze najczulsze punkty zapalne, ryzyko złudzeń lub nagłego chłodu oraz 3 gotowe zdania, które natychmiast rozbrajają gniew partnera.</p></div>
+          </div>
+          <div class="syn-loss-item">
+            <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
+            <div><strong>Kim dla siebie będziecie pod jednym dachem, bez masek? <span class="syn-loss-planet">(12 Domów i Kompozyt)</span></strong><p>Prawda o wspólnej codzienności po opadnięciu zauroczenia: lojalność, pieniądze, granice i intymność w zderzeniu z prozą życia.</p></div>
+          </div>
+          <div class="syn-loss-item">
+            <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
+            <div><strong>Kiedy przyjdzie próba — i jak rozpalić bliskość na nowo? <span class="syn-loss-planet">(Kalendarz 12M i Wenus ♀)</span></strong><p>Osobista mapa napięć i przełomów na najbliższe 12 miesięcy, tajny kod zmysłów Wenus oraz 5 pytań na noc szczerej rozmowy we dwoje.</p></div>
           </div>
         </div>
-        <div style="margin-top:1.25rem;text-align:center;">
+        <div style="margin-top:1.35rem;text-align:center;">
           <button type="button" class="syn-btn-paywall syn-loss-cta" id="syn-paywall-checkout-btn">
-            <span>Odblokuj Pozostałe 86% Raportu — ${priceDisplay} &rarr;</span>
+            <span>Odblokuj Całą Prawdę o Waszej Relacji — ${priceDisplay} &rarr;</span>
           </button>
           <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(250,248,245,0.65);margin-top:0.45rem;">
             ✓ Płatność jednorazowa • Natychmiastowy dostęp do 7 rozdziałów + Druk A4
@@ -1267,14 +1275,14 @@
               <span class="syn-loss-dot"></span>
               <span><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg>SEKCJA DOSSIER WYMAGA ODBLOKOWANIA</span>
             </div>
-            <h3 class="syn-loss-title" style="margin-top:0.35rem;">Ten fragment należy do zamkniętych rozdziałów II–VII</h3>
+            <h3 class="syn-loss-title" style="margin-top:0.35rem;">Zanim zamkniesz kartę — odpowiedzi na najtrudniejsze pytania są o krok</h3>
             <p class="syn-loss-desc">
-              Przeglądasz wersję próbną profilu pary. Dokładne punkty tarcia w kłótniach, mapa nałożenia planet w domach oraz pełna psychologia cienia otwierają się natychmiast po jednorazowym odblokowaniu dokumentu:
+              Widzisz dopiero bezpieczny wstęp. Prawdziwe napięcie, asymetria pragnień i test trwałości Waszej pary otwierają się natychmiast w zamkniętych rozdziałach II–VII:
             </p>
             <div class="syn-loss-meter">
               <div class="syn-loss-meter-labels">
-                <span>Odblokowane sekcje: <strong style="color:#C9A96E;">Rozdział I (Zarys)</strong></span>
-                <span>Czeka w pełnej wersji: <strong style="color:#FB7185;">6 zamkniętych rozdziałów</strong></span>
+                <span>Odblokowane sekcje: <strong style="color:#C9A96E;">Rozdział I (14%)</strong></span>
+                <span>Czeka pod kluczem: <strong style="color:#FB7185;">6 zamkniętych rozdziałów (86%)</strong></span>
               </div>
               <div class="syn-loss-bar">
                 <div class="syn-loss-bar-fill" style="width:14%;"></div>
@@ -1283,19 +1291,19 @@
             <div class="syn-loss-grid">
               <div class="syn-loss-item">
                 <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
-                <div><strong>Mapa Kątów Napięcia (Kwadratury i Opozycje)</strong><p>Dokładne orby planetarne pokazujące, skąd biorą się powtarzalne spięcia</p></div>
+                <div><strong>Czy Wasz związek przetrwa próbę czasu? <span class="syn-loss-planet">(Saturn ♄)</span></strong><p>Werdykt na progu 1, 3 i 7 lat — fundament na lata czy chwilowy haj?</p></div>
               </div>
               <div class="syn-loss-item">
                 <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
-                <div><strong>Psychologia Przyciągania i Tabu</strong><p>Analiza śladów Plutona, Lilith oraz Węzłów Księżycowych między Wami</p></div>
+                <div><strong>Kto kogo bardziej pragnie? <span class="syn-loss-planet">(Pluton ♇ i Lilith ⚸)</span></strong><p>Ukryty magnetyzm, zazdrość i to, kto ma nad kim cichą przewagę</p></div>
               </div>
               <div class="syn-loss-item">
                 <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
-                <div><strong>Sfera Życia pod Wpływem Partnera</strong><p>Kompletna interpretacja wejścia planet drugiej osoby w Twoje domy</p></div>
+                <div><strong>Komu zależy mocniej? <span class="syn-loss-planet">(Asymetria Uczuć %)</span></strong><p>Procentowy rozkład sił — kto nadaje ton, a kto mocniej przeżywa chłód</p></div>
               </div>
               <div class="syn-loss-item">
                 <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
-                <div><strong>Protokół Rozmów w Kryzysie</strong><p>Konkretne wskazówki, jak rozładować stres i bronić zaufania bez wycofania</p></div>
+                <div><strong>O co będziecie się ranić? <span class="syn-loss-planet">(Klucz Kryzysowy)</span></strong><p>Zapalniki kłótni, ciche dni i 3 zdania natychmiast gaszące gniew</p></div>
               </div>
             </div>
             <div style="margin-top:1.35rem;text-align:center;">
@@ -1391,6 +1399,11 @@
           return;
         }
         openStripeCheckout();
+      });
+      mountEl.querySelectorAll('.syn-loss-item').forEach((item) => {
+        item.addEventListener('click', () => {
+          if (!isReportUnlocked) paywallBtn.click();
+        });
       });
     }
 
