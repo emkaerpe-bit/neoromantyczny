@@ -4,8 +4,8 @@ import crypto from 'crypto';
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 
 const EXPECTED_AMOUNTS = {
-  prezentownik: 4700,
-  synastria: 6700,
+  prezentownik: 3700,
+  synastria: 5300,
   astrokartografia: 3900,
   dyspozytorzy: 2900,
   saturn: 4700,

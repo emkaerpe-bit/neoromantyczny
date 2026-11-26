@@ -83,13 +83,13 @@ document.querySelectorAll('a[href*="stripe.com"]').forEach(link => {
     const consent = window.neoConsent && window.neoConsent.get();
     if (consent && consent.marketing && typeof window.fbq !== 'undefined') {
       window.fbq('track', 'AddToCart', {
-        value: 47.00, currency: 'PLN', content_name: 'Zodiakalny Prezentownik', content_type: 'product'
+        value: 37.00, currency: 'PLN', content_name: 'Zodiakalny Prezentownik', content_type: 'product'
       }, { eventID: eventId });
     }
     if (consent && consent.analytics && typeof window.gtag !== 'undefined') {
       window.gtag('event', 'add_to_cart', {
-        currency: 'PLN', value: 47.00,
-        items: [{ item_id: 'prezentownik_47', item_name: 'Zodiakalny Prezentownik', price: 47.00, quantity: 1 }]
+        currency: 'PLN', value: 37.00,
+        items: [{ item_id: 'prezentownik_47', item_name: 'Zodiakalny Prezentownik', price: 37.00, quantity: 1 }]
       });
     }
   });

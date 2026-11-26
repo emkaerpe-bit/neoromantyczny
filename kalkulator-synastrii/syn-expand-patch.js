@@ -102,9 +102,9 @@
   function applyPriceCopy(root) {
     if (!root) return;
     const btn = document.getElementById('syn-paywall-checkout-btn');
-    if (btn) btn.innerHTML = btn.innerHTML.replace(/(?:39|69)\s*PLN/g, '67 PLN');
+    if (btn) btn.innerHTML = btn.innerHTML.replace(/(?:39|69)\s*PLN/g, '53 zł');
     const cta = document.getElementById('syn-loss-modal-cta');
-    if (cta) cta.innerHTML = cta.innerHTML.replace(/(?:39|69)\s*PLN/g, '67 PLN');
+    if (cta) cta.innerHTML = cta.innerHTML.replace(/(?:39|69)\s*PLN/g, '53 zł');
   }
 
   function enhanceUnlocked(d, dos) {

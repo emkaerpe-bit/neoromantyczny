@@ -776,7 +776,7 @@
   const N = window.__SYNASTRY_NARRATIVES__;
 
   function renderChaptersOneToFour(d, dos, verdict, unlocked = false) {
-    const priceDisplay = '67 PLN';
+    const priceDisplay = '<s style="opacity:0.55;font-weight:500;margin-right:4px;">67 zł</s>53 zł';
     const planetRows = dos.bodyDefs.map(b => {
       const pA = dos.posA[b.key];
       const pB = dos.posB[b.key];
@@ -943,11 +943,17 @@
           </div>
         </div>
         <div style="margin-top:1.35rem;text-align:center;">
+          <div style="font-family:'Inter',sans-serif;font-size:0.82rem;color:#F5E4A0;font-weight:500;margin-bottom:0.65rem;">
+            ✦ Black Weekend — cena promocyjna tylko do poniedziałku (30.11) do 23:59
+          </div>
           <button type="button" class="syn-btn-paywall syn-loss-cta" id="syn-paywall-checkout-btn">
             <span>Odblokuj Całą Prawdę o Waszej Relacji — ${priceDisplay} &rarr;</span>
           </button>
           <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(250,248,245,0.65);margin-top:0.45rem;">
             ✓ Płatność jednorazowa • Natychmiastowy dostęp do 7 rozdziałów + Druk A4
+          </div>
+          <div style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(250,248,245,0.44);margin-top:0.28rem;">
+            Najniższa cena z ostatnich 30 dni: 67 zł
           </div>
         </div>
       </div>
@@ -1166,7 +1172,7 @@
 
   function renderChaptersFiveToSevenAndPaywall(d, dos, verdict, unlocked = false, rawD = null) {
     const mailD = rawD || d;
-    const priceDisplay = '67 PLN';
+    const priceDisplay = '<s style="opacity:0.55;font-weight:500;margin-right:4px;">67 zł</s>53 zł';
     const isFemA = d.genderA === 'f';
     const isFemB = d.genderB === 'f';
     const profSunA = d.sunA.profile[isFemA ? 'f' : 'm'];
@@ -1306,12 +1312,18 @@
                 <div><strong>O co będziecie się ranić? <span class="syn-loss-planet">(Klucz Kryzysowy)</span></strong><p>Zapalniki kłótni, ciche dni i 3 zdania natychmiast gaszące gniew</p></div>
               </div>
             </div>
-            <div style="margin-top:0.9rem;text-align:center;">
+            <div style="margin-top:0.8rem;text-align:center;">
+              <div style="font-family:'Inter',sans-serif;font-size:0.74rem;color:#F5E4A0;font-weight:500;margin-bottom:0.45rem;">
+                Black Weekend — cena promocyjna tylko do poniedziałku (30.11) do 23:59
+              </div>
               <button type="button" class="syn-btn-paywall syn-loss-cta" id="syn-loss-modal-cta">
                 <span>Przejdź do pełnej analizy (${priceDisplay}) &rarr;</span>
               </button>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(250,248,245,0.62);margin-top:0.35rem;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(250,248,245,0.62);margin-top:0.32rem;">
                 ✓ Dostęp natychmiastowy + gotowy wydruk PDF A4
+              </div>
+              <div style="font-family:'Inter',sans-serif;font-size:10px;color:rgba(250,248,245,0.42);margin-top:0.18rem;">
+                Najniższa cena z ostatnich 30 dni: 67 zł
               </div>
             </div>
           </div>
@@ -1332,7 +1344,7 @@
                 <span class="syn-stripe-badge">G Pay</span>
                 <span class="syn-stripe-badge">BLIK</span>
                 <span class="syn-stripe-badge">Karta / Link</span>
-                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#34D399;font-weight:700;margin-left:auto;">67,00 PLN</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#34D399;font-weight:700;margin-left:auto;"><s style="opacity:0.52;color:rgba(250,248,245,0.7);font-weight:400;margin-right:6px;">67,00 PLN</s>53,00 PLN</span>
               </div>
             </div>
 
@@ -1347,8 +1359,11 @@
 
             <div style="margin-top:1rem;text-align:center;">
               <button type="button" class="syn-btn-paywall syn-loss-cta" id="syn-stripe-submit-btn" style="display:none;width:100%;">
-                <span>Zapłać 67,00 PLN i Odblokuj Raport &rarr;</span>
+                <span>Zapłać 53,00 PLN i Odblokuj Raport &rarr;</span>
               </button>
+              <div style="font-family:'Inter',sans-serif;font-size:10.5px;color:rgba(250,248,245,0.46);margin-top:0.4rem;">
+                Najniższa cena z ostatnich 30 dni: 67 zł
+              </div>
               <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(250,248,245,0.6);margin-top:0.6rem;">
                 <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg>Szyfrowanie 256-bit SSL • Płatność obsługiwana przez Stripe.com
               </div>
@@ -1531,7 +1546,7 @@
           if (error) {
             stripeErrorBox.innerHTML = `<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>${_neoEsc(error.message)}`;
             stripeSubmitBtn.disabled = false;
-            stripeSubmitBtn.innerHTML = '<span>Zapłać 67,00 PLN i Odblokuj Raport &rarr;</span>';
+            stripeSubmitBtn.innerHTML = '<span>Zapłać 53,00 PLN i Odblokuj Raport &rarr;</span>';
           } else if (paymentIntent && paymentIntent.status === 'succeeded') {
             const verifyUrl = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
               ? '/api/verify-payment'
@@ -1557,7 +1572,7 @@
         } catch (e) {
           stripeErrorBox.innerHTML = `<svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>Błąd połączenia: ${_neoEsc(e.message)}`;
           stripeSubmitBtn.disabled = false;
-          stripeSubmitBtn.innerHTML = '<span>Zapłać 67,00 PLN i Odblokuj Raport &rarr;</span>';
+          stripeSubmitBtn.innerHTML = '<span>Zapłać 53,00 PLN i Odblokuj Raport &rarr;</span>';
         }
       });
     }
