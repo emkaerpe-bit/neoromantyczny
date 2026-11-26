@@ -82,7 +82,7 @@ window.MOON_PHASE_DATA = {
       angleRange: [315, 360],
       icon: '☾',
       archetype: 'Pamięć Podskórna',
-      loveStyle: 'Wyczuwa nastrój w mieszkaniu, zanim jeszcze przekręci klucz w zamku. Nie potrzebuje wielu słów ani wielkich wyjść — najbliżej czuje się wtedy, gdy możecie leżeć obok siebie w ciszy, słuchać deszczu o parapet i wiedzieć, że żadne z Was nie musi grać żadnej roli.',
+      loveStyle: 'Wyczuwa nastrój w mieszkaniu już od pierwszych sekund po powrocie do domu. Nie potrzebuje wielu słów ani wielkich wyjść — najbliżej czuje się wtedy, gdy możecie być obok siebie w spokoju i wiedzieć, że żadne z Was nie musi grać żadnej roli.',
       shadowHabit: 'Łatwo ulega przebodźcowaniu hałasem i cudzymi emocjami. Musi mieć prawo do samotnych wieczorów, inaczej zaczyna uciekać myślami daleko od wspólnego stołu.'
     }
   ],

@@ -26,7 +26,7 @@
       forbidden: 'Nieprzemyślane wydatki ze wspólnych pieniędzy, szantażowanie rozstaniem podczas sprzeczki i wyśmiewanie jego potrzeby spokoju.'
     },
     f: {
-      conflict: 'Przechodzi w chłodną, bezbłędnie uprzejmą rezerwę. Nie podnosi głosu ani nie robi scen — po prostu wycofuje czułość, ogranicza kontakt do spraw organizacyjnych i obserwuje, kiedy zorientujesz się, że coś pękło. Zbiera zawiedzione obietnice do momentu, w którym zamyka relację na dobre.',
+      conflict: 'Przechodzi w chłodną, nienagannie uprzejmą rezerwę. Nie podnosi głosu ani nie robi scen — po prostu wycofuje czułość, ogranicza rozmowy do spraw bieżących i sprawdza, czy zauważysz tę zmianę tonu. Gdy długo czuje się zawiedziona w drobnych obietnicach, coraz trudniej przychodzi jej ponowne otwarcie.',
       sensory: 'Ceni jakość materii, uważny dotyk, zapach, spokojny rytm wieczoru i poczucie bezpieczeństwa materialnego. Szuka partnera słownego i konsekwentnego, przy którym nie musi stale kontrolować wspólnej przyszłości.',
       disarm: 'Przejmij jedną konkretną, uciążliwą sprawę z jej listy obowiązków i załatw ją bez rozgłosu. Konsekwentne działanie i cierpliwa bliskość przywracają jej zaufanie szybciej niż najdłuższe przeprosiny.',
       forbidden: 'Niedotrzymywanie drobnych obietnic, pośpiech w intymności oraz lekceważenie budżetu i bezpieczeństwa.'
@@ -88,7 +88,7 @@
   window.__JUNGIAN_PROFILES__[5] = { // Panna
     sign: 'Panna',
     m: {
-      conflict: 'Wycofuje emocje i przechodzi w tryb bezlitosnego audytora. Zamiast powiedzieć, co go zabolało, wyciąga listę Twoich konkretnych potknięć z ostatniego miesiąca — spóźnienia, bałagan i niedopatrzenia. Pod tą surowością chowa lęk przed utratą kontroli nad wspólnym życiem.',
+      conflict: 'Wycofuje emocje i chowa napięcie za chłodnym wyliczaniem faktów. Zamiast powiedzieć wprost, co go zabolało, potrafi wracać do drobnych potknięć z ostatnich tygodni — spóźnień, bałaganu czy niedopatrzeń. Pod tą surowością zwykle kryje się obawa, że codzienne sprawy wymykają się spod wspólnej opieki.',
       sensory: 'Jego intymność opiera się na higienie, porządku, dyskretnej elegancji i uważności na najdrobniejszy sygnał Twojego ciała. Zraża go chaos, krzykliwość i niedbałe podejście do codzienności.',
       disarm: 'Nie walcz z nim na argumenty logiczne. Zadbaj o spokojną atmosferę, przejmij jeden zaległy obowiązek domowy z jego listy i podziękuj za konkretną rzecz, którą zrobił w tym tygodniu.',
       forbidden: 'Chroniczne spóźnialstwo, bałagan we wspólnej przestrzeni, puste deklaracje oraz emocjonalne manipulacje.'
@@ -110,7 +110,7 @@
       forbidden: 'Publiczne wyzwiska, trzaskanie drzwiami i wymuszanie decyzji grubym ultimatum.'
     },
     f: {
-      conflict: 'Mrozi kontakt nienagannym, oficjalnym tonem. Nie krzyczy — ale jej sposób odpowiadania półsłówkami i przejście na uprzejmą rezerwę pokazuje, że dawno odsunęła się emocjonalnie. Zbiera niesprawiedliwości po cichu, aż nagle informuje o końcu relacji.',
+      conflict: 'Wycisza kontakt uprzejmym, oficjalnym tonem. Nie podnosi głosu, lecz jej krótkie odpowiedzi i grzeczny dystans pokazują, że poczuła brak równowagi między Wami. Długo przemilcza drobne niesprawiedliwości, licząc na to, że druga strona sama dostrzeże dysproporcję i przywróci uważność.',
       sensory: 'Lubi estetykę detalu, dobry styl, uważną obecność podczas randki i partnera o wysokiej kulturze osobistej, który potrafi rozmawiać z klasą.',
       disarm: 'Przeproś za brak wyczucia bez wymówek, zaproponuj zmianę miejsca na spokojne i okaż dbałość o jej komfort. Poczucie równości i stylu szybko topi jej rezerwę.',
       forbidden: 'Wulgarny humor, awantury na ulicy oraz skąpienie uwagi i wspólnego czasu.'
@@ -126,8 +126,8 @@
       forbidden: 'Półprawdy w drobnych sprawach, kokieteria przy innych i zamykanie rozmowy ogólnikami.'
     },
     f: {
-      conflict: 'Odcina ciepło z chłodną precyzją. Zanim otworzysz usta z tłumaczeniem, zwykle zna już kontekst i patrzy spokojnie, czy spróbujesz kłamać. Nie urządza scen przy ludziach — po prostu zamyka dostęp do swojej prywatności na stałe.',
-      sensory: 'Szuka mężczyzny psychicznie silnego i szczerego aż do bólu, który nie ucieka przed trudnymi rozmowami o zazdrości, władzy i pragnieniach.',
+      conflict: 'Wycofuje ciepło z cichą powagą. Zanim padną szybkie tłumaczenia, zwykle wyczuwa już niespójność i spokojnie obserwuje, czy postawisz na szczerość. Nie urządza scen przy ludziach — woli zamknąć dostęp do swoich najczulszych spraw do chwili, aż znów poczuje pełną uczciwość.',
+      sensory: 'Szuka mężczyzny psychicznie silnego i szczerego w rozmowie, który nie ucieka przed trudnymi tematami zaufania, granic i pragnień.',
       disarm: 'Odłóż powierzchowne komplementy i powiedz jej jedną szczerą, choćby niewygodną prawdę prosto w oczy. Odwaga i wyłączność działają na nią silniej niż jakiekolwiek obietnice.',
       forbidden: 'Odwracanie wzroku, drobne oszustwa, fałszywy uśmiech w kryzysie i lekceważenie jej pytań.'
     }
@@ -158,7 +158,7 @@
       forbidden: 'Lekkomyślne podejście do pieniędzy, publiczne sceny oraz łamanie danego słowa.'
     },
     f: {
-      conflict: 'Twardnieje bez jednego krzyku. Nie upomina pięć razy — po zawiedzionym zaufaniu zamyka temat krótkim komunikatem i odcina wspólną przyszłość bez oglądania się wstecz. Najbardziej obawia się oparcia na partnerze, który pęka przy pierwszej trudności.',
+      conflict: 'Wycofuje się w ciszę bez jednego krzyku. Nie lubi powtarzać tej samej prośby po kilka razy — gdy traci poczucie oparcia, ucina rozmowę rzeczowym zdaniem i chowa emocje za codziennymi obowiązkami. Pod tym opanowaniem kryje się obawa, że w trudnej chwili zostanie z ciężarem spraw sama.',
       sensory: 'Ceni jakość ponad ilość, spokojną pewność siebie partnera, spójność deklaracji z czynami i prywatną stabilność finansową oraz emocjonalną.',
       disarm: 'Zrealizuj ważną sprawę, zanim zdąży o nią poprosić, i zakomunikuj to krótko oraz spokojnie. Konsekwencja buduje jej zaufanie mocniej niż piękne deklaracje.',
       forbidden: 'Obietnice bez pokrycia, wymówki w kryzysie i uciekanie przed dorosłą odpowiedzialnością.'
@@ -306,7 +306,7 @@
       hook = `${aspAnchor}Zmysłowy magnetyzm (${chem}%) wyprzedza tu poczucie emocjonalnej pewności (${sec}%). Fizyczna uwaga między ${nA} a ${nB} zapala się szybko, ale prawdziwa bliskość wymaga czasu, zanim oboje odsłonicie swoje czułe punkty.`;
     } else if (fric >= 58) {
       title = `Zderzenie Silnych Charakterów: ${pairTag}`;
-      hook = `${aspAnchor}Wysoki indeks tarcia (${fric}%) przy chemii ${chem}% oznacza układ dwojga ludzi, którzy nie oddają pola bez walki. Ta relacja nie znosi półprawd ani zamiatania spraw pod dywan — przetrwa tylko przy jasnych granicach po obu stronach.`;
+      hook = `${aspAnchor}Wysoki indeks tarcia (${fric}%) przy chemii ${chem}% oznacza układ dwojga ludzi o wyraźnym zdaniu i silnej potrzebie autonomii. Ta relacja źle znosi niedomówienia i zamiatanie spraw pod dywan — najlepiej układa się przy jasnych, wzajemnie szanowanych granicach.`;
     } else if (sec - chem >= 10) {
       title = `Lojalne Przymierze Szukające Iskry: ${pairTag}`;
       hook = `${aspAnchor}Bezpieczeństwo (${sec}%) wyraźnie przeważa nad spontanicznym ogniem (${chem}%). ${nA} i ${nB} potrafią zbudować solidny, przewidywalny dom, o ile nie pozwolą, by codzienna logistyka wyparła uwodzenie i dotyk.`;

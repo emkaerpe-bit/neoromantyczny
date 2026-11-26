@@ -540,14 +540,14 @@ const SYNASTRY_PROFILES_A = [
   {
     sign: 'Baran',
     m: {
-      conflict: 'W kłótni uderza od razu jak trzask zamykanych drzwi. Milczenie uważa za obelgę — woli pięć minut ognia przy stole niż dwa dni chodzenia wokół siebie w ciężkich kapciach.',
-      venusGift: 'Kocha gesty zuchwałe, nieoczekiwane i bez asekuracji. Grzeczne drobiazgi go nudzą; potrzebuje znaku, że potrafisz spakować torbę przed północą i ruszyć bez wahania.',
+      conflict: 'W sporze reaguje natychmiast i mówi wprost, co myśli. Długie milczenie odbiera źle — woli pięć minut szczerej wymiany zdań niż dwa dni napiętej, oficjalnej ciszy w domu.',
+      venusGift: 'Kocha gesty śmiałe, nieoczekiwane i wolne od kalkulacji. Zachowawcze drobiazgi go nudzą; potrzebuje sygnału, że potrafisz spakować torbę wieczorem i ruszyć w drogę bez wahania.',
       openKey: 'Proste zdanie bez aluzji, brak gier i szacunek dla jego prawa do pierwszego kroku.',
       secretGift: 'Nocna jazda po pustym torze lub flakon ciężkich perfum z nutą skóry, dymu i czarnego pieprzu.'
     },
     f: {
-      conflict: 'Zapala się w kilka sekund, gdy wyczuje lekceważenie. Odwracanie uwagi i odkładanie trudnej rozmowy na bliżej nieokreślone jutro odbiera jako narzucanie jej ciszy.',
-      venusGift: 'Ceni gesty odważne i żywe. Pociąga ją partner, który nie kuli się pod stołem przy pierwszym piorunie i potrafi narzucić własny rytm wieczoru.',
+      conflict: 'Zapala się w kilka sekund, gdy wyczuje lekceważenie. Odwracanie uwagi i odkładanie trudnej rozmowy na bliżej nieokreślone jutro odbiera jako zbywanie jej emocji.',
+      venusGift: 'Ceni gesty odważne i żywe. Pociąga ją partner, który w trudniejszej chwili zachowuje spokój, bierze inicjatywę i potrafi nadać wspólny rytm wieczoru.',
       openKey: 'Konkret bez kręcenia, własna inicjatywa i odwaga spojrzenia jej prosto w oczy.',
       secretGift: 'Niszowy ekstrakt perfum z nutą różowego pieprzu i żywicy albo dwa bilety wręczone godzinę przed wyjazdem.'
     }
@@ -555,13 +555,13 @@ const SYNASTRY_PROFILES_A = [
   {
     sign: 'Byk',
     m: {
-      conflict: 'Zamyka bramy twierdzy od wewnątrz. Pod naciskiem nie przyśpiesza — staje w poprzek pokoju jak głaz i milczy tygodniami, broniąc swojego spokoju.',
-      venusGift: 'Jego serce otwiera ciężka, namacalna jakość. Dobre mięso na ciepłym talerzu, szorstki kaszmir na skórze i rzeczy, które nabierają patyny z upływem lat.',
+      conflict: 'W napięciu zamyka się w sobie i broni własnego rytmu. Pod naciskiem nie przyspiesza — wycofuje się w długie milczenie, dopóki atmosfera w domu znów nie stanie się spokojna.',
+      venusGift: 'Jego serce otwiera namacalna jakość i zmysłowy spokój: kolacja podana bez pośpiechu, miękki kaszmir w dotyku oraz przedmioty, które szlachetnieją z upływem lat.',
       openKey: 'Spokojna dłoń na karku, cichy głos w kuchni i wierność bez nerwowych wahań.',
       secretGift: 'Ciężki szlafrok z czesanego kaszmiru albo rzemieślnicza woda kolońska z figowcem i starym sandałowcem.'
     },
     f: {
-      conflict: 'Kiedy w pokoju brakuje jej oparcia i taktu, zastyga w chłodnej elegancji. Nie podnosi głosu — po prostu gasi światło ciepła i zostawia Cię samego na mrozie.',
+      conflict: 'Kiedy w relacji zaczyna brakować jej oparcia i taktu, wycofuje się w chłodną rezerwę. Nie podnosi głosu — po prostu ogranicza czułość i czeka, aż znów poczuje bezpieczeństwo.',
       venusGift: 'Kocha prawdę materii wyczuwalną pod palcami. Gładki jedwab, stare drewno, powolną kolację przy jednej lampce i piękno odporne na mody.',
       openKey: 'Cierpliwa obecność, dotyk bez pośpiechu i pewność, że obietnica znaczy u Ciebie więcej niż humor.',
       secretGift: 'Jedwabny szlafrok w kolorze szampana albo ciężka świeca o zapachu figowca i drzewa sandałowego.'
@@ -570,7 +570,7 @@ const SYNASTRY_PROFILES_A = [
   {
     sign: 'Bliźnięta',
     m: {
-      conflict: 'Chowa się za ostrym żartem i zaczyna ciąć słowem jak skalpelem. Im gęstsza atmosfera emocjonalna w mieszkaniu, tym szybciej zmienia temat lub ucieka w ironię.',
+      conflict: 'W napięciu zasłania się błyskotliwym żartem i szybką ripostą. Im cięższa staje się atmosfera emocjonalna w mieszkaniu, tym chętniej zmienia temat lub ucieka w ironię.',
       venusGift: 'Budzi go rozmowa z drugim dnem, zaskoczenie i błyskotliwy flirt ponad stołem. Podarunek bez opowieści i haczyka usypia go już po otwarciu pudełka.',
       openKey: 'Lekkość słów, świeża myśl i brak ciężkiego przesłuchania za zamkniętymi drzwiami.',
       secretGift: 'Limitowany album fotograficzny albo bilety na nocny spektakl w innym mieście podarowane przed wspólną kolacją.'
@@ -585,13 +585,13 @@ const SYNASTRY_PROFILES_A = [
   {
     sign: 'Rak',
     m: {
-      conflict: 'Cofa się do najciemniejszego kąta swojej skorupy i sprawdza po cichu, czy pójdziesz za nim w korytarz. Pamięta ton głosu sprzed trzech zim.',
-      venusGift: 'Pragnie domowego azylu i rzeczy świadczących o pamięci. Najmocniej trafia do niego gest mówiący wprost: pamiętam, co Cię kiedyś bolało.',
+      conflict: 'Wycofuje się w ciszę i po cichu sprawdza, czy zauważysz jego dystans i wyjdziesz mu naprzeciw. Długo nosi w pamięci szorstki ton głosu, bo pod spodem bardzo boi się odrzucenia.',
+      venusGift: 'Pragnie domowego azylu i rzeczy świadczących o pamięci. Najmocniej trafia do niego gest mówiący wprost: pamiętam, co jest dla Ciebie ważne.',
       openKey: 'Bezwarunkowe schronienie, czułość bez świadków i zero kpin z jego miękkich miejsc.',
       secretGift: 'Zegarek lub spinki z dyskretnym grawerunkiem współrzędnych pierwszego spotkania albo ciężki koc z wełny merynosów.'
     },
     f: {
-      conflict: 'Milknie w kuchni jak stara latarnia przed burzą i patrzy, czy w ogóle zauważysz pustkę między Wami. Zbiera chłodne zdania w pamięci na czarną godzinę.',
+      conflict: 'Cichnie wśród codziennych zajęć i sprawdza, czy sama obecność podpowie Ci, że coś ją zabolało. Niewypowiedziane żale potrafi długo chować w sobie z obawy przed kolejnym chłodem.',
       venusGift: 'Szuka ciepła z dala od hałasu ulicy. Najcenniejsze są dla niej drobiazgi niosące wspomnienie wspólnego świtu i troskę o jej spokój.',
       openKey: 'Stałość obecności, ramię odgradzające ją od cudzej szorstkości i pamięć o drobnych datach.',
       secretGift: 'Złoty medalion z wyrytą datą albo pościel z ciężkiego morwowego jedwabiu.'
@@ -600,13 +600,13 @@ const SYNASTRY_PROFILES_A = [
   {
     sign: 'Lew',
     m: {
-      conflict: 'Kiedy traktujesz go jak zwykłego przechodnia przy stole, zamyka się w urażonej dumie i chłodnej rezerwie. Najmocniej rani go obojętność partnerki.',
+      conflict: 'Kiedy czuje się traktowany z rutyną i bez uważności, chowa zranienie za urażoną dumą oraz chłodną rezerwą. Najtrudniej znosi poczucie, że przestał być dla partnerki ważny.',
       venusGift: 'Potrzebuje rozmachu, światła i gestu, przy którym pokój na chwilę milknie. Rzecz dla niego musi przypominać insygnia szacunku.',
       openKey: 'Lojalność przy ludziach, zachwyt bez fałszu i miejsce honorowe przy Twoim boku.',
       secretGift: 'Rzemieślniczy sygnet z 18-karatowego złota albo zamknięta degustacja rocznikowej whisky wieczorem.'
     },
     f: {
-      conflict: 'Gdy czuje się niedostrzegana w Twoim planie dnia, zamienia spojrzenie w zimny kryształ. Nie prosi dwa razy o uwagę — wychodzi z sali sama.',
+      conflict: 'Gdy czuje się pomijana w codziennym planie dnia, szybko traci ciepło w głosie i nabiera dystansu. Nie lubi dopraszać się o uwagę — woli wycofać się, dopóki znów nie poczuje szczerego zaangażowania.',
       venusGift: 'Lubi pełny format i światło bez oszczędzania na detalu. Prezent ma jej przypominać, że jest wybrana ponad cały gwar ulicy.',
       openKey: 'Otwarty zachwyt w oczach innych, hojność bez liczenia minut i odwaga wielkiego gestu.',
       secretGift: 'Rzeźbiarska biżuteria ze złota albo kolacja przy świecach nad ciemną panoramą miasta.'
@@ -615,7 +615,7 @@ const SYNASTRY_PROFILES_A = [
   {
     sign: 'Panna',
     m: {
-      conflict: 'Zamiast krzyku wyciąga ołówek i odhacza kolejne usterki z chłodną miną zegarmistrza. Surowość jest tu murem przeciw chaosowi, przed którym drży.',
+      conflict: 'Zamiast podnosić głos, przechodzi do suchego wyliczania drobnych potknięć i niedopatrzeń. Ta pozorna surowość jest dla niego sposobem na opanowanie niepokoju, gdy w relacji robi się chaotycznie.',
       venusGift: 'Czyta miłość w drobiazgach niewidocznych dla tłumu. Porywa go szlachetne rzemiosło, cisza linii i rzecz rozwiązująca jego codzienny kłopot.',
       openKey: 'Punktualność, słowność w małych rzeczach i szacunek do porządku w jego pokoju.',
       secretGift: 'Japońskie pióro wieczne o czystej linii albo skórzana teczka podróżna szyta ręcznie we Florencji.'
@@ -635,13 +635,13 @@ const SYNASTRY_PROFILES_B = [
   {
     sign: 'Waga',
     m: {
-      conflict: 'Unika ostrego krzyku i chaotycznych scen. Wycofuje się w uprzejmy dystans, długo analizuje bilans relacji i zamyka ją jednym spokojnym zdaniem.',
+      conflict: 'Unika ostrego krzyku i chaotycznych scen. Wycofuje się w uprzejmy dystans, długo waży w myślach proporcje zaangażowania i czeka na spokojną przestrzeń do rozmowy.',
       venusGift: 'Oddycha miarą, światłem i taktem. Brzydkie opakowanie albo przypadkowy drobiazg ze sklepu obok potrafią zgasić w nim cały zapał.',
       openKey: 'Kultura rozmowy, ładna oprawa wspólnego wieczoru i uwaga bez patrzenia w zegarek.',
       secretGift: 'Flakon niszowych perfum z paryskiego domu albo kolekcjonerski album starej architektury.'
     },
     f: {
-      conflict: 'Uśmiecha się nienagannie nad kieliszkiem, gdy w środku rośnie już lodowaty osad. Długo znosi zgrzyty po cichu, aż pewnego ranka nie zostawia nawet kartki.',
+      conflict: 'Zachowuje nienaganną formę przy stole, nawet gdy w środku narasta w niej żal. Długo przemilcza zgrzyty w imię spokoju, przez co łatwo przeoczyć moment, w którym zaczyna oddalać się emocjonalnie.',
       venusGift: 'Szuka harmonii w dotyku, proporcji i głosie. Pośpiech oraz nieokrzesanie zabijają jej pragnienie zanim skończy się kolacja.',
       openKey: 'Delikatność sporu, wieczór dopięty w szczegółach i obecność bez rozpraszania wzrokiem.',
       secretGift: 'Flakon niszowych perfum z Paryża albo rzeźbiarski wazon z ciężkiego szkła Murano.'
@@ -650,14 +650,14 @@ const SYNASTRY_PROFILES_B = [
   {
     sign: 'Skorpion',
     m: {
-      conflict: 'Nie uznaje półprawd ani miękkich wykrętów. W sporze milczy, zbiera okruchy spojrzeń i trafia bezbłędnie w najbardziej wrażliwy punkt Twoich intencji.',
-      venusGift: 'Gardzi błahostką z wystawy. Pragnie rzeczy z mrokiem, ciężarem i tajemnicą — takich, po których czuje się dotyk głębiej niż przez skórę.',
+      conflict: 'Źle znosi półprawdy i wymijające odpowiedzi. W sporze milknie, uważnie słucha tonu głosu i bezbłędnie wyczuwa moment, w którym druga strona próbuje coś przemilczeć.',
+      venusGift: 'Omija powierzchowne błahostki. Pragnie rzeczy z głębią, charakterem i tajemnicą — takich, które niosą ze sobą osobisty ładunek i pamięć wspólnych chwil.',
       openKey: 'Naga szczerość bez pudru i odwaga zostania przy nim, gdy w pokoju zapada noc.',
       secretGift: 'Ekstrakt perfum z czarnym oudem, skórą i kadzidłem albo bibliofilskie wydanie książki o władzy i namiętności.'
     },
     f: {
-      conflict: 'Nie wybacza małego fałszu, bo odczytuje z niego całą przyszłość. Zamienia sypialnię w czarny lód i patrzy spokojnie, jak sam plączesz się w wymówkach.',
-      venusGift: 'Czeka na intensywność bez hamulców. Drobiazg ma nieść zmysłowe napięcie, nocną tajemnicę albo odważny znak oddania.',
+      conflict: 'Drobna nieszczerość budzi w niej silny odruch obronny, bo od razu pyta siebie o bezpieczeństwo na przyszłość. Wycofuje wtedy czułość i z dystansu sprawdza, czy druga strona postawi na otwartą prawdę.',
+      venusGift: 'Czeka na intensywność i autentyczność. Upominek ma nieść zmysłowe napięcie, dyskretną tajemnicę albo wyraźny znak wyłączności.',
       openKey: 'Prawda prosto w oczy, wyłączność bez cienia dwuznaczności i siła, która nie drży pod jej wzrokiem.',
       secretGift: 'Obsydianowy jedwab nocny albo ciężki ekstrakt z ciemnej róży, oudu i żywicy.'
     }
@@ -665,7 +665,7 @@ const SYNASTRY_PROFILES_B = [
   {
     sign: 'Strzelec',
     m: {
-      conflict: 'Kiedy wyczuje klatkę wyrzutów albo próbę prowadzenia go na krótkiej smyczy, rzuca w twarz ostrą prawdę bez znieczulenia i wychodzi przewietrzyć głowę.',
+      conflict: 'Kiedy wyczuje gęstą atmosferę wyrzutów albo próbę ścisłej kontroli swojego czasu, potrafi rzucić zbyt dosadne słowo bez dyplomacji i wyjść przewietrzyć głowę.',
       venusGift: 'Kocha przestrzeń, daleki horyzont i śmiech w biegu. Prezent musi obiecywać przygodę, książkę pisaną w drodze albo smak innego miasta.',
       openKey: 'Oddech bez kontroli, wspólny żart w złej chwili i zero prób przypinania go do krzesła.',
       secretGift: 'Skórzana torba weekendowa z biletem lotniczym w kieszeni albo stary, rzadki trunek przywieziony z daleka.'
@@ -686,8 +686,8 @@ const SYNASTRY_PROFILES_B = [
       secretGift: 'Klasyczny zegarek na pasku ze skóry, aktówka z włoskiej licówki albo rocznikowa butelka z prywatnej piwnicy.'
     },
     f: {
-      conflict: 'Wkłada nieprzeniknioną uprzejmość i odchodzi bez awantury. Pod maską pełnej samowystarczalności nosi obawę, że kiedy się oprze, ramię obok ustąpi.',
-      venusGift: 'Ceni dyskretną doskonałość formy i rzeczy odporne na czas. Gardzi tanim hałasem; wypatruje rzemiosła o cichym ciężarze.',
+      conflict: 'Chowa emocje za nienaganną uprzejmością i wycofuje się bez awantury. Pod postawą pełnej samowystarczalności nosi cichą obawę, że gdy pozwoli sobie na słabość, zabraknie jej oparcia.',
+      venusGift: 'Ceni dyskretną doskonałość formy i rzeczy odporne na czas. Omija krzykliwe nowości; wybiera rzemiosło o spokojnej, ponadczasowej klasie.',
       openKey: 'Spójność czynu ze słowem i przejęcie ciężaru bez proszenia po raz trzeci.',
       secretGift: 'Ciężki szal z czystego kaszmiru, prosta torebka bez logo albo pierścień z matowego onyksu.'
     }
@@ -695,14 +695,14 @@ const SYNASTRY_PROFILES_B = [
   {
     sign: 'Wodnik',
     m: {
-      conflict: 'Wyłącza zaangażowanie emocjonalne w ułamku sekundy i obserwuje kłótnię z dystansu, jakby stał za szybą. Im głośniej prosisz o łzy, tym dalej odpływa.',
+      conflict: 'Wyłącza zaangażowanie emocjonalne w ułamku sekundy i przygląda się kłótni z chłodnego dystansu. Im mocniejszy nacisk na natychmiastowe wyznania, tym bardziej potrzebuje chwili osobności.',
       venusGift: 'Pociąga go osobliwość, zgrzyt kontrapunktu i przedmiot nie z tego katalogu. Masowa produkcja ze sklepowej sieci go nudzi i obraża.',
       openKey: 'Przyjaźń mocniejsza niż zaborczość, ostra myśl i zgoda na jego własny rytm nocy.',
       secretGift: 'Surowy gramofon o czystym brzmieniu, rzadki sprzęt audio albo sygnowana grafika młodego artysty.'
     },
     f: {
-      conflict: 'Znika za szklaną taflą chłodnej uprzejmości i staje się nieobecna mimo obecności przy stole. Gdy próbujesz wcisnąć ją w cudzy schemat, odchodzi bez pożegnania.',
-      venusGift: 'Otwiera ją to, co osobne, dziwne i wolne od schematu. Szuka znaku, że naprawdę dostrzegasz w niej kogoś niepodobnego do reszty ulicy.',
+      conflict: 'Chowa się za chłodną uprzejmością i staje się myślami nieobecna mimo wspólnego wieczoru. Gdy próbuje się ją wtłoczyć w gotowy schemat, zamyka się we własnej przestrzeni, by ochronić autonomię.',
+      venusGift: 'Otwiera ją to, co osobne, nieoczywiste i wolne od schematu. Szuka znaku, że naprawdę dostrzegasz w niej indywidualność.',
       openKey: 'Rozmowa na równej wysokości, zachwyt jej innością i prywatny pokój dla własnych myśli.',
       secretGift: 'Rzeźbiarska biżuteria z małej pracowni, zapach o chłodnej mineralnej nucie albo winyl z dalekiego archiwum.'
     }
@@ -710,14 +710,14 @@ const SYNASTRY_PROFILES_B = [
   {
     sign: 'Ryby',
     m: {
-      conflict: 'Wchłania napięcie całego pokoju jak ciemna wełna deszcz, po czym rozpływa się we mgle, śnie lub milczeniu. Szorstki świat wypiera go do środka.',
-      venusGift: 'Wypatruje znaków między wierszami i muzyki pod skórą. Najmocniej działają rzeczy uruchamiające pamięć, sen i cichą wyobraźnię.',
+      conflict: 'Bardzo silnie przejmuje napięcie panujące w domu, po czym wycofuje się w sen, muzykę lub długie milczenie. Przy zbyt szorstkim tonie zamyka się w sobie, chroniąc wrażliwość.',
+      venusGift: 'Wypatruje znaków między wierszami i nastroju chwili. Najmocniej działają na niego rzeczy budzące wspomnienia, spokój i cichą wyobraźnię.',
       openKey: 'Miękka dłoń, słuchanie tego, co zostało przemilczane, i ucieczka od wrzasku ulicy.',
       secretGift: 'Winyl z nocną muzyką filmową, ciężkie słuchawki albo żywiczne kadzidło o zapachu cedru i dymu.'
     },
     f: {
-      conflict: 'Chłonie Twój gniew aż po kości, a potem cichnie w łzach albo ucieka za zasłonę niedomówień. Ostry ton rani ją głębiej niż twardy fakt.',
-      venusGift: 'Pragnie poezji w zwykłym geście i odrobiny baśni po zachodzie słońca. Rzecz ma wyciszać zmysły i budować bezpieczną noc.',
+      conflict: 'Głęboko przeżywa cudzy gniew, przez co szybko cichnie ze wzruszenia albo chowa się za niedopowiedzeniem. Ostry ton głosu rani ją zwykle mocniej niż sam przedmiot sporu.',
+      venusGift: 'Pragnie poezji w zwykłym geście i odrobiny ciepła po zachodzie słońca. Upominek ma wyciszać zmysły i budować spokojny wieczór.',
       openKey: 'Czułość zanim padną zarzuty, wiara w jej przeczucie i zamknięcie drzwi przed zgiełkiem.',
       secretGift: 'Wieczorny rytuał kąpielowy z solą morską i różą damasceńską albo jedwabna opaska na oczy.'
     }
@@ -826,10 +826,10 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
   const sunNounB    = isFemB ? `Urodzeniowe Słońce partnerki` : `Urodzeniowe Słońce partnera`;
 
   const jungianDiag = (typeof window !== 'undefined' && window.__GENERATE_JUNGIAN_DIAGNOSIS__ && window.__GENERATE_JUNGIAN_DIAGNOSIS__(d)) || {
-    title: 'Ciche Przymierze czy Narkotyczny Magnes?',
-    hook: 'W synastrii ten układ oznacza spotkanie dwóch światów, które w ułamku sekundy rozpoznają w sobie nawzajem to, co dawno zostało wyparte ze świadomości.',
+    title: 'Ciche Przymierze i Głębia Przyciągania',
+    hook: 'W synastrii ten układ odsłania spotkanie dwojga ludzi, którzy szybko rozpoznają u siebie nawzajem zarówno naturalną bliskość, jak i czułe miejsca wymagające uważności.',
     moonTitle: 'Dynamika Emocjonalna',
-    moonDesc: 'Zderzenie dwóch podświadomych światów wymaga dojrzałości i zrozumienia granic.'
+    moonDesc: 'Spotkanie dwóch wrażliwości sprzyja bliskości, gdy towarzyszy mu spokój i szacunek dla granic.'
   };
 
   const ascTextB = cB.asc !== null ? `${ZODIAC_GLYPHS_MAP(cB.asc)}` : 'Brak godziny';
@@ -1038,7 +1038,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
       <div class="syn-card-tag" style="letter-spacing:0.15em;color:#C9A96E;">✦ ARCHITEKTURA RELACJI: CO NAPRAWDĘ WAS TRZYMA?</div>
       <h3 class="syn-card-heading" style="color:#FAF8F5;border:none;margin-bottom:0.65rem;">Lekcja Dojrzałości i Granic</h3>
       <p style="font-size:0.95rem;line-height:1.75;color:rgba(250,248,245,0.88);margin:0;">
-        W horoskopie porównawczym to spotkanie nie jest sielanką z komedii romantycznej — jest zwierciadłem, w którym przeglądają się Wasze niezagojone miejsca z przeszłości. Jeśli wracacie do siebie po kryzysach, nie dzieje się tak z powodu przypadku, lecz dlatego, że podświadomie wyczuwacie w partnerze szansę na stanięcie w prawdzie. Dojrzałość w tej relacji nie polega na unikaniu różnic, lecz na rezygnacji z prób zmieniania drugiej osoby na własne podobieństwo i zamianie wzajemnego ranienia na cichą, niezłomną lojalność.
+        W horoskopie porównawczym bliska relacja działa niczym uważne lustro, w którym wyraźniej widać zarówno Wasze mocne strony, jak i dawne obawy o zaufanie. Powroty do rozmowy po trudniejszych dniach pokazują, że pod codziennymi różnicami kryje się realna chęć wzajemnego zrozumienia. Najwięcej spokoju przynosi tu odpuszczenie prób przerabiania partnera na własny wzór oraz budowanie cichej, codziennej lojalności z szacunkiem dla odrębnego tempa drugiej osoby.
       </p>
     </div>
     <div id="syn-paywall-mount"></div>

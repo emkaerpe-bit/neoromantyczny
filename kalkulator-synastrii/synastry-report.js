@@ -139,7 +139,7 @@
       c: 'Pokusa grania w piękną harmonię kosztem przemilczanej zadry, dopóki kielich nie przeleje się przy błahej uwadze.'
     },
     'mars-sun': {
-      h: 'Żywy prąd pod skórą: przy sobie nie zasypiacie ani w sypialni, ani przed trudną decyzją o świcie.',
+      h: 'Żywa iskra i wzajemna mobilizacja: przy sobie nie zasypiacie ani w sypialni, ani przed ważną decyzją o świcie.',
       c: 'Iskra rzucona na suchą słomę — namiętność łatwo przechodzi tu w spór o to, kto ma klucz do drzwi.'
     },
     'jupiter-sun': {
@@ -167,7 +167,7 @@
       c: 'Dwa inne języki czułości: jedno potrzebuje ciasnego uścisku w kuchni, drugie elegancji, dystansu i ładnej oprawy.'
     },
     'mars-moon': {
-      h: 'Gęsty instynkt ochronny i nagłe pragnienie pod skórą. Wiesz, że w środku nocy nie zostaniesz z zagrożeniem sam.',
+      h: 'Silny instynkt opiekuńczy i żywe pragnienie bliskości. Daje poczucie, że w trudnej chwili nie zostaje się bez wsparcia.',
       c: 'Ostre słowo rzucone w nerwach trafia w czuły punkt szybciej, niż druga strona zdąży zareagować.'
     },
     'jupiter-moon': {
@@ -180,7 +180,7 @@
     },
     'moon-node': {
       h: 'Dziwne, nagłe rozpoznanie przy pierwszym uścisku dłoni, jakbyście kiedyś pili razem wino w innym życiu.',
-      c: 'Gęsty supeł dawnych przywiązań zmuszający oboje do porzucenia starych rodzinnych ról bez znieczulenia.'
+      c: 'Splot dawnych przyzwyczajeń skłaniający oboje do wyjścia ze starych rodzinnych ról ku dojrzalszej bliskości.'
     },
     'mercury-mercury': {
       h: 'Te same aluzje w locie, niedokończone półuśmiechy i nocne rozmowy o książkach bez patrzenia na zegarek.',
@@ -239,7 +239,7 @@
       c: 'Stopa na gazie przy zaciągniętym ręcznym hamulcu — chęć jednej strony rozbija się o kamienny mur ostrożności drugiej.'
     },
     'mars-node': {
-      h: 'Pchnięcie na właściwe tory wtedy, gdy sam stałeś od lat na peronie z walizką pełną wahań.',
+      h: 'Impuls do ruchu naprzód dokładnie wtedy, gdy od dawna odkładało się jedną ważną decyzję.',
       c: 'Gorące pole bitwy uczące mówić „nie” prosto w oczy, bez wbijania szpil za plecami.'
     },
     'jupiter-jupiter': {
@@ -264,43 +264,43 @@
     },
     'node-node': {
       h: 'Ten sam puls epoki i kierunek w drodze: rozumiecie podskórnie, przed czym uciekacie i czego szukacie za zakrętem.',
-      c: 'Opozycja biegunów — to, co dla jednego jest bezpiecznym wczoraj, dla drugiego staje się twardym drzwiami w przyszłość.'
+      c: 'Opozycja biegunów — to, co dla jednego jest bezpiecznym wczoraj, dla drugiego staje się progiem do zupełnie nowego etapu.'
     },
     'pluto-venus': {
-      h: 'Silne napięcie fizyczne i emocjonalne bez bezpiecznego dystansu. Przyciąganie bez wyłącznika, które zmienia spojrzenie na miłość do końca życia.',
-      c: 'Obsesyjna ciemność zazdrości i gra o władzę nad sercem — więź tak gęsta, że trudno z niej wyjść zwykłym pożegnaniem.'
+      h: 'Silne napięcie fizyczne i emocjonalne bez bezpiecznego dystansu. Przyciąganie, które potrafi głęboko zmienić spojrzenie na bliskość.',
+      c: 'Wysoka wrażliwość na punkcie wyłączności i wpływu — przyciąganie tak silne, że wymaga jasnych granic i wzajemnego szacunku.'
     },
     'mars-pluto': {
-      h: 'Pierwotna siła i namiętność bez znieczulenia. Razem nie pękacie w ciemnej uliczce ani w najcięższej godzinie próby.',
-      c: 'Walka tytanów na noże pod kołdrą i przy stole — bez bezwzględnej uczciwości pasja zmienia się w wojnę nerwów.'
+      h: 'Głęboka siła charakteru i intensywna namiętność. Razem potraficie zachować zimną krew nawet w najtrudniejszym momencie próby.',
+      c: 'Starcie dwóch bardzo silnych woli w codzienności i w sypialni — bez otwartej szczerości pasja łatwo przechodzi tu w próbę sił.'
     },
     'moon-pluto': {
-      h: 'Wzrok prześwietlający nastroje głębiej niż jakiekolwiek przesłuchanie. Czujecie własny strach jeszcze zanim zapadnie cisza.',
-      c: 'Gęsty wir zaborczości: sprawdzanie telefonu, testowanie wierności i głód posiadania drugiej duszy na własność.'
+      h: 'Wzrok wyczuwający zmianę nastroju szybciej niż jakiekolwiek pytanie. Rozumiecie swoje obawy jeszcze zanim zapadnie cisza.',
+      c: 'Silna potrzeba wyłączności emocjonalnej — niepokój o zaufanie może skłaniać do nadmiernej kontroli zamiast spokojnej rozmowy o obawach.'
     },
     'pluto-sun': {
-      h: 'Spotkanie z ogniem oczyszczającym z pozorów. Przy tej osobie zrzucasz stare ubranie słabości i poznajesz własny ciężar.',
+      h: 'Spotkanie oczyszczające z pozorów. Przy tej osobie łatwiej odłożyć udawane role i odkryć własną wewnętrzną siłę.',
       c: 'Twardy opór dumy przed oddaniem choćby cala pola silniejszemu magnetyzmowi partnera.'
     },
     'lilith-venus': {
-      h: 'Cichy klucz do zakazanego pokoju — tutaj znikają wstydliwe granice i opadają szkolne zakazy przy zgaszonym świetle.',
-      c: 'Napięcie między grzeczną rolą pokazywaną rodzinie a dzikim głodem, który woła o swoje w nocy.'
+      h: 'Cichy klucz do skrywanej zmysłowości — tutaj znikają wstydliwe granice i opadają sztywne konwenanse przy zgaszonym świetle.',
+      c: 'Napięcie między grzeczną rolą pokazywaną rodzinie a głębokim pragnieniem, które domaga się uwagi wieczorem.'
     },
     'lilith-mars': {
-      h: 'Surowy, nieposkromiony prąd ciał bez żadnej dyplomacji. Pożądanie nie pyta tu o pozwolenie ani o porę.',
-      c: 'Bunt i ostra prowokacja w chwili, gdy codzienna rutyna próbuje przypiąć Wam obojgu krótką smycz.'
+      h: 'Surowy, autentyczny magnetyzm ciał bez zbędnej dyplomacji. Bliskość rodzi się tu spontanicznie i z pełną szczerością.',
+      c: 'Wyraźny opór i prowokacja w chwilach, gdy codzienna rutyna zaczyna odbierać Wam poczucie swobody.'
     },
     'lilith-moon': {
       h: 'Przyjęcie tego, co inni nazwali ciemnym albo trudnym — odzyskujesz prawo do własnych przeczuć i łez bez wstydu.',
       c: 'Starcie pragnienia bezpiecznego domu z dzikim lękiem przed odrzuceniem i samotnością o zmierzchu.'
     },
     'lilith-sun': {
-      h: 'Pociąga Cię w niej lub w nim bezczelna wolność od cudzych opinii i odmowa grania grzecznej roli pod publiczkę.',
+      h: 'Przyciąga tu bezkompromisowa niezależność od cudzych opinii i niechęć do grania grzecznej roli na pokaz.',
       c: 'Ciche prowokowanie dumy i sprawdzanie, jak daleko wolno się posunąć zanim pęknie cierpliwość drugiej strony.'
     },
     'lilith-pluto': {
-      h: 'Podwójny mrok schodzący w najgłębsze zaułki psychiki bez latarki i bez lęku przed prawdą ukrytą pod skórą.',
-      c: 'Niezwykła siła przyciągania oparta na sekrecie, obsesji i niewypowiedzianych do końca pragnieniach.'
+      h: 'Rzadka głębia porozumienia bez zasłon i bez lęku przed nazwaniem najtrudniejszych emocji po imieniu.',
+      c: 'Niezwykła siła przyciągania oparta na dyskrecji, intensywności i niewypowiedzianych do końca pragnieniach.'
     }
   };
 
@@ -617,9 +617,9 @@
     'Królewski Krąg Światła (Kompozyt we Lwie) — Wasz sojusz oddycha dumą, hojnością gestu i potrzebą blasku. Jesteście dla siebie lustrem, w którym rośnie odwaga, dopóki okazujecie sobie zachwyt ponad szarą codziennością.',
     'Rzemiosło Bliskości (Kompozyt w Pannie) — Tu miłość nosi codzienny strój czynu, nie pustych toastów przy winie. Pomagacie sobie porządkować chaos i dźwigać ciężar dnia; uważajcie jedynie, by krytyczne oko nie zagasiło spontaniczności.',
     'Waga Piękna i Miary (Kompozyt w Wadze) — Związek krojony z wyczuciem taktu, symetrii i elegancji przy wspólnym stole. Potrzebujecie pięknej oprawy i spokoju sporu, w którym żadna ze stron nie musi opuszczać głowy ze wstydu.',
-    'Ciemny Nurt Prawdy (Kompozyt w Skorpionie) — Więź bez półśrodków i letniej wody. Tu wszystko schodzi aż pod skórę: albo obnażacie przed sobą prawdę bez cenzury, albo zjadacie się w ciszy podejrzeń za zamkniętym oknem.',
+    'Głęboki Nurt Prawdy (Kompozyt w Skorpionie) — Więź wolna od powierzchowności i letnich kompromisów. Najwięcej spokoju oraz zaufania daje Wam tutaj pełna szczerość, która wyprzedza domysły i ciche podejrzenia.',
     'Daleki Peron (Kompozyt w Strzelcu) — Wasze „My” potrzebuje przestrzeni większej niż ciasne mieszkanie w bloku. Ożywia Was wspólna wyprawa, śmiech w nieznanym mieście i horyzont, którego nie zasłania codzienna troska.',
-    'Kamienna Twierdza (Kompozyt w Koziorożcu) — Dyskretny sojusz budowany z myślą o dekadach, nie o jednej wiośnie. Czas sprawdza tu ciężar danego słowa, a wspólny spokój i lojalność stają się cenniejsze niż chwilowe fajerwerki.',
+    'Solidny Fundament (Kompozyt w Koziorożcu) — Dyskretny sojusz budowany z myślą o dekadach, nie o jednej wiośnie. Czas sprawdza tu ciężar danego słowa, a wspólny spokój i lojalność stają się cenniejsze niż chwilowe fajerwerki.',
     'Osobne Niebo (Kompozyt w Wodniku) — Łączycie braterstwo wolnych umysłów z odmową grania cudzych ról przy niedzielnym stole. To więź oparta na przyjaźni i oryginalności, która oddycha tylko przy dużym zaufaniu i swobodzie.',
     'Cisza Podwodnych Prądów (Kompozyt w Rybach) — Wyczuwacie swoje napięcie i zmiany nastroju jeszcze przed pierwszą rozmową. Tworzycie własny świat chroniony przed zgiełkiem ulicy, pod warunkiem że nie mylicie bliskości z utratą własnych granic.'
   ];
@@ -628,20 +628,20 @@
     const { chemistry, security, friction } = d.syn;
     if (chemistry >= 80 && dos.karmaHits >= 2) {
       return {
-        title: 'PIĘTNO PRZEZNACZENIA (SUPEŁ CZASU)',
-        summary: `Między ${d.nameA} (${d.sunA.name}) a ${d.nameB} (${d.sunB.name}) działa rzadki rezonans Węzła Północnego ☊ (${dos.karmaHits} ścisłe zetknięcia) złączony z wysokim napięciem ciał (${chemistry}%). To spotkanie nie zostawia człowieka takim samym — otwiera stare komnaty pamięci i zmienia kierunek dalszej drogi obojga.`
+        title: 'GŁĘBOKI REZONANS DROGI (WĘZEŁ CZASU)',
+        summary: `Między ${d.nameA} (${d.sunA.name}) a ${d.nameB} (${d.sunB.name}) działa rzadki rezonans Węzła Północnego ☊ (${dos.karmaHits} ścisłe zetknięcia) złączony z wysokim przyciąganiem (${chemistry}%). To spotkanie rzadko zostawia obojętnym — porusza ważne wspomnienia i potrafi wyraźnie zmienić kierunek dalszej drogi.`
       };
     }
     if (chemistry >= 78 && friction >= 60) {
       return {
-        title: 'ŻAR I ZIMNE SZKŁO (MAGNETYCZNE NAPIĘCIE)',
-        summary: `Silne przyciąganie Wenus–Mars (${chemistry}%) ściera się tu z wysoką temperaturą sporu (${friction}%). Jedno spojrzenie potrafi zapalić pokój w sekundę, ale ta sama iskra w złej godzinie domaga się twardych granic, żeby nie spalić zaufania.`
+        title: 'ŻAR I WYRAŹNE GRANICE (MAGNETYCZNE NAPIĘCIE)',
+        summary: `Silne przyciąganie Wenus–Mars (${chemistry}%) ściera się tu z wysoką temperaturą sporu (${friction}%). Jedno spojrzenie potrafi ożywić wieczór w sekundę, ale ta sama energia w trudniejszej chwili prosi o spokój i jasne granice, by chronić zaufanie.`
       };
     }
     if (security >= 75 && dos.saturnFinal >= 70) {
       return {
-        title: 'TWIERDZA Z KAMIENIA (PRZYMIERZE NA LATA)',
-        summary: `Wyjątkowa zgodność świateł (${security}%) podparta twardym fundamentem Saturna (${dos.saturnFinal}%). Budujecie spokojny, dyskretny dach nad głową, pod którym bliskość ma czas dojrzewać latami bez lęku o fundamenty.`
+        title: 'SPOKOJNA PRZYSTAŃ (PRZYMIERZE NA LATA)',
+        summary: `Wyjątkowa zgodność świateł (${security}%) podparta stabilnym oparciem Saturna (${dos.saturnFinal}%). Budujecie spokojny, dyskretny dach nad głową, pod którym bliskość ma czas dojrzewać latami w atmosferze zaufania.`
       };
     }
     return {
@@ -653,13 +653,13 @@
   const MIDPOINT_SIGN_DESCRIPTIONS = {
     compSun: [
       'Odwaga pierwszego kroku i życie bez asekuracji; gaśniecie w nudzie i letnich kompromisach.',
-      'Budowanie cichej twierdzy z dotyku, solidnego stołu i wierności odpornej na złe czasy.',
+      'Budowanie spokojnego domu z czułego dotyku, solidnego stołu i wierności odpornej na trudniejszy czas.',
       'Nocny dialog do świtu, ciekawość myśli i brak ciężkich kajdan z przyzwyczajenia.',
       'Dom za grubymi zasłonami, w którym można odpuścić czujność i odpocząć bez ciągłej obrony.',
       'Wspólne światło, duma z obecności drugiej osoby i hojność gestu bez drobnych rachunków.',
       'Uważna obecność w czynie, czyste szczegóły dnia i wzajemne porządkowanie życiowego chaosu.',
       'Spokój miary, elegancja sporu i wspólne szukanie piękna w codziennej formie.',
-      'Bezlitosna prawda pod skórą — albo schodzicie na dno swoich cieni razem, albo każde zamyka drzwi.',
+      'Odwaga pełnej prawdy i lojalności — najmocniej zbliża Was rozmowa bez masek o tym, co dla obojga naprawdę wrażliwe.',
       'Otwarty horyzont, wspólna podróż bez mapy i wiara większa niż ciasne lęki podwórka.',
       'Dyskretna siła na lata; czas działa tu na korzyść słowa wyrytego w kamieniu.',
       'Braterstwo wolnych umysłów bez grania narzuconych ról przy niedzielnym stole.',
@@ -715,7 +715,7 @@
       'Wspólna duma i zachwyt, przy których oboje możecie stać wyprostowani w pełnym świetle.',
       'Cicha niezawodność codziennych czynów ważąca tysiąc razy więcej niż głośne przysięgi.',
       'Elegancja spotkania, równe szale i spór prowadzony bez poniżenia żadnej ze stron.',
-      'Pakt aż do kości bez półprawd — potrzebujesz partnera niebojącego się nocy i głębokiej próby.',
+      'Głębokie przymierze bez półprawd — szukasz partnera, przy którym można zdjąć ostrożność i przejść razem przez trudniejszy czas.',
       'Wspólny horyzont, humor w deszczu i powietrze dające obojgu prawo do własnych skrzydeł.',
       'Twarda architektura zaufania na dekady, budowana powoli i ponad chwilową burzą.',
       'Sojusz wolnych ludzi oparty na szacunku dla odrębności, nie na klatce przyzwyczajeń.',
@@ -729,11 +729,11 @@
       'Żar rośnie w świetle podziwu i gestu mówiącego bez cienia skąpstwa: patrzę wyłącznie na Ciebie.',
       'Dyskretny magnetyzm opanowania, czystości linii i dłoni uważnej na najmniejsze drgnięcie.',
       'Sztuka powolnego uwodzenia w półmroku, miękki jedwab i napięcie wiszące w powietrzu.',
-      'Hipnotyczny nurt bez hamulców — spojrzenie jak ostrze, tabu i noc bez znieczulenia.',
+      'Silny, magnetyczny nurt przyciągania — uważne spojrzenie, potrzeba wyłączności i bliskość bez półśrodków.',
       'Spontaniczność w podróży, poczucie humoru i brak sztywnego scenariusza.',
       'Ciemny płomień pod chłodnym garniturem — rozpala go siła charakteru i powolne zdzieranie dystansu.',
       'Elektryzująca obietnica czegoś niepodobnego do wczoraj i wolność bez taniej rutyny.',
-      'Półmrok, muzyka pod żebrami i ciche zatracenie granic przy zgaszonej lampie.'
+      'Półmrok, ulubiona muzyka w tle i łagodna bliskość z dala od pośpiechu dnia.'
     ]
   };
 
@@ -881,8 +881,8 @@
             'INDEKS OBSESJI I TABU (♇ PLUTON × ⚸ LILITH)',
             `<div style="font-size:1.35rem;font-family:'JetBrains Mono',monospace;color:#FB7185;font-weight:700;">${dos.obsessionFinal}%</div>
              <div style="font-size:0.78rem;opacity:0.7;margin-top:0.2rem;">♇ ${dos.posA.pluto.name}/${dos.posB.pluto.name} • ⚸ Lilith: ${dos.posA.lilith.name} × ${dos.posB.lilith.name}</div>`,
-            'Mierzy siłę podświadomego magnetyzmu seksualnego, pokusy, zazdrości i tzw. „zakazanego owocu”. Wysoki wskaźnik oznacza więź, z której nie sposób się wyzwolić.',
-            'Algorytm odrzuca pokoleniowe aspekty Pluton–Pluton, badając wyłącznie bezpośrednie uderzenia Plutona i Czarnego Księżyca Lilith w planety osobiste partnera (szczególnie Wenus, Marsa, Księżyc i Słońce), obsadę w Skorpionie/8. Domu oraz ścisłość kątową (im mniejszy orb, tym silniejszy ładunek obsesji).'
+            'Mierzy siłę podświadomego magnetyzmu seksualnego, pokusy, zazdrości i tzw. „zakazanego owocu”. Wysoki wskaźnik oznacza więź o bardzo silnym, trudnym do zignorowania przyciąganiu.',
+            'Algorytm odrzuca pokoleniowe aspekty Pluton–Pluton, badając wyłącznie bezpośrednie kontakty Plutona i Czarnego Księżyca Lilith z planetami osobistymi partnera (szczególnie Wenus, Marsa, Księżyc i Słońce), obsadę w Skorpionie/8. Domu oraz ścisłość kątową (im mniejszy orb, tym silniejszy ładunek emocjonalny).'
           )}
           ${T(
             'NAKŁADKA DOMÓW PARTNERSKICH (HOUSE OVERLAYS)',
@@ -891,7 +891,7 @@
                  <div style="font-size:0.76rem;opacity:0.7;margin-top:0.2rem;">Wyliczono dokładne położenie planet w 12 domach Ascendentu</div>`
               : `<div style="font-size:0.9rem;font-family:'Playfair Display',serif;color:rgba(250,248,245,0.75);margin-top:0.15rem;">Wpisz godzinę urodzenia wyżej ↑</div>
                  <div style="font-size:0.76rem;opacity:0.65;margin-top:0.2rem;">Odblokowuje 7. Dom Małżeński i 8. Dom Seksualności</div>`,
-            'Pokazuje, w którą sferę Twojego życia (np. 7. Dom Małżeństwa, 8. Dom Intymności i Tabu, 5. Dom Romansu) bezpośrednio uderzają planety partnera.',
+            'Pokazuje, którą sferę Twojego życia (np. 7. Dom Małżeństwa, 8. Dom Intymności i Zaufania, 5. Dom Romansu) najmocniej poruszają planety partnera.',
             'Wymaga podania godziny urodzenia przynajmniej jednej osoby, aby wyznaczyć dokładny stopień Ascendentu i siatkę 12 domów horoskopowych.'
           )}
         </div>
@@ -919,11 +919,11 @@
         <div class="syn-loss-grid">
           <div class="syn-loss-item">
             <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
-            <div><strong>Sprawdź, czy Wasz związek przetrwa próbę czasu <span class="syn-loss-planet">(Aspekty Saturna ♄)</span></strong><p>Twardy werdykt trwałości na progu 1, 3 i 7 lat — zobacz, czy łączy Was fundament na lata, czy chwilowy haj, który zgaśnie przy pierwszym kryzysie.</p></div>
+            <div><strong>Sprawdź, czy Wasz związek przetrwa próbę czasu <span class="syn-loss-planet">(Aspekty Saturna ♄)</span></strong><p>Twardy werdykt trwałości na progu 1, 3 i 7 lat — zobacz, czy łączy Was fundament na lata, czy chwilowe zauroczenie, które słabnie przy pierwszym kryzysie.</p></div>
           </div>
           <div class="syn-loss-item">
             <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
-            <div><strong>Kto kogo bardziej pragnie — i kto ma nad kim władzę? <span class="syn-loss-planet">(Pluton ♇ i Lilith ⚸)</span></strong><p>Ukryty magnetyzm, zazdrość, walka o kontrolę i odpowiedź na pytanie, kto w tej relacji działa na drugą osobę jak zakazany narkotyk.</p></div>
+            <div><strong>Kto kogo bardziej pragnie — i kto ma nad kim przewagę? <span class="syn-loss-planet">(Pluton ♇ i Lilith ⚸)</span></strong><p>Ukryty magnetyzm, zazdrość, układ sił i odpowiedź na pytanie, kto w tej relacji budzi w drugiej osobie najsilniejsze, trudne do uciszenia pragnienie.</p></div>
           </div>
           <div class="syn-loss-item">
             <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
@@ -1102,7 +1102,7 @@
         <div class="syn-report-chapter">
           <div class="syn-chapter-num">ROZDZIAŁ IV-C • NAKŁADKA DOMÓW PARTNERSKICH (HOUSE OVERLAYS)</div>
           <h4 class="syn-chapter-title" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.6rem;">
-            <span>W które sfery życia uderzają planety partnera?</span>
+            <span>Które sfery życia najmocniej poruszają planety partnera?</span>
             <span class="syn-asp-badge" tabindex="0" style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#C9A96E;">
               <span class="syn-info-pill" style="font-size:9px;padding:0.2rem 0.65rem;cursor:help;">ⓘ O CO W TYM CHODZI?</span>
               <span class="syn-asp-tip">
@@ -1242,7 +1242,7 @@
               <div class="syn-chapter-num">ROZDZIAŁ VI • KONTRAKT KARMICZNY (WĘZŁY KSIĘŻYCOWE ☊) I TRWAŁOŚĆ SATURNA (♄)</div>
               <h4 class="syn-chapter-title">Przeznaczenie, Granice i Architektura Długoterminowa</h4>
               <p style="font-size:0.9rem;line-height:1.68;color:rgba(250,248,245,0.88);">
-                Węzeł Północny (${d.nameA}) w znaku <strong>${dos.posA.node.name} (${dos.posA.node.formatted})</strong> oraz Węzeł Północny (${d.nameB}) w znaku <strong>${dos.posB.node.name} (${dos.posB.node.formatted})</strong> wyznaczają ewolucyjny kierunek Waszego spotkania (aktywacje karmiczne: <strong>${dos.karmaHits}</strong>). Sfera <strong>„Trwałość i Granice” (Saturn ♄)</strong> — położona u ${d.nameA} w znaku <strong>${dos.posA.saturn.gen} (${dos.posA.saturn.formatted})</strong>, a u ${d.nameB} w znaku <strong>${dos.posB.saturn.gen} (${dos.posB.saturn.formatted})</strong> — buduje wskaźnik stabilności na poziomie <strong>${dos.saturnFinal}%</strong>. To dojrzały fundament lojalności, szacunku dla granic i dotrzymywania słowa, który utrzymuje relację, gdy opadnie pierwszy haj dopaminowy.
+                Węzeł Północny (${d.nameA}) w znaku <strong>${dos.posA.node.name} (${dos.posA.node.formatted})</strong> oraz Węzeł Północny (${d.nameB}) w znaku <strong>${dos.posB.node.name} (${dos.posB.node.formatted})</strong> wyznaczają rozwojowy kierunek Waszego spotkania (aktywacje Węzła: <strong>${dos.karmaHits}</strong>). Sfera <strong>„Trwałość i Granice” (Saturn ♄)</strong> — położona u ${d.nameA} w znaku <strong>${dos.posA.saturn.gen} (${dos.posA.saturn.formatted})</strong>, a u ${d.nameB} w znaku <strong>${dos.posB.saturn.gen} (${dos.posB.saturn.formatted})</strong> — buduje wskaźnik stabilności na poziomie <strong>${dos.saturnFinal}%</strong>. To dojrzały fundament lojalności, szacunku dla granic i dotrzymywania słowa, który utrzymuje relację, gdy opadną pierwsze emocje zauroczenia.
               </p>
             </div>
 
@@ -1297,7 +1297,7 @@
             <div class="syn-loss-grid">
               <div class="syn-loss-item">
                 <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>
-                <div><strong>Czy Wasz związek przetrwa próbę czasu? <span class="syn-loss-planet">(Saturn ♄)</span></strong><p>Werdykt na progu 1, 3 i 7 lat — fundament na lata czy chwilowy haj?</p></div>
+                <div><strong>Czy Wasz związek przetrwa próbę czasu? <span class="syn-loss-planet">(Saturn ♄)</span></strong><p>Werdykt na progu 1, 3 i 7 lat — fundament na lata czy chwilowe zauroczenie?</p></div>
               </div>
               <div class="syn-loss-item">
                 <span class="syn-loss-icon"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg></span>

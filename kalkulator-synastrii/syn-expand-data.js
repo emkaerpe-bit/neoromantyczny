@@ -88,7 +88,7 @@
   };
   const DISARM = {
     Ogień: ['„Widzę, że bardzo Cię to rusza. Powiedz mi wprost, o co chodzi, tylko spokojniej.”', '„Nie uciekam od tej rozmowy, jestem tutaj. Powiedz bez pośpiechu, czego teraz potrzebujesz.”', '„Zróbmy pięć minut przerwy, napijmy się wody i wróćmy do tego bez podnoszenia głosu.”'],
-    Ziemia: ['„Nie musisz odpowiadać w tej sekundzie. Zróbmy herbatę i wrócimy do tego za pół godziny.”', '„Rozumiem, gdzie jest Twoja granica. Ustalmy jedną rzecz, którą załatwimy dzisiaj od razu.”', '„Możesz na mnie liczyć na co dzień, nawet jeśli w tej jednej sprawie nie zgadzamy się od razu.”'],
+    Ziemia: ['„Nie musisz odpowiadać w tej sekundzie. Odpocznijmy chwilę i wrócimy do tego za pół godziny.”', '„Rozumiem, gdzie jest Twoja granica. Ustalmy jedną rzecz, którą załatwimy dzisiaj od razu.”', '„Możesz na mnie liczyć na co dzień, nawet jeśli w tej jednej sprawie nie zgadzamy się od razu.”'],
     Powietrze: ['„Zatrzymajmy na chwilę tę kłótnię i przejdźmy się dziesięć minut, żeby nie kręcić się w kółko.”', '„Nie chcę szukać winnego ani Cię rozliczać — po prostu chcę usłyszeć, jak Ty to widzisz.”', '„Powiedzmy sobie po jednym najważniejszym zdaniu bez przerywania.”'],
     Woda: ['„Nigdzie nie idę, nawet gdy jest trudno. Powiedz spokojnie, co Cię w tym zabolało.”', '„Nie chcę zbywać tego samymi argumentami. Chodź na chwilę, usiądźmy blisko.”', '„Wiem, jak bardzo jest to dla Ciebie czuły punkt — nie chcę obracać tego przeciwko Tobie.”']
   };
