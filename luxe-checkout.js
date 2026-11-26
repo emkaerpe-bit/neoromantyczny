@@ -221,7 +221,9 @@
       omnibus: 'Najniższa cena z ostatnich 30 dni: 47 zł',
       btn: 'Zapłać 37,00 PLN i Odbierz E-book &rarr;',
       successHeading: 'Płatność zakończona pomyślnie!',
-      successSub: 'Twój e-book Zodiakalny Prezentownik jest gotowy do pobrania.'
+      successSub: 'Twój e-book Zodiakalny Prezentownik jest gotowy do pobrania.',
+      // biome-ignore lint/security/noSecrets: public Stripe Payment Link URL
+      directUrl: 'https://buy.stripe.com/dRmaEQbv34rJa4mdKWcwg07'
     },
     'synastria': {
       tag: 'BLACK WEEKEND -20% • PEŁNY RAPORT (7 ROZDZIAŁÓW)',
