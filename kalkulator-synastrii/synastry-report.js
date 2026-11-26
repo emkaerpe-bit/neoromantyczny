@@ -1375,10 +1375,28 @@
 
   window.__SYNASTRY_REPORT_MOUNT__ = function (mountEl, d, forceUnlock = false) {
     if (!mountEl || !window.__SYNASTRY_BUILD_DOSSIER__) return;
+    const IS_LOCAL_HOST = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+    if (IS_LOCAL_HOST && !document.getElementById('syn-local-test-bar') && document.body) {
+      const bar = document.createElement('div');
+      bar.id = 'syn-local-test-bar';
+      bar.style.cssText = 'position:fixed;right:16px;bottom:16px;z-index:9998;display:flex;align-items:center;gap:10px;padding:9px 14px;border-radius:999px;background:rgba(14,12,18,0.94);border:1px solid rgba(201,168,76,0.45);box-shadow:0 10px 28px rgba(0,0,0,0.45);font-family:Inter,system-ui,sans-serif;font-size:12px;color:#FAF8F5;backdrop-filter:blur(10px);';
+      bar.innerHTML = '<span id="syn-test-status" style="color:#C9A84C;font-weight:600;">LOCALHOST · PAYWALL</span><button type="button" id="syn-test-toggle" style="cursor:pointer;border:1px solid rgba(201,168,76,0.55);background:rgba(201,168,76,0.16);color:#F5E4A0;padding:5px 12px;border-radius:999px;font-size:11px;font-weight:700;">Odblokuj za 0 zł</button>';
+      document.body.appendChild(bar);
+      document.getElementById('syn-test-toggle').addEventListener('click', () => {
+        window.__SYN_LOCAL_UNLOCK__ = !window.__SYN_LOCAL_UNLOCK__;
+        const st = document.getElementById('syn-test-status');
+        const btn = document.getElementById('syn-test-toggle');
+        if (st) st.textContent = window.__SYN_LOCAL_UNLOCK__ ? 'LOCALHOST · ODBLOKOWANY (0 zł)' : 'LOCALHOST · PAYWALL';
+        if (btn) btn.textContent = window.__SYN_LOCAL_UNLOCK__ ? 'Przywróć Paywall' : 'Odblokuj za 0 zł';
+        if (lastSynMountEl && lastSynRawData) {
+          window.__SYNASTRY_REPORT_MOUNT__(lastSynMountEl, lastSynRawData, Boolean(window.__SYN_LOCAL_UNLOCK__));
+        }
+      });
+    }
     lastSynMountEl = mountEl;
     lastSynRawData = d;
     currentSynHash = getSynChartHash(d);
-    isReportUnlocked = Boolean(forceUnlock || (window.NeoChartLock && window.NeoChartLock.isUnlocked('synastria', currentSynHash)));
+    isReportUnlocked = Boolean(forceUnlock || (IS_LOCAL_HOST && window.__SYN_LOCAL_UNLOCK__) || (window.NeoChartLock && window.NeoChartLock.isUnlocked('synastria', currentSynHash)));
     const safeD = { ...d, nameA: _neoEsc(d.nameA), nameB: _neoEsc(d.nameB) };
     const dos = window.__SYNASTRY_BUILD_DOSSIER__(safeD);
     const verdict = window.__SYNASTRY_NARRATIVES__.getVerdict(safeD, dos);

@@ -592,7 +592,10 @@
         errorBox.innerHTML = isLocalPreview
           ? `<div style="padding:0.95rem; border:1px solid rgba(201,168,76,0.38); background:rgba(201,168,76,0.08); border-radius:10px; margin-top:0.75rem; font-size:0.83rem; color:#FAF8F5; text-align:center; line-height:1.55;">
               <strong style="color:#F5E4A0;display:block;margin-bottom:4px;">Podgląd lokalny (localhost) — kwota do zapłaty: ${_neoEsc(prod.price)}</strong>
-              <span style="color:rgba(250,248,245,0.75);">Klucz serwerowy Stripe działa w chmurze Netlify — po wdrożeniu formularz BLIK / Karta / Apple Pay ładuje się w tym miejscu automatycznie na kwotę <strong>${_neoEsc(prod.price)}</strong>.</span>
+              <span style="color:rgba(250,248,245,0.75);display:block;margin-bottom:0.7rem;">Klucz serwerowy Stripe działa w chmurze Netlify — po wdrożeniu formularz BLIK / Karta ładuje się tutaj na kwotę <strong>${_neoEsc(prod.price)}</strong>.</span>
+              <button type="button" id="luxe-local-free-unlock" class="luxe-btn-submit" style="width:100%;justify-content:center;padding:0.72rem 1.2rem;font-size:0.84rem;">
+                Odblokuj testowo za 0 zł (localhost) &rarr;
+              </button>
             </div>`
           : `
           <div style="padding:0.85rem; border:1px solid rgba(201,168,76,0.3); background:rgba(201,168,76,0.06); border-radius:10px; margin-top:0.75rem; font-size:0.85rem; color:#FAF8F5; text-align:center; line-height:1.5;">
@@ -606,10 +609,20 @@
           </div>
         `;
       }
-      if (isLocalPreview && submitBtn) {
-        submitBtn.style.display = 'flex';
-        submitBtn.disabled = true;
-        submitBtn.style.opacity = '0.75';
+      if (isLocalPreview) {
+        const freeBtn = document.getElementById('luxe-local-free-unlock');
+        if (freeBtn) {
+          freeBtn.addEventListener('click', () => {
+            const fakeVerify = {
+              verified: true,
+              paymentIntentId: 'pi_localhost_test_0pln',
+              unlockToken: '1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef',
+              unlockTs: Date.now(),
+              chartHash: activeChartHash
+            };
+            showSuccess('', fakeVerify);
+          });
+        }
       }
     }
   }
