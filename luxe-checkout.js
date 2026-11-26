@@ -212,27 +212,31 @@
 
   const PRODUCTS_CONFIG = {
     'prezentownik': {
-      tag: 'NATYCHMIASTOWY DOSTĘP CYFROWY (PDF)',
+      tag: 'BLACK WEEKEND -20% • NATYCHMIASTOWY DOSTĘP (PDF)',
       title: 'Zodiakalny Prezentownik',
       sub: 'Praktyczny podręcznik trafionych prezentów dla 12 znaków zodiaku.',
-      price: '47,00 PLN',
-      btn: 'Zapłać 47,00 PLN i Odbierz E-book &rarr;',
+      oldPrice: '47,00 PLN',
+      price: '37,00 PLN',
+      promoNote: 'Black Weekend — cena promocyjna tylko do poniedziałku (30.11) do 23:59',
+      omnibus: 'Najniższa cena z ostatnich 30 dni: 47 zł',
+      btn: 'Zapłać 37,00 PLN i Odbierz E-book &rarr;',
       successHeading: 'Płatność zakończona pomyślnie!',
       successSub: 'Twój e-book Zodiakalny Prezentownik jest gotowy do pobrania.',
       // biome-ignore lint/security/noSecrets: public Stripe Payment Link URL
-      directUrl: 'https://buy.stripe.com/dRm28k8iRbUb4K2fT4cwg00'
+      directUrl: 'https://buy.stripe.com/dRmaEQbv34rJa4mdKWcwg07'
     },
     'synastria': {
-      tag: 'PEŁNY RAPORT SYNASTRII (7 ROZDZIAŁÓW)',
+      tag: 'BLACK WEEKEND -20% • PEŁNY RAPORT (7 ROZDZIAŁÓW)',
       title: 'Raport Synastrii Partnerskiej',
       sub: 'Kompletna analiza relacyjna dla Waszej pary + wersja PDF A4.',
-      price: '67,00 PLN',
-      btn: 'Zapłać 67,00 PLN i Odblokuj Raport &rarr;',
+      oldPrice: '67,00 PLN',
+      price: '53,00 PLN',
+      promoNote: 'Black Weekend — cena promocyjna tylko do poniedziałku (30.11) do 23:59',
+      omnibus: 'Najniższa cena z ostatnich 30 dni: 67 zł',
+      btn: 'Zapłać 53,00 PLN i Odblokuj Raport &rarr;',
       successHeading: 'Raport został odblokowany!',
       successSub: 'Wszystkie 7 rozdziałów analizy partnerskiej jest już aktywnych.',
-      unlockKey: 'neo_synastry_unlocked',
-      // biome-ignore lint/security/noSecrets: public Stripe Payment Link URL
-      directUrl: 'https://buy.stripe.com/3cI28kcz7cYfa4m22ecwg06'
+      unlockKey: 'neo_synastry_unlocked'
     },
     'astrokartografia': {
       tag: 'ATLAS ASTROKARTOGRAFICZNY',
@@ -306,11 +310,13 @@
           <h3 class="luxe-card-heading" id="luxe-modal-heading">Zodiakalny Prezentownik</h3>
           <p class="luxe-card-sub" id="luxe-modal-sub">Dostęp natychmiast po opłaceniu.</p>
           
+          <div id="luxe-modal-promo" style="display:none;margin:0 0 0.65rem;padding:0.42rem 0.75rem;border-radius:0.6rem;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.32);font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#F5E4A0;line-height:1.4;"></div>
+
           <div class="luxe-stripe-badges">
             <span class="luxe-badge" style="border-color:rgba(52,211,153,0.5);color:#34D399;font-weight:700;">BLIK</span>
             <span class="luxe-badge">Karta / Google Pay</span>
             <span class="luxe-badge">Apple Pay</span>
-            <span class="luxe-badge-price" id="luxe-modal-price">47,00 PLN</span>
+            <span class="luxe-badge-price" id="luxe-modal-price">37,00 PLN</span>
           </div>
 
           <div id="luxe-stripe-loader" class="luxe-stripe-loader">
@@ -324,6 +330,7 @@
           <button type="button" id="luxe-stripe-submit-btn" class="luxe-btn-submit" style="display:none;">
             <span id="luxe-submit-label">Zapłać i Odbierz &rarr;</span>
           </button>
+          <div id="luxe-modal-omnibus" style="display:none;margin-top:0.45rem;text-align:center;font-size:10.5px;color:rgba(250,248,245,0.46);"></div>
 
           <div class="luxe-stripe-footer">
             <svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M7.5 13.5h17l-1 12.2a1.8 1.8 0 0 1-1.8 1.6h-11.4a1.8 1.8 0 0 1-1.8-1.6l-1-12.2Z" stroke-width="1.65"/><path d="M11.2 13.5v-3.2a4.8 4.8 0 0 1 9.6 0v3.2" stroke-width="1.6"/><circle cx="16" cy="18.8" r="1.3" stroke="none" fill="currentColor"/><line x1="16" y1="20" x2="16" y2="22.8" stroke-width="1.2"/></svg>SSL 256-bit • Bezpieczne szyfrowanie Stripe<br>
@@ -390,11 +397,25 @@
     const subEl = document.getElementById('luxe-modal-sub');
     const priceEl = document.getElementById('luxe-modal-price');
     const labelEl = document.getElementById('luxe-submit-label');
+    const promoEl = document.getElementById('luxe-modal-promo');
+    const omniEl = document.getElementById('luxe-modal-omnibus');
 
     if (tagEl) tagEl.innerText = prod.tag;
     if (headEl) headEl.innerText = prod.title;
     if (subEl) subEl.innerText = prod.sub;
-    if (priceEl) priceEl.innerText = prod.price;
+    if (priceEl) {
+      priceEl.innerHTML = prod.oldPrice
+        ? `<s style="opacity:0.52;color:rgba(250,248,245,0.7);font-weight:400;margin-right:6px;">${_neoEsc(prod.oldPrice)}</s>${_neoEsc(prod.price)}`
+        : _neoEsc(prod.price);
+    }
+    if (promoEl) {
+      promoEl.textContent = prod.promoNote || '';
+      promoEl.style.display = prod.promoNote ? 'block' : 'none';
+    }
+    if (omniEl) {
+      omniEl.textContent = prod.omnibus || '';
+      omniEl.style.display = prod.omnibus ? 'block' : 'none';
+    }
     if (labelEl) labelEl.innerHTML = prod.btn;
 
     lastFocusedEl = document.activeElement;
@@ -568,8 +589,17 @@
     } catch (err) {
       if (loader) loader.style.display = 'none';
       const prod = PRODUCTS_CONFIG[productKey] || PRODUCTS_CONFIG['prezentownik'];
+      const isLocalPreview = ['localhost', '127.0.0.1'].includes(window.location.hostname);
       if (errorBox) {
-        errorBox.innerHTML = `
+        errorBox.innerHTML = isLocalPreview
+          ? `<div style="padding:0.95rem; border:1px solid rgba(201,168,76,0.38); background:rgba(201,168,76,0.08); border-radius:10px; margin-top:0.75rem; font-size:0.83rem; color:#FAF8F5; text-align:center; line-height:1.55;">
+              <strong style="color:#F5E4A0;display:block;margin-bottom:4px;">Podgląd lokalny (localhost) — kwota do zapłaty: ${_neoEsc(prod.price)}</strong>
+              <span style="color:rgba(250,248,245,0.75);display:block;margin-bottom:0.7rem;">Klucz serwerowy Stripe działa w chmurze Netlify — po wdrożeniu formularz BLIK / Karta ładuje się tutaj na kwotę <strong>${_neoEsc(prod.price)}</strong>.</span>
+              <button type="button" id="luxe-local-free-unlock" class="luxe-btn-submit" style="width:100%;justify-content:center;padding:0.72rem 1.2rem;font-size:0.84rem;">
+                Odblokuj testowo za 0 zł (localhost) &rarr;
+              </button>
+            </div>`
+          : `
           <div style="padding:0.85rem; border:1px solid rgba(201,168,76,0.3); background:rgba(201,168,76,0.06); border-radius:10px; margin-top:0.75rem; font-size:0.85rem; color:#FAF8F5; text-align:center; line-height:1.5;">
             <p style="margin:0 0 0.5rem; color:rgba(250,248,245,0.85);"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>${_neoEsc(err.message)}</p>
             ${prod && prod.directUrl ? `
@@ -580,6 +610,21 @@
             ` : ''}
           </div>
         `;
+      }
+      if (isLocalPreview) {
+        const freeBtn = document.getElementById('luxe-local-free-unlock');
+        if (freeBtn) {
+          freeBtn.addEventListener('click', () => {
+            const fakeVerify = {
+              verified: true,
+              paymentIntentId: 'pi_localhost_test_0pln',
+              unlockToken: '1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef',
+              unlockTs: Date.now(),
+              chartHash: activeChartHash
+            };
+            showSuccess('', fakeVerify);
+          });
+        }
       }
     }
   }
@@ -811,8 +856,30 @@
     }
   }
 
+  function enhanceGiftCalcPromo() {
+    if (window.location.pathname.indexOf('/kalkulator-prezentowy') !== 0) return;
+    const decorate = () => {
+      const cta = document.querySelector('#root a[href*="buy.stripe.com"]');
+      if (!cta || cta.dataset.neoPromoBound === '1') return;
+      cta.dataset.neoPromoBound = '1';
+      const pre = document.createElement('div');
+      pre.style.cssText = 'margin:0 auto 0.75rem;text-align:center;font-family:Inter,sans-serif;font-size:0.84rem;color:#F5E4A0;line-height:1.45;';
+      pre.innerHTML = '<strong style="color:#FAF8F5;"><s style="opacity:0.5;margin-right:6px;font-weight:400;">47 zł</s>37 zł (-20%)</strong> &bull; Black Weekend — cena promocyjna tylko do poniedziałku (30.11) do 23:59';
+      const post = document.createElement('div');
+      post.style.cssText = 'margin:0.55rem auto 0;text-align:center;font-family:Inter,sans-serif;font-size:11px;color:rgba(250,248,245,0.44);';
+      post.textContent = 'Najniższa cena z ostatnich 30 dni: 47 zł';
+      cta.parentNode.insertBefore(pre, cta);
+      cta.insertAdjacentElement('afterend', post);
+    };
+    decorate();
+    if (typeof MutationObserver === 'function' && document.body) {
+      new MutationObserver(decorate).observe(document.body, { childList: true, subtree: true });
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     handleRedirectReturn();
+    enhanceGiftCalcPromo();
     document.addEventListener('click', (e) => {
       const btn = e.target.closest('[data-luxe-checkout], .js-open-checkout, a[href*="buy.stripe.com"]:not(#luxe-stripe-modal a)');
       if (btn) {

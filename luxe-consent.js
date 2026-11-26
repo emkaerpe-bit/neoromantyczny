@@ -188,7 +188,7 @@
       openSettings();
       return;
     }
-    var stripeCta = e.target.closest('a[href*="buy.stripe.com"]');
+    var stripeCta = e.target.closest('a[href*="buy.stripe.com"], [data-luxe-checkout]');
     if (stripeCta && !stripeCta.closest('#luxe-stripe-modal')) {
       e.preventDefault();
       var prod = stripeCta.getAttribute('data-luxe-checkout') || stripeCta.getAttribute('data-product') || 'prezentownik';
@@ -206,7 +206,7 @@
         if (!existingScript) {
           var ls = document.createElement('script');
           ls.id = 'neo-luxe-checkout-js';
-          ls.src = '/luxe-checkout.js?v=6.1';
+          ls.src = '/luxe-checkout.js?v=6.4';
           ls.onload = function () {
             if (typeof window.openLuxeCheckout === 'function') window.openLuxeCheckout(prod);
           };

@@ -177,7 +177,7 @@ window.ACG_CITIES_DB = {
     "Tokio|Japonia|35.6762|139.6503|Asia/Tokyo|Cyberpunkowa harmonia, estetyczny perfekcjonizm, rytuał i przyszłość.",
     "Kioto & Osaka|Japonia|35.0116|135.7681|Asia/Kyoto|Starożytne świątynie zen, ogrody bambusowe, gejsze i duchowa głębia.",
     "Seul|Korea Południowa|37.5665|126.9780|Asia/Seoul|Globalna fala kultury, zaawansowana technologia, estetyka i tempo 24/7.",
-    "Singapur|Singapur|1.3521|103.8198|Asia/Singapore|Azjatycka twierdza bogactwa, bezpieczeństwa, zielonych ogrodów i ładu.",
+    "Singapur|Singapur|1.3521|103.8198|Asia/Singapore|Azjatycka oaza dobrobytu, bezpieczeństwa, zielonych ogrodów i ładu.",
     "Hongkong|Chiny (SAR)|22.3193|114.1694|Asia/Hong_Kong|Pionowa metropolia finansów między górami a Morzem Południowochińskim.",
     "Szanghaj|Chiny|31.2304|121.4737|Asia/Shanghai|Futurystyczny Bund, globalny handel i zawrotna skala.",
     "Tajpej|Tajwan|25.0330|121.5654|Asia/Taipei|Serce światowych półprzewodników, nocne targi i górskie świątynie.",
