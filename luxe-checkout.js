@@ -221,9 +221,7 @@
       omnibus: 'Najniższa cena z ostatnich 30 dni: 47 zł',
       btn: 'Zapłać 37,00 PLN i Odbierz E-book &rarr;',
       successHeading: 'Płatność zakończona pomyślnie!',
-      successSub: 'Twój e-book Zodiakalny Prezentownik jest gotowy do pobrania.',
-      // biome-ignore lint/security/noSecrets: public Stripe Payment Link URL
-      directUrl: 'https://buy.stripe.com/dRm28k8iRbUb4K2fT4cwg00'
+      successSub: 'Twój e-book Zodiakalny Prezentownik jest gotowy do pobrania.'
     },
     'synastria': {
       tag: 'BLACK WEEKEND -20% • PEŁNY RAPORT (7 ROZDZIAŁÓW)',
@@ -236,9 +234,7 @@
       btn: 'Zapłać 53,00 PLN i Odblokuj Raport &rarr;',
       successHeading: 'Raport został odblokowany!',
       successSub: 'Wszystkie 7 rozdziałów analizy partnerskiej jest już aktywnych.',
-      unlockKey: 'neo_synastry_unlocked',
-      // biome-ignore lint/security/noSecrets: public Stripe Payment Link URL
-      directUrl: 'https://buy.stripe.com/3cI28kcz7cYfa4m22ecwg06'
+      unlockKey: 'neo_synastry_unlocked'
     },
     'astrokartografia': {
       tag: 'ATLAS ASTROKARTOGRAFICZNY',
@@ -591,8 +587,14 @@
     } catch (err) {
       if (loader) loader.style.display = 'none';
       const prod = PRODUCTS_CONFIG[productKey] || PRODUCTS_CONFIG['prezentownik'];
+      const isLocalPreview = ['localhost', '127.0.0.1'].includes(window.location.hostname);
       if (errorBox) {
-        errorBox.innerHTML = `
+        errorBox.innerHTML = isLocalPreview
+          ? `<div style="padding:0.95rem; border:1px solid rgba(201,168,76,0.38); background:rgba(201,168,76,0.08); border-radius:10px; margin-top:0.75rem; font-size:0.83rem; color:#FAF8F5; text-align:center; line-height:1.55;">
+              <strong style="color:#F5E4A0;display:block;margin-bottom:4px;">Podgląd lokalny (localhost) — kwota do zapłaty: ${_neoEsc(prod.price)}</strong>
+              <span style="color:rgba(250,248,245,0.75);">Klucz serwerowy Stripe działa w chmurze Netlify — po wdrożeniu formularz BLIK / Karta / Apple Pay ładuje się w tym miejscu automatycznie na kwotę <strong>${_neoEsc(prod.price)}</strong>.</span>
+            </div>`
+          : `
           <div style="padding:0.85rem; border:1px solid rgba(201,168,76,0.3); background:rgba(201,168,76,0.06); border-radius:10px; margin-top:0.75rem; font-size:0.85rem; color:#FAF8F5; text-align:center; line-height:1.5;">
             <p style="margin:0 0 0.5rem; color:rgba(250,248,245,0.85);"><svg width="1.12em" height="1.12em" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.18em;flex-shrink:0;margin:0 0.28em 0 0" aria-hidden="true"><path d="M16 5.2L26.8 25.5H5.2L16 5.2Z" stroke-width="1.55"/><line x1="16" y1="12.2" x2="16" y2="19.2" stroke-width="1.35"/><circle cx="16" cy="22.3" r="1.05" stroke="none" fill="currentColor"/></svg>${_neoEsc(err.message)}</p>
             ${prod && prod.directUrl ? `
@@ -603,6 +605,11 @@
             ` : ''}
           </div>
         `;
+      }
+      if (isLocalPreview && submitBtn) {
+        submitBtn.style.display = 'flex';
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.75';
       }
     }
   }
