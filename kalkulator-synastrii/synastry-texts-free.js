@@ -186,43 +186,43 @@ window.__JUNGIAN_PROFILES__[11] = {
   const MOON_COMBOS = {
   "Ogień-Ogień": {
     "title": "Dwa Wysokie Temperamenty w Jednym Domu",
-    "desc": "W dobrych tygodniach przyciągacie się z dużym entuzjazmem, jednak w ostrzejszej wymianie zdań oba upory walczą o pierwszeństwo. Spokój wraca najszybciej wtedy, gdy któreś z Was odpuści dumę i zwolni tempo rozmowy."
+    "desc": "W dobrych dniach przyciągacie się z ogromną energią i entuzjazmem. Podczas kłótni oba upory walczą jednak o pierwszeństwo, co szybko zamienia drobną różnicę zdań w głośny spór, dopóki któreś z Was nie odpuści dumy."
   },
   "Ogień-Ziemia": {
     "title": "Szybki Impuls i Spokojna Rachuba",
-    fn: (byEl, mid) => `${byEl('Ogień')} chce decydować niemal od razu, natomiast ${mid(byEl('Ziemia'))} najpierw liczy koszty, terminy oraz skutki i stąd bierze się większość domowych zgrzytów. Wzajemny szacunek dla odmiennego rytmu pozwala zamienić tę różnicę w dobry zespół.`
+    "desc": "Jedno z Was chce decydować tu i teraz, drugie najpierw liczy koszty, terminy i ryzyko. Gdy pęd nazywa ostrożność brakiem pasji, a ostrożność ocenia spontaniczność zbyt surowo, rośnie cicha frustracja."
   },
   "Ogień-Powietrze": {
     "title": "Rozmowa, Która Nakręca Działanie",
-    fn: (byEl, mid) => `${byEl('Ogień')} szybko nadaje impuls do działania, a ${mid(byEl('Powietrze'))} podchwytuje go rozmową i humorem, więc rzadko grozi Wam nuda przy wspólnym stole. Bez kilku spokojnych wieczorów bez ekranów wysoki poziom bodźców potrafi jednak zamienić się w zwykłe zmęczenie.`
+    "desc": "Rozmawiacie żywo, nakręcacie swoje pomysły i rzadko nudzicie się we wspólnym towarzystwie. Bez kilku stałych nawyków w tygodniowym grafiku ten wysoki poziom bodźców łatwo prowadzi jednak do zmęczenia i rozproszenia."
   },
   "Ogień-Woda": {
     "title": "Krótki Wybuch i Długa Pamięć Serca",
-    fn: (byEl, mid) => `${byEl('Ogień')} wyrzuca złość w minutę i szybko zapomina o sporze, ale ${mid(byEl('Woda'))} nosi szorstki ton głosu jeszcze przez kilka dni. Łagodniejszy język w nerwach chroni zaufanie, zanim kurz zdąży opaść.`
+    "desc": "Ogień rzuca ostre słowa w przypływie irytacji i po kwadransie zapomina o sporze, podczas gdy Woda pamięta ten ton przez wiele dni i zamyka się emocjonalnie. Silna chemia wymaga tu dużej uważności na granice."
   },
   "Ziemia-Ziemia": {
     "title": "Pewny Grunt na Długie Lata",
-    "desc": "Działacie konsekwentnie i dotrzymujecie danego słowa, dzięki czemu nie musicie obawiać się nagłego trzaśnięcia drzwiami po gorszym wieczorze. Z czasem warto świadomie pilnować randek oraz czułości ponad samą organizacją tygodnia."
+    "desc": "Nikt nie grozi tu rozstaniem po jednej gorszej rozmowie, bo działacie konsekwentnie i szanujecie dane słowo. Jedynym realnym zagrożeniem jest wpadnięcie w czysto logistyczną przewidywalność bez zmysłowej spontaniczności."
   },
   "Ziemia-Powietrze": {
     "title": "Konkret Faktu i Swoboda Myśli",
-    fn: (byEl, mid) => `${byEl('Ziemia')} pyta o budżet i jasny plan, podczas gdy ${mid(byEl('Powietrze'))} rozważa kilka scenariuszy jednocześnie. Oddzielenie rozmowy o uczuciach od spraw w kalendarzu pozwala uniknąć mijania się w pół zdania.`
+    "desc": "Ziemia pyta o budżet i konkretny plan, podczas gdy Powietrze analizuje dziesięć nowych koncepcji naraz. Jeśli nie ustalicie wspólnego języka między planem a swobodą, zaczniecie mówić obok siebie."
   },
   "Ziemia-Woda": {
     "title": "Oparcie, Które Uspokaja Nastrój",
-    fn: (byEl, mid) => `${byEl('Ziemia')} wnosi spokojną stałość kojącą wahania nastroju, a ${mid(byEl('Woda'))} ociepla czułością domową dyscyplinę i wspólne obowiązki. Przy wzajemnej trosce budujecie atmosferę dającą autentyczne wytchnienie po długim dniu.`
+    "desc": "Jedna z najbardziej naturalnych konfiguracji bezpieczeństwa — konkret i stałość Ziemi koją wahania nastroju Wody, a czułość ociepla domową dyscyplinę."
   },
   "Powietrze-Powietrze": {
     "title": "Wspólny Język i Poczucie Humoru",
-    "desc": "Tematów do rozmowy nie brakuje Wam nawet po wielu latach pod jednym dachem. Pułapka pojawia się wtedy, gdy celny żart lub błyskotliwa dyskusja zaczynają zastępować zwykłe przytulenie i przyznanie się do słabości."
+    "desc": "Nie brakuje Wam tematów do rozmów nawet po wielu latach. Ryzyko pojawia się wtedy, gdy błyskotliwy żart zaczyna zastępować szczerą rozmowę o trudnych uczuciach i lękach."
   },
   "Powietrze-Woda": {
     "title": "Logika w Zderzeniu z Czułością",
-    fn: (byEl, mid) => `W trudnej chwili ${mid(byEl('Powietrze'))} szuka rozwiązania w faktach, tymczasem ${mid(byEl('Woda'))} potrzebuje najpierw zwykłego przytulenia i wysłuchania bez wykładu. Dopasowanie kolejności tych dwóch kroków rozbraja większość nieporozumień w domu.`
+    "desc": "Powietrze próbuje rozwiązać napięcie racjonalnymi argumentami, podczas gdy Woda potrzebuje najpierw zwykłego przytulenia i wysłuchania bez wykładu. Kluczem do zgody jest dopasowanie tempa reakcji."
   },
   "Woda-Woda": {
     "title": "Ciche Wyczucie Bez Długich Wyjaśnień",
-    "desc": "Zmianę nastroju wyczuwacie u siebie jeszcze przed pierwszym pytaniem, co daje głęboką bliskość bez tysiąca tłumaczeń. Pomaga pilnowanie jasnej granicy między własnym zmęczeniem a stresem przyniesionym przez partnera."
+    "desc": "Wyczuwacie swoje zmęczenie i zmianę tonu wiadomości bez długich wyjaśnień. Taka wrażliwość daje niezwykłą intymność, dopóki pilnujecie granicy między własnym stresem a nastrojem partnera."
   }
 };
   const getComboKey = (a, b) => MOON_COMBOS[`${a}-${b}`] ? `${a}-${b}` : (MOON_COMBOS[`${b}-${a}`] ? `${b}-${a}` : 'Ziemia-Woda');
@@ -240,14 +240,12 @@ window.__JUNGIAN_PROFILES__[11] = {
     const elG = M ? M.elemGen(sunElA) : sunElA, sunElAGen = elG, sunElBGen = M ? M.elemGen(sunElB) : sunElB;
     const marBGen = M ? M.signGen((marB && marB.name) || sB) : sB;
     const sNameA = _esc(d.nameA || 'Osoba 1'), sNameB = _esc(d.nameB || 'Osoba 2');
-    const mid = (nm) => (nm === 'Ona' || nm === 'On') ? nm.toLowerCase() : nm;
-    const byEl = (targetEl) => (elA === targetEl ? sNameA : sNameB);
     const moonElAGen = M ? M.elemGen(elA) : elA, moonElBGen = M ? M.elemGen(elB) : elB;
     const moonLegend = elA === elB
       ? `☽ <strong style="color:#FAF8F5;">${sNameA}</strong>: ${_esc(moonA.name)} &bull; ☽ <strong style="color:#FAF8F5;">${sNameB}</strong>: ${_esc(moonB.name)} <span style="color:#C9A96E;">(wspólny żywioł ${moonElAGen})</span>`
       : `☽ <strong style="color:#FAF8F5;">${sNameA}</strong>: ${_esc(moonA.name)} <span style="color:#C9A96E;">(żywioł ${moonElAGen})</span> &nbsp;&bull;&nbsp; ☽ <strong style="color:#FAF8F5;">${sNameB}</strong>: ${_esc(moonB.name)} <span style="color:#C9A96E;">(żywioł ${moonElBGen})</span>`;
     const dynamics = MOON_COMBOS[getComboKey(elA, elB)] || MOON_COMBOS['Ziemia-Woda'];
-    const moonDesc = typeof dynamics.fn === 'function' ? dynamics.fn(byEl, mid) : dynamics.desc;
+    const moonDesc = dynamics.desc;
     const topAsp = syn.aspects && syn.aspects[0];
     let aspAnchor = `Układ żywiołów Waszych Słońc oraz Wenus w znaku ${M ? M.signGen((venA && venA.name) || sA) : sA} wyznacza ton tej relacji. `;
     if (topAsp && C) { const flow = C.resolveDirectionalAspect({ bA: topAsp.pA, bB: topAsp.pB }, d); aspAnchor = `Główny ton nadaje tu ścisły kontakt, w którym ${flow.canonicalFlow}. `; }

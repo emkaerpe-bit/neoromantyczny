@@ -649,7 +649,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
       </p>
       <div style="padding:1.15rem 1.35rem;background:rgba(201,169,110,0.06);border-left:3px solid #C9A96E;border-radius:0.75rem;">
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#C9A96E;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.35rem;">
-          PRAWDA O ŚWIECIE EMOCJONALNYM: ${jungianDiag.moonTitle} (${moonA.name} &times; ${moonB.name})
+          PRAWDA O ŚWIECIE EMOCJONALNYM (${moonA.name} &times; ${moonB.name})
         </div>
         ${jungianDiag.moonLegend ? `<div class="syn-mono-meta" style="font-family:'Inter',sans-serif;font-size:0.82rem;color:rgba(250,248,245,0.76);margin-bottom:0.55rem;padding-bottom:0.45rem;border-bottom:1px solid rgba(201,169,110,0.16);line-height:1.5;">${jungianDiag.moonLegend}</div>` : ''}
         <p style="font-size:0.92rem;line-height:1.65;color:rgba(250,248,245,0.85);margin:0;">
@@ -1175,11 +1175,17 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="dateA">Data Urodzenia *</label>
-                <input class="syn-input" id="dateA" type="date" value="${escapeHtmlSyn(init.dateA)}" required />
+                <div class="syn-input-relative">
+                  <input class="syn-input syn-input-with-icon" id="dateA" type="date" value="${escapeHtmlSyn(init.dateA)}" required />
+                  <svg class="syn-input-pin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                </div>
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="timeA">Godzina Urodzenia</label>
-                <input class="syn-input" id="timeA" type="time" value="${escapeHtmlSyn(init.timeA)}" />
+                <div class="syn-input-relative">
+                  <input class="syn-input syn-input-with-icon" id="timeA" type="time" value="${escapeHtmlSyn(init.timeA)}" />
+                  <svg class="syn-input-pin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15.5 14"></polyline></svg>
+                </div>
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="cityA">Miejsce Narodzin</label>
@@ -1206,11 +1212,17 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="dateB">Data Urodzenia Partnera *</label>
-                <input class="syn-input" id="dateB" type="date" value="${escapeHtmlSyn(init.dateB)}" required />
+                <div class="syn-input-relative">
+                  <input class="syn-input syn-input-with-icon" id="dateB" type="date" value="${escapeHtmlSyn(init.dateB)}" required />
+                  <svg class="syn-input-pin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                </div>
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="timeB">Godzina Urodzenia</label>
-                <input class="syn-input" id="timeB" type="time" value="${escapeHtmlSyn(init.timeB)}" />
+                <div class="syn-input-relative">
+                  <input class="syn-input syn-input-with-icon" id="timeB" type="time" value="${escapeHtmlSyn(init.timeB)}" />
+                  <svg class="syn-input-pin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15.5 14"></polyline></svg>
+                </div>
               </div>
               <div class="syn-field">
                 <label class="syn-label" for="cityB">Miejsce Narodzin Partnera</label>
