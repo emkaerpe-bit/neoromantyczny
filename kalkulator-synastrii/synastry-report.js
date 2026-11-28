@@ -303,8 +303,8 @@
           const customDesc = typeof pairEntry === 'function'
             ? pairEntry(dirCtx, isHarm)
             : (isHarm
-              ? `Naturalne zgranie żywiołów ${elGA} i ${elGB}, które wzmacnia zaufanie.`
-              : `Zderzenie żywiołów ${elGA} i ${elGB}, wymagające cierpliwości oraz szczerych rozmów.`);
+              ? `Żywioły ${elGA} i ${elGB} dobrze się tu uzupełniają i ułatwiają wzajemne zrozumienie.`
+              : `Różnica między żywiołem ${elGA} a żywiołem ${elGB} wymaga tu cierpliwości i spokojnej rozmowy.`);
 
           const item = {
             bA, bB, posA: posA[bA.key], posB: posB[bB.key],

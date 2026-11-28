@@ -6,194 +6,141 @@
   const u = (ctx) => ctx.reactor.nom ? `u ${ctx.reactor.gen}` : 'po drugiej stronie';
   const aN = (ctx) => ctx.actor.nom || 'Pierwsza osoba';
   const rN = (ctx) => ctx.reactor.nom || 'druga osoba';
-
   P['sun-sun'] = (ctx, h) => h
-    ? `Dwa wyraźne charaktery przy jednym stole bez walki o krzesło. Pewność siebie ${ctx.actor.gen} naturalnie wzmacnia odwagę ${u(ctx)}.`
-    : `Zderzenie dwóch silnych ego o własny wpływ. Gdy brakuje jasnego podziału ról, ${aN(ctx)} i ${rN(ctx)} zaczynają przygaszać swoją inicjatywę.`;
-
+    ? `Dobrze dogadujecie się w ważnych decyzjach, bo pewność siebie ${ctx.actor.gen} naturalnie dodaje odwagi ${u(ctx)}.`
+    : `Kiedy brakuje jasnego podziału ról, ${aN(ctx)} i ${rN(ctx)} zaczynają rywalizować o wpływ na wspólne decyzje.`;
   P['moon-sun'] = (ctx, h) => h
-    ? `Spokojne dopełnienie dnia i nocy: pewność ${ctx.actor.gen} daje ciepłe oparcie wrażliwości ${u(ctx)}.`
-    : `Twarda duma zderza się z potrzebą troski. Kiedy ${aN(ctx)} idzie po swoje bez słowa wyjaśnienia, ${rN(ctx)} łatwo zamyka się z poczucia chłodu.`;
-
+    ? `Zdecydowanie ${ctx.actor.gen} daje ciepłe poczucie bezpieczeństwa i spokoju wrażliwości ${u(ctx)}.`
+    : `Gdy ${aN(ctx)} działa zbyt stanowczo bez krótkiego wyjaśnienia, ${rN(ctx)} zamyka się w sobie z poczucia chłodu.`;
   P['mercury-sun'] = (ctx, h) => h
-    ? `Rozmowa płynie lekko, jakbyście kończyli myśli w pół zdania. Słowo ${ctx.actor.gen} porządkuje to, co ${u(ctx)} jeszcze rano wydawało się mgliste.`
-    : `Spór o to, czyje zdanie zamyka rozmowę. Jedna wypowiedź brzmi jak pouczenie, a druga jak lekceważenie faktów.`;
-
+    ? `Rozmawiacie bardzo lekko i rzeczowo, a słowa ${ctx.actor.gen} pomagają uporządkować wątpliwości ${u(ctx)}.`
+    : `Łatwo wciągacie się w spór o rację, w którym jedna wypowiedź brzmi pouczająco, a partner czuje się lekceważony.`;
   P['sun-venus'] = (ctx, h) => h
-    ? `Naturalna sympatia i ciepło bez udawania kogokolwiek. W tym towarzystwie najzwyklejszy wieczór w domu smakuje jak małe święto.`
-    : `Pokusa utrzymania ładnej zgody kosztem przemilczanej zadry. Z pozoru jest miło, dopóki drobna uwaga nie przeleje czary.`;
-
+    ? `Od pierwszego spotkania czujecie naturalną sympatię i potraficie cieszyć się nawet zwykłym wspólnym wieczorem.`
+    : `Próbujecie utrzymać miłą atmosferę kosztem przemilczanej zadry, dopóki drobna uwaga nie wywoła nagłego żalu.`;
   P['mars-sun'] = (ctx, h) => h
-    ? `Żywa energia i wzajemna mobilizacja od rana do wieczora. Impuls ${ctx.actor.gen} budzi odwagę i chęć działania ${u(ctx)}.`
-    : `Iskra rzucona na suche drewno — namiętność szybko przechodzi tu w spór o to, kto tu prowadzi i stawia kropkę.`;
-
+    ? `Wzajemnie mobilizujecie się do działania, a energia ${ctx.actor.gen} wyraźnie budzi śmiałość i zapał ${u(ctx)}.`
+    : `Silne przyciąganie szybko miesza się tu ze sporem o to, kto ma narzucać tempo w trudniejszym dniu.`;
   P['jupiter-sun'] = (ctx, h) => h
-    ? `Powiew wolności i wiary we wspólne plany. Przy ${ctx.actor.ins} rośnie poczucie humoru i apetyt na odważniejsze decyzje.`
-    : `Hojne obietnice rzucane ponad winem, po których w zwykły wtorek brakuje konkretnego planu i pilnowania rachunków.`;
-
+    ? `Przy ${ctx.actor.loc || ctx.actor.nom} rośnie poczucie humoru, swoboda oraz odwaga do podejmowania wspólnych, śmielszych planów.`
+    : `Łatwo składacie sobie wielkie obietnice w dobrym nastroju, po których w zwykły wtorek brakuje pilnowania konkretów.`;
   P['saturn-sun'] = (ctx, h) => h
-    ? `Mocny grunt pod stopami — przy tym układzie słowo ${ctx.actor.gen} nie pęka nawet przy poważnym kryzysie w środku zimy.`
-    : `Cień surowej oceny: ${rN(ctx)} może odbierać powagę ${ctx.actor.gen} jak chłodny dystans, który gasi spontaniczną czułość.`;
-
+    ? `Możecie na sobie polegać w trudniejszym momencie, bo słowo dane przez ${ctx.actor.acc} zachowuje swoją wagę.`
+    : `${rN(ctx)} potrafi odbierać powagę ${ctx.actor.gen} zbyt osobiście, co studzi spontaniczną radość oraz czułość.`;
   P['node-sun'] = (ctx, h) => h
-    ? `Ważne spotkanie, które wyraźnie zmienia kierunek dalszej drogi. Obecność ${ctx.actor.gen} budzi ${u(ctx)} gotowość do dojrzałej decyzji.`
-    : `Koniec wygodnych wymówek: kontakt z ${ctx.actor.ins} wybija ze starych nawyków szybciej, niż się spodziewacie.`;
-
+    ? `Obecność ${ctx.actor.gen} wyraźnie porusza ważne decyzje ${u(ctx)} i skłania do poważniejszego spojrzenia w przyszłość.`
+    : `Kontakt z ${ctx.actor.ins} szybko wybija z wygodnych przyzwyczajeń, dlatego na starcie pojawia się wewnętrzny opór.`;
   P['moon-moon'] = (ctx, h) => h
-    ? `Ten sam rytm ciszy i odpoczynku w mieszkaniu. Bez długich tłumaczeń czujecie, kiedy trzeba porozmawiać, a kiedy posiedzieć obok siebie.`
-    : `Dwa różne odruchy w stresie — to, co ${aN(ctx)} chce od razu przegadać, ${rN(ctx)} woli przemilczeć w osobnym pokoju.`;
-
+    ? `Macie podobny rytm odpoczynku w domu i bez długich tłumaczeń czujecie, kiedy potrzeba ciszy albo rozmowy.`
+    : `W stresie reagujecie zupełnie inaczej, ponieważ to, co ${aN(ctx)} chce od razu przegadać, ${rN(ctx)} woli przeczekać osobno.`;
   P['mercury-moon'] = (ctx, h) => h
-    ? `Rzadka zdolność nazwania cudzej tęsknoty bez ranienia. Słowa ${ctx.actor.gen} trafiają prosto w sedno nastroju ${u(ctx)}.`
-    : `Rozbieranie łez na suche argumenty. Logika ${ctx.actor.gen} rani tu miękkie serce ${u(ctx)} swoją chłodną precyzją.`;
-
+    ? `${aN(ctx)} potrafi łagodnie nazwać emocje i tęsknoty ${u(ctx)}, nie raniąc przy tym wrażliwej natury.`
+    : `Chłodna logika ${ctx.actor.gen} dotyka czułego miejsca ${u(ctx)}, gdy w trudnej chwili bardziej potrzeba ciepła niż argumentów.`;
   P['moon-venus'] = (ctx, h) => h
-    ? `Miękka czułość i zapach czystej pościeli po długim dniu. Przy ${ctx.actor.ins} dom naprawdę leczy zmęczenie.`
-    : `Inne oczekiwania wobec bliskości: jedno szuka ciepłego uścisku w kuchni, drugie ładnej oprawy i odrobiny dystansu.`;
-
+    ? `Wspólne mieszkanie szybko daje Wam poczucie ukojenia, czułości oraz spokojnego odpoczynku po długim dniu.`
+    : `Różnicie się w potrzebie bliskości, ponieważ jedno z Was szuka przytulenia od razu, a partner potrzebuje odrobiny dystansu.`;
   P['mars-moon'] = (ctx, h) => h
-    ? `Silny instynkt opiekuńczy i żywe pragnienie bliskości. Impuls ${ctx.actor.gen} daje ${ctx.reactor.dat} poczucie, że nie zostanie bez wsparcia.`
-    : `Ostre słowo rzucone w nerwach przez ${ctx.actor.acc} trafia prosto w czuły punkt ${u(ctx)}, zanim opadną emocje.`;
-
+    ? `Silna potrzeba opieki oraz namiętność ${ctx.actor.gen} dają ${ctx.reactor.dat} poczucie ważności i wyraźnego zaangażowania.`
+    : `Ostre słowo rzucone w nerwach przez ${ctx.actor.acc} trafia w czuły punkt ${u(ctx)}, zanim opadną pierwsze emocje.`;
   P['jupiter-moon'] = (ctx, h) => h
-    ? `Szerokie ramiona i pamięć wolna od małostkowego wypominania błędów. Przy sobie łatwiej oddychać pełną piersią.`
-    : `Nadmiar dobrych chęci zalewa cały pokój, a wielkie gesty opieki czasem rozmywają się pod koniec zwykłego tygodnia.`;
-
+    ? `Dajecie sobie dużo wyrozumiałości oraz przestrzeni, nie wypominając drobnych błędów przy zwykłym zmęczeniu.`
+    : `Przesadna serdeczność lub brak umiaru w wydatkach i planach potrafią wprowadzić pod koniec tygodnia zbędny zamęt.`;
   P['moon-saturn'] = (ctx, h) => h
-    ? `Pewna kotwica w trudnej pogodzie. Kiedy inni tracą głowę w nerwach, lojalność ${ctx.actor.gen} trzyma Wasz dom w spokoju.`
-    : `Obowiązek staje wyżej niż czuła dłoń — pragnienie ciepła odbija się nieraz od chłodnego opanowania ${ctx.actor.gen}.`;
-
+    ? `Lojalność i spokój ${ctx.actor.gen} dają Wam trwałe oparcie wtedy, gdy wokół pojawia się gorszy nastrój.`
+    : `Obowiązki biorą górę nad czułością, przez co potrzeba bliskości odbija się nieraz od chłodnego opanowania ${ctx.actor.gen}.`;
   P['moon-node'] = (ctx, h) => h
-    ? `Nagłe poczucie bliskości od pierwszego uścisku dłoni, jakbyście znali swój rytm od dawna.`
-    : `Splot dawnych przyzwyczajeń wypycha Was ze starych ról rodzinnych w stronę bardziej świadomej więzi.`;
-
+    ? `Od pierwszego spotkania pojawia się między Wami ciche poczucie swojskości i łatwe zrozumienie emocji.`
+    : `Dawne nawyki wyniesione z rodzinnych domów zmuszają Was do szukania własnego, bardziej świadomego sposobu na bliskość.`;
   P['mercury-mercury'] = (ctx, h) => h
-    ? `Te same aluzje w locie i długie rozmowy bez patrzenia na zegarek. Rozumiecie swoje żarty po dwóch słowach.`
-    : `W kłótni przerzucacie się celnymi szpilami — bardziej słychać wtedy ton głosu niż prawdziwy żal pod spodem.`;
-
+    ? `Rozmawiacie bardzo płynnie, błyskawicznie łapiecie wspólne żarty i potraficie przegadać cały wieczór bez zmęczenia.`
+    : `Podczas sprzeczki przerzucacie się ciętymi ripostami, przez co ważniejszy staje się ton głosu niż prawdziwy żal pod spodem.`;
   P['mercury-venus'] = (ctx, h) => h
-    ? `Ciepłe słowa i wiadomości zostające w pamięci na lata. Sama rozmowa między Wami potrafi brzmieć jak pieszczota.`
-    : `Owijanie trudnej prawdy w zbyt grzeczne słowa, żeby tylko nie zepsuć nastroju przy wieczornej kolacji.`;
-
+    ? `Ciepłe wiadomości i uważne słowa zostają w pamięci na długo, podtrzymując między Wami naturalną sympatię.`
+    : `Owijacie trudne sprawy w nadmierną grzeczność, żeby nie zepsuć wieczoru, przez co ważne pytania zostają bez odpowiedzi.`;
   P['mars-mercury'] = (ctx, h) => h
-    ? `Szybki dowcip i myśl, która od razu zamienia się we wspólny krok za drzwi bez długiego wahania.`
-    : `Ostra ironia ${ctx.actor.gen} w gniewie tnie głębiej niż krzyk — trudno potem cofnąć zdanie rzucone z uśmiechem.`;
-
+    ? `Szybko przechodzicie od rozmowy do wspólnego działania, a żywy dowcip łatwo rozładowuje drobne napięcia.`
+    : `Ostra ironia ${ctx.actor.gen} potrafi w złości zranić głębiej niż krzyk i trudno potem cofnąć zdanie rzucone z uśmiechem.`;
   P['jupiter-mercury'] = (ctx, h) => h
-    ? `Nocne dyskusje otwierające głowę na nowe plany. Przy sobie uczycie się patrzeć szerzej na wspólne sprawy.`
-    : `Przeskakiwanie zwykłych faktów dla wielkich tez — spór o rację zamiast uważnego słuchania drugiej strony.`;
-
+    ? `Wspólne dyskusje otwierają głowy na nowe pomysły oraz uczą patrzeć na życiowe wybory bez lęku.`
+    : `Przeskakujecie konkretne fakty w obronie wielkich tez, spierając się o rację zamiast spokojnie się wysłuchać.`;
   P['mercury-saturn'] = (ctx, h) => h
-    ? `Słowa mają tu wagę danej umowy: zero pustych plotek, za to trzeźwy osąd i zaufanie do ustaleń na lata.`
-    : `Surowy ton ${ctx.actor.gen} poprawiający każde potknięcie szybko studzi zapał i zamyka usta ${u(ctx)}.`;
-
+    ? `Rozmawiacie poważnie i rzetelnie, dlatego dane obietnice oraz wspólne plany mają realne pokrycie w czynach.`
+    : `Krytyczny ton ${ctx.actor.gen} wytykający drobne pomyłki szybko studzi zapał i zamyka chęć rozmowy ${u(ctx)}.`;
   P['mercury-node'] = (ctx, h) => h
-    ? `Jedno trafne zdanie ${ctx.actor.gen} potrafi przestawić cały plan miesiąca i otworzyć nową decyzję.`
-    : `Słowa, przed którymi najpierw pojawia się opór, bo burzą wygodną opowieść o dotychczasowych nawykach.`;
-})();
-
-(function () {
-  window.__SYN_PAIR_TEXTS__ = window.__SYN_PAIR_TEXTS__ || {};
-  const P = window.__SYN_PAIR_TEXTS__;
-  const u = (ctx) => ctx.reactor.nom ? `u ${ctx.reactor.gen}` : 'po drugiej stronie';
-  const aN = (ctx) => ctx.actor.nom || 'Pierwsza osoba';
-  const rN = (ctx) => ctx.reactor.nom || 'druga osoba';
-
+    ? `Jedno trafne spostrzeżenie ${ctx.actor.gen} potrafi uporządkować ważne plany i podsunąć mądre wyjście z kłopotu.`
+    : `Słowa ${ctx.actor.gen} budzą na początku opór, ponieważ zmuszają do porzucenia starych wymówek i nawyków.`;
   P['venus-venus'] = (ctx, h) => h
-    ? `Zgodność smaku, dotyku i tempa wieczoru. Lubicie podobne światło w pokoju, wspólny stół i sposób okazywania czułości.`
-    : `Cicha rywalizacja o drobne przywileje albo inna miara tego, jak w praktyce wygląda uważny gest na co dzień.`;
-
+    ? `Macie zbliżone wyczucie estetyki oraz czułości, dzięki czemu łatwo tworzycie przyjemną atmosferę we dwoje.`
+    : `Różnicie się oceną tego, w jakim geście widać uważność, co bywa powodem cichych porównań o drobne przywileje.`;
   P['mars-venus'] = (ctx, h) => h
-    ? `Klasyczny magnes przyciągania: inicjatywa ${ctx.actor.gen} i magnetyzm ${u(ctx)} nakręcają się bez jednego zbędnego słowa.`
-    : `Wysokie napięcie w sypialni miesza się z zazdrością i tarciem o to, kto w tym tańcu nadaje tempo.`;
-
+    ? `Inicjatywa ${ctx.actor.gen} oraz zmysłowość ${u(ctx)} natychmiast się uzupełniają, tworząc żywe przyciąganie fizyczne.`
+    : `Silne pragnienie w sypialni miesza się z zazdrością oraz napięciem o to, kto ma wyznaczać tempo zbliżenia.`;
   P['jupiter-venus'] = (ctx, h) => h
-    ? `Szczodrość serca, śmiech i chęć do wspólnego świętowania ponad szary tydzień.`
-    : `Pokusa ucieczki przed zwykłym rachunkiem za mieszkanie i twardą rozmową w łatwe rozrywki na kredyt.`;
-
+    ? `Chętnie celebrujecie wspólny czas, okazujecie sobie hojność i wnosicie do związku dużo szczerej radości.`
+    : `Łatwo ulegacie pokusie przyjemności ponad stan, odkładając zwykłe rachunki oraz poważniejsze rozmowy na później.`;
   P['saturn-venus'] = (ctx, h) => h
-    ? `Wierność sprawdzona w trudniejszy czas, nie tylko latem. Uczucie nabiera tu ciężaru słowa danego na lata.`
-    : `Lęk przed zranieniem chowa się za chłodną rezerwą — ${aN(ctx)} każe czekać z pełnym zaufaniem na twarde dowody.`;
-
+    ? `Uczucia dojrzewają tu spokojnie i nabierają trwałej wierności, która nie słabnie przy gorszym tygodniu.`
+    : `Obawa przed zranieniem chowa się za chłodną rezerwą, przez co ${aN(ctx)} długo czeka na dowody zaangażowania.`;
   P['node-venus'] = (ctx, h) => h
-    ? `Spotkanie otwierające serce po długiej ostrożności. Przy ${ctx.actor.ins} łatwiej uwierzyć, że warto odłożyć gardę na progu.`
-    : `Łatwo tu pomylić dawny głód czułości z dorosłym wyborem — bliskość uczy Was odróżniać tęsknotę od faktów.`;
-
+    ? `Spotkanie z ${ctx.actor.ins} otwiera serce na czułość po długiej ostrożności i uczy zaufania w relacji.`
+    : `Bliskość uczy Was odróżniać dawny głód miłości od dojrzałego wyboru i realnych możliwości partnera.`;
   P['mars-mars'] = (ctx, h) => h
-    ? `Ten sam rytm kroku i apetytu w łóżku. Gdy ruszacie po wspólny cel, iskry lecą w dokładnie tę samą stronę.`
-    : `Dwa uparte charaktery na jednym wąskim moście — bez wspólnego zadania szybko obracacie energię przeciw sobie.`;
-
+    ? `Macie podobny temperament działania i apetyt na bliskość, dzięki czemu zgodnie ruszacie po wspólne cele.`
+    : `Dwa uparte charaktery bez wspólnego zadania szybko obracają nadmiar energii we wzajemne docinki.`;
   P['jupiter-mars'] = (ctx, h) => h
-    ? `Odwaga podkręcona o stopień wyżej: razem skaczecie dalej i mniej boicie się śmiałych decyzji.`
-    : `Brawura ponad miarę — w gniewie lub ryzyku podbijacie stawkę tak wysoko, że brakuje hamulców przed zakrętem.`;
-
+    ? `Razem podejmujecie śmielsze decyzje i łatwiej przełamujecie wahanie przed ważną zmianą w życiu.`
+    : `W gniewie lub ryzyku podbijacie stawkę zbyt wysoko, zapominając o rozsądnych granicach oraz konsekwencjach.`;
   P['mars-saturn'] = (ctx, h) => h
-    ? `Rozpęd dostaje wreszcie pewny ster i długi oddech: to układ zdolny przejść trudny okres bez pęknięcia.`
-    : `Noga na gazie przy zaciągniętym hamulcu — zapał ${ctx.actor.gen} zderza się z kamienną ostrożnością ${u(ctx)}.`;
-
+    ? `Zapał zyskuje tu cierpliwość oraz plan, więc potraficie wspólnie przetrwać trudniejszy okres bez pęknięcia.`
+    : `Zapał ${ctx.actor.gen} zderza się z twardą ostrożnością ${u(ctx)}, co bywa odbierane jako celowe blokowanie ruchu.`;
   P['mars-node'] = (ctx, h) => h
-    ? `Impuls do ruchu naprzód dokładnie wtedy, gdy od dawna odkładało się jedną ważną decyzję.`
-    : `Gorące spięcie uczy mówić „nie” prosto w oczy, bez chowania urazy za uprzejmym uśmiechem.`;
-
+    ? `Kontakt daje Wam odwagę do zrobienia kroku naprzód dokładnie tam, gdzie od dawna brakowało decyzji.`
+    : `Gorące spięcie uczy stawiać granice otwarcie i mówić nie bez chowania żalu pod uprzejmością.`;
   P['jupiter-jupiter'] = (ctx, h) => h
-    ? `Patrzycie z tego samego okna na ten sam horyzont — podobne zasady honoru, smaku wolności i sensu drogi.`
-    : `Każde broni własnej racji z poczuciem wyższości zamiast sprawdzić, jak sprawa wygląda z drugiego krzesła.`;
-
+    ? `Dzielicie podobne zasady życiowe, poczucie honoru oraz pragnienie rozwoju, które naturalnie spajają Waszą drogę.`
+    : `Każde z Was broni własnej racji z poczuciem nieomylności zamiast sprawdzić, czego naprawdę obawia się partner.`;
   P['jupiter-saturn'] = (ctx, h) => h
-    ? `Jedna osoba wnosi wiatr w żagle, druga trzyma mocny ster — rzadka równowaga marzenia z realnym planem.`
-    : `Ciągłe przeciąganie liny między rozmachem a lękiem o jutro, dopóki obu stronom nie zabraknie cierpliwości.`;
-
+    ? `Optymizm i rozmach jednej osoby spotykają się z trzeźwym planem partnera, dając rzadką równowagę w decyzjach.`
+    : `Przeciągacie linę między śmiałym pomysłem a lękiem o jutro, dopóki obu osobom nie zabraknie cierpliwości.`;
   P['jupiter-node'] = (ctx, h) => h
-    ? `Cichy pomyślny wiatr w dobrych drzwiach: obecność ${ctx.actor.gen} otwiera szerszy krąg ludzi i lepsze okazje.`
-    : `Pokusa wiary w szczęśliwy traf bez odrobienia własnej, żmudnej lekcji przyziemnej konsekwencji.`;
-
+    ? `Obecność ${ctx.actor.gen} wnosi sprzyjające okazje, poszerza grono życzliwych ludzi i dodaje wiary we własne siły.`
+    : `Łatwo uwierzyć tu w sam szczęśliwy traf zamiast dopilnować zwykłej konsekwencji oraz pracowitości.`;
   P['saturn-saturn'] = (ctx, h) => h
-    ? `Ten sam szacunek dla czasu, rzetelnej pracy i słowa dotrzymanego bez świadków. Zero złudzeń, za to spokojne oparcie.`
-    : `Podwójna surowość w czterech ścianach — bez świadomego wpuszczenia śmiechu życie łatwo zamienia się w sam obowiązek.`;
-
+    ? `Podobnie szanujecie czas, rzetelną pracę i dotrzymane słowo, budując bardzo przewidywalne, spokojne oparcie.`
+    : `Podwójna surowość sprawia, że bez świadomego luzu oraz śmiechu związek zamienia się w sam obowiązek.`;
   P['node-saturn'] = (ctx, h) => h
-    ? `Przymierze budujące kręgosłup na lata. Czas oddziela tu chwilowy zapał od prawdziwej lojalności.`
-    : `Ciężar dawnych niedomkniętych spraw zmusza do wzięcia odpowiedzialności bez szukania drogi na skróty.`;
-
+    ? `Więź uczy dojrzałej odpowiedzialności i pokazuje z biegiem miesięcy, co ma między Wami trwałą wartość.`
+    : `Ciężar dawnych, niedomkniętych spraw wraca i zmusza do uczciwego uporządkowania wzajemnych zobowiązań.`;
   P['node-node'] = (ctx, h) => h
-    ? `Ten sam puls pokolenia i kierunek drogi: wyczuwacie podskórnie, przed czym uciekacie i czego szukacie za zakrętem.`
-    : `Opozycja kierunków — to, co dla jednego jest bezpiecznym wczoraj, dla drugiego staje się progiem do nowego etapu.`;
-
+    ? `Dzielicie zbliżone doświadczenia pokoleniowe i intuicyjnie rozumiecie, w jakim kierunku chcecie się rozwijać.`
+    : `Różne kierunki rozwoju sprawiają, że bezpieczna przeszłość dla jednego z Was staje się przeszkodą dla partnera.`;
   P['pluto-venus'] = (ctx, h) => h
-    ? `Gęste przyciąganie fizyczne bez bezpiecznego dystansu. Kontakt, który głęboko zmienia spojrzenie na bliskość.`
-    : `Silna wrażliwość na punkcie wyłączności i wpływu — intensywność wymaga tu jasnych granic oraz wzajemnego szacunku.`;
-
+    ? `Głębokie przyciąganie fizyczne nie zostawia miejsca na letni dystans i wyraźnie zmienia Wasze spojrzenie na bliskość.`
+    : `Silna potrzeba wyłączności oraz wpływu wymaga od Was jasnych granic i wzajemnego szacunku w sypialni.`;
   P['mars-pluto'] = (ctx, h) => h
-    ? `Mocny charakter i niegasnąca namiętność. Razem potraficie zachować zimną krew nawet w bardzo trudnej próbie.`
-    : `Starcie dwóch bardzo silnych woli w łóżku i na co dzień — bez otwartej szczerości pasja zamienia się w ciche siłowanie.`;
-
+    ? `Łączy Was ogromna determinacja i żywa namiętność, a w poważnej próbie potraficie zachować zimną krew.`
+    : `Starcie dwóch bardzo silnych woli zamienia namiętność w cichą walkę o przewagę, gdy brakuje pełnej szczerości.`;
   P['moon-pluto'] = (ctx, h) => h
-    ? `Wzrok wyczuwający zmianę nastroju szybciej niż pytanie. Rozumiecie swoje lęki jeszcze zanim zapadnie cisza.`
-    : `Silny głód wyłączności emocjonalnej: niepokój o zaufanie skłania ${ctx.actor.acc} do kontroli zamiast spokojnej rozmowy.`;
-
+    ? `Błyskawicznie czytacie swoje nastroje jeszcze przed rozmową i potraficie przyjąć swoje najczulsze lęki.`
+    : `Lęk o pełne zaufanie skłania ${ctx.actor.acc} do nadmiernej kontroli zamiast spokojnego pytania o potrzeby.`;
   P['pluto-sun'] = (ctx, h) => h
-    ? `Spotkanie oczyszczające z pozorów. Przy ${ctx.actor.ins} łatwiej odłożyć udawane role i odkryć własną siłę.`
-    : `Twardy opór dumy przed oddaniem choćby cala pola silniejszemu magnetyzmowi ${ctx.actor.gen}.`;
-
+    ? `Przy ${ctx.actor.loc || ctx.actor.nom} łatwiej odrzucić udawane role, odkryć własną siłę i stanąć w pełni otwartej relacji.`
+    : `Duma podpowiada twardy opór przed silnym wpływem ${ctx.actor.gen}, co rodzi niepotrzebne napięcie o niezależność.`;
   P['lilith-venus'] = (ctx, h) => h
-    ? `Klucz do skrywanej zmysłowości — przy zgaszonym świetle opadają sztywne konwenanse oraz wstydliwe bariery.`
-    : `Napięcie między grzeczną rolą pokazywaną rodzinie a głodem bliskości, który domaga się uwagi po zmroku.`;
-
+    ? `Za zamkniętymi drzwiami opadają wszelkie zahamowania, budząc odważną zmysłowość oraz swobodę dotyku.`
+    : `Powstaje napięcie między grzecznym wizerunkiem na zewnątrz a silnym pragnieniem bliskości bez ograniczeń.`;
   P['lilith-mars'] = (ctx, h) => h
-    ? `Surowy, autentyczny magnetyzm ciał bez zbędnej dyplomacji. Bliskość rodzi się tu spontanicznie i z pełną szczerością.`
-    : `Wyraźny opór i prowokacja ze strony ${ctx.actor.gen}, gdy powtarzalny tydzień zaczyna odbierać Wam swobodę.`;
-
+    ? `Przyciąganie ciał pojawia się tu bardzo spontanicznie, z pełną szczerością i bez sztucznej dyplomacji.`
+    : `Gdy przewidywalny tydzień odbiera Wam oddech, ${aN(ctx)} reaguje ostrym buntem oraz prowokacją.`;
   P['lilith-moon'] = (ctx, h) => h
-    ? `Przyjęcie tego, co trudne i niewypowiedziane — przy sobie możecie pozwolić na łzy i słabość bez wstydu.`
-    : `Zderzenie potrzeby bezpiecznego domu z dzikim lękiem przed odrzuceniem, który wraca wieczorem.`;
-
+    ? `Przy sobie możecie otwarcie okazać słabość oraz łzy, nie obawiając się oceny czy chłodnego odrzucenia.`
+    : `Potrzeba spokojnego domu zderza się tu z dawnym lękiem przed odrzuceniem, który wraca wieczorami.`;
   P['lilith-sun'] = (ctx, h) => h
-    ? `Przyciąga tu bezkompromisowa niezależność od cudzych opinii i niechęć do grania grzecznej roli na pokaz.`
-    : `Ciche sprawdzanie granic cierpliwości oraz prowokowanie dumy, zanim padnie szczere „dość”.`;
-
+    ? `Najmocniej przyciąga Was wzajemna niezależność od cudzych opinii oraz niechęć do grania narzuconych ról.`
+    : `Pojawia się ciche sprawdzanie cierpliwości i prowokowanie dumy zamiast powiedzenia wprost, czego naprawdę brakuje.`;
   P['lilith-pluto'] = (ctx, h) => h
-    ? `Rzadka głębia porozumienia bez zasłon i bez lęku przed nazwaniem najtrudniejszych pragnień po imieniu.`
-    : `Silne napięcie oparte na dyskrecji i niewypowiedzianych do końca emocjach, które wciągają od pierwszego wieczoru.`;
+    ? `Rozumiecie swoje najgłębsze pragnienia bez wstydu i potraficie rozmawiać szczerze nawet o trudnych tematach.`
+    : `Silne emocje oparte na dyskrecji i niedopowiedzeniach wciągają bardzo szybko, choć wymagają dużej uczciwości.`;
 })();
 
 // 2. Archetypy kompozytowe, midpointy i domy
@@ -517,16 +464,16 @@
   const COMP_INS = { sun: 'ze Słońcem', moon: 'z Księżycem', venus: 'z Wenus', mars: 'z Marsem', Słońce: 'ze Słońcem', Księżyc: 'z Księżycem', Wenus: 'z Wenus', Mars: 'z Marsem' };
 
   const OUTER_PAIRS = {
-    'sun-uranus': { h: 'Przy sobie łatwiej odpuścić cudze oczekiwania i wybrać życie po swojemu.', c: 'Nagłe zwroty decyzji i ostry sprzeciw, gdy któreś z Was poczuje nacisk.' },
-    'moon-uranus': { h: 'Nieoczekiwana czułość i rozładowanie napięcia w domu jednym celnym żartem.', c: 'Nagła potrzeba dystansu i zamykanie się we własnych sprawach, gdy robi się ciasno.' },
-    'uranus-venus': { h: 'Żywa iskra od pierwszego spotkania — w tym układzie trudno o nudę i przewidywalność.', c: 'Potrzeba swobody pojawia się dokładnie wtedy, gdy druga strona czeka na stałą deklarację.' },
-    'mars-uranus': { h: 'Mocny temperament w sypialni i odwaga działania od razu, bez długiego wahania.', c: 'Wybuch w sekundzie i równie nagłe urwanie rozmowy trzaśnięciem drzwi.' },
-    'mercury-uranus': { h: 'Szybkie skojarzenia, wspólne pomysły i poczucie humoru ratujące gorszy dzień.', c: 'Niecierpliwe przerywanie w pół zdania i skakanie po tematach zamiast spokojnego słuchania.' },
-    'neptune-sun': { h: 'Wspólna wrażliwość, wyczucie nastroju i gotowość do wybaczenia w gorszym czasie.', c: 'Niedopowiedzenia i brak jasnych ustaleń — łatwo tu uwierzyć w wyobrażenie zamiast faktów.' },
-    'moon-neptune': { h: 'Ciche wyczuwanie nastroju partnera jeszcze zanim zamknie za sobą drzwi.', c: 'Zacieranie granic i ciche żale o to, że druga osoba nie domyśliła się wszystkiego sama.' },
-    'neptune-venus': { h: 'Miękki urok wspólnych wieczorów, muzyki i czułości oderwanej od biegu dnia.', c: 'Łatwo tu zakochać się we własnym obrazku i rozczarować przy zwykłych porankach.' },
-    'mars-neptune': { h: 'Uważny dotyk i zmysłowość bez gonitwy, w której liczy się nastrój chwili.', c: 'Uniki, bierny opór albo wymijające odpowiedzi zamiast prostego „tak” lub „nie”.' },
-    'mercury-neptune': { h: 'Rozmowy o muzyce, snach i półsłówkach, które rozumiecie bez długiego tłumaczenia.', c: 'Gubienie ustaleń i domysły w ciszy — ważne daty oraz obietnice lepiej potwierdzać na głos.' }
+    'sun-uranus': { h: 'Przy sobie łatwiej odpuścić cudze oczekiwania i wybrać własny, autentyczny sposób na wspólne życie.', c: 'Pojawiają się nagłe zmiany decyzji i ostry sprzeciw wtedy, gdy któreś z Was poczuje zbyt mocny nacisk.' },
+    'moon-uranus': { h: 'Potraficie rozładować domowe napięcie celnym żartem oraz okazać sobie czułość w nieoczekiwanym momencie.', c: 'Gdy w mieszkaniu robi się zbyt ciasno od emocji, pojawia się nagła potrzeba dystansu i wyjścia w swoje sprawy.' },
+    'uranus-venus': { h: 'Od pierwszego spotkania towarzyszy Wam żywa iskra oraz ciekawość, dzięki którym trudno tu o nudę.', c: 'Potrzeba własnej swobody odzywa się często dokładnie wtedy, gdy partner czeka już na spokojną deklarację.' },
+    'mars-uranus': { h: 'Wnosicie do sypialni śmiały temperament oraz odwagę do działania od razu bez długiego wahania.', c: 'W złości potraficie wybuchnąć w jednej sekundzie i równie nagle przerwać rozmowę przed wyciszeniem emocji.' },
+    'mercury-uranus': { h: 'Łączą Was szybkie skojarzenia, wspólne pomysły oraz błyskotliwe poczucie humoru ratujące gorszy dzień.', c: 'Niecierpliwe przerywanie w pół zdania i skakanie po tematach utrudniają spokojne dokończenie ważnej rozmowy.' },
+    'neptune-sun': { h: 'Wyczuwacie swoje nastroje z dużą wrażliwością i potraficie wybaczać sobie drobne potknięcia w trudniejszym czasie.', c: 'Niedopowiedzenia oraz brak twardych ustaleń sprawiają, że łatwo uwierzyć w wyobrażenie zamiast sprawdzić fakty.' },
+    'moon-neptune': { h: 'Odgadujecie nastrój partnera jeszcze zanim cokolwiek powie i potraficie otoczyć się łagodną troską.', c: 'Zacierają się wyraźne granice, przez co łatwo o ciche żale, że partner sam nie domyślił się potrzeby.' },
+    'neptune-venus': { h: 'Tworzycie nastrojowe wieczory pełne muzyki, czułości oraz delikatności oderwanej od biegu tygodnia.', c: 'Łatwo tu zakochać się we własnym wyobrażeniu i przeżyć rozczarowanie przy zderzeniu ze zwykłą prozą dnia.' },
+    'mars-neptune': { h: 'Bliskość opiera się na uważnym dotyku oraz zmysłowości, w której liczy się wspólny nastrój chwili.', c: 'Zamiast otwartego sporu pojawia się bierny opór oraz wymijające odpowiedzi tam, gdzie potrzeba prostej decyzji.' },
+    'mercury-neptune': { h: 'Rozmawiacie o muzyce, snach i skojarzeniach, rozumiejąc swoje intencje bez długiego tłumaczenia.', c: 'Ważne ustalenia oraz daty łatwo gubią się w niedopowiedzeniach, dlatego warto potwierdzać je jasno na głos.' }
   };
 
   const PLANET_HOUSE = {
