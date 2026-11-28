@@ -65,7 +65,7 @@
     const between = M ? M.betweenPair(d.nameA, gA, d.nameB, gB) : 'między Wami';
     const sA = (sunA && sunA.name) || 'Baran';
     const sB = (sunB && sunB.name) || 'Waga';
-    const pairTag = `${sA} &times; ${sB}`;
+    const pairTag = `${sA} × ${sB}`;
 
     const elA = getSignEl(moonA.name), elB = getSignEl(moonB.name);
     const sunElA = getSignEl(sA), sunElB = getSignEl(sB);
