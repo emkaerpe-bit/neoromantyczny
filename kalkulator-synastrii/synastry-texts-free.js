@@ -190,15 +190,15 @@ window.__JUNGIAN_PROFILES__[11] = {
   },
   "Ogień-Ziemia": {
     "title": "Szybki Impuls i Spokojna Rachuba",
-    "desc": "Jedna osoba chce decydować niemal od razu, natomiast partner liczy koszty, terminy oraz skutki i stąd bierze się większość domowych zgrzytów. Wzajemny szacunek dla odmiennego rytmu pozwala zamienić tę różnicę w dobry zespół."
+    fn: (byEl, mid) => `${byEl('Ogień')} chce decydować niemal od razu, natomiast ${mid(byEl('Ziemia'))} najpierw liczy koszty, terminy oraz skutki i stąd bierze się większość domowych zgrzytów. Wzajemny szacunek dla odmiennego rytmu pozwala zamienić tę różnicę w dobry zespół.`
   },
   "Ogień-Powietrze": {
     "title": "Rozmowa, Która Nakręca Działanie",
-    "desc": "Pomysły i żarty płyną między Wami bardzo swobodnie, więc rzadko grozi Wam nuda przy wspólnym stole. Bez kilku spokojnych wieczorów bez ekranów wysoki poziom bodźców potrafi jednak szybko zamienić się w zwykłe zmęczenie."
+    fn: (byEl, mid) => `${byEl('Ogień')} szybko nadaje impuls do działania, a ${mid(byEl('Powietrze'))} podchwytuje go rozmową i humorem, więc rzadko grozi Wam nuda przy wspólnym stole. Bez kilku spokojnych wieczorów bez ekranów wysoki poziom bodźców potrafi jednak zamienić się w zwykłe zmęczenie.`
   },
   "Ogień-Woda": {
     "title": "Krótki Wybuch i Długa Pamięć Serca",
-    "desc": "Temperament ognisty wyrzuca złość w minutę i szybko zapomina o sporze, ale wrażliwa strona nosi szorstki ton głosu jeszcze przez kilka dni. Łagodniejszy język w nerwach chroni zaufanie, zanim kurz zdąży opaść."
+    fn: (byEl, mid) => `${byEl('Ogień')} wyrzuca złość w minutę i szybko zapomina o sporze, ale ${mid(byEl('Woda'))} nosi szorstki ton głosu jeszcze przez kilka dni. Łagodniejszy język w nerwach chroni zaufanie, zanim kurz zdąży opaść.`
   },
   "Ziemia-Ziemia": {
     "title": "Pewny Grunt na Długie Lata",
@@ -206,11 +206,11 @@ window.__JUNGIAN_PROFILES__[11] = {
   },
   "Ziemia-Powietrze": {
     "title": "Konkret Faktu i Swoboda Myśli",
-    "desc": "Praktyczny umysł pyta o budżet i jasny plan, podczas gdy lotna natura rozważa kilka scenariuszy jednocześnie. Oddzielenie rozmowy o uczuciach od spraw w kalendarzu pozwala uniknąć mijania się w pół zdania."
+    fn: (byEl, mid) => `${byEl('Ziemia')} pyta o budżet i jasny plan, podczas gdy ${mid(byEl('Powietrze'))} rozważa kilka scenariuszy jednocześnie. Oddzielenie rozmowy o uczuciach od spraw w kalendarzu pozwala uniknąć mijania się w pół zdania.`
   },
   "Ziemia-Woda": {
     "title": "Oparcie, Które Uspokaja Nastrój",
-    "desc": "Spokojna stałość jednej osoby łagodzi wahania nastroju partnera, a miękka czułość ociepla domową dyscyplinę i wspólne obowiązki. Przy wzajemnej trosce budujecie atmosferę dającą autentyczne wytchnienie po długim dniu."
+    fn: (byEl, mid) => `${byEl('Ziemia')} wnosi spokojną stałość kojącą wahania nastroju, a ${mid(byEl('Woda'))} ociepla czułością domową dyscyplinę i wspólne obowiązki. Przy wzajemnej trosce budujecie atmosferę dającą autentyczne wytchnienie po długim dniu.`
   },
   "Powietrze-Powietrze": {
     "title": "Wspólny Język i Poczucie Humoru",
@@ -218,7 +218,7 @@ window.__JUNGIAN_PROFILES__[11] = {
   },
   "Powietrze-Woda": {
     "title": "Logika w Zderzeniu z Czułością",
-    "desc": "W trudnej chwili umysł szuka rozwiązania w faktach, tymczasem serce potrzebuje najpierw zwykłego przytulenia i wysłuchania bez wykładu. Dopasowanie kolejności tych dwóch kroków rozbraja większość nieporozumień w domu."
+    fn: (byEl, mid) => `W trudnej chwili ${mid(byEl('Powietrze'))} szuka rozwiązania w faktach, tymczasem ${mid(byEl('Woda'))} potrzebuje najpierw zwykłego przytulenia i wysłuchania bez wykładu. Dopasowanie kolejności tych dwóch kroków rozbraja większość nieporozumień w domu.`
   },
   "Woda-Woda": {
     "title": "Ciche Wyczucie Bez Długich Wyjaśnień",
@@ -239,7 +239,15 @@ window.__JUNGIAN_PROFILES__[11] = {
     const elA = getSignEl(moonA.name), elB = getSignEl(moonB.name), sunElA = getSignEl(sA), sunElB = getSignEl(sB);
     const elG = M ? M.elemGen(sunElA) : sunElA, sunElAGen = elG, sunElBGen = M ? M.elemGen(sunElB) : sunElB;
     const marBGen = M ? M.signGen((marB && marB.name) || sB) : sB;
+    const sNameA = _esc(d.nameA || 'Osoba 1'), sNameB = _esc(d.nameB || 'Osoba 2');
+    const mid = (nm) => (nm === 'Ona' || nm === 'On') ? nm.toLowerCase() : nm;
+    const byEl = (targetEl) => (elA === targetEl ? sNameA : sNameB);
+    const moonElAGen = M ? M.elemGen(elA) : elA, moonElBGen = M ? M.elemGen(elB) : elB;
+    const moonLegend = elA === elB
+      ? `☽ <strong style="color:#FAF8F5;">${sNameA}</strong>: ${_esc(moonA.name)} &bull; ☽ <strong style="color:#FAF8F5;">${sNameB}</strong>: ${_esc(moonB.name)} <span style="color:#C9A96E;">(wspólny żywioł ${moonElAGen})</span>`
+      : `☽ <strong style="color:#FAF8F5;">${sNameA}</strong>: ${_esc(moonA.name)} <span style="color:#C9A96E;">(żywioł ${moonElAGen})</span> &nbsp;&bull;&nbsp; ☽ <strong style="color:#FAF8F5;">${sNameB}</strong>: ${_esc(moonB.name)} <span style="color:#C9A96E;">(żywioł ${moonElBGen})</span>`;
     const dynamics = MOON_COMBOS[getComboKey(elA, elB)] || MOON_COMBOS['Ziemia-Woda'];
+    const moonDesc = typeof dynamics.fn === 'function' ? dynamics.fn(byEl, mid) : dynamics.desc;
     const topAsp = syn.aspects && syn.aspects[0];
     let aspAnchor = `Układ żywiołów Waszych Słońc oraz Wenus w znaku ${M ? M.signGen((venA && venA.name) || sA) : sA} wyznacza ton tej relacji. `;
     if (topAsp && C) { const flow = C.resolveDirectionalAspect({ bA: topAsp.pA, bB: topAsp.pB }, d); aspAnchor = `Główny ton nadaje tu ścisły kontakt, w którym ${flow.canonicalFlow}. `; }
@@ -252,7 +260,7 @@ window.__JUNGIAN_PROFILES__[11] = {
     else if (sunElA === sunElB) idx = 8;
     else if ((sunElA === 'Ogień' && sunElB === 'Powietrze') || (sunElA === 'Powietrze' && sunElB === 'Ogień') || (sunElA === 'Ziemia' && sunElB === 'Woda') || (sunElA === 'Woda' && sunElB === 'Ziemia')) idx = 9;
     const picked = D[idx], rep = (s) => s.replace(/\${both}/g, both).replace(/\${elG}/g, elG).replace(/\${marBGen}/g, marBGen).replace(/\${sunElAGen}/g, sunElAGen).replace(/\${sunElBGen}/g, sunElBGen);
-    return { title: _esc(`${rep(picked.title)}: ${pairTag}`), hook: aspAnchor + rep(picked.tpl), moonTitle: dynamics.title, moonDesc: dynamics.desc };
+    return { title: _esc(`${rep(picked.title)}: ${pairTag}`), hook: aspAnchor + rep(picked.tpl), moonTitle: dynamics.title, moonLegend, moonDesc };
   };
 })();
 (function () {

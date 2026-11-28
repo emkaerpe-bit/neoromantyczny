@@ -651,6 +651,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#C9A96E;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.35rem;">
           PRAWDA O ŚWIECIE EMOCJONALNYM: ${jungianDiag.moonTitle} (${moonA.name} &times; ${moonB.name})
         </div>
+        ${jungianDiag.moonLegend ? `<div class="syn-mono-meta" style="font-family:'Inter',sans-serif;font-size:0.82rem;color:rgba(250,248,245,0.76);margin-bottom:0.55rem;padding-bottom:0.45rem;border-bottom:1px solid rgba(201,169,110,0.16);line-height:1.5;">${jungianDiag.moonLegend}</div>` : ''}
         <p style="font-size:0.92rem;line-height:1.65;color:rgba(250,248,245,0.85);margin:0;">
           ${jungianDiag.moonDesc}
         </p>
