@@ -642,15 +642,32 @@
             <div><strong>Kiedy przyjdzie próba — i jak rozpalić bliskość na nowo? <span class="syn-loss-planet">(Kalendarz 12M i Wenus ♀)</span></strong><p>Osobista mapa napięć i przełomów na najbliższe 12 miesięcy, tajny kod zmysłów Wenus oraz 5 pytań na noc szczerej rozmowy we dwoje.</p></div>
           </div>
         </div>
-        <div style="margin-top:1.35rem;text-align:center;">
+        <div class="syn-live-preview-grid" aria-label="Podgląd gotowych wyliczeń dla Waszej pary">
+          <div class="syn-live-preview-card">
+            <div class="syn-live-preview-label">✦ Asymetria zaangażowania</div>
+            <div class="syn-live-preview-val">
+              <strong>${d.nameA}</strong> <span class="syn-live-mask" aria-hidden="true">██%</span>
+              <span style="opacity:0.55;">vs</span>
+              <strong>${d.nameB}</strong> <span class="syn-live-mask" aria-hidden="true">██%</span>
+            </div>
+          </div>
+          <div class="syn-live-preview-card">
+            <div class="syn-live-preview-label">✦ Najtrudniejszy miesiąc (12M)</div>
+            <div class="syn-live-preview-val">
+              <span>Okno próby dla ${d.nameA} i ${d.nameB}:</span>
+              <span class="syn-live-mask" aria-hidden="true">████ 2027</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:1.2rem;text-align:center;">
           <div style="font-family:'Inter',sans-serif;font-size:0.82rem;color:#F5E4A0;font-weight:500;margin-bottom:0.65rem;">
             ✦ Black Weekend — cena promocyjna tylko do poniedziałku (30.11) do 23:59
           </div>
           <button type="button" class="syn-btn-paywall syn-loss-cta" id="syn-paywall-checkout-btn">
             <span>Odblokuj Całą Prawdę o Waszej Relacji — ${priceDisplay} &rarr;</span>
           </button>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(250,248,245,0.65);margin-top:0.45rem;">
-            ✓ Płatność jednorazowa • Natychmiastowy dostęp do 7 rozdziałów + Druk A4
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(250,248,245,0.72);margin-top:0.5rem;">
+            ✓ BLIK / Apple Pay / Karta • Bez zakładania konta • Natychmiastowy dostęp + PDF
           </div>
           <div style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(250,248,245,0.44);margin-top:0.28rem;">
             Najniższa cena z ostatnich 30 dni: 67 zł
@@ -1026,8 +1043,8 @@
               <button type="button" class="syn-btn-paywall syn-loss-cta" id="syn-loss-modal-cta">
                 <span>Przejdź do pełnej analizy (${priceDisplay}) &rarr;</span>
               </button>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(250,248,245,0.62);margin-top:0.32rem;">
-                ✓ Dostęp natychmiastowy + gotowy wydruk PDF A4
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(250,248,245,0.68);margin-top:0.32rem;">
+                ✓ BLIK / Apple Pay / Karta • Bez zakładania konta • Natychmiastowy dostęp + PDF
               </div>
               <div style="font-family:'Inter',sans-serif;font-size:10px;color:rgba(250,248,245,0.42);margin-top:0.18rem;">
                 Najniższa cena z ostatnich 30 dni: 67 zł
@@ -1358,17 +1375,49 @@
       lockedDossier.addEventListener('click', () => {
         if (!isReportUnlocked) openLossModal();
       });
-      if ('IntersectionObserver' in window) {
-        const obs = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting && !modalHasTriggered && !isReportUnlocked) {
-              modalHasTriggered = true;
-              setTimeout(openLossModal, 700);
-            }
-          });
-        }, { threshold: 0.25 });
-        obs.observe(lockedDossier);
-      }
+    }
+
+    // Dyskretny dolny pasek sticky (zamiast automatycznego popupa po 700 ms)
+    const oldSticky = document.getElementById('syn-sticky-bar');
+    if (oldSticky) oldSticky.remove();
+    if (!isReportUnlocked && paywallBtn) {
+      const sticky = document.createElement('div');
+      sticky.id = 'syn-sticky-bar';
+      sticky.className = 'syn-sticky-bar syn-no-print';
+      sticky.setAttribute('role', 'region');
+      sticky.setAttribute('aria-label', 'Odblokuj pełny raport synastrii');
+      sticky.innerHTML = `
+        <div class="syn-sticky-text">
+          <span class="syn-sticky-title">Pełny raport 7 rozdziałów — <s style="opacity:0.55;font-weight:400;">67 zł</s> 53 zł</span>
+          <span class="syn-sticky-sub">BLIK • Bez konta • Dostęp od razu + PDF</span>
+        </div>
+        <div class="syn-sticky-actions">
+          <button type="button" class="syn-sticky-cta" id="syn-sticky-cta-btn">Odblokuj &rarr;</button>
+          <button type="button" class="syn-sticky-close" id="syn-sticky-close-btn" aria-label="Ukryj pasek">&times;</button>
+        </div>`;
+      document.body.appendChild(sticky);
+      let stickyDismissed = false;
+      const closeBtn = sticky.querySelector('#syn-sticky-close-btn');
+      const ctaBtn = sticky.querySelector('#syn-sticky-cta-btn');
+      if (closeBtn) closeBtn.addEventListener('click', () => { stickyDismissed = true; sticky.classList.remove('is-visible'); });
+      if (ctaBtn) ctaBtn.addEventListener('click', () => { paywallBtn.click(); });
+      const syncSticky = () => {
+        if (stickyDismissed || isReportUnlocked || !document.body.contains(sticky)) {
+          sticky.classList.remove('is-visible');
+          return;
+        }
+        const resEl = document.getElementById('syn-results');
+        const gateCta = document.getElementById('syn-paywall-checkout-btn');
+        const resRect = resEl ? resEl.getBoundingClientRect() : null;
+        const ctaRect = gateCta ? gateCta.getBoundingClientRect() : null;
+        const inResults = Boolean(resRect && resRect.top < 140 && resRect.bottom > 180);
+        const gateVisible = Boolean(ctaRect && ctaRect.top >= -20 && ctaRect.bottom <= window.innerHeight + 30);
+        sticky.classList.toggle('is-visible', inResults && !gateVisible);
+      };
+      if (window.__synStickyScrollFn) window.removeEventListener('scroll', window.__synStickyScrollFn);
+      window.__synStickyScrollFn = syncSticky;
+      window.addEventListener('scroll', syncSticky, { passive: true });
+      setTimeout(syncSticky, 250);
     }
 
     const triggerPrint = () => {

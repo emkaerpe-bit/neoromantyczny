@@ -1224,9 +1224,9 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
 
       <main class="syn-container">
         <header class="syn-hero">
-          <div class="syn-badge"><span class="syn-glyph">✦</span> Magia dzieje się Teraz</div>
+          <div class="syn-badge"><span class="syn-glyph">✦</span> Wynik w 10 sekund • Wystarczą daty urodzenia</div>
           <h2 class="syn-title">Chemia czy <em>Toksyczność?</em></h2>
-          <p class="syn-subtitle">Zestaw Wasze daty, godziny i miasta urodzenia. Obliczamy rzeczywiste kąty planetarne oraz Ascendent z automatyczną korektą czasu letniego/zimowego (CET/CEST).</p>
+          <p class="syn-subtitle">Wpisz daty urodzenia obojga (godzina i miasto są opcjonalne — odblokowują Ascendent i 12 Domów). Obliczamy rzeczywiste aspekty planetarne między Waszymi kosmogramami.</p>
         </header>
 
         <form id="syn-form" onsubmit="return false;">
@@ -1300,7 +1300,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
               <span>&rarr;</span>
             </button>
             <p style="margin:0.85rem 0 0;font-size:0.75rem;color:rgba(250,248,245,0.52);line-height:1.5;">
-              Obliczenia wykonują się lokalnie w Twojej przeglądarce (<code>localStorage</code>); daty urodzenia nie trafiają do bazy danych. <a href="/polityka-prywatnosci/" style="color:#C9A84C;text-decoration:underline;">Polityka Prywatności</a>
+              100% prywatności — Wasze daty urodzenia nie trafiają do żadnej bazy danych ani nie są nikomu udostępniane. <a href="/polityka-prywatnosci/" style="color:#C9A84C;text-decoration:underline;">Polityka Prywatności</a>
             </p>
           </div>
         </form>
