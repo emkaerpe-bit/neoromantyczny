@@ -1224,7 +1224,7 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
 
       <main class="syn-container">
         <header class="syn-hero">
-          <div class="syn-badge"><span class="syn-glyph">✦</span> Wynik w 10 sekund • Wystarczą daty urodzenia</div>
+          <div class="syn-badge"><span class="syn-glyph">✦</span> Magia dzieje się Teraz</div>
           <h2 class="syn-title">Chemia czy <em>Toksyczność?</em></h2>
           <p class="syn-subtitle">Wpisz daty urodzenia obojga (godzina i miasto są opcjonalne — odblokowują Ascendent i 12 Domów). Obliczamy rzeczywiste aspekty planetarne między Waszymi kosmogramami.</p>
         </header>
