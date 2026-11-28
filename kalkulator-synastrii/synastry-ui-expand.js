@@ -1,3 +1,201 @@
+/* === SYNASTRIA: ROZSZERZONE PANELE UI I HOOKI RENDERU === */
+(function () {
+  'use strict';
+  const esc = (x) => String(x || '').replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+  const zoneTag = (s, isFriction) => {
+    if (isFriction) return s >= 76 ? 'Wysokie napięcie' : s >= 56 ? 'Wyraźne tarcie' : s >= 45 ? 'Umiarkowane tarcie' : 'Niskie napięcie';
+    return s >= 76 ? 'Dominanta' : s >= 56 ? 'Wyraźny atut' : s >= 45 ? 'Strefa równowagi' : 'Słabszy wpływ';
+  };
+
+  function ensurePanelStyles() {
+    if (typeof document === 'undefined' || !document.head || document.getElementById('syn-exp-panels-css')) return;
+    const st = document.createElement('style');
+    st.id = 'syn-exp-panels-css';
+    st.textContent =
+      '.syn-exp-evidence{width:100%;margin:0.35rem 0 1.4rem;border-radius:1rem;background:linear-gradient(155deg,rgba(24,24,34,0.8) 0%,rgba(13,13,20,0.92) 100%);border:1px solid rgba(201,169,110,0.24);transition:border-color .22s ease,box-shadow .22s ease;overflow:hidden;}' +
+      '.syn-exp-evidence:hover,.syn-exp-evidence[open]{border-color:rgba(201,169,110,0.45);box-shadow:0 12px 30px rgba(0,0,0,0.35);}' +
+      '.syn-ev-sum{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:0.75rem;padding:0.8rem 1rem;cursor:pointer;user-select:none;}' +
+      '.syn-ev-sum::-webkit-details-marker{display:none;}' +
+      '.syn-ev-sum-left{display:flex;align-items:baseline;flex-wrap:wrap;gap:0.42rem;font-size:0.84rem;font-weight:600;color:#C9A96E;}' +
+      '.syn-ev-sum-sub{font-size:0.75rem;font-weight:400;color:rgba(250,248,245,0.55);}' +
+      '.syn-ev-chev{color:#C9A96E;flex-shrink:0;transition:transform .22s ease;}' +
+      '.syn-exp-evidence[open] .syn-ev-chev{transform:rotate(180deg);}' +
+      '.syn-ev-body{border-top:1px solid rgba(255,255,255,0.07);padding:0.9rem 1rem 1rem;}' +
+      '.syn-ev-label{font-family:"JetBrains Mono",monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:0.16em;color:rgba(201,169,110,0.82);margin-bottom:0.5rem;}' +
+      '.syn-ev-chips{display:flex;flex-wrap:wrap;gap:0.48rem;margin-bottom:0.95rem;}' +
+      '.syn-ev-chip{white-space:nowrap;display:inline-flex;align-items:center;gap:0.42rem;padding:0.35rem 0.72rem;border-radius:0.3rem;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.09);border-left-width:2.5px;font-size:0.76rem;color:rgba(250,248,245,0.92);line-height:1.25;}' +
+      '.syn-ev-orb{font-family:"JetBrains Mono",monospace;font-size:0.69rem;color:rgba(250,248,245,0.58);margin-left:0.18rem;padding-left:0.38rem;border-left:1px solid rgba(255,255,255,0.12);}' +
+      '.syn-ev-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:0.5rem;margin-top:0.45rem;}' +
+      '.syn-ev-metric{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:0.65rem;padding:0.5rem 0.65rem;}' +
+      '.syn-ev-m-k{font-size:0.71rem;color:rgba(250,248,245,0.62);margin-bottom:0.2rem;white-space:nowrap;}' +
+      '.syn-ev-m-v{font-family:"JetBrains Mono",monospace;font-size:0.84rem;font-weight:700;color:#FAF8F5;white-space:nowrap;}';
+    document.head.appendChild(st);
+  }
+
+  function renderTopBanners(d) {
+    const res = document.getElementById('syn-results');
+    if (!res) return;
+    const old = document.getElementById('syn-exp-banners');
+    if (old) old.remove();
+    let html = '';
+    if (!d.cA.hasTime || !d.cB.hasTime) {
+      const who = (!d.cA.hasTime && !d.cB.hasTime) ? 'obu osób' : (!d.cA.hasTime ? esc(d.nameA) : esc(d.nameB));
+      html += `<div style="margin-bottom:1rem;padding:0.85rem 1.15rem;border-radius:0.9rem;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.38);color:#FDE68A;font-size:0.84rem;line-height:1.55;"><strong>Tryb bez pełnej godziny urodzenia (${who}):</strong> osie AC/DC/MC/IC i domy pozostają ukryte, a pozycja Księżyca może różnić się nawet o &plusmn;6&deg;.</div>`;
+    }
+    if (Math.abs(d.cA.city.lat) >= 66.55 || Math.abs(d.cB.city.lat) >= 66.55) {
+      html += `<div style="margin-bottom:1rem;padding:0.85rem 1.15rem;border-radius:0.9rem;background:rgba(52,211,153,0.09);border:1px solid rgba(52,211,153,0.35);color:#A7F3D0;font-size:0.84rem;line-height:1.55;"><strong>Strefa podbiegunowa (&ge; 66.55&deg;):</strong> dla szerokości polarnej zastosowano automatycznie system domów <em>Whole Sign</em> zamiast Placidusa.</div>`;
+    }
+    if (html) res.insertAdjacentHTML('afterbegin', `<div id="syn-exp-banners">${html}</div>`);
+  }
+
+  const AXIS_TIPS = (typeof window !== 'undefined' && window.__SYNASTRY_FREE_TEXTS__ && window.__SYNASTRY_FREE_TEXTS__.AXIS_TIPS) || [];
+
+  function makeAxisTip(def, score, isFriction) {
+    return `<span class="syn-asp-badge syn-exp-tip" tabindex="0" style="margin-left:5px;vertical-align:middle;"><span class="syn-info-pill" style="font-size:8px;padding:1px 5px;cursor:help;">ⓘ</span><span class="syn-asp-tip"><strong style="color:${def.c};display:block;margin-bottom:3px;font-size:0.8rem;">${def.t} &bull; ${score}%</strong>${def.d}<br><span style="opacity:0.8;font-size:0.74rem;display:block;margin-top:4px;">Strefa: ${zoneTag(score, isFriction)} (45–55% to strefa równowagi).</span></span></span>`;
+  }
+
+  function enhanceFiveAxes(d, dos) {
+    ensurePanelStyles();
+    const wc = document.getElementById('syn-wheel-container');
+    const grid = wc && wc.closest('.syn-grid-2');
+    const rightCol = grid && grid.children[1];
+    if (!rightCol) return;
+    rightCol.querySelectorAll('.syn-exp-zone, .syn-exp-tip, .syn-exp-extra-axes, .syn-exp-evidence').forEach((el) => el.remove());
+
+    const baseScores = [d.syn.chemistry, d.syn.security, d.syn.friction];
+    rightCol.querySelectorAll('.syn-bar-track').forEach((tr, i) => {
+      const lblRow = tr.previousElementSibling;
+      if (!lblRow || baseScores[i] === undefined) return;
+      const isFric = i === 2;
+      lblRow.style.gap = '8px'; lblRow.style.alignItems = 'baseline';
+      const titleSpan = lblRow.firstElementChild, valSpan = lblRow.lastElementChild;
+      if (titleSpan) titleSpan.insertAdjacentHTML('beforeend', makeAxisTip(AXIS_TIPS[i], baseScores[i], isFric));
+      if (valSpan) {
+        valSpan.style.whiteSpace = 'nowrap'; valSpan.style.flexShrink = '0';
+        valSpan.insertAdjacentHTML('afterbegin', `<span class="syn-exp-zone" style="font-size:10px;opacity:0.75;margin-right:6px;font-weight:400;">(${zoneTag(baseScores[i], isFric)})</span>`);
+      }
+    });
+
+    const anchor = Array.from(rightCol.querySelectorAll('.syn-card-tag')).find((el) => el.textContent.includes('KLUCZOWE ASPEKTY'));
+    if (!anchor) return;
+    const extraBars = [
+      { idx: 3, val: dos.commFinal, grad: 'linear-gradient(90deg,#2563EB,#60A5FA)' },
+      { idx: 4, val: dos.saturnFinal, grad: 'linear-gradient(90deg,#7C3AED,#A78BFA)' }
+    ].map((x) => {
+      const def = AXIS_TIPS[x.idx];
+      return `<div class="syn-exp-extra-axes" style="margin-bottom:1.15rem;"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:0.9rem;font-weight:600;"><span>${def.t}${makeAxisTip(def, x.val, false)}</span><span style="color:${def.c};font-family:'JetBrains Mono',monospace;white-space:nowrap;flex-shrink:0;"><span style="font-size:10px;opacity:0.75;margin-right:6px;font-weight:400;">(${zoneTag(x.val, false)})</span>${x.val}%</span></div><div class="syn-bar-track"><div class="syn-bar-fill" style="width:${x.val}%;background:${x.grad};"></div></div></div>`;
+    }).join('');
+
+    const chips = (dos.fullAspects || []).slice(0, 5).map((a) => `<span class="syn-ev-chip" style="border-left-color:${a.color || '#C9A96E'};"><span>${a.bA.glyph} ${a.bA.label}</span><span style="color:${a.color || '#C9A96E'};font-weight:700;padding:0 2px;">${a.sym}</span><span>${a.bB.glyph} ${a.bB.label}</span><span class="syn-ev-orb">${a.orbStr}</span></span>`).join('') || '<span class="syn-ev-chip">Rozkład żywiołów pary</span>';
+    const chev = '<svg class="syn-ev-chev" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+    const evBox = `<details class="syn-exp-evidence"><summary class="syn-ev-sum"><span class="syn-ev-sum-left"><span>✦ Skąd wziął się ten wynik?</span><span class="syn-ev-sum-sub" style="opacity:0.45;">&bull;</span><span class="syn-ev-sum-sub">Zestawienie aspektów</span></span>${chev}</summary><div class="syn-ev-body"><div class="syn-ev-label">Najważniejsze aspekty w tym wyniku</div><div class="syn-ev-chips">${chips}</div><div class="syn-ev-label" style="margin-bottom:0;">Rezonans Ebertina 90&deg;</div><div class="syn-ev-metrics"><div class="syn-ev-metric"><div class="syn-ev-m-k">Oś Małżeństwa</div><div class="syn-ev-m-v">&Delta; ${dos.ebertinMarriageDelta.toFixed(1)}&deg;</div></div><div class="syn-ev-metric"><div class="syn-ev-m-k">Oś Pożądania</div><div class="syn-ev-m-v">&Delta; ${dos.ebertinDesireDelta.toFixed(1)}&deg;</div></div><div class="syn-ev-metric"><div class="syn-ev-m-k">Obsesja ♇&times;⚸</div><div class="syn-ev-m-v" style="color:#FB7185;">${dos.obsessionFinal}%</div></div></div></div></details>`;
+    anchor.insertAdjacentHTML('beforebegin', extraBars + evBox);
+  }
+
+  function enhance(d, dos) {
+    renderTopBanners(d);
+    enhanceFiveAxes(d, dos);
+  }
+
+  window.__SYN_EXPAND_PANELS__ = { enhance, zoneTag };
+})();
+
+(function () {
+  'use strict';
+  const esc = (x) => String(x || '').replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+
+  function ensureLifeStyles() {
+    if (typeof document === 'undefined' || !document.head || document.getElementById('syn-exp-life-css')) return;
+    const st = document.createElement('style');
+    st.id = 'syn-exp-life-css';
+    st.textContent =
+      '.syn-life-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.9rem;margin-top:0.85rem;}' +
+      '.syn-cmp-list{display:flex;flex-direction:column;gap:0.95rem;margin-top:0.85rem;}' +
+      '.syn-cmp-block{background:rgba(255,255,255,0.025);border:1px solid rgba(201,169,110,0.22);border-radius:1.05rem;padding:1.05rem 1.15rem;}' +
+      '.syn-cmp-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:0.55rem;}' +
+      '.syn-cmp-who{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#FAF8F5;margin-bottom:0.3rem;font-weight:700;}' +
+      '.syn-cmp-txt{font-size:0.84rem;line-height:1.58;color:rgba(250,248,245,0.88);margin:0;}' +
+      '.syn-cmp-bridge{margin-top:0.75rem;padding-top:0.65rem;border-top:1px solid rgba(255,255,255,0.07);font-size:0.8rem;color:#C9A96E;line-height:1.5;}' +
+      '.syn-exp-mat-meta{margin-top:0.75rem;padding-top:0.6rem;border-top:1px solid rgba(255,255,255,0.07);font-family:"JetBrains Mono",monospace;font-size:10.5px;color:rgba(201,169,110,0.85);letter-spacing:0.06em;}' +
+      '.syn-exp-questions{margin-top:1.35rem;padding-top:1.25rem;border-top:1px solid rgba(201,169,110,0.22);}' +
+      '.syn-q-list{display:flex;flex-direction:column;margin-top:0.8rem;}' +
+      '.syn-q-item{display:grid;grid-template-columns:2rem minmax(0,1fr);column-gap:0.75rem;align-items:start;margin-bottom:0.65rem;background:rgba(255,255,255,0.028);border:1px solid rgba(201,169,110,0.2);border-radius:0.85rem;padding:0.85rem 1.05rem;}' +
+      '.syn-q-item:last-child{margin-bottom:0;}' +
+      '.syn-q-num{font-family:"JetBrains Mono",monospace;font-size:0.82rem;font-weight:700;color:#C9A96E;padding-top:0.1rem;}' +
+      '.syn-q-tag{font-family:"JetBrains Mono",monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(201,169,110,0.82);margin-bottom:0.2rem;}' +
+      '.syn-q-txt{font-family:"Playfair Display",Georgia,serif;font-size:0.98rem;line-height:1.5;color:#FAF8F5;margin:0;}' +
+      '@media(max-width:820px){.syn-life-grid-3,.syn-cmp-cols{grid-template-columns:1fr;}}' +
+      '@media print{.syn-exp-life-chapter,.syn-cmp-block,.syn-q-item{break-inside:avoid;}.syn-q-item{border-color:rgba(201,169,110,0.45);}}';
+    document.head.appendChild(st);
+  }
+
+  function renderTopMaturity(d, dos) {
+    const LD = window.__SYN_EXPAND_LIFE_DATA__, res = document.getElementById('syn-results');
+    if (!LD || !res) return;
+    ensureLifeStyles();
+    const arch = Array.from(res.querySelectorAll('.syn-card')).find((c) => (c.querySelector('.syn-card-tag')?.textContent || '').includes('ARCHITEKTURA RELACJI'));
+    if (!arch) return;
+    const lesson = LD.buildMaturityLesson(d, dos);
+    const h3 = arch.querySelector('.syn-card-heading'), p = arch.querySelector('p');
+    if (h3) h3.textContent = lesson.title;
+    if (p) p.textContent = lesson.body;
+    let meta = arch.querySelector('.syn-exp-mat-meta');
+    if (!meta) {
+      meta = document.createElement('div');
+      meta.className = 'syn-exp-mat-meta';
+      arch.appendChild(meta);
+    }
+    meta.textContent = lesson.meta;
+  }
+
+  function renderUnlockedLife(d, dos, houseHits) {
+    const LD = window.__SYN_EXPAND_LIFE_DATA__, dossier = document.getElementById('syn-locked-dossier');
+    if (!LD || !dossier) return;
+    ensureLifeStyles();
+    dossier.querySelectorAll('.syn-exp-life-chapter, .syn-exp-questions').forEach((el) => el.remove());
+
+    const chaps = dossier.querySelectorAll(':scope > .syn-report-chapter');
+    const nA = esc(d.nameA), nB = esc(d.nameB);
+
+    if (chaps[0]) {
+      const blocks = LD.buildOneToOneData(d, dos).map((b) => `
+        <div class="syn-cmp-block">
+          <div class="syn-card-tag">${b.glyph} ${b.title}</div>
+          <div class="syn-cmp-cols">
+            <div><div class="syn-cmp-who">${nA} (${esc(b.signA)})</div><p class="syn-cmp-txt">${esc(b.textA)}</p></div>
+            <div><div class="syn-cmp-who">${nB} (${esc(b.signB)})</div><p class="syn-cmp-txt">${esc(b.textB)}</p></div>
+          </div>
+          <div class="syn-cmp-bridge">${esc(b.bridge)}</div>
+        </div>`).join('');
+      chaps[0].insertAdjacentHTML('afterend', `<div class="syn-report-chapter syn-exp-life-chapter"><div class="syn-chapter-num">ROZDZIAŁ II-B &bull; PORÓWNANIE 1:1: ROZMOWA, DZIAŁANIE I BLISKOŚĆ</div><h4 class="syn-chapter-title">Jak myślicie, działacie i okazujecie uczucia?</h4><div class="syn-cmp-list">${blocks}</div></div>`);
+    }
+
+    if (chaps[5]) {
+      const cards = LD.buildLifeDomains(d, dos, houseHits).map((c) => `
+        <div class="syn-stat-box">
+          <div class="syn-card-tag">${esc(c.tag)}</div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:#FAF8F5;margin-bottom:0.35rem;">${esc(c.title)}</div>
+          <p style="font-size:0.83rem;line-height:1.58;color:rgba(250,248,245,0.86);margin:0;">${esc(c.body)}</p>
+        </div>`).join('');
+      chaps[5].insertAdjacentHTML('afterend', `<div class="syn-report-chapter syn-exp-life-chapter"><div class="syn-chapter-num">ROZDZIAŁ V-B &bull; CODZIENNOŚĆ, PIENIĄDZE I WSPÓLNY DOM</div><h4 class="syn-chapter-title">Trzy strefy wspólnego życia po pierwszym zauroczeniu</h4><div class="syn-life-grid-3">${cards}</div></div>`);
+    }
+
+    if (chaps[7]) {
+      const qHtml = LD.buildFiveQuestions(d, dos).map((item, idx) => `
+        <div class="syn-q-item">
+          <div class="syn-q-num">0${idx + 1}</div>
+          <div><div class="syn-q-tag">${esc(item.tag)}</div><p class="syn-q-txt">${esc(item.q)}</p></div>
+        </div>`).join('');
+      const wrap = `<div class="syn-exp-questions"><div class="syn-card-tag">NA WIECZÓR WE DWOJE</div><h4 style="font-family:'Playfair Display',Georgia,serif;font-size:1.22rem;color:#FAF8F5;margin:0.15rem 0 0.2rem;">5 pytań dobranych pod Wasz horoskop</h4><div class="syn-q-list">${qHtml}</div></div>`;
+      const actions = chaps[7].querySelector('.syn-no-print');
+      if (actions) actions.insertAdjacentHTML('beforebegin', wrap);
+      else chaps[7].insertAdjacentHTML('beforeend', wrap);
+    }
+  }
+
+  window.__SYN_EXPAND_LIFE_UI__ = { renderTopMaturity, renderUnlockedLife };
+})();
+
 (function () {
   'use strict';
   const norm = (x) => ((x % 360) + 360) % 360;

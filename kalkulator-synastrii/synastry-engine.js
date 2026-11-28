@@ -535,80 +535,21 @@
   window.__SYNASTRY_ASTRO__ = { calcChart, analyzeSynastry, renderBiWheelSvg, SYNASTRY_CITIES, getCityById };
 })();
 
-// Part 2: Profile prezentowe ładowane z syn-gift-profiles.js
+// Part 2: Profile prezentowe ładowane z synastry-texts-pro.js
 const SYNASTRY_PROFILES = (typeof window !== 'undefined' && window.__SYN_GIFT_PROFILES__) || [];
 
-
-// Profile prezentowe załadowane z syn-gift-profiles.js
-
 const DEFAULT_WHEEL_HINT = '✦ Dotknij lub najedź na dowolną planetę, znak lub aspekt na kole, aby odkryć jego znaczenie';
-
-function getMoonElementAndModality(signName) {
-  const el = ['Baran', 'Lew', 'Strzelec'].includes(signName) ? 'Ogień' :
-             ['Byk', 'Panna', 'Koziorożec'].includes(signName) ? 'Ziemia' :
-             ['Bliźnięta', 'Waga', 'Wodnik'].includes(signName) ? 'Powietrze' : 'Woda';
-  const mod = ['Baran', 'Rak', 'Waga', 'Koziorożec'].includes(signName) ? 'Kardynalny' :
-              ['Byk', 'Lew', 'Skorpion', 'Wodnik'].includes(signName) ? 'Stały' : 'Zmienny';
-  return { el, mod };
-}
 
 function escapeHtmlSyn(s) {
   return String(s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
 function buildRelationalCollisionBridge(chartA, chartB, rawNameA, rawNameB, syn, gAIn, gBIn) {
-  const M = typeof window !== 'undefined' ? window.SynPlMorphology : null;
-  const gA = M ? M.inferGender(rawNameA, gAIn || 'f') : (gAIn || 'f');
-  const gB = M ? M.inferGender(rawNameB, gBIn || 'm') : (gBIn || 'm');
-  const both = M ? M.pairBoth(gA, gB) : 'oboje';
-  const nameA = escapeHtmlSyn(rawNameA), nameB = escapeHtmlSyn(rawNameB);
-  const mA = chartA && chartA.moon ? chartA.moon : { name: 'Baran' };
-  const mB = chartB && chartB.moon ? chartB.moon : { name: 'Byk' };
-  const infoA = getMoonElementAndModality(mA.name), infoB = getMoonElementAndModality(mB.name);
-  const pairKey = [infoA.el, infoB.el].sort().join('+');
-  const friction = syn && typeof syn.friction === 'number' ? syn.friction : 50;
-
-  const dativeBoth = M ? M.pairDative(gA, gB) : 'obojgu';
-  let loopDesc = '';
-  if (pairKey === 'Ogień+Woda') {
-    const fN = infoA.el === 'Ogień' ? nameA : nameB, wN = infoA.el === 'Woda' ? nameA : nameB;
-    const wG = infoA.el === 'Woda' ? gA : gB;
-    const silent = wG === 'f' ? 'milknie i zamyka zaufanie' : 'milknie i odsuwa się w ciszę';
-    loopDesc = `${fN} podnosi ton i chce odpowiedzi natychmiast, przez co ${wN} odbiera nacisk jak atak, ${silent} i niechcący tylko podkręca spór. Pomaga kwadrans przerwy.`;
-  } else if (pairKey === 'Powietrze+Ziemia') {
-    const eN = infoA.el === 'Ziemia' ? nameA : nameB, aN = infoA.el === 'Powietrze' ? nameA : nameB;
-    const aG = infoA.el === 'Powietrze' ? gA : gB;
-    const grilled = aG === 'f' ? 'czuje się przesłuchiwana' : 'czuje się przesłuchiwany';
-    loopDesc = `${eN} żąda konkretnych obietnic oraz faktów na stole, podczas gdy ${aN} potrzebuje najpierw omówić kontekst i ${grilled}, gdy padają twarde pytania. Oddzielcie uczucia od kalendarza.`;
-  } else if (pairKey === 'Ogień+Ziemia') {
-    loopDesc = `Jedna osoba naciska na szybką zmianę kursu pod wpływem impulsu, a druga blokuje ruch z ostrożności o skutki, więc rozwaga wygląda jak chłód. Podzielcie wyraźnie role.`;
-  } else if (pairKey === 'Powietrze+Woda') {
-    const aN = infoA.el === 'Powietrze' ? nameA : nameB, wN = infoA.el === 'Woda' ? nameA : nameB;
-    loopDesc = `W napięciu ${aN} próbuje rozłożyć emocje na logiczne argumenty, co ${wN} odbiera jak chłód wobec własnego bólu, przez co zaufanie szybko znika. Najpierw wysłuchajcie tonu.`;
-  } else if (infoA.el === infoB.el) {
-    const elG = M ? M.elemGen(infoA.el) : infoA.el;
-    loopDesc = `${both.charAt(0).toUpperCase() + both.slice(1)} macie Księżyc w żywiole ${elG}, więc w stresie odpalacie ten sam odruch obronny i łatwo odbijacie w sobie własne uparte reakcje. Ktoś musi zwolnić.`;
-  } else {
-    const elGA = M ? M.elemGen(infoA.el) : infoA.el, elGB = M ? M.elemGen(infoB.el) : infoB.el;
-    loopDesc = `Połączenie żywiołów ${elGA} i ${elGB} daje wyraźny kontrast tempa w nerwach: jedna strona szuka wtedy bliskości, a druga krótkiego dystansu. To oszczędza ${dativeBoth} niepotrzebnych żalów.`;
+  const F = typeof window !== 'undefined' && window.__SYNASTRY_FREE_TEXTS__;
+  if (F && typeof F.buildMoonCollision === 'function') {
+    return F.buildMoonCollision(chartA, chartB, rawNameA, rawNameB, syn, gAIn, gBIn);
   }
-
-  const modNote = (infoA.mod === 'Stały' && infoB.mod === 'Stały')
-    ? ' Przy dwóch znakach stałych największym ryzykiem jest wielodniowe czekanie, kto odezwie się pierwszy.'
-    : (infoA.mod === 'Kardynalny' && infoB.mod === 'Kardynalny')
-    ? ` Gdy ${both} macie Księżyc w znakach kardynalnych, obie strony walczą o narzucenie tempa rozwiązania sporu.`
-    : '';
-
-  return `
-    <div style="margin-top:1.15rem;padding:0.95rem 1.15rem;background:rgba(251,113,133,0.06);border-left:3px solid #FB7185;border-radius:0.75rem;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#FB7185;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.35rem;font-weight:700;">
-        ✦ PĘTLA WYZWALACZ–REAKCJA (${mA.name} &times; ${mB.name} • Tarcie ${friction}%)
-      </div>
-      <p style="font-size:0.86rem;line-height:1.62;color:rgba(250,248,245,0.88);margin:0;">
-        ${loopDesc}${modNote}
-      </p>
-    </div>
-  `;
+  return '';
 }
 
 
@@ -672,22 +613,8 @@ window.__SYNASTRY_UI_RENDER__ = function (container, d) {
     `Najważniejsze pytanie dotyczące naszej relacji:\n`
   );
 
-  const ASPECT_MUGOL_MAP = {
-    'Koniunkcja': { title: 'Koniunkcja (0°) — Zespolenie Energii', desc: 'Planety stoją w tym samym miejscu nieba. W tej sferze działacie jak jeden zespół i szybko łapiecie wspólny rytm.' },
-    'Trygon': { title: 'Trygon (120°) — Naturalna Zgoda', desc: 'Bardzo swobodny kąt w astrologii. Energia płynie między Wami bez oporu, więc niczego nie musicie sobie udowadniać.' },
-    'Sekstyl': { title: 'Sekstyl (60°) — Przyjazny Impuls', desc: 'Zgodne żywioły dają sympatię, lekkość i chęć wspólnego działania, gdy tylko wyjdziecie z inicjatywą.' },
-    'Kwadratura': { title: 'Kwadratura (90°) — Napięcie i Iskra', desc: 'Kąt prosty wywołujący tarcie. Prowokuje silne pożądanie, ale też spory o pierwszeństwo, które nie pozwalają na nudę.' },
-    'Opozycja': { title: 'Opozycja (180°) — Przyciąganie Kontrastu', desc: 'Planety naprzeciwko siebie jak w lustrze. Pociąga Was inna natura partnera, choć potrzeba kompromisu zamiast przeciągania liny.' }
-  };
-  window.__GET_ASPECT_MUGOL_TIP__ = function (name) {
-    for (const key in ASPECT_MUGOL_MAP) {
-      if (name.includes(key)) return ASPECT_MUGOL_MAP[key];
-    }
-    return { title: name, desc: 'Wzajemne oddziaływanie energii planetarnych w Waszej relacji.' };
-  };
-
   const aspectItems = syn.aspects.map(a => {
-    const tip = window.__GET_ASPECT_MUGOL_TIP__(a.name);
+    const tip = (window.__GET_ASPECT_MUGOL_TIP__ && window.__GET_ASPECT_MUGOL_TIP__(a.name)) || { title: a.name, desc: 'Aspekt planetarny.' };
     return `
       <div class="syn-key-aspect-card" style="border-left-color:${a.color};">
         <div class="syn-key-aspect-planets">

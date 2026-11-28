@@ -122,7 +122,7 @@
   const U = window.__SYNASTRY_DEEP_UTILS__;
 
   const PAIR_TEXTS = (typeof window !== 'undefined' && window.__SYN_PAIR_TEXTS__) || {};
-  // Reszta par ładowana z syn-pair-texts-b.js
+  // Pary planetarne ładowane z synastry-texts-pro.js
 
   const JUPITER_GLYPH = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:inline-block;vertical-align:-2px;" xmlns="http://www.w3.org/2000/svg"><g transform="translate(12,12)"><path d="M-5,-4 C-5,-8 1,-8 1,-4 C1,1 -5,1 -5,4 L7,4 M3,-4 L3,10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g></svg>';
 
@@ -679,7 +679,7 @@
       <div class="syn-locked-content" id="syn-locked-dossier">
         ${!unlocked ? `
         <div class="syn-report-chapter"><div class="syn-chapter-num">ROZDZIAŁ II • PEŁNA EFEMERYDA 10 PUNKTÓW & ASPEKTARIUM</div><p style="opacity:0.65;">Szczegółowa tabela pozycji i aspektów międzyplanetarnych zostanie wygenerowana po odblokowaniu raportu.</p></div>
-        <div class="syn-report-chapter"><div class="syn-chapter-num">ROZDZIAŁ III • HOROSKOP KOMPOZYTOWY & DAVISON</div><p style="opacity:0.65;">Analiza Trzeciej Encji oraz punktów środkowych Słońce/Księżyc/Wenus/Mars dostępna po odblokowaniu.</p></div>
+        <div class="syn-report-chapter"><div class="syn-chapter-num">ROZDZIAŁ III • HOROSKOP KOMPOZYTOWY & DAVISON</div><p style="opacity:0.65;">Analiza wspólnego kompozytu oraz punktów środkowych Słońce/Księżyc/Wenus/Mars dostępna po odblokowaniu.</p></div>
         <div class="syn-report-chapter"><div class="syn-chapter-num">ROZDZIAŁ IV • KOSMOBIOLOGIA EBERTINA, PLUTON/LILITH & DOMY</div><p style="opacity:0.65;">Indeks obsesji i nakładka domów partnerskich otwierają się natychmiast po zakupie.</p></div>` : `
         <div class="syn-report-chapter">
           <div class="syn-chapter-num">ROZDZIAŁ II • PEŁNA EFEMERYDA 10 PUNKTÓW (Z PLUTONEM I LILITH) & ASPEKTARIUM</div>
@@ -937,7 +937,7 @@
           ${ch1_4}
 
             ${!unlocked ? `
-            <div class="syn-report-chapter"><div class="syn-chapter-num">ROZDZIAŁ V–VII • PROTOKÓŁ KRYZYSOWY, KONTRAKT KARMICZNY I ZŁOTY PREZENT</div><p style="opacity:0.65;">Instrukcja deeskalacji napięć oraz psychologiczny profil prezentowy Wenus dostępne po odblokowaniu.</p></div>
+            <div class="syn-report-chapter"><div class="syn-chapter-num">ROZDZIAŁ V–VII • TRUDNE CHWILE, KONTRAKT KARMICZNY I ZŁOTY PREZENT</div><p style="opacity:0.65;">Wskazówki wyciszania napięć oraz psychologiczny profil prezentowy Wenus dostępne po odblokowaniu.</p></div>
           </div>` : `
             <div class="syn-report-chapter">
               <div class="syn-chapter-num">ROZDZIAŁ V • JAK WRACAĆ DO SIEBIE PO SPIĘCIU</div>
